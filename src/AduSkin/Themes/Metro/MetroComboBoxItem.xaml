@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    
+
+</ResourceDictionary>

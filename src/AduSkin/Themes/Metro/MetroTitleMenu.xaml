@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type Metro:MetroTitleMenu}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="0,-32,120,0"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Background" Value="#fff"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Metro:MetroTitleMenu}">
+                    <Grid Background="#ffffff">
+                        <Grid Background="{TemplateBinding Background}" ClipToBounds="True">
+                            <ItemsPresenter HorizontalAlignment="Right"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

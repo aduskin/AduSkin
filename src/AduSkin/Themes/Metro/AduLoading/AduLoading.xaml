@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="DoubleRound.xaml" />
+        <ResourceDictionary Source="SingleRound.xaml" />
+        <ResourceDictionary Source="Cogs.xaml" />
+        <ResourceDictionary Source="Apple.xaml" />
+        <ResourceDictionary Source="Lines.xaml" />
+        <ResourceDictionary Source="Normal.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type Adu:AduLoading}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{StaticResource Brush}" />
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Template" Value="{StaticResource Normal}" />
+        <Style.Triggers>
+            <Trigger Property="Type" Value="DoubleRound">
+                <Setter Property="Template" Value="{StaticResource DoubleRound}" />
+            </Trigger>
+            <Trigger Property="Type" Value="SingleRound">
+                <Setter Property="Template" Value="{StaticResource SingleRound}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Win10">
+                <Setter Property="Template" Value="{StaticResource SingleRound}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Android">
+                <Setter Property="Template" Value="{StaticResource Normal}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Cogs">
+                <Setter Property="Template" Value="{StaticResource Cogs}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Apple">
+                <Setter Property="Width" Value="24" />
+                <Setter Property="Template" Value="{StaticResource Apple}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Normal">
+                <Setter Property="Template" Value="{StaticResource Normal}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Lines">
+                <Setter Property="Template" Value="{StaticResource Lines}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

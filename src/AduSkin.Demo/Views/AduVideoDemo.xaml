@@ -1,0 +1,29 @@
+﻿<Adu:AduWindow
+    x:Class="AduSkin.Demo.Views.AduVideoDemo"
+    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:AduSkin.Demo.Views"
+    xmlns:AduPlayer="clr-namespace:AduVideoPlayer.Controls;assembly=AduVideoPlayer"
+    mc:Ignorable="d"
+    Title="AduVideoDemo" 
+    Height="450" 
+    MinHeight="300" 
+    BorderThickness="1"
+    BorderBrush="{StaticResource DefaultBrush}"
+    Width="800" 
+    TitleForeground="#444"
+    MinWidth="600" Closed="AduWindow_Closed">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AduVideoPlayer;component/Controls/AduVideoPlayer.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <AduPlayer:VideoPlayer x:Name="videoPlayer"/>
+    </Grid>
+</Adu:AduWindow>

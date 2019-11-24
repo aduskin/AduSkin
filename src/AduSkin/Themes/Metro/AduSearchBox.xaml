@@ -1,0 +1,179 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Converter:StringToVisibility x:Key="StringToVisibility"/>
+
+    <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="title" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.9" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="title" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.5" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <TextBlock x:Name="title" Text="{TemplateBinding Content}" Opacity="0.65" VerticalAlignment="Center" Margin="8,0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Adu:AduSearchBox}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+
+        <Setter Property="AcceptsReturn" Value="False"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+
+        <Setter Property="Background" Value="#FFFFFFFF"/>
+        <Setter Property="MouseMoveBackground" Value="#FFFFFFFF"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Brush}"/>
+        <Setter Property="Foreground" Value="#A5000000"/>
+        <Setter Property="TitleForeground" Value="#A5000000"/>
+        <Setter Property="TitleMinWidth" Value="80"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Adu:AduSearchBox}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="{TemplateBinding TitleMinWidth}" Width="Auto" x:Name="titleWidth1"/>
+                            <ColumnDefinition Width="10" x:Name="titleWidth2"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border x:Name="back" Grid.Column="2" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="#FF000000" Opacity="0.15"/>
+                                <Border x:Name="bordermove" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" Opacity="0"/>
+                                <Border x:Name="bordertrue" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="#FF99cb8a" Visibility="Hidden"/>
+                                <Border x:Name="borderfalse" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="#FFe99595" Visibility="Hidden"/>
+                                <Grid x:Name="content">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" x:Name="iconWidth"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="Auto" x:Name="buttonWidth1"/>
+                                        <ColumnDefinition Width="Auto" x:Name="buttonWidth2"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Width="16" Height="16" Margin="6,6,0,6" Source="{TemplateBinding Icon}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Grid x:Name="hideInputHint" Opacity="0" Grid.Column="1">
+                                        <TextBlock x:Name="inputHint" Margin="6,5,5,5" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding InputHint}" HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Opacity="0" IsHitTestVisible="False"/>
+                                    </Grid>
+                                    <ScrollViewer Grid.Column="1" x:Name="PART_ContentHost" Margin="5" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                                    <Rectangle Grid.Column="2" Width="1" Height="11" Margin="5,9,0,0" Fill="#FF000000" Opacity="0.15" VerticalAlignment="Top"/>
+                                    <Button x:Name="button" Focusable="False" Grid.Column="3" Content="{TemplateBinding ButtonTitle}" Margin="0,6" Style="{StaticResource buttonStyle}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Popup x:Name="popupHint" PlacementTarget="{Binding ElementName=PART_ContentHost}" AllowsTransparency="True" Focusable="False" Placement="RelativePoint" VerticalOffset="-42" HorizontalOffset="-14" PopupAnimation="Fade">
+                            <Grid>
+                                <StackPanel Visibility="{TemplateBinding PopupHint, Converter={StaticResource StringToVisibility}}">
+                                    <Border x:Name="popupborder" CornerRadius="2" Background="{TemplateBinding BorderBrush}">
+                                        <StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <Polygon x:Name="popuppolygon" Points="0,0 10,0 5,5 0,0" Fill="{TemplateBinding BorderBrush}" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="content" Value="0.5"/>
+                            <Setter Property="Background" TargetName="back" Value="#FFFAFAFA"/>
+                            <Setter Property="Opacity" TargetName="inputHint" Value="0.5"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Opacity" TargetName="border" Value="0"/>
+                            <Setter Property="Opacity" TargetName="bordermove" Value="1"/>
+                            <Setter Property="BorderBrush" TargetName="bordertrue" Value="#ff6fae5f"/>
+                            <Setter Property="BorderBrush" TargetName="borderfalse" Value="#ffe67979"/>
+
+                            <Setter Property="Background" TargetName="back" Value="{Binding MouseMoveBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                        <Trigger Property="IsPassWordBox" Value="true">
+                            <Setter Property="Visibility" TargetName="PART_ContentHost" Value="Hidden"/>
+                            <Setter Property="InputMethod.PreferredImeState" Value="Off"/>
+                        </Trigger>
+                        <Trigger Property="MultipleLine" Value="true">
+                            <Setter Property="AcceptsReturn" Value="true"/>
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="Opacity" TargetName="border" Value="0"/>
+                            <Setter Property="Opacity" TargetName="bordermove" Value="1"/>
+                            <Setter Property="IsOpen" TargetName="popupHint" Value="true"/>
+                            <Setter Property="BorderBrush" TargetName="bordertrue" Value="#ff6fae5f"/>
+                            <Setter Property="BorderBrush" TargetName="borderfalse" Value="#ffe67979"/>
+                            <Setter Property="Opacity" TargetName="inputHint" Value="0"/>
+
+                            <Setter Property="Background" TargetName="back" Value="{Binding MouseMoveBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="false">
+                            <Setter Property="IsOpen" TargetName="popupHint" Value="false"/>
+                        </Trigger>
+                        <Trigger Property="Title" Value="">
+                            <Setter Property="MinWidth" TargetName="titleWidth1" Value="0"/>
+                            <Setter Property="Width" TargetName="titleWidth2" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="Opacity" TargetName="hideInputHint" Value="1"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value=""/>
+                                <Condition Property="IsEnabled" Value="true"/>
+                                <Condition Property="IsKeyboardFocused" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Opacity" TargetName="inputHint" Value="0.25"/>
+                        </MultiTrigger>
+                        <Trigger Property="State" Value="true">
+                            <Setter Property="Visibility" TargetName="border" Value="Hidden"/>
+                            <Setter Property="Visibility" TargetName="bordertrue" Value="Visible"/>
+
+                            <Setter Property="Background" TargetName="popupborder" Value="#FF99cb8a"/>
+                            <Setter Property="Fill" TargetName="popuppolygon" Value="#FF99cb8a"/>
+                        </Trigger>
+                        <Trigger Property="State" Value="false">
+                            <Setter Property="Visibility" TargetName="border" Value="Hidden"/>
+                            <Setter Property="Visibility" TargetName="borderfalse" Value="Visible"/>
+
+                            <Setter Property="Background" TargetName="popupborder" Value="#FFe99595"/>
+                            <Setter Property="Fill" TargetName="popuppolygon" Value="#FFe99595"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="Width" TargetName="iconWidth" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="ButtonTitle" Value="">
+                            <Setter Property="Width" TargetName="buttonWidth1" Value="0"/>
+                            <Setter Property="Width" TargetName="buttonWidth2" Value="0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

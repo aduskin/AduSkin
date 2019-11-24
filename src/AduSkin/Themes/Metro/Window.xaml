@@ -1,0 +1,173 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="SystemButton" TargetType="Button">
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Background" Value="{StaticResource TransparentColor}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#10FFFFFF" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.8" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MainStyle" TargetType="Window">
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CaptionHeight="70"
+                    GlassFrameThickness="1"
+                    ResizeBorderThickness="0"
+                    UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Window">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        SnapsToDevicePixels="True">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <AdornerDecorator x:Name="content">
+                                <ContentPresenter />
+                            </AdornerDecorator>
+                            <ResizeGrip
+                                x:Name="ResizeGrip"
+                                Margin="0,0,2,2"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                IsTabStop="False"
+                                Visibility="Collapsed"
+                                WindowChrome.ResizeGripDirection="BottomRight" />
+                            <StackPanel
+                                Height="60"
+                                Margin="0,0,10,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                Orientation="Horizontal"
+                                WindowChrome.IsHitTestVisibleInChrome="True">
+                                <!--<Adu:AduPathIconButton x:Name="ButtonMin" Width="40" PathWidth="12"
+                                                       NormalPathColor="#999" PressedPathColor="#999" MouseOverPathColor="#888" 
+                                                       Command="SystemCommands.MinimizeWindowCommand" PathData="{StaticResource Icon_SysMin}"/>-->
+                                <Button
+                                    x:Name="ButtonMin"
+                                    Command="SystemCommands.MinimizeWindowCommand"
+                                    IsTabStop="False"
+                                    Style="{StaticResource SystemButton}">
+                                    <Path
+                                        Width="11"
+                                        Height="2"
+                                        Data="{StaticResource Icon_SysMin}"
+                                        Fill="{StaticResource foreground_normal_color}"
+                                        Stretch="Fill" />
+                                </Button>
+                                <!--<Adu:AduPathIconButton x:Name="ButtonMax" Width="40"  PathWidth="12"
+                                                        NormalPathColor="#999" PressedPathColor="#999" MouseOverPathColor="#888" 
+                                                       Command="SystemCommands.MaximizeWindowCommand" PathData="{StaticResource Icon_SysMax}"/>-->
+                                <Button
+                                    x:Name="ButtonMax"
+                                    Command="SystemCommands.MaximizeWindowCommand"
+                                    IsTabStop="False"
+                                    Style="{StaticResource SystemButton}">
+                                    <Path
+                                        Width="11"
+                                        Height="11"
+                                        Margin="0,0,0,0"
+                                        Data="{StaticResource Icon_SysMax}"
+                                       Fill="{StaticResource foreground_normal_color}"
+                                        Stretch="Fill" />
+                                </Button>
+                                <!--<Adu:AduPathIconButton x:Name="ButtonRestore" Width="40"  PathWidth="12"
+                                                        NormalPathColor="#999" PressedPathColor="#999" MouseOverPathColor="#888" 
+                                                       Command="SystemCommands.RestoreWindowCommand" PathData="{StaticResource Icon_SystemRestore}"/>-->
+                                <Button
+                                    x:Name="ButtonRestore"
+                                    Command="SystemCommands.RestoreWindowCommand"
+                                    IsTabStop="False"
+                                    Style="{StaticResource SystemButton}">
+                                    <Path
+                                        Width="11"
+                                        Height="11"
+                                        Margin="0,0,0,0"
+                                        Data="{StaticResource Icon_SystemRestore}"
+                                        Fill="{StaticResource foreground_normal_color}"
+                                        Stretch="Fill" />
+                                </Button>
+                                <!--<Adu:AduPathIconButton x:Name="ButtonClose" Width="40"  PathWidth="12"
+                                                        NormalPathColor="#999" PressedPathColor="#999" MouseOverPathColor="#888" 
+                                                       Command="SystemCommands.CloseWindowCommand" PathData="{StaticResource Icon_SystemClose}"/>-->
+                                <Button
+                                    x:Name="ButtonClose"
+                                    Command="SystemCommands.CloseWindowCommand"
+                                    IsTabStop="False"
+                                    Style="{StaticResource SystemButton}">
+                                    <Path
+                                        Width="11"
+                                        Height="11"
+                                        Data="{StaticResource Icon_SystemClose}"
+                                        Fill="{StaticResource foreground_normal_color}"
+                                        Stretch="Fill" />
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter Property="Padding" Value="8" />
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Normal">
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="NoResize">
+                            <Setter TargetName="ButtonMin" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="CanMinimize">
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="WindowStyle" Value="ToolWindow">
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="ResizeMode" Value="CanResizeWithGrip" />
+                                <Condition Property="WindowState" Value="Normal" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ResizeGrip" Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

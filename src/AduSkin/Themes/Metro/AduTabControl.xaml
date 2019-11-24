@@ -1,0 +1,237 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type Adu:AduTabControl}" >
+        <Style.Resources>
+            <ResourceDictionary />
+        </Style.Resources>
+        <Setter Property="Control.Padding">
+            <Setter.Value>
+                <Thickness>2,2,2,2</Thickness>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+        <Setter Property="Control.HorizontalContentAlignment">
+            <Setter.Value>
+                <x:Static Member="HorizontalAlignment.Center" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.VerticalContentAlignment">
+            <Setter.Value>
+                <x:Static Member="VerticalAlignment.Center" />
+            </Setter.Value>
+        </Setter>
+        <!--容器背景色-->
+        <Setter Property="Panel.Background">
+            <Setter.Value>
+                <SolidColorBrush>#00ffffff</SolidColorBrush>
+            </Setter.Value>
+        </Setter>
+        <!--边框-->
+        <Setter Property="Border.BorderBrush">
+            <Setter.Value>
+                <SolidColorBrush>Transparent</SolidColorBrush>
+            </Setter.Value>
+        </Setter>
+        <!--边框-->
+        <!--<Setter Property="Border.BorderThickness">
+            <Setter.Value>
+                <Thickness>1,1,1,1</Thickness>
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="TextElement.Foreground">
+            <Setter.Value>
+                <DynamicResource ResourceKey="{x:Static SystemColors.ControlTextBrushKey}" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid Name="templateRoot" ClipToBounds="True" SnapsToDevicePixels="True" KeyboardNavigation.TabNavigation="Local">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Name="ColumnDefinition0" />
+                            <ColumnDefinition Width="0" Name="ColumnDefinition1" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" Name="RowDefinition0" />
+                            <RowDefinition Height="*" Name="RowDefinition1" />
+                        </Grid.RowDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup>
+                                <!--<VisualState x:Name="SelectionStart"/>
+                                <VisualState x:Name="SelectionEnd">
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(Margin)" To="0,20,0,-20" Duration="0:0:0"/>
+                                        <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.0"/>
+                                        <ThicknessAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(Margin)" To="0" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(UIElement.Opacity)" To="1" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="SelectionLoaded">
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(Margin)" To="0" Duration="0:0:0"/>
+                                        <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(UIElement.Opacity)" To="1" Duration="0:0:0"/>
+                                    </Storyboard>
+                                </VisualState>-->
+                                <VisualState x:Name="SelectionStart"/>
+                                <VisualState x:Name="SelectionEnd">
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(Margin)" To="30,0,-30,0" Duration="0:0:0"/>
+                                        <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.0"/>
+                                        <ThicknessAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(Margin)" To="0" Duration="0:0:0.5"/>
+                                        <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(UIElement.Opacity)" To="1" Duration="0:0:0.5"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="SelectionLoaded">
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(Margin)" To="0" Duration="0:0:0"/>
+                                        <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="(UIElement.Opacity)" To="1" Duration="0:0:0"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <!--<Border  BorderBrush="#10ffffff" BorderThickness="0,0,0,1" HorizontalAlignment="Center">-->
+                            <TabPanel Grid.Column="0" Grid.Row="0" Background="#00FFFFFF" IsItemsHost="True" Name="HeaderPanel" Margin="0,0,0,0" Panel.ZIndex="1" 
+                                  KeyboardNavigation.TabIndex="1"  />
+                        <!--</Border>-->
+                        <Border BorderThickness="0" 
+                                BorderBrush="{TemplateBinding Border.BorderBrush}" Background="{TemplateBinding Panel.Background}" 
+                                Name="ContentPanel" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" 
+                                KeyboardNavigation.DirectionalNavigation="Contained" Grid.Column="0" Grid.Row="1">
+                            <ContentPresenter Content="{TemplateBinding TabControl.SelectedContent}" 
+                                              x:Name="content"
+                                              ContentTemplate="{TemplateBinding TabControl.SelectedContentTemplate}" 
+                                              ContentStringFormat="{TemplateBinding TabControl.SelectedContentStringFormat}" 
+                                              ContentSource="SelectedContent" 
+                                              Margin="{TemplateBinding Control.Padding}" 
+                                              SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabControl.TabStripPlacement">
+                            <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="1">
+             
+                            </Setter>
+                            <Setter Property="Border.BorderThickness" TargetName="HeaderPanel">
+                                <Setter.Value>
+                                    0
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0">
+         
+                            </Setter>
+                            <Setter Property="RowDefinition.Height" TargetName="RowDefinition0">
+                                <Setter.Value>
+                                    <GridLength>*</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RowDefinition.Height" TargetName="RowDefinition1">
+                                <Setter.Value>
+                                    <GridLength>Auto</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="FrameworkElement.Margin" TargetName="HeaderPanel">
+                                <Setter.Value>
+                                    <Thickness>0,0,0,0</Thickness>
+                                </Setter.Value>
+                            </Setter>
+                            <Trigger.Value>
+                                <x:Static Member="Dock.Bottom" />
+                            </Trigger.Value>
+                        </Trigger>
+                        <Trigger Property="TabControl.TabStripPlacement">
+                            <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0">
+
+                            </Setter>
+                            <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0">
+
+                            </Setter>
+                            <Setter Property="Grid.Column" TargetName="HeaderPanel" Value="0">
+                            </Setter>
+                            <Setter Property="Grid.Column" TargetName="ContentPanel" Value="1">
+                            </Setter>
+                            <Setter Property="ColumnDefinition.Width" TargetName="ColumnDefinition0">
+                                <Setter.Value>
+                                    <GridLength>Auto</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="ColumnDefinition.Width" TargetName="ColumnDefinition1">
+                                <Setter.Value>
+                                    <GridLength>*</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RowDefinition.Height" TargetName="RowDefinition0">
+                                <Setter.Value>
+                                    <GridLength>*</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RowDefinition.Height" TargetName="RowDefinition1">
+                                <Setter.Value>
+                                    <GridLength>0</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="FrameworkElement.Margin" TargetName="HeaderPanel">
+                                <Setter.Value>
+                                    <Thickness>0,0,0,0</Thickness>
+                                </Setter.Value>
+                            </Setter>
+                            <Trigger.Value>
+                                <x:Static Member="Dock.Left" />
+                            </Trigger.Value>
+                        </Trigger>
+                        <Trigger Property="TabControl.TabStripPlacement">
+
+                            <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0">
+                            </Setter>
+                            <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0">
+                            </Setter>
+                            <Setter Property="Grid.Column" TargetName="HeaderPanel" Value="1">
+                            </Setter>
+                            <Setter Property="Grid.Column" TargetName="ContentPanel" Value="0">
+                            </Setter>
+                            <Setter Property="ColumnDefinition.Width" TargetName="ColumnDefinition0">
+                                <Setter.Value>
+                                    <GridLength>*</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="ColumnDefinition.Width" TargetName="ColumnDefinition1">
+                                <Setter.Value>
+                                    <GridLength>Auto</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RowDefinition.Height" TargetName="RowDefinition0">
+                                <Setter.Value>
+                                    <GridLength>*</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RowDefinition.Height" TargetName="RowDefinition1">
+                                <Setter.Value>
+                                    <GridLength>0</GridLength>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="FrameworkElement.Margin" TargetName="HeaderPanel">
+                                <Setter.Value>
+                                    <Thickness>0,0,0,0</Thickness>
+                                </Setter.Value>
+                            </Setter>
+                            <Trigger.Value>
+                                <x:Static Member="Dock.Right" />
+                            </Trigger.Value>
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled" Value="False">
+                            <Setter Property="TextElement.Foreground" TargetName="templateRoot">
+                                <Setter.Value>
+                                    <DynamicResource ResourceKey="{x:Static SystemColors.GrayTextBrushKey}" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

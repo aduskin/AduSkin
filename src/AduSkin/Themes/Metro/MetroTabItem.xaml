@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type Metro:MetroTabItem}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Margin" Value="-1,0,0,0"/>
+        <Setter Property="MinWidth" Value="80"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Metro:MetroTabItem}">
+                    <Grid Height="38" Background="#00000000">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#f3f3f3" Duration="0:0:0.1"/>
+                                        <ThicknessAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Margin)" To="0,7,0,0" Duration="0:0:0.1"/>
+                                        <ThicknessAnimation Storyboard.TargetName="border1" Storyboard.TargetProperty="(Margin)" To="0,0,0,-1" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="title" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.65" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed"/>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="border" Margin="0,13,0,1" Background="#e7e7e7" BorderThickness="1,1,1,0" BorderBrush="#dadada">
+                            <Grid x:Name="border1" HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="iconWidth" Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="icon" Grid.Column="0" Width="12" Height="12" Margin="10,0,-5,0" VerticalAlignment="Center" Source="{TemplateBinding Icon}" Opacity="0.7"/>
+                                <Metro:MetroTextBlock x:Name="title" Grid.Column="1" Text="{TemplateBinding Header}" VerticalAlignment="Center" Margin="10,0" Opacity="0.5"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="#f3f3f3"/>
+                            <Setter Property="Margin" TargetName="border" Value="0,7,0,0"/>
+                            <Setter Property="Margin" TargetName="border1" Value="0,0,0,-1"/>
+                            <Setter Property="Opacity" TargetName="title" Value="0.65"/>
+                            <Setter Property="Opacity" TargetName="icon" Value="1"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="Width" TargetName="iconWidth" Value="0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

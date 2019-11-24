@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type Metro:MetroImage}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Stretch" Value="Uniform"/>
+        <Setter Property="StretchDirection" Value="DownOnly"/>
+        <Setter Property="ImageWidth" Value="-1"/>
+        <Setter Property="ImageHeight" Value="-1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Metro:MetroImage}">
+                    <Grid Background="#00000000">
+                        <Viewbox Stretch="{TemplateBinding Stretch}" StretchDirection="{TemplateBinding StretchDirection}">
+                            <Image Source="{TemplateBinding Source}" MinWidth="{TemplateBinding ImageWidth}" MinHeight="{TemplateBinding ImageHeight}" MaxWidth="{TemplateBinding ImageWidth}" MaxHeight="{TemplateBinding ImageHeight}" VerticalAlignment="{TemplateBinding ImageVerticalAlignment}" HorizontalAlignment="{TemplateBinding ImageHorizontalAlignment}" Width="{Binding Source.PixelWidth, Mode=OneWay, RelativeSource={RelativeSource Self}}" Height="{Binding Source.PixelHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}"/>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

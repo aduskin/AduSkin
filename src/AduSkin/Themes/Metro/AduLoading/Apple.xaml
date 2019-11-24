@@ -1,0 +1,246 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+    
+    <ControlTemplate x:Key="Apple" TargetType="{x:Type Adu:AduLoading}">
+        <Grid x:Name="PART_Root" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Canvas>
+                <Rectangle x:Name="Rectangle01" Canvas.Left="0" Canvas.Top="2" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" />
+                <Rectangle x:Name="Rectangle02" Canvas.Left="0" Canvas.Top="2" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="30" />
+                            <TranslateTransform X="3.7499999999999996" Y="1.00480947161671" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle03" Canvas.Left="0" Canvas.Top="2" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="60" />
+                            <TranslateTransform X="6.49519052838329" Y="3.7500000271702154" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle04" Canvas.Left="0" Canvas.Top="2" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="90" />
+                            <TranslateTransform X="7.5000000920390741" Y="7.5" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle05" Canvas.Left="0" Canvas.Top="2" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="120" />
+                            <TranslateTransform X="6.49519052838329" Y="11.25" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle06" Canvas.Left="0" Canvas.Top="2" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="150" />
+                            <TranslateTransform X="3.7500000920390728" Y="13.995190528383292" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle07" Canvas.Left="0" Canvas.Top="17" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" />
+                <Rectangle x:Name="Rectangle08" Canvas.Left="0" Canvas.Top="17" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="30" />
+                            <TranslateTransform X="-3.7499999999999996" Y="-1.00480947161671" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle09" Canvas.Left="0" Canvas.Top="17" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="60" />
+                            <TranslateTransform X="-6.49519052838329" Y="-3.7500000271702154" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle10" Canvas.Left="0" Canvas.Top="17" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="90" />
+                            <TranslateTransform X="-7.5000000920390741" Y="-7.5" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle11" Canvas.Left="0" Canvas.Top="17" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="120" />
+                            <TranslateTransform X="-6.49519052838329" Y="-11.25" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Rectangle x:Name="Rectangle12" Canvas.Left="0" Canvas.Top="17" Width="2"
+                           Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
+                           RadiusY="1" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform Angle="150" />
+                            <TranslateTransform X="-3.7500000920390728" Y="-13.995190528383292" />
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+            </Canvas>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="ActiveStates">
+                    <VisualState x:Name="Inactive">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Duration="0:0:0">
+                                <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0" >
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <Visibility>Collapsed</Visibility>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames.KeyFrames>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Active">
+                        <Storyboard BeginTime="00:00:00" RepeatBehavior="Forever">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle01" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle12" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle11" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.9000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="0.5"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle02" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle03" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle04" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle05" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle06" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle07" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.9000000" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle08" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.9000000" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle09" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.9000000" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.25"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="0.2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Rectangle10" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.2"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.9000000" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.5"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:01.1000000" Value="0.25"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

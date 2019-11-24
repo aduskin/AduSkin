@@ -1,0 +1,68 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{x:Type Adu:AduButtonIcon}" Style.TargetType="{x:Type Adu:AduButtonIcon}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="FrameworkElement.FocusVisualStyle" Setter.Value="{x:Null}" />
+        <Setter Setter.Property="UIElement.SnapsToDevicePixels" Setter.Value="True" />
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FFFFFFFF" />
+        <Setter Setter.Property="FrameworkElement.Cursor" Setter.Value="Hand" />
+        <Setter Property="MinWidth" Value="100"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Setter.Property="Control.Background" Setter.Value="#00FFFFFF" />
+        <Setter Setter.Property="FrameworkElement.MinWidth" Setter.Value="30" />
+        <Setter Setter.Property="FrameworkElement.MinHeight" Setter.Value="30" />
+        <Setter Setter.Property="FontSize" Setter.Value="14" />
+        <Setter Setter.Property="IconHeight" Setter.Value="14" />
+        <Setter Setter.Property="IconWidth" Setter.Value="14" />
+        <Setter Setter.Property="CornerRadius" Setter.Value="0" />
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate ControlTemplate.TargetType="{x:Type Adu:AduButtonIcon}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="move" Storyboard.TargetProperty="(UIElement.Opacity)" DoubleAnimation.To="0" Timeline.Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="move" Storyboard.TargetProperty="(UIElement.Opacity)" DoubleAnimation.To="0.2" Timeline.Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="move" Storyboard.TargetProperty="(UIElement.Opacity)" DoubleAnimation.To="0.2" Timeline.Duration="0:0:0.03" />
+                                        <DoubleAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(UIElement.Opacity)" DoubleAnimation.To="0.7" Timeline.Duration="0:0:0.03" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border Border.Name="border" Border.Background="{TemplateBinding Control.Background}" >
+                            <Grid>
+                                <Border Border.Background="#00FFFFFF" UIElement.Opacity="0.2" />
+                                <Border Border.Name="back" Border.Background="{TemplateBinding Control.Background}" FrameworkElement.Margin="0,0,0,0" Padding="{TemplateBinding Padding}">
+                                    <Grid>
+                                        <Border Border.Name="move" Border.Background="#000" UIElement.Opacity="0"  CornerRadius="{TemplateBinding CornerRadius}"/>
+                                        <StackPanel StackPanel.Orientation="Horizontal" FrameworkElement.HorizontalAlignment="Center">
+                                            <Path FrameworkElement.Name="icon" FrameworkElement.Width="{TemplateBinding IconWidth}" FrameworkElement.Height="{TemplateBinding IconHeight}" Shape.Fill="{TemplateBinding Control.Foreground}" Shape.Stretch="Fill" Path.Data="{TemplateBinding Icon}" />
+                                            <Border Width="{TemplateBinding IconTextMargin}" Height="1"></Border>
+                                            <TextBlock TextBlock.Name="contentPresenter"  Grid.Column="1" TextBlock.FontSize="{TemplateBinding Control.FontSize}" TextBlock.Foreground="{TemplateBinding Control.Foreground}" TextBlock.TextTrimming="CharacterEllipsis" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.VerticalAlignment="Center" TextBlock.Text="{TemplateBinding ContentControl.Content}" UIElement.Focusable="False" UIElement.SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,111 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Converter:CornerRadiusToDouble x:Key="CornerRadiusToDouble"/>
+
+    <Style TargetType="{x:Type Metro:MetroProgressBar}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+
+        <Setter Property="ProgressBarHeight" Value="15"/>
+        <Setter Property="CornerRadius" Value="7.5"/>
+        <Setter Property="ProgressBarState" Value="None"/>
+        <Setter Property="Background" Value="#6fae5f"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Padding" Value="5,0"/>
+        <Setter Property="TextHorizontalAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Metro:MetroProgressBar}">
+                    <Grid Background="#00000000">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" x:Name="height1"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Determinate"/>
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <PointAnimationUsingKeyFrames Storyboard.TargetName="Animation" Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                                            <EasingPointKeyFrame KeyTime="0:0:0" Value="0.5,0.5"/>
+                                            <EasingPointKeyFrame KeyTime="0:0:1.5" Value="1.95,0.5"/>
+                                            <EasingPointKeyFrame KeyTime="0:0:3" Value="0.5,0.5"/>
+                                        </PointAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Metro:MetroTextBlock Text="{TemplateBinding Title}" FontSize="12" Opacity="0.65" Margin="0,0,0,10" HorizontalAlignment="{TemplateBinding TextHorizontalAlignment}"/>
+                        <Grid Grid.Row="1" Height="{TemplateBinding ProgressBarHeight}">
+                            <Border Background="#000000" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0.05"/>
+                            <Border BorderBrush="#000000" BorderThickness="1" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0.1"/>
+                            <Grid Margin="{TemplateBinding BorderThickness}">
+                                <Border x:Name="PART_Track"/>
+                                <Grid x:Name="PART_Indicator" ClipToBounds="True" HorizontalAlignment="Left" MinWidth="{TemplateBinding CornerRadius,Converter={StaticResource CornerRadiusToDouble},ConverterParameter=2}">
+                                    <Grid.ColumnDefinitions>
+                                            <ColumnDefinition x:Name="width1"/>
+                                            <ColumnDefinition x:Name="width2" Width="0"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid x:Name="Animation"  RenderTransformOrigin="0.5,0.5">
+                                            <Grid.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleY="-1" ScaleX="1"/>
+                                                    <SkewTransform AngleY="0" AngleX="0"/>
+                                                    <RotateTransform Angle="180"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Grid.RenderTransform>
+                                            <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+                                            <Viewbox HorizontalAlignment="Left" StretchDirection="DownOnly" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                                <Metro:MetroTextBlock Foreground="{TemplateBinding Foreground}" SnapsToDevicePixels="True" FontSize="{TemplateBinding FontSize}" VerticalAlignment="Center" Text="{TemplateBinding Hint}" RenderTransformOrigin="0.5,0.5">
+                                                        <Metro:MetroTextBlock.RenderTransform>
+                                                            <TransformGroup>
+                                                                <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                                                                <SkewTransform AngleY="0" AngleX="0"/>
+                                                                <RotateTransform Angle="0"/>
+                                                                <TranslateTransform/>
+                                                            </TransformGroup>
+                                                        </Metro:MetroTextBlock.RenderTransform>
+                                                    </Metro:MetroTextBlock>
+                                                </Viewbox>
+                                            </Border>
+                                            <Border BorderBrush="#000000" BorderThickness="1" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0.1"/>
+                                        </Grid>
+                                    </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ProgressBarState" Value="Wait">
+                            <Setter Property="IsIndeterminate" Value="true"/>
+                            <Setter Property="Background" Value="#edb15a"/>
+                        </Trigger>
+                        <Trigger Property="Title" Value="{x:Null}">
+                            <Setter TargetName="height1" Property="Height" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="Title" Value="">
+                            <Setter TargetName="height1" Property="Height" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="ProgressBarState" Value="Error">
+                            <Setter Property="Background" Value="#e67979"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="#c5c5c5"/>
+                        </Trigger>
+                        <Trigger Property="IsIndeterminate" Value="true">
+                            <Setter TargetName="width1" Property="Width" Value="0.25*"/>
+                            <Setter TargetName="width2" Property="Width" Value="0.725*"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

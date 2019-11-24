@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type Adu:AduButtonSvg}" >
+        <Setter Setter.Property="FrameworkElement.FocusVisualStyle" Setter.Value="{x:Null}" />
+        <Setter Setter.Property="UIElement.SnapsToDevicePixels" Setter.Value="True" />
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FFFFFFFF" />
+        <Setter Setter.Property="FrameworkElement.Cursor" Setter.Value="Hand" />
+        <Setter Property="MinWidth" Value="100"/>
+        <Setter Setter.Property="Control.Background" Setter.Value="#00FFFFFF" />
+        <Setter Setter.Property="FrameworkElement.MinWidth" Setter.Value="30" />
+        <Setter Setter.Property="FrameworkElement.MinHeight" Setter.Value="30" />
+        <Setter Setter.Property="FontSize" Setter.Value="14" />
+        <Setter Setter.Property="Padding" Setter.Value="8,6" />
+        <Setter Setter.Property="Icon" Setter.Value="{StaticResource Icon_Project2}" />
+        <Setter Setter.Property="IconHeight" Setter.Value="14" />
+        <Setter Setter.Property="IconWidth" Setter.Value="14" />
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate ControlTemplate.TargetType="{x:Type Adu:AduButtonSvg}">
+                    <Grid Name="border" Background="#00000000">
+                        <Path FrameworkElement.Name="icon" FrameworkElement.Width="{TemplateBinding IconWidth}" FrameworkElement.Height="{TemplateBinding IconHeight}" Shape.Fill="{TemplateBinding Control.Foreground}" Shape.Stretch="Fill" Path.Data="{TemplateBinding Icon}" />
+                        <Adu:AduRipple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"     
+                                    ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Padding="{TemplateBinding Padding}" 
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Grid>
+                    
+                    <ControlTemplate.Triggers >
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value=".8"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

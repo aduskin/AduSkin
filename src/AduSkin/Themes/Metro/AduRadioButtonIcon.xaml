@@ -1,0 +1,66 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="{x:Type Adu:AduRadioButtonIcon}">
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Foreground" Value="#888" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="2,0,0,0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Adu:AduRadioButtonIcon}">
+                    <Border
+                        x:Name="templateRoot"
+                        Background="#00FFFFFF"
+                        Margin="{TemplateBinding Margin}"
+                        Padding="{TemplateBinding Padding}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <WrapPanel
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal"
+                            SnapsToDevicePixels="True">
+                            <Border>
+                                <Path x:Name="Icon" Width="{TemplateBinding IconWidth}" Height="{TemplateBinding IconHeight}" Margin="20,0" Fill="{TemplateBinding Foreground}" Stretch="Fill" Data="{TemplateBinding Icon}" />
+                            </Border>
+                            <TextBlock
+                                x:Name="contentPresenter"
+                                Grid.Column="1"
+                                Foreground="{TemplateBinding Foreground}"
+                                Margin="0,0,5,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{TemplateBinding Content}"
+                                Focusable="False"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </WrapPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True" >
+                            <Setter TargetName="templateRoot" Property="Opacity" Value=".7" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False" />
+                        <Trigger Property="IsPressed" Value="True" />
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="templateRoot" Property="Opacity" Value=".8" />
+                            <Setter TargetName="templateRoot" Property="BorderThickness" Value="2,0,0,0" />
+                            <Setter TargetName="Icon" Property="Fill" Value="{Binding SelectColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                            <Setter TargetName="templateRoot" Property="BorderBrush" Value="{Binding SelectColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                            <Setter TargetName="contentPresenter" Property="Foreground" Value="{Binding SelectColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+</ResourceDictionary>

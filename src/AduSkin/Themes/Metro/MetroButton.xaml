@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type Metro:MetroButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Foreground" Value="#FFFFFFFF"/>
+        <Setter Property="Background" Value="{StaticResource Brush}"/>
+        <Setter Property="MinWidth" Value="100"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="8,6"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Metro:MetroButton}">
+                    <Grid Background="#00000000">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="move" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="move" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.2" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="move" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.03"/>
+                                        <DoubleAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.7" Duration="0:0:0.03"/>
+                                        <ThicknessAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Margin)" To="0,2,0,0" Duration="0:0:0.03"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="border" CornerRadius="3" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Border CornerRadius="3" Background="#000000" Opacity="0.2"/>
+                                <Border x:Name="back" CornerRadius="3" Background="{TemplateBinding Background}" Margin="0,0,0,2">
+                                    <Grid>
+                                        <Border x:Name="move" Background="#FFFFFFFF" CornerRadius="3" Opacity="0"/>
+                                        <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.7"/>
+                            <Setter TargetName="border" Property="Opacity" Value="0.7"/>
+                            <Setter TargetName="back" Property="Margin" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="MetroButtonState" Value="Green">
+                            <Setter TargetName="border" Property="Background" Value="#00A290"/>
+                            <Setter TargetName="back" Property="Background" Value="#00A290"/>
+                        </Trigger>
+                        <Trigger Property="MetroButtonState" Value="Red">
+                            <Setter TargetName="border" Property="Background" Value="#F34336"/>
+                            <Setter TargetName="back" Property="Background" Value="#F34336"/>
+                        </Trigger>
+                        <Trigger Property="MetroButtonState" Value="Blue">
+                            <Setter TargetName="border" Property="Background" Value="#0293EC"/>
+                            <Setter TargetName="back" Property="Background" Value="#0293EC"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
