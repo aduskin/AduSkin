@@ -26,5 +26,5 @@ HandyControl、Arthas、WPF.UI
 
 
 如果你觉得本框架还不错的话，可以赞助我防脱洗发水，Haha
-![image(https://github.com/aduskin/AduSkin/blob/master/screenshot/other/zhifu.jpg)
+![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/other/zhifu.jpg)
 
