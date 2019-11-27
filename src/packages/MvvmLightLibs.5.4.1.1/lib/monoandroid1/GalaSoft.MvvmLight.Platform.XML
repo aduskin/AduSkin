@@ -1,0 +1,1293 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalaSoft.MvvmLight.Platform</name>
+    </assembly>
+    <members>
+        <member name="T:GalaSoft.MvvmLight.Helpers.Binding">
+            <summary>
+            Base class for bindings in Xamarin.iOS and Xamarin.Android.
+            </summary>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Helpers.Binding.TopSource">
+            <summary>
+            The source at the "top" of the property chain.
+            </summary>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Helpers.Binding.TopTarget">
+            <summary>
+            The target at the "top" of the property chain.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.Binding.Mode">
+            <summary>
+            The mode of the binding. OneTime means that the target property will be set once (when the binding is
+            created) but that subsequent changes will be ignored. OneWay means that the target property will be set, and
+            if the PropertyChanged event is raised by the source, the target property will be updated. TwoWay means that the source
+            property will also be updated if the target raises the PropertyChanged event. Default means OneWay if only the source
+            implements INPC, and TwoWay if both the source and the target implement INPC.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.Binding.Source">
+            <summary>
+            Gets the source object for the binding.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.Binding.Target">
+            <summary>
+            Gets the target object for the binding.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding.Detach">
+            <summary>
+            Instructs the Binding instance to stop listening to value changes and to
+            remove all listeneners.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding.ForceUpdateValueFromSourceToTarget">
+            <summary>
+            Forces the Binding's value to be reevaluated. The target value will
+            be set to the source value.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding.ForceUpdateValueFromTargetToSource">
+            <summary>
+            Forces the Binding's value to be reevaluated. The source value will
+            be set to the target value.
+            </summary>
+        </member>
+        <member name="E:GalaSoft.MvvmLight.Helpers.Binding.ValueChanged">
+            <summary>
+            Occurs when the value of the databound property changes.
+            </summary>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Helpers.Binding`2">
+            <summary>
+            Creates a binding between two properties. If the source implements INotifyPropertyChanged, the source property raises the PropertyChanged event
+            and the BindingMode is OneWay or TwoWay, the target property will be synchronized with the source property. If
+            the target implements INotifyPropertyChanged, the target property raises the PropertyChanged event and the BindingMode is
+            TwoWay, the source property will also be synchronized with the target property.
+            </summary>
+            <typeparam name="TSource">The type of the source property that is being databound.</typeparam>
+            <typeparam name="TTarget">The type of the target property that is being databound. If the source type
+            is not the same as the target type, an automatic conversion will be attempted. However only
+            simple types can be converted. For more complex conversions, use the <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertSourceToTarget(System.Func{`0,`1})"/>
+            and <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertTargetToSource(System.Func{`1,`0})"/> methods to define custom converters.</typeparam>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.UpdateSourceTrigger">
+            <summary>
+            Define that the binding should be evaluated when the bound control's source property changes. 
+            Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to specify that the binding must be updated when the property changes.
+            </summary>
+            <remarks>This method should only be used with the following items:
+            <para>- an EditText control and its Text property (TextChanged event).</para>
+            <para>- a CompoundButton control and its Checked property (CheckedChange event).</para>
+            </remarks>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime binding. Such bindings cannot be updated. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.UpdateSourceTrigger(GalaSoft.MvvmLight.Helpers.UpdateTriggerMode)">
+            <summary>
+            Define when the binding should be evaluated when the bound source object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <param name="mode">Defines the binding's update mode. Use 
+            <see cref="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.LostFocus"/> to update the binding when
+            the source control loses the focus. You can also use
+            <see cref="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.PropertyChanged"/> to update the binding
+            when the source control's property changes.
+            The PropertyChanged mode should only be used with the following items:
+            <para>- an EditText control and its Text property (TextChanged event).</para>
+            <para>- a CompoundButton control and its Checked property (CheckedChange event).</para>
+            </param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime binding. Such bindings cannot be updated. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.UpdateTargetTrigger">
+            <summary>
+            Define that the binding should be evaluated when the bound control's target property changes. 
+            Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to specify that the binding must be updated when the property changes.
+            </summary>
+            <remarks>This method should only be used with the following items:
+            <para>- an EditText control and its Text property (TextChanged event).</para>
+            <para>- a CompoundButton control and its Checked property (CheckedChange event).</para>
+            </remarks>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime or a OneWay binding. This exception can
+            also be thrown when the target object is null or has already been
+            garbage collected before this method is called.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.UpdateTargetTrigger(GalaSoft.MvvmLight.Helpers.UpdateTriggerMode)">
+            <summary>
+            Define when the binding should be evaluated when the bound target object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <param name="mode">Defines the binding's update mode. Use 
+            <see cref="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.LostFocus"/> to update the binding when
+            the source control loses the focus. You can also use
+            <see cref="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.PropertyChanged"/> to update the binding
+            when the source control's property changes.
+            The PropertyChanged mode should only be used with the following items:
+            <para>- an EditText control and its Text property (TextChanged event).</para>
+            <para>- a CompoundButton control and its Checked property (CheckedChange event).</para>
+            </param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime or a OneWay binding. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.UpdateSourceTrigger(System.String)">
+            <summary>
+            Define when the binding should be evaluated when the bound source object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <param name="eventName">The name of the event that should be observed
+            to update the binding's value.</param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime binding. Such bindings cannot be updated. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+            <exception cref="T:System.ArgumentNullException">When the eventName parameter is null
+            or is an empty string.</exception>
+            <exception cref="T:System.ArgumentException">When the requested event does not exist on the
+            source control.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.UpdateSourceTrigger``1(System.String)">
+            <summary>
+            Define when the binding should be evaluated when the bound source object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <remarks>Use this method when the event requires a specific EventArgs type
+            instead of the standard EventHandler.</remarks>
+            <typeparam name="TEventArgs">The type of the EventArgs used by this control's event.</typeparam>
+            <param name="eventName">The name of the event that should be observed
+            to update the binding's value.</param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime binding. Such bindings cannot be updated. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+            <exception cref="T:System.ArgumentNullException">When the eventName parameter is null
+            or is an empty string.</exception>
+            <exception cref="T:System.ArgumentException">When the requested event does not exist on the
+            source control.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.UpdateTargetTrigger(System.String)">
+            <summary>
+            Define when the binding should be evaluated when the bound target object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <param name="eventName">The name of the event that should be observed
+            to update the binding's value.</param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime or a OneWay binding. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+            <exception cref="T:System.ArgumentNullException">When the eventName parameter is null
+            or is an empty string.</exception>
+            <exception cref="T:System.ArgumentException">When the requested event does not exist on the
+            target control.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.UpdateTargetTrigger``1(System.String)">
+            <summary>
+            Define when the binding should be evaluated when the bound target object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <remarks>Use this method when the event requires a specific EventArgs type
+            instead of the standard EventHandler.</remarks>
+            <typeparam name="TEventArgs">The type of the EventArgs used by this control's event.</typeparam>
+            <param name="eventName">The name of the event that should be observed
+            to update the binding's value.</param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime or OneWay binding. This exception can
+            also be thrown when the target object is null or has already been
+            garbage collected before this method is called.</exception>
+            <exception cref="T:System.ArgumentNullException">When the eventName parameter is null
+            or is an empty string.</exception>
+            <exception cref="T:System.ArgumentException">When the requested event does not exist on the
+            target control.</exception>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.Binding`2.FallbackValue">
+            <summary>
+            Gets or sets the value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.Binding`2.TargetNullValue">
+            <summary>
+            Gets of sets the value used when the source property is null (or equals to default(TSource)).
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.Binding`2.Value">
+            <summary>
+            Gets the current value of the binding.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.#ctor(System.Object,System.String,System.Object,System.String,GalaSoft.MvvmLight.Helpers.BindingMode,`0,`0)">
+            <summary>
+            Initializes a new instance of the Binding class for which the source and target properties
+            are located in different objects.
+            </summary>
+            <param name="source">The source of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is OneWay or TwoWay, the target will be notified of changes to the target property.</param>
+            <param name="sourcePropertyName">The name of the source property for the binding.</param>
+            <param name="target">The target of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is TwoWay, the source will be notified of changes to the source property.</param>
+            <param name="targetPropertyName">The name of the target property for the binding.</param>
+            <param name="mode">The mode of the binding. OneTime means that the target property will be set once (when the binding is
+            created) but that subsequent changes will be ignored. OneWay means that the target property will be set, and
+            if the PropertyChanged event is raised by the source, the target property will be updated. TwoWay means that the source
+            property will also be updated if the target raises the PropertyChanged event. Default means OneWay if only the source
+            implements INPC, and TwoWay if both the source and the target implement INPC.</param>
+            <param name="fallbackValue">Tthe value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+            <param name="targetNullValue">The value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.#ctor(System.Object,System.Linq.Expressions.Expression{System.Func{`0}},System.Object,System.Linq.Expressions.Expression{System.Func{`1}},GalaSoft.MvvmLight.Helpers.BindingMode,`0,`0)">
+            <summary>
+            Initializes a new instance of the Binding class for which the source and target properties
+            are located in different objects.
+            </summary>
+            <param name="source">The source of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is OneWay or TwoWay, the target will be notified of changes to the target property.</param>
+            <param name="sourcePropertyExpression">An expression pointing to the source property. It can be
+            a simple expression "() => [source].MyProperty" or a composed expression "() => [source].SomeObject.SomeOtherObject.SomeProperty".</param>
+            <param name="target">The target of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is TwoWay, the source will be notified of changes to the source property.</param>
+            <param name="targetPropertyExpression">An expression pointing to the target property. It can be
+            a simple expression "() => [target].MyProperty" or a composed expression "() => [target].SomeObject.SomeOtherObject.SomeProperty".</param>
+            <param name="mode">The mode of the binding. OneTime means that the target property will be set once (when the binding is
+            created) but that subsequent changes will be ignored. OneWay means that the target property will be set, and
+            if the PropertyChanged event is raised by the source, the target property will be updated. TwoWay means that the source
+            property will also be updated if the target raises the PropertyChanged event. Default means OneWay if only the source
+            implements INPC, and TwoWay if both the source and the target implement INPC.</param>
+            <param name="fallbackValue">Tthe value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+            <param name="targetNullValue">The value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertSourceToTarget(System.Func{`0,`1})">
+            <summary>
+            Defines a custom conversion method for a binding. To be used when the
+            binding's source property is of a different type than the binding's
+            target property, and the conversion cannot be done automatically (simple
+            values).
+            </summary>
+            <param name="convert">A func that will be called with the source
+            property's value, and will return the target property's value.
+             IMPORTANT: Note that closures are not supported at the moment
+            due to the use of WeakActions (see http://stackoverflow.com/questions/25730530/). </param>
+            <returns>The Binding instance.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertTargetToSource(System.Func{`1,`0})">
+            <summary>
+            Defines a custom conversion method for a two-way binding. To be used when the
+            binding's target property is of a different type than the binding's
+            source property, and the conversion cannot be done automatically (simple
+            values).
+            </summary>
+            <param name="convertBack">A func that will be called with the source
+            property's value, and will return the target property's value.
+             IMPORTANT: Note that closures are not supported at the moment
+            due to the use of WeakActions (see http://stackoverflow.com/questions/25730530/). </param>
+            <returns>The Binding instance.</returns>
+            <remarks>This method is inactive on OneTime or OneWay bindings.</remarks>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.Detach">
+            <summary>
+            Instructs the Binding instance to stop listening to value changes and to
+            remove all listeneners.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ForceUpdateValueFromSourceToTarget">
+            <summary>
+            Forces the Binding's value to be reevaluated. The target value will
+            be set to the source value.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ForceUpdateValueFromTargetToSource">
+            <summary>
+            Forces the Binding's value to be reevaluated. The source value will
+            be set to the target value.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ObserveSourceEvent(System.String)">
+            <summary>
+            Define when the binding should be evaluated when the bound source object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <param name="eventName">The name of the event that should be observed
+            to update the binding's value.</param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime binding. Such bindings cannot be updated. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+            <exception cref="T:System.ArgumentNullException">When the eventName parameter is null
+            or is an empty string.</exception>
+            <exception cref="T:System.ArgumentException">When the requested event does not exist on the
+            source control.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ObserveSourceEvent``1(System.String)">
+            <summary>
+            Define when the binding should be evaluated when the bound source object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <remarks>Use this method when the event requires a specific EventArgs type
+            instead of the standard EventHandler.</remarks>
+            <typeparam name="TEventArgs">The type of the EventArgs used by this control's event.</typeparam>
+            <param name="eventName">The name of the event that should be observed
+            to update the binding's value.</param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime binding. Such bindings cannot be updated. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+            <exception cref="T:System.ArgumentNullException">When the eventName parameter is null
+            or is an empty string.</exception>
+            <exception cref="T:System.ArgumentException">When the requested event does not exist on the
+            source control.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ObserveTargetEvent(System.String)">
+            <summary>
+            Define when the binding should be evaluated when the bound target object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <param name="eventName">The name of the event that should be observed
+            to update the binding's value.</param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime or a OneWay binding. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+            <exception cref="T:System.ArgumentNullException">When the eventName parameter is null
+            or is an empty string.</exception>
+            <exception cref="T:System.ArgumentException">When the requested event does not exist on the
+            target control.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ObserveTargetEvent``1(System.String)">
+            <summary>
+            Define when the binding should be evaluated when the bound target object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <remarks>Use this method when the event requires a specific EventArgs type
+            instead of the standard EventHandler.</remarks>
+            <typeparam name="TEventArgs">The type of the EventArgs used by this control's event.</typeparam>
+            <param name="eventName">The name of the event that should be observed
+            to update the binding's value.</param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime or OneWay binding. This exception can
+            also be thrown when the target object is null or has already been
+            garbage collected before this method is called.</exception>
+            <exception cref="T:System.ArgumentNullException">When the eventName parameter is null
+            or is an empty string.</exception>
+            <exception cref="T:System.ArgumentException">When the requested event does not exist on the
+            target control.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.WhenSourceChanges(System.Action)">
+            <summary>
+            Defines an action that will be executed every time that the binding value
+            changes.
+            </summary>
+            <param name="callback">The action that will be executed when the binding changes.
+            IMPORTANT: Note that closures are not supported at the moment
+            due to the use of WeakActions (see http://stackoverflow.com/questions/25730530/). </param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When WhenSourceChanges is called on
+            a binding which already has a target property set.</exception>
+        </member>
+        <member name="E:GalaSoft.MvvmLight.Helpers.Binding`2.ValueChanged">
+            <summary>
+            Occurs when the value of the databound property changes.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.Binding`2.PropertyChangedEventListener.InstanceReference">
+            <summary>
+            Gets a reference to the instance that this listener listens to.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ObserveSourceEvent">
+            <summary>
+            Define that the binding should be evaluated when the bound control's source property changes. 
+            Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to specify that the binding must be updated when the property changes.
+            </summary>
+            <remarks>This method should only be used with the following items:
+            <para>- an EditText control and its Text property (TextChanged event).</para>
+            <para>- a CompoundButton control and its Checked property (CheckedChange event).</para>
+            </remarks>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime binding. Such bindings cannot be updated. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ObserveSourceEvent(GalaSoft.MvvmLight.Helpers.UpdateTriggerMode)">
+            <summary>
+            Define when the binding should be evaluated when the bound source object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <param name="mode">Defines the binding's update mode. Use 
+            <see cref="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.LostFocus"/> to update the binding when
+            the source control loses the focus. You can also use
+            <see cref="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.PropertyChanged"/> to update the binding
+            when the source control's property changes.
+            The PropertyChanged mode should only be used with the following items:
+            <para>- an EditText control and its Text property (TextChanged event).</para>
+            <para>- a CompoundButton control and its Checked property (CheckedChange event).</para>
+            </param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime binding. Such bindings cannot be updated. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ObserveTargetEvent">
+            <summary>
+            Define that the binding should be evaluated when the bound control's target property changes. 
+            Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to specify that the binding must be updated when the property changes.
+            </summary>
+            <remarks>This method should only be used with the following items:
+            <para>- an EditText control and its Text property (TextChanged event).</para>
+            <para>- a CompoundButton control and its Checked property (CheckedChange event).</para>
+            </remarks>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime or a OneWay binding. This exception can
+            also be thrown when the target object is null or has already been
+            garbage collected before this method is called.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Binding`2.ObserveTargetEvent(GalaSoft.MvvmLight.Helpers.UpdateTriggerMode)">
+            <summary>
+            Define when the binding should be evaluated when the bound target object
+            is a control. Because Xamarin controls are not DependencyObjects, the
+            bound property will not automatically update the binding attached to it. Instead,
+            use this method to define which of the control's events should be observed.
+            </summary>
+            <param name="mode">Defines the binding's update mode. Use 
+            <see cref="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.LostFocus"/> to update the binding when
+            the source control loses the focus. You can also use
+            <see cref="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.PropertyChanged"/> to update the binding
+            when the source control's property changes.
+            The PropertyChanged mode should only be used with the following items:
+            <para>- an EditText control and its Text property (TextChanged event).</para>
+            <para>- a CompoundButton control and its Checked property (CheckedChange event).</para>
+            </param>
+            <returns>The Binding instance.</returns>
+            <exception cref="T:System.InvalidOperationException">When this method is called
+            on a OneTime or a OneWay binding. This exception can
+            also be thrown when the source object is null or has already been
+            garbage collected before this method is called.</exception>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Helpers.BindingMode">
+            <summary>
+            The mode of the <see cref="T:GalaSoft.MvvmLight.Helpers.Binding`2"/>.
+            </summary>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Helpers.BindingMode.Default">
+            <summary>
+            A default binding is a one way binding.
+            </summary>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Helpers.BindingMode.OneTime">
+            <summary>
+            A one time binding. The binding's value will be set when the
+            binding is created but subsequent changes will be ignored/
+            </summary>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Helpers.BindingMode.OneWay">
+            <summary>
+            A one way binding, where the changes to the source
+            property will update the target property, but changes to the
+            target property don't affect the source property.
+            </summary>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Helpers.BindingMode.TwoWay">
+            <summary>
+            A two way binding, where the changes to the source
+            property will update the target property, and vice versa.
+            </summary>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Helpers.ExtensionsAndroid">
+            <summary>
+            Defines extension methods for Android only.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.ExtensionsAndroid.GetAdapter``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Func{System.Int32,``0,Android.Views.View,Android.Views.View})">
+            <summary>
+            Creates a new <see cref="T:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1"/> for a given <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>.
+            </summary>
+            <typeparam name="T">The type of the items contained in the <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>.</typeparam>
+            <param name="collection">The collection that the adapter will be created for.</param>
+            <param name="getTemplateDelegate">A method taking an item's position in the list, the item itself,
+            and a recycled Android View, and returning an adapted View for this item. Note that the recycled
+            view might be null, in which case a new View must be inflated by this method.</param>
+            <returns>A View adapted for the item passed as parameter.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.ExtensionsAndroid.GetAdapter``1(System.Collections.Generic.IList{``0},System.Func{System.Int32,``0,Android.Views.View,Android.Views.View})">
+            <summary>
+            Creates a new <see cref="T:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1"/> for a given <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <typeparam name="T">The type of the items contained in the <see cref="T:System.Collections.Generic.IList`1"/>.</typeparam>
+            <param name="list">The list that the adapter will be created for.</param>
+            <param name="getTemplateDelegate">A method taking an item's position in the list, the item itself,
+            and a recycled Android <see cref="T:Android.Views.View"/>, and returning an adapted View for this item. Note that the recycled
+            View might be null, in which case a new View must be inflated by this method.</param>
+            <returns>An adapter adapted to the collection passed in parameter..</returns>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Helpers.Extensions">
+            <summary>
+            Defines extension methods used to add data bindings and commands between Xamarin
+            Android and iOS elements.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetBinding``2(System.Object,System.Linq.Expressions.Expression{System.Func{``0}},System.Object,System.Linq.Expressions.Expression{System.Func{``1}},GalaSoft.MvvmLight.Helpers.BindingMode,``0,``0)">
+            <summary>
+            Sets a data binding between two properties. If the source implements INotifyPropertyChanged, the source property raises the PropertyChanged event
+            and the BindingMode is OneWay or TwoWay, the target property will be synchronized with the source property. If
+            the target implements INotifyPropertyChanged, the target property raises the PropertyChanged event and the BindingMode is
+            TwoWay, the source property will also be synchronized with the target property.
+            </summary>
+            <remarks>This class allows for a different TSource and TTarget and is able to perform simple
+            type conversions automatically. This is useful if the source property and the target
+            property are of different type.
+            If the type conversion is complex, please use the <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertSourceToTarget(System.Func{`0,`1})"/>
+            and <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertTargetToSource(System.Func{`1,`0})"/> methods to configure the binding.
+            It is very possible that TSource and TTarget are the same type in which case no conversion occurs.</remarks>
+            <typeparam name="TSource">The type of the property that is being databound before conversion.</typeparam>
+            <typeparam name="TTarget">The type of the property that is being databound after conversion.</typeparam>
+            <param name="target">The target of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is TwoWay, the source will be notified of changes to the source property.</param>
+            <param name="targetPropertyExpression">An expression pointing to the target property. It can be
+            a simple expression "() => [target].MyProperty" or a composed expression "() => [target].SomeObject.SomeOtherObject.SomeProperty".</param>
+            <param name="source">The source of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is OneWay or TwoWay, the target will be notified of changes to the target property.</param>
+            <param name="sourcePropertyExpression">An expression pointing to the source property. It can be
+            a simple expression "() => [source].MyProperty" or a composed expression "() => [source].SomeObject.SomeOtherObject.SomeProperty".</param>
+            <param name="mode">The mode of the binding. OneTime means that the target property will be set once (when the binding is
+            created) but that subsequent changes will be ignored. OneWay means that the target property will be set, and
+            if the PropertyChanged event is raised by the source, the target property will be updated. TwoWay means that the source
+            property will also be updated if the target raises the PropertyChanged event. Default means OneWay if only the source
+            implements INPC, and TwoWay if both the source and the target implement INPC.</param>
+            <param name="fallbackValue">The value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+            <param name="targetNullValue">The value used when the source property is null (or equals to default(TSource)).</param>
+            <returns>The new Binding instance.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetBinding``1(System.Object,System.Linq.Expressions.Expression{System.Func{``0}},GalaSoft.MvvmLight.Helpers.BindingMode,``0,``0)">
+            <summary>
+            Creates a <see cref="T:GalaSoft.MvvmLight.Helpers.Binding`2"/> with a source property but without a target.
+            This type of bindings is useful for the <see cref="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``1(System.Object,System.String,GalaSoft.MvvmLight.Command.RelayCommand{``0},GalaSoft.MvvmLight.Helpers.Binding)"/>,
+            <see cref="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``1(System.Object,GalaSoft.MvvmLight.Command.RelayCommand{``0},GalaSoft.MvvmLight.Helpers.Binding)"/>,
+            <see cref="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``2(System.Object,System.String,GalaSoft.MvvmLight.Command.RelayCommand{``0},GalaSoft.MvvmLight.Helpers.Binding)"/>
+            and <see cref="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``2(System.Object,GalaSoft.MvvmLight.Command.RelayCommand{``0},GalaSoft.MvvmLight.Helpers.Binding)"/> methods, to use as CommandParameter
+            binding.
+            </summary>
+            <param name="source">The source of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is OneWay or TwoWay, the target will be notified of changes to the target property.</param>
+            <param name="sourcePropertyExpression">An expression pointing to the source property. It can be
+            a simple expression "() => [source].MyProperty" or a composed expression "() => [source].SomeObject.SomeOtherObject.SomeProperty".</param>
+            <param name="mode">The mode of the binding. OneTime means that the target property will be set once (when the binding is
+            created) but that subsequent changes will be ignored. OneWay means that the target property will be set, and
+            if the PropertyChanged event is raised by the source, the target property will be updated. TwoWay means that the source
+            property will also be updated if the target raises the PropertyChanged event. Default means OneWay if only the source
+            implements INPC, and TwoWay if both the source and the target implement INPC.</param>
+            <param name="fallbackValue">The value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+            <param name="targetNullValue">The value used when the source property is null (or equals to default(TSource)).</param>
+            <typeparam name="TSource">The type of the bound property.</typeparam>
+            <returns>The created binding instance.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetBinding``2(System.Object,System.Linq.Expressions.Expression{System.Func{``0}},System.Linq.Expressions.Expression{System.Func{``1}},GalaSoft.MvvmLight.Helpers.BindingMode,``0,``0)">
+            <summary>
+            Sets a data binding between two properties of the same object. If the source implements INotifyPropertyChanged, has observable properties
+            and the BindingMode is OneWay or TwoWay, the target property will be notified of changes to the source property. If
+            the target implements INotifyPropertyChanged, has observable properties and the BindingMode is
+            TwoWay, the source will also be notified of changes to the target's properties.
+            </summary>
+            <typeparam name="TSource">The type of the source property that is being databound.</typeparam>
+            <typeparam name="TTarget">The type of the target property that is being databound. If the source type
+            is not the same as the target type, an automatic conversion will be attempted. However only
+            simple types can be converted. For more complex conversions, use the <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertSourceToTarget(System.Func{`0,`1})"/>
+            and <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertTargetToSource(System.Func{`1,`0})"/> methods to define custom converters.</typeparam>
+            <param name="targetPropertyExpression">An expression pointing to the target property. It can be
+            a simple expression "() => [target].MyProperty" or a composed expression "() => [target].SomeObject.SomeOtherObject.SomeProperty".</param>
+            <param name="source">The source of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is OneWay or TwoWay, the target will be notified of changes to the target property.</param>
+            <param name="sourcePropertyExpression">An expression pointing to the source property. It can be
+            a simple expression "() => [source].MyProperty" or a composed expression "() => [source].SomeObject.SomeOtherObject.SomeProperty".</param>
+            <param name="mode">The mode of the binding. OneTime means that the target property will be set once (when the binding is
+            created) but that subsequent changes will be ignored. OneWay means that the target property will be set, and
+            if the PropertyChanged event is raised by the source, the target property will be updated. TwoWay means that the source
+            property will also be updated if the target raises the PropertyChanged event. Default means OneWay if only the source
+            implements INPC, and TwoWay if both the source and the target implement INPC.</param>
+            <param name="fallbackValue">The value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+            <param name="targetNullValue">The value used when the source property is null (or equals to default(TSource)).</param>
+            <returns>The new Binding instance.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetBinding``2(System.Object,System.String,System.Object,System.String,GalaSoft.MvvmLight.Helpers.BindingMode,``0,``0)">
+            <summary>
+            Sets a data binding between two properties. If the source implements INotifyPropertyChanged, the source property raises the PropertyChanged event
+            and the BindingMode is OneWay or TwoWay, the target property will be synchronized with the source property. If
+            the target implements INotifyPropertyChanged, the target property raises the PropertyChanged event and the BindingMode is
+            TwoWay, the source property will also be synchronized with the target property.
+            </summary>
+            <typeparam name="TSource">The type of the source property that is being databound.</typeparam>
+            <typeparam name="TTarget">The type of the target property that is being databound. If the source type
+            is not the same as the target type, an automatic conversion will be attempted. However only
+            simple types can be converted. For more complex conversions, use the <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertSourceToTarget(System.Func{`0,`1})"/>
+            and <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertTargetToSource(System.Func{`1,`0})"/> methods to define custom converters.</typeparam>
+            <param name="target">The target of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is TwoWay, the source will be notified of changes to the source property.</param>
+            <param name="targetPropertyName">The name of the target property. This must be a simple name, without dots.</param>
+            <param name="source">The source of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is OneWay or TwoWay, the target will be notified of changes to the target property.</param>
+            <param name="sourcePropertyName">The name of the source property. This must be a simple name, without dots.</param>
+            <param name="mode">The mode of the binding. OneTime means that the target property will be set once (when the binding is
+            created) but that subsequent changes will be ignored. OneWay means that the target property will be set, and
+            if the PropertyChanged event is raised by the source, the target property will be updated. TwoWay means that the source
+            property will also be updated if the target raises the PropertyChanged event. Default means OneWay if only the source
+            implements INPC, and TwoWay if both the source and the target implement INPC.</param>
+            <param name="fallbackValue">The value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+            <param name="targetNullValue">The value used when the source property is null (or equals to default(TSource)).</param>
+            <returns>The new Binding instance.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetBinding``2(System.Object,System.String,System.String,GalaSoft.MvvmLight.Helpers.BindingMode,``0,``0)">
+            <summary>
+            Sets a data binding between two properties of the same object. If the source implements INotifyPropertyChanged, has observable properties
+            and the BindingMode is OneWay or TwoWay, the target property will be notified of changes to the source property. If
+            the target implements INotifyPropertyChanged, has observable properties and the BindingMode is
+            TwoWay, the source will also be notified of changes to the target's properties.
+            </summary>
+            <typeparam name="TSource">The type of the source property that is being databound.</typeparam>
+            <typeparam name="TTarget">The type of the target property that is being databound. If the source type
+            is not the same as the target type, an automatic conversion will be attempted. However only
+            simple types can be converted. For more complex conversions, use the <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertSourceToTarget(System.Func{`0,`1})"/>
+            and <see cref="M:GalaSoft.MvvmLight.Helpers.Binding`2.ConvertTargetToSource(System.Func{`1,`0})"/> methods to define custom converters.</typeparam>
+            <param name="targetPropertyName">The name of the target property. This must be a simple name, without dots.</param>
+            <param name="source">The source of the binding. If this object implements INotifyPropertyChanged and the
+            BindingMode is OneWay or TwoWay, the target will be notified of changes to the target property.</param>
+            <param name="sourcePropertyName">The name of the source property. This must be a simple name, without dots.</param>
+            <param name="mode">The mode of the binding. OneTime means that the target property will be set once (when the binding is
+            created) but that subsequent changes will be ignored. OneWay means that the target property will be set, and
+            if the PropertyChanged event is raised by the source, the target property will be updated. TwoWay means that the source
+            property will also be updated if the target raises the PropertyChanged event. Default means OneWay if only the source
+            implements INPC, and TwoWay if both the source and the target implement INPC.</param>
+            <param name="fallbackValue">The value to use when the binding is unable to return a value. This can happen if one of the
+            items on the Path (except the source property itself) is null, or if the Converter throws an exception.</param>
+            <param name="targetNullValue">The value used when the source property is null (or equals to default(TSource)).</param>
+            <returns>The new Binding instance.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``1(System.Object,System.String,GalaSoft.MvvmLight.Command.RelayCommand{``0},GalaSoft.MvvmLight.Helpers.Binding)">
+            <summary>
+            Sets a generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            can only be used when the event uses a standard EventHandler. 
+            </summary>
+            <typeparam name="T">The type of the CommandParameter that will be passed to the RelayCommand.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="eventName">The name of the event that will be subscribed to to actuate the command.</param>
+            <param name="command">The command that must be added to the element.</param>
+            <param name="commandParameterBinding">A <see cref="T:GalaSoft.MvvmLight.Helpers.Binding`2">Binding</see> instance subscribed to
+            the CommandParameter that will passed to the RelayCommand. Depending on the Binding, the CommandParameter
+            will be observed and changes will be passed to the command, for example to update the CanExecute.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``2(System.Object,System.String,GalaSoft.MvvmLight.Command.RelayCommand{``0},GalaSoft.MvvmLight.Helpers.Binding)">
+            <summary>
+            Sets a generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            should be used when the event uses an EventHandler&lt;TEventArgs&gt;.
+            </summary>
+            <typeparam name="T">The type of the CommandParameter that will be passed to the RelayCommand.</typeparam>
+            <typeparam name="TEventArgs">The type of the event's arguments.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+            <param name="eventName">The name of the event that will be subscribed to to actuate the command.</param>
+            <param name="commandParameterBinding">A <see cref="T:GalaSoft.MvvmLight.Helpers.Binding`2">Binding</see> instance subscribed to
+            the CommandParameter that will passed to the RelayCommand. Depending on the Binding, the CommandParameter
+            will be observed and changes will be passed to the command, for example to update the CanExecute.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand(System.Object,System.String,System.Windows.Input.ICommand)">
+            <summary>
+            Sets a non-generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            can only be used when the event uses a standard EventHandler. 
+            </summary>
+            <param name="element">The element to which the command is added.</param>
+            <param name="eventName">The name of the event that will be subscribed to to actuate the command.</param>
+            <param name="command">The command that must be added to the element.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``1(System.Object,System.String,System.Windows.Input.ICommand)">
+            <summary>
+            Sets a non-generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            should be used when the event uses an EventHandler&lt;TEventArgs&gt;.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event's arguments.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="eventName">The name of the event that will be subscribed to to actuate the command.</param>
+            <param name="command">The command that must be added to the element.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``1(System.Object,System.String,GalaSoft.MvvmLight.Command.RelayCommand{``0},``0)">
+            <summary>
+            Sets a generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            can only be used when the event uses a standard EventHandler. 
+            </summary>
+            <typeparam name="T">The type of the CommandParameter that will be passed to the RelayCommand.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+            <param name="eventName">The name of the event that will be subscribed to to actuate the command.</param>
+            <param name="commandParameter">The command parameter that will be passed to the RelayCommand when it
+            is executed. This is a fixed value. To pass an observable value, use one of the SetCommand
+            overloads that uses a Binding as CommandParameter.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``2(System.Object,System.String,GalaSoft.MvvmLight.Command.RelayCommand{``0},``0)">
+            <summary>
+            Sets a generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            should be used when the event uses an EventHandler&lt;TEventArgs&gt;.
+            </summary>
+            <typeparam name="T">The type of the CommandParameter that will be passed to the RelayCommand.</typeparam>
+            <typeparam name="TEventArgs">The type of the event's arguments.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+            <param name="eventName">The name of the event that will be subscribed to to actuate the command.</param>
+            <param name="commandParameter">The command parameter that will be passed to the RelayCommand when it
+            is executed. This is a fixed value. To pass an observable value, use one of the SetCommand
+            overloads that uses a Binding as CommandParameter.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``1(System.Object,GalaSoft.MvvmLight.Command.RelayCommand{``0},GalaSoft.MvvmLight.Helpers.Binding)">
+            <summary>
+            Sets a generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            can only be used when the event uses a standard EventHandler.
+            This method does not specify the observed event explicitly. The following events are used:
+            - For CheckBox: CheckedChange.
+            - For Button: Click.
+            - At the moment, no other controls are supported. For other controls, use another SetCommand overload
+            and specify the eventName parameter explicitly.
+            </summary>
+            <typeparam name="T">The type of the CommandParameter that will be passed to the RelayCommand.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+            <param name="commandParameterBinding">A <see cref="T:GalaSoft.MvvmLight.Helpers.Binding`2">Binding</see> instance subscribed to
+            the CommandParameter that will passed to the RelayCommand. Depending on the Binding, the CommandParameter
+            will be observed and changes will be passed to the command, for example to update the CanExecute.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``2(System.Object,GalaSoft.MvvmLight.Command.RelayCommand{``0},GalaSoft.MvvmLight.Helpers.Binding)">
+            <summary>
+            Sets a generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            should be used when the event uses an EventHandler&lt;TEventArgs&gt;.
+            This method does not specify the observed event explicitly. The following events are used:
+            - For CheckBox: CheckedChange.
+            - For Button: Click.
+            - At the moment, no other controls are supported. For other controls, use another SetCommand overload
+            and specify the eventName parameter explicitly.
+            </summary>
+            <typeparam name="T">The type of the CommandParameter that will be passed to the RelayCommand.</typeparam>
+            <typeparam name="TEventArgs">The type of the event's arguments.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+            <param name="commandParameterBinding">A <see cref="T:GalaSoft.MvvmLight.Helpers.Binding`2">Binding</see> instance subscribed to
+            the CommandParameter that will passed to the RelayCommand. Depending on the Binding, the CommandParameter
+            will be observed and changes will be passed to the command, for example to update the CanExecute.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand(System.Object,System.Windows.Input.ICommand)">
+            <summary>
+            Sets an ICommand to an object and actuates the command when a specific event is raised. This method
+            can only be used when the event uses a standard EventHandler. 
+            This method does not specify the observed event explicitly. The following events are used:
+            - For CheckBox: CheckedChange.
+            - For Button: Click.
+            - At the moment, no other controls are supported. For other controls, use another SetCommand overload
+            and specify the eventName parameter explicitly.
+            </summary>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``1(System.Object,System.Windows.Input.ICommand)">
+            <summary>
+            Sets an ICommand to an object and actuates the command when a specific event is raised. This method
+            should be used when the event uses an EventHandler&lt;TEventArgs&gt;.
+            This method does not specify the observed event explicitly. The following events are used:
+            - For CheckBox: CheckedChange.
+            - For Button: Click.
+            - At the moment, no other controls are supported. For other controls, use another SetCommand overload
+            and specify the eventName parameter explicitly.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event's arguments.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``1(System.Object,GalaSoft.MvvmLight.Command.RelayCommand{``0},``0)">
+            <summary>
+            Sets a generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            can only be used when the event uses a standard EventHandler.
+            This method does not specify the observed event explicitly. The following events are used:
+            - For CheckBox: CheckedChange.
+            - For Button: Click.
+            - At the moment, no other controls are supported. For other controls, use another SetCommand overload
+            and specify the eventName parameter explicitly.
+            </summary>
+            <typeparam name="T">The type of the CommandParameter that will be passed to the RelayCommand.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+            <param name="commandParameter">The command parameter that will be passed to the RelayCommand when it
+            is executed. This is a fixed value. To pass an observable value, use one of the SetCommand
+            overloads that uses a Binding as CommandParameter.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.Extensions.SetCommand``2(System.Object,GalaSoft.MvvmLight.Command.RelayCommand{``0},``0)">
+            <summary>
+            Sets a generic RelayCommand to an object and actuates the command when a specific event is raised. This method
+            should be used when the event uses an EventHandler&lt;TEventArgs&gt;.
+            This method does not specify the observed event explicitly. The following events are used:
+            - For CheckBox: CheckedChange.
+            - For Button: Click.
+            - At the moment, no other controls are supported. For other controls, use another SetCommand overload
+            and specify the eventName parameter explicitly.
+            </summary>
+            <typeparam name="T">The type of the CommandParameter that will be passed to the RelayCommand.</typeparam>
+            <typeparam name="TEventArgs">The type of the event's arguments.</typeparam>
+            <param name="element">The element to which the command is added.</param>
+            <param name="command">The command that must be added to the element.</param>
+            <param name="commandParameter">The command parameter that will be passed to the RelayCommand when it
+            is executed. This is a fixed value. To pass an observable value, use one of the SetCommand
+            overloads that uses a Binding as CommandParameter.</param>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1">
+            <summary>
+            A <see cref="T:Android.Widget.BaseAdapter`1"/> that can be used with an Android ListView. After setting
+            the <see cref="P:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.DataSource"/> and the <see cref="P:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.GetTemplateDelegate"/> properties, the adapter is
+            suitable for a list control. If the DataSource is an <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/>,
+            changes to the collection will be observed and the UI will automatically be updated.
+            </summary>
+            <typeparam name="T">The type of the items contained in the <see cref="P:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.DataSource"/>.</typeparam>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.Count">
+            <summary>
+            Gets the number of items in the DataSource.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.DataSource">
+            <summary>
+            Gets or sets the list containing the items to be represented in the list control.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.GetTemplateDelegate">
+            <summary>
+            Gets and sets a method taking an item's position in the list, the item itself,
+            and a recycled Android View, and returning an adapted View for this item. Note that the recycled
+            view might be null, in which case a new View must be inflated by this method.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.Item(System.Int32)">
+            <summary>
+            Gets the item corresponding to the index in the DataSource.
+            </summary>
+            <param name="index">The index of the item that needs to be returned.</param>
+            <returns>The item corresponding to the index in the DataSource</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.GetItemId(System.Int32)">
+            <summary>
+            Returns a unique ID for the item corresponding to the position parameter.
+            In this implementation, the method always returns the position itself.
+            </summary>
+            <param name="position">The position of the item for which the ID needs to be returned.</param>
+            <returns>A unique ID for the item corresponding to the position parameter.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.GetView(System.Int32,Android.Views.View,Android.Views.ViewGroup)">
+            <summary>
+            Prepares the view (template) for the item corresponding to the position
+            in the DataSource. This method calls the <see cref="P:GalaSoft.MvvmLight.Helpers.ObservableAdapter`1.GetTemplateDelegate"/> method so that the caller
+            can create (if necessary) and adapt the template for the corresponding item.
+            </summary>
+            <param name="position">The position of the item in the DataSource.</param>
+            <param name="convertView">A recycled view. If this parameter is null,
+            a new view must be inflated.</param>
+            <param name="parent">The view's parent.</param>
+            <returns>A view adapted for the item at the corresponding position.</returns>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode">
+            <summary>
+            Defines how a <see cref="T:GalaSoft.MvvmLight.Helpers.Binding"/> is updated by a source control.
+            </summary>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.LostFocus">
+            <summary>
+            Defines that the binding should be updated when the control
+            loses the focus.
+            </summary>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Helpers.UpdateTriggerMode.PropertyChanged">
+            <summary>
+            Defines that the binding should be updated when the control's 
+            bound property changes.
+            </summary>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Threading.DispatcherHelper">
+            <summary>
+            Helper class for dispatcher operations on the UI thread in Android.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Threading.DispatcherHelper.CheckBeginInvokeOnUI(System.Action)">
+            <summary>
+            Executes an action on the UI thread. If this method is called
+            from the UI thread, the action is executed immendiately. If the
+            method is called from another thread, the action will be enqueued
+            on the UI thread's dispatcher and executed asynchronously.
+            </summary>
+            <param name="action">The action that will be executed on the UI
+            thread.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Threading.DispatcherHelper.Initialize">
+            <summary>
+            This method is only here for compatibility with
+            other platforms but it doesn't do anything.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Threading.DispatcherHelper.Reset">
+            <summary>
+            This method is only here for compatibility with
+            other platforms but it doesn't do anything.
+            </summary>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Views.ActivityBase">
+            <summary>
+            A base class for Activities that allow the <see cref="T:GalaSoft.MvvmLight.Views.NavigationService"/>
+            to keep track of the navigation journal.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Views.ActivityBase.CurrentActivity">
+            <summary>
+            The activity that is currently in the foreground.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.ActivityBase.GoBack">
+            <summary>
+            If possible, discards the current page and displays the previous page
+            on the navigation stack.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.ActivityBase.OnResume">
+            <summary>
+            Overrides <see cref="M:Android.App.Activity.OnResume"/>. If you override
+            this method in your own Activities, make sure to call
+            base.OnResume to allow the <see cref="T:GalaSoft.MvvmLight.Views.NavigationService"/>
+            to work properly.
+            </summary>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Views.DialogService">
+            <summary>
+            An implementation of <see cref="T:GalaSoft.MvvmLight.Views.IDialogService"/> allowing
+            to display simple dialogs to the user. Note that this class
+            uses the built in Android dialogs which may or may not
+            be sufficient for your needs. Using this class is easy
+            but feel free to develop your own IDialogService implementation
+            if needed.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.DialogService.ShowError(System.String,System.String,System.String,System.Action)">
+            <summary>
+            Displays information about an error.
+            </summary>
+            <param name="message">The message to be shown to the user.</param>
+            <param name="title">The title of the dialog box. This may be null.</param>
+            <param name="buttonText">The text shown in the only button
+            in the dialog box. If left null, the text "OK" will be used.</param>
+            <param name="afterHideCallback">A callback that should be executed after
+            the dialog box is closed by the user.</param>
+            <returns>A Task allowing this async method to be awaited.</returns>
+            <remarks>Displaying dialogs in Android is synchronous. As such,
+            this method will be executed synchronously even though it can be awaited
+            for cross-platform compatibility purposes.</remarks>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.DialogService.ShowError(System.Exception,System.String,System.String,System.Action)">
+            <summary>
+            Displays information about an error.
+            </summary>
+            <param name="error">The exception of which the message must be shown to the user.</param>
+            <param name="title">The title of the dialog box. This may be null.</param>
+            <param name="buttonText">The text shown in the only button
+            in the dialog box. If left null, the text "OK" will be used.</param>
+            <param name="afterHideCallback">A callback that should be executed after
+            the dialog box is closed by the user.</param>
+            <returns>A Task allowing this async method to be awaited.</returns>
+            <remarks>Displaying dialogs in Android is synchronous. As such,
+            this method will be executed synchronously even though it can be awaited
+            for cross-platform compatibility purposes.</remarks>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.DialogService.ShowMessage(System.String,System.String)">
+            <summary>
+            Displays information to the user. The dialog box will have only
+            one button with the text "OK".
+            </summary>
+            <param name="message">The message to be shown to the user.</param>
+            <param name="title">The title of the dialog box. This may be null.</param>
+            <returns>A Task allowing this async method to be awaited.</returns>
+            <remarks>Displaying dialogs in Android is synchronous. As such,
+            this method will be executed synchronously even though it can be awaited
+            for cross-platform compatibility purposes.</remarks>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.DialogService.ShowMessage(System.String,System.String,System.String,System.Action)">
+            <summary>
+            Displays information to the user. The dialog box will have only
+            one button.
+            </summary>
+            <param name="message">The message to be shown to the user.</param>
+            <param name="title">The title of the dialog box. This may be null.</param>
+            <param name="buttonText">The text shown in the only button
+            in the dialog box. If left null, the text "OK" will be used.</param>
+            <param name="afterHideCallback">A callback that should be executed after
+            the dialog box is closed by the user.</param>
+            <returns>A Task allowing this async method to be awaited.</returns>
+            <remarks>Displaying dialogs in Android is synchronous. As such,
+            this method will be executed synchronously even though it can be awaited
+            for cross-platform compatibility purposes.</remarks>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.DialogService.ShowMessage(System.String,System.String,System.String,System.String,System.Action{System.Boolean})">
+            <summary>
+            Displays information to the user. The dialog box will have only
+            one button.
+            </summary>
+            <param name="message">The message to be shown to the user.</param>
+            <param name="title">The title of the dialog box. This may be null.</param>
+            <param name="buttonConfirmText">The text shown in the "confirm" button
+            in the dialog box. If left null, the text "OK" will be used.</param>
+            <param name="buttonCancelText">The text shown in the "cancel" button
+            in the dialog box. If left null, the text "Cancel" will be used.</param>
+            <param name="afterHideCallback">A callback that should be executed after
+            the dialog box is closed by the user. The callback method will get a boolean
+            parameter indicating if the "confirm" button (true) or the "cancel" button
+            (false) was pressed by the user.</param>
+            <returns>A Task allowing this async method to be awaited. The task will return
+            true or false depending on the dialog result.</returns>
+            <remarks>Displaying dialogs in Android is synchronous. As such,
+            this method will be executed synchronously even though it can be awaited
+            for cross-platform compatibility purposes.</remarks>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.DialogService.ShowMessageBox(System.String,System.String)">
+            <summary>
+            Displays information to the user in a simple dialog box. The dialog box will have only
+            one button with the text "OK". This method should be used for debugging purposes.
+            </summary>
+            <param name="message">The message to be shown to the user.</param>
+            <param name="title">The title of the dialog box. This may be null.</param>
+            <returns>A Task allowing this async method to be awaited.</returns>
+            <remarks>Displaying dialogs in Android is synchronous. As such,
+            this method will be executed synchronously even though it can be awaited
+            for cross-platform compatibility purposes.</remarks>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Views.NavigationService">
+            <summary>
+            Xamarin Android implementation of <see cref="T:GalaSoft.MvvmLight.Views.INavigationService"/>.
+            This implementation can be used in Xamarin Android applications (not Xamarin Forms).
+            </summary>
+            <remarks>For this navigation service to work properly, your Activities
+            should derive from the <see cref="T:GalaSoft.MvvmLight.Views.ActivityBase"/> class.</remarks>
+        </member>
+        <member name="F:GalaSoft.MvvmLight.Views.NavigationService.RootPageKey">
+            <summary>
+            The key that is returned by the <see cref="P:GalaSoft.MvvmLight.Views.NavigationService.CurrentPageKey"/> property
+            when the current Activiy is the root activity.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Views.NavigationService.CurrentPageKey">
+            <summary>
+            The key corresponding to the currently displayed page.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.NavigationService.Configure(System.String,System.Type)">
+            <summary>
+            Adds a key/page pair to the navigation service.
+            </summary>
+            <remarks>For this navigation service to work properly, your Activities
+            should derive from the <see cref="T:GalaSoft.MvvmLight.Views.ActivityBase"/> class.</remarks>
+            <param name="key">The key that will be used later
+            in the <see cref="M:GalaSoft.MvvmLight.Views.NavigationService.NavigateTo(System.String)"/> or <see cref="M:GalaSoft.MvvmLight.Views.NavigationService.NavigateTo(System.String,System.Object)"/> methods.</param>
+            <param name="activityType">The type of the activity (page) corresponding to the key.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.NavigationService.GetAndRemoveParameter(Android.Content.Intent)">
+            <summary>
+            Allows a caller to get the navigation parameter corresponding 
+            to the Intent parameter.
+            </summary>
+            <param name="intent">The <see cref="P:Android.App.Activity.Intent"/> 
+            of the navigated page.</param>
+            <returns>The navigation parameter. If no parameter is found,
+            returns null.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.NavigationService.GetAndRemoveParameter``1(Android.Content.Intent)">
+            <summary>
+            Allows a caller to get the navigation parameter corresponding 
+            to the Intent parameter.
+            </summary>
+            <typeparam name="T">The type of the retrieved parameter.</typeparam>
+            <param name="intent">The <see cref="P:Android.App.Activity.Intent"/> 
+            of the navigated page.</param>
+            <returns>The navigation parameter casted to the proper type.
+            If no parameter is found, returns default(T).</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.NavigationService.GoBack">
+            <summary>
+            If possible, discards the current page and displays the previous page
+            on the navigation stack.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.NavigationService.NavigateTo(System.String)">
+            <summary>
+            Displays a new page corresponding to the given key. 
+            Make sure to call the <see cref="M:GalaSoft.MvvmLight.Views.NavigationService.Configure(System.String,System.Type)"/>
+            method first.
+            </summary>
+            <param name="pageKey">The key corresponding to the page
+            that should be displayed.</param>
+            <exception cref="T:System.ArgumentException">When this method is called for 
+            a key that has not been configured earlier.</exception>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Views.NavigationService.NavigateTo(System.String,System.Object)">
+            <summary>
+            Displays a new page corresponding to the given key,
+            and passes a parameter to the new page.
+            Make sure to call the <see cref="M:GalaSoft.MvvmLight.Views.NavigationService.Configure(System.String,System.Type)"/>
+            method first.
+            </summary>
+            <param name="pageKey">The key corresponding to the page
+            that should be displayed.</param>
+            <param name="parameter">The parameter that should be passed
+            to the new page.</param>
+            <exception cref="T:System.ArgumentException">When this method is called for 
+            a key that has not been configured earlier.</exception>
+        </member>
+        <member name="T:System.Windows.IWeakEventListener">
+            <summary>
+            Provides event listening support for classes that expect to receive events 
+            through the WeakEvent pattern and a WeakEventManager.
+            </summary>
+        </member>
+        <member name="P:System.Windows.IWeakEventListener.InstanceReference">
+            <summary>
+            Gets the WeakReference holding the instance that raised the event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.IWeakEventListener.ReceiveWeakEvent(System.Type,System.Object,System.EventArgs)">
+            <summary>
+            Receives events from the centralized event manager. 
+            </summary>
+            <param name="managerType">The type of the WeakEventManager calling this method.</param>
+            <param name="sender">Object that originated the event.</param>
+            <param name="e">Event data.</param>
+            <returns>true if the listener handled the event. It is considered an error by the 
+            WeakEventManager handling in WPF to register a listener for an event that the 
+            listener does not handle. Regardless, the method should return false if it receives 
+            an event that it does not recognize or handle.
+            </returns>
+        </member>
+        <member name="T:System.Windows.PropertyChangedEventManager">
+            <summary>
+            Provides an implementation so that you can use the 
+            "weak event listener" pattern to attach listeners
+            for the <see cref="M:System.Windows.PropertyChangedEventManager.PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)" /> event. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.PropertyChangedEventManager.Instance">
+            <summary>
+            Get the current instance of <see cref="T:System.Windows.PropertyChangedEventManager"/>
+            </summary>
+        </member>
+        <member name="M:System.Windows.PropertyChangedEventManager.AddListener(System.ComponentModel.INotifyPropertyChanged,System.Windows.IWeakEventListener,System.String)">
+            <summary>
+            Adds the specified listener to the list of listeners on the specified source. 
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The object to add as a listener.</param>
+            <param name="propertyName">The name of the property that exists on
+            source upon which to listen for changes.</param>
+        </member>
+        <member name="M:System.Windows.PropertyChangedEventManager.RemoveListener(System.Windows.IWeakEventListener)">
+            <summary>
+            Removes the specified listener from the list of listeners on the 
+            specified source. 
+            </summary>
+            <param name="listener">The object to remove as a listener.</param>
+        </member>
+        <member name="M:System.Windows.PropertyChangedEventManager.PrivateAddListener(System.ComponentModel.INotifyPropertyChanged,System.Windows.IWeakEventListener,System.String)">
+            <summary>
+            Private method to add the specified listener to the list of listeners 
+            on the specified source. 
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The object to add as a listener.</param>
+            <param name="propertyName">The name of the property that exists 
+            on source upon which to listen for changes.</param>
+        </member>
+        <member name="M:System.Windows.PropertyChangedEventManager.PrivateRemoveListener(System.Windows.IWeakEventListener)">
+            <summary>
+            Private method to remove the specified listener from the list of listeners 
+            on the specified source. 
+            </summary>
+            <param name="listener">The object to remove as a listener.</param>
+        </member>
+        <member name="M:System.Windows.PropertyChangedEventManager.PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            The method that handles the <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/> event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="args">A <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> that 
+            contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.PropertyChangedEventManager.StartListening(System.ComponentModel.INotifyPropertyChanged)">
+            <summary>
+            Begin listening for the <see cref="M:System.Windows.PropertyChangedEventManager.PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)"/> event on 
+            the provided source.
+            </summary>
+            <param name="source">The object on which to start listening 
+            for <see cref="M:System.Windows.PropertyChangedEventManager.PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)"/>.</param>
+        </member>
+        <member name="M:System.Windows.PropertyChangedEventManager.StopListening(System.ComponentModel.INotifyPropertyChanged)">
+            <summary>
+            Stop listening for the <see cref="M:System.Windows.PropertyChangedEventManager.PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)"/> event on the 
+            provided source.
+            </summary>
+            <param name="source">The object on which to start listening for 
+            <see cref="M:System.Windows.PropertyChangedEventManager.PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)"/>.</param>
+        </member>
+    </members>
+</doc>

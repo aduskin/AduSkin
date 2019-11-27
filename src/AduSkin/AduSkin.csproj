@@ -65,6 +65,7 @@
     <Compile Include="Commen\ExternDll.cs" />
     <Compile Include="Commen\UnsafeNativeMethods.cs" />
     <Compile Include="Controls\ControlEnum.cs" />
+    <Compile Include="Controls\Converter\BoolToVisibility.cs" />
     <Compile Include="Controls\Converter\CalendarDayButtonTypeConverter.cs" />
     <Compile Include="Controls\Converter\DoubleToCornerRadius.cs" />
     <Compile Include="Controls\Converter\CornerRadiusToDouble.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Controls\Metro\AduButtonSvg.cs" />
     <Compile Include="Controls\Metro\AduButtonRemind.cs" />
     <Compile Include="Controls\Metro\AduButtonIcon.cs" />
+    <Compile Include="Controls\Metro\AduContactItem.cs" />
     <Compile Include="Controls\Metro\AduDatePickers\AduCalendar.cs" />
     <Compile Include="Controls\Metro\AduDatePickers\AduCalendarButton.cs" />
     <Compile Include="Controls\Metro\AduDatePickers\AduCalendarDayButton.cs" />
@@ -124,6 +126,8 @@
     <Compile Include="Controls\Metro\AnimationPath.cs" />
     <Compile Include="Controls\Metro\AduGroupBox.cs" />
     <Compile Include="Controls\Metro\Base\AduButtonBase.cs" />
+    <Compile Include="Controls\Metro\Base\ISelectable.cs" />
+    <Compile Include="Controls\Metro\Base\SelectableItem.cs" />
     <Compile Include="Controls\Metro\Carousel\Carousel.cs" />
     <Compile Include="Controls\Metro\Carousel\SlideSwitchPanel.cs" />
     <Compile Include="Controls\Metro\HCShield.cs" />
@@ -172,6 +176,7 @@
     <Compile Include="Controls\Metro\SegmentControls\SegmentControl.cs" />
     <Compile Include="Controls\Metro\SegmentControls\SegmentItem.cs" />
     <Compile Include="Controls\Metro\TransitioningContentControl.cs" />
+    <Compile Include="Controls\Tools\Extension\EdgeElement.cs" />
     <Compile Include="Controls\Tools\Extension\GeometryExtension.cs" />
     <Compile Include="Controls\Tools\Extension\UIElementExtension.cs" />
     <Compile Include="Controls\Tools\Helper\AnimationHelper.cs" />
@@ -242,12 +247,12 @@
     <Compile Include="Themes\Theme.cs" />
     <Compile Include="Utility\AduMethod\DateTimeHelper.cs" />
     <Compile Include="Utility\AduMethod\HttpHelper.cs" />
-    <Compile Include="Utility\AduMethod\TaskManager.cs" />
     <Compile Include="Utility\AduMethod\VlcUtil.cs" />
     <Compile Include="Utility\Computer\Screen.cs" />
     <Compile Include="Utility\Computer\TaskBarPostion.cs" />
     <Compile Include="Utility\Element\ElementBase.cs" />
     <Compile Include="Utility\Element\VisualObj.cs" />
+    <Compile Include="Utility\Extend\StringExtend.cs" />
     <Compile Include="Utility\Media\HsbaColor.cs" />
     <Compile Include="Utility\Media\ResObj.cs" />
     <Compile Include="Utility\Media\RgbaColor.cs" />
@@ -352,6 +357,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Metro\AduListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Metro\AduLoading\AduLoading.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -437,6 +446,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Metro\AduUpload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Metro\AduContactItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -862,6 +862,13 @@
                     </Border>
                 </Metro:MetroScrollViewer>
             </Metro:MetroMenuTabItem>
+            <Metro:MetroMenuTabItem Header="更多案例" Icon="{StaticResource Icon_Desgin}" >
+                <Grid Background="{StaticResource MainContentForegroundDrawingBrush}">
+                    <Border HorizontalAlignment="Center" VerticalAlignment="Center" Padding="40" Background="#FFF" CornerRadius="6" Effect="{StaticResource CardShadow}">
+                        <UserControls:SortGroup VerticalAlignment="Center" HorizontalAlignment="Center" Width="300"/>
+                    </Border>
+                </Grid>
+            </Metro:MetroMenuTabItem>
             <Metro:MetroMenuTabItem Header="轮播" Icon="{StaticResource Icon_Carousel}">
                 <Grid Background="{StaticResource MainContentForegroundDrawingBrush}">
                     <AduCarousel:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Height="350" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">

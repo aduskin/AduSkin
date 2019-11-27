@@ -129,4 +129,16 @@ namespace AduSkin.Controls
       Fade,
       Custom
    }
+   /// <summary>
+   /// 联系人类型
+   /// </summary>
+   public enum ContactType
+   {
+      SerialNumber,
+      Single,
+      Group,
+      AddUser,
+      CutUser
+   }
+
 }

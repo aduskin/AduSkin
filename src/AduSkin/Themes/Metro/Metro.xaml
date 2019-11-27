@@ -68,6 +68,8 @@
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/RatingBarButton.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTimeLine.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduIndexRadionButton.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduListBox.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduContactItem.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCShield.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTransitioningContentControl.xaml" />
     </ResourceDictionary.MergedDictionaries>

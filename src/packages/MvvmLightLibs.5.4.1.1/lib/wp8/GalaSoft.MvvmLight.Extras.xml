@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GalaSoft.MvvmLight.Extras</name>
+    </assembly>
+    <members>
+        <member name="T:GalaSoft.MvvmLight.Helpers.DesignerLibrary">
+            <summary>
+            Helper class for platform detection.
+            </summary>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Ioc.ISimpleIoc">
+            <summary>
+            A very simple IOC container with basic functionality needed to register and resolve
+            instances. If needed, this class can be replaced by another more elaborate
+            IOC container implementing the IServiceLocator interface.
+            The inspiration for this class is at https://gist.github.com/716137 but it has
+            been extended with additional features.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.ContainsCreated``1">
+            <summary>
+            Checks whether at least one instance of a given class is already created in the container.
+            </summary>
+            <typeparam name="TClass">The class that is queried.</typeparam>
+            <returns>True if at least on instance of the class is already created, false otherwise.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.ContainsCreated``1(System.String)">
+            <summary>
+            Checks whether the instance with the given key is already created for a given class
+            in the container.
+            </summary>
+            <typeparam name="TClass">The class that is queried.</typeparam>
+            <param name="key">The key that is queried.</param>
+            <returns>True if the instance with the given key is already registered for the given class,
+            false otherwise.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.IsRegistered``1">
+            <summary>
+            Gets a value indicating whether a given type T is already registered.
+            </summary>
+            <typeparam name="T">The type that the method checks for.</typeparam>
+            <returns>True if the type is registered, false otherwise.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.IsRegistered``1(System.String)">
+            <summary>
+            Gets a value indicating whether a given type T and a give key
+            are already registered.
+            </summary>
+            <typeparam name="T">The type that the method checks for.</typeparam>
+            <param name="key">The key that the method checks for.</param>
+            <returns>True if the type and key are registered, false otherwise.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Register``2">
+            <summary>
+            Registers a given type for a given interface.
+            </summary>
+            <typeparam name="TInterface">The interface for which instances will be resolved.</typeparam>
+            <typeparam name="TClass">The type that must be used to create instances.</typeparam>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Register``2(System.Boolean)">
+            <summary>
+            Registers a given type for a given interface with the possibility for immediate
+            creation of the instance.
+            </summary>
+            <typeparam name="TInterface">The interface for which instances will be resolved.</typeparam>
+            <typeparam name="TClass">The type that must be used to create instances.</typeparam>
+            <param name="createInstanceImmediately">If true, forces the creation of the default
+            instance of the provided class.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Register``1">
+            <summary>
+            Registers a given type.
+            </summary>
+            <typeparam name="TClass">The type that must be used to create instances.</typeparam>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Register``1(System.Boolean)">
+            <summary>
+            Registers a given type with the possibility for immediate
+            creation of the instance.
+            </summary>
+            <typeparam name="TClass">The type that must be used to create instances.</typeparam>
+            <param name="createInstanceImmediately">If true, forces the creation of the default
+            instance of the provided class.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Register``1(System.Func{``0})">
+            <summary>
+            Registers a given instance for a given type.
+            </summary>
+            <typeparam name="TClass">The type that is being registered.</typeparam>
+            <param name="factory">The factory method able to create the instance that
+            must be returned when the given type is resolved.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Register``1(System.Func{``0},System.Boolean)">
+            <summary>
+            Registers a given instance for a given type with the possibility for immediate
+            creation of the instance.
+            </summary>
+            <typeparam name="TClass">The type that is being registered.</typeparam>
+            <param name="factory">The factory method able to create the instance that
+            must be returned when the given type is resolved.</param>
+            <param name="createInstanceImmediately">If true, forces the creation of the default
+            instance of the provided class.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Register``1(System.Func{``0},System.String)">
+            <summary>
+            Registers a given instance for a given type and a given key.
+            </summary>
+            <typeparam name="TClass">The type that is being registered.</typeparam>
+            <param name="factory">The factory method able to create the instance that
+            must be returned when the given type is resolved.</param>
+            <param name="key">The key for which the given instance is registered.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Register``1(System.Func{``0},System.String,System.Boolean)">
+            <summary>
+            Registers a given instance for a given type and a given key with the possibility for immediate
+            creation of the instance.
+            </summary>
+            <typeparam name="TClass">The type that is being registered.</typeparam>
+            <param name="factory">The factory method able to create the instance that
+            must be returned when the given type is resolved.</param>
+            <param name="key">The key for which the given instance is registered.</param>
+            <param name="createInstanceImmediately">If true, forces the creation of the default
+            instance of the provided class.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Reset">
+            <summary>
+            Resets the instance in its original states. This deletes all the
+            registrations.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Unregister``1">
+            <summary>
+            Unregisters a class from the cache and removes all the previously
+            created instances.
+            </summary>
+            <typeparam name="TClass">The class that must be removed.</typeparam>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Unregister``1(``0)">
+            <summary>
+            Removes the given instance from the cache. The class itself remains
+            registered and can be used to create other instances.
+            </summary>
+            <typeparam name="TClass">The type of the instance to be removed.</typeparam>
+            <param name="instance">The instance that must be removed.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.ISimpleIoc.Unregister``1(System.String)">
+            <summary>
+            Removes the instance corresponding to the given key from the cache. The class itself remains
+            registered and can be used to create other instances.
+            </summary>
+            <typeparam name="TClass">The type of the instance to be removed.</typeparam>
+            <param name="key">The key corresponding to the instance that must be removed.</param>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Ioc.PreferredConstructorAttribute">
+            <summary>
+            When used with the SimpleIoc container, specifies which constructor
+            should be used to instantiate when GetInstance is called.
+            If there is only one constructor in the class, this attribute is
+            not needed.
+            </summary>
+        </member>
+        <member name="T:GalaSoft.MvvmLight.Ioc.SimpleIoc">
+            <summary>
+            A very simple IOC container with basic functionality needed to register and resolve
+            instances. If needed, this class can be replaced by another more elaborate
+            IOC container implementing the IServiceLocator interface.
+            The inspiration for this class is at https://gist.github.com/716137 but it has
+            been extended with additional features.
+            </summary>
+        </member>
+        <member name="P:GalaSoft.MvvmLight.Ioc.SimpleIoc.Default">
+            <summary>
+            This class' default instance.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.ContainsCreated``1">
+            <summary>
+            Checks whether at least one instance of a given class is already created in the container.
+            </summary>
+            <typeparam name="TClass">The class that is queried.</typeparam>
+            <returns>True if at least on instance of the class is already created, false otherwise.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.ContainsCreated``1(System.String)">
+            <summary>
+            Checks whether the instance with the given key is already created for a given class
+            in the container.
+            </summary>
+            <typeparam name="TClass">The class that is queried.</typeparam>
+            <param name="key">The key that is queried.</param>
+            <returns>True if the instance with the given key is already registered for the given class,
+            false otherwise.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.IsRegistered``1">
+            <summary>
+            Gets a value indicating whether a given type T is already registered.
+            </summary>
+            <typeparam name="T">The type that the method checks for.</typeparam>
+            <returns>True if the type is registered, false otherwise.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.IsRegistered``1(System.String)">
+            <summary>
+            Gets a value indicating whether a given type T and a give key
+            are already registered.
+            </summary>
+            <typeparam name="T">The type that the method checks for.</typeparam>
+            <param name="key">The key that the method checks for.</param>
+            <returns>True if the type and key are registered, false otherwise.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Register``2">
+            <summary>
+            Registers a given type for a given interface.
+            </summary>
+            <typeparam name="TInterface">The interface for which instances will be resolved.</typeparam>
+            <typeparam name="TClass">The type that must be used to create instances.</typeparam>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Register``2(System.Boolean)">
+            <summary>
+            Registers a given type for a given interface with the possibility for immediate
+            creation of the instance.
+            </summary>
+            <typeparam name="TInterface">The interface for which instances will be resolved.</typeparam>
+            <typeparam name="TClass">The type that must be used to create instances.</typeparam>
+            <param name="createInstanceImmediately">If true, forces the creation of the default
+            instance of the provided class.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Register``1">
+            <summary>
+            Registers a given type.
+            </summary>
+            <typeparam name="TClass">The type that must be used to create instances.</typeparam>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Register``1(System.Boolean)">
+            <summary>
+            Registers a given type with the possibility for immediate
+            creation of the instance.
+            </summary>
+            <typeparam name="TClass">The type that must be used to create instances.</typeparam>
+            <param name="createInstanceImmediately">If true, forces the creation of the default
+            instance of the provided class.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Register``1(System.Func{``0})">
+            <summary>
+            Registers a given instance for a given type.
+            </summary>
+            <typeparam name="TClass">The type that is being registered.</typeparam>
+            <param name="factory">The factory method able to create the instance that
+            must be returned when the given type is resolved.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Register``1(System.Func{``0},System.Boolean)">
+            <summary>
+            Registers a given instance for a given type with the possibility for immediate
+            creation of the instance.
+            </summary>
+            <typeparam name="TClass">The type that is being registered.</typeparam>
+            <param name="factory">The factory method able to create the instance that
+            must be returned when the given type is resolved.</param>
+            <param name="createInstanceImmediately">If true, forces the creation of the default
+            instance of the provided class.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Register``1(System.Func{``0},System.String)">
+            <summary>
+            Registers a given instance for a given type and a given key.
+            </summary>
+            <typeparam name="TClass">The type that is being registered.</typeparam>
+            <param name="factory">The factory method able to create the instance that
+            must be returned when the given type is resolved.</param>
+            <param name="key">The key for which the given instance is registered.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Register``1(System.Func{``0},System.String,System.Boolean)">
+            <summary>
+            Registers a given instance for a given type and a given key with the possibility for immediate
+            creation of the instance.
+            </summary>
+            <typeparam name="TClass">The type that is being registered.</typeparam>
+            <param name="factory">The factory method able to create the instance that
+            must be returned when the given type is resolved.</param>
+            <param name="key">The key for which the given instance is registered.</param>
+            <param name="createInstanceImmediately">If true, forces the creation of the default
+            instance of the provided class.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Reset">
+            <summary>
+            Resets the instance in its original states. This deletes all the
+            registrations.
+            </summary>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Unregister``1">
+            <summary>
+            Unregisters a class from the cache and removes all the previously
+            created instances.
+            </summary>
+            <typeparam name="TClass">The class that must be removed.</typeparam>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Unregister``1(``0)">
+            <summary>
+            Removes the given instance from the cache. The class itself remains
+            registered and can be used to create other instances.
+            </summary>
+            <typeparam name="TClass">The type of the instance to be removed.</typeparam>
+            <param name="instance">The instance that must be removed.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.Unregister``1(System.String)">
+            <summary>
+            Removes the instance corresponding to the given key from the cache. The class itself remains
+            registered and can be used to create other instances.
+            </summary>
+            <typeparam name="TClass">The type of the instance to be removed.</typeparam>
+            <param name="key">The key corresponding to the instance that must be removed.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetAllCreatedInstances(System.Type)">
+            <summary>
+            Provides a way to get all the created instances of a given type available in the
+            cache. Registering a class or a factory does not automatically
+            create the corresponding instance! To create an instance, either register
+            the class or the factory with createInstanceImmediately set to true,
+            or call the GetInstance method before calling GetAllCreatedInstances.
+            Alternatively, use the GetAllInstances method, which auto-creates default
+            instances for all registered classes.
+            </summary>
+            <param name="serviceType">The class of which all instances
+            must be returned.</param>
+            <returns>All the already created instances of the given type.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetAllCreatedInstances``1">
+            <summary>
+            Provides a way to get all the created instances of a given type available in the
+            cache. Registering a class or a factory does not automatically
+            create the corresponding instance! To create an instance, either register
+            the class or the factory with createInstanceImmediately set to true,
+            or call the GetInstance method before calling GetAllCreatedInstances.
+            Alternatively, use the GetAllInstances method, which auto-creates default
+            instances for all registered classes.
+            </summary>
+            <typeparam name="TService">The class of which all instances
+            must be returned.</typeparam>
+            <returns>All the already created instances of the given type.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetService(System.Type)">
+            <summary>
+            Gets the service object of the specified type.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
+            been registered before calling this method.</exception>
+            <returns>
+            A service object of type <paramref name="serviceType" />.
+            </returns>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetAllInstances(System.Type)">
+            <summary>
+            Provides a way to get all the created instances of a given type available in the
+            cache. Calling this method auto-creates default
+            instances for all registered classes.
+            </summary>
+            <param name="serviceType">The class of which all instances
+            must be returned.</param>
+            <returns>All the instances of the given type.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetAllInstances``1">
+            <summary>
+            Provides a way to get all the created instances of a given type available in the
+            cache. Calling this method auto-creates default
+            instances for all registered classes.
+            </summary>
+            <typeparam name="TService">The class of which all instances
+            must be returned.</typeparam>
+            <returns>All the instances of the given type.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstance(System.Type)">
+            <summary>
+            Provides a way to get an instance of a given type. If no instance had been instantiated 
+            before, a new instance will be created. If an instance had already
+            been created, that same instance will be returned.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
+            been registered before calling this method.</exception>
+            <param name="serviceType">The class of which an instance
+            must be returned.</param>
+            <returns>An instance of the given type.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstanceWithoutCaching(System.Type)">
+            <summary>
+            Provides a way to get an instance of a given type. This method
+            always returns a new instance and doesn't cache it in the IOC container.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
+            been registered before calling this method.</exception>
+            <param name="serviceType">The class of which an instance
+            must be returned.</param>
+            <returns>An instance of the given type.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstance(System.Type,System.String)">
+            <summary>
+            Provides a way to get an instance of a given type corresponding
+            to a given key. If no instance had been instantiated with this
+            key before, a new instance will be created. If an instance had already
+            been created with the same key, that same instance will be returned.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
+            been registered before calling this method.</exception>
+            <param name="serviceType">The class of which an instance must be returned.</param>
+            <param name="key">The key uniquely identifying this instance.</param>
+            <returns>An instance corresponding to the given type and key.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstanceWithoutCaching(System.Type,System.String)">
+            <summary>
+            Provides a way to get an instance of a given type. This method
+            always returns a new instance and doesn't cache it in the IOC container.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type serviceType has not
+            been registered before calling this method.</exception>
+            <param name="serviceType">The class of which an instance must be returned.</param>
+            <param name="key">The key uniquely identifying this instance.</param>
+            <returns>An instance corresponding to the given type and key.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstance``1">
+            <summary>
+            Provides a way to get an instance of a given type. If no instance had been instantiated 
+            before, a new instance will be created. If an instance had already
+            been created, that same instance will be returned.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type TService has not
+            been registered before calling this method.</exception>
+            <typeparam name="TService">The class of which an instance
+            must be returned.</typeparam>
+            <returns>An instance of the given type.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstanceWithoutCaching``1">
+            <summary>
+            Provides a way to get an instance of a given type. This method
+            always returns a new instance and doesn't cache it in the IOC container.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type TService has not
+            been registered before calling this method.</exception>
+            <typeparam name="TService">The class of which an instance
+            must be returned.</typeparam>
+            <returns>An instance of the given type.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstance``1(System.String)">
+            <summary>
+            Provides a way to get an instance of a given type corresponding
+            to a given key. If no instance had been instantiated with this
+            key before, a new instance will be created. If an instance had already
+            been created with the same key, that same instance will be returned.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type TService has not
+            been registered before calling this method.</exception>
+            <typeparam name="TService">The class of which an instance must be returned.</typeparam>
+            <param name="key">The key uniquely identifying this instance.</param>
+            <returns>An instance corresponding to the given type and key.</returns>
+        </member>
+        <member name="M:GalaSoft.MvvmLight.Ioc.SimpleIoc.GetInstanceWithoutCaching``1(System.String)">
+            <summary>
+            Provides a way to get an instance of a given type. This method
+            always returns a new instance and doesn't cache it in the IOC container.
+            </summary>
+            <exception cref="T:CommonServiceLocator.ActivationException">If the type TService has not
+            been registered before calling this method.</exception>
+            <typeparam name="TService">The class of which an instance must be returned.</typeparam>
+            <param name="key">The key uniquely identifying this instance.</param>
+            <returns>An instance corresponding to the given type and key.</returns>
+        </member>
+    </members>
+</doc>
