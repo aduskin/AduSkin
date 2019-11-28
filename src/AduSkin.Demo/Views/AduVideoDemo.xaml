@@ -24,6 +24,6 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <AduPlayer:VideoPlayer x:Name="videoPlayer"/>
+        <AduPlayer:VideoPlayer x:Name="videoPlayer" MinHeight="200"/>
     </Grid>
 </Adu:AduWindow>

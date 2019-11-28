@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
-                    xmlns:convers="clr-namespace:AduSkin.Demo.Controls.Converter">
+                    xmlns:convers="clr-namespace:AduSkin.Demo.Converter">
     
     <HierarchicalDataTemplate x:Key="ItemNode" ItemsSource="{Binding Children,Mode=TwoWay}">
         <Grid  Background="Transparent">

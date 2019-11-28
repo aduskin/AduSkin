@@ -2,6 +2,8 @@
 using AduSkin.Controls.Metro;
 using AduSkin.Controls.Metro.AduNotice;
 using AduSkin.Demo.Models;
+using AduSkin.Demo.UserControls;
+using AduSkin.Demo.ViewModel;
 using AduSkin.Demo.Views;
 using AduSkin.Utility.Media;
 using System;
@@ -10,6 +12,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Threading;
 
 namespace AduSkin.Demo
@@ -107,25 +110,7 @@ namespace AduSkin.Demo
          };
 
          #region 折叠容器
-         foreach (FrameworkElement fe in lists.Children)
-         {
-            if (fe is MetroExpander)
-            {
-               (fe as MetroExpander).Click += delegate (object sender, EventArgs e)
-               {
-                  if ((fe as MetroExpander).CanHide)
-                  {
-                     foreach (FrameworkElement fe1 in lists.Children)
-                     {
-                        if (fe1 is MetroExpander && fe1 != sender)
-                        {
-                           (fe1 as MetroExpander).IsExpanded = false;
-                        }
-                     }
-                  }
-               };
-            }
-         }
+         
          #endregion
 
          #region 日期控件
@@ -147,15 +132,6 @@ namespace AduSkin.Demo
          }
          this.Carousels.ItemsSource = list;
          #endregion
-         /*
-         // Chrome 浏览器封装
-         ChromeBrowser chrome = new ChromeBrowser();
-         chromeGrid.Children.Add(chrome);
-         chromeText.Text = chrome.Address;
-         chromeText.ButtonClick += delegate { chrome.Load(chromeText.Text); };
-         chromeText.KeyUp += delegate (object sender, KeyEventArgs e) { if (e.Key == Key.Enter) { chrome.Load(chromeText.Text); } };
-         chrome.Load("http://ie.icoa.cn/");
-         */
 
          #region TreeView
          ObservableCollection<CompanyModel> TreeList = new ObservableCollection<CompanyModel>()
@@ -317,7 +293,15 @@ namespace AduSkin.Demo
          });
       }
 
-      
+
       #endregion
+
+      private void UIElement_OnMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+      {
+         var sample = (ControlModel)((Border)sender).DataContext;
+         var hvm = (MainViewModel)DataContext;
+         hvm.Content = (UserControl)Activator.CreateInstance(sample.Content);
+         hvm.Title = sample.Title;
+      }
    }
 }

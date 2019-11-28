@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="AduSkin.Demo.UserControls.VideoPlayer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AduSkin.Demo.UserControls"
+             mc:Ignorable="d" 
+             xmlns:AduPlayer="clr-namespace:AduVideoPlayer.Controls;assembly=AduVideoPlayer"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AduVideoPlayer;component/Controls/AduVideoPlayer.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <AduPlayer:VideoPlayer x:Name="videoPlayer"/>
+    </Grid>
+</UserControl>

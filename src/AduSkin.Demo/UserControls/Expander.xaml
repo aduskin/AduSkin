@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="AduSkin.Demo.UserControls.Expander"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AduSkin.Demo.UserControls"
+             xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
+            <Border BorderBrush="#19000000" BorderThickness="1,1,1,0">
+                <StackPanel x:Name="lists">
+                    <Metro:MetroExpander
+                                    Header="Button"
+                                    Hint="提示"
+                                    Icon="../Resources/tabIcon.png" />
+                    <Metro:MetroExpander Header="Button" Hint="1 / 100" />
+                    <Metro:MetroExpander
+                                    Header="Header"
+                                    Hint="可以修改"
+                                    HintBackground="#FFF34D64">
+                        <StackPanel>
+                            <Metro:MetroExpander Header="Button" Icon="../Resources/tabIcon.png" />
+                            <Metro:MetroExpander Header="Button" Icon="../Resources/tabIcon.png" />
+                            <Metro:MetroExpander Header="Button" Icon="../Resources/tabIcon.png" />
+                            <Metro:MetroExpander Header="Button" />
+                            <Metro:MetroExpander Header="Button" />
+                        </StackPanel>
+                    </Metro:MetroExpander>
+                    <Metro:MetroExpander Header="Header" IsExpanded="True">
+                        <StackPanel>
+                            <Metro:MetroExpander
+                                            Header="子内容长标题测试"
+                                            Hint="1 / 100"
+                                            Icon="../Resources/tabIcon.png" />
+                            <Metro:MetroExpander Header="Button" />
+                            <Metro:MetroExpander Header="Button" />
+                            <Metro:MetroExpander Header="Button" />
+                        </StackPanel>
+                    </Metro:MetroExpander>
+                    <Metro:MetroExpander Header="Button" />
+                    <Metro:MetroExpander Header="Button" />
+                </StackPanel>
+            </Border>
+        </Metro:MetroScrollViewer>
+    </Grid>
+</UserControl>

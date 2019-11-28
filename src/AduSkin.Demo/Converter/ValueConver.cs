@@ -9,7 +9,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace AduSkin.Demo.Controls.Converter
+namespace AduSkin.Demo.Converter
 {
     public class IndentConverter : IValueConverter
     {

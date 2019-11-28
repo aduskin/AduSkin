@@ -97,19 +97,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\ControlToken.cs" />
     <Compile Include="Models\Carousel.cs" />
     <Compile Include="Models\ChatUserModel.cs" />
     <Compile Include="Models\CompanyModel.cs" />
+    <Compile Include="Models\ControlModel.cs" />
     <Compile Include="Models\DemoModel.cs" />
     <Compile Include="Models\NoticeInfo.cs" />
+    <Compile Include="UserControls\Expander.xaml.cs">
+      <DependentUpon>Expander.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel.xaml.cs">
+      <DependentUpon>NavigationPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SortGroup.xaml.cs">
       <DependentUpon>SortGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UploadPic.xaml.cs">
       <DependentUpon>UploadPic.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="UserControls\VideoPlayer.xaml.cs">
+      <DependentUpon>VideoPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SortGroupViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\AduSkinDemo.xaml.cs">
       <DependentUpon>AduSkinDemo.xaml</DependentUpon>
     </Compile>
@@ -124,7 +136,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Converter\ValueConver.cs" />
+    <Compile Include="Converter\ValueConver.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -137,6 +149,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Style\ShowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Expander.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NavigationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\SortGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +168,10 @@
     <Page Include="UserControls\UploadPic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\VideoPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AduSkinDemo.xaml">
       <SubType>Designer</SubType>
@@ -208,7 +236,9 @@
     <Resource Include="logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\" />
     <Folder Include="Data\Enum\" />
+    <Folder Include="Tool\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Img\Header\头像2.png" />

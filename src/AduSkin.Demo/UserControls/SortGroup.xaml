@@ -33,7 +33,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Border Background="#F5F6FA" Visibility="{Binding IsOpenSortList,Converter={StaticResource BoolToVisibility}}">
+        <Border Background="#F5F6FA" Visibility="{Binding IsOpenSortList,Converter={StaticResource BoolToVisibility}}" Width="Auto">
             <ItemsControl
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"

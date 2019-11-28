@@ -18,7 +18,8 @@
     d:DesignWidth="1600"
     BorderThickness="0"
     WindowStyle="None"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator},Path=Main}">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -824,49 +825,50 @@
                     </Metro:AduTabItem>
                 </Metro:AduTabControl>
             </Metro:MetroMenuTabItem>
-            <Metro:MetroMenuTabItem Header="菜单" Icon="{StaticResource Icon_Fold}" IconHeight="20" IconWidth="20">
-                <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
-                    <Border BorderBrush="#19000000" BorderThickness="0,0,1,0">
-                        <StackPanel x:Name="lists">
-                            <Metro:MetroExpander
-                                    Header="Button"
-                                    Hint="提示"
-                                    Icon="Resources/tabIcon.png" />
-                            <Metro:MetroExpander Header="Button" Hint="1 / 100" />
-                            <Metro:MetroExpander
-                                    Header="Header"
-                                    Hint="可以修改"
-                                    HintBackground="#FFF34D64">
-                                <StackPanel>
-                                    <Metro:MetroExpander Header="Button" Icon="Resources/tabIcon.png" />
-                                    <Metro:MetroExpander Header="Button" Icon="Resources/tabIcon.png" />
-                                    <Metro:MetroExpander Header="Button" Icon="Resources/tabIcon.png" />
-                                    <Metro:MetroExpander Header="Button" />
-                                    <Metro:MetroExpander Header="Button" />
-                                </StackPanel>
-                            </Metro:MetroExpander>
-                            <Metro:MetroExpander Header="Header" IsExpanded="True">
-                                <StackPanel>
-                                    <Metro:MetroExpander
-                                            Header="子内容长标题测试"
-                                            Hint="1 / 100"
-                                            Icon="Resources/tabIcon.png" />
-                                    <Metro:MetroExpander Header="Button" />
-                                    <Metro:MetroExpander Header="Button" />
-                                    <Metro:MetroExpander Header="Button" />
-                                </StackPanel>
-                            </Metro:MetroExpander>
-                            <Metro:MetroExpander Header="Button" />
-                            <Metro:MetroExpander Header="Button" />
-                        </StackPanel>
-                    </Border>
-                </Metro:MetroScrollViewer>
-            </Metro:MetroMenuTabItem>
             <Metro:MetroMenuTabItem Header="更多案例" Icon="{StaticResource Icon_Desgin}" >
-                <Grid Background="{StaticResource MainContentForegroundDrawingBrush}">
-                    <Border HorizontalAlignment="Center" VerticalAlignment="Center" Padding="40" Background="#FFF" CornerRadius="6" Effect="{StaticResource CardShadow}">
-                        <UserControls:SortGroup VerticalAlignment="Center" HorizontalAlignment="Center" Width="300"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border Background="#FFF" BorderThickness="0,0,1,0" BorderBrush="#10000000">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border  Background="#05000000">
+                                <TextBlock Foreground="#999" Style="{StaticResource H5}"  Padding="0,20,0,0" HorizontalAlignment="Center">搜索你要找的控件</TextBlock>
+                            </Border>
+                            <Border  Background="#05000000" Grid.Row="1">
+                                <Metro:MetroTextBox Background="#80ffffff" BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center" CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="{StaticResource icon_hover_color}"  InputHint="Search you need control..." />
+                            </Border>
+                            <Metro:MetroScrollViewer Grid.Row="2" >
+                                <ItemsControl ItemsSource="{Binding SearchControl}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border MouseDown="UIElement_OnMouseDown" Style="{StaticResource MenuItem}" >
+                                                <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource H5}" FontSize="12" HorizontalAlignment="Left" Text="{Binding Title}"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Metro:MetroScrollViewer>
+                        </Grid>
                     </Border>
+                    <Grid Background="{StaticResource MainContentForegroundDrawingBrush}" Grid.Column="1">
+                        <Border HorizontalAlignment="Center" VerticalAlignment="Center" Padding="40,0,40,40" Margin="20" MinWidth="400" Background="#FFF" CornerRadius="6" Effect="{StaticResource CardShadow}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="{Binding Title}" Style="{StaticResource H5}" VerticalAlignment="Center" Margin="20,0"/>
+                                <ContentPresenter Grid.Row="1" Content="{Binding Content}" MinHeight="200"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
                 </Grid>
             </Metro:MetroMenuTabItem>
             <Metro:MetroMenuTabItem Header="轮播" Icon="{StaticResource Icon_Carousel}">
@@ -966,31 +968,6 @@
                         </TimeLine:AduTimeline.SlotTemplate>
                     </TimeLine:AduTimeline>
                 </Border>
-            </Metro:MetroMenuTabItem>
-            <Metro:MetroMenuTabItem Header="导航容器" Icon="{StaticResource Icon_Menu}">
-                <Metro:AduNavigationPanel x:Name="navigationPanel" Grid.Row="1" 
-                                IndicatorMargin="0" IndicatorHorizontalAlignment="Center" 
-                                IndicatorSelectedIndex="0" IndicatorPlacement="Left">
-                    <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel >
-                            <Metro:AduGroupBoxNor Header="常规设置" HeaderBackground="Transparent" BorderThickness="0" Height="600" FontSize="14" HeaderPadding="10,6">
-                                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="常规设置" />
-                            </Metro:AduGroupBoxNor>
-                            <Metro:AduGroupBoxNor Header="歌词面板" HeaderBackground="Transparent" BorderThickness="0" FontSize="14" Height="500" HeaderPadding="10,6">
-                                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="歌词面板" />
-                            </Metro:AduGroupBoxNor>
-                            <Metro:AduGroupBoxNor Header="下载与缓存" HeaderBackground="Transparent" BorderThickness="0" FontSize="14" Height="500" HeaderPadding="10,6">
-                                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="下载与缓存" />
-                            </Metro:AduGroupBoxNor>
-                            <Metro:AduGroupBoxNor Header="桌面歌词" HeaderBackground="Transparent" BorderThickness="0" FontSize="14" Height="600" HeaderPadding="10,6">
-                                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="桌面歌词" />
-                            </Metro:AduGroupBoxNor>
-                            <Metro:AduGroupBoxNor Header="快捷键" HeaderBackground="Transparent" BorderThickness="0" FontSize="14" Height="600">
-                                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="快捷键" />
-                            </Metro:AduGroupBoxNor>
-                        </StackPanel>
-                    </Metro:MetroScrollViewer>
-                </Metro:AduNavigationPanel>
             </Metro:MetroMenuTabItem>
             <Metro:MetroMenuTabItem Header="瀑布流控件" Icon="{StaticResource Icon_Waterfall}">
                 <Grid>
@@ -1225,7 +1202,7 @@
             <Metro:MetroMenuTabItem Header="关于AduSkin" Icon="{StaticResource Icon_Logo}" IconHeight="22" IconWidth="22">
                 <Border Background="#FFF">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock HorizontalAlignment="Center" >
+                        <TextBlock HorizontalAlignment="Center" >
                         <Hyperlink Name="aduskincom" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"
                                     FontSize="14" Foreground="#ffffff" TextDecorations="{x:Null}" ToolTip="点击进入源码库">
                             <StackPanel Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0,20">
@@ -1237,24 +1214,24 @@
                             </StackPanel>
                         </Hyperlink>
                     </TextBlock>
-                    <StackPanel Margin="0,10">
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="本UI框架起源于 Arthas WPFUI，融合部分开源框架的组件，为个人定制的UI，仅供学者参考" />
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="Nuget 使用敬请期待" Margin="10"/>
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="具体使用请参考 AduSkin.Demo" Margin="0"/>
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="技术交流" Margin="10"/>
-                        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                            <Metro:HCShield Subject="QQ群" Status="544471417" Color="#25B78A" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb"/>
-                            <Metro:HCShield Subject="QQ" Status="1280429435" Color="#25B78A" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes"/>
+                        <StackPanel Margin="0,10">
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="本UI框架起源于 Arthas WPFUI，融合部分开源框架的组件，为个人定制的UI，仅供学者参考" />
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="Nuget 使用敬请期待" Margin="10"/>
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="具体使用请参考 AduSkin.Demo" Margin="0"/>
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="技术交流" Margin="10"/>
+                            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                                <Metro:HCShield Subject="QQ群" Status="544471417" Color="#25B78A" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb"/>
+                                <Metro:HCShield Subject="QQ" Status="1280429435" Color="#25B78A" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes"/>
+                            </StackPanel>
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="感谢开源框架 " Margin="0,10" />
+                            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                                <Metro:HCShield Subject="WPF" Status="Arthas" Color="#6C819E" Margin="10,0"/>
+                                <Metro:HCShield Subject="WPF" Status="WPF.UI" Color="#3399FF" Margin="10,0"/>
+                                <Metro:HCShield Subject="WPF" Status="HandyControl" Color="#F06632" Margin="10,0"/>
+                            </StackPanel>
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#009BDB" FontSize="20" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
                         </StackPanel>
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="感谢开源框架 " Margin="0,10" />
-                        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                            <Metro:HCShield Subject="WPF" Status="Arthas" Color="#6C819E" Margin="10,0"/>
-                            <Metro:HCShield Subject="WPF" Status="WPF.UI" Color="#3399FF" Margin="10,0"/>
-                            <Metro:HCShield Subject="WPF" Status="HandyControl" Color="#F06632" Margin="10,0"/>
-                        </StackPanel>
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#009BDB" FontSize="20" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
                     </StackPanel>
-                </StackPanel>
                 </Border>
             </Metro:MetroMenuTabItem>
         </Metro:MetroMenuTabControl>
