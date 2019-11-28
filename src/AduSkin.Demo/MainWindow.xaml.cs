@@ -119,99 +119,11 @@ namespace AduSkin.Demo
          Date4.SelectedDateEnd = Date5.SelectedDateEnd = Date6.SelectedDateEnd = DateTime.Now.AddDays(10);
          #endregion
 
-         #region 轮播
-         ObservableCollection<Carousel> list = new ObservableCollection<Carousel>();
-         for (int i = 0; i < 5; i++)
-         {
-            list.Add(new Carousel()
-            {
-               imgpath = "Resources/pic.jpg",
-               name = "AduSkin",
-               info = "追求极致，永臻完美"
-            });
-         }
-         this.Carousels.ItemsSource = list;
-         #endregion
+         
 
-         #region TreeView
-         ObservableCollection<CompanyModel> TreeList = new ObservableCollection<CompanyModel>()
-         {
-                new CompanyModel()
-                {
-                    IsGrouping=true,
-                    DisplayName="公司(3/7)",
-                    Children=new ObservableCollection<CompanyModel>()
-                    {
-                        new CompanyModel(){
-                            IsGrouping=true,
-                            DisplayName="部门(2/4)",
-                            Children=new ObservableCollection<CompanyModel>()
-                            {
-                                new CompanyModel(){
-                                    IsGrouping=false,
-                                    SurName="A",
-                                    Name="AduSkin",
-                                    Info="追求极致，臻于完美！",
-                                    State="在线"
-                                },
-                                new CompanyModel(){
-                                    IsGrouping=false,
-                                    SurName="A",
-                                    Name="AduSkin",
-                                    Info="我要走向天空！",
-                                    State="在线"
-                                },
-                                new CompanyModel(){
-                                    IsGrouping=false,
-                                    SurName="A",
-                                    Name="AduSkin",
-                                    Info="我要走向天空！",
-                                    State="在线"
-                                }
-                            }
-                        },
-                         new CompanyModel(){
-                            IsGrouping=true,
-                            DisplayName="部门(2/4)",
-                            Children=new ObservableCollection<CompanyModel>()
-                            {
-                                new CompanyModel(){
-                                    IsGrouping=false,
-                                    SurName="A",
-                                    Name="AduSkin",
-                                    Info="我要走向天空！",
-                                    State="在线"
-                                }
-                            }
-                        }, new CompanyModel(){
-                            IsGrouping=true,
-                            DisplayName="部门(2/4)",
-                            Children=new ObservableCollection<CompanyModel>()
-                            {
-                                new CompanyModel(){
-                                    IsGrouping=false,
-                                    SurName="A",
-                                    Name="AduSkin",
-                                    Info="我要走向天空！",
-                                    State="在线"
-                                }
-                            }
-                        }
-                    }
-                }
+         
 
-            };
-         TreeViewCompany.ItemsSource = TreeList;
-         #endregion
-
-         #region 时间轴
-         ObservableCollection<Tuple<int, string, string>> listTimeLine = new ObservableCollection<Tuple<int, string, string>>();
-         for (int i = 0; i < 5; i++)
-         {
-            listTimeLine.Add(new Tuple<int, string, string>(i, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), "哈哈哈哈"));
-         }
-         AduTimeLine.ItemsSource = listTimeLine;
-         #endregion
+         
       }
 
       #region Demo

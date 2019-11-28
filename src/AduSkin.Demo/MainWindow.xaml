@@ -5,10 +5,8 @@
     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
     xmlns:AduDatePicker="clr-namespace:AduSkin.Controls.Metro.AduDatePickers;assembly=AduSkin"
     xmlns:UserControls="clr-namespace:AduSkin.Demo.UserControls"
-    xmlns:AduCarousel="clr-namespace:AduSkin.Controls.Metro.Carousel;assembly=AduSkin"
     xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
     xmlns:AduRating="clr-namespace:AduSkin.Controls.Metro.RatingBar;assembly=AduSkin"
-    xmlns:TimeLine="clr-namespace:AduSkin.Controls.Metro.AduTimeLine;assembly=AduSkin"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="AduSkin.Demo"
@@ -749,18 +747,6 @@
                                             </Grid>
                                         </Metro:MetroGroupBox>
                                     </Grid>
-                                    <Grid Height="250">
-                                        <Metro:MetroGroupBox Header="图片选择">
-                                            <UserControls:UploadPic HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        </Metro:MetroGroupBox>
-                                    </Grid>
-                                    <Grid>
-                                        <Metro:MetroGroupBox Header="树形框">
-                                            <Grid Height="200">
-                                                <TreeView x:Name="TreeViewCompany" BorderThickness="0" Background="Transparent"/>
-                                            </Grid>
-                                        </Metro:MetroGroupBox>
-                                    </Grid>
                                     <Grid>
                                         <Metro:MetroGroupBox Header="右侧弹框">
                                             <StackPanel>
@@ -825,24 +811,24 @@
                     </Metro:AduTabItem>
                 </Metro:AduTabControl>
             </Metro:MetroMenuTabItem>
-            <Metro:MetroMenuTabItem Header="更多案例" Icon="{StaticResource Icon_Desgin}" >
+            <Metro:MetroMenuTabItem Header="更多案例" Icon="{StaticResource Icon_Desgin}" IconWidth="24" IconHeight="20">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="250"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Border Background="#FFF" BorderThickness="0,0,1,0" BorderBrush="#10000000">
+                    <Border Background="#FFF" BorderThickness="0,0,1,0" BorderBrush="{StaticResource DefaultBorderBrush}">
                         <Grid >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Border  Background="#05000000">
+                            <Border  Background="#08000000">
                                 <TextBlock Foreground="#999" Style="{StaticResource H5}"  Padding="0,20,0,0" HorizontalAlignment="Center">搜索你要找的控件</TextBlock>
                             </Border>
-                            <Border  Background="#05000000" Grid.Row="1">
-                                <Metro:MetroTextBox Background="#80ffffff" BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center" CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="{StaticResource icon_hover_color}"  InputHint="Search you need control..." />
+                            <Border  Background="#08000000" Grid.Row="1">
+                                <Metro:MetroTextBox Background="#90ffffff" BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center" CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="{StaticResource icon_hover_color}"  InputHint="Search you need control..." />
                             </Border>
                             <Metro:MetroScrollViewer Grid.Row="2" >
                                 <ItemsControl ItemsSource="{Binding SearchControl}">
@@ -870,104 +856,6 @@
                         </Border>
                     </Grid>
                 </Grid>
-            </Metro:MetroMenuTabItem>
-            <Metro:MetroMenuTabItem Header="轮播" Icon="{StaticResource Icon_Carousel}">
-                <Grid Background="{StaticResource MainContentForegroundDrawingBrush}">
-                    <AduCarousel:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Height="350" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <AduCarousel:Carousel.ItemTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding imgpath}" Stretch="UniformToFill" >
-                                        <Image.RenderTransform>
-                                            <TransformGroup>
-                                                <ScaleTransform ScaleX="1" ScaleY="1" />
-                                            </TransformGroup>
-                                        </Image.RenderTransform>
-                                    </Image>
-                                    <Metro:AduButtonIcon
-                                        x:Name="PlayBtn"
-                                        Background="Transparent"
-                                        Margin="10,50" Width="60"
-                                        HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.PlayRecommendClick}"
-                                        CommandParameter="{Binding}"
-                                        Foreground="#fff"
-                                        Icon="{StaticResource Icon_Desgin}"
-                                        IconHeight="16"
-                                        IconWidth="25"
-                                        Visibility="Hidden" />
-                                    <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
-                                        <TextBlock Text="{Binding name}" Background="#50000000" Padding="6,0" Foreground="#FFF" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
-                                        <TextBlock Text="{Binding info}" Background="#50000000" Padding="6,2" Foreground="#FFF" FontSize="14" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
-                                    </StackPanel>
-                                </Grid>
-                                <DataTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="PlayBtn" Property="Visibility" Value="Visible" />
-                                    </Trigger>
-                                    <!-- 鼠标进入事件 -->
-                                    <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
-                                                <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                    <!-- 鼠标离开事件 -->
-                                    <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" AutoReverse="False" />
-                                                <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" AutoReverse="False" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                </DataTemplate.Triggers>
-                            </DataTemplate>
-                        </AduCarousel:Carousel.ItemTemplate>
-                    </AduCarousel:Carousel>
-                </Grid>
-            </Metro:MetroMenuTabItem>
-            <Metro:MetroMenuTabItem Header="时间轴" Icon="{StaticResource Icon_TimeLine}">
-                <Border  Background="#fff">
-                    <TimeLine:AduTimeline IsCustomEverySlot="True" VerticalAlignment="Center" x:Name="AduTimeLine" HorizontalAlignment="Center">
-                        <TimeLine:AduTimeline.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock x:Name="timePart" Text="{Binding Item2}" Foreground="Black" />
-                                    <TextBlock Text="{Binding Item3}" Margin="0,10,0,30" />
-                                </StackPanel>
-                                <DataTemplate.Triggers>
-                                    <DataTrigger Binding="{Binding Path=IsFirstItem, RelativeSource={RelativeSource AncestorType={x:Type TimeLine:AduTimelineItem}}}" Value="True">
-                                        <Setter TargetName="timePart" Property="Foreground" Value="Red" />
-                                    </DataTrigger>
-                                </DataTemplate.Triggers>
-                            </DataTemplate>
-                        </TimeLine:AduTimeline.ItemTemplate>
-                        <TimeLine:AduTimeline.SlotTemplate>
-                            <DataTemplate>
-                                <Border x:Name="border" Width="15" Height="15" CornerRadius="100" 
-                                BorderBrush="Blue" BorderThickness="1" 
-                                SnapsToDevicePixels="True" UseLayoutRounding="True" />
-                                <DataTemplate.Triggers>
-                                    <DataTrigger Binding="{Binding Item1}" Value="1">
-                                        <Setter TargetName="border" Property="BorderBrush" Value="#09CD6B" />
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Item1}" Value="2">
-                                        <Setter TargetName="border" Property="BorderBrush" Value="#FD4416" />
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Item1}" Value="3">
-                                        <Setter TargetName="border" Property="BorderBrush" Value="#46A2FF" />
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Item1}" Value="4">
-                                        <Setter TargetName="border" Property="BorderBrush" Value="#06CD6A" />
-                                    </DataTrigger>
-                                </DataTemplate.Triggers>
-                            </DataTemplate>
-                        </TimeLine:AduTimeline.SlotTemplate>
-                    </TimeLine:AduTimeline>
-                </Border>
             </Metro:MetroMenuTabItem>
             <Metro:MetroMenuTabItem Header="瀑布流控件" Icon="{StaticResource Icon_Waterfall}">
                 <Grid>

@@ -7,6 +7,7 @@
 
     <Style TargetType="{x:Type Metro:MetroGroupBox}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="#16000000"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Padding" Value="10"/>
         <Setter Property="Template">
@@ -17,7 +18,7 @@
                             <RowDefinition Height="16"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Border Grid.RowSpan="2" Margin="0,8,0,0" BorderBrush="#FF000000" BorderThickness="1" CornerRadius="0" Opacity="0.1"/>
+                        <Border Grid.RowSpan="2" Margin="0,8,0,0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="2"/>
                         <Grid Margin="15,0,0,0" HorizontalAlignment="Left">
                             <Rectangle Fill="#FFF3F3F3" Height="1" Margin="-5,0"/>
                             <Metro:MetroTextBlock Text="{TemplateBinding Header}" Opacity="0.65"/>

@@ -19,9 +19,9 @@ namespace AduSkin.Demo.UserControls
    /// <summary>
    /// Expander.xaml 的交互逻辑
    /// </summary>
-   public partial class Expander : UserControl
+   public partial class ExpanderMenu : UserControl
    {
-      public Expander()
+      public ExpanderMenu()
       {
          InitializeComponent();
 

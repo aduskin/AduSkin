@@ -19,7 +19,7 @@
         <Setter Property="CornerRadius" Value="0" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="BorderThickness" Value="0,0,1,0" />
-        <Setter Property="BorderBrush" Value="#D7DDE4" />
+        <Setter Property="BorderBrush" Value="#10000000" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="ItemsPanel">
             <Setter.Value>
@@ -79,6 +79,7 @@
                             </MultiTrigger.Conditions>
                             <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
                             <Setter TargetName="markline" Property="Background" Value="{StaticResource Item.SelectedActive.foreground}" />
+                            <Setter Property="Foreground" Value="{StaticResource Item.SelectedActive.foreground}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
