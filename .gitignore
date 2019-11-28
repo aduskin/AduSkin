@@ -4,3 +4,9 @@
 
 /.vs
 /src/.vs/AduSkin
+/src/AduSkin/bin
+/src/AduSkin/obj
+/src/AduSkin.Demo/bin
+/src/AduSkin.Demo/obj
+/src/AduVideoPlayer/bin
+/src/AduVideoPlayer/obj
