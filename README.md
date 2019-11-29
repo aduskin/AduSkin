@@ -3,7 +3,7 @@
 
 本UI框架起源于 Arthas WPFUI，融合部分开源框架的组件，为个人定制的UI，仅供学者参考。
 
-Nuget 使用敬请期待
+Nuget 搜索"AduSkin" 可直接导包使用
 
 具体使用请参考 AduSkin.Demo
 
