@@ -12,7 +12,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace AduSkin.Controls.Metro.AduDatePickers
+namespace AduSkin.Controls.Metro
 {
     /// <summary>
     /// 日期选择控件

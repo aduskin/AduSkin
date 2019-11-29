@@ -4,12 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
-             xmlns:AduCarousel="clr-namespace:AduSkin.Controls.Metro.Carousel;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <AduCarousel:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Height="350" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <AduCarousel:Carousel.ItemTemplate>
+        <Metro:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Height="350" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Metro:Carousel.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding imgpath}" Stretch="UniformToFill" >
@@ -60,7 +59,7 @@
                         </EventTrigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
-            </AduCarousel:Carousel.ItemTemplate>
-        </AduCarousel:Carousel>
+            </Metro:Carousel.ItemTemplate>
+        </Metro:Carousel>
     </Grid>
 </UserControl>

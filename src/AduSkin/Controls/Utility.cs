@@ -1,7 +1,4 @@
 ﻿using AduSkin.Controls.Metro;
-using AduSkin.Controls.Metro.AduDatePickers;
-using AduSkin.Controls.Metro.RatingBar;
-using AduSkin.Controls.Metro.SegmentControls;
 using AduSkin.Utility.Media;
 using System.ComponentModel;
 using System.Windows;

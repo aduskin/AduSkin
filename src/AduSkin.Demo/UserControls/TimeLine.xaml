@@ -3,25 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:TimeLine="clr-namespace:AduSkin.Controls.Metro.AduTimeLine;assembly=AduSkin"
+             xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TimeLine:AduTimeline IsCustomEverySlot="True" VerticalAlignment="Center" x:Name="AduTimeLine" HorizontalAlignment="Center">
-            <TimeLine:AduTimeline.ItemTemplate>
+        <Metro:AduTimeline IsCustomEverySlot="True" VerticalAlignment="Center" x:Name="AduTimeLine" HorizontalAlignment="Center">
+            <Metro:AduTimeline.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock x:Name="timePart" Text="{Binding Item2}" Foreground="Black" />
                         <TextBlock Text="{Binding Item3}" Margin="0,10,0,30" />
                     </StackPanel>
                     <DataTemplate.Triggers>
-                        <DataTrigger Binding="{Binding Path=IsFirstItem, RelativeSource={RelativeSource AncestorType={x:Type TimeLine:AduTimelineItem}}}" Value="True">
+                        <DataTrigger Binding="{Binding Path=IsFirstItem, RelativeSource={RelativeSource AncestorType={x:Type Metro:AduTimelineItem}}}" Value="True">
                             <Setter TargetName="timePart" Property="Foreground" Value="Red" />
                         </DataTrigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
-            </TimeLine:AduTimeline.ItemTemplate>
-            <TimeLine:AduTimeline.SlotTemplate>
+            </Metro:AduTimeline.ItemTemplate>
+            <Metro:AduTimeline.SlotTemplate>
                 <DataTemplate>
                     <Border x:Name="border" Width="15" Height="15" CornerRadius="100" 
                                 BorderBrush="Blue" BorderThickness="1" 
@@ -41,7 +41,7 @@
                         </DataTrigger>
                     </DataTemplate.Triggers>
                 </DataTemplate>
-            </TimeLine:AduTimeline.SlotTemplate>
-        </TimeLine:AduTimeline>
+            </Metro:AduTimeline.SlotTemplate>
+        </Metro:AduTimeline>
     </Grid>
 </UserControl>

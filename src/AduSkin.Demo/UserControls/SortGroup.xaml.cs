@@ -1,5 +1,5 @@
 ﻿using AduSkin.Demo.Models;
-using AduSkin.Demo.ViewModel;
+using AduSkin.Demo.ViewModel.DemoViewModel;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;

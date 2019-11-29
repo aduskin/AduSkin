@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-                    xmlns:AduPicker="clr-namespace:AduSkin.Controls.Metro.AduDatePickers">
+                    xmlns:AduPicker="clr-namespace:AduSkin.Controls.Metro">
     <Style TargetType="{x:Type AduPicker:AduCalendarButton}">
         <Setter Property="Background" Value="#3399FF" />
         <Setter Property="FontSize" Value="{StaticResource CalendarButton.FontSize}" />

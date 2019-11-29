@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace AduSkin.Controls.Metro.AduDatePickers
+namespace AduSkin.Controls.Metro
 {
     public class AduTimeButton : ListBoxItem
     {

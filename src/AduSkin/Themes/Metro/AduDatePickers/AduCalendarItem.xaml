@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:AduPicker="clr-namespace:AduSkin.Controls.Metro.AduDatePickers"
+                    xmlns:AduPicker="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
 
     <PathGeometry x:Key="Left" Figures="M352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256" />

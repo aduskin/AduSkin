@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace AduSkin.Controls.Metro.AduDatePickers
+namespace AduSkin.Controls.Metro
 {
     [TemplatePart(Name = "PART_MonthView", Type = typeof(Grid))]
     [TemplatePart(Name = "PART_YearView", Type = typeof(Grid))]

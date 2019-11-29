@@ -10,7 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Text.RegularExpressions;
 
-namespace AduSkin.Controls.Metro.RatingBar
+namespace AduSkin.Controls.Metro
 {
    /// <summary>
    /// 星级评价控件

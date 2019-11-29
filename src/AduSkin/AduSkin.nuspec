@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.1.1.1</version>
+    <version>1.1.1.2</version>
     <title>AduSkin</title>
     <authors>Adu</authors>
     <owners>Adu</owners>
@@ -11,8 +11,8 @@
     <iconUrl>https://github.com/aduskin/AduSkin/blob/master/src/AduSkin/Resources/logo.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Welcome </description>
-    <releaseNotes>A Beautiful WPF UI</releaseNotes>
-    <copyright>@AduSkin Copyright 2019</copyright>
+    <releaseNotes>A Beautiful WPF Control UI</releaseNotes>
+    <copyright>Copyright @ 2019 AduSkin - WPFUI</copyright>
     <tags>WPF Controls</tags>
   </metadata>
 </package>

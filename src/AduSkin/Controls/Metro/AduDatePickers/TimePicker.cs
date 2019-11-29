@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace AduSkin.Controls.Metro.AduDatePickers
+namespace AduSkin.Controls.Metro
 {
     public class TimePicker : Control
     {

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="AduSkin.Demo.UserControls.DataGridDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel.DemoViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewmodel:DataGridDemoViewModel/>
+    </UserControl.DataContext>
+    <Grid >
+        <Metro:AduDataGrid IsReadOnly="True" Width="400" Grid.Row="1" HeadersVisibility="All" AutoGenerateColumns="False" ItemsSource="{Binding ContactList}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn CanUserResize="False" Header="Select">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Metro:AduCheckBox IsChecked="{Binding IsAllChecked}"></Metro:AduCheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Metro:AduCheckBox Margin="10,0,0,0" IsChecked="{Binding IsChecked}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn CanUserResize="False" Header="Header">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Header}" Width="32" Height="32" Stretch="Uniform"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Width="Auto" Binding="{Binding UserName}" Header="Name"/>
+                <DataGridTextColumn Width="1*" Binding="{Binding Describe}" Header="Remark"/>
+            </DataGrid.Columns>
+        </Metro:AduDataGrid>
+    </Grid>
+</UserControl>

@@ -15,5 +15,7 @@ namespace AduSkin.Demo.Models
       public string Describe { get; set; } = "追求极致，永臻完美";
 
       public ContactType ContactType { get; set; } = ContactType.Single;
+
+      public bool IsChecked { get; set; }
    }
 }

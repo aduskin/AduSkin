@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.ComponentModel;
 
-namespace AduSkin.Controls.Metro.AduTimeLine
+namespace AduSkin.Controls.Metro
 {
     /// <summary>
     /// 时间轴

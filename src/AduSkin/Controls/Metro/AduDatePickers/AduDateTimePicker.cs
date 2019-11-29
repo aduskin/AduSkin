@@ -6,7 +6,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Shapes;
 
-namespace AduSkin.Controls.Metro.AduDatePickers
+namespace AduSkin.Controls.Metro
 {
     /// <summary>
     /// 日期时间选择控件

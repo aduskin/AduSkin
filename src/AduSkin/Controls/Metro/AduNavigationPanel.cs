@@ -1,5 +1,4 @@
 ﻿using AduSkin.Controls.Helper;
-using AduSkin.Controls.Metro.SegmentControls;
 using System;
 using System.Collections;
 using System.Collections.Generic;

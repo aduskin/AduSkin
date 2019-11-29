@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:AduPicker="clr-namespace:AduSkin.Controls.Metro.AduDatePickers">
+                    xmlns:AduPicker="clr-namespace:AduSkin.Controls.Metro">
     <SolidColorBrush x:Key="Control.Static.Foreground" Color="#DCDCDE" />
     <SolidColorBrush x:Key="Control.Static.Background" Color="#2C2C3A" />
     <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#393947" />

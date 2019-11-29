@@ -5,7 +5,7 @@ using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace AduSkin.Controls.Metro.Carousel
+namespace AduSkin.Controls.Metro
 {
     [TemplatePart(Name = "PART_SlideSwitchPanel", Type = typeof(SlideSwitchPanel))]
     [TemplatePart(Name = "PART_IndexPanel", Type = typeof(StackPanel))]

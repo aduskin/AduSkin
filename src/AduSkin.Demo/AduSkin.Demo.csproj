@@ -107,6 +107,9 @@
     <Compile Include="UserControls\CarouselContainer.xaml.cs">
       <DependentUpon>CarouselContainer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DataGridDemo.xaml.cs">
+      <DependentUpon>DataGridDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ExpanderMenu.xaml.cs">
       <DependentUpon>ExpanderMenu.xaml</DependentUpon>
     </Compile>
@@ -128,8 +131,9 @@
     <Compile Include="UserControls\VideoPlayer.xaml.cs">
       <DependentUpon>VideoPlayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\DemoViewModel\DataGridDemoViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\SortGroupViewModel.cs" />
+    <Compile Include="ViewModel\DemoViewModel\SortGroupViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\AduSkinDemo.xaml.cs">
       <DependentUpon>AduSkinDemo.xaml</DependentUpon>
@@ -163,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CarouselContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DataGridDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

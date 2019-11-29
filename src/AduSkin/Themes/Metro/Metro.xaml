@@ -45,6 +45,7 @@
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduComboBox.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPasswordBox.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduUpload.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDataGrid.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduDatePicker.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduCalendar.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduCalendarItem.xaml" />

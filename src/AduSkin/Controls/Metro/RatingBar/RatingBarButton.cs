@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 
-namespace AduSkin.Controls.Metro.RatingBar
+namespace AduSkin.Controls.Metro
 {
     public class RatingBarButton : ButtonBase
     {

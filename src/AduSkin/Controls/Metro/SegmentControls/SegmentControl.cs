@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace AduSkin.Controls.Metro.SegmentControls
+namespace AduSkin.Controls.Metro
 {
     /// <summary>
     /// 分段按钮控件，类似IOS的SegmentControl

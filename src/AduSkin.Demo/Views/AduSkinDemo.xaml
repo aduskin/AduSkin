@@ -4,8 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AduSkin.Demo.Views"
-        xmlns:AduRating="clr-namespace:AduSkin.Controls.Metro.RatingBar;assembly=AduSkin"
-        xmlns:AduCarousel="clr-namespace:AduSkin.Controls.Metro.Carousel;assembly=AduSkin"
+        xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
         mc:Ignorable="d"
         BorderBrush="#FFF"
         BorderThickness="1"
@@ -42,8 +41,8 @@
         <Grid Grid.Row="1" Grid.Column="1">
             <Adu:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,20" >
                 <StackPanel>
-                    <AduCarousel:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
-                        <AduCarousel:Carousel.ItemTemplate>
+                    <Metro:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
+                        <Metro:Carousel.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding Cover}" Stretch="UniformToFill" >
@@ -95,8 +94,8 @@
                                     </EventTrigger>
                                 </DataTemplate.Triggers>
                             </DataTemplate>
-                        </AduCarousel:Carousel.ItemTemplate>
-                    </AduCarousel:Carousel>
+                        </Metro:Carousel.ItemTemplate>
+                    </Metro:Carousel>
                     <ItemsControl  x:Name="Demos" FocusVisualStyle="{x:Null}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -127,7 +126,7 @@
                                         <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Describe}" FontSize="14" TextWrapping="Wrap"/>
                                         <Grid Grid.Row="3" Grid.ColumnSpan="2">
                                             <TextBlock  x:Name="timePart" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding BlogDate}" FontSize="18" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}" />
-                                            <AduRating:RatingBar VerticalAlignment="Center" HorizontalAlignment="Right" Height="30" Value="5" SelectedColor="{StaticResource DefaultBrush}" />
+                                            <Metro:RatingBar VerticalAlignment="Center" HorizontalAlignment="Right" Height="30" Value="5" SelectedColor="{StaticResource DefaultBrush}" />
                                         </Grid>
                                     </Grid>
                                 </Border>

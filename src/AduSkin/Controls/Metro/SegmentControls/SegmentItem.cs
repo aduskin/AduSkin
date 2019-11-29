@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace AduSkin.Controls.Metro.SegmentControls
+namespace AduSkin.Controls.Metro
 {
     /// <summary>
     /// 分段控件的子项

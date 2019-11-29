@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace AduSkin.Controls.Metro.AduNotice
+namespace AduSkin.Controls.Metro
 {
     public class Notice : ItemsControl
     {
