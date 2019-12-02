@@ -24,6 +24,14 @@ HandyControl、Arthas、WPF.UI
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(3).png)
 
+AduSkin开发案例如下
+
+【AduChat】
+![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/project/aduchat.gif)
+
+【心理FM】
+【SuperEvil】
+【HttpTool】
 
 如果你觉得本框架还不错的话，可以赞助我防脱洗发水，Haha
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/other/zhifu.jpg)
