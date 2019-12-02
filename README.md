@@ -7,10 +7,13 @@ Nuget 搜索"AduSkin" 可直接导包使用
 
 具体使用请参考 AduSkin.Demo
 
+如有 WPF UI 外包 可联系我
+
 技术交流
 
-QQ群：544471417
-QQ：1280429435
+> QQ：1280429435
+
+> QQ群：544471417
 
 感谢开源框架
 
@@ -26,12 +29,15 @@ HandyControl、Arthas、WPF.UI
 
 AduSkin开发案例如下
 
-【AduChat】
+> 【AduChat】
+
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/project/aduchat.gif)
 
-【心理FM】
-【SuperEvil】
-【HttpTool】
+> 【心理FM】
+
+> 【SuperEvil】
+
+> 【HttpTool】
 
 如果你觉得本框架还不错的话，可以赞助我防脱洗发水，Haha
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/other/zhifu.jpg)
