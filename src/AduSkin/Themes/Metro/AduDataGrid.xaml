@@ -35,8 +35,8 @@
         <Setter Property="FontWeight" Value="SemiBold"></Setter>
         <Setter Property="FontSize" Value="14" />
         <Setter Property="BorderThickness" Value="0,0,0,3" />
-        <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource DefaultBackground}" />
+        <Setter Property="Background" Value="{StaticResource DefaultBackground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
@@ -100,8 +100,8 @@
         <Setter Property="Foreground" Value="#000" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="Background" Value="#00000000" />
-        <Setter Property="Margin" Value="0,4" />
+        <Setter Property="Background" Value="#FFF" />
+        <Setter Property="Margin" Value="0,2" />
         <Setter Property="Height" Value="60"></Setter>
         <Style.Triggers>
             <!--<Trigger Property="ItemsControl.AlternationIndex" Value="1">
@@ -215,7 +215,7 @@
     <!--表格DataGrid样式-->
     <Style TargetType="{x:Type Adu:AduDataGrid}">
         <Setter Property="MinRowHeight" Value="25" />
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="{StaticResource DefaultBackground}" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <!--<Setter Property="HorizontalGridLinesBrush" Value="{StaticResource GridLinesBrush}" />
@@ -227,6 +227,7 @@
         <Setter Property="HeadersVisibility" Value="All" />
         <Setter Property="EnableRowVirtualization" Value="True" />
         <Setter Property="EnableColumnVirtualization" Value="False" />
+        <Setter Property="Padding" Value="6" />
         <Setter Property="AutoGenerateColumns" Value="False" />
         <Setter Property="IsReadOnly" Value="True" />
         <Setter Property="SelectionMode" Value="Single" />
@@ -259,7 +260,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DataGrid">
-                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" x:Name="border"
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" x:Name="border" CornerRadius="3"
                             Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
                         <Adu:MetroScrollViewer x:Name="DG_ScrollViewer" Focusable="false" >
                             <ScrollViewer.Template>
@@ -283,7 +284,7 @@
                                             <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" />
                                         </Grid>
                                         <!--垂直滑动条-->
-                                        <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" Style="{StaticResource scrollBarStyle}" HorizontalAlignment="Right" Maximum="{TemplateBinding ScrollableHeight}"
+                                        <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" BorderBrush="#000" Style="{StaticResource scrollBarStyle}" HorizontalAlignment="Right" Maximum="{TemplateBinding ScrollableHeight}"
                                                    Orientation="Vertical" Grid.Row="0" Grid.RowSpan="3" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
                                                    Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
                                                    ViewportSize="{TemplateBinding ViewportHeight}" />

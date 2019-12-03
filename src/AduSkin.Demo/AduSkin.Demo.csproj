@@ -113,6 +113,9 @@
     <Compile Include="UserControls\ExpanderMenu.xaml.cs">
       <DependentUpon>ExpanderMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MultiFunctionTabControl.xaml.cs">
+      <DependentUpon>MultiFunctionTabControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\NavigationPanel.xaml.cs">
       <DependentUpon>NavigationPanel.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ExpanderMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MultiFunctionTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -66,7 +66,6 @@ namespace AduSkin.Controls
             if (control is AduIndexRadionButton) { (control as AduIndexRadionButton).BorderBrush = mw.BorderBrush; }
             if (control is AduLoading) { (control as AduLoading).Foreground = mw.BorderBrush; }
             if (control is AduTimeButton) { (control as AduTimeButton).Foreground = mw.BorderBrush; }
-            if (control is AduPathIconButton) { (control as AduPathIconButton).NormalPathColor = mw.BorderBrush; }
             if (control is AduFlatSilder) { (control as AduFlatSilder).DecreaseColor = mw.BorderBrush; }
             if (control is AduRadioButtonIcon) { (control as AduRadioButtonIcon).SelectColor = mw.BorderBrush; }
 

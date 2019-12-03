@@ -68,10 +68,10 @@ namespace AduSkin.Demo.ViewModel.DemoViewModel
          item7.Describe = "不需要太多";
          tempContactList.Add(item7);
 
-         contactList = tempContactList;
+         contactList =new ObservableCollection<ChatUserModel>(tempContactList);
       }
 
-      private List<ChatUserModel> contactList;
+      private ObservableCollection<ChatUserModel> contactList;
       /// <summary>
       /// 联系人列表
       /// </summary>
@@ -79,7 +79,7 @@ namespace AduSkin.Demo.ViewModel.DemoViewModel
       {
          get
          {
-            return new ObservableCollection<ChatUserModel>(contactList);
+            return contactList;
          }
       }
 

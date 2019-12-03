@@ -1065,8 +1065,8 @@
                         </Hyperlink>
                     </TextBlock>
                         <StackPanel Margin="0,10">
-                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="本UI框架起源于 Arthas WPFUI，融合部分开源框架的组件，为个人定制的UI，仅供学者参考" />
-                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="Nuget 使用敬请期待" Margin="10"/>
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="本UI框架起源于 Arthas WPFUI，融合部分开源框架的组件，为个人定制的UI，可供学者参考" />
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="Nuget 搜索 'AduSkin' 可直接导包使用" Margin="10"/>
                             <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="具体使用请参考 AduSkin.Demo" Margin="0"/>
                             <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="技术交流" Margin="10"/>
                             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">

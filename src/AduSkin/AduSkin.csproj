@@ -72,6 +72,7 @@
     <Compile Include="Controls\Converter\DoubleFactor.cs" />
     <Compile Include="Controls\Converter\DoubleToThickness.cs" />
     <Compile Include="Controls\Converter\StringToVisibility.cs" />
+    <Compile Include="Controls\Data\Args\CancelRoutedEventArgs.cs" />
     <Compile Include="Controls\Data\ValueBoxes.cs" />
     <Compile Include="Controls\Expression\Drawing\GeometryHelper.cs" />
     <Compile Include="Controls\Expression\Drawing\MathHelper.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Controls\Metro\Base\SelectableItem.cs" />
     <Compile Include="Controls\Metro\Carousel\Carousel.cs" />
     <Compile Include="Controls\Metro\Carousel\SlideSwitchPanel.cs" />
+    <Compile Include="Controls\Metro\AduContextMenuButton.cs" />
     <Compile Include="Controls\Metro\HCShield.cs" />
     <Compile Include="Controls\Metro\MetroPath.cs" />
     <Compile Include="Controls\Metro\MetroBorder.cs" />
@@ -175,6 +177,9 @@
     <Compile Include="Controls\Metro\RatingBar\RatingBarButton.cs" />
     <Compile Include="Controls\Metro\SegmentControls\SegmentControl.cs" />
     <Compile Include="Controls\Metro\SegmentControls\SegmentItem.cs" />
+    <Compile Include="Controls\Metro\HCTabControl\HCTabControl.cs" />
+    <Compile Include="Controls\Metro\HCTabControl\HCTabItem.cs" />
+    <Compile Include="Controls\Metro\HCTabControl\HCTabPanel.cs" />
     <Compile Include="Controls\Metro\TransitioningContentControl.cs" />
     <Compile Include="Controls\Tools\Extension\EdgeElement.cs" />
     <Compile Include="Controls\Tools\Extension\GeometryExtension.cs" />
@@ -293,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Metro\AduConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Metro\AduDataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -398,6 +407,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Metro\AduNotice\Notifiaction.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Metro\AduContextMenuButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -614,6 +627,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Metro\RatingBar\RatingBarButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Metro\HCTabControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

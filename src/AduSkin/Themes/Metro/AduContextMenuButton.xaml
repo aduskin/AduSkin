@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <PathGeometry x:Key="DefaultIcon"
+                  Figures="M12,18A6,6,0,0,1,6,12C6,11,6.25,10.03,6.7,9.2L5.24,7.74C4.46,8.97,4,10.43,4,12A8,8,0,0,0,12,20L12,23 16,19 12,15 M12,4L12,1 8,5 12,9 12,6A6,6,0,0,1,18,12C18,13,17.75,13.97,17.3,14.8L18.76,16.26C19.54,15.03,20,13.57,20,12A8,8,0,0,0,12,4z"
+                  FillRule="NonZero" />
+    
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+
+    <Style TargetType="{x:Type Adu:AduContextMenuButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Foreground" Value="#000000" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="MouseOverBackground" Value="Transparent" />
+        <Setter Property="PressedBackground" Value="Transparent" />
+        <Setter Property="NormalPathColor" Value="{StaticResource Brush}" />
+        <Setter Property="MouseOverPathColor" Value="#000000" />
+        <Setter Property="PressedPathColor" Value="#000000" />
+        <Setter Property="PathData" Value="{StaticResource DefaultIcon}" />
+        <Setter Property="PathWidth" Value="13" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Adu:AduContextMenuButton}">
+                    <Border x:Name="border" Padding="{TemplateBinding Padding}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true" UseLayoutRounding="True">
+                        <Path x:Name="path"
+                              Width="{TemplateBinding PathWidth}"
+                              Margin="0,0,0,0" VerticalAlignment="Center"
+                              Data="{TemplateBinding PathData}"
+                              Fill="{TemplateBinding NormalPathColor}"
+                              Stretch="Uniform" />
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter TargetName="border" Property="Background" Value="{Binding MouseOverBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                            <Setter TargetName="path" Property="Fill" Value="{Binding MouseOverPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                            <Setter TargetName="path" Property="Fill" Value="{Binding PressedPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="border" Property="Background" Value="Transparent" />
+                            <Setter TargetName="path" Property="Fill" Value="#888" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

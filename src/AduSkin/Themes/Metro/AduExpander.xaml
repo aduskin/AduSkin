@@ -24,7 +24,7 @@
                                 Height="10"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Data="{StaticResource Icon_DownArrow}"
+                                Data="{StaticResource Icon_RightArrow}"
                                 Fill="{TemplateBinding Foreground}"
                                 SnapsToDevicePixels="False"
                                 Stretch="Fill"/>
@@ -44,7 +44,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="arrow" Property="Width" Value="10" />
                             <Setter TargetName="arrow" Property="Height" Value="6" />
-                            <Setter TargetName="arrow" Property="Data" Value="{StaticResource Icon_RightArrow}" />
+                            <Setter TargetName="arrow" Property="Data" Value="{StaticResource Icon_DownArrow}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="arrow" Property="Opacity" Value="0.8" />

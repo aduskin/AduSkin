@@ -27,6 +27,7 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("时间轴", typeof(TimeLine)),
             new ControlModel("树形菜单", typeof(TreeMenu)),
             new ControlModel("数据列表", typeof(DataGridDemo)),
+            new ControlModel("多功能TabControl", typeof(MultiFunctionTabControl)),
          };
          _SearchControl = _AllControl;
       }

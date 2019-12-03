@@ -26,14 +26,14 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid Height="400">
-        <ListBox x:Name="ListBoxContact" BorderBrush="{StaticResource DefaultBorderBrush}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding ContactList}" Style="{StaticResource StackPanelVerticalListBox}" SelectedItem="{Binding CurrentChatUserModel}">
+        <ListBox x:Name="ListBoxContact" BorderBrush="{StaticResource DefaultBorderBrush}" Width="300" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding ContactList}" Style="{StaticResource StackPanelVerticalListBox}" SelectedItem="{Binding CurrentChatUserModel}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Adu:AduContactItem HeaderImage="{Binding Header}" Style="{DynamicResource ContactItem}" Type="{Binding ContactType}" UserName="{Binding UserName}" SortID="{Binding SortID}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Border Background="#F5F6FA" Visibility="{Binding IsOpenSortList,Converter={StaticResource BoolToVisibility}}" Width="Auto">
+        <Border Background="#F5F6FA" Visibility="{Binding IsOpenSortList,Converter={StaticResource BoolToVisibility}}" Width="300">
             <ItemsControl
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
