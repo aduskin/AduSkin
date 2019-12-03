@@ -1,7 +1,9 @@
 # AduSkin
 追求极致，永臻完美
 
-本UI框架起源于 Arthas WPFUI，融合部分开源框架的组件，为个人定制的UI，仅供学者参考。
+A Beautiful WPF Control UI
+
+本UI框架起源于 Arthas WPFUI，融合部分开源框架的组件，为个人定制的UI，可供学者参考。
 
 Nuget 搜索"AduSkin" 可直接导包使用
 
