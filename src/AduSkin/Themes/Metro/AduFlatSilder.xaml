@@ -87,6 +87,24 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="RepeatButtonVerticalTransparent" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Background" Value="{Binding DecreaseColor, RelativeSource={RelativeSource AncestorType=Adu:AduFlatSilder}}" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Width" Value="{StaticResource Slider.Vertical.RepeatButton.Width}"/>
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle Width="{TemplateBinding Width}"
+                               Height="{TemplateBinding Height}"
+                               Fill="{TemplateBinding Background}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <ControlTemplate x:Key="SliderThumbHorizontalDefault" TargetType="{x:Type Thumb}">
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="True">
             <Grid.RowDefinitions>
@@ -168,7 +186,10 @@
                             <RepeatButton Background="{TemplateBinding IncreaseColor}" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
                         </Track.IncreaseRepeatButton>
                         <Track.Thumb>
-                            <Thumb x:Name="PART_Thumb" HorizontalAlignment="Left" VerticalAlignment="Center" Focusable="False" OverridesDefaultStyle="True" Template="{StaticResource SliderThumbHorizontalDefault}" />
+                            <Thumb x:Name="PART_Thumb" HorizontalAlignment="Left" 
+                                   VerticalAlignment="Center" Focusable="False"
+                                   OverridesDefaultStyle="True" 
+                                   Template="{StaticResource SliderThumbHorizontalDefault}" />
                         </Track.Thumb>
                     </Track>
                     <TickBar x:Name="BottomTick" Grid.Row="2" Height="4" Margin="0,2,0,0"
@@ -249,29 +270,6 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <ControlTemplate x:Key="SliderThumbVerticalDefault" TargetType="{x:Type Thumb}">
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="True">
-            <Path x:Name="grip" Data="M0.5,0.5 L18.5,0.5 18.5,11.5 0.5,11.5z"
-                  Fill="{StaticResource SliderThumb.Static.Background}"
-                  Stretch="Fill"
-                  Stroke="{StaticResource SliderThumb.Static.Border}" />
-        </Grid>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.MouseOver.Background}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.MouseOver.Border}" />
-            </Trigger>
-            <Trigger Property="IsDragging" Value="true">
-                <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.Pressed.Background}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.Pressed.Border}" />
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter TargetName="grip" Property="Fill" Value="{StaticResource SliderThumb.Disabled.Background}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{StaticResource SliderThumb.Disabled.Border}" />
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
-
     <ControlTemplate x:Key="SliderVertical" TargetType="{x:Type Adu:AduFlatSilder}">
         <Border x:Name="border"
                 Background="{TemplateBinding Background}"
@@ -287,11 +285,11 @@
                 <TickBar x:Name="TopTick" Grid.Column="0" Width="4" Margin="0,0,2,0"
                          Fill="{TemplateBinding Foreground}"
                          Placement="Left" Visibility="Collapsed" />
-                <Border x:Name="TrackBackground" Grid.Column="1" Width="4.0" Margin="0,5"
+                <Border x:Name="TrackBackground" Grid.Column="1" Width="2.0" Margin="0"
                         HorizontalAlignment="center"
                         Background="{StaticResource SliderThumb.Track.Background}"
                         BorderBrush="{StaticResource SliderThumb.Track.Border}"
-                        BorderThickness="1">
+                        BorderThickness="0">
                     <Canvas Margin="-1,-6">
                         <Rectangle x:Name="PART_SelectionRange" Width="4.0"
                                    Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"
@@ -300,15 +298,15 @@
                 </Border>
                 <Track x:Name="PART_Track" Grid.Column="1">
                     <Track.DecreaseRepeatButton>
-                        <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                        <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonVerticalTransparent}" />
                     </Track.DecreaseRepeatButton>
                     <Track.IncreaseRepeatButton>
-                        <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                        <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Background="{TemplateBinding IncreaseColor}" Style="{StaticResource RepeatButtonVerticalTransparent}" />
                     </Track.IncreaseRepeatButton>
                     <Track.Thumb>
-                        <Thumb x:Name="Thumb" Width="18" Height="11" VerticalAlignment="Top"
+                        <Thumb x:Name="Thumb" Width="18" Height="13" VerticalAlignment="Top"
                                Focusable="False" OverridesDefaultStyle="True"
-                               Template="{StaticResource SliderThumbVerticalDefault}" />
+                               Template="{StaticResource SliderThumbHorizontalDefault}" />
                     </Track.Thumb>
                 </Track>
                 <TickBar x:Name="BottomTick" Grid.Column="2" Width="4" Margin="2,0,0,0"

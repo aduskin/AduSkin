@@ -679,6 +679,11 @@
                                             </Grid>
                                         </Metro:MetroGroupBox>
                                     </Grid>
+                                    <Grid Height="250">
+                                        <Metro:MetroGroupBox Header="Slider">
+                                            <Metro:AduFlatSilder Orientation="Vertical" HorizontalAlignment="Center" Maximum="1000" Value="500" Height="200"/>
+                                        </Metro:MetroGroupBox>
+                                    </Grid>
                                     <Grid Height="100">
                                         <Metro:MetroGroupBox Header="下拉框">
                                             <Grid>
