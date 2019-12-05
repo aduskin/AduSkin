@@ -36,7 +36,7 @@
                 <Metro:MetroMenuItem Header="GitHub" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
                 <Metro:MetroMenuItem Header="码云" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://gitee.com/aduskin"/>
             </Metro:MetroTitleMenuItem>
-            <Metro:MetroTitleMenuItem Header="技术支持"/>
+            <Metro:MetroTitleMenuItem Header="技术支持"  Icon="Resources/github.png" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
         </Metro:MetroTitleMenu>
     </Metro:MetroWindow.Menu>
     <Metro:MetroWindow.ContextMenu>
@@ -86,10 +86,10 @@
                                                     Width="100"
                                                     Height="100"
                                                     VerticalAlignment="Center"
-                                                    Data="{StaticResource Icon_Logo2}"
+                                                    Data="{StaticResource Icon_Github}"
                                                     Stretch="Uniform"
                                                     Stroke="{DynamicResource DefaultBrush}"
-                                                    StrokeThickness="6"
+                                                    StrokeThickness="3"
                                                     Duration="0:0:6" />
                                         </Metro:MetroGroupBox>
                                     </Grid>
@@ -778,7 +778,7 @@
                     </Metro:AduTabItem>
                 </Metro:AduTabControl>
             </Metro:MetroMenuTabItem>
-            <Metro:MetroMenuTabItem Header="更多案例" Icon="{StaticResource Icon_Desgin}" IconWidth="24" IconHeight="20">
+            <Metro:MetroMenuTabItem Header="更多案例" Icon="{StaticResource Icon_Demo}" IconWidth="22" IconHeight="24">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250"/>

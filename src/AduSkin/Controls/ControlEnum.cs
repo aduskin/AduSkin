@@ -141,4 +141,12 @@ namespace AduSkin.Controls
       CutUser
    }
 
+   /// <summary>
+   /// 进度条类型
+   /// </summary>
+   public enum ProgressBarType
+   {
+      Line,
+      Round
+   }
 }

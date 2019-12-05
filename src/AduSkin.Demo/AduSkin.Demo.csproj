@@ -107,6 +107,9 @@
     <Compile Include="UserControls\CarouselContainer.xaml.cs">
       <DependentUpon>CarouselContainer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ContextMenuDemo.xaml.cs">
+      <DependentUpon>ContextMenuDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\DataGridDemo.xaml.cs">
       <DependentUpon>DataGridDemo.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CarouselContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ContextMenuDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -283,6 +290,9 @@
     <Resource Include="Resources\Img\Header\头像4.png" />
     <Resource Include="Resources\Img\Header\头像5.png" />
     <Resource Include="Resources\Img\Header\头像6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\github.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -24,7 +24,7 @@
                                 <ColumnDefinition Width="0" x:Name="subWidth"/>
                             </Grid.ColumnDefinitions>
                             <Rectangle x:Name="backRectangle" Grid.ColumnSpan="3" Fill="#888" Opacity="0" Height="30" /><!--行高-->
-                            <Image Grid.Column="0" x:Name="icon" Source="{TemplateBinding Icon}" Width="12" Height="12" Margin="10,3,0,3"/>
+                            <Image Grid.Column="0" x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="10,3,0,3"/>
                             <Metro:MetroTextBlock x:Name="title" Grid.Column="1" VerticalAlignment="Center" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" Margin="8,3,10,3"/>
                             <Polyline Grid.Column="2" Points="0,0 5,5 0,10" Stroke="{TemplateBinding Foreground}" VerticalAlignment="Center" Margin="5,0,8,0"/>
                         </Grid>
