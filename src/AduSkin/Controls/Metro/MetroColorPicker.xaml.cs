@@ -202,8 +202,10 @@ namespace AduSkin.Controls.Metro
             {
                 Background = currentColor.OpaqueSolidColorBrush;
             }
-
-            ColorChange.Invoke(this, null);
+            if (ColorChange != null)
+            {
+               ColorChange.Invoke(this, null);
+            }
         }
 
         private double ConvertDouble(string text)

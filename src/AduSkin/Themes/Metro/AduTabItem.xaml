@@ -15,9 +15,17 @@
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
         <Setter Property="Template" >
             <Setter.Value>
-                <ControlTemplate  TargetType="{x:Type TabItem}">
+                <ControlTemplate  TargetType="{x:Type Adu:AduTabItem}">
                     <Grid Background="Transparent">
                         <StackPanel Orientation="Horizontal" x:Name="x" Opacity="{TemplateBinding Opacity}" HorizontalAlignment="Center" Margin="40,14">
+                            <Path x:Name="path"
+                              HorizontalAlignment="Center"
+                              Width="{TemplateBinding PathWidth}"
+                              Margin="0,0,0,0" VerticalAlignment="Center"
+                              Data="{TemplateBinding PathData}"
+                              Fill="{TemplateBinding Foreground}"
+                              Stretch="Uniform" />
+                            <Border Width="{TemplateBinding IconTextMargin}" Height="1"></Border>
                             <ContentPresenter x:Name="Content" 
                                               ContentSource="Header" HorizontalAlignment="Center" 
                                               VerticalAlignment="Center" >

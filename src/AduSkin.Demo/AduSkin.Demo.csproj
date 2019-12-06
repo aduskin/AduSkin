@@ -104,8 +104,14 @@
     <Compile Include="Models\ControlModel.cs" />
     <Compile Include="Models\DemoModel.cs" />
     <Compile Include="Models\NoticeInfo.cs" />
+    <Compile Include="UserControls\AduSkinAbout.xaml.cs">
+      <DependentUpon>AduSkinAbout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CarouselContainer.xaml.cs">
       <DependentUpon>CarouselContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CommonControlCase.xaml.cs">
+      <DependentUpon>CommonControlCase.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ContextMenuDemo.xaml.cs">
       <DependentUpon>ContextMenuDemo.xaml</DependentUpon>
@@ -121,6 +127,12 @@
     </Compile>
     <Compile Include="UserControls\NavigationPanel.xaml.cs">
       <DependentUpon>NavigationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PracticalCase.xaml.cs">
+      <DependentUpon>PracticalCase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PracticalControlCase.xaml.cs">
+      <DependentUpon>PracticalControlCase.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SortGroup.xaml.cs">
       <DependentUpon>SortGroup.xaml</DependentUpon>
@@ -140,6 +152,8 @@
     <Compile Include="ViewModel\DemoViewModel\DataGridDemoViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\DemoViewModel\SortGroupViewModel.cs" />
+    <Compile Include="ViewModel\ModuleViewModel\PracticalCaseViewModel.cs" />
+    <Compile Include="ViewModel\ModuleViewModel\PracticalControlCaseViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\AduSkinDemo.xaml.cs">
       <DependentUpon>AduSkinDemo.xaml</DependentUpon>
@@ -172,7 +186,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\AduSkinAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\CarouselContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CommonControlCase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +215,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\NavigationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PracticalCase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PracticalControlCase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
