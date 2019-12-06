@@ -88,13 +88,6 @@
                     </Metro:MetroGroupBox>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="字体选择器">
-                        <Grid>
-                            <StackPanel />
-                        </Grid>
-                    </Metro:MetroGroupBox>
-                </Grid>
-                <Grid>
                     <Metro:MetroGroupBox Header="图片框">
                         <Grid>
                             <StackPanel>
