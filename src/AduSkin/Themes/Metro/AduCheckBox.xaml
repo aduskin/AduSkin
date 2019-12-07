@@ -22,14 +22,9 @@
                     <StackPanel Orientation="Horizontal" >
                         <Border Background="#00000000">
                             <StackPanel Orientation="Horizontal">
-                                <Path  x:Name="icon"
-                                Width="{TemplateBinding IconWidth}"
-                                Height="{TemplateBinding IconWidth}"
-                                Margin="10,0,0,0"
-                                Fill="{TemplateBinding Foreground}"
-                                VerticalAlignment="Center"
-                                Stretch="Fill"
-                                Data="{TemplateBinding Icon}" />
+                                <Border Background="#FFF" Margin="10,0,0,0" CornerRadius="3" VerticalAlignment="Center">
+                                    <Path  x:Name="icon" Width="{TemplateBinding IconWidth}" Height="{TemplateBinding IconWidth}" Fill="{TemplateBinding Foreground}" Stretch="Fill" Data="{TemplateBinding Icon}" />
+                                </Border>
                                 <TextBlock Name="text" VerticalAlignment="Center" Margin="6,0,0,2" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}" ></TextBlock>
                             </StackPanel>
                         </Border>

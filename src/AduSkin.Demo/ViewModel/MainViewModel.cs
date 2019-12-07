@@ -36,15 +36,6 @@ namespace AduSkin.Demo.ViewModel
          set { Set(ref _PracticalCase, value); }
       }
       /// <summary>
-      /// 实用控件
-      /// </summary>
-      private UserControl _PracticalControlCase = new PracticalControlCase();
-      public UserControl PracticalControlCase
-      {
-         get { return _PracticalControlCase; }
-         set { Set(ref _PracticalControlCase, value); }
-      }
-      /// <summary>
       /// 关于
       /// </summary>
       private UserControl _AduSkinAbout = new AduSkinAbout();

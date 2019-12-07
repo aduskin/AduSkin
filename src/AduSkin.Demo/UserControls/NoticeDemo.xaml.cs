@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace AduSkin.Demo.UserControls
 {
    /// <summary>
-   /// PracticalControlCase.xaml 的交互逻辑
+   /// NoticeDemo.xaml 的交互逻辑
    /// </summary>
-   public partial class PracticalControlCase : UserControl
+   public partial class NoticeDemo : UserControl
    {
-      public PracticalControlCase()
+      public NoticeDemo()
       {
          InitializeComponent();
       }

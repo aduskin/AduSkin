@@ -26,7 +26,7 @@
                     <TextBlock Foreground="#999" Style="{StaticResource H5}"  Padding="0,20,0,0" HorizontalAlignment="Center">搜索你要找的控件</TextBlock>
                 </Border>
                 <Border Background="#05000000" Grid.Row="1">
-                    <Metro:MetroTextBox CaretBrush="#000" Background="#10000000" BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center" CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  InputHint="Search you need control..." />
+                    <Metro:MetroTextBox CaretBrush="#000" Background="#10000000" BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center" CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  InputHint="Search you need Demo..." />
                 </Border>
                 <Metro:MetroScrollViewer Grid.Row="2" >
                     <ItemsControl ItemsSource="{Binding SearchControl}">

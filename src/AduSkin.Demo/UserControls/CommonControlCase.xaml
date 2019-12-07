@@ -6,39 +6,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="{StaticResource DefaultBackground}" >
         <Metro:MetroScrollViewer>
             <Metro:MetroWaterfallFlow x:Name="waterfallFlow" ListWidth="300">
                 <Grid>
-                    <Metro:MetroGroupBox Header="Logo">
-                        <Metro:AnimationPath
-                                                    Width="100"
-                                                    Height="100"
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <Metro:AnimationPath Width="100" Height="100"
                                                     VerticalAlignment="Center"
                                                     Data="{StaticResource Icon_Github}"
-                                                    Stretch="Uniform"
-                                                    Stroke="{DynamicResource DefaultBrush}"
-                                                    StrokeThickness="3"
-                                                    Duration="0:0:6" />
-                    </Metro:MetroGroupBox>
+                                                    Stretch="Uniform" Stroke="{DynamicResource DefaultBrush}"
+                                                    StrokeThickness="3"  Duration="0:0:6" />
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="主题颜色（MetroColorPicker 实现）">
-                        <Grid>
-                            <WrapPanel Orientation="Horizontal">
-                                <Metro:MetroColorPicker x:Name="color1" Width="50" Height="50" Padding="5" Background="#EE796F" DefaultColor="#EE796F" />
-                                <Metro:MetroColorPicker x:Name="color2" Width="50" Height="50" Padding="5" Background="#6D819A" DefaultColor="#6D819A" IsEnabled="False" />
-                            </WrapPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <WrapPanel Orientation="Horizontal">
+                            <Metro:MetroColorPicker x:Name="color1" Width="50" Height="50" Padding="5" Background="#EE796F" DefaultColor="#EE796F" />
+                            <Metro:MetroColorPicker x:Name="color2" Width="50" Height="50" Padding="5" Background="#6D819A" DefaultColor="#6D819A" IsEnabled="False" />
+                        </WrapPanel>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="日历控件" Height="300">
+                    <Border Style="{StaticResource ShowControlBorder}">
                         <Metro:AduCalendar x:Name="Calendar1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </Metro:MetroGroupBox>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="日期控件" Height="250">
+                    <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
                             <Metro:AduDatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="4" Width="200" VerticalAlignment="Center" Height="28"
                                                     Type="DateTime"  CornerRadius="3" DateStringFormat="yyyy/MM/dd"/>
@@ -51,87 +45,211 @@
                             <Metro:AduDatePicker x:Name="Date6" HorizontalAlignment="Left" Margin="4" Width="240" VerticalAlignment="Center" Height="28"
                                                     Type="SingleDateRange" CornerRadius="3"/>
                         </StackPanel>
-                    </Metro:MetroGroupBox>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="多选框">
-                        <Grid>
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Metro:AduCheckBox
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <Metro:AduLoading SpeedRatio="1" IsActived="True" Type="SingleRound"/>
+                            <Metro:AduLoading Margin="20" SpeedRatio="1" Type="DoubleRound" IsActived="True"/>
+                            <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Apple" IsActived="True"/>
+                            <Metro:AduLoading Margin="20" SpeedRatio=".6" Type="Normal" IsActived="True"/>
+                            <Metro:AduLoading SpeedRatio="1" Type="Lines" IsActived="True"  Width="100"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <Metro:AduRadioButtonIcon
+                                                            Content="盒子"
+                                                            IsChecked="True"
+                                                            Icon="{StaticResource Icon_Desgin2}"
+                                                            IconHeight="18"
+                                                            IconWidth="16" />
+                            <Metro:AduRadioButtonIcon
+                                                            Content="菜单"
+                                                            Icon="{StaticResource Icon_Fold}"
+                                                            IconHeight="16"
+                                                            IconWidth="16" />
+                            <Metro:AduRadioButtonIcon
+                                                            Content="轮播"
+                                                            Icon="{StaticResource Icon_Carousel}"
+                                                            IconHeight="16"
+                                                            IconWidth="16" />
+                            <Metro:AduRadioButtonIcon
+                                                            Content="组"
+                                                            Icon="{StaticResource Icon_Group}"
+                                                            IconHeight="16"
+                                                            IconWidth="16" />
+                            <Metro:AduRadioButtonIcon
+                                                            Content="时间轴"
+                                                            Icon="{StaticResource Icon_TimeLine}"
+                                                            IconHeight="16"
+                                                            IconWidth="16" />
+                            <Metro:AduRadioButtonIcon
+                                                            Content="瀑布流"
+                                                            Icon="{StaticResource Icon_Waterfall}"
+                                                            IconHeight="16"
+                                                            IconWidth="16" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Metro:AduCheckBox
                                                                 Content="禁用未选择"
                                                                 FontSize="14"
                                                                 IconWidth="16"
                                                                 IsChecked="False"
                                                                 IsEnabled="False" />
-                                    <Metro:AduCheckBox
+                                <Metro:AduCheckBox
                                                                 Content="默认未选择"
                                                                 FontSize="14"
                                                                 IconWidth="16"
                                                                 IsChecked="False" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Metro:AduCheckBox
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Metro:AduCheckBox
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
                                                                 IconWidth="16"
                                                                 IsChecked="True"
                                                                 IsEnabled="False" />
-                                    <Metro:AduCheckBox
+                                <Metro:AduCheckBox
                                                                 Content="默认已选择"
                                                                 FontSize="14"
                                                                 IconWidth="16"
                                                                 IsChecked="True" />
-                                </StackPanel>
                             </StackPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
+                        </StackPanel>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="图片框">
-                        <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Background="{StaticResource DefaultBrush}" Margin="10,10,0,10"  CornerRadius="4">
+                                <Metro:AduComboBox Width="100" Height="28" IsReadOnly="True" SelectedIndex="0">
+                                    <ComboBoxItem Content="上海" Tag="1" />
+                                    <ComboBoxItem Content="北京" Tag="1" />
+                                    <ComboBoxItem Content="广州" Tag="1" />
+                                </Metro:AduComboBox>
+                            </Border>
+                            <Border Background="{StaticResource DefaultBrush}" Margin="10,10,0,10"  CornerRadius="4">
+                                <Metro:AduComboBox Width="100" Height="26" IsReadOnly="True" SelectedIndex="0">
+                                    <ComboBoxItem Content="1080*1920" Tag="1" />
+                                    <ComboBoxItem Content="768*1366" Tag="1" />
+                                    <ComboBoxItem Content="760*1024" Tag="1" />
+                                </Metro:AduComboBox>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid Height="250">
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <Metro:MetroScrollViewer>
                             <StackPanel>
-                                <Metro:MetroTextBlock Opacity="0.65" Text="自动调整大小，不用管图片的PPI" />
-                                <Metro:MetroImage Margin="0,5,0,0" Source="../Resources/pic.jpg" />
+                                <Metro:AduNoExpander Header="不可折叠" IsExpanded="True">
+                                    <StackPanel>
+                                        <Metro:AduRadioButton
+                                                                        Content="单选框"
+                                                                        FontSize="14"
+                                                                        IconWidth="16"
+                                                                        IsChecked="True" />
+                                        <Metro:AduRadioButton
+                                                                        Content="单选框"
+                                                                        FontSize="14"
+                                                                        IconWidth="16" />
+                                    </StackPanel>
+                                </Metro:AduNoExpander>
+                                <Metro:AduExpander Header="可折叠" IsEnabled="True">
+                                    <StackPanel>
+                                        <Metro:AduCheckBox
+                                                                        Content="复选框"
+                                                                        FontSize="14"
+                                                                        IconWidth="16"
+                                                                        IsChecked="True" />
+                                        <Metro:AduCheckBox
+                                                                        Content="复选框"
+                                                                        FontSize="14"
+                                                                        IconWidth="16"
+                                                                        IsChecked="True" />
+                                        <Metro:AduCheckBox
+                                                                        Content="复选框"
+                                                                        FontSize="14"
+                                                                        IconWidth="16"
+                                                                        IsChecked="True" />
+                                        <Metro:AduCheckBox
+                                                                        Content="复选框"
+                                                                        FontSize="14"
+                                                                        IconWidth="16"
+                                                                        IsChecked="True" />
+                                    </StackPanel>
+                                </Metro:AduExpander>
                             </StackPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
+                        </Metro:MetroScrollViewer>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="单选框">
-                        <Grid>
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Metro:AduRadioButton
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <Metro:AduSlider Maximum="1000" Value="500" Margin="0,10" Height="3"/>
+                            <Metro:AduFlatSilder Maximum="1000" Value="500" Margin="0,10" Height="17"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <Metro:RatingBar VerticalAlignment="Center" Height="30" Value="3" IsShowContent="True" IsReadOnly="False"/>
+                            <Metro:RatingBar VerticalAlignment="Center" Height="30" Value="3.7"/>
+                            <Metro:RatingBar VerticalAlignment="Center" Height="30" Value="3" Maximum="10" IsShowContent="True" ContentStringFormat="{}{0}星" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <Metro:MetroTextBlock Opacity="0.65" Text="自动调整大小，不用管图片的PPI" />
+                            <Metro:MetroImage Margin="0,5,0,0" Source="../Resources/pic.jpg" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
                                                                 IconWidth="16"
                                                                 IsEnabled="False" />
-                                    <Metro:AduRadioButton
+                                <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
                                                                 IconWidth="16"
                                                                 IsChecked="True"
                                                                 IsEnabled="False" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Metro:AduRadioButton
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
                                                                 IconWidth="16"
                                                                 IsChecked="False" />
-                                    <Metro:AduRadioButton
+                                <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
                                                                 IconWidth="16"
                                                                 IsChecked="True" />
-                                </StackPanel>
                             </StackPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
+                        </StackPanel>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="开关">
+                    <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
                             <Metro:MetroSwitch
                                                         Margin="10"
@@ -158,10 +276,10 @@
                                                         Content="方块模式"
                                                         CornerRadius="2" />
                         </StackPanel>
-                    </Metro:MetroGroupBox>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="编辑框">
+                    <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
                             <Metro:AduPasswordBox Margin="0,0,0,10"  Height="30"  Watermark="请输入密码"></Metro:AduPasswordBox>
                             <Metro:MetroTextBox
@@ -224,62 +342,27 @@
                                                         PopupHint="Length is more than 10!"
                                                         Text="已经输入内容且禁用" />
                         </StackPanel>
-                    </Metro:MetroGroupBox>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="按钮">
+                    <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal">
-                                <Metro:MetroButton
-                                                            Margin="10"
-                                                            Content="默认颜色"
-                                                            IsEnabled="False"
-                                                            MetroButtonState="None" />
-                                <Metro:MetroButton
-                                                            Margin="10"
-                                                            Content="默认颜色"
-                                                            MetroButtonState="None" />
+                                <Metro:MetroButton Margin="10" Content="默认颜色" IsEnabled="False" MetroButtonState="None" />
+                                <Metro:MetroButton Margin="10" Content="默认颜色" MetroButtonState="None" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Metro:MetroButton
-                                                            Margin="10"
-                                                            Content="错误颜色"
-                                                            IsEnabled="False"
-                                                            MetroButtonState="Red" />
-                                <Metro:MetroButton
-                                                            Margin="10"
-                                                            Content="错误颜色"
-                                                            MetroButtonState="Red" />
+                                <Metro:MetroButton Margin="10" Content="错误颜色"  IsEnabled="False" MetroButtonState="Red" />
+                                <Metro:MetroButton Margin="10" Content="错误颜色" MetroButtonState="Red" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Metro:MetroButton
-                                                            Margin="10"
-                                                            Content="正确颜色"
-                                                            IsEnabled="False"
-                                                            MetroButtonState="Blue" />
-                                <Metro:MetroButton
-                                                            Name="btnShowAdu"
-                                                            Margin="10"
-                                                            Content="正确颜色"
-                                                            MetroButtonState="Blue" />
+                                <Metro:MetroButton  Margin="10" Content="正确颜色" IsEnabled="False" MetroButtonState="Blue" />
+                                <Metro:MetroButton Name="btnShowAdu" Margin="10" Content="正确颜色" MetroButtonState="Blue" />
                             </StackPanel>
-
                             <StackPanel Orientation="Horizontal">
-                                <Metro:AduSysButton
-                                                        Foreground="#555"
-                                                            Margin="10"
-                                                        CornerRadius="6"
-                                                        Height="40" Width="40"
-                                                        Icon="{StaticResource Icon_Browser}"
-                                                            Content="" />
-                                <Metro:AduButtonTransparent
-                                                            Width="40"
-                                                            Margin="10"
-                                                        CornerRadius="3"
-                                                            Foreground="#000"
-                                                            Icon="{StaticResource Icon_Map}"
-                                                            IconHeight="18" />
-
+                                <Metro:AduSysButton Foreground="#555" Margin="10" CornerRadius="6" Height="40" Width="40" Icon="{StaticResource Icon_Browser}" Content="" />
+                                <Metro:AduButtonTransparent Width="40"  Margin="10" CornerRadius="3" Foreground="#000" Icon="{StaticResource Icon_Map}" IconHeight="18" />
+                                <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}"  IconHeight="22" IconWidth="20" Foreground="#999" Height="40" Width="40" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Metro:AduButtonIcon Height="40" Icon="{StaticResource Icon_Logo}" IconWidth="20" IconHeight="22" IconTextMargin="10.0" Margin="10" Width="120" CornerRadius="6" Content="正确颜色" Foreground="#000" />
@@ -287,90 +370,88 @@
                                 <Metro:AduCheckButton Margin="10" Content="AduSkin" PathData="{StaticResource Icon_Logo}" CheckedPathColor="#F34336" NormalPathColor="#555555" MouseOverPathColor="#0293EC" PressedPathColor="#FF9900"></Metro:AduCheckButton>
                             </StackPanel>
                         </StackPanel>
-                    </Metro:MetroGroupBox>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="文本编辑器">
-                        <Grid>
-                            <StackPanel>
-                                <Metro:MetroRichTextBox
-                                                            MaxHeight="50"
-                                                            Margin="5"
-                                                            CornerRadius="1"
-                                                            IsEnabled="False">
-                                    <FlowDocument>
-                                        <Paragraph>
-                                            <Run Text="禁用" />
-                                        </Paragraph>
-                                    </FlowDocument>
-                                </Metro:MetroRichTextBox>
-                                <Metro:MetroRichTextBox
-                                                            x:Name="rt1"
-                                                            MaxHeight="50"
-                                                            Margin="5"
-                                                            CornerRadius="1"
-                                                            IsReadOnly="True">
-                                    <FlowDocument>
-                                        <Paragraph>
-                                            <Run Text="阅读模式" />
-                                        </Paragraph>
-                                    </FlowDocument>
-                                </Metro:MetroRichTextBox>
-                                <Metro:MetroRichTextBox
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel Orientation="Horizontal">
+                            <Metro:AduButtonRemind Icon="{StaticResource Icon_Demo}" AduButtonState="Green" IconHeight="22" IconWidth="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
+                            <Metro:AduButtonRemind Icon="{StaticResource Icon_Demo}" AduButtonState="Red" IconHeight="22" IconWidth="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
+                            <Metro:AduButtonRemind Icon="{StaticResource Icon_Demo}" AduButtonState="Blue" IconHeight="22" IconWidth="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
+                            <Metro:AduButtonRemind Icon="{StaticResource Icon_Demo}" AduButtonState="None" IconHeight="22" IconWidth="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <Metro:MetroRichTextBox MaxHeight="50" Margin="5" CornerRadius="1" IsEnabled="False">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="禁用" />
+                                    </Paragraph>
+                                </FlowDocument>
+                            </Metro:MetroRichTextBox>
+                            <Metro:MetroRichTextBox x:Name="rt1" MaxHeight="50" Margin="5" CornerRadius="1"  IsReadOnly="True">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="阅读模式" />
+                                    </Paragraph>
+                                </FlowDocument>
+                            </Metro:MetroRichTextBox>
+                            <Metro:MetroRichTextBox
                                                             x:Name="rt3"
                                                             MaxHeight="100"
                                                             Margin="5"
                                                             AutoLimitMouse="True"
                                                             CornerRadius="1">
-                                    <FlowDocument>
-                                        <Paragraph>
-                                            <Run Text="追加内容" />
-                                        </Paragraph>
-                                        <Paragraph>
-                                            <Run Text="自动高度" />
-                                        </Paragraph>
-                                    </FlowDocument>
-                                </Metro:MetroRichTextBox>
-                                <Metro:MetroRichTextBox
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="追加内容" />
+                                    </Paragraph>
+                                    <Paragraph>
+                                        <Run Text="自动高度" />
+                                    </Paragraph>
+                                </FlowDocument>
+                            </Metro:MetroRichTextBox>
+                            <Metro:MetroRichTextBox
                                                             MaxHeight="100"
                                                             Margin="5"
                                                             Background="#00000000"
                                                             BorderThickness="0"
                                                             CornerRadius="0"
                                                             IsEnabled="False">
-                                    <FlowDocument>
-                                        <Paragraph>
-                                            <Run Text="修改外观的 MetroRichTextBox" />
-                                        </Paragraph>
-                                        <Paragraph>
-                                            <Run Text="禁用" />
-                                        </Paragraph>
-                                    </FlowDocument>
-                                </Metro:MetroRichTextBox>
-                                <Metro:MetroRichTextBox
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="修改外观的 MetroRichTextBox" />
+                                    </Paragraph>
+                                    <Paragraph>
+                                        <Run Text="禁用" />
+                                    </Paragraph>
+                                </FlowDocument>
+                            </Metro:MetroRichTextBox>
+                            <Metro:MetroRichTextBox
                                                             MaxHeight="100"
                                                             Margin="5"
                                                             Background="#00000000"
                                                             BorderThickness="0"
                                                             CornerRadius="0">
-                                    <FlowDocument>
-                                        <Paragraph>
-                                            <Run Text="修改外观的 MetroRichTextBox" />
-                                        </Paragraph>
-                                        <Paragraph>
-                                            <Run Text="正常" />
-                                        </Paragraph>
-                                    </FlowDocument>
-                                </Metro:MetroRichTextBox>
-                            </StackPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="修改外观的 MetroRichTextBox" />
+                                    </Paragraph>
+                                    <Paragraph>
+                                        <Run Text="正常" />
+                                    </Paragraph>
+                                </FlowDocument>
+                            </Metro:MetroRichTextBox>
+                        </StackPanel>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="进度条">
-                        <Grid>
-                            <StackPanel Background="#00000000">
-                                <Metro:MetroProgressBar
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel Background="#00000000">
+                            <Metro:MetroProgressBar
                                                             Margin="5"
                                                             Background="#FF555C65"
                                                             CornerRadius="10"
@@ -378,7 +459,7 @@
                                                             ProgressBarHeight="20"
                                                             ProgressBarState="None"
                                                             Value="15" />
-                                <Metro:MetroProgressBar
+                            <Metro:MetroProgressBar
                                                             x:Name="pb1"
                                                             Title="MetroProgressBar 调整"
                                                             Margin="5"
@@ -388,7 +469,7 @@
                                                             ProgressBarState="None"
                                                             TextHorizontalAlignment="Center"
                                                             Value="20" />
-                                <Metro:MetroProgressBar
+                            <Metro:MetroProgressBar
                                                             x:Name="pb2"
                                                             Title="MetroProgressBar 正常"
                                                             Margin="5"
@@ -396,103 +477,61 @@
                                                             Maximum="50"
                                                             TextHorizontalAlignment="Right"
                                                             Value="0" />
-                                <Metro:MetroProgressBar
+                            <Metro:MetroProgressBar
                                                             Title="MetroProgressBar 错误"
                                                             Margin="5"
                                                             ProgressBarState="Error"
                                                             Value="40" />
-                            </StackPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
+                        </StackPanel>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="画布背景">
-                        <Grid>
-                            <StackPanel>
-                                <Metro:MetroCanvasGrid
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <Metro:MetroCanvasGrid
                                                             Height="100"
                                                             Margin="5"
                                                             CornerRadius="2" />
-                                <Metro:MetroCanvasGrid
+                            <Metro:MetroCanvasGrid
                                                             Height="100"
                                                             Margin="5"
                                                             CornerRadius="2"
                                                             GridOpacity="1"
                                                             IsApplyTheme="False"
                                                             Viewport="0 0 20 20" />
-                            </StackPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
+                        </StackPanel>
+                    </Border>
                 </Grid>
                 <Grid>
-                    <Metro:MetroGroupBox Header="等待">
-                        <Grid>
-                            <StackPanel Background="#00000000">
-                                <Metro:MetroProgressBar
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel Background="#00000000">
+                            <Metro:MetroProgressBar
                                                             Title="MetroProgressBar 等待禁用"
                                                             Margin="60,5,5,5"
                                                             Background="#FF555C65"
                                                             IsEnabled="False"
                                                             ProgressBarState="Wait" />
-                                <Metro:MetroProgressBar
+                            <Metro:MetroProgressBar
                                                             x:Name="vis"
                                                             Title="MetroProgressBar 等待"
                                                             Margin="5"
                                                             Background="#FF555C65"
                                                             ProgressBarState="Wait" />
-                                <Metro:MetroVisualElement
+                            <Metro:MetroVisualElement
                                                             Width="{Binding ActualWidth, ElementName=vis}"
                                                             Height="{Binding ActualHeight, ElementName=vis}"
                                                             Visual="{Binding ElementName=vis}"
                                                             VisualBlurRadius="10"
                                                             VisualOpacity="0.5" />
-                                <Metro:MetroProgressBar
+                            <Metro:MetroProgressBar
                                                             Title="MetroProgressBar 等待调整大小"
                                                             Margin="5,5,60,5"
                                                             Background="#FF555C65"
                                                             CornerRadius="5"
                                                             ProgressBarHeight="10"
                                                             ProgressBarState="Wait" />
-                            </StackPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
-                </Grid>
-                <Grid>
-                    <Metro:MetroGroupBox Header="组合框">
-                        <Grid>
-                            <StackPanel>
-                                <Metro:MetroComboBox
-                                                            Title="默认标题"
-                                                            Icon="../Resources/editIcon.png"
-                                                            IsEnabled="False"
-                                                            Text="MetroComboBox">
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem0" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem1" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem2" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem3" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem4" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem5" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem6" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem7" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem8" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem9" />
-                                </Metro:MetroComboBox>
-                                <Metro:MetroComboBox Text="MetroComboBox" />
-                                <Metro:MetroComboBox Title="默认标题" Text="MetroComboBox">
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem0" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem1" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem2" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem3" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem4" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem5" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem6" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem7" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem8" />
-                                    <Metro:MetroComboBoxItem Content="MetroComboBoxItem9" />
-                                </Metro:MetroComboBox>
-                            </StackPanel>
-                        </Grid>
-                    </Metro:MetroGroupBox>
+                        </StackPanel>
+                    </Border>
                 </Grid>
             </Metro:MetroWaterfallFlow>
         </Metro:MetroScrollViewer>

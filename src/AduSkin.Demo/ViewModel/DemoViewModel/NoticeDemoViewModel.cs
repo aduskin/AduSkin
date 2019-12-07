@@ -1,54 +1,16 @@
 ﻿using AduSkin.Controls;
 using AduSkin.Controls.Metro.AduNotice;
 using AduSkin.Demo.Models;
-using AduSkin.Demo.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class PracticalControlCaseViewModel: ViewModelBase
+   public class NoticeDemoViewModel: ViewModelBase
    {
-      /// <summary>
-      /// 命令Command
-      /// </summary>
-      public ICommand OpenDemo => new RelayCommand<string>((e) =>
-      {
-         switch (e)
-         {
-            case "About":
-               new AduSkinDemo().Show();
-               return;
-            case "Video":
-               new AduVideoDemo().Show();
-               return;
-            default:
-               break;
-         }
-      });
-
-      #region 弹框
-      private ObservableCollection<NoticeInfo> _NoticeList;
-
-      public ObservableCollection<NoticeInfo> NoticeList
-      {
-         get
-         {
-            if (_NoticeList == null)
-            {
-               _NoticeList = new ObservableCollection<NoticeInfo>();
-            }
-            return _NoticeList;
-         }
-         set { _NoticeList = value; }
-      }
+      #region 右侧弹框
       private Notifiaction _NotifiactionWin;
       public Notifiaction NotifiactionWin
       {

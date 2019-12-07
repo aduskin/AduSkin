@@ -34,4 +34,14 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="ShowControlBorder" TargetType="Border">
+        <Setter Property="CornerRadius" Value="6"></Setter>
+        <Setter Property="Background" Value="#FFF"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="10 10 10 10"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="BorderBrush" Value="#EBEBEB"></Setter>
+        <Setter Property="Effect" Value="{StaticResource CardShadow}"></Setter>
+    </Style>
 </ResourceDictionary>

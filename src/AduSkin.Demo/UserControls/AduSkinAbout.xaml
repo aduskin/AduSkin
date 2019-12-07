@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
+             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewmodel:AduSkinAboutViewModel/>
+    </UserControl.DataContext>
     <Grid>
         <Border Background="#FFF">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -38,6 +42,7 @@
                         <Metro:HCShield Subject="WPF" Status="HandyControl" Color="#F06632" Margin="10,0"/>
                     </StackPanel>
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#009BDB" FontSize="20" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
+                    <Metro:AduFlatButton Content="项目案例" Type="success" Width="150" Height="32" BorderBrush="{StaticResource DefaultBrush}" BorderThickness="1" Foreground="{StaticResource DefaultBrush}" Background="{StaticResource DefaultBorderBrush}" Command="{Binding OpenDemo}" CommandParameter="About"></Metro:AduFlatButton>
                 </StackPanel>
             </StackPanel>
         </Border>

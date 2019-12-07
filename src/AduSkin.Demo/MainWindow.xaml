@@ -55,19 +55,25 @@
     </Metro:MetroWindow.ContextMenu>
     <Grid>
         <Metro:AduTabControl Background="#FFF">
+            <Metro:AduTabControl.Resources>
+                <Style TargetType="TabPanel">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </Metro:AduTabControl.Resources>
             <Metro:AduTabItem Header="实用案例">
                 <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,1,0,0">
                     <ContentControl  Content="{Binding PracticalCase}"/>
                 </Border>
             </Metro:AduTabItem>
             <Metro:AduTabItem Header="常用控件">
-                <ContentControl Content="{Binding CommonControlCase}"/>
-            </Metro:AduTabItem>
-            <Metro:AduTabItem Header="实用控件">
-                <ContentControl Content="{Binding PracticalControlCase}"/>
+                <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,1,0,0">
+                    <ContentControl Content="{Binding CommonControlCase}"/>
+                </Border>
             </Metro:AduTabItem>
             <Metro:AduTabItem Header="关于AduSkin">
-                <ContentControl Content="{Binding AduSkinAbout}"/>
+                <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,1,0,0">
+                    <ContentControl Content="{Binding AduSkinAbout}"/>
+                </Border>
             </Metro:AduTabItem>
         </Metro:AduTabControl>
     </Grid>
