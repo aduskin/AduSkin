@@ -21,7 +21,7 @@ Nuget 搜索"AduSkin" 可直接导包使用
 
 HandyControl、Arthas、WPF.UI
 
-组件展示
+# 组件展示
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(1).png)
 
@@ -29,7 +29,7 @@ HandyControl、Arthas、WPF.UI
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(3).png)
 
-AduSkin开发案例如下
+# 开发案例如下
 
 > 【AduChat】
 
