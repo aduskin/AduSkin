@@ -30,7 +30,7 @@ namespace AduSkin.Demo.Views
          {
             ID = 1,
             Name = " “ AduChat ” 极简聊天UI ",
-            Cover = "http://m.qpic.cn/psb?/V12WtbKq4PLaCF/RS2rHkLeCVhVkNXaXT7LaeIC9aNE19yHsrQ6Fy0mdxU!/b/dLYAAAAAAAAA&bo=GgQEAxoEBAMDCSw!&rf=viewer_4",
+            Cover = "http://r.photo.store.qq.com/psb?/V12WtbKq3d7FCg/o0OzX8R8r*a1G*b3VMqHXnuel.eKFqw2BTUoO7yn03U!/r/dE8BAAAAAAAA",
             Link = "https://baidu.com",
             Likes = "99+",
             Shares = "99+",
@@ -54,7 +54,7 @@ namespace AduSkin.Demo.Views
          {
             ID = 1,
             Name = "“Shadow” 心理FM PC客户端, 众多贴心新功能等你去发现！",
-            Cover = "http://b191.photo.store.qq.com/psb?/V12WtbKq4PLaCF/nQlvRpwSF72VutvTvmKvqhGyFXZrnz2B2dQTk436wdc!/b/dL8AAAAAAAAA&bo=VgUAA1YFAAMDCSw!&rf=viewer_4",
+            Cover = "http://r.photo.store.qq.com/psb?/V12WtbKq3d7FCg/QnUb2ALu57Ig8YXGJXS0nZvaLKxeUhhImdjsiVFOqgc!/r/dDcBAAAAAAAA",
             Link = "https://baidu.com",
             Likes = "99+",
             Shares = "99+",
@@ -66,7 +66,7 @@ namespace AduSkin.Demo.Views
          {
             ID = 1,
             Name = " “Super Evil” 一款独具匠心的音乐播放器！",
-            Cover = "http://b191.photo.store.qq.com/psb?/V12WtbKq4PLaCF/qcNDwznfR2QbFMy96v53FD93ClzOuRbra6p.x0If4w8!/b/dL8AAAAAAAAA&bo=gAc4BIAHOAQDCSw!&rf=viewer_4",
+            Cover = "http://r.photo.store.qq.com/psb?/V12WtbKq3d7FCg/SOxjPTd2KC2KWCr0oQVNkAx1nQlBs4KLpcUiVJZoeXs!/r/dMMAAAAAAAAA",
             Link = "https://baidu.com",
             Likes = "99+",
             Shares = "99+",
