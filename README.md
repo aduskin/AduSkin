@@ -23,9 +23,9 @@ HandyControl、Arthas、WPF.UI
 
 # 组件展示
 
-![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(1).png)
-
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(2).png)
+
+![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(1).png)
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(3).png)
 
