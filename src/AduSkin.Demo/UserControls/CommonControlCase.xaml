@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1000">
     <Grid Background="{StaticResource DefaultBackground}" >
         <Metro:MetroScrollViewer>
             <Metro:MetroWaterfallFlow x:Name="waterfallFlow" ListWidth="300">
@@ -348,16 +348,20 @@
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal">
-                                <Metro:MetroButton Margin="10" Content="默认颜色" IsEnabled="False" MetroButtonState="None" />
-                                <Metro:MetroButton Margin="10" Content="默认颜色" MetroButtonState="None" />
+                                <Metro:AduFlatButton Margin="10" Content="默认颜色" IsEnabled="False" Type="success" />
+                                <Metro:AduFlatButton Margin="10" Content="默认颜色" Type="success" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Metro:MetroButton Margin="10" Content="错误颜色"  IsEnabled="False" MetroButtonState="Red" />
-                                <Metro:MetroButton Margin="10" Content="错误颜色" MetroButtonState="Red" />
+                                <Metro:AduFlatButton Margin="10" Content="错误颜色"  IsEnabled="False" Type="warning" />
+                                <Metro:AduFlatButton Margin="10" Content="错误颜色" Type="warning" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Metro:MetroButton  Margin="10" Content="正确颜色" IsEnabled="False" MetroButtonState="Blue" />
-                                <Metro:MetroButton Name="btnShowAdu" Margin="10" Content="正确颜色" MetroButtonState="Blue" />
+                                <Metro:AduFlatButton Margin="10" Content="错误颜色"  IsEnabled="False" Type="info" />
+                                <Metro:AduFlatButton Margin="10" Content="错误颜色" Type="info" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Metro:AduFlatButton  Margin="10" Content="正确颜色" IsEnabled="False" Type="error" />
+                                <Metro:AduFlatButton Name="btnShowAdu" Margin="10" Content="正确颜色" Type="error" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Metro:AduSysButton Foreground="#555" Margin="10" CornerRadius="6" Height="40" Width="40" Icon="{StaticResource Icon_Browser}" Content="" />
@@ -366,7 +370,6 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Metro:AduButtonIcon Height="40" Icon="{StaticResource Icon_Logo}" IconWidth="20" IconHeight="22" IconTextMargin="10.0" Margin="10" Width="120" CornerRadius="6" Content="正确颜色" Foreground="#000" />
-                                <Metro:AduDIYCheckBox  IsEnabled="True" Margin="10"></Metro:AduDIYCheckBox>
                                 <Metro:AduCheckButton Margin="10" Content="AduSkin" PathData="{StaticResource Icon_Logo}" CheckedPathColor="#F34336" NormalPathColor="#555555" MouseOverPathColor="#0293EC" PressedPathColor="#FF9900"></Metro:AduCheckButton>
                             </StackPanel>
                         </StackPanel>

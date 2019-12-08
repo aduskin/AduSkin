@@ -42,7 +42,7 @@
                         <Metro:HCShield Subject="WPF" Status="HandyControl" Color="#F06632" Margin="10,0"/>
                     </StackPanel>
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#009BDB" FontSize="20" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
-                    <Metro:AduFlatButton Content="项目案例" Type="success" Width="150" Height="32" BorderBrush="{StaticResource DefaultBrush}" BorderThickness="1" Foreground="{StaticResource DefaultBrush}" Background="{StaticResource DefaultBorderBrush}" Command="{Binding OpenDemo}" CommandParameter="About"></Metro:AduFlatButton>
+                    <Metro:AduFlatButton Content="项目案例" Width="150" Height="32" BorderBrush="{StaticResource DefaultBrush}" BorderThickness="1" Foreground="{StaticResource DefaultBrush}" Background="#FFF" Command="{Binding OpenDemo}" CommandParameter="About"></Metro:AduFlatButton>
                 </StackPanel>
             </StackPanel>
         </Border>
