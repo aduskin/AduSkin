@@ -10,12 +10,21 @@
                 <convers:VisibleToReverse x:Key="visibleToReverse"/>
             </Grid.Resources>
             <Grid MinHeight="30" Height="50" Background="Transparent" Margin="-5 0 0 0" Visibility="{Binding Visibility,ElementName=groupinginfo,Converter={StaticResource visibleToReverse}}">
-                <Border Background="{StaticResource DefaultBrush}" Width="40" Height="40" CornerRadius="3" HorizontalAlignment="Left" Margin="0 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Background="{StaticResource DefaultBrush}" Width="40" Height="40" CornerRadius="3" HorizontalAlignment="Left" Grid.Column="0" Grid.RowSpan="2">
                      <TextBlock Text="{Binding SurName}" FontSize="23" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Border>
-                <TextBlock Text="{Binding Name}" Margin="50 7 0 0" FontSize="13"/>
-                <TextBlock Text="{Binding Info}" Foreground="#808080" Margin="50 30 0 0"/>
-                <TextBlock Text="{Binding State}" Foreground="#808080" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 15 0"/>
+                <TextBlock Text="{Binding Name}"  FontSize="13" Grid.Column="1" Margin="0,4,0,0" TextTrimming="CharacterEllipsis"/>
+                <TextBlock Text="{Binding Info}" Foreground="#808080"  Grid.Column="1" Grid.Row="1"/>
+                <TextBlock Text="{Binding State}" Foreground="#808080" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4,15,0"/>
             </Grid>
             <StackPanel MinHeight="25" x:Name="groupinginfo" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Visibility="{Binding IsGrouping,Converter={StaticResource boolToVisible}}">
                 <TextBlock Text="{Binding DisplayName}" Margin="3 0" VerticalAlignment="Center" HorizontalAlignment="Left"/>

@@ -39,55 +39,55 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <Metro:AduFlatButton Background="Transparent" Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Foreground="#3E3E3E" Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="传歌到手机" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Metro:AduFlatButton>
-                            <Metro:AduFlatButton Background="Transparent" Grid.Column="1" Grid.Row="0" Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Grid.Column="1" Grid.Row="0" Foreground="#3E3E3E"  Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="音频转码" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Metro:AduFlatButton>
-                            <Metro:AduFlatButton Background="Transparent" Grid.Column="2" Grid.Row="0"  Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Grid.Column="2" Grid.Row="0"  Foreground="#3E3E3E" Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="铃声制作" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Metro:AduFlatButton>
-                            <Metro:AduFlatButton Background="Transparent" Grid.Column="0" Grid.Row="1"  Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Grid.Column="0" Grid.Row="1"  Foreground="#3E3E3E" Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="音乐网盘" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Metro:AduFlatButton>
-                            <Metro:AduFlatButton Background="Transparent" Grid.Column="1" Grid.Row="1"  Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Grid.Column="1" Grid.Row="1"  Foreground="#3E3E3E" Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="定时设置" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Metro:AduFlatButton>
-                            <Metro:AduFlatButton Background="Transparent" Grid.Column="2" Grid.Row="1"  Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Grid.Column="2" Grid.Row="1"  Foreground="#3E3E3E" Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="反馈与修复" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Metro:AduFlatButton>
-                            <Metro:AduFlatButton Background="Transparent" Grid.Column="0" Grid.Row="2"  Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Grid.Column="0" Grid.Row="2"  Foreground="#3E3E3E" Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="游戏优化" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Metro:AduFlatButton>
-                            <Metro:AduFlatButton Background="Transparent" Grid.Column="1" Grid.Row="2"  Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Grid.Column="1" Grid.Row="2"  Foreground="#3E3E3E" Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="消息中心" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Metro:AduFlatButton>
-                            <Metro:AduFlatButton Background="Transparent" Grid.Column="2" Grid.Row="2"  Foreground="#3E3E3E" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <Metro:AduFlatButton Background="Transparent" Grid.Column="2" Grid.Row="2"  Foreground="#3E3E3E" Width="auto" Height="auto">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}" Foreground="{StaticResource DefaultBrush}" IconWidth="24" IconHeight="24" Margin="0,0,0,4"/>
                                     <TextBlock Text="听歌识曲" Foreground="{StaticResource DefaultBrush}" FontSize="12" HorizontalAlignment="Center" />

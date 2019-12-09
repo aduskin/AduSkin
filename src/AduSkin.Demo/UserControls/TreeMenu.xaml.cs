@@ -32,14 +32,21 @@ namespace AduSkin.Demo.UserControls
                 new CompanyModel()
                 {
                     IsGrouping=true,
-                    DisplayName="公司(3/7)",
+                    DisplayName="公司(3/3)",
                     Children=new ObservableCollection<CompanyModel>()
                     {
                         new CompanyModel(){
                             IsGrouping=true,
-                            DisplayName="部门(2/4)",
+                            DisplayName="部门(2/3)",
                             Children=new ObservableCollection<CompanyModel>()
                             {
+                                new CompanyModel(){
+                                    IsGrouping=false,
+                                    SurName="A",
+                                    Name="AduSkin",
+                                    Info="追求极致，臻于完美,追求极致，臻于完美,追求极致，臻于完美！",
+                                    State="在线"
+                                },
                                 new CompanyModel(){
                                     IsGrouping=false,
                                     SurName="A",
@@ -51,41 +58,34 @@ namespace AduSkin.Demo.UserControls
                                     IsGrouping=false,
                                     SurName="A",
                                     Name="AduSkin",
-                                    Info="我要走向天空！",
-                                    State="在线"
-                                },
-                                new CompanyModel(){
-                                    IsGrouping=false,
-                                    SurName="A",
-                                    Name="AduSkin",
-                                    Info="我要走向天空！",
-                                    State="在线"
+                                    Info="追求极致，臻于完美！",
+                                    State="离线"
                                 }
                             }
                         },
                          new CompanyModel(){
                             IsGrouping=true,
-                            DisplayName="部门(2/4)",
+                            DisplayName="部门(1/1)",
                             Children=new ObservableCollection<CompanyModel>()
                             {
                                 new CompanyModel(){
                                     IsGrouping=false,
                                     SurName="A",
                                     Name="AduSkin",
-                                    Info="我要走向天空！",
+                                    Info="追求极致，臻于完美！",
                                     State="在线"
                                 }
                             }
                         }, new CompanyModel(){
                             IsGrouping=true,
-                            DisplayName="部门(2/4)",
+                            DisplayName="部门(1/1)",
                             Children=new ObservableCollection<CompanyModel>()
                             {
                                 new CompanyModel(){
                                     IsGrouping=false,
                                     SurName="A",
                                     Name="AduSkin",
-                                    Info="我要走向天空！",
+                                    Info="追求极致，臻于完美！",
                                     State="在线"
                                 }
                             }
