@@ -46,10 +46,21 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
-                        <RowDefinition/>
+                        <RowDefinition MinHeight="200"/>
+                        <RowDefinition MinHeight="40"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="{Binding Title}" Style="{StaticResource H5}" VerticalAlignment="Center" Margin="20,0"/>
-                    <ContentPresenter Grid.Row="1" Content="{Binding Content}" MinHeight="200"/>
+                    <ContentPresenter Grid.Row="1" Content="{Binding Content}" />
+                    <Grid Grid.Row="2" Margin="0,20,0,0">
+                        <Metro:AduExpander >
+                            <Metro:MetroTextBox Height="200" Background="#05000000" Margin="0,10,0,0">
+                            </Metro:MetroTextBox>
+                        </Metro:AduExpander>
+                        <Metro:SegmentControl SelectedIndex="0" Foreground="#000" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <Metro:SegmentItem Content="XAML"/>
+                            <Metro:SegmentItem Content="Code"/>
+                        </Metro:SegmentControl>
+                    </Grid>
                 </Grid>
             </Border>
         </Grid>
