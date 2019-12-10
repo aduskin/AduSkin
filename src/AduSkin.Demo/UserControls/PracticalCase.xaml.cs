@@ -32,6 +32,11 @@ namespace AduSkin.Demo.UserControls
          var hvm = (PracticalCaseViewModel)DataContext;
          hvm.Content = (UserControl)Activator.CreateInstance(sample.Content);
          hvm.Title = sample.Title;
+         hvm.CurrentShowControl = sample;
+         if (CodeType.SelectedIndex == 0)
+            hvm.CurrentShowCode = sample.XAML;
+         else
+            hvm.CurrentShowCode = sample.Code;
       }
    }
 }

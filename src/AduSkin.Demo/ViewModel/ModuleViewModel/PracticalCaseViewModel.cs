@@ -55,6 +55,17 @@ namespace AduSkin.Demo.ViewModel
          }
       }
 
+
+      private string _CurrentShowCode;
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public string CurrentShowCode
+      {
+         get { return _CurrentShowCode; }
+         set { Set(ref _CurrentShowCode, value); }
+      }
+
       private ControlModel _CurrentShowControl;
       /// <summary>
       /// 当前显示控件
@@ -63,6 +74,23 @@ namespace AduSkin.Demo.ViewModel
       {
          get { return _CurrentShowControl; }
          set { Set(ref _CurrentShowControl, value); }
+      }
+
+
+      private int _ShowCodeTypeIndex = 0;
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public int ShowCodeTypeIndex
+      {
+         get { return _ShowCodeTypeIndex; }
+         set {
+            if (value == 0)
+               CurrentShowCode = CurrentShowControl.XAML;
+            else
+               CurrentShowCode = CurrentShowControl.Code;
+            Set(ref _ShowCodeTypeIndex, value); 
+         }
       }
 
       private UserControl _content = new SortGroup();
