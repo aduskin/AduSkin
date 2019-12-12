@@ -30,6 +30,8 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
          };
          _SearchControl = _AllControl;
+         Content = (UserControl)Activator.CreateInstance(AllControl[0].Content);
+         CurrentShowControl = _AllControl[0];
       }
 
       private List<ControlModel> _AllControl;
@@ -93,7 +95,7 @@ namespace AduSkin.Demo.ViewModel
          }
       }
 
-      private UserControl _content = new SortGroup();
+      private UserControl _content;
       public UserControl Content
       {
          get { return _content; }

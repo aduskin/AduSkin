@@ -149,4 +149,13 @@ namespace AduSkin.Controls
       Line,
       Round
    }
+   /// <summary>
+   /// XAML显示类型
+   /// </summary>
+   public enum Scope
+   {
+      None,
+      This,
+      ThisAndChildren
+   }
 }

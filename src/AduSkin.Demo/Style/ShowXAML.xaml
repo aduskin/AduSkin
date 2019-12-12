@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:showMeTheXaml="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="XamlDisplayer.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="showMeTheXaml:XamlDisplay" BasedOn="{StaticResource AvalonEditXamlDisplay}" />
+</ResourceDictionary>
