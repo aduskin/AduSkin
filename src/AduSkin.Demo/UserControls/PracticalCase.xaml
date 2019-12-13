@@ -7,13 +7,6 @@
              xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="900">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/ShowXAML.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
     <UserControl.DataContext>
         <viewmodel:PracticalCaseViewModel/>
     </UserControl.DataContext>
@@ -60,9 +53,7 @@
                     <ContentPresenter Grid.Row="1" Content="{Binding Content}"/>
                     <Grid Grid.Row="2" Margin="0,20,0,0">
                         <Metro:AduExpander >
-                            <!--<Metro:XamlDisplay Background="#10000000">
-                                <Button Content="按钮" Height="30" Width="150" Background="#05000000" Margin="20"/>
-                            </Metro:XamlDisplay>-->
+                            <Metro:MetroTextBox InputHint="Demo SourceCode ..." Height="200"/>
                         </Metro:AduExpander>
                         <Metro:SegmentControl x:Name="CodeType" BorderBrush="{StaticResource DefaultBrush}" VerticalAlignment="Top" Foreground="{StaticResource DefaultBrush}" SelectedIndex="{Binding ShowCodeTypeIndex}" HorizontalAlignment="Left">
                             <Metro:SegmentItem Content="XAML"/>

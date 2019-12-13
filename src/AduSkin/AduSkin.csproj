@@ -180,11 +180,6 @@
     <Compile Include="Controls\Metro\HCTabControl\HCTabControl.cs" />
     <Compile Include="Controls\Metro\HCTabControl\HCTabItem.cs" />
     <Compile Include="Controls\Metro\HCTabControl\HCTabPanel.cs" />
-    <Compile Include="Controls\Metro\ShowXAML\IXamlFormatter.cs" />
-    <Compile Include="Controls\Metro\ShowXAML\XamlDisplay.cs" />
-    <Compile Include="Controls\Metro\ShowXAML\XamlFormatter.cs" />
-    <Compile Include="Controls\Metro\ShowXAML\XamlResolveEventArgs.cs" />
-    <Compile Include="Controls\Metro\ShowXAML\XamlResolver.cs" />
     <Compile Include="Controls\Metro\TransitioningContentControl.cs" />
     <Compile Include="Controls\Tools\Extension\EdgeElement.cs" />
     <Compile Include="Controls\Tools\Extension\GeometryExtension.cs" />
@@ -468,10 +463,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Metro\AduContactItem.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Metro\ShowXAML.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
