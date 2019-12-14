@@ -1,13 +1,16 @@
 ﻿using AduSkin.Demo.Data;
 using AduSkin.Demo.Models;
 using AduSkin.Demo.UserControls;
+using AduSkin.Demo.Views;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
@@ -17,6 +20,22 @@ namespace AduSkin.Demo.ViewModel
       {
 
       }
+
+      /// <summary>
+      /// 命令Command
+      /// </summary>
+      public ICommand OpenClick => new RelayCommand<string>((e) =>
+      {
+         switch (e)
+         {
+            case "AduSkinDemo":
+               new AduSkinDemo().Show();
+               return;
+            default:
+               break;
+         }
+      });
+
       /// <summary>
       /// 常见控件
       /// </summary>

@@ -285,7 +285,7 @@
                                         </Grid>
                                         <!--垂直滑动条-->
                                         <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" BorderBrush="#000" Style="{StaticResource scrollBarStyle}" HorizontalAlignment="Right" Maximum="{TemplateBinding ScrollableHeight}"
-                                                   Orientation="Vertical" Grid.Row="0" Grid.RowSpan="3" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                                   Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
                                                    Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
                                                    ViewportSize="{TemplateBinding ViewportHeight}" />
                                         <!--横向滑动条-->

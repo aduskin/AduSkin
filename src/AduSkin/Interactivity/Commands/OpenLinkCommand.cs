@@ -4,30 +4,34 @@ using System.Windows.Input;
 
 namespace AduSkin.Interactivity
 {
-    public class OpenLinkCommand : ICommand
-    {
-        public bool CanExecute(object parameter) => true;
+   public class OpenLinkCommand : ICommand
+   {
+      public bool CanExecute(object parameter) => true;
 
-        public void Execute(object parameter)
-        {
-            if (parameter is string link)
+      public void Execute(object parameter)
+      {
+         if (parameter is string link)
+         {
+            if (string.IsNullOrEmpty(link))
             {
-                link = link.Replace("&", "^&");
-                try
-                {
-                    Process.Start(new ProcessStartInfo("cmd", $"/c start {link}")
-                    {
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    });
-                }
-                catch
-                {
-                    // ignored
-                }
+               return;
             }
-        }
+            link = link.Replace("&", "^&");
+            try
+            {
+               Process.Start(new ProcessStartInfo("cmd", $"/c start {link}")
+               {
+                  UseShellExecute = false,
+                  CreateNoWindow = true
+               });
+            }
+            catch
+            {
+               // ignored
+            }
+         }
+      }
 
-        public event EventHandler CanExecuteChanged;
-    }
+      public event EventHandler CanExecuteChanged;
+   }
 }

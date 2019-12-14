@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AduSkin.Demo.Views"
         xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+        xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
         BorderBrush="#FFF"
         BorderThickness="1"
         xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
-        Title="AduSkinDemo" Height="600" MinHeight="350" MinWidth="784" Width="1100" >
+        Title="AduSkinDemo" Height="700" MinHeight="350" MinWidth="784" Width="1100" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
@@ -44,7 +44,7 @@
                     <Metro:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
                         <Metro:Carousel.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Background="#00000000">
                                     <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding Cover}" Stretch="UniformToFill" >
                                         <Image.RenderTransform>
                                             <TransformGroup>
@@ -52,19 +52,11 @@
                                             </TransformGroup>
                                         </Image.RenderTransform>
                                     </Image>
-                                    <Adu:AduButtonIcon
-                                        x:Name="PlayBtn"
-                                        Background="Transparent"
-                                        Margin="50"
-                                        Width="60"
-                                        HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.PlayRecommendClick}"
-                                        CommandParameter="{Binding}"
-                                        Foreground="#fff"
-                                        Icon="{StaticResource Icon_Desgin}"
-                                        IconHeight="16"
-                                        IconWidth="25"
-                                        Visibility="Hidden" />
+                                    <Adu:AduFlatButton x:Name="PlayBtn" Visibility="Hidden"  Margin="0,0,0,40"
+                                                       MouseOverBackground="#000" Foreground="{StaticResource DefaultBrush}" 
+                                                       ToolTip="点击进入Demo查看" FontSize="30" Width="120" Height="40" 
+                                                       Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}"
+                                                       Content="查看案例" Background="Transparent" />
                                     <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
                                         <TextBlock Text="{Binding BlogDate}" Background="#80000000" Padding="6,0" Foreground="#FFF" FontSize="16" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
                                         <TextBlock Text="{Binding Name}" Background="#80000000" Padding="4,2" Foreground="#FFF" FontSize="20" HorizontalAlignment="Center"  MaxWidth="400" TextTrimming="CharacterEllipsis"/>
@@ -120,8 +112,9 @@
                                         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
                                             <Adu:AduButtonIcon Content="{Binding Likes}" Width="70" Height="30" CornerRadius="5" IconTextMargin="10" FontSize="12" Foreground="#666" IconWidth="16" Icon="{StaticResource Icon_Like}"/>
                                             <Adu:AduButtonIcon Content="{Binding Shares}" Width="70" Height="30" CornerRadius="5" IconTextMargin="10" FontSize="12" Foreground="#666" Icon="{StaticResource Icon_Dynamic}"/>
+                                            <Adu:AduFlatButton Width="80" MouseOverBackground="#000" Foreground="{StaticResource DefaultBrush}" ToolTip="点击进入Demo查看" FontSize="15" FontWeight="Light" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}" Content="查看案例" Background="Transparent" HorizontalAlignment="Right"/>
                                         </StackPanel>
-                                        <Adu:AduFlatButton Grid.Row="1" Grid.Column="1" Width="80" MouseOverBackground="#000" Foreground="#666" Content="View Post" Background="Transparent" HorizontalAlignment="Right"/>
+                                        
                                         <TextBlock Grid.Row="2" Text="{Binding Name}" FontSize="18" FontWeight="Bold" TextWrapping="Wrap"/>
                                         <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Describe}" FontSize="14" TextWrapping="Wrap"/>
                                         <Grid Grid.Row="3" Grid.ColumnSpan="2">
