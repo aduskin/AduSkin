@@ -22,7 +22,7 @@
             <Metro:MetroTitleMenuItem Header="源码" >
                 <Metro:MetroMenuItem Header="GitHub" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
                 <Metro:MetroMenuItem Header="码云" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://gitee.com/aduskin"/>
-                <Metro:MetroMenuItem Header="开发案例" Command="{Binding OpenClick}" CommandParameter="AduSkinDemo"/>
+                <Metro:MetroMenuItem Header="项目案例" Command="{Binding OpenClick}" CommandParameter="AduSkinDemo"/>
             </Metro:MetroTitleMenuItem>
             <Metro:MetroTitleMenuItem Header="技术支持"  Icon="Resources/github.png" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
         </Metro:MetroTitleMenu>

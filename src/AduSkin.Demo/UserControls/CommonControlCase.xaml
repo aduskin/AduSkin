@@ -43,7 +43,7 @@
                             <Metro:AduDatePicker x:Name="Date5" HorizontalAlignment="Left" Margin="4" Width="240" VerticalAlignment="Center" Height="28"
                                                     Type="SingleDateRange" CornerRadius="3"/>
                             <Metro:AduDatePicker x:Name="Date6" HorizontalAlignment="Left" Margin="4" Width="240" VerticalAlignment="Center" Height="28"
-                                                    Type="SingleDateRange" CornerRadius="3"/>
+                                                    Type="SingleDateRange" CornerRadius="3" IsShowConfirm="True"/>
                         </StackPanel>
                     </Border>
                 </Grid>

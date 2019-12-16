@@ -53,7 +53,7 @@
                     <ContentPresenter Grid.Row="1" Content="{Binding Content}"/>
                     <Grid Grid.Row="2" Margin="0,20,0,0">
                         <Metro:AduExpander >
-                            <Metro:MetroTextBox InputHint="Demo SourceCode ..." Height="200"/>
+                            <Metro:MetroTextBox InputHint="Demo SourceCode ..." Margin="0,10,0,0" Height="200"/>
                         </Metro:AduExpander>
                         <Metro:SegmentControl x:Name="CodeType" BorderBrush="{StaticResource DefaultBrush}" VerticalAlignment="Top" Foreground="{StaticResource DefaultBrush}" SelectedIndex="{Binding ShowCodeTypeIndex}" HorizontalAlignment="Left">
                             <Metro:SegmentItem Content="XAML"/>
