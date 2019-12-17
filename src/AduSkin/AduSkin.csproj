@@ -132,6 +132,7 @@
     <Compile Include="Controls\Metro\Carousel\Carousel.cs" />
     <Compile Include="Controls\Metro\Carousel\SlideSwitchPanel.cs" />
     <Compile Include="Controls\Metro\AduContextMenuButton.cs" />
+    <Compile Include="Controls\Metro\HCRunningBlock.cs" />
     <Compile Include="Controls\Metro\HCShield.cs" />
     <Compile Include="Controls\Metro\MetroPath.cs" />
     <Compile Include="Controls\Metro\MetroBorder.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Controls\Metro\HCTabControl\HCTabControl.cs" />
     <Compile Include="Controls\Metro\HCTabControl\HCTabItem.cs" />
     <Compile Include="Controls\Metro\HCTabControl\HCTabPanel.cs" />
+    <Compile Include="Controls\Metro\HCSimplePanel.cs" />
     <Compile Include="Controls\Metro\TransitioningContentControl.cs" />
     <Compile Include="Controls\Tools\Extension\EdgeElement.cs" />
     <Compile Include="Controls\Tools\Extension\GeometryExtension.cs" />
@@ -465,6 +467,10 @@
     <Page Include="Themes\Metro\AduContactItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Metro\HCRunningBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Metro\HCShield.xaml">
       <SubType>Designer</SubType>

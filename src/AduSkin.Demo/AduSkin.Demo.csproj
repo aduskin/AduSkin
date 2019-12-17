@@ -99,6 +99,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\StringRepeatConverter.cs" />
     <Compile Include="Data\ControlToken.cs" />
     <Compile Include="Models\Carousel.cs" />
     <Compile Include="Models\ChatUserModel.cs" />
@@ -182,6 +183,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Style\BaseStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Converter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

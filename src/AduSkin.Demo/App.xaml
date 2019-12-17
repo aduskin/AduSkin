@@ -12,6 +12,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/BaseStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/ShowControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/Converter.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

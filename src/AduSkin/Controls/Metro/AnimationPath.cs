@@ -7,6 +7,7 @@ using System.Windows.Shapes;
 using AduSkin.Controls.Data;
 using AduSkin.Controls.Expression.Drawing;
 using AduSkin.Controls.Tools.Extension;
+using AduSkin.Utility.Element;
 
 namespace AduSkin.Controls.Metro
 {
@@ -119,6 +120,7 @@ namespace AduSkin.Controls.Metro
 
         static AnimationPath()
         {
+            ElementBase.DefaultStyle<AnimationPath>(DefaultStyleKeyProperty);
             StretchProperty.AddOwner(typeof(AnimationPath), new FrameworkPropertyMetadata(Stretch.Uniform,
                 OnPropertiesChanged));
 
@@ -128,6 +130,7 @@ namespace AduSkin.Controls.Metro
 
         public AnimationPath()
         {
+            Utility.Refresh(this);
             Loaded += (s, e) =>
             {
                 if (_isLoaded) return;

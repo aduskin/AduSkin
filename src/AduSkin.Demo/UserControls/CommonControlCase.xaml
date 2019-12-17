@@ -28,6 +28,35 @@
                 </Grid>
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel>
+                            <Metro:HCRunningBlock Duration="0:0:20" Margin="0,0,0,10">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Padding="5,0">
+                                        <Image Source="../Resources/Img/Header/头像1.png" Width="32" Height="32" />
+                                    </Border>
+                                    <Border Padding="5,0">
+                                    <Image Source="../Resources/Img/Header/头像2.png" Width="32" Height="32" />
+                                    </Border>
+                                    <Border Padding="5,0">
+                                        <Image Source="../Resources/Img/Header/头像3.png" Width="32" Height="32"/>
+                                    </Border>
+                                    <Border Padding="5,0">
+                                        <Image Source="../Resources/Img/Header/头像4.png" Width="32" Height="32"/>
+                                    </Border>
+                                    <Border Padding="5,0" >
+                                        <Image Source="../Resources/Img/Header/头像5.png" Width="32" Height="32"/>
+                                    </Border>
+                                    <Border Padding="5,0" >
+                                        <Image Source="../Resources/Img/Header/头像6.png" Width="32" Height="32"/>
+                                    </Border>
+                                </StackPanel>
+                            </Metro:HCRunningBlock>
+                            <Metro:HCRunningBlock Content="AduSkin - 追求极致，永臻完美" FontSize="16" FontWeight="Light" Foreground="OrangeRed" Duration="0:0:10"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
                         <Metro:AduCalendar x:Name="Calendar1" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                 </Grid>
@@ -43,7 +72,7 @@
                             <Metro:AduDatePicker x:Name="Date5" HorizontalAlignment="Left" Margin="4" Width="240" VerticalAlignment="Center" Height="28"
                                                     Type="SingleDateRange" CornerRadius="3"/>
                             <Metro:AduDatePicker x:Name="Date6" HorizontalAlignment="Left" Margin="4" Width="240" VerticalAlignment="Center" Height="28"
-                                                    Type="SingleDateRange" CornerRadius="3" IsShowConfirm="True"/>
+                                                    Type="SingleDateRange" CornerRadius="3"/>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -99,30 +128,12 @@
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Metro:AduCheckBox
-                                                                Content="禁用未选择"
-                                                                FontSize="14"
-                                                                IconWidth="16"
-                                                                IsChecked="False"
-                                                                IsEnabled="False" />
-                                <Metro:AduCheckBox
-                                                                Content="默认未选择"
-                                                                FontSize="14"
-                                                                IconWidth="16"
-                                                                IsChecked="False" />
+                                <Metro:AduCheckBox Content="禁用未选择" FontSize="14" IconWidth="16" IsChecked="False" IsEnabled="False" />
+                                <Metro:AduCheckBox Content="默认未选择" FontSize="14" IconWidth="16" IsChecked="False" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Metro:AduCheckBox
-                                                                Content="禁用已选择"
-                                                                FontSize="14"
-                                                                IconWidth="16"
-                                                                IsChecked="True"
-                                                                IsEnabled="False" />
-                                <Metro:AduCheckBox
-                                                                Content="默认已选择"
-                                                                FontSize="14"
-                                                                IconWidth="16"
-                                                                IsChecked="True" />
+                                <Metro:AduCheckBox Content="禁用已选择" FontSize="14" IconWidth="16" IsChecked="True" IsEnabled="False" />
+                                <Metro:AduCheckBox Content="默认已选择" FontSize="14" IconWidth="16" IsChecked="True" />
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -153,39 +164,16 @@
                             <StackPanel>
                                 <Metro:AduNoExpander Header="不可折叠" IsExpanded="True">
                                     <StackPanel>
-                                        <Metro:AduRadioButton
-                                                                        Content="单选框"
-                                                                        FontSize="14"
-                                                                        IconWidth="16"
-                                                                        IsChecked="True" />
-                                        <Metro:AduRadioButton
-                                                                        Content="单选框"
-                                                                        FontSize="14"
-                                                                        IconWidth="16" />
+                                        <Metro:AduRadioButton Content="单选框" FontSize="14" IconWidth="16" IsChecked="True" />
+                                        <Metro:AduRadioButton Content="单选框" FontSize="14" IconWidth="16" />
                                     </StackPanel>
                                 </Metro:AduNoExpander>
                                 <Metro:AduExpander Header="可折叠" IsEnabled="True">
                                     <StackPanel>
-                                        <Metro:AduCheckBox
-                                                                        Content="复选框"
-                                                                        FontSize="14"
-                                                                        IconWidth="16"
-                                                                        IsChecked="True" />
-                                        <Metro:AduCheckBox
-                                                                        Content="复选框"
-                                                                        FontSize="14"
-                                                                        IconWidth="16"
-                                                                        IsChecked="True" />
-                                        <Metro:AduCheckBox
-                                                                        Content="复选框"
-                                                                        FontSize="14"
-                                                                        IconWidth="16"
-                                                                        IsChecked="True" />
-                                        <Metro:AduCheckBox
-                                                                        Content="复选框"
-                                                                        FontSize="14"
-                                                                        IconWidth="16"
-                                                                        IsChecked="True" />
+                                        <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
+                                        <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
+                                        <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
+                                        <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
                                     </StackPanel>
                                 </Metro:AduExpander>
                             </StackPanel>

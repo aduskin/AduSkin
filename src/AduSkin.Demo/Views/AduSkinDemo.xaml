@@ -52,9 +52,9 @@
                                             </TransformGroup>
                                         </Image.RenderTransform>
                                     </Image>
-                                    <Adu:AduFlatButton x:Name="PlayBtn" Visibility="Hidden"  Margin="0,0,0,40"
+                                    <Adu:AduFlatButton x:Name="PlayBtn" Visibility="Hidden"  Margin="20,60" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                                        MouseOverBackground="#000" Foreground="{StaticResource DefaultBrush}" 
-                                                       ToolTip="点击进入Demo查看" FontSize="30" Width="120" Height="40" 
+                                                       ToolTip="点击进入Demo查看" FontSize="18" FontWeight="Bold" Width="120" Height="40" 
                                                        Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}"
                                                        Content="查看案例" Background="Transparent" />
                                     <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">

@@ -10,7 +10,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Adu:AduPathIconButton Click="AduPathIconButton_Click" MouseOverPathColor="{StaticResource DefaultBrush}" PressedPathColor="{StaticResource PrimaryBrush}" PathWidth="50" Width="50" Height="50" VerticalAlignment="Top" Margin="10,15,0,0" PathData="{StaticResource Icon_InsertImage}"/>
+        <Adu:AduPathIconButton Click="AduPathIconButton_Click" MouseOverPathColor="{StaticResource DefaultBrush}" PressedPathColor="{StaticResource DefaultMouseOverBrush}" PathWidth="50" Width="50" Height="50" VerticalAlignment="Top" Margin="10,15,0,0" PathData="{StaticResource Icon_InsertImage}"/>
         <Adu:MetroScrollViewer Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Center" Padding="10">
             <ItemsControl x:Name="itemsControl"   Background="Transparent" ItemsSource="{Binding }">
                 <ItemsControl.ItemsPanel>
