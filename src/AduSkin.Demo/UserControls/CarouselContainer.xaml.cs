@@ -31,7 +31,7 @@ namespace AduSkin.Demo.UserControls
          {
             list.Add(new Models.Carousel()
             {
-               imgpath = "../Resources/pic.jpg",
+               imgpath = "../Resources/aduskin.png",
                name = "AduSkin",
                info = "追求极致，永臻完美"
             });
