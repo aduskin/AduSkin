@@ -107,6 +107,10 @@
     <Compile Include="Controls\Metro\AduNavigationPanel.cs" />
     <Compile Include="Controls\Metro\AduNotice\Notice.cs" />
     <Compile Include="Controls\Metro\AduNotice\NoticeItem.cs" />
+    <Compile Include="Controls\Metro\AduNumericUpDown\AduNumericUpDownBase.cs" />
+    <Compile Include="Controls\Metro\AduNumericUpDown\AduNumericUpDown.cs" />
+    <Compile Include="Controls\Metro\AduNumericUpDown\AduDoubleUpDown.cs" />
+    <Compile Include="Controls\Metro\AduNumericUpDown\AduIntegerUpDown.cs" />
     <Compile Include="Controls\Metro\AduPathIconButton.cs" />
     <Compile Include="Controls\Metro\AduRipple.cs" />
     <Compile Include="Controls\Metro\AduRippleAssist.cs" />
@@ -625,6 +629,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Metro\AduPasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Metro\AduNumericUpDown.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

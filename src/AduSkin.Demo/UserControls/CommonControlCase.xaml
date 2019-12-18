@@ -158,6 +158,14 @@
                         </StackPanel>
                     </Border>
                 </Grid>
+                <Grid>
+                    <Border Style="{StaticResource ShowControlBorder}">
+                        <StackPanel Orientation="Horizontal">
+                            <Metro:AduIntegerUpDown Width="100" Height="30" Margin="10,0" Maximum="20"
+                                          Minimum="0" Value="30" UpDownOrientation="Horizontal" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
                 <Grid Height="250">
                     <Border Style="{StaticResource ShowControlBorder}">
                         <Metro:MetroScrollViewer>

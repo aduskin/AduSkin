@@ -140,7 +140,6 @@ namespace AduSkin.Controls
       AddUser,
       CutUser
    }
-
    /// <summary>
    /// 进度条类型
    /// </summary>
@@ -157,5 +156,24 @@ namespace AduSkin.Controls
       None,
       This,
       ThisAndChildren
+   }
+   /// <summary>
+   /// 加减数字控件
+   /// </summary>
+   public enum EnumCompare
+   {
+      /// <summary>
+      /// 小于
+      /// </summary>
+      Less,
+      /// <summary>
+      /// 等于
+      /// </summary>
+      Equal,
+      /// <summary>
+      /// 大于
+      /// </summary>
+      Large,
+      None,
    }
 }
