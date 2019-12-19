@@ -326,12 +326,12 @@
                     </Grid>
                 </Popup>
 
-                <Adu:AduPathIconButton x:Name="PART_DOWN" Grid.Column="0" PathData="{StaticResource Icon_Reduce}" PathWidth="10" Background="{StaticResource Brush}" MouseOverPathColor="{StaticResource Brush}" PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF"/>
+                <Adu:AduPathIconButton x:Name="PART_DOWN" Grid.Column="0" PathData="{StaticResource Icon_Reduce}" PathWidth="10" Background="{StaticResource Brush}" MouseOverBackground="{StaticResource DefaultBackground}" MouseOverPathColor="{StaticResource Brush}" PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF"/>
 
                 <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" Focusable="false" HorizontalScrollBarVisibility="Hidden"
                               VerticalScrollBarVisibility="Hidden" />
 
-                <Adu:AduPathIconButton x:Name="PART_UP" Grid.Column="2" PathData="{StaticResource Icon_Add}" PathWidth="12" Background="{StaticResource Brush}" MouseOverPathColor="{StaticResource Brush}"  PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF" />
+                <Adu:AduPathIconButton x:Name="PART_UP" Grid.Column="2" PathData="{StaticResource Icon_Add}" PathWidth="12" Background="{StaticResource Brush}" MouseOverBackground="{StaticResource DefaultBackground}" MouseOverPathColor="{StaticResource Brush}"  PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF" />
             </Grid>
         </Border>
         <ControlTemplate.Triggers>

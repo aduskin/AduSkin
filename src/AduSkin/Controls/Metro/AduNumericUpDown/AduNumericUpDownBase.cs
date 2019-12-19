@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 namespace AduSkin.Controls.Metro
 {
-   public class AduNumericUpDownBase : TextBox
+   public class AduNumericUpDownBase : MetroTextBox
    {
       static AduNumericUpDownBase()
       {
@@ -18,7 +18,7 @@ namespace AduSkin.Controls.Metro
       }
 
       public static readonly DependencyProperty UpDownOrientationProperty = DependencyProperty.Register("UpDownOrientation"
-          , typeof(UpDownOrientationEnum), typeof(TextBox));
+          , typeof(UpDownOrientationEnum), typeof(MetroTextBox));
       /// <summary>
       /// 皮肤
       /// </summary>
