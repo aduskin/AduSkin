@@ -31,6 +31,10 @@ HandyControl、Arthas、WPF.UI
 
 # 开发案例如下
 
+> 【AduShopping】
+
+![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/project/AduShopping.gif)
+
 > 【AduChat】
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/project/aduchat.gif)
