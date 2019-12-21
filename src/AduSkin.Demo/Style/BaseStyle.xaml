@@ -11,6 +11,8 @@
     <SolidColorBrush x:Key="DefaultMouseOverBrush" Color="#FA9D95" />
     <SolidColorBrush x:Key="DefaultBorderBrush" Color="#10000000" />
     <SolidColorBrush x:Key="DefaultBackground" Color="#05000000" />
+    <!--ShadowColor-->
+    <SolidColorBrush x:Key="ShadowColor" Color="#2D2D30" />
     <!--马赛克背景-->
     <DrawingBrush x:Key="MainContentForegroundDrawingBrush" RenderOptions.CachingHint="Cache" Viewport="0,0,16,16" ViewportUnits="Absolute" Stretch="None" TileMode="Tile">
         <DrawingBrush.Drawing>

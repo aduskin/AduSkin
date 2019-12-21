@@ -28,23 +28,33 @@ namespace AduSkin.Controls.Metro
         #endregion
 
         #region DependencyProperty
-
-        public static readonly DependencyProperty SelectForegroundProperty = DependencyProperty.Register("SelectForeground"
-            , typeof(Brush), typeof(SegmentItem), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(79, 193, 233))));
-        /// <summary>
-        /// 选中时的字体边框色
-        /// </summary>
-        public Brush SelectForeground
-        {
+         public static readonly DependencyProperty SelectForegroundProperty = DependencyProperty.Register("SelectForeground"
+             , typeof(Brush), typeof(SegmentItem));
+         /// <summary>
+         /// 鼠标悬浮时按钮的背景色
+         /// </summary>
+         public Brush SelectForeground
+         {
             get { return (Brush)GetValue(SelectForegroundProperty); }
             set { SetValue(SelectForegroundProperty, value); }
-        }
+         }
 
-        #region IsFirstItem
-        /// <summary>
-        /// 获取或者设置该项在列表中是否是第一个
-        /// </summary>
-        [Bindable(true), Description("获取或者设置该项在列表中是否是第一个")]
+         public static readonly DependencyProperty SelectBackgroundProperty = DependencyProperty.Register("SelectBackground"
+                , typeof(Brush), typeof(SegmentItem));
+         /// <summary>
+         /// 鼠标悬浮时按钮的背景色
+         /// </summary>
+         public Brush SelectBackground
+         {
+            get { return (Brush)GetValue(SelectBackgroundProperty); }
+            set { SetValue(SelectBackgroundProperty, value); }
+         }
+
+      #region IsFirstItem
+      /// <summary>
+      /// 获取或者设置该项在列表中是否是第一个
+      /// </summary>
+      [Bindable(true), Description("获取或者设置该项在列表中是否是第一个")]
         public bool IsFirstItem
         {
             get { return (bool)GetValue(IsFirstItemProperty); }

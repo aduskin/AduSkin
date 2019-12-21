@@ -44,20 +44,10 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="true" UseLayoutRounding="True">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition Width="3" />
-                            </Grid.ColumnDefinitions>
-
-                            <ContentPresenter Margin="20,8,20,8" 
+                        <ContentPresenter Margin="20,8,20,8" 
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-
-                            <Border x:Name="markline" Grid.Column="1" Background="#003399FF" SnapsToDevicePixels="True"
-                                    UseLayoutRounding="True" />
-                        </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -77,8 +67,7 @@
                                 <Condition Property="Selector.IsSelectionActive" Value="False" />
                                 <Condition Property="IsSelected" Value="True" />
                             </MultiTrigger.Conditions>
-                            <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
-                            <Setter TargetName="markline" Property="Background" Value="{StaticResource Item.SelectedActive.foreground}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{Binding SelectBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                             <Setter Property="Foreground" Value="{StaticResource Item.SelectedActive.foreground}" />
                         </MultiTrigger>
                         <MultiTrigger>
@@ -86,8 +75,7 @@
                                 <Condition Property="Selector.IsSelectionActive" Value="True" />
                                 <Condition Property="IsSelected" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="markline" Property="Background" Value="{StaticResource Item.SelectedActive.foreground}" />
-                            <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
+                            <Setter TargetName="Bd" Property="Background" Value="{Binding SelectBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                             <Setter Property="Foreground" Value="{StaticResource Item.SelectedActive.foreground}" />
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">

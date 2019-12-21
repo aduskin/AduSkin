@@ -8,7 +8,7 @@ namespace AduSkin.Controls.Metro
     public class MetroWaterfallFlow : Canvas
     {
         int column;
-        double listWidth = 180;
+        double listWidth = 200;
         public double ListWidth { get { return listWidth; } set { listWidth = value; SetColumn(); } }
         static MetroWaterfallFlow()
         {

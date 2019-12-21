@@ -291,7 +291,7 @@
     <!--  加减按钮位于两侧  -->
     <ControlTemplate x:Key="HorizontalUpDown" TargetType="{x:Type Adu:AduNumericUpDownBase}">
         <Border x:Name="border"
-                CornerRadius="3"
+                CornerRadius="5"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -326,12 +326,12 @@
                     </Grid>
                 </Popup>
 
-                <Adu:AduPathIconButton x:Name="PART_DOWN" Grid.Column="0" PathData="{StaticResource Icon_Reduce}" PathWidth="10" Background="{StaticResource Brush}" MouseOverBackground="{StaticResource DefaultBackground}" MouseOverPathColor="{StaticResource Brush}" PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF"/>
+                <Adu:AduPathIconButton x:Name="PART_DOWN" CornerRadius="3,0,0,3" Grid.Column="0" PathData="{StaticResource Icon_Reduce}" PathWidth="10" Background="{StaticResource Brush}" MouseOverBackground="{StaticResource DefaultBackground}" MouseOverPathColor="{StaticResource Brush}" PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF"/>
 
                 <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" Focusable="false" HorizontalScrollBarVisibility="Hidden"
                               VerticalScrollBarVisibility="Hidden" />
 
-                <Adu:AduPathIconButton x:Name="PART_UP" Grid.Column="2" PathData="{StaticResource Icon_Add}" PathWidth="12" Background="{StaticResource Brush}" MouseOverBackground="{StaticResource DefaultBackground}" MouseOverPathColor="{StaticResource Brush}"  PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF" />
+                <Adu:AduPathIconButton x:Name="PART_UP"  CornerRadius="0,3,3,0" Grid.Column="2" PathData="{StaticResource Icon_Add}" PathWidth="12" Background="{StaticResource Brush}" MouseOverBackground="{StaticResource DefaultBackground}" MouseOverPathColor="{StaticResource Brush}"  PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF" />
             </Grid>
         </Border>
         <ControlTemplate.Triggers>

@@ -12,6 +12,7 @@
         <Setter Property="Height" Value="24" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Background" Value="{StaticResource Brush}" />
         <Setter Property="BorderCornerRadius" Value="12" />
         <Setter Property="Template">
             <Setter.Value>
@@ -28,32 +29,36 @@
                                     <Storyboard>
                                         <ThicknessAnimation Storyboard.TargetName="yuan" Storyboard.TargetProperty="(Margin)" To="2,2,2,2" Duration="0:0:0.2" />
                                         <ThicknessAnimation Storyboard.TargetName="yuan" Storyboard.TargetProperty="(Margin)" To="23,2,2,2" Duration="0:0:0.4" />
-                                        <ColorAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#EE796F" Duration="0:0:0.4" />
+                                        <!--<ColorAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(Opacity)" To="#EE796F" Duration="0:0:0.4" />-->
+                                        <DoubleAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.4"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="OpenLoaded">
                                     <Storyboard>
                                         <ThicknessAnimation Storyboard.TargetName="yuan" Storyboard.TargetProperty="(Margin)" To="23,2,2,2" Duration="0:0:0" />
-                                        <ColorAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#EE796F" Duration="0:0:0" />
+                                        <!--<ColorAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#EE796F" Duration="0:0:0" />-->
+                                        <DoubleAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Close">
                                     <Storyboard>
                                         <ThicknessAnimation Storyboard.TargetName="yuan" Storyboard.TargetProperty="(Margin)" To="2,2,2,2" Duration="0:0:0.2" />
                                         <ThicknessAnimation Storyboard.TargetName="yuan" Storyboard.TargetProperty="(Margin)" To="2,2,23,2" Duration="0:0:0.4" />
-                                        <ColorAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FA9D95" Duration="0:0:0.4" />
+                                        <!--<ColorAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FA9D95" Duration="0:0:0.4" />-->
+                                        <DoubleAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="Opacity" To=".6" Duration="0:0:0.4"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="CloseLoaded">
                                     <Storyboard>
                                         <ThicknessAnimation Storyboard.TargetName="yuan" Storyboard.TargetProperty="(Margin)" To="2,2,23,2" Duration="0:0:0" />
-                                        <ColorAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FA9D95" Duration="0:0:0" />
+                                        <!--<ColorAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FA9D95" Duration="0:0:0" />-->
+                                        <DoubleAnimation Storyboard.TargetName="back" Storyboard.TargetProperty="Opacity" To=".6" Duration="0:0:0"/>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Metro:MetroTextBlock x:Name="title" Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding TextHorizontalAlignment}" Opacity="0.65" />
-                        <Border x:Name="back" Grid.Column="2" CornerRadius="{TemplateBinding BorderCornerRadius}" Background="#FFF34D64" />
+                        <Border x:Name="back" Grid.Column="2" CornerRadius="{TemplateBinding BorderCornerRadius}" Background="{TemplateBinding Background}" />
                         <Border x:Name="backFalse" Grid.Column="2" CornerRadius="{TemplateBinding BorderCornerRadius}" />
                         <Border x:Name="yuan" Grid.Column="2" Background="#ffffff" CornerRadius="{TemplateBinding CornerRadius}" Margin="2" />
                     </Grid>
