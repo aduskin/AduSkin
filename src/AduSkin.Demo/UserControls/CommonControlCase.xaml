@@ -209,7 +209,7 @@
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
                             <Metro:MetroTextBlock Opacity="0.65" Text="自动调整大小，不用管图片的PPI" />
-                            <Metro:MetroImage Margin="0,5,0,0" Source="../Resources/pic.jpg" />
+                            <Metro:MetroImage Margin="0,5,0,0" Source="../Resources/pic.jpg" RenderOptions.BitmapScalingMode="Fant"/>
                         </StackPanel>
                     </Border>
                 </Grid>
