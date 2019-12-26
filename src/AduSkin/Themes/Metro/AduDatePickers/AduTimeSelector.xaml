@@ -74,11 +74,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type AduPicker:AduTimeSelector}">
                     <Border Background="{TemplateBinding Background}"
+                            CornerRadius="3,3,0,0"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                             UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
-                        <UniformGrid Rows="1">
+                        <UniformGrid Rows="1" Margin="0,1,0,0">
                             <ListBox x:Name="PART_Hour" Style="{StaticResource TimeItemsStyle}" BorderThickness="0,0,0,1" />
                             <ListBox x:Name="PART_Minute" BorderThickness="1,0,0,1" Style="{StaticResource TimeItemsStyle}" />
                             <ListBox x:Name="PART_Second" BorderThickness="0,0,0,1" Style="{StaticResource TimeItemsStyle}" />

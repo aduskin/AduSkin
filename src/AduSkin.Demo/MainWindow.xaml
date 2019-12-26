@@ -13,16 +13,20 @@
     DataContext="{Binding Source={StaticResource Locator},Path=Main}">
     <Metro:MetroWindow.Menu>
         <Metro:MetroTitleMenu Height="40">
-            <Metro:MetroTitleMenuItem Header="关于">
+            <Metro:MetroTitleMenuItem Header="联系">
                 <Metro:MetroMenuItem Header="QQ"  Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes"/>
-                <Metro:MetroMenuItem Header="QQ群"  Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb"/>
-                <Metro:MetroMenuItem Header="邮箱:1280429435@qq.com" />
-                <Metro:MetroMenuItem Header="微博" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://weibo.com/sentiment562520"/>
+                <Metro:MetroMenuItem Header="QQ群" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb"/>
+                <Metro:MetroMenuItem Header="邮箱" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="mailto:1280429435@qq.com" />
             </Metro:MetroTitleMenuItem>
             <Metro:MetroTitleMenuItem Header="源码" >
                 <Metro:MetroMenuItem Header="GitHub" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
                 <Metro:MetroMenuItem Header="码云" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://gitee.com/aduskin"/>
                 <Metro:MetroMenuItem Header="项目案例" Command="{Binding OpenClick}" CommandParameter="AduSkinDemo"/>
+            </Metro:MetroTitleMenuItem>
+            <Metro:MetroTitleMenuItem Header="关于">
+                <Metro:MetroMenuItem Header="Nuget" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://www.nuget.org/packages/aduskin"/>
+                <Metro:MetroMenuItem Header="微博" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://weibo.com/sentiment562520"/>
+                <Metro:MetroMenuItem Header="博客园" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://www.cnblogs.com/aduskin"/>
             </Metro:MetroTitleMenuItem>
             <Metro:MetroTitleMenuItem Header="技术支持"  Icon="Resources/github.png" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
         </Metro:MetroTitleMenu>
