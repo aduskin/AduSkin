@@ -300,7 +300,15 @@ namespace AduSkin.Controls.Metro
       private static void SelectedDateTimeChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
       {
          AduDatePicker datePicker = d as AduDatePicker;
-         datePicker.SetSingleDateToTextBox(datePicker.SelectedDateTime);
+         DateTime? dateTime = (DateTime?)e.NewValue;
+         if (dateTime.HasValue)
+         {
+            DateTime dt = dateTime.Value;
+            if (datePicker.SelectedDate == null)
+            {
+               datePicker.SelectedDate = dt;
+            }
+         }
       }
       #endregion
 

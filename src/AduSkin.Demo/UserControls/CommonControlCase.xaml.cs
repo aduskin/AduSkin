@@ -34,7 +34,7 @@ namespace AduSkin.Demo.UserControls
 
          ts.IsChecked = true;
          #region 日期控件
-         Calendar1.SelectedDate = Date3.SelectedDate = Date2.SelectedDate = Date1.SelectedDate = DateTime.Now;
+         Calendar1.SelectedDate = Date3.SelectedDateTime = Date2.SelectedDateTime = Date1.SelectedDateTime = DateTime.Now;
          Date4.SelectedDateStart = Date5.SelectedDateStart = Date6.SelectedDateStart = DateTime.Now;
          Date4.SelectedDateEnd = Date5.SelectedDateEnd = Date6.SelectedDateEnd = DateTime.Now.AddDays(10);
          #endregion
