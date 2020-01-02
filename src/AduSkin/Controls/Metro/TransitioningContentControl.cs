@@ -27,18 +27,16 @@ namespace AduSkin.Controls.Metro
       }
 
       public static readonly DependencyProperty TransitionModeProperty = DependencyProperty.Register(
-          "TransitionMode", typeof(TransitionMode), typeof(TransitioningContentControl), new PropertyMetadata(default(TransitionMode), OnTransitionModeChanged));
-
-      private static void OnTransitionModeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-      {
-         var ctl = (TransitioningContentControl)d;
-         ctl.StartTransition();
-      }
+          "TransitionMode", typeof(TransitionMode), typeof(TransitioningContentControl));
 
       public TransitionMode TransitionMode
       {
          get => (TransitionMode)GetValue(TransitionModeProperty);
-         set => SetValue(TransitionModeProperty, value);
+         set
+         {
+            StartTransition();
+            SetValue(TransitionModeProperty, value);
+         }
       }
 
       public static readonly DependencyProperty TransitionStoryboardProperty = DependencyProperty.Register(

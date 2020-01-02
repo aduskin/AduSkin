@@ -55,10 +55,18 @@
                         <Metro:AduExpander >
                             <Metro:MetroTextBox InputHint="Demo SourceCode ..." Margin="0,10,0,0" Height="200"/>
                         </Metro:AduExpander>
-                        <Metro:SegmentControl x:Name="CodeType" BorderBrush="{StaticResource DefaultBrush}" VerticalAlignment="Top" Foreground="{StaticResource DefaultBrush}" SelectedIndex="{Binding ShowCodeTypeIndex}" HorizontalAlignment="Left">
-                            <Metro:SegmentItem Content="XAML"/>
-                            <Metro:SegmentItem Content="Code"/>
-                        </Metro:SegmentControl>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                            <Metro:SegmentControl x:Name="CodeType" BorderBrush="{StaticResource DefaultBrush}"  Foreground="{StaticResource DefaultBrush}" SelectedIndex="{Binding ShowCodeTypeIndex}" HorizontalAlignment="Left">
+                                <Metro:SegmentItem Content="XAML"/>
+                                <Metro:SegmentItem Content="Code"/>
+                            </Metro:SegmentControl>
+                            <Metro:AduButtonSvg IconWidth="20" IconHeight="20" Icon="{StaticResource Icon_CopyCode}" Margin="20,0" Foreground="{StaticResource DefaultBrush}">
+                                <Metro:AduButtonSvg.ToolTip>
+                                    <Metro:AduToolTip Content="复制代码" PlacementEx="TopCenter" Padding="10,6"/>
+                                </Metro:AduButtonSvg.ToolTip>
+                            </Metro:AduButtonSvg>
+                        </StackPanel>
+                       
                     </Grid>
                 </Grid>
             </Border>
