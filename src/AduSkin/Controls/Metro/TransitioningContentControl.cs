@@ -1,6 +1,7 @@
 ﻿using AduSkin.Controls.Data;
 using AduSkin.Controls.Tools;
 using AduSkin.Controls.Tools.Helper;
+using AduSkin.Utility.Element;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,11 +54,20 @@ namespace AduSkin.Controls.Metro
 
       private void TransitioningContentControl_Loaded(object sender, RoutedEventArgs e) => StartTransition();
 
+      static TransitioningContentControl()
+      {
+         ElementBase.DefaultStyle<TransitioningContentControl>(DefaultStyleKeyProperty);
+      }
+
       private void StartTransition()
       {
          if (Visibility != Visibility.Visible || _contentPresenter == null) return;
 
-         (TransitionStoryboard ?? ResourceHelper.GetResource<Storyboard>($"{TransitionMode.ToString()}Transition"))?.Begin(_contentPresenter);
+         ElementBase.GoToState(this, "InitTransition");
+         if (TransitionStoryboard != null)
+            TransitionStoryboard.Begin(_contentPresenter);
+         else
+            ElementBase.GoToState(this, $"{TransitionMode.ToString()}Transition");
       }
 
       public override void OnApplyTemplate()

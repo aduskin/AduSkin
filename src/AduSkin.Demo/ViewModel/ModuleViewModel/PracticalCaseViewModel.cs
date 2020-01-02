@@ -28,6 +28,7 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("多功能Tab", typeof(MultiFunctionTabControl)),
             new ControlModel("右键菜单", typeof(ContextMenuDemo)),
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
+            new ControlModel("过渡容器", typeof(TransitioningContentControlDemo)),
          };
          _SearchControl = _AllControl;
          Content = (UserControl)Activator.CreateInstance(AllControl[0].Content);

@@ -1,0 +1,149 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:AduSkin.Controls.Converter" 
+                    xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Converters:OffsetConverter x:Key="OffsetConverter" />
+
+    <Style TargetType="{x:Type AduSkin:AduToolTip}">
+        <Setter Property="ToolTipService.HorizontalOffset" Value="0" />
+        <Setter Property="ToolTipService.VerticalOffset" Value="0" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="BorderBrush" Value="#585D6B" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="{StaticResource Brush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type AduSkin:AduToolTip}">
+                    <AduSkin:AngleBorder x:Name="AngleBorder" Padding="{TemplateBinding Padding}" VerticalAlignment="Center"
+                                     Background="{TemplateBinding Background}"
+                                     BorderBrush="{TemplateBinding BorderBrush}"
+                                     BorderThickness="{TemplateBinding BorderThickness}"
+                                     CornerRadius="4"
+                                     Placement="{TemplateBinding PlacementEx}"
+                                     SnapsToDevicePixels="True" TailHeight="6" TailHorizontalOffset="15" TailWidth="12"
+                                     UseLayoutRounding="True">
+                        <ContentPresenter />
+                    </AduSkin:AngleBorder>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="TopLeft">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="BottomLeft" />
+                            <Setter Property="Placement" Value="Top" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="TopCenter">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="BottomCenter" />
+                            <Setter Property="Placement" Value="Top" />
+                            <Setter Property="ToolTipService.HorizontalOffset">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource OffsetConverter}" ConverterParameter="Center">
+                                        <Binding Path="PlacementTarget.ActualWidth" RelativeSource="{RelativeSource Mode=Self}" />
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=Self}" />
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="TopRight">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="BottomRight" />
+                            <Setter Property="Placement" Value="Top" />
+                            <Setter Property="ToolTipService.HorizontalOffset">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource OffsetConverter}" ConverterParameter="Right">
+                                        <Binding Path="PlacementTarget.ActualWidth" RelativeSource="{RelativeSource Mode=Self}" />
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=Self}" />
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="BottomLeft">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="TopLeft" />
+                            <Setter Property="Placement" Value="Bottom" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="BottomCenter">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="TopCenter" />
+                            <Setter Property="Placement" Value="Bottom" />
+                            <Setter Property="ToolTipService.HorizontalOffset">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource OffsetConverter}" ConverterParameter="Center">
+                                        <Binding Path="PlacementTarget.ActualWidth" RelativeSource="{RelativeSource Mode=Self}" />
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=Self}" />
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="BottomRight">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="TopRight" />
+                            <Setter Property="Placement" Value="Bottom" />
+                            <Setter Property="ToolTipService.HorizontalOffset">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource OffsetConverter}" ConverterParameter="Right">
+                                        <Binding Path="PlacementTarget.ActualWidth" RelativeSource="{RelativeSource Mode=Self}" />
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=Self}" />
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="LeftTop">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="RightTop" />
+                            <Setter Property="Placement" Value="Left" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="LeftCenter">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="RightCenter" />
+                            <Setter Property="Placement" Value="Left" />
+                            <Setter Property="ToolTipService.VerticalOffset">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource OffsetConverter}" ConverterParameter="Center">
+                                        <Binding Path="PlacementTarget.ActualHeight" RelativeSource="{RelativeSource Mode=Self}" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=Self}" />
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="LeftBottom">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="RightBottom" />
+                            <Setter Property="Placement" Value="Left" />
+                            <Setter Property="ToolTipService.VerticalOffset">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource OffsetConverter}" ConverterParameter="Right">
+                                        <Binding Path="PlacementTarget.ActualHeight" RelativeSource="{RelativeSource Mode=Self}" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=Self}" />
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="RightTop">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="LeftTop" />
+                            <Setter Property="Placement" Value="Right" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="RightCenter">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="LeftCenter" />
+                            <Setter Property="Placement" Value="Right" />
+                            <Setter Property="ToolTipService.VerticalOffset">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource OffsetConverter}" ConverterParameter="Center">
+                                        <Binding Path="PlacementTarget.ActualHeight" RelativeSource="{RelativeSource Mode=Self}" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=Self}" />
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlacementEx, RelativeSource={RelativeSource Self}}" Value="RightBottom">
+                            <Setter TargetName="AngleBorder" Property="Placement" Value="LeftBottom" />
+                            <Setter Property="Placement" Value="Right" />
+                            <Setter Property="ToolTipService.VerticalOffset">
+                                <Setter.Value>
+                                    <MultiBinding Converter="{StaticResource OffsetConverter}" ConverterParameter="Right">
+                                        <Binding Path="PlacementTarget.ActualHeight" RelativeSource="{RelativeSource Mode=Self}" />
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=Self}" />
+                                    </MultiBinding>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -107,13 +107,13 @@
     <Compile Include="Models\ControlModel.cs" />
     <Compile Include="Models\DemoModel.cs" />
     <Compile Include="Models\NoticeInfo.cs" />
-    <Compile Include="UserControls\AduSkinAbout.xaml.cs">
+    <Compile Include="Views\AduSkinAbout.xaml.cs">
       <DependentUpon>AduSkinAbout.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CarouselContainer.xaml.cs">
       <DependentUpon>CarouselContainer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CommonControlCase.xaml.cs">
+    <Compile Include="Views\CommonControlCase.xaml.cs">
       <DependentUpon>CommonControlCase.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ContextMenuDemo.xaml.cs">
@@ -134,7 +134,7 @@
     <Compile Include="UserControls\NoticeDemo.xaml.cs">
       <DependentUpon>NoticeDemo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\PracticalCase.xaml.cs">
+    <Compile Include="Views\PracticalCase.xaml.cs">
       <DependentUpon>PracticalCase.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SortGroup.xaml.cs">
@@ -142,6 +142,9 @@
     </Compile>
     <Compile Include="UserControls\TimeLine.xaml.cs">
       <DependentUpon>TimeLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TransitioningContentControlDemo.xaml.cs">
+      <DependentUpon>TransitioningContentControlDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\TreeMenu.xaml.cs">
       <DependentUpon>TreeMenu.xaml</DependentUpon>
@@ -194,7 +197,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\AduSkinAbout.xaml">
+    <Page Include="Views\AduSkinAbout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,7 +205,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\CommonControlCase.xaml">
+    <Page Include="Views\CommonControlCase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,7 +233,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\PracticalCase.xaml">
+    <Page Include="Views\PracticalCase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,6 +242,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\TimeLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TransitioningContentControlDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

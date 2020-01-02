@@ -114,6 +114,63 @@ namespace AduSkin.Controls
    #endregion
 
    /// <summary>
+   /// 方向
+   /// </summary>
+   #region EnumPlacement 
+   public enum EnumPlacement
+   {
+      /// <summary>
+      /// 左上
+      /// </summary>
+      LeftTop,
+      /// <summary>
+      /// 左中
+      /// </summary>
+      LeftCenter,
+      /// <summary>
+      /// 左下
+      /// </summary>
+      LeftBottom,
+      /// <summary>
+      /// 右上
+      /// </summary>
+      RightTop,
+      /// <summary>
+      /// 右中
+      /// </summary>
+      RightCenter,
+      /// <summary>
+      /// 右下
+      /// </summary>
+      RightBottom,
+      /// <summary>
+      /// 上左
+      /// </summary>
+      TopLeft,
+      /// <summary>
+      /// 上中
+      /// </summary>
+      TopCenter,
+      /// <summary>
+      /// 上右
+      /// </summary>
+      TopRight,
+      /// <summary>
+      /// 下左
+      /// </summary>
+      BottomLeft,
+      /// <summary>
+      /// 下中
+      /// </summary>
+      BottomCenter,
+      /// <summary>
+      /// 下右
+      /// </summary>
+      BottomRight,
+   }
+   #endregion
+
+   /// <summary>
    /// 动画容器类型
    /// </summary>
    public enum TransitionMode

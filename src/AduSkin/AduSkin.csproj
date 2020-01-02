@@ -46,6 +46,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -71,6 +72,7 @@
     <Compile Include="Controls\Converter\CornerRadiusToDouble.cs" />
     <Compile Include="Controls\Converter\DoubleFactor.cs" />
     <Compile Include="Controls\Converter\DoubleToThickness.cs" />
+    <Compile Include="Controls\Converter\OffsetConverter.cs" />
     <Compile Include="Controls\Converter\StringToVisibility.cs" />
     <Compile Include="Controls\Data\Args\CancelRoutedEventArgs.cs" />
     <Compile Include="Controls\Data\ValueBoxes.cs" />
@@ -187,6 +189,7 @@
     <Compile Include="Controls\Metro\HCTabControl\HCTabPanel.cs" />
     <Compile Include="Controls\Metro\HCSimplePanel.cs" />
     <Compile Include="Controls\Metro\TransitioningContentControl.cs" />
+    <Compile Include="Controls\Metro\AduToolTip.cs" />
     <Compile Include="Controls\Tools\Extension\EdgeElement.cs" />
     <Compile Include="Controls\Tools\Extension\GeometryExtension.cs" />
     <Compile Include="Controls\Tools\Extension\UIElementExtension.cs" />
@@ -252,6 +255,7 @@
     <Compile Include="Themes\Metro\AduWindow.xaml.cs">
       <DependentUpon>AduWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Themes\Metro\AngleBorder.cs" />
     <Compile Include="Themes\Metro\MetroWindow.xaml.cs">
       <DependentUpon>MetroWindow.xaml</DependentUpon>
     </Compile>
@@ -469,6 +473,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Metro\AduContactItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Metro\AduToolTip.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

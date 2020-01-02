@@ -16,10 +16,13 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock HorizontalAlignment="Center" >
                         <Hyperlink Name="aduskincom" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"
-                                    FontSize="14" Foreground="#ffffff" TextDecorations="{x:Null}" ToolTip="点击进入源码库">
+                                    FontSize="14" Foreground="#ffffff" TextDecorations="{x:Null}">
                             <StackPanel Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0,20">
+                                <StackPanel.ToolTip>
+                                    <Metro:AduToolTip Content="点击进入源码库" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                                </StackPanel.ToolTip>
                                 <StackPanel Orientation="Horizontal">
-                                    <Metro:AduPathIconButton PathWidth="28" PathData="{StaticResource Icon_Logo}" VerticalAlignment="Center"/>
+                                    <Metro:AduButtonSvg IconWidth="28" IconHeight="28" Icon="{StaticResource Icon_Logo}" VerticalAlignment="Center" Foreground="{StaticResource DefaultBrush}"/>
                                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}" Text="duSkin" />
                                 </StackPanel>
                                 <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="追求极致，永臻完美" />
@@ -41,8 +44,9 @@
                         <Metro:HCShield Subject="WPF" Status="WPF.UI" Color="#3399FF" Margin="10,0"/>
                         <Metro:HCShield Subject="WPF" Status="HandyControl" Color="#F06632" Margin="10,0"/>
                     </StackPanel>
-                    <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#009BDB" FontSize="20" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
-                    <Metro:AduFlatButton Content="项目案例" Width="150" Height="32" BorderBrush="{StaticResource DefaultBrush}" BorderThickness="1" Foreground="{StaticResource DefaultBrush}" Background="#FFF" Command="{Binding OpenDemo}" CommandParameter="About"></Metro:AduFlatButton>
+                    <TextBlock  HorizontalAlignment="Center" Foreground="#009BDB" FontSize="30" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
+                    <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="Version 1.1.1.4" />
+                    <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="Copyright ©AduSkin 2019" />
                 </StackPanel>
             </StackPanel>
         </Border>
