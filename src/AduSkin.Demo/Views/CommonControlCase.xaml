@@ -82,7 +82,6 @@
                             <Metro:AduLoading SpeedRatio="1" IsActived="True" Type="SingleRound"/>
                             <Metro:AduLoading Margin="20" SpeedRatio="1" Type="DoubleRound" IsActived="True"/>
                             <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Apple" IsActived="True"/>
-                            <Metro:AduLoading Margin="20" SpeedRatio=".6" Type="Normal" IsActived="True"/>
                             <Metro:AduLoading SpeedRatio="1" Type="Lines" IsActived="True"  Width="100"/>
                         </StackPanel>
                     </Border>

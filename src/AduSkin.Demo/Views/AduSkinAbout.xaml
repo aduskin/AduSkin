@@ -14,21 +14,23 @@
     <Grid>
         <Border Background="#FFF">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock HorizontalAlignment="Center" >
-                        <Hyperlink Name="aduskincom" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"
-                                    FontSize="14" Foreground="#ffffff" TextDecorations="{x:Null}">
-                            <StackPanel Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0,20">
-                                <StackPanel.ToolTip>
-                                    <Metro:AduToolTip Content="点击进入源码库" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
-                                </StackPanel.ToolTip>
-                                <StackPanel Orientation="Horizontal">
-                                    <Metro:AduButtonSvg IconWidth="28" IconHeight="28" Icon="{StaticResource Icon_Logo}" VerticalAlignment="Center" Foreground="{StaticResource DefaultBrush}"/>
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}" Text="duSkin" />
-                                </StackPanel>
-                                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="追求极致，永臻完美" />
+                <Metro:TransitioningContentControl TransitionStoryboard="{StaticResource Custom2Transition}">
+                    <TextBlock HorizontalAlignment="Center">
+                    <Hyperlink Name="aduskincom" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"
+                                FontSize="14" Foreground="#ffffff" TextDecorations="{x:Null}">
+                        <StackPanel Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0,20">
+                            <StackPanel.ToolTip>
+                                <Metro:AduToolTip Content="点击进入源码库" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                            </StackPanel.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Metro:AduButtonSvg IconWidth="28" IconHeight="28" Icon="{StaticResource Icon_Logo}" VerticalAlignment="Center" Foreground="{StaticResource DefaultBrush}"/>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}" Text="duSkin" />
                             </StackPanel>
-                        </Hyperlink>
-                    </TextBlock>
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="追求极致，永臻完美" />
+                        </StackPanel>
+                    </Hyperlink>
+                </TextBlock>
+                </Metro:TransitioningContentControl>
                 <StackPanel Margin="0,10">
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="一款简单漂亮的WPF UI，融合部分开源框架的组件，为个人定制的UI，可供学者参考" />
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000" FontSize="12" Text="Nuget 搜索 'AduSkin' 可直接导包使用" Margin="10"/>

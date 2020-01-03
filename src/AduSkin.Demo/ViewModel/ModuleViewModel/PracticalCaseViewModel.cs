@@ -3,10 +3,12 @@ using AduSkin.Demo.UserControls;
 using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace AduSkin.Demo.ViewModel
 {
@@ -30,26 +32,31 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
             new ControlModel("过渡容器", typeof(TransitioningContentControlDemo)),
          };
-         _SearchControl = _AllControl;
-         Content = (UserControl)Activator.CreateInstance(AllControl[0].Content);
-         CurrentShowControl = _AllControl[0];
+         _SearchControl.Source= _AllControl;
+         _SearchControl.View.Culture = new System.Globalization.CultureInfo("zh-CN");
+         _SearchControl.View.Filter = (obj) => ((obj as ControlModel).Title+ (obj as ControlModel).TitlePinyin).ToLower().Contains(SearchKey);
+         _SearchControl.View.SortDescriptions.Add(new SortDescription(nameof(ControlModel.Title), ListSortDirection.Ascending));
+
+
+         Content = (UserControl)Activator.CreateInstance(AllControl.First().Content);
+         CurrentShowControl = _AllControl.First();
       }
 
-      private List<ControlModel> _AllControl;
+      private IEnumerable<ControlModel> _AllControl;
       /// <summary>
       /// 所有控件
       /// </summary>
-      public List<ControlModel> AllControl
+      public IEnumerable<ControlModel> AllControl
       {
          get { return _AllControl; }
          set { Set(ref _AllControl, value); }
       }
 
-      private List<ControlModel> _SearchControl;
+      private CollectionViewSource _SearchControl = new CollectionViewSource();
       /// <summary>
       /// 所有控件
       /// </summary>
-      public List<ControlModel> SearchControl
+      public CollectionViewSource SearchControl
       {
          get { return _SearchControl; }
          set
@@ -76,7 +83,11 @@ namespace AduSkin.Demo.ViewModel
       public ControlModel CurrentShowControl
       {
          get { return _CurrentShowControl; }
-         set { Set(ref _CurrentShowControl, value); }
+         set {
+            Set(ref _CurrentShowControl, value);
+            RaisePropertyChanged("Content");
+            RaisePropertyChanged("Title");
+         }
       }
 
 
@@ -99,18 +110,25 @@ namespace AduSkin.Demo.ViewModel
       private UserControl _content;
       public UserControl Content
       {
-         get { return _content; }
+         get {
+            if (CurrentShowControl == null)
+               return null;
+            return (UserControl)Activator.CreateInstance(CurrentShowControl.Content); 
+         }
          set { Set(ref _content, value); }
       }
 
       private string _Title = "Win10菜单";
       public string Title
       {
-         get { return _Title; }
+         get {
+            if (CurrentShowControl == null)
+               return null;
+            return CurrentShowControl.Title; }
          set { Set(ref _Title, value); }
       }
 
-      private string _SearchKey;
+      private string _SearchKey="";
       public string SearchKey
       {
          get { return _SearchKey; }
@@ -118,18 +136,9 @@ namespace AduSkin.Demo.ViewModel
          {
 
             Set(ref _SearchKey, value);
-            OnSearchKeyChanged();
+            if (_SearchControl != null)
+               _SearchControl.View.Refresh();
          }
-      }
-
-      private void OnSearchKeyChanged()
-      {
-         if (string.IsNullOrWhiteSpace(SearchKey))
-         {
-            SearchControl = _AllControl;
-            return;
-         }
-         SearchControl = _AllControl.Where(a => a.Title.ToLowerInvariant().Contains(SearchKey.ToLowerInvariant()) || a.Tags.ToLowerInvariant().Contains(SearchKey.ToLowerInvariant())).ToList();
       }
    }
 }

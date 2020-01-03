@@ -15,6 +15,17 @@ namespace AduSkin.Utility.Extend
          return GetPinyinChar(charArray[0]);
       }
 
+      public static string GetPinyin(string str)
+      {
+         string pinyin = "";
+         char[] charArray = str.ToCharArray();
+         foreach (var item in charArray)
+         {
+            pinyin+=GetPinyinChar(item);
+         }
+         return pinyin;
+      }
+
       private static string GetPinyinChar(char c)
       {
          string str = c.ToString();

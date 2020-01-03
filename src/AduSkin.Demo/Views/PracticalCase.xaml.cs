@@ -28,15 +28,15 @@ namespace AduSkin.Demo.UserControls
       }
       private void UIElement_OnMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
       {
-         var sample = (ControlModel)((Border)sender).DataContext;
-         var hvm = (PracticalCaseViewModel)DataContext;
-         hvm.Content = (UserControl)Activator.CreateInstance(sample.Content);
-         hvm.Title = sample.Title;
-         hvm.CurrentShowControl = sample;
-         if (CodeType.SelectedIndex == 0)
-            hvm.CurrentShowCode = sample.XAML;
-         else
-            hvm.CurrentShowCode = sample.Code;
+         //var sample = (ControlModel)((Border)sender).DataContext;
+         //var hvm = (PracticalCaseViewModel)DataContext;
+         //hvm.Content = (UserControl)Activator.CreateInstance(sample.Content);
+         //hvm.Title = sample.Title;
+         //hvm.CurrentShowControl = sample;
+         //if (CodeType.SelectedIndex == 0)
+         //   hvm.CurrentShowCode = sample.XAML;
+         //else
+         //   hvm.CurrentShowCode = sample.Code;
       }
    }
 }

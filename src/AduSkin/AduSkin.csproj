@@ -188,6 +188,9 @@
     <Compile Include="Controls\Metro\HCTabControl\HCTabItem.cs" />
     <Compile Include="Controls\Metro\HCTabControl\HCTabPanel.cs" />
     <Compile Include="Controls\Metro\HCSimplePanel.cs" />
+    <Compile Include="Controls\Metro\AduTextBlock\TextBlockHighlightSource.cs" />
+    <Compile Include="Controls\Metro\AduTextBlock\TextBlockHighlightSourceConverter.cs" />
+    <Compile Include="Controls\Metro\AduTextBlock\TextBlockService.cs" />
     <Compile Include="Controls\Metro\TransitioningContentControl.cs" />
     <Compile Include="Controls\Metro\AduToolTip.cs" />
     <Compile Include="Controls\Tools\Extension\EdgeElement.cs" />
