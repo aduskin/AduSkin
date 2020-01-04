@@ -54,9 +54,13 @@
                         <Metro:HCShield Subject="WPF" Status="WPF.UI" Color="#3399FF" Margin="10,0"/>
                         <Metro:HCShield Subject="WPF" Status="HandyControl" Color="#F06632" Margin="10,0"/>
                     </StackPanel>
-                    <TextBlock  HorizontalAlignment="Center" Foreground="#009BDB" FontSize="30" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
-                    <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="Version 1.1.1.4" />
-                    <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="Copyright ©AduSkin 2019" />
+                    <Metro:TransitioningContentControl TransitionMode="Bottom2Top">
+                        <StackPanel>
+                            <TextBlock  HorizontalAlignment="Center" Foreground="#009BDB" FontSize="30" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
+                            <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="Version 1.1.1.4" />
+                            <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="Copyright ©AduSkin 2019" />
+                        </StackPanel>
+                    </Metro:TransitioningContentControl>
                 </StackPanel>
             </StackPanel>
         </Border>
