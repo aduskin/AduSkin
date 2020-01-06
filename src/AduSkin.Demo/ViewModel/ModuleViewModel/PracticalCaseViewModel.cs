@@ -34,7 +34,7 @@ namespace AduSkin.Demo.ViewModel
          };
          _SearchControl.Source= _AllControl;
          _SearchControl.View.Culture = new System.Globalization.CultureInfo("zh-CN");
-         _SearchControl.View.Filter = (obj) => ((obj as ControlModel).Title+ (obj as ControlModel).TitlePinyin).ToLower().Contains(SearchKey);
+         _SearchControl.View.Filter = (obj) => ((obj as ControlModel).Title+ (obj as ControlModel).TitlePinyin).ToLower().Contains(SearchKey.ToLower());
          _SearchControl.View.SortDescriptions.Add(new SortDescription(nameof(ControlModel.Title), ListSortDirection.Ascending));
 
 

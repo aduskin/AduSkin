@@ -10,7 +10,8 @@
         BorderThickness="1"
         xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
         Title="AduSkinDemo" Height="700" MinHeight="350" MinWidth="784" Width="1100" >
-    <Grid>
+    <Metro:TransitioningContentControl>
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
             <RowDefinition />
@@ -135,4 +136,5 @@
             </Adu:MetroScrollViewer>
         </Grid>
     </Grid>
+    </Metro:TransitioningContentControl>
 </Adu:AduWindow>

@@ -39,7 +39,7 @@
                     </ListBox.Resources>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Border MinHeight="40" Width="250" MouseDown="UIElement_OnMouseDown" Background="#00000000" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0 1 0 0">
+                            <Border MinHeight="40" Width="250" Background="#00000000" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0 1 0 0">
                                 <TextBlock Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource DefaultBrush}" Metro:TextBlockService.HighlightText="{Binding ElementName=SearchKey,Path=Text}" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             </Border>
                             <DataTemplate.Triggers>

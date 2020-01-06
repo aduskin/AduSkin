@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace AduSkin.Utility.AduMethod
+namespace AduSkin.Utility
 {
     public static class HttpHelper
     {
@@ -127,7 +127,6 @@ namespace AduSkin.Utility.AduMethod
             }
             return null;
         }
-
 
         #region 其他
 
@@ -557,7 +556,6 @@ namespace AduSkin.Utility.AduMethod
 
         #endregion
 
-
         #region 各类型转换
 
         /// <summary>
@@ -609,232 +607,7 @@ namespace AduSkin.Utility.AduMethod
 
         #endregion
 
-
-
-
-
-        #region 旧版本
-        public static string Old_HttpGet_AA(string _url, List<TItem> _conmand, string _cookie = null)
-        {
-            return HttpHelper.Http_Get(_url, new List<TItem> { new TItem { Name = "Cookie", Value = _cookie } }, _conmand).ToStringX();
-        }
-        public static string Old_HttpPost_AA(string _url, List<TItem> _conmand, string _cookie = null)
-        {
-            return HttpHelper.Http_Post(_url, new List<TItem> { new TItem { Name = "Cookie", Value = _cookie } }, _conmand).ToStringX();
-        }
-
-        [Obsolete("这是一个过时的请求方法")]
-        public static string Old_HttpGet(string _url, string _header = "", string _cookie = "")
-        {
-            string _result = null;
-            try
-            {
-                Uri uri = new Uri(_url);
-                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
-                req.Proxy = null;
-                req.KeepAlive = true;
-                req.AllowAutoRedirect = true;
-                if (_cookie != "")
-                {
-                    CookieContainer cookie_container = new CookieContainer();
-                    if (_cookie.IndexOf(";") >= 0)
-                    {
-                        string[] arrCookie = _cookie.Split(';');
-                        //加载Cookie
-                        //cookie_container.SetCookies(new Uri(url), cookie);
-                        foreach (string sCookie in arrCookie)
-                        {
-                            if (sCookie.IndexOf("expires") > 0)
-                                continue;
-                            cookie_container.SetCookies(uri, sCookie);
-                        }
-                    }
-                    else
-                    {
-                        cookie_container.SetCookies(uri, _cookie);
-                    }
-                    req.CookieContainer = cookie_container;
-                }
-                if (_header != "")
-                {
-                    System.Collections.Specialized.NameValueCollection collection = null;
-                    var property = typeof(WebHeaderCollection).GetProperty("InnerCollection", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-                    if (property != null)
-                    {
-                        collection = property.GetValue(req.Headers, null) as System.Collections.Specialized.NameValueCollection;
-                    }
-                    if (collection != null)
-                    {
-                        foreach (string str in GetData(_header, "(.*?):(.*?)\n", "$1@$2|").Split('|'))
-                        {
-                            if (str != "")
-                            {
-                                string[] po = str.Split('@');
-
-                                //设置对象的Header数据
-                                if (collection != null)
-                                {
-                                    collection[po[0]] = po[1];
-                                }
-                            }
-                        }
-                    }
-                }
-                HttpWebResponse result = (HttpWebResponse)req.GetResponse();
-                Stream receviceStream = result.GetResponseStream();
-                StreamReader readerOfStream = new StreamReader(receviceStream, Encoding.UTF8);
-                string strHTML = readerOfStream.ReadToEnd();
-                _result = strHTML;
-                readerOfStream.Dispose();
-                receviceStream.Dispose();
-                readerOfStream.Close();
-                receviceStream.Close();
-                result.Close();
-            }
-            catch (WebException err)
-            {
-                var rsp = err.Response as HttpWebResponse;
-                if (rsp != null)
-                {
-                    rsp.Close(); rsp.Dispose();
-                }
-            }
-            return _result;
-        }
-
-        [Obsolete("这是一个过时的请求方法")]
-        public static string Old_HttpPost(string _url, string _conmand, string _header = "", string _cookie = null)
-        {
-            string _result = null;
-            try
-            {
-                Uri uri = new Uri(_url);
-                HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(uri);
-                req.AllowAutoRedirect = true;
-                req.KeepAlive = true;
-                req.Proxy = null;
-                string param = _conmand;
-                byte[] bs = Encoding.UTF8.GetBytes(param);
-
-                req.Method = "POST";
-                //req.ContentType = "application/x-www-form-urlencoded";
-                req.ContentType = "application/json;charset=UTF-8";
-                req.ContentLength = bs.Length;
-                if (_header != "")
-                {
-                    System.Collections.Specialized.NameValueCollection collection = null;
-                    var property = typeof(WebHeaderCollection).GetProperty("InnerCollection", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-                    if (property != null)
-                    {
-                        collection = property.GetValue(req.Headers, null) as System.Collections.Specialized.NameValueCollection;
-                    }
-                    if (collection != null)
-                    {
-                        foreach (string str in GetData(_header, "(.*?):(.*?)\n", "$1@$2|").Split('|'))
-                        {
-                            if (str != "")
-                            {
-                                string[] po = str.Split('@');
-                                //设置对象的Header数据
-                                if (collection != null)
-                                {
-                                    collection[po[0]] = po[1];
-                                }
-                            }
-                        }
-                    }
-                }
-                if (_cookie != null)
-                {
-                    CookieContainer cookie_container = new CookieContainer();
-                    if (_cookie.IndexOf(";") >= 0)
-                    {
-                        string[] arrCookie = _cookie.Split(';');
-                        //加载Cookie
-                        //cookie_container.SetCookies(new Uri(url), cookie);
-                        foreach (string sCookie in arrCookie)
-                        {
-                            if (sCookie.IndexOf("expires") > 0)
-                                continue;
-                            cookie_container.SetCookies(uri, sCookie);
-                        }
-                    }
-                    else
-                    {
-                        cookie_container.SetCookies(uri, _cookie);
-                    }
-                    req.CookieContainer = cookie_container;
-                }
-
-                using (Stream reqStream = req.GetRequestStream())
-                {
-                    reqStream.Write(bs, 0, bs.Length);
-                    reqStream.Close();
-                }
-
-                string responseData = String.Empty;
-                using (HttpWebResponse response = (HttpWebResponse)req.GetResponse())
-                {
-                    Stream _stream = response.GetResponseStream();
-                    using (StreamReader reader = new StreamReader(_stream, Encoding.UTF8))
-                    {
-                        responseData = reader.ReadToEnd().ToString();
-                    }
-                    _result = responseData;
-                }
-            }
-            catch (WebException err)
-            {
-                var rsp = err.Response as HttpWebResponse;
-                if (rsp != null)
-                {
-                    rsp.Close(); rsp.Dispose();
-                }
-            }
-            return _result;
-        }
-
-        /// <summary>
-        /// 正则
-        /// </summary>
-        /// <param name="webcode">内容</param>
-        /// <param name="regex_A">正则</param>
-        /// <param name="setparameter">参数</param>
-        /// <returns></returns>
-        static string GetData(string webcode, string regex_A, string setparameter)
-        {
-            string Data = "";
-            try
-            {
-                Regex _regex = new Regex(regex_A, RegexOptions.IgnoreCase | RegexOptions.Multiline);
-                if (_regex.IsMatch(webcode))
-                {
-                    MatchCollection matchCollection = _regex.Matches(webcode);
-                    foreach (Match match in matchCollection)
-                    {
-                        try
-                        {
-                            Regex r = new Regex(regex_A);
-                            Data = Data + r.Replace(match.Value, setparameter);
-                        }
-                        catch (Exception ex)
-                        {
-                            return ex.Message;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-            return Data;
-        }
-
-        #endregion
-
     }
-
 
     public enum Encode
     {

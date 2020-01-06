@@ -1,6 +1,4 @@
-﻿using AduSkin.Demo.Models;
-using AduSkin.Demo.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +16,11 @@ using System.Windows.Shapes;
 namespace AduSkin.Demo.UserControls
 {
    /// <summary>
-   /// PracticalCase.xaml 的交互逻辑
+   /// ImageTool.xaml 的交互逻辑
    /// </summary>
-   public partial class PracticalCase : UserControl
+   public partial class ImageTool : UserControl
    {
-      public PracticalCase()
+      public ImageTool()
       {
          InitializeComponent();
       }

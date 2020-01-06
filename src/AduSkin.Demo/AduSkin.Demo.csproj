@@ -107,6 +107,9 @@
     <Compile Include="Models\ControlModel.cs" />
     <Compile Include="Models\DemoModel.cs" />
     <Compile Include="Models\NoticeInfo.cs" />
+    <Compile Include="UserControls\ImageTool.xaml.cs">
+      <DependentUpon>ImageTool.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AduSkinAbout.xaml.cs">
       <DependentUpon>AduSkinAbout.xaml</DependentUpon>
     </Compile>
@@ -194,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Style\ShowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ImageTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
