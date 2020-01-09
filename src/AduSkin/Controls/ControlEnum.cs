@@ -109,7 +109,22 @@ namespace AduSkin.Controls
       Apple,
       Cogs,
       Normal,
-      Lines
+      /// <summary>
+      /// 线条动画
+      /// </summary>
+      Lines,
+      /// <summary>
+      /// 方格动画
+      /// </summary>
+      Grids,
+      /// <summary>
+      /// 中心旋转动画
+      /// </summary>
+      Rotate,
+      /// <summary>
+      /// 版块加载
+      /// </summary>
+      Block
    }
    #endregion
 

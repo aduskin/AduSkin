@@ -1,0 +1,548 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+    <ControlTemplate x:Key="Grids" TargetType="{x:Type Adu:AduLoading}">
+        <Border x:Name="PART_Root"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin=".5,.5">
+                <FrameworkElement.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="RectangleStyle"
+										TargetType="{x:Type Rectangle}">
+                            <Setter Property="Width"
+											Value="10" />
+                            <Setter Property="Height"
+											Value="10" />
+                            <Setter Property="Margin"
+											Value="0.4" />
+                            <Setter Property="UIElement.RenderTransformOrigin"
+											Value=".5,.5" />
+                        </Style>
+                    </ResourceDictionary>
+                </FrameworkElement.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <WrapPanel Grid.Row="0"
+								Margin="2,2,2,0">
+                    <Rectangle Name="R7"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" >
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R7S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Name="R8"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R8S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Name="R9"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R9S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                </WrapPanel>
+                <WrapPanel Grid.Row="1"
+								Margin="2,0,2,0">
+                    <Rectangle Name="R4"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R4S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Name="R5"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R5S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Name="R6"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R6S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                </WrapPanel>
+                <WrapPanel Grid.Row="2"
+								Margin="2,0,2,2">
+                    <Rectangle Name="R1"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R1S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Name="R2"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R2S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Name="R3"
+									Style="{StaticResource RectangleStyle}"
+									Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                        <UIElement.RenderTransform>
+                            <ScaleTransform x:Name="R3S"
+											CenterX="0"
+											CenterY="0" />
+                        </UIElement.RenderTransform>
+                    </Rectangle>
+                </WrapPanel>
+            </Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="ActiveStates">
+                    <VisualState x:Name="Inactive">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Active">
+                        <Storyboard
+                            SpeedRatio="{TemplateBinding SpeedRatio}"
+		RepeatBehavior="Forever"
+		Duration="0:0:1.2">
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R1S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R1S"
+			Storyboard.TargetProperty="ScaleY"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R2S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="R2S" Storyboard.TargetProperty="ScaleY" BeginTime="0">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                                <SplineDoubleKeyFrame KeyTime="00:00:0.2" Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R3S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R3S"
+			Storyboard.TargetProperty="ScaleY"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R4S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R4S"
+			Storyboard.TargetProperty="ScaleY"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R5S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R5S"
+			Storyboard.TargetProperty="ScaleY"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R6S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R6S"
+			Storyboard.TargetProperty="ScaleY"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R7S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R7S"
+			Storyboard.TargetProperty="ScaleY"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="0.6" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R8S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R8S"
+			Storyboard.TargetProperty="ScaleY"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="0" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R9S"
+			Storyboard.TargetProperty="ScaleX"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames
+			Storyboard.TargetName="R9S"
+			Storyboard.TargetProperty="ScaleY"
+			BeginTime="0">
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:00"
+				Value="0" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.2"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.4"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:0.8"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1"
+				Value="1" />
+                                <SplineDoubleKeyFrame
+				KeyTime="00:00:1.2"
+				Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

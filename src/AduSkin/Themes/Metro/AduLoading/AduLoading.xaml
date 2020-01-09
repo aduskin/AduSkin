@@ -4,12 +4,15 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
-        <ResourceDictionary Source="DoubleRound.xaml" />
-        <ResourceDictionary Source="SingleRound.xaml" />
-        <ResourceDictionary Source="Cogs.xaml" />
-        <ResourceDictionary Source="Apple.xaml" />
-        <ResourceDictionary Source="Lines.xaml" />
-        <ResourceDictionary Source="Normal.xaml" />
+        <ResourceDictionary Source="DoubleRound.xaml"/>
+        <ResourceDictionary Source="SingleRound.xaml"/>
+        <ResourceDictionary Source="Cogs.xaml"/>
+        <ResourceDictionary Source="Apple.xaml"/>
+        <ResourceDictionary Source="Lines.xaml"/>
+        <ResourceDictionary Source="Normal.xaml"/>
+        <ResourceDictionary Source="Grids.xaml"/>
+        <ResourceDictionary Source="Rotate.xaml"/>
+        <ResourceDictionary Source="Block.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
     <Style TargetType="{x:Type Adu:AduLoading}">
@@ -47,6 +50,15 @@
             </Trigger>
             <Trigger Property="Type" Value="Lines">
                 <Setter Property="Template" Value="{StaticResource Lines}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Grids">
+                <Setter Property="Template" Value="{StaticResource Grids}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Rotate">
+                <Setter Property="Template" Value="{StaticResource Rotate}" />
+            </Trigger>
+            <Trigger Property="Type" Value="Block">
+                <Setter Property="Template" Value="{StaticResource Block}" />
             </Trigger>
         </Style.Triggers>
     </Style>

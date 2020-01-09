@@ -79,10 +79,12 @@
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
-                            <Metro:AduLoading SpeedRatio="1" IsActived="True" Type="SingleRound"/>
-                            <Metro:AduLoading Margin="20" SpeedRatio="1" Type="DoubleRound" IsActived="True"/>
+                            <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Grids" IsActived="True"/>
+                            <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="SingleRound" IsActived="True"/>
+                            <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="DoubleRound" IsActived="True"/>
                             <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Apple" IsActived="True"/>
-                            <Metro:AduLoading SpeedRatio="1" Type="Lines" IsActived="True"  Width="100"/>
+                            <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Lines" IsActived="True"  Width="100"/>
+                            <Metro:AduLoading Margin="0,0,0,0" SpeedRatio="1" Type="Rotate" IsActived="True" Width="80" Height="80"/>
                         </StackPanel>
                     </Border>
                 </Grid>
