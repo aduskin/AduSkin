@@ -403,10 +403,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Metro\AduLoading\Block.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Themes\Metro\AduLoading\Rotate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

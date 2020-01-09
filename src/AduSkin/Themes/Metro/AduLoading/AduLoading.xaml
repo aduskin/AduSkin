@@ -12,7 +12,6 @@
         <ResourceDictionary Source="Normal.xaml"/>
         <ResourceDictionary Source="Grids.xaml"/>
         <ResourceDictionary Source="Rotate.xaml"/>
-        <ResourceDictionary Source="Block.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
     <Style TargetType="{x:Type Adu:AduLoading}">
@@ -56,9 +55,6 @@
             </Trigger>
             <Trigger Property="Type" Value="Rotate">
                 <Setter Property="Template" Value="{StaticResource Rotate}" />
-            </Trigger>
-            <Trigger Property="Type" Value="Block">
-                <Setter Property="Template" Value="{StaticResource Block}" />
             </Trigger>
         </Style.Triggers>
     </Style>
