@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
-             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel.DemoViewModel"
+             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>

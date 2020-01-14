@@ -142,20 +142,16 @@
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel Orientation="Horizontal">
-                            <Border Background="{StaticResource DefaultBrush}" Margin="10,10,0,10"  CornerRadius="4">
-                                <Metro:AduComboBox Width="100" Height="28" IsReadOnly="True" SelectedIndex="0">
-                                    <ComboBoxItem Content="上海" Tag="1" />
-                                    <ComboBoxItem Content="北京" Tag="1" />
-                                    <ComboBoxItem Content="广州" Tag="1" />
-                                </Metro:AduComboBox>
-                            </Border>
-                            <Border Background="{StaticResource DefaultBrush}" Margin="10,10,0,10"  CornerRadius="4">
-                                <Metro:AduComboBox Width="100" Height="26" IsReadOnly="True" SelectedIndex="0">
-                                    <ComboBoxItem Content="1080*1920" Tag="1" />
-                                    <ComboBoxItem Content="768*1366" Tag="1" />
-                                    <ComboBoxItem Content="760*1024" Tag="1" />
-                                </Metro:AduComboBox>
-                            </Border>
+                            <Metro:AduComboBox Width="100" Height="30" IsReadOnly="True" Background="{StaticResource DefaultBrush}" SelectedIndex="0" Margin="10,10,0,10"  CornerRadius="4">
+                                <ComboBoxItem Content="上海" Tag="1" />
+                                <ComboBoxItem Content="北京" Tag="1" />
+                                <ComboBoxItem Content="广州" Tag="1" />
+                            </Metro:AduComboBox>
+                            <Metro:AduComboBox Width="100" Height="30" IsReadOnly="True" SelectedIndex="0" Margin="10,10,0,10"  CornerRadius="4">
+                                <ComboBoxItem Content="1080*1920" Tag="1" />
+                                <ComboBoxItem Content="768*1366" Tag="1" />
+                                <ComboBoxItem Content="760*1024" Tag="1" />
+                            </Metro:AduComboBox>
                         </StackPanel>
                     </Border>
                 </Grid>

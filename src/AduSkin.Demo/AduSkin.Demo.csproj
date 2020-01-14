@@ -107,9 +107,17 @@
     <Compile Include="Models\ControlModel.cs" />
     <Compile Include="Models\DemoModel.cs" />
     <Compile Include="Models\NoticeInfo.cs" />
+    <Compile Include="Models\Sys_Code.cs" />
+    <Compile Include="UserControls\BaiduTranslate.xaml.cs">
+      <DependentUpon>BaiduTranslate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HttpTool.xaml.cs">
+      <DependentUpon>HttpTool.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ImageTool.xaml.cs">
       <DependentUpon>ImageTool.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ToolViewModel\HttpToolViewModel.cs" />
     <Compile Include="Views\AduSkinAbout.xaml.cs">
       <DependentUpon>AduSkinAbout.xaml</DependentUpon>
     </Compile>
@@ -197,6 +205,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Style\ShowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaiduTranslate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HttpTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

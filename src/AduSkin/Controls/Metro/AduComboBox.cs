@@ -5,12 +5,21 @@ using System.Windows.Media;
 
 namespace AduSkin.Controls.Metro
 {
-    public class AduComboBox : ComboBox
-    {
-        static AduComboBox()
-        {
-            ElementBase.DefaultStyle<AduComboBox>(DefaultStyleKeyProperty);
-        }
-        
-    }
+   public class AduComboBox : ComboBox
+   {
+      static AduComboBox()
+      {
+         ElementBase.DefaultStyle<AduComboBox>(DefaultStyleKeyProperty);
+      }
+      public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register("CornerRadius"
+          , typeof(CornerRadius), typeof(AduComboBox));
+      /// <summary>
+      /// 按钮四周圆角
+      /// </summary>
+      public CornerRadius CornerRadius
+      {
+         get { return (CornerRadius)GetValue(CornerRadiusProperty); }
+         set { SetValue(CornerRadiusProperty, value); }
+      }
+   }
 }

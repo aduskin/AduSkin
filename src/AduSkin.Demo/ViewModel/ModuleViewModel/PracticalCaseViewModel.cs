@@ -31,6 +31,7 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("右键菜单", typeof(ContextMenuDemo)),
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
             new ControlModel("过渡容器", typeof(TransitioningContentControlDemo)),
+            new ControlModel("接口调试工具", typeof(HttpTool)),
          };
          _SearchControl.Source= _AllControl;
          _SearchControl.View.Culture = new System.Globalization.CultureInfo("zh-CN");

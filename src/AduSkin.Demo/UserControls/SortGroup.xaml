@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              Name="ListSortGroup"
              xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
-             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel.DemoViewModel"
+             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
              xmlns:i="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
              d:DesignHeight="450" d:DesignWidth="800">
     <i:Interaction.Triggers>

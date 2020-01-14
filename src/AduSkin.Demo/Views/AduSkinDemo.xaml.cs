@@ -1,19 +1,6 @@
 ﻿using AduSkin.Controls.Metro;
 using AduSkin.Demo.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace AduSkin.Demo.Views
 {
@@ -42,7 +29,7 @@ namespace AduSkin.Demo.Views
          {
             ID = 1,
             Name = "“Maker Wallpaper” 让我们来见一见这款精心为您打造的视频桌面壁纸！",
-            Cover = "http://dmskin.com/image/xxxx.png",
+            Cover = "https://qqadapt.qpic.cn/txdocpic/0/784b3a8183c2b0a49715fcaec57825ab/0?w=1353&h=864",
             Link = "",
             Likes = "99+",
             Shares = "99+",

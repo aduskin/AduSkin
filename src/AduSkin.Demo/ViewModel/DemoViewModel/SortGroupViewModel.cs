@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace AduSkin.Demo.ViewModel.DemoViewModel
+namespace AduSkin.Demo.ViewModel
 {
    public class SortGroupViewModel:ViewModelBase
    {
