@@ -78,12 +78,12 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
-                        <RowDefinition MinHeight="200"/>
-                        <RowDefinition MinHeight="40"/>
+                        <RowDefinition MinHeight="200" Height="Auto"/>
+                        <RowDefinition MinHeight="{Binding ShowCodeHeight}"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="{Binding Title}" Style="{StaticResource H5}" VerticalAlignment="Center" Margin="20,0"/>
                     <ContentPresenter Grid.Row="1" Content="{Binding Content}"/>
-                    <Grid Grid.Row="2" Margin="0,20,0,0">
+                    <Grid Grid.Row="2" Margin="0,20,0,0" Visibility="{Binding IsShowCode,Converter={StaticResource BoolToVisibility}}">
                         <Metro:AduExpander >
                             <Metro:MetroTextBox InputHint="Demo SourceCode ..." Margin="0,10,0,0" Height="200"/>
                         </Metro:AduExpander>

@@ -1,15 +1,17 @@
 ﻿using AduSkin.Demo.Models;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
-  public class HttpToolViewModel : ViewModelBase
+   public class HttpToolViewModel : ViewModelBase
    {
       public HttpToolViewModel()
       {
@@ -32,6 +34,19 @@ namespace AduSkin.Demo.ViewModel
                 , new Sys_Code{CodeValue="delete",CodeName="delete"}
             };
          CurrentHttpType = HttpTypList[0];
+
+         //请求参数默认两个空
+         RequestParameter = new ObservableCollection<Sys_Code>
+            {
+                new Sys_Code("","")
+                , new Sys_Code("","")
+            };
+         //请求头默认两个空
+         RequestHead = new ObservableCollection<Sys_Code>
+            {
+                new Sys_Code("","")
+                , new Sys_Code("","")
+            };
       }
 
       private ObservableCollection<Sys_Code> _HttpTypList;
@@ -74,5 +89,55 @@ namespace AduSkin.Demo.ViewModel
          get { return _CurrentCodeType; }
          set { Set(ref _CurrentCodeType, value); }
       }
+
+      private ObservableCollection<Sys_Code> _RequestParameter;
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public ObservableCollection<Sys_Code> RequestParameter
+      {
+         get { return _RequestParameter; }
+         set { Set(ref _RequestParameter, value); }
+      }
+
+
+      private ObservableCollection<Sys_Code> _RequestHead;
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public ObservableCollection<Sys_Code> RequestHead
+      {
+         get { return _RequestHead; }
+         set { Set(ref _RequestHead, value); }
+      }
+
+      #region 命令
+      /// <summary>
+      /// 添加请求参数
+      /// </summary>
+      public ICommand AddRequestCodeCommand => new RelayCommand<string>((e) =>
+      {
+         if (e == "Param")
+            RequestParameter.Add(new Sys_Code("", ""));
+         else
+            RequestHead.Add(new Sys_Code());
+      });
+
+      /// <summary>
+      /// 删除当前参数
+      /// </summary>    
+      public ICommand RemoveParameter => new RelayCommand<Sys_Code>((e) =>
+      {
+         RequestParameter.Remove(e);
+      });
+
+      /// <summary>
+      /// 删除请求头
+      /// </summary>    
+      public ICommand RemoveHeader => new RelayCommand<Sys_Code>((e) =>
+      {
+         RequestHead.Remove(e);
+      });
+      #endregion
    }
 }

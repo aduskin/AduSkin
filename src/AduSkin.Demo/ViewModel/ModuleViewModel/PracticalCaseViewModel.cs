@@ -1,4 +1,5 @@
-﻿using AduSkin.Demo.Models;
+﻿using AduSkin.Demo.Data.Enum;
+using AduSkin.Demo.Models;
 using AduSkin.Demo.UserControls;
 using GalaSoft.MvvmLight;
 using System;
@@ -31,7 +32,7 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("右键菜单", typeof(ContextMenuDemo)),
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
             new ControlModel("过渡容器", typeof(TransitioningContentControlDemo)),
-            new ControlModel("接口调试工具", typeof(HttpTool)),
+            new ControlModel("接口调试工具", typeof(HttpTool),DemoType.Tool),
          };
          _SearchControl.Source= _AllControl;
          _SearchControl.View.Culture = new System.Globalization.CultureInfo("zh-CN");
@@ -66,10 +67,28 @@ namespace AduSkin.Demo.ViewModel
          }
       }
 
+      /// <summary>
+      /// 显示代码案例栏
+      /// </summary>
+      public bool IsShowCode => CurrentShowControl.Type == DemoType.Demo;
+
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public double ShowCodeHeight
+      {
+         get 
+         {
+            if (CurrentShowControl.Type == DemoType.Demo)
+               return 40;
+            else
+               return 0;
+         }
+      }
 
       private string _CurrentShowCode;
       /// <summary>
-      /// 属性.
+      /// 案例代码
       /// </summary>
       public string CurrentShowCode
       {
@@ -88,13 +107,15 @@ namespace AduSkin.Demo.ViewModel
             Set(ref _CurrentShowControl, value);
             RaisePropertyChanged("Content");
             RaisePropertyChanged("Title");
+            RaisePropertyChanged("IsShowCode");
+            RaisePropertyChanged("ShowCodeHeight");
          }
       }
 
 
       private int _ShowCodeTypeIndex = 0;
       /// <summary>
-      /// 属性.
+      /// 显示代码类型
       /// </summary>
       public int ShowCodeTypeIndex
       {
@@ -108,6 +129,9 @@ namespace AduSkin.Demo.ViewModel
          }
       }
 
+      /// <summary>
+      /// 控件显示
+      /// </summary>
       private UserControl _content;
       public UserControl Content
       {
@@ -118,7 +142,9 @@ namespace AduSkin.Demo.ViewModel
          }
          set { Set(ref _content, value); }
       }
-
+      /// <summary>
+      /// 标题
+      /// </summary>
       private string _Title = "Win10菜单";
       public string Title
       {
@@ -128,14 +154,15 @@ namespace AduSkin.Demo.ViewModel
             return CurrentShowControl.Title; }
          set { Set(ref _Title, value); }
       }
-
+      /// <summary>
+      /// 搜索关键字
+      /// </summary>
       private string _SearchKey="";
       public string SearchKey
       {
          get { return _SearchKey; }
          set
          {
-
             Set(ref _SearchKey, value);
             if (_SearchControl != null)
                _SearchControl.View.Refresh();

@@ -101,6 +101,7 @@
     </ApplicationDefinition>
     <Compile Include="Converter\StringRepeatConverter.cs" />
     <Compile Include="Data\ControlToken.cs" />
+    <Compile Include="Data\Enum\AduEnums.cs" />
     <Compile Include="Models\Carousel.cs" />
     <Compile Include="Models\ChatUserModel.cs" />
     <Compile Include="Models\CompanyModel.cs" />
@@ -348,7 +349,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Data\Enum\" />
     <Folder Include="Tool\" />
   </ItemGroup>
   <ItemGroup>

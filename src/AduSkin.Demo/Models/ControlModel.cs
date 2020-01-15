@@ -1,4 +1,5 @@
-﻿using AduSkin.Utility.Extend;
+﻿using AduSkin.Demo.Data.Enum;
+using AduSkin.Utility.Extend;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace AduSkin.Demo.Models
 {
    public class ControlModel
    {
-      public ControlModel(string title, Type content, string xaml= "", string code = "", string tags = "")
+      public ControlModel(string title, Type content, DemoType type=DemoType.Demo, string xaml= "", string code = "", string tags = "")
       {
          Title = title;
          TitlePinyin = StringExtend.GetPinyin(title);
          Content = content;
+         Type = type;
          Tags = tags;
          XAML = xaml;
          Code = code;
@@ -23,6 +25,8 @@ namespace AduSkin.Demo.Models
       {
          Tags = string.Empty;
       }
+
+      public DemoType Type { get; set; }
 
       public int Id { get; private set; }
 

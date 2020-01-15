@@ -102,7 +102,7 @@
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Background" Value="#FFF" />
         <Setter Property="Margin" Value="0,2" />
-        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Height" Value="36"></Setter>
         <Style.Triggers>
             <!--<Trigger Property="ItemsControl.AlternationIndex" Value="1">
                 <Setter Property="Background" Value="#10000000" />
