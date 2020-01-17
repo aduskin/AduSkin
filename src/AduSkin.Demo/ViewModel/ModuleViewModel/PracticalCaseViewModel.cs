@@ -133,7 +133,7 @@ namespace AduSkin.Demo.ViewModel
       {
          get 
          {
-            if (CurrentShowControl?.Type == DemoType.Demo)
+            if (CurrentShowControl?.Type == DemoType.Demo && SelectedDemoType == 0)
                return 40;
             else
                return 0;
@@ -178,6 +178,8 @@ namespace AduSkin.Demo.ViewModel
             Set(ref _CurrentShowTool, value);
             RaisePropertyChanged("Content");
             RaisePropertyChanged("Title");
+            RaisePropertyChanged("IsShowCode");
+            RaisePropertyChanged("ShowCodeHeight");
          }
       }
 

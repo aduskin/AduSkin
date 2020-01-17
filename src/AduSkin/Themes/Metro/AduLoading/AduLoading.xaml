@@ -12,12 +12,14 @@
         <ResourceDictionary Source="Normal.xaml"/>
         <ResourceDictionary Source="Grids.xaml"/>
         <ResourceDictionary Source="Rotate.xaml"/>
+        <ResourceDictionary Source="PathAnimation.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
     <Style TargetType="{x:Type Adu:AduLoading}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Icon" Value="{StaticResource Icon_Project}" />
         <Setter Property="Foreground" Value="{StaticResource Brush}" />
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="40" />
@@ -55,6 +57,9 @@
             </Trigger>
             <Trigger Property="Type" Value="Rotate">
                 <Setter Property="Template" Value="{StaticResource Rotate}" />
+            </Trigger>
+            <Trigger Property="Type" Value="PathAnimation">
+                <Setter Property="Template" Value="{StaticResource PathAnimation}" />
             </Trigger>
         </Style.Triggers>
     </Style>

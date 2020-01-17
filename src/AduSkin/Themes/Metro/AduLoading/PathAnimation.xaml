@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <ControlTemplate x:Key="PathAnimation" TargetType="{x:Type Adu:AduLoading}">
+        <Grid x:Name="PART_Root" Background="{TemplateBinding Background}">
+            <Path x:Name="PART_Ellipse" Stretch="UniformToFill"
+                  Data="{TemplateBinding Icon}"
+                     Fill="{TemplateBinding Foreground}"
+                  Width="{TemplateBinding Width}"
+                  Height="{TemplateBinding Height}"
+                     RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <ScaleTransform />
+                </Path.RenderTransform>
+            </Path>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="ActiveStates">
+                    <VisualState x:Name="Inactive">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Active">
+                        <Storyboard Duration="0:0:1.500" RepeatBehavior="Forever"
+                                    SpeedRatio="{TemplateBinding SpeedRatio}">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.000" Value="0" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.500" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                <LinearDoubleKeyFrame KeyTime="0:0:0.000" Value="0" />
+                                <LinearDoubleKeyFrame KeyTime="0:0:1.500" Value="1" />
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimation Duration="0:0:1.500" From="1" Storyboard.TargetName="PART_Ellipse" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

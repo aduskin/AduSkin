@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace AduSkin.Controls.Metro
 {
@@ -20,6 +21,15 @@ namespace AduSkin.Controls.Metro
       #endregion
 
       #region 依赖属性定义
+      public Geometry Icon
+      {
+         get { return (Geometry)GetValue(IconProperty); }
+         set { SetValue(IconProperty, value); }
+      }
+
+      public static readonly DependencyProperty IconProperty =
+          DependencyProperty.Register("Icon", typeof(Geometry), typeof(AduLoading));
+
       public bool IsActived
       {
          get { return (bool)GetValue(IsActivedProperty); }

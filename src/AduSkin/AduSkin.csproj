@@ -411,6 +411,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Metro\AduLoading\PathAnimation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Metro\AduLoading\SingleRound.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

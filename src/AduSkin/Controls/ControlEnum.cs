@@ -124,7 +124,11 @@ namespace AduSkin.Controls
       /// <summary>
       /// 版块加载
       /// </summary>
-      Block
+      Block,
+      /// <summary>
+      /// 自定义图标动画
+      /// </summary>
+      PathAnimation
    }
    #endregion
 
