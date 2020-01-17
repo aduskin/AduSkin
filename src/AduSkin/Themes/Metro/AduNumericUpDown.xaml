@@ -303,35 +303,28 @@
                     <ColumnDefinition Width="26" />
                 </Grid.ColumnDefinitions>
 
-                <Popup AllowsTransparency="True"
-                       IsOpen="{Binding IsShowTip,
-                                        RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                       Placement="Top"
-                       PlacementTarget="{Binding ElementName=border}"
-                       StaysOpen="False">
+                <Popup AllowsTransparency="True" IsOpen="{Binding IsShowTip, RelativeSource={RelativeSource Mode=TemplatedParent}}" Placement="Top" PlacementTarget="{Binding ElementName=border}" StaysOpen="False">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="5" />
                         </Grid.RowDefinitions>
-                        <Border Background="{Binding TipBackground,
-                                                     RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                CornerRadius="2" Padding="5">
+                        <Border Background="{Binding TipBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" CornerRadius="2" Padding="5">
                             <TextBlock Foreground="White" Text="{Binding TipText, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                         </Border>
-
-                        <Path Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Left" Data="M0,0 5,5 10,0Z"
-                              Fill="{Binding TipBackground,
-                                             RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                        <Path Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Left" Data="M0,0 5,5 10,0Z" Fill="{Binding TipBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                     </Grid>
                 </Popup>
 
-                <Adu:AduPathIconButton x:Name="PART_DOWN" CornerRadius="3,0,0,3" Grid.Column="0" PathData="{StaticResource Icon_Reduce}" PathWidth="10" Background="{StaticResource Brush}" MouseOverBackground="{StaticResource DefaultBackground}" MouseOverPathColor="{StaticResource Brush}" PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF"/>
+                <Adu:AduPathIconButton x:Name="PART_DOWN" CornerRadius="3,0,0,3" Grid.Column="0" PathData="{StaticResource Icon_Reduce}" PathWidth="10" 
+                                       Background="{TemplateBinding Background}" MouseOverBackground="{TemplateBinding Background}" 
+                                       MouseOverPathColor="#FFF" PressedPathColor="#FFF"  NormalPathColor="#FFF"/>
 
-                <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" Focusable="false" HorizontalScrollBarVisibility="Hidden"
-                              VerticalScrollBarVisibility="Hidden" />
+                <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
 
-                <Adu:AduPathIconButton x:Name="PART_UP"  CornerRadius="0,3,3,0" Grid.Column="2" PathData="{StaticResource Icon_Add}" PathWidth="12" Background="{StaticResource Brush}" MouseOverBackground="{StaticResource DefaultBackground}" MouseOverPathColor="{StaticResource Brush}"  PressedPathColor="{StaticResource Brush}"  NormalPathColor="#FFF" />
+                <Adu:AduPathIconButton x:Name="PART_UP"  CornerRadius="0,3,3,0" Grid.Column="2" PathData="{StaticResource Icon_Add}" PathWidth="12" 
+                                       Background="{TemplateBinding Background}" MouseOverBackground="{TemplateBinding Background}" 
+                                       MouseOverPathColor="#FFF"  PressedPathColor="#FFF"  NormalPathColor="#FFF" />
             </Grid>
         </Border>
         <ControlTemplate.Triggers>
@@ -341,9 +334,9 @@
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter Property="Cursor" Value="Arrow" />
             </Trigger>
-            <Trigger Property="IsMouseOver" Value="true">
+            <!--<Trigger Property="IsMouseOver" Value="true">
                 <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Brush}" />
-            </Trigger>
+            </Trigger>-->
             <!--<Trigger Property="IsKeyboardFocused" Value="true">
                 <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource TextBox.Focus.Border}" />
             </Trigger>-->
@@ -352,9 +345,9 @@
 
     <!--  控件样式，以UpDownOrientation来控制控件呈现方式  -->
     <Style TargetType="{x:Type Adu:AduNumericUpDownBase}">
-        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="Background" Value="{StaticResource Brush}" />
         <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="Foreground" Value="#FFF" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />

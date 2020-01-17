@@ -11,18 +11,18 @@
         xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
         Title="AduSkinDemo" Height="700" MinHeight="350" MinWidth="784" Width="1100" >
     <Metro:TransitioningContentControl>
-        <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".8*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width=".8*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel HorizontalAlignment="Left" Grid.ColumnSpan="3" VerticalAlignment="Center">
-            <TextBlock
+        <Grid Background="{StaticResource ShadowColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".8*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width=".8*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Left" Grid.ColumnSpan="3" VerticalAlignment="Center">
+                <TextBlock
                 Margin="40,0,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -30,7 +30,7 @@
                 FontWeight="Bold"
                Foreground="{StaticResource DefaultBrush}"
                 Text="AduSkin" />
-            <TextBlock
+                <TextBlock
                 Margin="40,0,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -38,103 +38,103 @@
                 FontWeight="Light"
                 Foreground="{StaticResource DefaultBrush}"
                 Text="追求极致，永臻完美" />
-        </StackPanel>
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Adu:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,20" >
-                <StackPanel>
-                    <Metro:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
-                        <Metro:Carousel.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Background="#00000000">
-                                    <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding Cover}" Stretch="UniformToFill" >
-                                        <Image.RenderTransform>
-                                            <TransformGroup>
-                                                <ScaleTransform ScaleX="1" ScaleY="1" />
-                                            </TransformGroup>
-                                        </Image.RenderTransform>
-                                    </Image>
-                                    <Adu:AduFlatButton x:Name="PlayBtn" Visibility="Hidden"  Margin="20,60" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+            </StackPanel>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Adu:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,20" >
+                    <StackPanel>
+                        <Metro:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
+                            <Metro:Carousel.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Background="#00000000">
+                                        <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding Cover}" Stretch="UniformToFill" >
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                        <Adu:AduFlatButton x:Name="PlayBtn" Visibility="Hidden"  Margin="20,60" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                                        MouseOverBackground="#000" Foreground="{StaticResource DefaultBrush}" 
                                                        ToolTip="点击进入Demo查看" FontSize="18" FontWeight="Bold" Width="120" Height="40" 
                                                        Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}"
                                                        Content="查看案例" Background="Transparent" />
-                                    <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
-                                        <TextBlock Text="{Binding BlogDate}" Background="#80000000" Padding="6,0" Foreground="#FFF" FontSize="16" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
-                                        <TextBlock Text="{Binding Name}" Background="#80000000" Padding="4,2" Foreground="#FFF" FontSize="20" HorizontalAlignment="Center"  MaxWidth="400" TextTrimming="CharacterEllipsis"/>
-                                    </StackPanel>
-                                </Grid>
-                                <DataTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="PlayBtn" Property="Visibility" Value="Visible" />
-                                    </Trigger>
-                                    <!-- 鼠标进入事件 -->
-                                    <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
-                                                <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                    <!-- 鼠标离开事件 -->
-                                    <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" AutoReverse="False" />
-                                                <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" AutoReverse="False" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                </DataTemplate.Triggers>
-                            </DataTemplate>
-                        </Metro:Carousel.ItemTemplate>
-                    </Metro:Carousel>
-                    <ItemsControl  x:Name="Demos" FocusVisualStyle="{x:Null}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border Name="bg" Padding="0,0">
-                                    <Grid Margin="0,0,0,20" >
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
-                                            <RowDefinition Height="40"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="40"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="1.5*"/>
-                                            <ColumnDefinition Width="3*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Image Grid.Row="0" Grid.ColumnSpan="2" Stretch="UniformToFill" Source="{Binding Cover}"/>
-                                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
-                                            <Adu:AduButtonIcon Content="{Binding Likes}" Width="70" Height="30" CornerRadius="5" IconTextMargin="10" FontSize="12" Foreground="#666" IconWidth="16" Icon="{StaticResource Icon_Like}"/>
-                                            <Adu:AduButtonIcon Content="{Binding Shares}" Width="70" Height="30" CornerRadius="5" IconTextMargin="10" FontSize="12" Foreground="#666" Icon="{StaticResource Icon_Dynamic}"/>
-                                            <Adu:AduFlatButton Width="80" MouseOverBackground="#000" Foreground="{StaticResource DefaultBrush}" ToolTip="点击进入Demo查看" FontSize="15" FontWeight="Light" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}" Content="查看案例" Background="Transparent" HorizontalAlignment="Right"/>
+                                        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
+                                            <TextBlock Text="{Binding BlogDate}" Background="#80000000" Padding="6,0" Foreground="#FFF" FontSize="16" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
+                                            <TextBlock Text="{Binding Name}" Background="#80000000" Padding="4,2" Foreground="#FFF" FontSize="20" HorizontalAlignment="Center"  MaxWidth="400" TextTrimming="CharacterEllipsis"/>
                                         </StackPanel>
-                                        
-                                        <TextBlock Grid.Row="2" Text="{Binding Name}" FontSize="18" FontWeight="Bold" TextWrapping="Wrap"/>
-                                        <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Describe}" FontSize="14" TextWrapping="Wrap"/>
-                                        <Grid Grid.Row="3" Grid.ColumnSpan="2">
-                                            <TextBlock  x:Name="timePart" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding BlogDate}" FontSize="18" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}" />
-                                            <Metro:RatingBar VerticalAlignment="Center" HorizontalAlignment="Right" Height="30" Value="5" SelectedColor="{StaticResource DefaultBrush}" />
-                                        </Grid>
                                     </Grid>
-                                </Border>
-                                <DataTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="bg" Property="Background" Value="#10ffffff" />
-                                    </Trigger>
-                                </DataTemplate.Triggers>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </Adu:MetroScrollViewer>
+                                    <DataTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="PlayBtn" Property="Visibility" Value="Visible" />
+                                        </Trigger>
+                                        <!-- 鼠标进入事件 -->
+                                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
+                                                    <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <!-- 鼠标离开事件 -->
+                                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" AutoReverse="False" />
+                                                    <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" AutoReverse="False" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </Metro:Carousel.ItemTemplate>
+                        </Metro:Carousel>
+                        <ItemsControl  x:Name="Demos" FocusVisualStyle="{x:Null}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Name="bg" Padding="10,10">
+                                        <Grid Margin="0,0,0,20" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="40"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="40"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1.5*"/>
+                                                <ColumnDefinition Width="3*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Row="0" Grid.ColumnSpan="2" Stretch="UniformToFill" Source="{Binding Cover}"/>
+                                            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left">
+                                                <Adu:AduButtonIcon Content="{Binding Likes}" Width="70" Height="30" CornerRadius="3" IconTextMargin="10" FontSize="12" Foreground="#FFF" IconWidth="16" Icon="{StaticResource Icon_Like}"/>
+                                                <Adu:AduButtonIcon Content="{Binding Shares}" Width="70" Height="30" CornerRadius="3" IconTextMargin="10" FontSize="12" Foreground="#FFF" Icon="{StaticResource Icon_Dynamic}"/>
+                                                <Adu:AduFlatButton Width="80" MouseOverBackground="#000" Foreground="{StaticResource DefaultBrush}" ToolTip="点击进入Demo查看" FontSize="15" FontWeight="Light" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}" Content="查看案例" Background="Transparent" HorizontalAlignment="Right"/>
+                                            </StackPanel>
+
+                                            <TextBlock Grid.Row="2" Text="{Binding Name}" FontSize="18" FontWeight="Bold" TextWrapping="Wrap" Foreground="#FFF"/>
+                                            <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Describe}" FontSize="14" TextWrapping="Wrap" Foreground="#FFF"/>
+                                            <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                                                <TextBlock  x:Name="timePart" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding BlogDate}" FontSize="18" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}" />
+                                                <Metro:RatingBar VerticalAlignment="Center" HorizontalAlignment="Right" Height="30" Value="5" Foreground="#FFF" SelectedColor="{StaticResource DefaultBrush}" />
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                    <DataTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="bg" Property="Background" Value="#10ffffff" />
+                                        </Trigger>
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Adu:MetroScrollViewer>
+            </Grid>
         </Grid>
-    </Grid>
     </Metro:TransitioningContentControl>
 </Adu:AduWindow>

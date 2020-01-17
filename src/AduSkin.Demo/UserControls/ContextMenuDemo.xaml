@@ -8,22 +8,6 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid Background="#00000000">
-        <Grid.Resources>
-            <Style x:Key="MenuItem_NonStyle" TargetType="{x:Type MenuItem}">
-                <Setter Property="Height" Value="Auto" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type MenuItem}">
-                            <Grid Margin="1">
-                                <ContentPresenter x:Name="Presenter"
-                                          ContentSource="Header"
-                                          Margin="{TemplateBinding Padding}" />
-                            </Grid>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-        </Grid.Resources>
         <Grid.ContextMenu>
             <Metro:MetroContextMenu Width="260">
                 <MenuItem Height="200" Padding="10" Style="{StaticResource MenuItem_NonStyle}">
@@ -98,6 +82,11 @@
                 </MenuItem>
                 <Metro:MetroMenuSeparator />
                 <Metro:MetroMenuItem Header="设置" />
+                <MenuItem Style="{StaticResource MenuItem_NonStyle}" FontSize="12" VerticalAlignment="Center" Padding="32,0,9,0">
+                    <MenuItem.Header>
+                        <Metro:MetroSwitch Content="开启加速"/>
+                    </MenuItem.Header>
+                </MenuItem>
                 <Metro:MetroMenuItem Header="关于"  />
                 <Metro:MetroMenuItem Header="帮助" >
                     <Metro:MetroMenuItem Header="升级"  />

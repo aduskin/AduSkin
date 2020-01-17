@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
-    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type Adu:SegmentItem}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="1, 0, 0, 0" />
@@ -46,9 +48,9 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Padding" Value="-1,-1" />
         <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
         <Setter Property="BorderThickness" Value="1,1,1,1" />
-        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Foreground" Value="{StaticResource Brush}" />
         <Setter Property="FontFamily" Value="微软雅黑" />
         <Setter Property="FontSize" Value="12" />
         <Setter Property="CornerRadius" Value="5" />

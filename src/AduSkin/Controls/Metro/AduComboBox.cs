@@ -7,6 +7,10 @@ namespace AduSkin.Controls.Metro
 {
    public class AduComboBox : ComboBox
    {
+      public AduComboBox()
+      {
+         Utility.Refresh(this);
+      }
       static AduComboBox()
       {
          ElementBase.DefaultStyle<AduComboBox>(DefaultStyleKeyProperty);

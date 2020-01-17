@@ -82,13 +82,17 @@ namespace AduSkin.Controls.Metro
             this.RaiseEvent(arg);
         }
 
-        #endregion
+      #endregion
 
-        #endregion
+      #endregion
 
-        #region Constructors
+      #region Constructors
+      public SegmentControl()
+      {
+         Utility.Refresh(this);
+      }
 
-        static SegmentControl()
+      static SegmentControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SegmentControl), new FrameworkPropertyMetadata(typeof(SegmentControl)));
         }

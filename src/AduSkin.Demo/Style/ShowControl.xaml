@@ -70,7 +70,6 @@
         </DoubleAnimation>
     </Storyboard>
 
-
     <Style TargetType="{x:Type ListBox}">
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -89,6 +88,20 @@
                             <ItemsPresenter Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                         </Metro:MetroScrollViewer>
                     </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--空MenuHeader-->
+    <Style x:Key="MenuItem_NonStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Grid Margin="1">
+                        <ContentPresenter x:Name="Presenter" ContentSource="Header" Margin="{TemplateBinding Padding}" />
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

@@ -14,6 +14,6 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <TreeView x:Name="TreeViewCompany" BorderThickness="0" Background="Transparent"/>
+        <TreeView x:Name="TreeViewCompany" BorderThickness="0" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
     </Grid>
 </UserControl>

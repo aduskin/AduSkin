@@ -24,6 +24,11 @@ namespace AduSkin.Demo
          InitializeComponent();
         
          exit.Click += delegate { Close(); };
+         Theme.ColorChange += delegate
+         {
+            // 不要通过XAML来绑定颜色，无法获取到通知
+            BorderBrush = Theme.CurrentColor.OpaqueSolidColorBrush;
+         };
       }
    }
 }

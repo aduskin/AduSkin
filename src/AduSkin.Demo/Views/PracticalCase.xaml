@@ -28,7 +28,7 @@
                 <Border Background="#05000000" Grid.Row="1">
                     <Metro:MetroTextBox x:Name="SearchKey" CaretBrush="#000" Background="#10000000" BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center" CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  InputHint="Search you need Demo..." />
                 </Border>
-                <Metro:AduTabControl Grid.Row="2">
+                <Metro:AduTabControl Grid.Row="2" SelectedIndex="{Binding SelectedDemoType}">
                     <Metro:AduTabControl.Resources>
                         <Style TargetType="TabPanel">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -68,7 +68,37 @@
                         </ListBox>
                     </Metro:AduTabItem>
                     <Metro:AduTabItem Header="工具">
-
+                        <ListBox ItemsSource="{Binding SearchTool.View}" BorderThickness="0" Background="Transparent" SelectedItem="{Binding CurrentShowTool}">
+                            <ListBox.Resources>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Background" Value="Transparent" />
+                                    <Setter Property="BorderThickness" Value="0" />
+                                    <Setter Property="Padding" Value="0" />
+                                    <Setter Property="Cursor" Value="Hand"></Setter>
+                                </Style>
+                            </ListBox.Resources>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border MinHeight="40" Width="250" Background="#00000000" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0 1 0 0">
+                                        <TextBlock Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource DefaultBrush}" Metro:TextBlockService.HighlightText="{Binding ElementName=SearchKey,Path=Text}" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Border>
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"  Value="True">
+                                            <Setter TargetName="Bd" Property="Background" Value="#EAEAEA" />
+                                        </DataTrigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsMouseOver" Value="True" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke" />
+                                        </MultiTrigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                                        </Trigger>
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </Metro:AduTabItem>
                 </Metro:AduTabControl>
             </Grid>
@@ -88,7 +118,7 @@
                             <Metro:MetroTextBox InputHint="Demo SourceCode ..." Margin="0,10,0,0" Height="200"/>
                         </Metro:AduExpander>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                            <Metro:SegmentControl x:Name="CodeType" BorderBrush="{StaticResource DefaultBrush}"  Foreground="{StaticResource DefaultBrush}" SelectedIndex="{Binding ShowCodeTypeIndex}" HorizontalAlignment="Left">
+                            <Metro:SegmentControl x:Name="CodeType" SelectedIndex="{Binding ShowCodeTypeIndex}" HorizontalAlignment="Left">
                                 <Metro:SegmentItem Content="XAML"/>
                                 <Metro:SegmentItem Content="Code"/>
                             </Metro:SegmentControl>

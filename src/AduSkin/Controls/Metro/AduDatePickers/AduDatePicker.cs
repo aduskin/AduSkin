@@ -425,6 +425,7 @@ namespace AduSkin.Controls.Metro
 
       public AduDatePicker()
       {
+         Utility.Refresh(this);
          this.SelectedDates = new ObservableCollection<DateTime>();
       }
       #endregion

@@ -11,7 +11,12 @@ namespace AduSkin.Controls.Metro
 
         public string Remark { get { return (string)GetValue(RemarkProperty); } set { SetValue(RemarkProperty, value); } }
 
-        static AduTabItem()
+        public AduTabItem()
+        {
+           Utility.Refresh(this);
+        }
+
+      static AduTabItem()
         {
             ElementBase.DefaultStyle<AduTabItem>(DefaultStyleKeyProperty);
         }

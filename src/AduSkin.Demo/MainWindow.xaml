@@ -27,8 +27,17 @@
                 <Metro:MetroMenuItem Header="Nuget" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://www.nuget.org/packages/aduskin"/>
                 <Metro:MetroMenuItem Header="微博" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://weibo.com/sentiment562520"/>
                 <Metro:MetroMenuItem Header="博客园" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://www.cnblogs.com/aduskin"/>
+                <MenuItem Style="{StaticResource MenuItem_NonStyle}" Height="30" >
+                    <MenuItem.Header>
+                        <Grid>
+                            <TextBlock Text="主题色" Margin="33,0" VerticalAlignment="Center"/>
+                            <Metro:MetroColorPicker x:Name="Theme" Width="20" Height="20" Background="{StaticResource DefaultBrush}" DefaultColor="{StaticResource DefaultBrush}" />
+                        </Grid>
+                    </MenuItem.Header>
+                </MenuItem>
             </Metro:MetroTitleMenuItem>
             <Metro:MetroTitleMenuItem Header="技术支持"  Icon="Resources/github.png" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
+            
         </Metro:MetroTitleMenu>
     </Metro:MetroWindow.Menu>
     <Metro:MetroWindow.ContextMenu>

@@ -158,7 +158,7 @@
                                 <StackPanel Orientation="Horizontal" >
                                     <Adu:MetroTextBox x:Name="PART_Txt_VideoSource" Background="#90FFFFFF" BorderThickness="0" CornerRadius="15" Width="300" Height="30" VerticalAlignment="Center" Text="https://vg-dl.nos-eastchina1.126.net/video/map.mp4"/>
                                     <Adu:AduFlatButton x:Name="PART_Btn_PlayLocalFile" Width="70" Height="30" Content="Play" Margin="10,0,0,0" Background="{StaticResource DefaultBrush}"/>
-                                    <Adu:AduFlatButton x:Name="PART_Btn_PlayUri" Width="100" Height="30" Content="btnPlayUri" Background="{StaticResource DefaultBrush}"  Margin="10,0,0,0" />
+                                    <Adu:AduFlatButton x:Name="PART_Btn_PlayUri" Width="100" Height="30" Content="PlayUri" Background="{StaticResource DefaultBrush}"  Margin="10,0,0,0" />
                                 </StackPanel>
                             </Border>
                         </Grid>

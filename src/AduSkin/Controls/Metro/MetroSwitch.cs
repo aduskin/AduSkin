@@ -16,7 +16,8 @@ namespace AduSkin.Controls.Metro
 
         public MetroSwitch()
         {
-            Loaded += delegate { ElementBase.GoToState(this, (bool)IsChecked ? "OpenLoaded" : "CloseLoaded"); };
+         Utility.Refresh(this);
+         Loaded += delegate { ElementBase.GoToState(this, (bool)IsChecked ? "OpenLoaded" : "CloseLoaded"); };
         }
 
         protected override void OnChecked(RoutedEventArgs e)
