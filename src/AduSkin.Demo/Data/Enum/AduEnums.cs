@@ -11,4 +11,11 @@ namespace AduSkin.Demo.Data.Enum
       Demo,
       Tool
    }
+
+   public enum ControlState
+   {
+      New,
+      InDev,
+      Nor
+   }
 }

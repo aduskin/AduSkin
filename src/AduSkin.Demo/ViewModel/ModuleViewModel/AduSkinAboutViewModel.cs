@@ -25,9 +25,23 @@ namespace AduSkin.Demo.ViewModel
             case "Video":
                new AduVideoDemo().Show();
                return;
+            case "Reward":
+               IsOpenReward = true;
+               return;
             default:
                break;
          }
       });
+
+
+      private bool _IsOpenReward;
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public bool IsOpenReward
+      {
+         get { return _IsOpenReward; }
+         set { Set(ref _IsOpenReward, value); }
+      }
    }
 }

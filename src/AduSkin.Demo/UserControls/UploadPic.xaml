@@ -25,7 +25,7 @@
                                 <Image Source="{Binding}" MaxWidth="100" MaxHeight="80" Stretch="UniformToFill" MinWidth="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <Border x:Name="delete" Visibility="Collapsed" Background="#50000000">
-                                <Adu:AduPathIconButton Click="Delete_Click" MouseOverPathColor="{StaticResource DefaultBrush}" PressedPathColor="{StaticResource PrimaryBrush}" PathWidth="30" PathData="{StaticResource Icon_Delete}"/>
+                                <Adu:AduPathIconButton Click="Delete_Click" MouseOverPathColor="{StaticResource DefaultBrush}" PressedPathColor="{StaticResource DefaultMouseOverBrush}" PathWidth="30" PathData="{StaticResource Icon_Delete}"/>
                             </Border>
                         </Grid>
                         <DataTemplate.Triggers>

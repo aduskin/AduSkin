@@ -6,7 +6,7 @@
         xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
         xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
-        BorderBrush="#FFF"
+        BorderBrush="#3E3E45"
         BorderThickness="1"
         xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
         Title="AduSkinDemo" Height="700" MinHeight="350" MinWidth="784" Width="1100" >

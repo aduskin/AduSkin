@@ -48,11 +48,13 @@ namespace AduSkin.Demo.UserControls
          {
             foreach (var item in FileDialog.FileNames)
             {
-               Capture.Add(item);
+               if (!Capture.Contains(item))
+               {
+                  Capture.Add(item);
+               }
+               
             }
          }
       }
-
-      
    }
 }

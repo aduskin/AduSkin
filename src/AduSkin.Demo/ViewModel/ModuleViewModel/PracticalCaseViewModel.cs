@@ -19,7 +19,7 @@ namespace AduSkin.Demo.ViewModel
          _AllTool = new List<ControlModel>()
          {
             //new ControlModel("百度翻译", typeof(BaiduTranslate),DemoType.Tool),
-            new ControlModel("接口调试工具", typeof(HttpTool),DemoType.Tool),
+            new ControlModel("接口调试工具", typeof(HttpTool),DemoType.Tool,ControlState.InDev),
          };
          _SearchTool.Source = _AllTool;
          _SearchTool.View.Culture = new System.Globalization.CultureInfo("zh-CN");
@@ -38,11 +38,11 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("轮播容器", typeof(CarouselContainer)),
             new ControlModel("时间轴", typeof(TimeLine)),
             new ControlModel("树形菜单", typeof(TreeMenu)),
-            new ControlModel("数据列表", typeof(DataGridDemo)),
+            new ControlModel("数据列表", typeof(DataGridDemo),DemoType.Demo,ControlState.New),
             new ControlModel("多功能Tab", typeof(MultiFunctionTabControl)),
-            new ControlModel("右键菜单", typeof(ContextMenuDemo)),
+            new ControlModel("右键菜单", typeof(ContextMenuDemo),DemoType.Demo,ControlState.New),
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
-            new ControlModel("过渡容器", typeof(TransitioningContentControlDemo)),
+            new ControlModel("过渡容器", typeof(TransitioningContentControlDemo),DemoType.Demo,ControlState.New),
          };
          _SearchControl.Source= _AllControl;
          _SearchControl.View.Culture = new System.Globalization.CultureInfo("zh-CN");

@@ -10,7 +10,7 @@ namespace AduSkin.Demo.Models
 {
    public class ControlModel
    {
-      public ControlModel(string title, Type content, DemoType type=DemoType.Demo, string xaml= "", string code = "", string tags = "")
+      public ControlModel(string title, Type content, DemoType type=DemoType.Demo,ControlState state=ControlState.Nor, string xaml= "", string code = "", string tags = "")
       {
          Title = title;
          TitlePinyin = StringExtend.GetPinyin(title);
@@ -19,6 +19,7 @@ namespace AduSkin.Demo.Models
          Tags = tags;
          XAML = xaml;
          Code = code;
+         State = state;
       }
 
       public ControlModel()
@@ -41,5 +42,7 @@ namespace AduSkin.Demo.Models
       public string Code { get; set; }
 
       public string Tags { get; set; }
+
+      public ControlState State { get; set; }
    }
 }

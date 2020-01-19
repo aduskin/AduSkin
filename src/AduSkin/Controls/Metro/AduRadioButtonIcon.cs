@@ -18,7 +18,7 @@ namespace AduSkin.Controls.Metro
 
       #region AduSkin
       public static readonly DependencyProperty SelectColorProperty = DependencyProperty.Register("SelectColor"
-            , typeof(Brush), typeof(AduFlatButton), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(238, 121, 111))));
+            , typeof(Brush), typeof(AduRadioButtonIcon), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(238, 121, 111))));
       /// <summary>
       /// 选中时颜色
       /// </summary>

@@ -85,7 +85,7 @@
                 </Border>
             </Metro:AduTabItem>
             <Metro:AduTabItem Header="关于AduSkin">
-                <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,1,0,0">
+                <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,0,0,0">
                     <ContentControl Content="{Binding AduSkinAbout}"/>
                 </Border>
             </Metro:AduTabItem>

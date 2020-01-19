@@ -8,6 +8,7 @@
     <Color x:Key="PrimaryColor">#DC4E41</Color>
     <Color x:Key="DarkPrimaryColor">#007ACC</Color>
     <SolidColorBrush x:Key="DefaultBrush" Color="#EE796F" />
+    <SolidColorBrush x:Key="DefaultWhiteBrush" Color="#FFF" />
     <SolidColorBrush x:Key="DefaultMouseOverBrush" Color="#FA9D95" />
     <SolidColorBrush x:Key="DefaultBorderBrush" Color="#10000000" />
     <SolidColorBrush x:Key="DefaultBackground" Color="#05000000" />
