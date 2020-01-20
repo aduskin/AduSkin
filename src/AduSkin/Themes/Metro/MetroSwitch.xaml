@@ -57,7 +57,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Metro:MetroTextBlock x:Name="title" Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding TextHorizontalAlignment}" Opacity="0.65" />
+                        <Metro:MetroTextBlock x:Name="title" Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding TextHorizontalAlignment}" Opacity="1" />
                         <Border x:Name="back" Grid.Column="2" CornerRadius="{TemplateBinding BorderCornerRadius}" Background="{TemplateBinding Background}" />
                         <Border x:Name="backFalse" Grid.Column="2" CornerRadius="{TemplateBinding BorderCornerRadius}" />
                         <Border x:Name="yuan" Grid.Column="2" Background="#ffffff" CornerRadius="{TemplateBinding CornerRadius}" Margin="2" />

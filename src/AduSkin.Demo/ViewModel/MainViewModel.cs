@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace AduSkin.Demo.ViewModel
 {
@@ -21,6 +22,32 @@ namespace AduSkin.Demo.ViewModel
 
       }
 
+
+      private int _SelectedModularIndex;
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public int SelectedModularIndex
+      {
+         get { return _SelectedModularIndex; }
+         set { 
+            Set(ref _SelectedModularIndex, value);
+            if (value == 2)
+               MainBackground= new SolidColorBrush(Color.FromRgb(28, 64, 139));
+            else
+               MainBackground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+         }
+      }
+
+      private SolidColorBrush _MainBackground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public SolidColorBrush MainBackground
+      {
+         get { return _MainBackground; }
+         set { Set(ref _MainBackground, value); }
+      }
       /// <summary>
       /// 命令Command
       /// </summary>

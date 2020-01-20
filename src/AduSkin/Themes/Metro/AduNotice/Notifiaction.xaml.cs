@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 
-namespace AduSkin.Controls.Metro.AduNotice
+namespace AduSkin.Controls.Metro
 {
     /// <summary>
     /// Notifiaction.xaml 的交互逻辑
@@ -93,4 +93,18 @@ namespace AduSkin.Controls.Metro.AduNotice
         /// </summary>
         public EnumPromptType NotifiactionType { get; set; }
     }
+
+   public class NoticeManager
+   {
+      public static Notifiaction NotifiactionShow { get;set;}
+
+      public static void Initialize() 
+      {
+         NotifiactionShow = new Notifiaction();
+      }
+      public static void ExitNotifiaction()
+      {
+         NotifiactionShow?.Close();
+      }
+   }
 }

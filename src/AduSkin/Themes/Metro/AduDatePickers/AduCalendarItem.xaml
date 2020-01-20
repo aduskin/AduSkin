@@ -19,9 +19,9 @@
                     <VisualState x:Name="Normal" />
                     <VisualState x:Name="MouseOver">
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="buttonContent"
-                                Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
-                                To="#FFF"
+                            <DoubleAnimation Storyboard.TargetName="buttonContent"
+                                Storyboard.TargetProperty="Opacity"
+                                To=".7"
                                 Duration="0:0:0.3" />
                         </Storyboard>
                     </VisualState>

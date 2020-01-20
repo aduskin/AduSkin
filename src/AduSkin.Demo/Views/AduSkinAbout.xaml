@@ -63,11 +63,11 @@
                             </Grid>
                         </Metro:AduFlatButton>
                         <Popup  PopupAnimation="Fade" 
-                                       Width="500" Height="300"
+                                        Height="300"
                                        PlacementTarget="{Binding ElementName=OpenReward}" 
                                        Placement="Bottom" AllowsTransparency="True" 
-                                       StaysOpen="False" IsOpen="{Binding IsOpenReward}" HorizontalOffset="-125" VerticalOffset="13">
-                            <Border Background="#fff" Margin="20" Padding="0,10" BorderBrush="#04000000" BorderThickness="1">
+                                       StaysOpen="False" IsOpen="{Binding IsOpenReward}" HorizontalOffset="-141" VerticalOffset="13">
+                            <Border Background="#fff" Margin="20" Padding="4" BorderBrush="#04000000" BorderThickness="1">
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="20" Opacity="0.5" Direction="270" ShadowDepth="0" Color="Black"/>
                                 </Border.Effect>
@@ -109,6 +109,11 @@
                                 <Metro:AduToolTip Content="联系作者" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
                             </Metro:HCShield.ToolTip>
                         </Metro:HCShield>
+                        <Metro:HCShield Subject="Issues" Status="Github:AduSkin" Color="#25B78A" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/issues">
+                            <Metro:HCShield.ToolTip>
+                                <Metro:AduToolTip Content="意见反馈" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                            </Metro:HCShield.ToolTip>
+                        </Metro:HCShield>
                     </StackPanel>
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="感谢开源框架 " Margin="0,10" />
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
@@ -119,8 +124,8 @@
                     <Metro:TransitioningContentControl TransitionMode="Bottom2Top">
                         <StackPanel>
                             <TextBlock  HorizontalAlignment="Center" Foreground="#FFF" FontSize="30" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
-                            <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="Version 1.1.1.4" />
-                            <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="{StaticResource DefaultBrush}" Text="Copyright ©AduSkin 2019" />
+                            <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FF14D4E5" Text="Version 1.1.1.4" />
+                            <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="#FF14D4E5" Text="Copyright ©AduSkin 2019" />
                         </StackPanel>
                     </Metro:TransitioningContentControl>
                 </StackPanel>

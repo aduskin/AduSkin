@@ -67,8 +67,8 @@
             <Metro:MetroMenuItem x:Name="exit" Header="退出程序" />
         </Metro:MetroContextMenu>
     </Metro:MetroWindow.ContextMenu>
-    <Grid>
-        <Metro:AduTabControl Background="#FFF">
+    <Grid Background="{Binding MainBackground}">
+        <Metro:AduTabControl Background="#FFF" SelectedIndex="{Binding SelectedModularIndex}">
             <Metro:AduTabControl.Resources>
                 <Style TargetType="TabPanel">
                     <Setter Property="HorizontalAlignment" Value="Center"/>

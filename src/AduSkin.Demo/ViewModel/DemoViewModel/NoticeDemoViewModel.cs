@@ -1,5 +1,5 @@
 ﻿using AduSkin.Controls;
-using AduSkin.Controls.Metro.AduNotice;
+using AduSkin.Controls.Metro;
 using AduSkin.Demo.Models;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -11,21 +11,6 @@ namespace AduSkin.Demo.ViewModel
    public class NoticeDemoViewModel: ViewModelBase
    {
       #region 右侧弹框
-      private Notifiaction _NotifiactionWin;
-      public Notifiaction NotifiactionWin
-      {
-         get
-         {
-            if (_NotifiactionWin == null)
-            {
-               _NotifiactionWin = new Notifiaction();
-            }
-            return _NotifiactionWin;
-         }
-      }
-
-
-
       /// <summary>
       /// 命令Command
       /// </summary>
@@ -34,7 +19,7 @@ namespace AduSkin.Demo.ViewModel
          switch (e)
          {
             case "Error":
-               NotifiactionWin.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
                {
                   Title = "这是Error通知标题",
                   Content = "这条通知不会自动关闭，需要点击关闭按钮",
@@ -42,7 +27,7 @@ namespace AduSkin.Demo.ViewModel
                });
                return;
             case "Success":
-               NotifiactionWin.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
                {
                   Title = "这是Success通知标题",
                   Content = "这条通知不会自动关闭，需要点击关闭按钮这条通知不会自动关闭，需要点击关闭按钮这条通知不会自动关闭，需要点击关闭按钮",
@@ -50,7 +35,7 @@ namespace AduSkin.Demo.ViewModel
                });
                return;
             case "Warm":
-               NotifiactionWin.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
                {
                   Title = "这是Warn通知标题",
                   Content = "这条通知不会自动关闭，需要点击关闭按钮",
@@ -58,7 +43,7 @@ namespace AduSkin.Demo.ViewModel
                });
                return;
             case "Info":
-               NotifiactionWin.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
                {
                   Title = "这是Info通知标题",
                   Content = "这条通知不会自动关闭"

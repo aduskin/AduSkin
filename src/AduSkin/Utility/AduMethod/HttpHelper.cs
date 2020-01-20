@@ -543,7 +543,7 @@ namespace AduSkin.Utility
             {
                 case Encode.UTF7: return Encoding.UTF7;
                 case Encode.UTF32: return Encoding.UTF32;
-                case Encode.Unicode: return Encoding.Unicode;
+                case Encode.UNICODE: return Encoding.Unicode;
                 case Encode.ASCII: return Encoding.ASCII;
                 case Encode.GB2312:
                     return Encoding.GetEncoding("GB2312");
@@ -614,7 +614,7 @@ namespace AduSkin.Utility
         UTF8,
         UTF7,
         UTF32,
-        Unicode,
+        UNICODE,
         ASCII,
         GB2312,
         GBK,

@@ -1,4 +1,4 @@
-﻿<Window x:Class="AduSkin.Controls.Metro.AduNotice.Notifiaction" 
+﻿<Window x:Class="AduSkin.Controls.Metro.Notifiaction" 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Adu="clr-namespace:AduSkin.Controls.Metro" 
