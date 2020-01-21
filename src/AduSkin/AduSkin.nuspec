@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.1.1.4</version>
+    <version>1.1.1.5</version>
     <title>AduSkin</title>
     <authors>Adu</authors>
     <owners>Adu</owners>
@@ -11,8 +11,8 @@
     <iconUrl>http://www.dmskin.com/image/aduskin.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A Beautiful WPF Control UI</description>
-    <releaseNotes>1.Add new controls;2.Repair compatible style of some controls</releaseNotes>
-    <copyright>Copyright @ 2019 AduSkin - WPFUI</copyright>
+    <releaseNotes>Add new controls and demo</releaseNotes>
+    <copyright>Copyright @ 2019 - 2020 AduSkin - WPFUI</copyright>
     <tags>AduSkin WPF Controls</tags>
   </metadata>
 </package>
