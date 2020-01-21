@@ -66,7 +66,7 @@
                                         Height="300"
                                        PlacementTarget="{Binding ElementName=OpenReward}" 
                                        Placement="Bottom" AllowsTransparency="True" 
-                                       StaysOpen="False" IsOpen="{Binding IsOpenReward}" HorizontalOffset="-141" VerticalOffset="13">
+                                       StaysOpen="False" IsOpen="{Binding IsOpenReward}" HorizontalOffset="-141" VerticalOffset="6">
                             <Border Background="#fff" Margin="20" Padding="4" BorderBrush="#04000000" BorderThickness="1">
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="20" Opacity="0.5" Direction="270" ShadowDepth="0" Color="Black"/>

@@ -75,6 +75,7 @@
     <Compile Include="Controls\Converter\OffsetConverter.cs" />
     <Compile Include="Controls\Converter\StringToVisibility.cs" />
     <Compile Include="Controls\Data\Args\CancelRoutedEventArgs.cs" />
+    <Compile Include="Controls\Data\Args\FunctionEventArgs1.cs" />
     <Compile Include="Controls\Data\ValueBoxes.cs" />
     <Compile Include="Controls\Expression\Drawing\GeometryHelper.cs" />
     <Compile Include="Controls\Expression\Drawing\MathHelper.cs" />
@@ -255,6 +256,7 @@
     <Compile Include="Themes\Metro\AduNotice\Notifiaction.xaml.cs">
       <DependentUpon>Notifiaction.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Metro\AduPage.cs" />
     <Compile Include="Themes\Metro\AduWindow.xaml.cs">
       <DependentUpon>AduWindow.xaml</DependentUpon>
     </Compile>
@@ -438,6 +440,10 @@
     <Page Include="Themes\Metro\AduContextMenuButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Metro\AduPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Metro\AduPathIconButton.xaml">
       <Generator>MSBuild:Compile</Generator>

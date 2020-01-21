@@ -145,7 +145,7 @@
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True" />
                             </MultiDataTrigger.Conditions>
-                            <Setter TargetName="back" Property="Opacity" Value=".9" />
+                            <Setter TargetName="back" Property="Opacity" Value=".8" />
                         </MultiDataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

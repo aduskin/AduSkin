@@ -4,14 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+             xmlns:interactivity="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
              xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <viewmodel:DataGridDemoViewModel/>
     </UserControl.DataContext>
-    <Grid >
-        <Metro:AduDataGrid IsReadOnly="True" Width="400" Grid.Row="1" HeadersVisibility="All" AutoGenerateColumns="False" ItemsSource="{Binding ContactList}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <Metro:AduPage MaxPageCount="10" PageIndex="1">
+                <interactivity:Interaction.Triggers>
+                    <interactivity:EventTrigger EventName="PageUpdated">
+                        <interactivity:EventToCommand Command="{Binding PageUpdatedCmd}" PassEventArgsToCommand="True" />
+                    </interactivity:EventTrigger>
+                </interactivity:Interaction.Triggers>
+            </Metro:AduPage>
+        </Grid>
+        <Metro:AduDataGrid Grid.Row="1" IsReadOnly="True" Width="400" MaxHeight="900" MinHeight="200" Height="Auto" HeadersVisibility="All" AutoGenerateColumns="False" ItemsSource="{Binding ContactList}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn CanUserResize="False" Header="Select">
                     <DataGridTemplateColumn.HeaderTemplate>

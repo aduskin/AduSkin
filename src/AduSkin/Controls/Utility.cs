@@ -75,7 +75,7 @@ namespace AduSkin.Controls
             if (control is AduFlatSilder) { (control as AduFlatSilder).DecreaseColor = mw.BorderBrush; }
             if (control is AduRadioButtonIcon) { (control as AduRadioButtonIcon).SelectColor = mw.BorderBrush; }
             if (control is AduNumericUpDownBase) { (control as AduNumericUpDownBase).Background = mw.BorderBrush; }
-            if (control is AduToolTip) { (control as AduToolTip).Background = mw.BorderBrush; }
+            if (control is AduPathIconButton) { (control as AduPathIconButton).NormalPathColor = mw.BorderBrush; }
 
             if (control is RatingBar) { (control as RatingBar).SelectedColor = mw.BorderBrush; }
             if (control is AnimationPath) { (control as AnimationPath).Stroke = mw.BorderBrush; }

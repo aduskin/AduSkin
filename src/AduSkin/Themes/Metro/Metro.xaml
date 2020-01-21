@@ -73,6 +73,7 @@
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduContactItem.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduNumericUpDown.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduToolTip.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPage.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCShield.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTransitioningContentControl.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTabControl.xaml" />

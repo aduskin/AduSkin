@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:interactivity="clr-namespace:AduSkin.Interactivity">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduRadioButton.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPathIconButton.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="Adu:AduPage">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Adu:AduPage">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!--向左切换-->
+                        <Adu:AduPathIconButton x:Name="PART_ButtonLeft" Command="interactivity:ControlCommands.Prev" Margin="5,0" RenderTransformOrigin="0.5, 0.5" PathData="{StaticResource Icon_RightArrow2}" PathWidth="16">
+                            <Adu:AduPathIconButton.RenderTransform>
+                                <RotateTransform Angle="180" />
+                            </Adu:AduPathIconButton.RenderTransform>
+                        </Adu:AduPathIconButton>
+                        <StackPanel HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
+                            <interactivity:Interaction.Triggers>
+                                <interactivity:RoutedEventTrigger RoutedEvent="RadioButton.Checked">
+                                    <interactivity:EventToCommand Command="interactivity:ControlCommands.Selected" PassEventArgsToCommand="True" />
+                                </interactivity:RoutedEventTrigger>
+                            </interactivity:Interaction.Triggers>
+                            <Adu:AduRadioButton x:Name="PART_ButtonFirst" Content="首页" Tag="1" IsChecked="True" IconVisibility="Collapsed"/>
+                            <TextBlock Name="PART_TextBlockLeft" Margin="10,0" FontSize="16" Text="..." Foreground="{DynamicResource Brush}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                            <StackPanel Name="PART_PanelMain" Orientation="Horizontal"/>
+
+                            <TextBlock Name="PART_TextBlockRight" Margin="10,0" FontSize="16" Text="..." Foreground="{DynamicResource Brush}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Adu:AduRadioButton x:Name="PART_ButtonLast" Content="末页" Tag="10"  IconVisibility="Collapsed"/>
+                        </StackPanel>
+                        <!--向右切换-->
+                        <Adu:AduPathIconButton x:Name="PART_ButtonRight" Grid.Column="2" Command="interactivity:ControlCommands.Next" Margin="5,0" PathData="{StaticResource Icon_RightArrow2}" PathWidth="16"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

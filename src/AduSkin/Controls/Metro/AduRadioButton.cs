@@ -22,6 +22,16 @@ namespace AduSkin.Controls.Metro
       }
 
       #region AduSkin
+      public Visibility IconVisibility
+      {
+         get { return (Visibility)GetValue(IconVisibilityProperty); }
+         set { SetValue(IconVisibilityProperty, value); }
+      }
+
+      public static readonly DependencyProperty IconVisibilityProperty =
+          DependencyProperty.Register("IconVisibility", typeof(Visibility), typeof(AduRadioButton));
+
+
       public Geometry Icon
       {
          get { return (Geometry)GetValue(IconProperty); }

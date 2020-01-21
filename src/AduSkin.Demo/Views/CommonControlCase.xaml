@@ -168,7 +168,7 @@
                         <Metro:MetroScrollViewer>
                             <StackPanel>
                                 <Metro:AduNoExpander Header="不可折叠" IsExpanded="True">
-                                    <StackPanel>
+                                    <StackPanel HorizontalAlignment="Left">
                                         <Metro:AduRadioButton Content="单选框" FontSize="14" IconWidth="16" IsChecked="True" />
                                         <Metro:AduRadioButton Content="单选框" FontSize="14" IconWidth="16" />
                                     </StackPanel>
@@ -213,7 +213,7 @@
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                 <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
