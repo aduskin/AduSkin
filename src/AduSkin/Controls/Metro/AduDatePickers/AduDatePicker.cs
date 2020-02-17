@@ -1038,14 +1038,16 @@ namespace AduSkin.Controls.Metro
          this.SelectedDates.Clear();
          this.SelectedDateStart = null;
          this.SelectedDateEnd = null;
-
+         this.SelectedDateTime = null;
          if (this.PART_Calendar != null)
          {
+            this.SelectedDate = null;
             this.PART_Calendar.SelectedDate = null;
             this.PART_Calendar.SelectedDates.Clear();
          }
          if (this.PART_Calendar_Second != null)
          {
+            this.SelectedDate = null;
             this.PART_Calendar_Second.SelectedDate = null;
             this.PART_Calendar_Second.SelectedDates.Clear();
          }
