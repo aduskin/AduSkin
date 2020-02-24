@@ -30,11 +30,11 @@ HandyControl、Arthas、WPF.UI
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(3).png)
 
-## 开发环境
+### 开发环境
 
 开发环境：Windows 10  +  Visual Studio 2019 Professional  +  .Net Framework 4.5
 
-## 使用方法
+### 使用方法
 
 ```c
 //引用命名空间
@@ -45,7 +45,7 @@ xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
 <AduSkin:AduFlatButton Content="按钮"/>
 ```
 
-## 协同开发代码规范
+### 协同开发代码规范
 
 1、代码中的代码缩进 Tab = 3;
 2、多类文件的样式或控件以控件命名文件夹;
