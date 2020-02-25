@@ -33,7 +33,9 @@ namespace AduSkin.Demo.ViewModel
          set { 
             Set(ref _SelectedModularIndex, value);
             if (value == 2)
-               MainBackground= new SolidColorBrush(Color.FromRgb(28, 64, 139));
+               MainBackground = new SolidColorBrush(Color.FromRgb(28, 64, 139));
+            else if (value == 3)
+               MainBackground = new SolidColorBrush(Color.FromRgb(250, 251, 252));
             else
                MainBackground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
          }
@@ -89,6 +91,15 @@ namespace AduSkin.Demo.ViewModel
       {
          get { return _AduSkinAbout; }
          set { Set(ref _AduSkinAbout, value); }
+      }
+      /// <summary>
+      /// 支持与赞助
+      /// </summary>
+      private UserControl _AduSkinSupport = new AduSkinSupport();
+      public UserControl AduSkinSupport
+      {
+         get { return _AduSkinSupport; }
+         set { Set(ref _AduSkinSupport, value); }
       }
    }
 }

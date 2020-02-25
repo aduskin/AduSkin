@@ -89,6 +89,11 @@
                     <ContentControl Content="{Binding AduSkinAbout}"/>
                 </Border>
             </Metro:AduTabItem>
+            <Metro:AduTabItem Header="技术支持">
+                <Border >
+                    <ContentControl Content="{Binding AduSkinSupport}"/>
+                </Border>
+            </Metro:AduTabItem>
         </Metro:AduTabControl>
     </Grid>
 </Metro:MetroWindow>

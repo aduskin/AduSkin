@@ -18,4 +18,16 @@ namespace AduSkin.Demo.Data.Enum
       InDev,
       Nor
    }
+
+   public enum SupportType
+   {
+      //技术
+      Skill,
+      //打赏
+      Money,
+      //推荐
+      Recommend,
+      //推广
+      Extension
+   }
 }
