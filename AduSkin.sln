@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{943343AA-6C6F-46CB-BC3A-E4CFF7B7BE23}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AduSkin", "src\AduSkin\AduSkin.csproj", "{1703A7C5-7E70-4DF7-AC0D-63CBCCCFB4A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AduVideoPlayer", "src\AduVideoPlayer\AduVideoPlayer.csproj", "{EC2AAD8D-FDA7-4EE5-940D-440EE7B86A76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AduSkin.Demo", "src\AduSkin.Demo\AduSkin.Demo.csproj", "{9569B8A3-5935-4D83-8AF2-519D5E666E82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95C4AEA1-D2C0-4939-AA50-82E1116B9DFA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1703A7C5-7E70-4DF7-AC0D-63CBCCCFB4A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1703A7C5-7E70-4DF7-AC0D-63CBCCCFB4A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1703A7C5-7E70-4DF7-AC0D-63CBCCCFB4A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1703A7C5-7E70-4DF7-AC0D-63CBCCCFB4A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2AAD8D-FDA7-4EE5-940D-440EE7B86A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2AAD8D-FDA7-4EE5-940D-440EE7B86A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2AAD8D-FDA7-4EE5-940D-440EE7B86A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2AAD8D-FDA7-4EE5-940D-440EE7B86A76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9569B8A3-5935-4D83-8AF2-519D5E666E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9569B8A3-5935-4D83-8AF2-519D5E666E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9569B8A3-5935-4D83-8AF2-519D5E666E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9569B8A3-5935-4D83-8AF2-519D5E666E82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1703A7C5-7E70-4DF7-AC0D-63CBCCCFB4A1} = {943343AA-6C6F-46CB-BC3A-E4CFF7B7BE23}
+		{EC2AAD8D-FDA7-4EE5-940D-440EE7B86A76} = {943343AA-6C6F-46CB-BC3A-E4CFF7B7BE23}
+		{9569B8A3-5935-4D83-8AF2-519D5E666E82} = {943343AA-6C6F-46CB-BC3A-E4CFF7B7BE23}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {5318668E-4B38-4FF0-BFFD-AF0ACE3C3D33}
+	EndGlobalSection
+EndGlobal
