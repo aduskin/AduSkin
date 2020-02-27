@@ -23,12 +23,11 @@
 
   <ItemGroup>
     <PackageReference Include="System.Management" Version="4.7.0" />
-    <PackageReference Include="Vlc.DotNet.Wpf" Version="3.1.0-develop364" Condition="$(TargetFramework) == 'netcoreapp3.1'" />
+    <PackageReference Include="Vlc.DotNet.Wpf" Version="3.1.0-develop364" />
   </ItemGroup>
 
   <ItemGroup Condition="$(TargetFramework) == 'net45'">
     <Reference Include="System.Web" />
-    <PackageReference Include="Vlc.DotNet.Wpf" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
