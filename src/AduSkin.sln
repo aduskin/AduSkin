@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AduSkin", "AduSkin\AduSkin.csproj", "{F5DBBC65-F7D3-4A0D-8A9F-3DAFD3DEB7ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AduSkin.Demo", "AduSkin.Demo\AduSkin.Demo.csproj", "{20827429-E998-4EA3-BB34-DB49CBD0FCC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AduSkin.Demo", "AduSkin.Demo\AduSkin.Demo.csproj", "{20827429-E998-4EA3-BB34-DB49CBD0FCC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AduVideoPlayer", "AduVideoPlayer\AduVideoPlayer.csproj", "{4BCD7F1B-C36B-4FB6-A35E-8C66C7A72092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AduVideoPlayer", "AduVideoPlayer\AduVideoPlayer.csproj", "{4BCD7F1B-C36B-4FB6-A35E-8C66C7A72092}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{943343AA-6C6F-46CB-BC3A-E4CFF7B7BE23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,8 +45,13 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F5DBBC65-F7D3-4A0D-8A9F-3DAFD3DEB7ED} = {943343AA-6C6F-46CB-BC3A-E4CFF7B7BE23}
+		{20827429-E998-4EA3-BB34-DB49CBD0FCC0} = {943343AA-6C6F-46CB-BC3A-E4CFF7B7BE23}
+		{4BCD7F1B-C36B-4FB6-A35E-8C66C7A72092} = {943343AA-6C6F-46CB-BC3A-E4CFF7B7BE23}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		SolutionGuid = {5318668E-4B38-4FF0-BFFD-AF0ACE3C3D33}
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal
