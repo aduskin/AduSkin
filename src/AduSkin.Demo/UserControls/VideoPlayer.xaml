@@ -15,6 +15,6 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <AduPlayer:VideoPlayer x:Name="videoPlayer" MinWidth="600"/>
+        <AduPlayer:VideoPlayer x:Name="videoPlayer" MinWidth="600" MaxWidth="800" MaxHeight="700"/>
     </Grid>
 </UserControl>

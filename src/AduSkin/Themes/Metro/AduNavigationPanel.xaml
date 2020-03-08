@@ -9,7 +9,7 @@
     <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA" />
     <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#3D26A0DA" />
     <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA" />
-    <SolidColorBrush x:Key="Item.SelectedActive.foreground" Color="#EE7986" />
+    <SolidColorBrush x:Key="Item.SelectedActive.foreground" Color="#000" />
 
     
 

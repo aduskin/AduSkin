@@ -142,7 +142,7 @@ namespace AduSkin.Controls.Metro
             {
                return;
             }
-            this.SelectedDateTime = Convert.ToDateTime(this.SelectedDate.Value.ToLongDateString().ToString() + " " + SelectedTime.Value.ToLongTimeString().ToString());
+            this.SelectedDateTime = Convert.ToDateTime(this.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + SelectedTime.Value.ToString("hh:mm:ss"));
          }
       }
 
@@ -270,7 +270,7 @@ namespace AduSkin.Controls.Metro
             {
                return;
             }
-            this.SelectedDateTime = Convert.ToDateTime(this.SelectedDate.Value.ToLongDateString().ToString() + " " + SelectedTime.Value.ToLongTimeString().ToString());
+            this.SelectedDateTime = Convert.ToDateTime(this.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + SelectedTime.Value.ToString("hh:mm:ss"));
          }
       }
 

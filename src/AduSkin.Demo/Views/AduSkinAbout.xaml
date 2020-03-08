@@ -94,17 +94,18 @@
                 </TextBlock>
                 </Metro:TransitioningContentControl>
                 <StackPanel Margin="0,10">
-                    <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="一款简单漂亮的WPF UI，融合部分开源框架的组件，为个人定制的UI，可供学者参考" />
+                    <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="一款简单漂亮的WPF UI，融合部分开源框架的组件，为个人定制的UI，可供学者参考和使用 ，商业用途请联系作者！" />
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="Nuget 搜索 'AduSkin' 可直接导包使用" Margin="10"/>
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="具体使用请参考 AduSkin.Demo" Margin="0"/>
-                    <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="技术交流" Margin="10"/>
+                    <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="Core 3.0 版本，敬请期待" Margin="10"/>
+                    <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="技术交流" Margin="0"/>
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                        <Metro:HCShield Subject="QQ群" Status="544471417" Color="#25B78A" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb">
+                        <Metro:HCShield Subject="QQ群" Status="544471417" Color="{StaticResource DefaultBrush}" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb">
                             <Metro:HCShield.ToolTip>
                                 <Metro:AduToolTip Content="点击加入群聊" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
                             </Metro:HCShield.ToolTip>
                         </Metro:HCShield>
-                        <Metro:HCShield Subject="QQ" Status="1280429435" Color="#25B78A" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes">
+                        <Metro:HCShield Subject="QQ" Status="1280429435" Color="#4A8AF4" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes">
                             <Metro:HCShield.ToolTip>
                                 <Metro:AduToolTip Content="联系作者" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
                             </Metro:HCShield.ToolTip>
@@ -117,9 +118,21 @@
                     </StackPanel>
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="感谢开源框架 " Margin="0,10" />
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                        <Metro:HCShield Subject="WPF" Status="Arthas" Color="#6C819E" Margin="10,0"/>
-                        <Metro:HCShield Subject="WPF" Status="WPF.UI" Color="#3399FF" Margin="10,0"/>
-                        <Metro:HCShield Subject="WPF" Status="HandyControl" Color="#F06632" Margin="10,0"/>
+                        <Metro:HCShield Subject="WPF" Status="Arthas" Color="#6C819E" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/1217950746/Arthas-WPFUI">
+                            <Metro:HCShield.ToolTip>
+                                <Metro:AduToolTip Content="进入开源库" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                            </Metro:HCShield.ToolTip>
+                        </Metro:HCShield>
+                        <Metro:HCShield Subject="WPF" Status="WPF.UI" Color="#3399FF" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/zhidanfeng/WPF.UI">
+                            <Metro:HCShield.ToolTip>
+                                <Metro:AduToolTip Content="进入开源库" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                            </Metro:HCShield.ToolTip>
+                        </Metro:HCShield>
+                        <Metro:HCShield Subject="WPF" Status="HandyControl" Color="#F06632" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/HandyOrg/HandyControl">
+                            <Metro:HCShield.ToolTip>
+                                <Metro:AduToolTip Content="进入开源库" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                            </Metro:HCShield.ToolTip>
+                        </Metro:HCShield>
                     </StackPanel>
                     <Metro:TransitioningContentControl TransitionMode="Bottom2Top">
                         <StackPanel>
