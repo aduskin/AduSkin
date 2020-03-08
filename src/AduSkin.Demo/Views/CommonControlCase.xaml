@@ -173,7 +173,7 @@
                                         <Metro:AduRadioButton Content="单选框" FontSize="14" IconWidth="16" />
                                     </StackPanel>
                                 </Metro:AduNoExpander>
-                                <Metro:AduExpander Header="可折叠" IsEnabled="True">
+                                <Metro:AduExpander Header="可折叠" IsEnabled="True" IsExpanded="True">
                                     <StackPanel>
                                         <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
                                         <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
