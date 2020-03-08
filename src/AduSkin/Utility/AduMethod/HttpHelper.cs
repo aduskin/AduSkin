@@ -324,7 +324,7 @@ namespace AduSkin.Utility
                                             string file = files[i];
                                             reqStream.Write(boundarybytes, 0, boundarybytes.Length);
 #if NETCOREAPP
-                                            string contentType = MimeMappingManager.Shared.GetMimeMapping(file);
+                                            string contentType = MimeMappingProvider.Shared.GetMimeMapping(file);
 #else
                                             string contentType = System.Web.MimeMapping.GetMimeMapping(file);
 #endif
