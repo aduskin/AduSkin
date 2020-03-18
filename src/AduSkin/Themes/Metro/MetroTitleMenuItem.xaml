@@ -12,6 +12,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="Background" Value="#1E1F23"/>
+        <Setter Property="Foreground" Value="#FFF"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -32,7 +33,7 @@
                                 <ColumnDefinition Width="0" x:Name="subWidth"/>
                             </Grid.ColumnDefinitions>
                             <Image x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="10,0,0,0"/>
-                            <Metro:MetroTextBlock Grid.Column="1" Text="{TemplateBinding Header}" Foreground="#ffffff" Margin="10,0"/>
+                            <Metro:MetroTextBlock Grid.Column="1" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" Margin="10,0"/>
                             <Polyline Grid.Column="2" Points="0,0 5,5 10,0" Stroke="#ffffff" VerticalAlignment="Center"  Margin="0,0,10,0"/>
                         </Grid>
                         <Rectangle Grid.Column="3" Fill="#ffffff" Opacity="0.2" Height="12"/>

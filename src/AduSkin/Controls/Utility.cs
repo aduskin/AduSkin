@@ -39,7 +39,6 @@ namespace AduSkin.Controls
          if (mw != null)
          {
             if (control is MetroTitleMenu) { (control as MetroTitleMenu).Background = mw.BorderBrush; }
-            if (control is MetroTitleMenuItem) { (control as MetroTitleMenuItem).Foreground = mw.BorderBrush; }
             if (control is MetroMenuItem) { (control as MetroMenuItem).Foreground = mw.BorderBrush; }
             if (control is MetroContextMenu) { (control as MetroContextMenu).Foreground = mw.BorderBrush; }
             if (control is MetroTextBox) { (control as MetroTextBox).BorderBrush = mw.BorderBrush; }

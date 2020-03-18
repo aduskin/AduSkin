@@ -203,6 +203,17 @@
                             <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="maximizedButton" Property="Visibility" Value="Visible" />
                         </Trigger>
+                        <Trigger Property="WindowStyle" Value="ToolWindow">
+                            <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="minimizedButton" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="WindowStyle" Value="None">
+                            <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="minimizedButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="closeButton" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
