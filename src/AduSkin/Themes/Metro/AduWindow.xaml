@@ -189,9 +189,8 @@
                             <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="ResizeMode" Value="CanMinimize">
-                            <Setter TargetName="maximizedButton" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
-                            <Setter TargetName="minimizedButton" Property="Margin" Value="0,0,40,0" />
                         </Trigger>
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
@@ -201,7 +200,6 @@
                         </Trigger>
                         <Trigger Property="WindowState" Value="Normal">
                             <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
-                            <Setter TargetName="maximizedButton" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="WindowStyle" Value="ToolWindow">
                             <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />

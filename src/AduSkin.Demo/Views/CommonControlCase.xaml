@@ -274,7 +274,7 @@
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
-                            <Metro:AduPasswordBox Margin="0,0,0,10"  Height="30"  Watermark="请输入密码"></Metro:AduPasswordBox>
+                            <Metro:AduPasswordBox Margin="0,0,0,10"  Height="30" IsCanSeePassword="True" Password="{Binding Path=DemoPassWord,Mode=OneWayToSource}" Watermark="请输入密码"></Metro:AduPasswordBox>
                             <Metro:MetroTextBox
                                                         x:Name="password"
                                                         ButtonTitle="确定"
