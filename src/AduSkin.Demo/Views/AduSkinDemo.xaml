@@ -7,13 +7,12 @@
         xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
         BorderBrush="#3E3E45"
-        WindowStyle="ToolWindow"
-        ResizeMode="NoResize"
+        ResizeMode="CanMinimize"
         BorderThickness="1"
         xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
         Title="AduSkinDemo" 
-        MinWidth="600" MinHeight="350" MaxWidth="1000"
-        d:DesignHeight="1200" d:DesignWidth="1000" >
+        MinWidth="600" MinHeight="350" MaxWidth="1100"
+        d:DesignHeight="1200" d:DesignWidth="1100" >
     <Metro:TransitioningContentControl>
         <Grid Background="{StaticResource ShadowColor}">
             <Grid.RowDefinitions>

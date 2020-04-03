@@ -43,6 +43,8 @@ xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
 <AduSkin:MetroWindow x:Class="MainWindow"/>
 //使用控件
 <AduSkin:AduFlatButton Content="按钮"/>
+//视频控件解码器(下载完成libvlc.7z后解压于Demo输出目录)
+下载链接：https://share.weiyun.com/5ATTi2Y 密码：m7jrsb
 ```
 
 # 开发案例如下
