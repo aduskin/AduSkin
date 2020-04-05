@@ -42,9 +42,14 @@ namespace AduSkin.Utility.AduMethod
             fontSize = GetFontSizeByPixel(bgImage.PixelHeight, fontSize);
 
             //设置水印文字效果：字体、颜色等
+            #if NETCOREAPP
             FormattedText signatureTxt = new FormattedText(watermark, CultureInfo.CurrentCulture, FlowDirection.LeftToRight
-                , new Typeface(SystemFonts.MessageFontFamily, FontStyles.Normal, fontWeight, FontStretches.Normal), fontSize, foreground);
-
+               , new Typeface(SystemFonts.MessageFontFamily, FontStyles.Normal, fontWeight, FontStretches.Normal), fontSize, foreground,
+             VisualTreeHelper.GetDpi(Application.Current.MainWindow).PixelsPerDip);
+            #else
+            FormattedText signatureTxt = new FormattedText(watermark, CultureInfo.CurrentCulture, FlowDirection.LeftToRight
+               , new Typeface(SystemFonts.MessageFontFamily, FontStyles.Normal, fontWeight, FontStretches.Normal), fontSize, foreground);
+            #endif
             DrawingVisual drawingVisual = new DrawingVisual();
             DrawingContext drawingContext = drawingVisual.RenderOpen();
             drawingContext.DrawImage(bgImage, new Rect(0, 0, bgImage.Width, bgImage.Height));

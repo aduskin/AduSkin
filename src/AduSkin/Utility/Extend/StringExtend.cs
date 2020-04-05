@@ -9,7 +9,7 @@ namespace AduSkin.Utility.Extend
    {
       public static string GetFirstPinyin(string str)
       {
-         if(str==null || str.Length <= 0)
+         if (str == null || str.Length <= 0)
             return "*";
          char[] charArray = str.ToCharArray();
          return GetPinyinChar(charArray[0]);
@@ -29,16 +29,20 @@ namespace AduSkin.Utility.Extend
       private static string GetPinyinChar(char c)
       {
          string str = c.ToString();
-         if ((int)c >= 32 && (int)c <= 126)
+         if ((int)c >= 65 && (int)c <= 126)
          {
             return str;
+         }
+         if ((int)c >= 48 && (int)c <= 57)
+         {
+            return "#";
          }
          byte[] array = new byte[2];
          array = System.Text.Encoding.Default.GetBytes(str);
 
          int i = (short)(array[0] - '\0') * 256 + ((short)(array[1] - '\0'));
 
-         if (i < 0xB0A1) return "*";
+         if (i < 0xB0A1) return "#";
 
          if (i < 0xB0C5) return "A";
 
@@ -86,7 +90,7 @@ namespace AduSkin.Utility.Extend
 
          if (i < 0xD7FA) return "Z";
 
-         return "*";
+         return "#";
       }
    }
 }

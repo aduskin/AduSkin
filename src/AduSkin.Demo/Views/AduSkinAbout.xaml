@@ -97,7 +97,7 @@
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="一款简单漂亮的WPF UI，融合部分开源框架的组件，为个人定制的UI，可供学者参考和使用 ，商业用途请联系作者！" />
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="Nuget 搜索 'AduSkin' 可直接导包使用" Margin="10"/>
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="具体使用请参考 AduSkin.Demo" Margin="0"/>
-                    <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="Core 3.0 版本，敬请期待" Margin="10"/>
+                    <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="本框架支持 .Net 4.5 .Net Core 3.1 版本" Margin="10"/>
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="技术交流" Margin="0"/>
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
                         <Metro:HCShield Subject="QQ群" Status="544471417" Color="{StaticResource DefaultBrush}" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb">
@@ -137,7 +137,7 @@
                     <Metro:TransitioningContentControl TransitionMode="Bottom2Top">
                         <StackPanel>
                             <TextBlock  HorizontalAlignment="Center" Foreground="#FFF" FontSize="30" Margin="0,20" FontWeight="Light" Text="Welcome To AduSkin" />
-                            <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FF14D4E5" Text="Version 1.1.1.5" />
+                            <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FF14D4E5" Text="Version 1.1.1.6" />
                             <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="#FF14D4E5" Text="Copyright ©AduSkin 2019 - 2020" />
                         </StackPanel>
                     </Metro:TransitioningContentControl>

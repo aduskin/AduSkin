@@ -3,17 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+        xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
         xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
         BorderBrush="#3E3E45"
         ResizeMode="CanMinimize"
         BorderThickness="1"
-        xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
         Title="AduSkinDemo" 
         MinWidth="600" MinHeight="350" MaxWidth="1100"
         d:DesignHeight="1200" d:DesignWidth="1100" >
-    <Metro:TransitioningContentControl>
+    <Adu:TransitioningContentControl>
         <Grid Background="{StaticResource ShadowColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
@@ -45,8 +44,8 @@
             <Grid Grid.Row="1" Grid.Column="1">
                 <Adu:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,20" >
                     <StackPanel>
-                        <Metro:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
-                            <Metro:Carousel.ItemTemplate>
+                        <Adu:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
+                            <Adu:Carousel.ItemTemplate>
                                 <DataTemplate>
                                     <Grid Background="#00000000">
                                         <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding Cover}" Stretch="UniformToFill" >
@@ -90,8 +89,8 @@
                                         </EventTrigger>
                                     </DataTemplate.Triggers>
                                 </DataTemplate>
-                            </Metro:Carousel.ItemTemplate>
-                        </Metro:Carousel>
+                            </Adu:Carousel.ItemTemplate>
+                        </Adu:Carousel>
                         <ItemsControl  x:Name="Demos" FocusVisualStyle="{x:Null}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
@@ -123,7 +122,7 @@
                                             <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Describe}" FontSize="14" TextWrapping="Wrap" Foreground="#FFF"/>
                                             <Grid Grid.Row="3" Grid.ColumnSpan="2">
                                                 <TextBlock  x:Name="timePart" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding BlogDate}" FontSize="18" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}" />
-                                                <Metro:RatingBar VerticalAlignment="Center" HorizontalAlignment="Right" Height="30" Value="5" Foreground="#FFF" SelectedColor="{StaticResource DefaultBrush}" />
+                                                <Adu:RatingBar VerticalAlignment="Center" HorizontalAlignment="Right" Height="30" Value="5" Foreground="#FFF" SelectedColor="{StaticResource DefaultBrush}" />
                                             </Grid>
                                         </Grid>
                                     </Border>
@@ -139,5 +138,5 @@
                 </Adu:MetroScrollViewer>
             </Grid>
         </Grid>
-    </Metro:TransitioningContentControl>
+    </Adu:TransitioningContentControl>
 </Adu:AduWindow>

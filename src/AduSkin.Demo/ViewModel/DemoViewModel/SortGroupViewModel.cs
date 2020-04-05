@@ -86,10 +86,9 @@ namespace AduSkin.Demo.ViewModel
       {
          List<ChatUserModel> ResultList = new List<ChatUserModel>();
          Dictionary<string, List<ChatUserModel>> dic = new Dictionary<string, List<ChatUserModel>>();
-         List<string> sorts = new List<string>() { "群组", "A", "B", "C", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "*" };
+         List<string> sorts = new List<string>() { "群组", "A", "B", "C", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#" };
          foreach (var item in sorts)
             dic.Add(item, new List<ChatUserModel>());
-         List<ChatUserModel> templist = new List<ChatUserModel>();
          //将对象按字母顺序存起来
          for (int i = 0; i < Temps.Count; i++)
          {

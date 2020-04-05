@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AduSkin.Utility.AduMethod;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -322,7 +323,10 @@ namespace AduSkin.Utility
                                         {
                                             string file = files[i];
                                             reqStream.Write(boundarybytes, 0, boundarybytes.Length);
-                                            string contentType = System.Web.MimeMapping.GetMimeMapping(file);
+
+                                            string contentType = MimeMappingManager.Shared.GetMimeMapping(file);
+
+                                            //string contentType = System.Web.MimeMapping.GetMimeMapping(file);
 
                                             //string header = string.Format(headerTemplate, "file" + i, Path.GetFileName(file), contentType);
                                             string header = string.Format(headerTemplate, "media", Path.GetFileName(file), contentType);//微信
@@ -398,7 +402,7 @@ namespace AduSkin.Utility
                             req.ContentLength = 0;
                         }
                     }
-                    #endregion
+#endregion
 
                     return req;
                 }
@@ -447,7 +451,7 @@ namespace AduSkin.Utility
             _web.Header = header;
             _web.Cookie = cookie;
 
-            #region 下载流
+#region 下载流
             using (Stream stream = response.GetResponseStream())
             {
                 using (MemoryStream file = new MemoryStream())
@@ -481,7 +485,7 @@ namespace AduSkin.Utility
                     }
                 }
             }
-            #endregion
+#endregion
             return _web;
         }
 
@@ -554,9 +558,9 @@ namespace AduSkin.Utility
         }
 
 
-        #endregion
+#endregion
 
-        #region 各类型转换
+#region 各类型转换
 
         /// <summary>
         /// 将字节转为文本类型
@@ -605,7 +609,7 @@ namespace AduSkin.Utility
             return null;
         }
 
-        #endregion
+#endregion
 
     }
 
