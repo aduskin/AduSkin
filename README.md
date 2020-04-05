@@ -43,8 +43,13 @@ xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
 <AduSkin:MetroWindow x:Class="MainWindow"/>
 //使用控件
 <AduSkin:AduFlatButton Content="按钮"/>
-//视频控件解码器(下载完成libvlc.7z后解压于Demo输出目录)
-下载链接：https://share.weiyun.com/5ATTi2Y 密码：m7jrsb
+```
+**视频控件需要依赖[VideoLan.LibVlc.Windows]（https://www.nuget.org/packages/VideoLAN.LibVLC.Windows/）**
+```
+//使用.net cli
+dotnet添加程序包VideoLan.LibVlc.Windows
+//使用vs的package-manager
+安装包VideoLAN.LibVLC.Windows 
 ```
 
 # 开发案例如下
