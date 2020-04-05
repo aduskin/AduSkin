@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net45</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net45;net46</TargetFrameworks>
     <GenerateDocumentFile>true</GenerateDocumentFile>
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
@@ -20,7 +20,10 @@
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.8.1" />
   </ItemGroup>
-
+  
+  <ItemGroup Condition="'$(TargetFramework)' != 'net45'">
+    <PackageReference Include="System.Text.Encoding.CodePages"  Version="4.7.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources/**" />
