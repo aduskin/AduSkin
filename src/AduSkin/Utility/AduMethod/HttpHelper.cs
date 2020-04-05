@@ -323,11 +323,11 @@ namespace AduSkin.Utility
                                         {
                                             string file = files[i];
                                             reqStream.Write(boundarybytes, 0, boundarybytes.Length);
-#if NETCOREAPP
-                                            string contentType = MimeMappingProvider.Shared.GetMimeMapping(file);
-#else
-                                            string contentType = System.Web.MimeMapping.GetMimeMapping(file);
-#endif
+
+                                            string contentType = MimeMappingManager.Shared.GetMimeMapping(file);
+
+                                            //string contentType = System.Web.MimeMapping.GetMimeMapping(file);
+
                                             //string header = string.Format(headerTemplate, "file" + i, Path.GetFileName(file), contentType);
                                             string header = string.Format(headerTemplate, "media", Path.GetFileName(file), contentType);//微信
                                             byte[] headerbytes = _encoding.GetBytes(header);
