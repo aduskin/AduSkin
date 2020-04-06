@@ -48,7 +48,7 @@ namespace AduSkin.Utility.Extend
 
          int i = (short)(array[0] - '\0') * 256 + ((short)(array[1] - '\0'));
 
-         if (i < 0xB0A1) return "*";
+         if (i < 0xB0A1) return "#";
 
          if (i < 0xB0C5) return "A";
 
@@ -96,7 +96,7 @@ namespace AduSkin.Utility.Extend
 
          if (i < 0xD7FA) return "Z";
 
-         return "*";
+         return "#";
       }
    }
 }
