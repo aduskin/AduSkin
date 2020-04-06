@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace AduSkin.Utility.Extend
 {
@@ -21,7 +22,7 @@ namespace AduSkin.Utility.Extend
          char[] charArray = str.ToCharArray();
          foreach (var item in charArray)
          {
-            pinyin+=GetPinyinChar(item);
+            pinyin += GetPinyinChar(item);
          }
          return pinyin;
       }
@@ -29,16 +30,21 @@ namespace AduSkin.Utility.Extend
       private static string GetPinyinChar(char c)
       {
          string str = c.ToString();
-         if ((int)c >= 65 && (int)c <= 126)
+         if ((int)c >= 32 && (int)c <= 126)
          {
             return str;
          }
-         if ((int)c >= 48 && (int)c <= 57)
-         {
-            return "#";
-         }
          byte[] array = new byte[2];
-         array = System.Text.Encoding.Default.GetBytes(str);
+         Encoding gbEncoding;
+         try
+         {
+            gbEncoding = System.Text.Encoding.GetEncoding("GB2312");
+         }
+         catch
+         {
+            throw new Exception("GB2312 Text Encoding is not registered, please register it on app start ");
+         }
+         array = gbEncoding.GetBytes(str);
 
          int i = (short)(array[0] - '\0') * 256 + ((short)(array[1] - '\0'));
 

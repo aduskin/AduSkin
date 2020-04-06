@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="System.Management" Version="4.7.0" />
   </ItemGroup>
-
+  
   <ItemGroup Condition="$(TargetFramework) == 'net45'">
     <Reference Include="System.Web" />
   </ItemGroup>
@@ -18,5 +18,5 @@
   <ItemGroup>
     <Resource Include="Resources/**" />
   </ItemGroup>
-
+  
 </Project>

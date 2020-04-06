@@ -43,13 +43,17 @@ xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
 <AduSkin:MetroWindow x:Class="MainWindow"/>
 //使用控件
 <AduSkin:AduFlatButton Content="按钮"/>
+
 ```
-**视频控件需要依赖[VideoLan.LibVlc.Windows]（https://www.nuget.org/packages/VideoLAN.LibVLC.Windows/）**
+
+
+**视频控件 需要依赖 [VideoLan.LibVlc.Windows](https://www.nuget.org/packages/VideoLAN.LibVLC.Windows/)**
 ```
-//使用.net cli
-dotnet添加程序包VideoLan.LibVlc.Windows
-//使用vs的package-manager
-安装包VideoLAN.LibVLC.Windows 
+// 使用 .net cli
+dotnet add package VideoLan.LibVlc.Windows
+
+// 使用 vs 的 package-manager
+Install-Package VideoLAN.LibVLC.Windows 
 ```
 
 # 开发案例如下
