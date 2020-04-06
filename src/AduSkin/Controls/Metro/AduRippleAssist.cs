@@ -122,6 +122,22 @@ namespace AduSkin.Controls.Metro
 
         #endregion
 
+        #region RippleOnTop
 
+        public static readonly DependencyProperty RippleOnTopProperty = DependencyProperty.RegisterAttached(
+            "RippleOnTop", typeof(bool), typeof(AduRippleAssist),
+            new FrameworkPropertyMetadata(default(bool), FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.AffectsRender));
+
+        public static void SetRippleOnTop(DependencyObject element, bool value)
+        {
+            element.SetValue(RippleOnTopProperty, value);
+        }
+
+        public static bool GetRippleOnTop(DependencyObject element)
+        {
+            return (bool)element.GetValue(RippleOnTopProperty);
+        }
+
+        #endregion
     }
 }

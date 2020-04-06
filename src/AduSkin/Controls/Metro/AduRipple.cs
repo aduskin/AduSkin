@@ -93,43 +93,87 @@ namespace AduSkin.Controls.Metro
             set { SetValue(FeedbackProperty, value); }
         }
 
+        private static readonly DependencyPropertyKey RippleSizePropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                "RippleSize", typeof(double), typeof(AduRipple),
+                new PropertyMetadata(default(double)));
+
+        public static readonly DependencyProperty RippleSizeProperty =
+            RippleSizePropertyKey.DependencyProperty;
+
+        public double RippleSize
+        {
+            get { return (double)GetValue(RippleSizeProperty); }
+            private set { SetValue(RippleSizePropertyKey, value); }
+        }
+
+        private static readonly DependencyPropertyKey RippleXPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                "RippleX", typeof(double), typeof(AduRipple),
+                new PropertyMetadata(default(double)));
+
+        public static readonly DependencyProperty RippleXProperty =
+            RippleXPropertyKey.DependencyProperty;
+
+        public double RippleX
+        {
+            get { return (double)GetValue(RippleXProperty); }
+            private set { SetValue(RippleXPropertyKey, value); }
+        }
+
+        private static readonly DependencyPropertyKey RippleYPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                "RippleY", typeof(double), typeof(AduRipple),
+                new PropertyMetadata(default(double)));
+
+        public static readonly DependencyProperty RippleYProperty =
+            RippleYPropertyKey.DependencyProperty;
+
+        public double RippleY
+        {
+            get { return (double)GetValue(RippleYProperty); }
+            private set { SetValue(RippleYPropertyKey, value); }
+        }
+
         protected override void OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)
         {
-            var point = e.GetPosition(this);
+         if (AduRippleAssist.GetIsCentered(this))
+         {
+            var innerContent = (Content as FrameworkElement);
 
-            if (AduRippleAssist.GetIsCentered(this))
+            if (innerContent != null)
             {
-                var innerContent = (Content as FrameworkElement);
+               var position = innerContent.TransformToAncestor(this)
+                   .Transform(new Point(0, 0));
 
-                if (innerContent != null)
-                {
-                    var position = innerContent.TransformToAncestor(this)
-                        .Transform(new Point(0, 0));
-
-                    AduRippleX = position.X + innerContent.ActualWidth / 2 - AduRippleSize / 2;
-                    AduRippleY = position.Y + innerContent.ActualHeight / 2 - AduRippleSize / 2;
-                }
-                else
-                {
-                    AduRippleX = ActualWidth / 2 - AduRippleSize / 2;
-                    AduRippleY = ActualHeight / 2 - AduRippleSize / 2;
-                }
+               if (FlowDirection == FlowDirection.RightToLeft)
+                  RippleX = position.X - innerContent.ActualWidth / 2 - RippleSize / 2;
+               else
+                  RippleX = position.X + innerContent.ActualWidth / 2 - RippleSize / 2;
+               RippleY = position.Y + innerContent.ActualHeight / 2 - RippleSize / 2;
             }
             else
             {
-                AduRippleX = point.X - AduRippleSize / 2;
-                AduRippleY = point.Y - AduRippleSize / 2;
+               RippleX = ActualWidth / 2 - RippleSize / 2;
+               RippleY = ActualHeight / 2 - RippleSize / 2;
             }
+         }
+         else
+         {
+            var point = e.GetPosition(this);
+            RippleX = point.X - RippleSize / 2;
+            RippleY = point.Y - RippleSize / 2;
+         }
 
-            if (!AduRippleAssist.GetIsDisabled(this))
-            {
-                VisualStateManager.GoToState(this, TemplateStateNormal, false);
-                VisualStateManager.GoToState(this, TemplateStateMousePressed, true);
-                PressedInstances.Add(this);
-            }
+         if (!AduRippleAssist.GetIsDisabled(this))
+         {
+            VisualStateManager.GoToState(this, TemplateStateNormal, false);
+            VisualStateManager.GoToState(this, TemplateStateMousePressed, true);
+            PressedInstances.Add(this);
+         }
 
-            base.OnPreviewMouseLeftButtonDown(e);
-        }
+         base.OnPreviewMouseLeftButtonDown(e);
+      }
 
         private static readonly DependencyPropertyKey AduRippleSizePropertyKey =
             DependencyProperty.RegisterReadOnly(
