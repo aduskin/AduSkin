@@ -22,6 +22,23 @@ Nuget 搜索"AduSkin" 可直接导包使用
 
 HandyControl、Arthas、WPF.UI
 
+## 贡献者
+
+<a href="https://github.com/aduskin" target="_blank"><img width="64px" src="https://avatars2.githubusercontent.com/u/33409777?s=460&u=536aecd59ce72fa64b09d2279821227bc6a721da&v=4"></a>
+<a href="https://github.com/John0King" target="_blank"><img width="64px" src="https://avatars0.githubusercontent.com/u/13639146?s=460&u=b6e8111b1285c86efcf7576758e06d7518cc8601&v=4"></a>
+<a href="https://github.com/guanguanchuangyu" target="_blank"><img width="64px" src="https://avatars0.githubusercontent.com/u/25916858?s=460&u=7eab6998abb6a32d8a87f2a453e5d382cfff97e4&v=4"></a>
+<a href="https://github.com/dotnet9" target="_blank"><img width="64px" src="https://avatars2.githubusercontent.com/u/19390373?s=460&u=b0c81b21f8e3e54e6eea706c19ec85277968104d&v=4"></a>
+
+## 支持者
+
+<a href="https://github.com/dotnet9" target="_blank"><img width="64px" src="https://avatars2.githubusercontent.com/u/19390373?s=460&u=b0c81b21f8e3e54e6eea706c19ec85277968104d&v=4"></a>
+<a href="https://github.com/Haku-Men" target="_blank"><img width="64px" src="https://avatars2.githubusercontent.com/u/13210002?s=460&u=ae17e9b33173d1e2af00bccfc76c6ce540b0cdbf&v=4"></a>
+
+### 赞助支持
+如果你觉得本框架还不错的话，可以赞助我防脱洗发水，Haha
+
+![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/other/zhifu.jpg)
+
 # 组件展示
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(2).png)
@@ -32,7 +49,7 @@ HandyControl、Arthas、WPF.UI
 
 ### 开发环境
 
-开发环境：Windows 10  +  Visual Studio 2019 Professional  +  .Net Framework 4.5
+开发环境：Windows 10  +  Visual Studio 2019 Professional  +  .Net Framework 4.5 + .Net Core 3.1
 
 ### 使用方法
 
@@ -78,8 +95,4 @@ Install-Package VideoLAN.LibVLC.Windows
 
 ![image](https://github.com/aduskin/HttpTool/blob/master/ScreenShot/cover.png)
 
-# 技术支持
-如果你觉得本框架还不错的话，可以赞助我防脱洗发水，Haha
-
-![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/other/zhifu.jpg)
 
