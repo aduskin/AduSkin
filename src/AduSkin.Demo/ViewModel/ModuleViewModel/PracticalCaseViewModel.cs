@@ -1,4 +1,4 @@
-﻿using AduSkin.Demo.Data.Enum;
+using AduSkin.Demo.Data.Enum;
 using AduSkin.Demo.Models;
 using AduSkin.Demo.UserControls;
 using GalaSoft.MvvmLight;
@@ -38,11 +38,12 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("轮播容器", typeof(CarouselContainer)),
             new ControlModel("时间轴", typeof(TimeLine)),
             new ControlModel("树形菜单", typeof(TreeMenu)),
-            new ControlModel("数据列表", typeof(DataGridDemo),DemoType.Demo,ControlState.New),
+            new ControlModel("数据列表", typeof(DataGridDemo),DemoType.Demo),
             new ControlModel("多功能Tab", typeof(MultiFunctionTabControl)),
-            new ControlModel("右键菜单", typeof(ContextMenuDemo),DemoType.Demo,ControlState.New),
+            new ControlModel("右键菜单", typeof(ContextMenuDemo),DemoType.Demo),
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
-            new ControlModel("过渡容器", typeof(TransitioningContentControlDemo),DemoType.Demo,ControlState.New),
+            new ControlModel("过渡容器", typeof(TransitioningContentControlDemo),DemoType.Demo),
+            new ControlModel("消息弹框", typeof(MessageBoxDemo),DemoType.Demo,ControlState.New),
          };
          _SearchControl.Source= _AllControl;
          _SearchControl.View.Culture = new System.Globalization.CultureInfo("zh-CN");

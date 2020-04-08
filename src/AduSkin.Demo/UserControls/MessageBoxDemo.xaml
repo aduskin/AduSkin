@@ -1,0 +1,22 @@
+<UserControl x:Class="AduSkin.Demo.UserControls.MessageBoxDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+   <UserControl.DataContext>
+      <viewmodel:MessageBoxDemoViewModel/>
+   </UserControl.DataContext>
+   <Grid>
+      <WrapPanel>
+         <AduSkin:AduFlatButton Content="普通弹框" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="普通弹框"/>
+         <AduSkin:AduFlatButton Content="普通弹框2" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="普通弹框2"/>
+         <AduSkin:AduFlatButton Content="确认取消弹框" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="确认取消弹框"/>
+         <AduSkin:AduFlatButton Content="带图标确认取消弹框" Width="130" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="带图标确认取消弹框"/>
+         <AduSkin:AduFlatButton Content="自定义弹框" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="自定义弹框"/>
+      </WrapPanel>
+   </Grid>
+</UserControl>
