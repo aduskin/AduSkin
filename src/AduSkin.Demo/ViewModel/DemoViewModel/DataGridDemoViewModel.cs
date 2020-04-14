@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls.Data;
+using AduSkin.Controls.Data;
 using AduSkin.Demo.Models;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -103,9 +103,7 @@ namespace AduSkin.Demo.ViewModel
          {
             Set(ref _IsAllChecked, value);
             foreach (var item in ContactList)
-            {
-               item.IsChecked = value;
-            }
+               item.IsChecked = IsAllChecked;
          }
       }
 

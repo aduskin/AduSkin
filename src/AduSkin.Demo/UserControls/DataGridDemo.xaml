@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AduSkin.Demo.UserControls.DataGridDemo"
+<UserControl x:Class="AduSkin.Demo.UserControls.DataGridDemo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -25,17 +25,17 @@
                 </interactivity:Interaction.Triggers>
             </Metro:AduPage>
         </Grid>
-        <Metro:AduDataGrid Grid.Row="1" IsReadOnly="True" Width="400" MaxHeight="900" MinHeight="200" Height="Auto" HeadersVisibility="All" AutoGenerateColumns="False" ItemsSource="{Binding ContactList}">
+        <Metro:AduDataGrid Grid.Row="1" x:Name="MyDataGrid" IsReadOnly="True" Width="400" MaxHeight="900" MinHeight="200" Height="Auto" HeadersVisibility="All" AutoGenerateColumns="False" ItemsSource="{Binding ContactList}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn CanUserResize="False" Header="Select">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
-                            <Metro:AduCheckBox IsChecked="{Binding IsAllChecked}"></Metro:AduCheckBox>
+                           <Metro:AduCheckBox IsChecked="{Binding ElementName = MyDataGrid,Path=DataContext.IsAllChecked}"></Metro:AduCheckBox>
                         </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Metro:AduCheckBox Margin="10,0,0,0" IsChecked="{Binding IsChecked}"/>
+                            <Metro:AduCheckBox Margin="10,0,0,0" IsChecked="{Binding IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
