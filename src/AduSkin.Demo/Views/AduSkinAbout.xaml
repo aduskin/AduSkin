@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AduSkin.Demo.UserControls.AduSkinAbout"
+<UserControl x:Class="AduSkin.Demo.UserControls.AduSkinAbout"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -100,15 +100,25 @@
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="本框架支持 .Net 4.5 .Net Core 3.1 版本" Margin="10"/>
                     <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="技术交流" Margin="0"/>
                     <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                       <Metro:HCShield Subject="QQ" Status="1280429435" Color="#4A8AF4" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes">
+                            <Metro:HCShield.ToolTip>
+                                <Metro:AduToolTip Content="联系作者" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                            </Metro:HCShield.ToolTip>
+                        </Metro:HCShield>
                         <Metro:HCShield Subject="QQ群" Status="544471417" Color="{StaticResource DefaultBrush}" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb">
                             <Metro:HCShield.ToolTip>
                                 <Metro:AduToolTip Content="点击加入群聊" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
                             </Metro:HCShield.ToolTip>
                         </Metro:HCShield>
-                        <Metro:HCShield Subject="QQ" Status="1280429435" Color="#4A8AF4" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes">
-                            <Metro:HCShield.ToolTip>
-                                <Metro:AduToolTip Content="联系作者" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
-                            </Metro:HCShield.ToolTip>
+                        <Metro:HCShield Subject="QQ2群" Status="224087477" Color="#F99E19" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=58vo7dL">
+                           <Metro:HCShield.ToolTip>
+                              <Metro:AduToolTip Content="点击加入群聊" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                           </Metro:HCShield.ToolTip>
+                        </Metro:HCShield>
+                       <Metro:HCShield Subject="QQ3群" Status="252480168" Color="#BA2B5B" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=5fyhmof">
+                           <Metro:HCShield.ToolTip>
+                              <Metro:AduToolTip Content="点击加入群聊" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
+                           </Metro:HCShield.ToolTip>
                         </Metro:HCShield>
                         <Metro:HCShield Subject="Issues" Status="Github:AduSkin" Color="#25B78A" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/issues">
                             <Metro:HCShield.ToolTip>

@@ -16,7 +16,9 @@ Nuget 搜索"AduSkin" 可直接导包使用
 |联系方式||
 |---|---
 |QQ|1280429435
-|QQ群|544471417
+|QQ群1|[544471417](https://jq.qq.com/?_wv=1027&k=5NBE1xa)
+|QQ群2|[224087477](https://jq.qq.com/?_wv=1027&k=58vo7dL)
+|QQ群3|[252480168](https://jq.qq.com/?_wv=1027&k=5fyhmof)
 
 感谢开源框架
 
