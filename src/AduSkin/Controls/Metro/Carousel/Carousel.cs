@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -146,7 +146,8 @@ namespace AduSkin.Controls.Metro
             if (this.PART_SlideSwitchPanel != null)
             {
                 this.PART_SlideSwitchPanel.IndexChanged += PART_SlideSwitchPanel_IndexChanged;
-                
+                PART_SlideSwitchPanel.initHeight = Height;
+                PART_SlideSwitchPanel.initWidth = Width;
             }
 
             this.MouseEnter += PART_SlideSwitchPanel_MouseEnter;
@@ -188,6 +189,7 @@ namespace AduSkin.Controls.Metro
                 control.HorizontalAlignment = HorizontalAlignment.Stretch;
                 control.HorizontalContentAlignment = HorizontalAlignment.Center;
                 control.VerticalContentAlignment = VerticalAlignment.Center;
+                control.VerticalAlignment = VerticalAlignment.Stretch;
                 control.ContentTemplate = this.ItemTemplate;
                 this.PART_SlideSwitchPanel.Children.Add(control);
             }

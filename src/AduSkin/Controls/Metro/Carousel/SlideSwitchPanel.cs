@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +13,8 @@ namespace AduSkin.Controls.Metro
     {
         TranslateTransform translate = new TranslateTransform();
         private int ChildCount = 0;
-        private double initWidth = 700;
-        private double initHeight = 350;
+         public double initWidth = 700;
+         public double initHeight = 350;
 
         public SlideSwitchPanel()
         {
