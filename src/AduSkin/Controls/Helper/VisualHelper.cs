@@ -1,14 +1,15 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Interop;
 using System.Windows.Media;
 
 namespace AduSkin.Controls.Helper
 {
-    public class VisualHelper
+    public static class VisualHelper
     {
         /// <summary>
         /// 查找元素的子元素
@@ -145,6 +146,11 @@ namespace AduSkin.Controls.Helper
                 }
             }
             return null;
+        }
+
+        public static IntPtr GetHandle(this Visual visual)
+        {
+            return (PresentationSource.FromVisual(visual) as HwndSource)?.Handle ?? IntPtr.Zero;
         }
 
         /// <summary>

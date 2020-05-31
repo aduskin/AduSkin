@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -251,5 +251,30 @@ namespace AduSkin.Controls
       /// </summary>
       Large,
       None,
+   }
+   /// <summary>
+   /// 通知图片类型
+   /// </summary>
+   public enum NotifyIconInfoType
+   {
+      /// <summary>
+      ///  No Icon.
+      /// </summary>
+      None,
+
+      /// <summary>
+      ///  A Information Icon.
+      /// </summary>
+      Info,
+
+      /// <summary>
+      ///  A Warning Icon.
+      /// </summary>
+      Warning,
+
+      /// <summary>
+      ///  A Error Icon.
+      /// </summary>
+      Error
    }
 }

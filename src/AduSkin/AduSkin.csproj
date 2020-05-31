@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net45</TargetFrameworks>
     <GenerateDocumentFile>true</GenerateDocumentFile>
