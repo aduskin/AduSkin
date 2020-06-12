@@ -1,4 +1,4 @@
-﻿using AduSkin.Demo.Data.Enum;
+using AduSkin.Demo.Data.Enum;
 using AduSkin.Demo.Models;
 using GalaSoft.MvvmLight;
 using System;
@@ -19,7 +19,8 @@ namespace AduSkin.Demo.ViewModel
          AllSupports.Add(new SupportUser("关关", "tencent://message/?uin=2453966523&Site=&Menu=yes", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=2453966523&spec=100", "", new string[] { SupportType.Skill.ToString(), SupportType.Extension.ToString() }));
          AllSupports.Add(new SupportUser("Tom", "tencent://message/?uin=17379620&Site=&Menu=yes", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=17379620&spec=100", "", new string[] { SupportType.Skill.ToString(), SupportType.Extension.ToString(),SupportType.Money.ToString() + "：350元" }));
          AllSupports.Add(new SupportUser("KING", "tencent://message/?uin=1061973727&Site=&Menu=yes", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=1061973727&spec=100", "", new string[] { SupportType.Skill.ToString()}));
-        }
+         AllSupports.Add(new SupportUser("FOX-Yu", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=435892115&spec=100", "", new string[] { SupportType.Money.ToString() + "：88元" }));
+      }
       private ObservableCollection<SupportUser> _AllSupports =new ObservableCollection<SupportUser>();
       /// <summary>
       /// 赞助人
