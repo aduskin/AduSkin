@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -31,6 +31,17 @@ namespace AduSkin.Controls.Metro
       {
          get { return (Geometry)GetValue(PathDataProperty); }
          set { SetValue(PathDataProperty, value); }
+      }
+
+      public static readonly DependencyProperty SelectedPathDataProperty = DependencyProperty.Register("SelectedPathData"
+          , typeof(Geometry), typeof(AduDIYCheckBox));
+      /// <summary>
+      /// Selected Path的Data
+      /// </summary>
+      public Geometry SelectedPathData
+      {
+         get { return (Geometry)GetValue(SelectedPathDataProperty); }
+         set { SetValue(SelectedPathDataProperty, value); }
       }
 
       public static readonly DependencyProperty NormalPathColorProperty = DependencyProperty.Register("NormalPathColor"

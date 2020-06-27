@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
 
@@ -8,6 +8,8 @@
     <Style TargetType="{x:Type Adu:AduDIYCheckBox}">
         <Setter Property="BorderBrush" Value="#EE796F" />
         <Setter Property="IsChecked" Value="True"/>
+        <Setter Property="PathData" Value="{StaticResource icon_pause}"/>
+        <Setter Property="SelectedPathData" Value="{StaticResource icon_play}"/>
         <Setter Property="NormalPathColor" Value="#000000" />
         <Setter Property="MouseOverPathColor" Value="#000000" />
         <Setter Property="PressedPathColor" Value="#000000" />
@@ -25,10 +27,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="False">
-                            <Setter TargetName="path" Property="Data" Value="{StaticResource icon_play}"/>
+                            <Setter TargetName="path" Property="Data" Value="{Binding PathData, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="path" Property="Data" Value="{StaticResource icon_pause}"/>
+                            <Setter TargetName="path" Property="Data" Value="{Binding SelectedPathData, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="true">

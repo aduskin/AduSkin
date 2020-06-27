@@ -277,4 +277,19 @@ namespace AduSkin.Controls
       /// </summary>
       Error
    }
+   public enum EnumChooseBoxType
+   {
+      /// <summary>
+      /// 单文件
+      /// </summary>
+      SingleFile,
+      /// <summary>
+      /// 多文件
+      /// </summary>
+      MultiFile,
+      /// <summary>
+      /// 文件夹
+      /// </summary>
+      Folder,
+   }
 }

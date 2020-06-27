@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroWindow.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduWindow.xaml" />
@@ -78,5 +78,6 @@
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTransitioningContentControl.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTabControl.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCRunningBlock.xaml" />
-    </ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduChooseBox.xaml" />
+   </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
