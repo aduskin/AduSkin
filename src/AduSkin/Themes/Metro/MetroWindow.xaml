@@ -164,7 +164,7 @@
                                                     Width="11"
                                                     Height="2"
                                                     Data="{StaticResource Icon_SysMin}"
-                                                    Fill="#fff"
+                                                    Fill="{TemplateBinding TitleForeground}"
                                                     Stretch="Fill" />
                                             </Button.Content>
                                         </Button>
@@ -176,7 +176,7 @@
                                             <Button.Content>
                                                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                                                     <Path 
-                                                          Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="#fff" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SysMax}" />
+                                                          Width="11" Height="11" Margin="0,0,0,0"  Fill="{TemplateBinding TitleForeground}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SysMax}" />
                                                 </Grid>
                                             </Button.Content>
                                         </Button>
@@ -190,7 +190,7 @@
                                                     Margin="0,2,3,0"
                                                     HorizontalAlignment="Center"
                                                     VerticalAlignment="Center">
-                                                    <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="#fff" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemRestore}" />
+                                                    <Path  Width="11" Height="11" Margin="0,0,0,0"  Fill="{TemplateBinding TitleForeground}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemRestore}" />
                                                 </Grid>
                                             </Button.Content>
                                         </Button>
@@ -201,7 +201,7 @@
                                             Style="{StaticResource buttonStyle}">
                                             <Button.Content>
                                                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                    <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="#fff" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemClose}" />
+                                                    <Path  Width="11" Height="11" Margin="0,0,0,0"  Fill="{TemplateBinding TitleForeground}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemClose}" />
                                                 </Grid>
                                             </Button.Content>
                                         </Button>
