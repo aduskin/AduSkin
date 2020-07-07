@@ -1,12 +1,9 @@
 using AduSkin.Demo.Data.Enum;
 using AduSkin.Demo.Models;
 using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
+using GalaSoft.MvvmLight.Command;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
@@ -29,6 +26,31 @@ namespace AduSkin.Demo.ViewModel
       {
          get { return _AllSupports; }
          set { Set(ref _AllSupports, value); }
+      }
+
+      /// <summary>
+      /// 命令Command
+      /// </summary>
+      public ICommand OpenDemo => new RelayCommand<string>((e) =>
+      {
+         switch (e)
+         {
+            case "Reward":
+               IsOpenReward = true;
+               return;
+            default:
+               break;
+         }
+      });
+
+      private bool _IsOpenReward;
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public bool IsOpenReward
+      {
+         get { return _IsOpenReward; }
+         set { Set(ref _IsOpenReward, value); }
       }
    }
 }
