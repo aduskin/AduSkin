@@ -1,4 +1,4 @@
-﻿using AduSkin.Themes;
+using AduSkin.Themes;
 using AduSkin.Utility.Element;
 using System;
 using System.Windows;
@@ -14,11 +14,13 @@ namespace AduSkin.Controls.Metro
         public static readonly new DependencyProperty BorderBrushProperty = ElementBase.Property<MetroWindow, Brush>("BorderBrushProperty");
         public static readonly DependencyProperty TitleForegroundProperty = ElementBase.Property<MetroWindow, Brush>("TitleForegroundProperty");
         public static readonly DependencyProperty TitleFontSizeProperty = ElementBase.Property<MetroWindow, FontSizeConverter>("TitleFontSizeProperty");
+        public static readonly DependencyProperty SysButtonColorProperty = ElementBase.Property<MetroWindow, Brush>("SysButtonColorProperty");
 
         public bool IsSubWindowShow { get { return (bool)GetValue(IsSubWindowShowProperty); } set { SetValue(IsSubWindowShowProperty, value); GoToState(); } }
         public object Menu { get { return GetValue(MenuProperty); } set { SetValue(MenuProperty, value); } }
         public new Brush BorderBrush { get { return (Brush)GetValue(BorderBrushProperty); } set { SetValue(BorderBrushProperty, value); BorderBrushChange(value); } }
         public Brush TitleForeground { get { return (Brush)GetValue(TitleForegroundProperty); } set { SetValue(TitleForegroundProperty, value); } }
+        public Brush SysButtonColor { get { return (Brush)GetValue(SysButtonColorProperty); } set { SetValue(SysButtonColorProperty, value); } }
         public FontSizeConverter TitleFontSize { get { return (FontSizeConverter)GetValue(TitleFontSizeProperty); } set { SetValue(TitleFontSizeProperty, value); } }
         void BorderBrushChange(Brush brush)
         {
