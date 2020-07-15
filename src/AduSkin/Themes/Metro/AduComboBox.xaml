@@ -79,15 +79,15 @@
                                               IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                                               ClickMode="Press"></ToggleButton>
                             <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Fade" >
-                                <Border CornerRadius="6" BorderThickness="1" Background="{TemplateBinding Background}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                                <Border CornerRadius="6" BorderThickness="1" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
                                     <Border.Effect>
                                         <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="0" Opacity="0.5"/>
                                     </Border.Effect>
-                                    <ScrollViewer Margin="0" Style="{DynamicResource WScrollviewer}" MaxHeight="{TemplateBinding MaxDropDownHeight}" 
+                                    <Adu:MetroScrollViewer Margin="0" MaxHeight="{TemplateBinding MaxDropDownHeight}" 
                                                   SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
                                         <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
                                         <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
-                                    </ScrollViewer>
+                                    </Adu:MetroScrollViewer>
                                 </Border>
                             </Popup>
                         </Grid>

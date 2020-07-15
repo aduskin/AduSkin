@@ -1,4 +1,4 @@
-﻿using AduSkin.Utility.Element;
+using AduSkin.Utility.Element;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -24,6 +24,17 @@ namespace AduSkin.Controls.Metro
       {
          get { return (CornerRadius)GetValue(CornerRadiusProperty); }
          set { SetValue(CornerRadiusProperty, value); }
+      }
+
+      public static readonly DependencyProperty ComBoxItemPanelBackgroundProperty = DependencyProperty.Register("ComBoxItemPanelBackground"
+            , typeof(Brush), typeof(AduComboBox), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(238, 121, 111))));
+      /// <summary>
+      /// 下拉列表背景色
+      /// </summary>
+      public Brush ComBoxItemPanelBackground
+      {
+         get { return (Brush)GetValue(ComBoxItemPanelBackgroundProperty); }
+         set { SetValue(ComBoxItemPanelBackgroundProperty, value); }
       }
    }
 }
