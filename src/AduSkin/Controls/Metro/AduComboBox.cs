@@ -36,5 +36,16 @@ namespace AduSkin.Controls.Metro
          get { return (Brush)GetValue(ComBoxItemPanelBackgroundProperty); }
          set { SetValue(ComBoxItemPanelBackgroundProperty, value); }
       }
+
+      public static readonly DependencyProperty ToggleButtonColorProperty = DependencyProperty.Register("ToggleButtonColor"
+            , typeof(Brush), typeof(AduComboBox), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(238, 121, 111))));
+      /// <summary>
+      /// 下拉列表背景色
+      /// </summary>
+      public Brush ToggleButtonColor
+      {
+         get { return (Brush)GetValue(ToggleButtonColorProperty); }
+         set { SetValue(ToggleButtonColorProperty, value); }
+      }
    }
 }

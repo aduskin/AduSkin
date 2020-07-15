@@ -16,7 +16,7 @@
                             Name="PathFill"
                             Width="10"
                             Height="6"
-                            Fill="#fff"
+                            Fill="{TemplateBinding Foreground}"
                             Stretch="Fill"
                             Margin="0,0,6,0"
                             Data="{StaticResource Icon_DropDowm}" />
@@ -36,6 +36,7 @@
         <Setter Property="Foreground" Value="#fff"></Setter>
         <Setter Property="BorderBrush" Value="#fff"></Setter>
         <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="ToggleButtonColor" Value="#FFF"></Setter>
         <Setter Property="Cursor" Value="Hand"></Setter>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
         <Setter Property="CornerRadius" Value="3"/>
@@ -75,7 +76,7 @@
                                 <ColumnDefinition  MaxWidth="24"/>
                             </Grid.ColumnDefinitions>
                             <TextBox  Grid.Column="0" Background="Transparent" IsReadOnly="{TemplateBinding IsReadOnly}" Text="{TemplateBinding Text}" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" BorderThickness="0" Margin="6,0,0,0"></TextBox>
-                            <ToggleButton Grid.Column="1" Style="{StaticResource ComboxStyleBtn}" VerticalAlignment="Center" 
+                            <ToggleButton Grid.Column="1" Style="{StaticResource ComboxStyleBtn}" VerticalAlignment="Center" Foreground="{TemplateBinding ToggleButtonColor}"
                                               IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                                               ClickMode="Press"></ToggleButton>
                             <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Fade" >
