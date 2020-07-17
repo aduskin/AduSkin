@@ -190,7 +190,7 @@
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="windowGrid" Property="Margin" Value="8" />
-                            <Setter TargetName="windowGrid" Property="Margin" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Shell:WindowChrome.WindowChrome).ResizeBorderThickness}" />
+                            <!--<Setter TargetName="windowGrid" Property="Margin" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Shell:WindowChrome.WindowChrome).ResizeBorderThickness}" />任务栏高度-->
                             <Setter TargetName="border" Property="BorderThickness" Value="0" />
                         </Trigger>
                         <Trigger Property="WindowState" Value="Normal">
