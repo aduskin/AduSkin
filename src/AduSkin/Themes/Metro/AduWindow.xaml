@@ -38,7 +38,7 @@
     <Style TargetType="{x:Type Metro:AduWindow}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="SysButtonColor" Value="#ffffff" />
+        <Setter Property="SysButtonColor" Value="{StaticResource Brush}" />
         <Setter Property="Background" Value="#FFF3F3F3" />
         <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
         <Setter Property="Foreground" Value="#FF000000" />
@@ -90,7 +90,7 @@
                                 BorderBrush="#000000"
                                 BorderThickness="{Binding BorderThickness, ElementName=border}"
                                 Opacity="0.15" />
-                            <Grid x:Name="windowGrid" Background="{TemplateBinding BorderBrush}">
+                            <Grid x:Name="windowGrid" Background="{TemplateBinding Background}">
 
                                 <AdornerDecorator>
                                     <ContentPresenter />

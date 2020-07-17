@@ -1,4 +1,4 @@
-﻿<Adu:AduWindow x:Class="AduSkin.Demo.Views.AduSkinDemo"
+<Adu:AduWindow x:Class="AduSkin.Demo.Views.AduSkinDemo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,6 +7,7 @@
         xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
         BorderBrush="#3E3E45"
+        Background="{StaticResource ShadowColor}"       
         ResizeMode="CanMinimize"
         BorderThickness="1"
         Title="AduSkinDemo" 
