@@ -76,6 +76,12 @@ Install-Package VideoLAN.LibVLC.Windows
 
 # 开发案例如下
 
+> 【AduMusic】
+
+![image](https://github.com/aduskin/AduMusic-Mini/blob/master/screenshot/%E6%80%80%E6%97%A7s.gif)
+
+![image](https://github.com/aduskin/AduMusic-Mini/blob/master/screenshot/%E6%AD%8C%E8%AF%8D.gif)
+
 > 【AduShopping】
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/project/AduShopping.gif)
