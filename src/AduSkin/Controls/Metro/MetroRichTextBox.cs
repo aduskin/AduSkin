@@ -127,9 +127,35 @@ namespace AduSkin.Controls.Metro
         public void AddLine(ImageSource image) { AddLine(image, (Action)null); }
         public void AddLine(string content, Action action) { AddLine(content, null, action); }
 
-        public void AddLine(string title, string url) { AddLine(title, () => System.Diagnostics.Process.Start(url)); }
-        public void Add(string title, string url){ Add(title, () => System.Diagnostics.Process.Start(url)); }
+        public void AddLine(string title, string url)
+        {
+           AddLine(title, () =>
+           {
+              if (string.IsNullOrEmpty(url)) return;
+              url = url.Replace("&", "^&");
+              
+              System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}")
+              {
+                 UseShellExecute = false,
+                 CreateNoWindow = true
+              });
+           });
+        }
+        
+        public void Add(string title, string url)
+        {
+           Add(title, () =>
+           {
+              if (string.IsNullOrEmpty(url)) return;
+              url = url.Replace("&", "^&");
 
+              System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}")
+              {
+                 UseShellExecute = false,
+                 CreateNoWindow = true
+              });
+           });
+        }
 
         public void Add(string content, RgbaColor rgba, Action action)
         {
