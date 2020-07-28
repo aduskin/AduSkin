@@ -3,7 +3,7 @@
 
 A Beautiful WPF Control UI
 
-一款简单漂亮的WPF UI，融合部分开源框架的组件，为个人定制的UI，可供学者参考和使用。
+一款简单漂亮的WPF UI，融合多个开源框架组件，为个人定制的UI，可供学者参考和使用。
 
 Nuget 搜索"AduSkin" 可直接导包使用
 
