@@ -5,6 +5,7 @@
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
     <NoWarn>$(NoWarn);0067</NoWarn>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup>

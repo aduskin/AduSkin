@@ -8,6 +8,7 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
     <OutputType>WinExe</OutputType>
     <StartupObject />
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   
   <ItemGroup>
@@ -22,7 +23,7 @@
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework)' != 'net45'">
-    <PackageReference Include="System.Text.Encoding.CodePages"  Version="4.7.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
