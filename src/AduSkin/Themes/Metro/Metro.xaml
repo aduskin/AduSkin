@@ -79,5 +79,6 @@
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTabControl.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCRunningBlock.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduChooseBox.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTimeBarNew.xaml" />
    </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
