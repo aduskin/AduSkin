@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-      <AduSkin:HCTimeBarNew BorderThickness="0" Height="30" Margin="32" Width="600"  VerticalAlignment="Center"/>
+   <Grid>
+      <AduSkin:CoverFlow Grid.Row="0" x:Name="CoverFlowMain" Width="500" Height="200" />
    </Grid>
 </UserControl>

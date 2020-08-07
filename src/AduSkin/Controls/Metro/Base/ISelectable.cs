@@ -1,6 +1,6 @@
-﻿using System.Windows;
+using System.Windows;
 
-namespace AduSkin.Controls.Metro.Base
+namespace AduSkin.Controls.Metro
 {
    public interface ISelectable
    {

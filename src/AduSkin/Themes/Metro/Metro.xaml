@@ -74,11 +74,13 @@
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduNumericUpDown.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduToolTip.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPage.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduChooseBox.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCShield.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTransitioningContentControl.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTabControl.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCRunningBlock.xaml" />
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduChooseBox.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTimeBarNew.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Cover/CoverFlow.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Cover/CoverView.xaml" />
    </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -1,10 +1,10 @@
-﻿
+
 using AduSkin.Controls.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace AduSkin.Controls.Metro.Base
+namespace AduSkin.Controls.Metro
 {
    public class SelectableItem : ContentControl, ISelectable
    {

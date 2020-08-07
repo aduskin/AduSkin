@@ -37,7 +37,7 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("导航容器", typeof(NavigationPanel)),
             new ControlModel("轮播容器", typeof(CarouselContainer)),
             new ControlModel("时间轴", typeof(TimeLine)),
-            new ControlModel("时间线", typeof(TimeBarDemo)),
+            new ControlModel("封面流", typeof(TimeBarDemo)),
             new ControlModel("树形菜单", typeof(TreeMenu)),
             new ControlModel("数据列表", typeof(DataGridDemo),DemoType.Demo),
             new ControlModel("多功能Tab", typeof(MultiFunctionTabControl)),
