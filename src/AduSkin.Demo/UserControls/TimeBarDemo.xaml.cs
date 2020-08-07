@@ -22,22 +22,6 @@ namespace AduSkin.Demo.UserControls
       public TimeBarDemo()
       {
          InitializeComponent();
-         #region 封面
-         CoverFlowMain.AddRange(new[]
-            {
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png")
-            });
-         CoverFlowMain.JumpTo(2);
-         #endregion
       }
    }
 }

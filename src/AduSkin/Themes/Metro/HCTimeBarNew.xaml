@@ -11,7 +11,7 @@
       <Setter Property="UseLayoutRounding" Value="True"/>
       <Setter Property="BorderThickness" Value="0,1,0,0"/>
       <Setter Property="Foreground" Value="White"/>
-      <Setter Property="Background" Value="Red"/>
+      <Setter Property="Background" Value="{StaticResource Brush}"/>
       <Setter Property="Height" Value="60"/>
       <Setter Property="BorderBrush" Value="#FFF"/>
       <Setter Property="Template">
@@ -44,7 +44,7 @@
                      </Border>
                      <TextBlock Visibility="{TemplateBinding ShowSpeStr,Converter={StaticResource BooleanVisibilityConverter}}" Text="{TemplateBinding SpeStr}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,14,10,0"/>
                      <TextBlock Visibility="Collapsed" Name="PART_TextBlockMove" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,2,0,0"/>
-                     <Border Width="1" Background="Blue"/>
+                     <Border Width="1" Background="{TemplateBinding BorderBrush}"/>
                      <Canvas Name="PART_CanvasSpe" VerticalAlignment="Bottom" Height="28"/>
                      <Border Name="PART_BorderTop" Background="Transparent" Cursor="Hand"/>
                   </AduSkin:HCSimplePanel>

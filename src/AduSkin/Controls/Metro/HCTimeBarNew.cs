@@ -1,5 +1,6 @@
 using AduSkin.Controls.Data;
 using AduSkin.Interactivity;
+using AduSkin.Utility.Element;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -161,8 +162,13 @@ namespace AduSkin.Controls.Metro
 
       private readonly bool _isLoaded;
 
+      static HCTimeBarNew()
+      {
+         ElementBase.DefaultStyle<HCTimeBarNew>(DefaultStyleKeyProperty);
+      }
       public HCTimeBarNew()
       {
+         Utility.Refresh(this);
          _starTime = DateTime.Now;
          SelectedTime = new DateTime(_starTime.Year, _starTime.Month, _starTime.Day, 0, 0, 0);
          _starTime = SelectedTime;
