@@ -148,7 +148,7 @@
                         <StackPanel>
                             <TextBlock  HorizontalAlignment="Center" Foreground="#FFF" FontSize="30" Margin="0,20,0,0" FontWeight="Light" Text="Welcome To AduSkin" />
                             <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FFF" Text="且随疾风前行，身后一许流星" Margin="0,0,0,20"/>
-                            <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FF14D4E5" Text="Version 1.1.1.6" />
+                            <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FF14D4E5" Text="Version 1.1.1.9" />
                             <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="#FF14D4E5" Text="Copyright ©AduSkin 2019 - 2020" />
                         </StackPanel>
                     </Metro:TransitioningContentControl>

@@ -20,11 +20,14 @@ namespace AduSkin.Controls.Metro
 
         private readonly UIElement _uiElement;
 
+        internal object CurrentItemData { get; set; }
+
         internal int Index { get; set; }
 
-        public CoverFlowItem(int itemIndex, int currentIndex, UIElement element)
+        public CoverFlowItem(int itemIndex, int currentIndex,object ItemData, UIElement element)
         {
             Index = itemIndex;
+            CurrentItemData = ItemData;
             _uiElement = element;
             _uiElement.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
 

@@ -1,6 +1,7 @@
 using AduSkin.Controls.Data;
 using AduSkin.Utility.Element;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,7 @@ namespace AduSkin.Controls.Metro
       public CoverFlow()
       {
          Utility.Refresh(this);
+         this.ItemsSource = new List<object>();
       }
 
       static CoverFlow()
@@ -42,9 +44,7 @@ namespace AduSkin.Controls.Metro
         /// <summary>
         ///     页码
         /// </summary>
-        public static readonly DependencyProperty PageIndexProperty = DependencyProperty.Register(
-            "PageIndex", typeof(int), typeof(CoverFlow),
-            new PropertyMetadata(ValueBoxes.Int0Box, OnPageIndexChanged, CoercePageIndex));
+        public static readonly DependencyProperty PageIndexProperty = DependencyProperty.Register("PageIndex", typeof(int), typeof(CoverFlow), new PropertyMetadata(ValueBoxes.Int0Box, OnPageIndexChanged, CoercePageIndex));
 
         private static object CoercePageIndex(DependencyObject d, object baseValue)
         {
@@ -55,9 +55,9 @@ namespace AduSkin.Controls.Metro
             {
                 return 0;
             }
-            if (v >= ctl._contentDic.Count)
+            if (v >= ctl.Count)
             {
-                return ctl._contentDic.Count - 1;
+                return ctl.Count - 1;
             }
             return v;
         }
@@ -66,28 +66,101 @@ namespace AduSkin.Controls.Metro
         {
             var ctl = (CoverFlow)d;
             ctl.UpdateIndex((int)e.NewValue, (int)e.OldValue);
+            ctl.OnIndexChanged((int)e.OldValue, (int)e.NewValue);
+      }
+      /// <summary>
+      /// 切换事件
+      /// </summary>
+      public static RoutedEvent IndexChangedEvent = EventManager.RegisterRoutedEvent("IndexChanged", RoutingStrategy.Bubble, typeof(RoutedPropertyChangedEventHandler<int>), typeof(CoverFlow));
+        public event RoutedPropertyChangedEventHandler<int> IndexChanged
+        {
+            add { AddHandler(IndexChangedEvent, value); }
+            remove { RemoveHandler(IndexChangedEvent, value); }
         }
 
-        /// <summary>
-        ///     是否循环
-        /// </summary>
-        public static readonly DependencyProperty LoopProperty = DependencyProperty.Register(
+      public virtual void OnIndexChanged(int oldValue, int newValue)
+      {
+         RoutedPropertyChangedEventArgs<int> arg = new RoutedPropertyChangedEventArgs<int>(oldValue, newValue, IndexChangedEvent);
+         this.RaiseEvent(arg);
+      }
+
+      /// <summary>
+      ///     是否循环
+      /// </summary>
+      public static readonly DependencyProperty LoopProperty = DependencyProperty.Register(
             "Loop", typeof(bool), typeof(CoverFlow), new PropertyMetadata(ValueBoxes.FalseBox));
 
         /// <summary>
         ///     存储所有的内容
         /// </summary>
-        private readonly Dictionary<int, object> _contentDic = new Dictionary<int, object>();
+        //private readonly Dictionary<int, object> _contentDic = new Dictionary<int, object>();
 
         /// <summary>
         ///     当前在显示范围内的项
         /// </summary>
         private readonly Dictionary<int, CoverFlowItem> _itemShowList = new Dictionary<int, CoverFlowItem>();
 
-        /// <summary>
-        ///     相机
-        /// </summary>
-        private ProjectionCamera _camera;
+      public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.Register("ItemTemplate", typeof(DataTemplate), typeof(CoverFlow));
+
+      /// <summary>
+      /// 轮播的Item的数据模板
+      /// </summary>
+      public DataTemplate ItemTemplate
+      {
+         get { return (DataTemplate)GetValue(ItemTemplateProperty); }
+         set { SetValue(ItemTemplateProperty, value); }
+      }
+
+      public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register("ItemsSource", typeof(IEnumerable), typeof(CoverFlow));
+      
+      /// <summary>
+      /// 轮播数据源
+      /// </summary>
+      public IEnumerable ItemsSource
+      {
+         get
+         {
+            return (IEnumerable)GetValue(ItemsSourceProperty);
+         }
+         set
+         {
+            SetValue(ItemsSourceProperty, value);
+         }
+      }
+
+      public static readonly DependencyProperty CurrentItemProperty = DependencyProperty.Register("CurrentItem", typeof(object), typeof(CoverFlow));
+      /// <summary>
+      /// 轮播数据源
+      /// </summary>
+      public object CurrentItem
+      {
+         get
+         {
+            return (object)GetValue(CurrentItemProperty);
+         }
+         set
+         {
+            SetValue(CurrentItemProperty, value);
+         }
+      }
+
+      private int _Count;
+      /// <summary>
+      /// 属性.
+      /// </summary>
+      public int Count
+      {
+         get {
+            var items = (ItemsSource as IList);
+            return items.Count;
+
+         }
+      }
+
+      /// <summary>
+      ///     相机
+      /// </summary>
+      private ProjectionCamera _camera;
 
         /// <summary>
         ///     3d画布
@@ -120,7 +193,11 @@ namespace AduSkin.Controls.Metro
         public int PageIndex
         {
             get => (int)GetValue(PageIndexProperty);
-            internal set => SetValue(PageIndexProperty, value);
+            internal set
+            {
+               CurrentItem = _itemShowList[value].CurrentItemData;
+               SetValue(PageIndexProperty, value);
+            }
         }
 
         /// <summary>
@@ -165,25 +242,25 @@ namespace AduSkin.Controls.Metro
         ///     批量添加资源
         /// </summary>
         /// <param name="contentList"></param>
-        public void AddRange(IEnumerable<object> contentList)
-        {
-            foreach (var content in contentList)
-            {
-                _contentDic.Add(_contentDic.Count, content);
-            }
-        }
+        //public void AddRange(IEnumerable<object> contentList)
+        //{
+        //    foreach (var content in contentList)
+        //    {
+        //        _contentDic.Add(_contentDic.Count, content);
+        //    }
+        //}
 
         /// <summary>
         ///     添加一项资源
         /// </summary>
         /// <param name="uriString"></param>
-        public void Add(string uriString) => _contentDic.Add(_contentDic.Count, new Uri(uriString));
+        //public void Add(string uriString) => _contentDic.Add(_contentDic.Count, new Uri(uriString));
 
         /// <summary>
         ///     添加一项资源
         /// </summary>
         /// <param name="uri"></param>
-        public void Add(Uri uri) => _contentDic.Add(_contentDic.Count, uri);
+        //public void Add(Uri uri) => _contentDic.Add(_contentDic.Count, uri);
 
         /// <summary>
         ///     跳转
@@ -197,12 +274,12 @@ namespace AduSkin.Controls.Metro
             if (e.Delta < 0)
             {
                 var index = PageIndex + 1;
-                PageIndex = index >= _contentDic.Count ? Loop ? 0 : _contentDic.Count - 1 : index;
+                PageIndex = index >= Count ? Loop ? 0 : Count - 1 : index;
             }
             else
             {
                 var index = PageIndex - 1;
-                PageIndex = index < 0 ? Loop ? _contentDic.Count - 1 : 0 : index;
+                PageIndex = index < 0 ? Loop ? Count - 1 : 0 : index;
             }
 
             e.Handled = true;
@@ -282,8 +359,10 @@ namespace AduSkin.Controls.Metro
         /// </summary>
         private void UpdateShowRange()
         {
+            if (this.ItemsSource == null)
+             return;
             var newFirstShowIndex = Math.Max(PageIndex - MaxShowCountHalf, 0);
-            var newLastShowIndex = Math.Min(PageIndex + MaxShowCountHalf, _contentDic.Count - 1);
+            var newLastShowIndex = Math.Min(PageIndex + MaxShowCountHalf, Count - 1);
 
             if (_firstShowIndex < newFirstShowIndex)
             {
@@ -304,7 +383,7 @@ namespace AduSkin.Controls.Metro
             {
                 if (!_itemShowList.ContainsKey(i))
                 {
-                    var cover = CreateCoverFlowItem(i, _contentDic[i]);
+                    var cover = CreateCoverFlowItem(i, (ItemsSource as IList)[i]);
                     _itemShowList[i] = cover;
                     _visualParent.Children.Add(cover);
                 }
@@ -312,6 +391,7 @@ namespace AduSkin.Controls.Metro
 
             _firstShowIndex = newFirstShowIndex;
             _lastShowIndex = newLastShowIndex;
+
         }
 
         private CoverFlowItem CreateCoverFlowItem(int index, object content)
@@ -320,21 +400,27 @@ namespace AduSkin.Controls.Metro
             {
                 try
                 {
-                    return new CoverFlowItem(index, PageIndex, new Image
+                    return new CoverFlowItem(index, PageIndex, content, new Image
                     {
                         Source = BitmapFrame.Create(uri, BitmapCreateOptions.DelayCreation, BitmapCacheOption.OnDemand)
                     });
                 }
                 catch
                 {
-                    return new CoverFlowItem(index, PageIndex, new ContentControl());
+                    return new CoverFlowItem(index, PageIndex, content, new ContentControl());
                 }
             }
-
-            return new CoverFlowItem(index, PageIndex, new ContentControl
+            var contentControl= new ContentControl
             {
-                Content = content
-            });
-        }
+               Content = content
+            };
+            contentControl.Content = content;
+            contentControl.HorizontalAlignment = HorizontalAlignment.Stretch;
+            contentControl.HorizontalContentAlignment = HorizontalAlignment.Center;
+            contentControl.VerticalContentAlignment = VerticalAlignment.Center;
+            contentControl.VerticalAlignment = VerticalAlignment.Stretch;
+            contentControl.ContentTemplate = this.ItemTemplate;
+            return new CoverFlowItem(index, PageIndex, content, contentControl);
+      }
     }
 }

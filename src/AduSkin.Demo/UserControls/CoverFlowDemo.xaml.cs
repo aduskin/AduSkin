@@ -1,15 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AduSkin.Demo.UserControls
 {
@@ -21,20 +11,19 @@ namespace AduSkin.Demo.UserControls
       public CoverFlowDemo()
       {
          InitializeComponent();
-         #region 封面
-         CoverFlowMain.AddRange(new[]
+         
+         #region 轮播
+         ObservableCollection<Models.Carousel> list = new ObservableCollection<Models.Carousel>();
+         for (int i = 0; i < 5; i++)
+         {
+            list.Add(new Models.Carousel()
             {
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png"),
-                new Uri(@"pack://application:,,,/Resources/aduskin.png")
+               imgpath = "../Resources/aduskin.png",
+               name = "AduSkin",
+               info = "追求极致，永臻完美"
             });
+         }
+         this.CoverFlowMain.ItemsSource = list;
          CoverFlowMain.JumpTo(2);
          #endregion
       }
