@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1000">
     <Grid Background="{StaticResource DefaultBackground}" >
-        <Metro:MetroScrollViewer>
+        <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
             <Metro:MetroWaterfallFlow x:Name="waterfallFlow" ListWidth="300">
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
