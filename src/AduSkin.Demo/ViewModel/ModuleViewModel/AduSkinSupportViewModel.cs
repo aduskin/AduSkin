@@ -18,6 +18,7 @@ namespace AduSkin.Demo.ViewModel
          AllSupports.Add(new SupportUser("KING", "tencent://message/?uin=1061973727&Site=&Menu=yes", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=1061973727&spec=100", "", new string[] { SupportType.Skill.ToString()}));
          AllSupports.Add(new SupportUser("FOX-Yu", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=435892115&spec=100", "", new string[] { SupportType.Money.ToString() + "：88元" }));
          AllSupports.Add(new SupportUser("不愿意透露姓名的网友", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=2603473237&spec=100", "", new string[] { SupportType.Money.ToString() + "：300元" }));
+         AllSupports.Add(new SupportUser("飘逸", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=1827152663&spec=100", "", new string[] { SupportType.Money.ToString() + "：8.88元" }));
       }
       private ObservableCollection<SupportUser> _AllSupports =new ObservableCollection<SupportUser>();
       /// <summary>

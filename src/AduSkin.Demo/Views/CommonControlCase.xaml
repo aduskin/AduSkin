@@ -64,7 +64,7 @@
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
-                            <Metro:AduDatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="4" Width="200" VerticalAlignment="Center" Height="28"
+                     <Metro:AduDatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="4" Width="200" VerticalAlignment="Center" Height="28" AduAttach:BackgroundElement.PanelBackground="{StaticResource DefaultWhiteBrush}"
                                                     Type="DateTime"  CornerRadius="3" DateStringFormat="yyyy/MM/dd"/>
                             <Metro:AduDatePicker x:Name="Date2" HorizontalAlignment="Left" Margin="4" Width="200" VerticalAlignment="Center" Height="28" CornerRadius="3"/>
                             <Metro:AduDatePicker x:Name="Date3" HorizontalAlignment="Left" Margin="4" Width="200" VerticalAlignment="Center" Height="28" CornerRadius="3" IsShowShortCuts="True" />
