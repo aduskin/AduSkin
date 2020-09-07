@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls;
+using AduSkin.Controls;
 using AduSkin.Utility.AduMethod;
 using System;
 using System.Collections.Generic;
@@ -142,7 +142,7 @@ namespace AduSkin.Controls.Metro
             {
                return;
             }
-            this.SelectedDateTime = Convert.ToDateTime(this.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + SelectedTime.Value.ToString("hh:mm:ss"));
+            this.SelectedDateTime = Convert.ToDateTime(this.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + SelectedTime.Value.ToString("HH:mm:ss"));
          }
       }
 
@@ -270,7 +270,7 @@ namespace AduSkin.Controls.Metro
             {
                return;
             }
-            this.SelectedDateTime = Convert.ToDateTime(this.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + SelectedTime.Value.ToString("hh:mm:ss"));
+            this.SelectedDateTime = Convert.ToDateTime(this.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + SelectedTime.Value.ToString("HH:mm:ss"));
          }
       }
 
