@@ -17,12 +17,16 @@ namespace AduSkin.Controls.Metro
       public static readonly DependencyProperty TitleForegroundProperty = ElementBase.Property<AduWindow, Brush>("TitleForegroundProperty");
       public static readonly DependencyProperty TitleFontSizeProperty = ElementBase.Property<AduWindow, FontSizeConverter>("TitleFontSizeProperty");
       public static readonly DependencyProperty SysButtonColorProperty = ElementBase.Property<AduWindow, Brush>("SysButtonColorProperty");
+      public static readonly DependencyProperty SysButtonVisibleProperty = ElementBase.Property<AduWindow, Visibility>("SysButtonVisibleProperty");
+      public static readonly DependencyProperty SysButtonMarginProperty = ElementBase.Property<AduWindow, Thickness>("SysButtonMarginProperty");
 
       public bool IsSubWindowShow { get { return (bool)GetValue(IsSubWindowShowProperty); } set { SetValue(IsSubWindowShowProperty, value); GoToState(); } }
       public object Menu { get { return GetValue(MenuProperty); } set { SetValue(MenuProperty, value); } }
       public new Brush BorderBrush { get { return (Brush)GetValue(BorderBrushProperty); } set { SetValue(BorderBrushProperty, value); BorderBrushChange(value); } }
       public Brush TitleForeground { get { return (Brush)GetValue(TitleForegroundProperty); } set { SetValue(TitleForegroundProperty, value); } }
       public Brush SysButtonColor { get { return (Brush)GetValue(SysButtonColorProperty); } set { SetValue(SysButtonColorProperty, value); } }
+      public Visibility SysButtonVisible { get { return (Visibility)GetValue(SysButtonVisibleProperty); } set { SetValue(SysButtonVisibleProperty, value); } }
+      public Thickness SysButtonMargin { get { return (Thickness)GetValue(SysButtonMarginProperty); } set { SetValue(SysButtonMarginProperty, value); } }
       public FontSizeConverter TitleFontSize { get { return (FontSizeConverter)GetValue(TitleFontSizeProperty); } set { SetValue(TitleFontSizeProperty, value); } }
       void BorderBrushChange(Brush brush)
       {

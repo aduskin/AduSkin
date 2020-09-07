@@ -42,6 +42,7 @@
         <Setter Property="Background" Value="#FFF3F3F3" />
         <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
         <Setter Property="Foreground" Value="#FF000000" />
+        <Setter Property="SysButtonMargin" Value="10" />
         <Setter Property="Icon" Value="/AduSkin;component/Resources/logo.ico" />
         <Setter Property="BorderThickness" Value="1" />
 
@@ -96,7 +97,7 @@
                                     <ContentPresenter />
                                 </AdornerDecorator>
 
-                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="60" Margin="0,0,10,0" VerticalAlignment="Top" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                                <StackPanel Visibility="{TemplateBinding SysButtonVisible}" HorizontalAlignment="Right" Orientation="Horizontal" Margin="{TemplateBinding SysButtonMargin}" VerticalAlignment="Top" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                                     <Button
                                             x:Name="minimizedButton"
                                             Click="Minimized"

@@ -10,6 +10,9 @@
         Background="{StaticResource ShadowColor}"       
         ResizeMode="CanMinimize"
         BorderThickness="1"
+        SysButtonColor="{StaticResource DefaultBrush}"
+        SysButtonMargin="14"
+        SysButtonVisible="Visible"
         Title="AduSkinDemo" 
         MinWidth="600" MinHeight="350" MaxWidth="1100"
         d:DesignHeight="1200" d:DesignWidth="1100" >
