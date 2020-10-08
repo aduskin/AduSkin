@@ -75,6 +75,7 @@
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduToolTip.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPage.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduChooseBox.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFormLable.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCShield.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTransitioningContentControl.xaml" />
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTabControl.xaml" />

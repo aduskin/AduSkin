@@ -51,7 +51,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border MinHeight="100" Background="#FAFBFC" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0,0,0,1" CornerRadius="4">
+                    <Border MinHeight="100" Background="#FAFBFC" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0,0,0,1">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100" />

@@ -1,12 +1,12 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
     <ControlTemplate x:Key="Lines" TargetType="{x:Type Adu:AduLoading}">
-        <StackPanel x:Name="PART_Root" Background="{TemplateBinding Background}" Orientation="Horizontal" HorizontalAlignment="Center">
+        <UniformGrid x:Name="PART_Root" Background="{TemplateBinding Background}" Columns="5">
             <Rectangle x:Name="PART_Ellipse1"
-                       Height="30"
+                       Height="auto"
                        Width="4"
-                       Margin="4,0"
+                       HorizontalAlignment="Center"
                        Fill="{TemplateBinding Foreground}"
                        Opacity="0.5" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
@@ -14,9 +14,9 @@
                 </Rectangle.RenderTransform>
             </Rectangle>
             <Rectangle x:Name="PART_Ellipse2"
-                       Height="30"
+                       Height="auto"
                        Width="4"
-                       Margin="4,0"
+                       HorizontalAlignment="Center"
                        Fill="{TemplateBinding Foreground}"
                        Opacity="0.5" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
@@ -24,9 +24,9 @@
                 </Rectangle.RenderTransform>
             </Rectangle>
             <Rectangle x:Name="PART_Ellipse3"
-                       Height="30"
+                       Height="auto"
                        Width="4"
-                       Margin="4,0"
+                       HorizontalAlignment="Center"
                        Fill="{TemplateBinding Foreground}"
                        Opacity="0.5" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
@@ -34,9 +34,9 @@
                 </Rectangle.RenderTransform>
             </Rectangle>
             <Rectangle x:Name="PART_Ellipse4"
-                       Height="30"
+                       Height="auto"
                        Width="4"
-                       Margin="4,0"
+                       HorizontalAlignment="Center"
                        Fill="{TemplateBinding Foreground}"
                        Opacity="0.5" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
@@ -44,9 +44,9 @@
                 </Rectangle.RenderTransform>
             </Rectangle>
             <Rectangle x:Name="PART_Ellipse5"
-                       Height="30"
+                       Height="auto"
                        Width="4"
-                       Margin="4,0"
+                       HorizontalAlignment="Center"
                        Fill="{TemplateBinding Foreground}"
                        Opacity="0.5" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
@@ -169,6 +169,6 @@
                     </VisualState>
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-        </StackPanel>
+        </UniformGrid>
     </ControlTemplate>
 </ResourceDictionary>

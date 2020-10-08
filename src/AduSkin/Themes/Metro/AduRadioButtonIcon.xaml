@@ -52,6 +52,7 @@
                         <Trigger Property="IsEnabled" Value="False" />
                         <Trigger Property="IsPressed" Value="True" />
                         <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="templateRoot" Property="Background" Value="{Binding SelectBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                             <Setter TargetName="templateRoot" Property="Opacity" Value=".8" />
                             <Setter TargetName="templateRoot" Property="BorderThickness" Value="2,0,0,0" />
                             <Setter TargetName="Icon" Property="Fill" Value="{Binding SelectColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />

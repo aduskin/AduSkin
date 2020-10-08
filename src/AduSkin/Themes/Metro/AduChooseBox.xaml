@@ -5,77 +5,77 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <PathGeometry x:Key="icon" Figures="M147.01175 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273 44.792159 0 81.109296-36.329417 81.109296-81.108273C228.121046 467.194538 191.804932 430.890704 147.01175 430.890704zM511.999488 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273 44.792159 0 81.109296-36.329417 81.109296-81.108273C593.108784 467.194538 556.791647 430.890704 511.999488 430.890704zM876.987227 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273s81.108273-36.329417 81.108273-81.108273C958.094476 467.194538 921.778362 430.890704 876.987227 430.890704z" />
-    <Style TargetType="{x:Type Adu:AduChooseBox}">
-        <Setter Property="Background" Value="White" />
-        <Setter Property="BorderBrush" Value="#FF000000" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="FontSize" Value="12" />
-        <Setter Property="Foreground" Value="Black" />
-        <Setter Property="Height" Value="30" />
-        <Setter Property="Padding" Value="2,0" />
-        <Setter Property="ChooseButtonWidth" Value="20" />
-        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="UseLayoutRounding" Value="True" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Adu:AduChooseBox}">
-                    <Border x:Name="border" Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            CornerRadius="2"
-                            Opacity="1"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                            UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="auto" />
-                            </Grid.ColumnDefinitions>
-                            <ScrollViewer x:Name="PART_ContentHost" Grid.Column="0"
+   <Style TargetType="{x:Type Adu:AduChooseBox}">
+      <Setter Property="Background" Value="White" />
+      <Setter Property="BorderBrush" Value="#FF000000" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Padding" Value="2,0" />
+      <Setter Property="ChooseButtonWidth" Value="20" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="UseLayoutRounding" Value="True" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Adu:AduChooseBox}">
+               <Grid>
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*" />
+                     <ColumnDefinition Width="auto" />
+                  </Grid.ColumnDefinitions>
+                  <Border x:Name="border" Grid.ColumnSpan="2" 
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        CornerRadius="2"
+                        Opacity="0.15"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                        UseLayoutRounding="{TemplateBinding UseLayoutRounding}"/>
+                  <ScrollViewer x:Name="PART_ContentHost" Grid.Column="0"
                                           Margin="{TemplateBinding Padding}"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           HorizontalScrollBarVisibility="Hidden"
                                           VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}" />
-                            <Button x:Name="PART_ChooseButton" Grid.Column="1" Width="{TemplateBinding ChooseButtonWidth}" 
+                  <Button x:Name="PART_ChooseButton" Grid.Column="1" Width="{TemplateBinding ChooseButtonWidth}" 
                                     Style="{TemplateBinding ChooseButtonStyle}" />
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsKeyboardFocused" Value="true">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Brush}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="ChooseButtonStyle">
-            <Setter.Value>
-                <Style TargetType="Button">
-                    <Setter Property="Background" Value="Transparent" />
-                    <Setter Property="BorderThickness" Value="0" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}"
+               </Grid>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsKeyboardFocused" Value="true">
+                     <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Brush}" />
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+      <Setter Property="ChooseButtonStyle">
+         <Setter.Value>
+            <Style TargetType="Button">
+               <Setter Property="Background" Value="Transparent" />
+               <Setter Property="BorderThickness" Value="0" />
+               <Setter Property="Template">
+                  <Setter.Value>
+                     <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}">
-                                    <Path x:Name="icon" Data="{StaticResource icon}" Width="12" Fill="#50000000" Stretch="Uniform"
+                           <Path x:Name="icon" Data="{StaticResource icon}" Width="12" Fill="#50000000" Stretch="Uniform"
                                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                </Border>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Cursor" Value="Hand" />
-                                        <Setter TargetName="icon" Property="Fill" Value="{StaticResource Brush}" />
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                           <Trigger Property="IsMouseOver" Value="True">
+                              <Setter Property="Cursor" Value="Hand" />
+                              <Setter TargetName="icon" Property="Fill" Value="{StaticResource Brush}" />
+                           </Trigger>
+                        </ControlTemplate.Triggers>
+                     </ControlTemplate>
+                  </Setter.Value>
+               </Setter>
+            </Style>
+         </Setter.Value>
+      </Setter>
+   </Style>
 </ResourceDictionary>

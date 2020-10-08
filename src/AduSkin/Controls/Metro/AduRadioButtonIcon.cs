@@ -26,5 +26,16 @@ namespace AduSkin.Controls.Metro
          get { return (Brush)GetValue(SelectColorProperty); }
          set { SetValue(SelectColorProperty, value); }
       }
+
+      public static readonly DependencyProperty SelectBackgroundProperty = DependencyProperty.Register("SelectBackground"
+            , typeof(Brush), typeof(AduRadioButtonIcon), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromArgb(0,0, 0, 0))));
+      /// <summary>
+      /// 选中时背景色颜色
+      /// </summary>
+      public Brush SelectBackground
+      {
+         get { return (Brush)GetValue(SelectBackgroundProperty); }
+         set { SetValue(SelectBackgroundProperty, value); }
+      }
    }
 }
