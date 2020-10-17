@@ -79,9 +79,7 @@ Install-Package VideoLAN.LibVLC.Windows
 
 > 【AduMusic】
 
-![image](https://github.com/aduskin/AduMusic-Mini/blob/master/screenshot/%E6%80%80%E6%97%A7s.gif)
-
-![image](https://github.com/aduskin/AduMusic-Mini/blob/master/screenshot/%E6%AD%8C%E8%AF%8D.gif)
+![image](https://github.com/aduskin/AduMusic-Mini/blob/master/screenshot/%E6%80%80%E6%97%A7plus.png)
 
 > 【AduShopping】
 
