@@ -76,7 +76,7 @@
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
                         <StackPanel>
-                            <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Grids" IsActived="True"/>
+                            <Metro:AduLoading Margin="0,0,0,20" SpeedRatio=".5" Type="Cogs" IsActived="True"/>
                             <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="SingleRound" IsActived="True"/>
                             <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="DoubleRound" IsActived="True"/>
                             <Metro:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Apple" IsActived="True"/>
