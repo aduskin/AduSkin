@@ -21,7 +21,7 @@
         </Storyboard>
 
         <DataTemplate x:Key="NotifiactionTemplate">
-            <Grid x:Name="NoticeGrid" Margin="5" Tag="{Binding Path=Id}"
+            <Grid x:Name="NoticeGrid" Margin="8" Tag="{Binding Path=Id}"
                   RenderTransformOrigin="1,0.5" SizeChanged="NoticeGrid_SizeChanged">
                 <Grid.RenderTransform>
                     <TransformGroup>
@@ -33,7 +33,7 @@
                 </Grid.RenderTransform>
                 <Border Background="#FFFFFF" CornerRadius="2,0,0,2" SnapsToDevicePixels="True" UseLayoutRounding="True">
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="8" Opacity="0.2" ShadowDepth="0" Color="Brown" />
+                        <DropShadowEffect BlurRadius="20" Opacity="0.2" ShadowDepth="10" Color="Black" />
                     </Border.Effect>
                 </Border>
 
