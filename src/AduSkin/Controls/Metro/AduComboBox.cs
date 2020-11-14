@@ -26,6 +26,17 @@ namespace AduSkin.Controls.Metro
          set { SetValue(CornerRadiusProperty, value); }
       }
 
+      public static readonly DependencyProperty WatermarkProperty = DependencyProperty.Register("Watermark"
+            , typeof(string), typeof(AduComboBox));
+      /// <summary>
+      /// 文本输入框的水印
+      /// </summary>
+      public string Watermark
+      {
+         get { return (string)GetValue(WatermarkProperty); }
+         set { SetValue(WatermarkProperty, value); }
+      }
+
       public static readonly DependencyProperty ComBoxItemPanelBackgroundProperty = DependencyProperty.Register("ComBoxItemPanelBackground"
             , typeof(Brush), typeof(AduComboBox), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(238, 121, 111))));
       /// <summary>
