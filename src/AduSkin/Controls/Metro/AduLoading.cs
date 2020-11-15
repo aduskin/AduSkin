@@ -1,4 +1,4 @@
-﻿using AduSkin.Utility.Element;
+using AduSkin.Utility.Element;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +57,7 @@ namespace AduSkin.Controls.Metro
 
       // Using a DependencyProperty as the backing store for SpeedRatio.  This enables animation, styling, binding, etc...
       public static readonly DependencyProperty SpeedRatioProperty =
-          DependencyProperty.Register("SpeedRatio", typeof(double), typeof(AduLoading), new PropertyMetadata(1d, OnSpeedRatioChangedCallback));
+          DependencyProperty.Register("SpeedRatio", typeof(double), typeof(AduLoading), new PropertyMetadata(.5d, OnSpeedRatioChangedCallback));
 
       private static void OnSpeedRatioChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
       {
