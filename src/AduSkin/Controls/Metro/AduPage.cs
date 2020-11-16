@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls.Data;
+using AduSkin.Controls.Data;
 using AduSkin.Controls.Tools.Extension;
 using AduSkin.Interactivity;
 using AduSkin.Utility.Element;
@@ -308,6 +308,8 @@ namespace AduSkin.Controls.Metro
             var selectButton = CreateButton(PageIndex);
             _panelMain.Children.Add(selectButton);
             selectButton.IsChecked = true;
+            _buttonFirst.IsChecked = false;
+            _buttonLast.IsChecked = false;
          }
          else if (PageIndex == 1)
          {
