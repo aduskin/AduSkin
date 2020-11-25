@@ -136,26 +136,14 @@
 
 
    <Style x:Key="ComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
-      <Setter Property="SnapsToDevicePixels" Value="True" />
-      <Setter Property="Padding" Value="10,5,15,5" />
-      <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
-      <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
-      <Setter Property="Background" Value="Transparent" />
-      <Setter Property="BorderBrush" Value="Transparent" />
-      <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="FontSize" Value="{Binding FontSize, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+      <Setter Property="Height" Value="30"></Setter>
+      <Setter Property="MinHeight" Value="22"></Setter>
+      <Setter Property="MinWidth" Value="60"></Setter>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-               <Border x:Name="Bd"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}"
-                            SnapsToDevicePixels="true" UseLayoutRounding="True">
-                  <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+               <Border Name="Back"  BorderThickness="0,0,0,0" Background="{TemplateBinding Background}" BorderBrush="Transparent"  Padding="10,0">
+                  <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0"></ContentPresenter>
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="False">
@@ -276,38 +264,25 @@
                      </TextBox>
 
                      <!--  Popup showing items  -->
-                     <Popup Name="Popup"
-                                   MinWidth="{TemplateBinding FrameworkElement.ActualWidth}"
-                                   MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}"
-                                   AllowsTransparency="True" Focusable="False" HorizontalOffset="0"
-                                   IsOpen="{TemplateBinding IsDropDownOpen}"
-                                   Placement="Bottom" StaysOpen="False" VerticalOffset="1">
-                        <Grid Name="DropDown"
-                                      Width="{TemplateBinding FrameworkElement.ActualWidth}"
-                                      MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}"
-                                      Margin="10,0,10,10" RenderTransformOrigin="0.5,0" SnapsToDevicePixels="True">
-                           <Grid.RenderTransform>
+                     <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Fade" >
+                        <Border CornerRadius="6" RenderTransformOrigin="0.5,0" BorderThickness="1" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                           <Border.RenderTransform>
                               <TransformGroup>
                                  <ScaleTransform />
                                  <SkewTransform />
                                  <RotateTransform />
                                  <TranslateTransform />
                               </TransformGroup>
-                           </Grid.RenderTransform>
-                           <Border Background="{TemplateBinding ComBoxItemPanelBackground}" CornerRadius="{TemplateBinding CornerRadius}" SnapsToDevicePixels="True" UseLayoutRounding="True">
-                              <Border.Effect>
-                                 <DropShadowEffect BlurRadius="5" Opacity="0.2" ShadowDepth="0" Color="Brown" />
-                              </Border.Effect>
-                           </Border>
-
-                           <Border Name="DropDownBorder" Background="{TemplateBinding ComBoxItemPanelBackground}"
-                                            BorderBrush="#10000000"
-                                            BorderThickness="1" CornerRadius="{TemplateBinding CornerRadius}" SnapsToDevicePixels="True" UseLayoutRounding="True" />
-
-                           <Adu:MetroScrollViewer Margin="0,3,0,3" SnapsToDevicePixels="True">
-                              <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
+                           </Border.RenderTransform>
+                           <Border.Effect>
+                              <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="0" Opacity="0.5"/>
+                           </Border.Effect>
+                           <Adu:MetroScrollViewer Margin="0" MaxHeight="{TemplateBinding MaxDropDownHeight}" 
+                                                  SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                              <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                              <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                            </Adu:MetroScrollViewer>
-                        </Grid>
+                        </Border>
                      </Popup>
                   </Grid>
                </Grid>
@@ -328,9 +303,9 @@
                         <BeginStoryboard x:Name="Storyboard_Close_BeginStoryboard" Storyboard="{StaticResource Storyboard_Close}" />
                      </Trigger.EnterActions>
                   </Trigger>
-                  <Trigger Property="ItemsControl.HasItems" Value="False">
+                  <!--<Trigger Property="ItemsControl.HasItems" Value="False">
                      <Setter TargetName="DropDownBorder" Property="FrameworkElement.MinHeight" Value="100" />
-                  </Trigger>
+                  </Trigger>-->
                   <Trigger Property="UIElement.IsEnabled" Value="False">
                      <Setter Property="TextElement.Foreground" Value="{StaticResource ComboBox.Disabled.Foreground}" />
                      <Setter TargetName="PART_EditableTextBox" Property="Foreground" Value="{StaticResource ComboBox.Disabled.Foreground}" />
