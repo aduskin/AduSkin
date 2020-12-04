@@ -8,6 +8,7 @@
     <Style TargetType="{x:Type Adu:AduDIYCheckBox}">
         <Setter Property="BorderBrush" Value="#EE796F" />
         <Setter Property="IsChecked" Value="True"/>
+        <Setter Property="Background" Value="#00000000" />
         <Setter Property="PathData" Value="{StaticResource icon_pause}"/>
         <Setter Property="SelectedPathData" Value="{StaticResource icon_play}"/>
         <Setter Property="NormalPathColor" Value="#000000" />
@@ -16,9 +17,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Adu:AduDIYCheckBox}">
-                    <Border Background="#00000000">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
                         <Path x:Name="path"
-                                  HorizontalAlignment="Center"
+                              HorizontalAlignment="Center"
                               Width="{TemplateBinding PathWidth}"
                               Margin="0,0,0,0" VerticalAlignment="Center"
                               Data="{TemplateBinding PathData}"
@@ -32,15 +33,17 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="path" Property="Data" Value="{Binding SelectedPathData, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                         </Trigger>
-
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Cursor" Value="Hand" />
+                           <Setter TargetName="border" Property="Background" Value="{Binding MouseOverBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                             <Setter TargetName="path" Property="Fill" Value="{Binding MouseOverPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                             <Setter TargetName="path" Property="Fill" Value="{Binding PressedPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
+                           <Setter TargetName="border" Property="Background" Value="Transparent" />
                             <Setter TargetName="path" Property="Fill" Value="#888" />
                         </Trigger>
                     </ControlTemplate.Triggers>

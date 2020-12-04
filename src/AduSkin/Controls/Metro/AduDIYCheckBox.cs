@@ -87,5 +87,39 @@ namespace AduSkin.Controls.Metro
          DependencyProperty.Register("DisabledPathColor", typeof(Brush), typeof(AduDIYCheckBox));
 
       #endregion
+      #region BackGround
+      public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register("CornerRadius"
+            , typeof(CornerRadius), typeof(AduDIYCheckBox));
+      /// <summary>
+      /// 按钮四周圆角
+      /// </summary>
+      public CornerRadius CornerRadius
+      {
+         get { return (CornerRadius)GetValue(CornerRadiusProperty); }
+         set { SetValue(CornerRadiusProperty, value); }
+      }
+
+      public static readonly DependencyProperty MouseOverBackgroundProperty = DependencyProperty.Register("MouseOverBackground"
+          , typeof(Brush), typeof(AduDIYCheckBox));
+      /// <summary>
+      /// 鼠标悬浮时按钮的背景色
+      /// </summary>
+      public Brush MouseOverBackground
+      {
+         get { return (Brush)GetValue(MouseOverBackgroundProperty); }
+         set { SetValue(MouseOverBackgroundProperty, value); }
+      }
+
+      public static readonly DependencyProperty PressedBackgroundProperty = DependencyProperty.Register("PressedBackground"
+          , typeof(Brush), typeof(AduDIYCheckBox));
+      /// <summary>
+      /// 鼠标按下时按钮的背景色
+      /// </summary>
+      public Brush PressedBackground
+      {
+         get { return (Brush)GetValue(PressedBackgroundProperty); }
+         set { SetValue(PressedBackgroundProperty, value); }
+      }
+      #endregion
    }
 }
