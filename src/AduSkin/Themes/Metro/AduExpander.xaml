@@ -19,8 +19,8 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="35" />
                             </Grid.ColumnDefinitions>
-                            <Path x:Name="icon" Grid.Column="0" Margin="{TemplateBinding AduAttach:IconElement.IconMargin}" Width="{TemplateBinding AduAttach:IconElement.Width}" Height="{TemplateBinding AduAttach:IconElement.Height}" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                  Data="{TemplateBinding AduAttach:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" SnapsToDevicePixels="False" Stretch="Fill"/>
+                            <Path x:Name="icon" Grid.Column="0" Margin="{TemplateBinding AduAttach:IconElement.IconMargin}" Width="{TemplateBinding AduAttach:IconElement.Width}" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                  Data="{TemplateBinding AduAttach:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" SnapsToDevicePixels="False" Stretch="Uniform"/>
                             <ContentPresenter
                                 Grid.Column="1"
                                 Margin="2,0,0,0"
@@ -91,7 +91,6 @@
                                 DockPanel.Dock="Top"
                                 AduAttach:IconElement.Geometry="{TemplateBinding AduAttach:IconElement.Geometry}"
                                 AduAttach:IconElement.Width="{TemplateBinding AduAttach:IconElement.Width}"
-                                AduAttach:IconElement.Height="{TemplateBinding AduAttach:IconElement.Height}"
                                 AduAttach:IconElement.IconMargin="{TemplateBinding AduAttach:IconElement.IconMargin}"
                                 FontFamily="{TemplateBinding FontFamily}"
                                 FontSize="{TemplateBinding FontSize}"

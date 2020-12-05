@@ -138,7 +138,7 @@
    <Style x:Key="ComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
       <Setter Property="Height" Value="30"></Setter>
       <Setter Property="MinHeight" Value="22"></Setter>
-      <Setter Property="MinWidth" Value="60"></Setter>
+      <Setter Property="MinWidth" Value="30"></Setter>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type ComboBoxItem}">
@@ -265,7 +265,7 @@
 
                      <!--  Popup showing items  -->
                      <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Fade" >
-                        <Border CornerRadius="6" RenderTransformOrigin="0.5,0" BorderThickness="1" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                        <Border CornerRadius="3" RenderTransformOrigin="0.5,0" BorderThickness="1" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
                            <Border.RenderTransform>
                               <TransformGroup>
                                  <ScaleTransform />
