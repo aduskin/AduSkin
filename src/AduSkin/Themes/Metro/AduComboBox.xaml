@@ -55,7 +55,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
          </Grid.ColumnDefinitions>
-         <Border Grid.ColumnSpan="2" x:Name="ShadowBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="#FFFFFF" SnapsToDevicePixels="True" UseLayoutRounding="True">
+         <Border Grid.ColumnSpan="2" x:Name="ShadowBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="Transparent" SnapsToDevicePixels="True" UseLayoutRounding="True">
             <!--<Border.Effect>
                <DropShadowEffect BlurRadius="5" Opacity="0.2" ShadowDepth="0" Color="Transparent" />
             </Border.Effect>-->
