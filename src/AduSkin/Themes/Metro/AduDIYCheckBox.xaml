@@ -11,7 +11,7 @@
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="Foreground" Value="#000000" />
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="#00000000"/>
       <Setter Property="MouseOverBackground" Value="Transparent" />
       <Setter Property="PressedBackground" Value="Transparent" />
       <Setter Property="NormalPathColor" Value="{StaticResource Brush}" />
@@ -22,7 +22,6 @@
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Padding" Value="0" />
-
       <Setter Property="IsChecked" Value="True"/>
       <Setter Property="PathData" Value="{StaticResource icon_pause}"/>
       <Setter Property="SelectedPathData" Value="{StaticResource icon_play}"/>
@@ -34,12 +33,10 @@
                           Width="{TemplateBinding Width}"
                           Padding="{TemplateBinding Padding}"
                           CornerRadius="{TemplateBinding CornerRadius}"
-                          Background="{TemplateBinding Background}"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
                           SnapsToDevicePixels="true" UseLayoutRounding="True">
                         <Path x:Name="path"
-                              HorizontalAlignment="Center"
                               Width="{TemplateBinding PathWidth}"
                               Margin="0,0,0,0" VerticalAlignment="Center"
                               Data="{TemplateBinding PathData}"

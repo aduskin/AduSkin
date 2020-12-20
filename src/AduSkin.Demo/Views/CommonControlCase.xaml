@@ -144,8 +144,8 @@
                 </Grid>
                 <Grid>
                     <Border Style="{StaticResource ShowControlBorder}">
-                        <StackPanel Orientation="Horizontal" Background="Blue">
-                            <Metro:AduComboBox Width="auto" Height="30" Foreground="#FFF" Background="{StaticResource DefaultBrush}" SelectedIndex="0" Margin="10,10,0,10"  CornerRadius="3">
+                        <StackPanel Orientation="Horizontal">
+                            <Metro:AduComboBox Width="auto" Height="30" Foreground="#FFF" Background="Transparent" SelectedIndex="0" Margin="10,10,0,10"  CornerRadius="3">
                                 <ComboBoxItem Content="上海" Tag="1" />
                                 <ComboBoxItem Content="北京" Tag="1" />
                                 <ComboBoxItem Content="追求极致，永臻完美" Tag="1" />

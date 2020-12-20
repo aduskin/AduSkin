@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,7 +70,9 @@ namespace AduSkin.Controls.Metro
          get { return (Brush)GetValue(PressedPathColorProperty); }
          set { SetValue(PressedPathColorProperty, value); }
       }
-
+      /// <summary>
+      /// 禁用时Path的颜色
+      /// </summary>
       public Brush DisabledPathColor
       {
          get { return (Brush)GetValue(DisabledPathColorProperty); }

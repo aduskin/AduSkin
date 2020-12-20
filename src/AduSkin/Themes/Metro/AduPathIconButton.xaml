@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
@@ -60,7 +60,7 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter TargetName="border" Property="Background" Value="Transparent" />
-                            <Setter TargetName="path" Property="Fill" Value="#888" />
+                           <Setter TargetName="path" Property="Fill" Value="{Binding DisabledPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"  />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

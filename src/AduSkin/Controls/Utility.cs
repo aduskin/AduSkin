@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls.Metro;
+using AduSkin.Controls.Metro;
 using AduSkin.Utility.Media;
 using System.ComponentModel;
 using System.Windows;
@@ -41,7 +41,12 @@ namespace AduSkin.Controls
             if (control is MetroTitleMenu) { (control as MetroTitleMenu).Background = mw.BorderBrush; }
             if (control is MetroMenuItem) { (control as MetroMenuItem).Foreground = mw.BorderBrush; }
             if (control is MetroContextMenu) { (control as MetroContextMenu).Foreground = mw.BorderBrush; }
-            if (control is MetroTextBox) { (control as MetroTextBox).BorderBrush = mw.BorderBrush; }
+            if (control is MetroTextBox textbox)
+            {
+               textbox.BorderBrush = mw.BorderBrush;
+               textbox.Foreground = mw.BorderBrush;
+            }
+
             if (control is MetroSwitch) { (control as MetroSwitch).Background = mw.BorderBrush; }
             if (control is MetroButton) { (control as MetroButton).Background = mw.BorderBrush; }
             if (control is MetroMenuTabControl) { (control as MetroMenuTabControl).BorderBrush = mw.BorderBrush; }
@@ -53,18 +58,20 @@ namespace AduSkin.Controls
             if (control is ToggleButton) { (control as ToggleButton).Background = mw.BorderBrush; }
             if (control is DataGridRow) { (control as DataGridRow).BorderBrush = mw.BorderBrush; }
 
-            if (control is AduDatePicker) 
+            if (control is AduDatePicker)
             {
                var dataPicker = (control as AduDatePicker);
                dataPicker.Foreground = mw.BorderBrush;
-               dataPicker.BorderBrush= mw.BorderBrush;
+               dataPicker.BorderBrush = mw.BorderBrush;
             }
+            if (control is AduDIYCheckBox) { (control as AduDIYCheckBox).NormalPathColor = mw.BorderBrush; }
             if (control is AduTimeSelector) { (control as AduTimeSelector).Foreground = mw.BorderBrush; }
             if (control is SegmentItem) { (control as SegmentItem).SelectForeground = mw.BorderBrush; }
             if (control is AduSlider) { (control as AduSlider).Background = mw.BorderBrush; }
             if (control is AduPasswordBox) { (control as AduPasswordBox).BorderBrush = mw.BorderBrush; }
             if (control is AduCheckBox) { (control as AduCheckBox).Foreground = mw.BorderBrush; }
-            if (control is AduComboBox) { (control as AduComboBox).Background = mw.BorderBrush; }
+            if (control is AduComboBox) { (control as AduComboBox).Foreground = mw.BorderBrush; }
+            if (control is AduComboBox) { (control as AduComboBox).ToggleButtonColor = mw.BorderBrush; }
             if (control is AduRadioButton) { (control as AduRadioButton).Foreground = mw.BorderBrush; }
             if (control is AduTabItem) { (control as AduTabItem).Foreground = mw.BorderBrush; }
             if (control is AduFlatRadionButton) { (control as MetroTitleMenuItem).Foreground = mw.BorderBrush; }
@@ -79,7 +86,7 @@ namespace AduSkin.Controls
             if (control is RatingBar) { (control as RatingBar).SelectedColor = mw.BorderBrush; }
             if (control is AnimationPath) { (control as AnimationPath).Stroke = mw.BorderBrush; }
             //if (control is SegmentControl) { (control as SegmentControl).BorderBrush = (control as SegmentControl).Foreground =  mw.BorderBrush; }
-            
+
          }
       }
    }

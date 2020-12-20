@@ -1,3 +1,4 @@
+using AduSkin.Utility.Element;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -8,7 +9,7 @@ namespace AduSkin.Controls.Metro
    {
       static AduDIYCheckBox()
       {
-         DefaultStyleKeyProperty.OverrideMetadata(typeof(AduDIYCheckBox), new FrameworkPropertyMetadata(typeof(AduDIYCheckBox)));
+         ElementBase.DefaultStyle<AduDIYCheckBox>(DefaultStyleKeyProperty);
       }
       #region Path相关属性
       public static readonly DependencyProperty PathWidthProperty = DependencyProperty.Register("PathWidth"
@@ -87,6 +88,7 @@ namespace AduSkin.Controls.Metro
          DependencyProperty.Register("DisabledPathColor", typeof(Brush), typeof(AduDIYCheckBox));
 
       #endregion
+
       #region BackGround
       public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register("CornerRadius"
             , typeof(CornerRadius), typeof(AduDIYCheckBox));

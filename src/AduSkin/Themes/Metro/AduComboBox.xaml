@@ -62,13 +62,11 @@
          </Border>
 
          <Border Name="Border" Grid.ColumnSpan="2"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderBrush="#D9D9D9"
                     BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}"
                     SnapsToDevicePixels="True" UseLayoutRounding="True" />
 
          <Border Name="ButtonBorder" Grid.Column="1" Margin="1, 1, 1, 1"
-                    Background="{TemplateBinding Background}"
                     CornerRadius="{TemplateBinding CornerRadius}"
                     Padding="5,0,8,0">
             <Path Name="Arrow" Grid.Column="1" Width="10" HorizontalAlignment="Center"
@@ -113,14 +111,14 @@
       </Grid>
       <ControlTemplate.Triggers>
          <Trigger Property="IsMouseOver" Value="True">
-            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Light.Border.MouseOver}" />
+            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
          </Trigger>
          <MultiTrigger>
             <MultiTrigger.Conditions>
                <Condition Property="ToggleButton.IsChecked" Value="True" />
                <Condition Property="IsMouseOver" Value="False" />
             </MultiTrigger.Conditions>
-            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Light.Border.MouseOver}" />
+            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
          </MultiTrigger>
          <Trigger Property="UIElement.IsEnabled" Value="False">
             <Setter TargetName="Border" Property="Panel.Background" Value="{StaticResource ComboBox.Disabled.Background}" />
@@ -171,6 +169,11 @@
       <Setter Property="ToggleButtonColor" Value="#FFF" />
       <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="MinHeight" Value="20" />
+      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="ToggleButtonColor" Value="{StaticResource Brush}" />
+      <Setter Property="ComBoxItemPanelBackground" Value="#FFF" />
+      <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemStyle}" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Padding" Value="5,0,0,0" />
@@ -211,8 +214,8 @@
                         IsChecked="{Binding Path=IsDropDownOpen,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
                         Template="{StaticResource ComboBoxToggleButtonTemplate}" Foreground="{TemplateBinding ToggleButtonColor}"
                         BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        Background="{TemplateBinding Background}"/>
+                                          Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"/>
                      <ContentPresenter Name="ContentSite" Margin="5, 3, 25, 3" HorizontalAlignment="Left"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               Content="{TemplateBinding ComboBox.SelectionBoxItem}"
