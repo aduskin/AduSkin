@@ -7,13 +7,15 @@
     <NoWarn>$(NoWarn);0067</NoWarn>
     <PackageIcon>logo.png</PackageIcon>
     <PackageIconUrl />
-    <Version>1.1.1.8</Version>
+    <Version>1.1.1.9</Version>
     <Description>一款简单漂亮的WPF UI
 A Beautiful WPF Control UI</Description>
     <Platforms>AnyCPU;x64</Platforms>
     <Copyright>AduSkin</Copyright>
     <PackageTags>WPF UI</PackageTags>
     <PackageReleaseNotes>控件细节优化</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseFile>README.md</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +31,10 @@ A Beautiful WPF Control UI</Description>
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="Resources\logo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
