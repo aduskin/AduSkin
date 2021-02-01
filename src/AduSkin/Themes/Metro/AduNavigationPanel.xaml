@@ -1,287 +1,291 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
-                    xmlns:AduControls="clr-namespace:AduSkin.Controls.Metro">
+                    xmlns:AduControls="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
 
-    <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#F3F3F3" />
-    <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da" />
-    <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3DDADADA" />
-    <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA" />
-    <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#3D26A0DA" />
-    <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA" />
-    <SolidColorBrush x:Key="Item.SelectedActive.foreground" Color="#000" />
+   <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#F3F3F3" />
+   <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da" />
+   <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3DDADADA" />
+   <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA" />
+   <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#3D26A0DA" />
+   <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA" />
+   <SolidColorBrush x:Key="Item.SelectedActive.foreground" Color="#000" />
 
-    
 
-    <!--#region 左边样式-->
-    <Style x:Key="LeftIndicatorStyle" TargetType="{x:Type Adu:SegmentControl}">
-        <Setter Property="Padding" Value="0" />
-        <Setter Property="CornerRadius" Value="0" />
-        <Setter Property="VerticalAlignment" Value="Top" />
-        <Setter Property="BorderThickness" Value="0,0,1,0" />
-        <Setter Property="BorderBrush" Value="#10000000" />
-        <Setter Property="VerticalAlignment" Value="Stretch" />
-        <Setter Property="ItemsPanel">
-            <Setter.Value>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Vertical" IsItemsHost="True" />
-                </ItemsPanelTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    <Style x:Key="LeftIndicatorItemStyle" TargetType="{x:Type Adu:SegmentItem}">
-        <Setter Property="Padding" Value="0" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="HorizontalContentAlignment" Value="Right" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Adu:SegmentItem}">
-                    <Border x:Name="Bd"
+
+   <!--#region 左边样式-->
+   <Style x:Key="LeftIndicatorStyle" TargetType="{x:Type Adu:SegmentControl}">
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="VerticalAlignment" Value="Top" />
+      <Setter Property="BorderThickness" Value="0,0,1,0" />
+      <Setter Property="BorderBrush" Value="#10000000" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
+      <Setter Property="ItemsPanel">
+         <Setter.Value>
+            <ItemsPanelTemplate>
+               <StackPanel Orientation="Vertical" IsItemsHost="True" />
+            </ItemsPanelTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+
+   <Style x:Key="LeftIndicatorItemStyle" TargetType="{x:Type Adu:SegmentItem}">
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="HorizontalContentAlignment" Value="Right" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Adu:SegmentItem}">
+               <Border x:Name="Bd"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="true" UseLayoutRounding="True">
-                        <ContentPresenter Margin="20,8,20,8" 
+                  <ContentPresenter x:Name="content" Margin="20,8,20,8" 
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
-                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsMouseOver" Value="True" />
-                                <Condition Property="IsSelected" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
-                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="Selector.IsSelectionActive" Value="False" />
-                                <Condition Property="IsSelected" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{Binding SelectBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                            <Setter Property="Foreground" Value="{StaticResource Item.SelectedActive.foreground}" />
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="Selector.IsSelectionActive" Value="True" />
-                                <Condition Property="IsSelected" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{Binding SelectBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                            <Setter Property="Foreground" Value="{StaticResource Item.SelectedActive.foreground}" />
-                        </MultiTrigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <!--#endregion-->
+               </Border>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsMouseOver" Value="True">
+                     <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
+                  </Trigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsSelected" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
+                  </MultiTrigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="Selector.IsSelectionActive" Value="False" />
+                        <Condition Property="IsSelected" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <Setter TargetName="Bd" Property="Background" Value="{Binding SelectBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="content" Property="Opacity" Value=".45" />
+                  </MultiTrigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="Selector.IsSelectionActive" Value="True" />
+                        <Condition Property="IsSelected" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <Setter TargetName="Bd" Property="Background" Value="{Binding SelectBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="content" Property="Opacity" Value=".45" />
+                  </MultiTrigger>
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+   <!--#endregion-->
 
-    <!--#region 右边样式-->
-    <Style x:Key="RightIndicatorStyle" TargetType="{x:Type Adu:SegmentControl}">
-        <Setter Property="Padding" Value="0" />
-        <Setter Property="CornerRadius" Value="0" />
-        <Setter Property="VerticalAlignment" Value="Top" />
-        <Setter Property="BorderThickness" Value="1,0,0,0" />
-        <Setter Property="BorderBrush" Value="#D7DDE4" />
-        <Setter Property="VerticalAlignment" Value="Stretch" />
-        <Setter Property="ItemsPanel">
-            <Setter.Value>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Vertical" IsItemsHost="True" />
-                </ItemsPanelTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    <Style x:Key="RightIndicatorItemStyle" TargetType="{x:Type Adu:SegmentItem}">
-        <Setter Property="Padding" Value="0" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="HorizontalContentAlignment" Value="Left" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Adu:SegmentItem}">
-                    <Border x:Name="Bd"
+   <!--#region 右边样式-->
+   <Style x:Key="RightIndicatorStyle" TargetType="{x:Type Adu:SegmentControl}">
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="VerticalAlignment" Value="Top" />
+      <Setter Property="BorderThickness" Value="1,0,0,0" />
+      <Setter Property="BorderBrush" Value="#D7DDE4" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
+      <Setter Property="ItemsPanel">
+         <Setter.Value>
+            <ItemsPanelTemplate>
+               <StackPanel Orientation="Vertical" IsItemsHost="True" />
+            </ItemsPanelTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+
+   <Style x:Key="RightIndicatorItemStyle" TargetType="{x:Type Adu:SegmentItem}">
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Adu:SegmentItem}">
+               <Border x:Name="Bd"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="true" UseLayoutRounding="True">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="3" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
+                  <Grid>
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition />
+                     </Grid.ColumnDefinitions>
 
-                            <ContentPresenter Margin="20,8,20,8" Grid.Column="1"
+                     <ContentPresenter Margin="20,8,20,8" Grid.Column="1"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
 
-                            <Border x:Name="markline" Grid.Column="0" Background="#003399FF" SnapsToDevicePixels="True"
+                     <Border x:Name="markline" Grid.Column="0" Background="#003399FF" SnapsToDevicePixels="True"
                                     UseLayoutRounding="True" />
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
-                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsMouseOver" Value="True" />
-                                <Condition Property="IsSelected" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
-                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="Selector.IsSelectionActive" Value="False" />
-                                <Condition Property="IsSelected" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
-                            <Setter TargetName="markline" Property="Background" Value="#3399FF" />
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="Selector.IsSelectionActive" Value="True" />
-                                <Condition Property="IsSelected" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="markline" Property="Background" Value="#3399FF" />
-                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
-                            <Setter Property="Foreground" Value="#3399FF" />
-                        </MultiTrigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <!--#endregion-->
+                  </Grid>
+               </Border>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsMouseOver" Value="True">
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
+                  </Trigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsSelected" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
+                  </MultiTrigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="Selector.IsSelectionActive" Value="False" />
+                        <Condition Property="IsSelected" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
+                     <Setter TargetName="markline" Property="Background" Value="#3399FF" />
+                  </MultiTrigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="Selector.IsSelectionActive" Value="True" />
+                        <Condition Property="IsSelected" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <Setter TargetName="markline" Property="Background" Value="#3399FF" />
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
+                     <Setter Property="Foreground" Value="#3399FF" />
+                  </MultiTrigger>
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+   <!--#endregion-->
 
-    <!--#region 索引器在左边-->
-    <ControlTemplate x:Key="IndicatorIsInLeft" TargetType="{x:Type AduControls:AduNavigationPanel}">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Adu:SegmentControl x:Name="PART_Indicator" SelectedIndex="0"
+   <!--#region 索引器在左边-->
+   <ControlTemplate x:Key="IndicatorIsInLeft" TargetType="{x:Type AduControls:AduNavigationPanel}">
+      <Grid>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+         </Grid.ColumnDefinitions>
+         <Adu:SegmentControl x:Name="PART_Indicator" SelectedIndex="0"
+                                HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
+                                Margin="{TemplateBinding IndicatorMargin}"
+                             Foreground="{TemplateBinding Foreground}"
+                             AduAttach:ElementBackground.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                             AduAttach:ElementForeground.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.SelectedForeground)}"  
+                             ItemsSource="{TemplateBinding ItemsSource}"
+                                DisplayMemberPath="Header"
+                                Style="{TemplateBinding IndicatorStyle}"
+                                ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
+         <ContentPresenter x:Name="PART_ContentPresenter" Grid.Column="1"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+      </Grid>
+   </ControlTemplate>
+   <!--#endregion-->
+
+   <!--#region 索引器在顶部-->
+   <ControlTemplate x:Key="IndicatorIsInTop" TargetType="{x:Type AduControls:AduNavigationPanel}">
+      <Grid>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+         </Grid.RowDefinitions>
+         <Adu:SegmentControl x:Name="PART_Indicator" SelectedIndex="0"
                                 HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
                                 Margin="{TemplateBinding IndicatorMargin}"
                                 ItemsSource="{TemplateBinding ItemsSource}"
                                 DisplayMemberPath="Header"
                                 Style="{TemplateBinding IndicatorStyle}"
                                 ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
-            <ContentPresenter x:Name="PART_ContentPresenter" Grid.Column="1"
+         <ContentPresenter x:Name="PART_ContentPresenter" Grid.Row="1"
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-        </Grid>
-    </ControlTemplate>
-    <!--#endregion-->
-    
-    <!--#region 索引器在顶部-->
-    <ControlTemplate x:Key="IndicatorIsInTop" TargetType="{x:Type AduControls:AduNavigationPanel}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Adu:SegmentControl x:Name="PART_Indicator" SelectedIndex="0"
+      </Grid>
+   </ControlTemplate>
+   <!--#endregion-->
+
+   <!--#region 索引器在右边-->
+   <ControlTemplate x:Key="IndicatorIsInRight" TargetType="{x:Type AduControls:AduNavigationPanel}">
+      <Grid>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+         </Grid.ColumnDefinitions>
+         <Adu:SegmentControl x:Name="PART_Indicator" Grid.Column="1" SelectedIndex="0"
                                 HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
                                 Margin="{TemplateBinding IndicatorMargin}"
                                 ItemsSource="{TemplateBinding ItemsSource}"
                                 DisplayMemberPath="Header"
                                 Style="{TemplateBinding IndicatorStyle}"
                                 ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
-            <ContentPresenter x:Name="PART_ContentPresenter" Grid.Row="1"
+         <ContentPresenter x:Name="PART_ContentPresenter" Grid.Column="0"
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-        </Grid>
-    </ControlTemplate>
-    <!--#endregion-->
+      </Grid>
+   </ControlTemplate>
+   <!--#endregion-->
 
-    <!--#region 索引器在右边-->
-    <ControlTemplate x:Key="IndicatorIsInRight" TargetType="{x:Type AduControls:AduNavigationPanel}">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
-            <Adu:SegmentControl x:Name="PART_Indicator" Grid.Column="1" SelectedIndex="0"
-                                HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
-                                Margin="{TemplateBinding IndicatorMargin}"
-                                ItemsSource="{TemplateBinding ItemsSource}"
-                                DisplayMemberPath="Header"
-                                Style="{TemplateBinding IndicatorStyle}"
-                                ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
-            <ContentPresenter x:Name="PART_ContentPresenter" Grid.Column="0"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-        </Grid>
-    </ControlTemplate>
-    <!--#endregion-->
-
-    <!--#region 索引器在底部-->
-    <ControlTemplate x:Key="IndicatorIsInBottom" TargetType="{x:Type AduControls:AduNavigationPanel}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-            <Adu:SegmentControl x:Name="PART_Indicator" Grid.Row="1" SelectedIndex="0"
+   <!--#region 索引器在底部-->
+   <ControlTemplate x:Key="IndicatorIsInBottom" TargetType="{x:Type AduControls:AduNavigationPanel}">
+      <Grid>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+         </Grid.RowDefinitions>
+         <Adu:SegmentControl x:Name="PART_Indicator" Grid.Row="1" SelectedIndex="0"
                                 HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
                                 Margin="{TemplateBinding IndicatorMargin}"
                                 ItemsSource="{TemplateBinding ItemsSource}"
                                 DisplayMemberPath="Header"
                                 Style="{TemplateBinding IndicatorStyle}"
                                 ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}" />
-            <ContentPresenter x:Name="PART_ContentPresenter" Grid.Row="0"
+         <ContentPresenter x:Name="PART_ContentPresenter" Grid.Row="0"
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-        </Grid>
-    </ControlTemplate>
-    <!--#endregion-->
+      </Grid>
+   </ControlTemplate>
+   <!--#endregion-->
 
-    <Style TargetType="{x:Type AduControls:AduNavigationPanel}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Foreground" Value="Black" />
-        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="UseLayoutRounding" Value="True" />
-        <Setter Property="Template" Value="{StaticResource IndicatorIsInTop}" />
-        <Style.Triggers>
-            <Trigger Property="IndicatorPlacement" Value="Left">
-                <Setter Property="Template" Value="{StaticResource IndicatorIsInLeft}" />
-                <Setter Property="IndicatorItemContainerStyle" Value="{StaticResource LeftIndicatorItemStyle}" />
-                <Setter Property="IndicatorStyle" Value="{StaticResource LeftIndicatorStyle}" />
-            </Trigger>
-            <Trigger Property="IndicatorPlacement" Value="Right">
-                <Setter Property="Template" Value="{StaticResource IndicatorIsInRight}" />
-                <Setter Property="IndicatorItemContainerStyle" Value="{StaticResource RightIndicatorItemStyle}" />
-                <Setter Property="IndicatorStyle" Value="{StaticResource RightIndicatorStyle}" />
-            </Trigger>
-            <Trigger Property="IndicatorPlacement" Value="Bottom">
-                <Setter Property="Template" Value="{StaticResource IndicatorIsInBottom}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
+   <Style TargetType="{x:Type AduControls:AduNavigationPanel}">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="Foreground" Value="{StaticResource DefaultBrush}" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="UseLayoutRounding" Value="True" />
+      <Setter Property="Template" Value="{StaticResource IndicatorIsInTop}" />
+      <Style.Triggers>
+         <Trigger Property="IndicatorPlacement" Value="Left">
+            <Setter Property="Template" Value="{StaticResource IndicatorIsInLeft}" />
+            <Setter Property="IndicatorItemContainerStyle" Value="{StaticResource LeftIndicatorItemStyle}" />
+            <Setter Property="IndicatorStyle" Value="{StaticResource LeftIndicatorStyle}" />
+         </Trigger>
+         <Trigger Property="IndicatorPlacement" Value="Right">
+            <Setter Property="Template" Value="{StaticResource IndicatorIsInRight}" />
+            <Setter Property="IndicatorItemContainerStyle" Value="{StaticResource RightIndicatorItemStyle}" />
+            <Setter Property="IndicatorStyle" Value="{StaticResource RightIndicatorStyle}" />
+         </Trigger>
+         <Trigger Property="IndicatorPlacement" Value="Bottom">
+            <Setter Property="Template" Value="{StaticResource IndicatorIsInBottom}" />
+         </Trigger>
+      </Style.Triggers>
+   </Style>
 </ResourceDictionary>

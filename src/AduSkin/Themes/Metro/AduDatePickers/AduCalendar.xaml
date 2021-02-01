@@ -1,44 +1,57 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-                    xmlns:Converters="clr-namespace:AduSkin.Controls.Converter" 
-                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-                    mc:Ignorable="d">
+                    mc:Ignorable="d"
+                    xmlns:Converters="clr-namespace:AduSkin.Controls.Converter" 
+                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
 
-    <Converters:CalendarDayButtonTypeConverter x:Key="CalendarDayButtonTypeConverter" />
+   <Converters:CalendarDayButtonTypeConverter x:Key="CalendarDayButtonTypeConverter" />
 
-    <Style TargetType="{x:Type Adu:AduCalendar}">
-        <Setter Property="Foreground" Value="{DynamicResource Control.Static.Foreground}" />
-        <Setter Property="Background" Value="{DynamicResource Control.Static.Background}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Divider}" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="UseLayoutRounding" Value="True" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Adu:AduCalendar}">
-                    <Grid x:Name="PART_Root" HorizontalAlignment="Center">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                                Background="{TemplateBinding Background}"
+   <Style TargetType="{x:Type Adu:AduCalendar}">
+      <Setter Property="Foreground" Value="{DynamicResource Control.Static.Foreground}" />
+      <Setter Property="Background" Value="{DynamicResource Control.Static.Background}" />
+      <Setter Property="AduAttach:ElementBackground.HighlightBackground" Value="#05000000"/>
+      <Setter Property="AduAttach:ElementBackground.SelectedBackground" Value="#20000000"/>
+      <Setter Property="AduAttach:ElementBackground.MouseOverBackground" Value="#10000000"/>
+      <Setter Property="AduAttach:ElementForeground.HighlightForeground" Value="#FFF"/>
+      <Setter Property="AduAttach:ElementForeground.SelectedForeground" Value="#FFF"/>
+      <Setter Property="AduAttach:ElementForeground.MouseOverForeground" Value="#FFF"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource Divider}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="UseLayoutRounding" Value="True" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Adu:AduCalendar}">
+               <Grid x:Name="PART_Root" HorizontalAlignment="Center">
+                  <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding AduAttach:ElementBackground.PanelBackground}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="0" SnapsToDevicePixels="True" UseLayoutRounding="True">
-                            <Adu:AduCalendarItem x:Name="PART_CalendarItem" Grid.Row="1"
+                     <Adu:AduCalendarItem x:Name="PART_CalendarItem" Grid.Row="1"
+                                 AduAttach:ElementBackground.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                                 AduAttach:ElementBackground.HighlightBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.HighlightBackground)}"
+                                 AduAttach:ElementBackground.MouseOverBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.MouseOverBackground)}"
+                                 AduAttach:ElementForeground.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.MouseOverForeground)}"
+                                 AduAttach:ElementForeground.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.HighlightForeground)}"
+                                 AduAttach:ElementForeground.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.SelectedForeground)}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Style="{TemplateBinding CalendarItemStyle}"/>
-                        </Border>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="DayTitleTemplate">
-            <Setter.Value>
-                <DataTemplate>
-                    <TextBlock Text="{Binding}" Foreground="{DynamicResource Calendar.WeekHeader.Foreground}" />
-                </DataTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                  </Border>
+               </Grid>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+      <Setter Property="DayTitleTemplate">
+         <Setter.Value>
+            <DataTemplate>
+               <TextBlock Text="{Binding}" Foreground="{DynamicResource Calendar.WeekHeader.Foreground}" />
+            </DataTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 </ResourceDictionary>

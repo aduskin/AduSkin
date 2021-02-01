@@ -47,8 +47,8 @@
                   <Border Border.Name="back" Border.Background="{TemplateBinding Control.Background}" FrameworkElement.Margin="0,0,0,0" Padding="{TemplateBinding Padding}">
                      <Grid>
                         <StackPanel StackPanel.Orientation="Horizontal" FrameworkElement.HorizontalAlignment="Center">
-                           <Path FrameworkElement.Name="icon" Data="{TemplateBinding AduAttach:IconElement.Geometry}" 
-                                              Width="{TemplateBinding AduAttach:IconElement.Width}" Margin="{TemplateBinding AduAttach:IconElement.IconMargin}" 
+                           <Path FrameworkElement.Name="icon" Data="{TemplateBinding AduAttach:IconElement.PathData}" 
+                                              Width="{TemplateBinding AduAttach:IconElement.Width}" Margin="{TemplateBinding AduAttach:IconElement.Margin}" 
                                               Shape.Fill="{TemplateBinding Control.Foreground}" Shape.Stretch="Uniform" />
                            <TextBlock TextBlock.Name="contentPresenter"  Grid.Column="1" TextBlock.FontSize="{TemplateBinding Control.FontSize}" TextBlock.Foreground="{TemplateBinding Control.Foreground}" TextBlock.TextTrimming="CharacterEllipsis" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.VerticalAlignment="Center" TextBlock.Text="{TemplateBinding ContentControl.Content}" UIElement.Focusable="False" UIElement.SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
                         </StackPanel>
