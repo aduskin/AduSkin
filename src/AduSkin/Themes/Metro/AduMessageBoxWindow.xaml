@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
+        xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach"
         mc:Ignorable="d"
         Icon="../../Resources/logo.ico"
         Background="Transparent" AllowsTransparency="True" WindowStyle="None" BorderThickness="30" 
@@ -76,7 +77,7 @@
          <Border Grid.Row="0" Background="#FFF" CornerRadius="6,0,0,0">
             <TextBlock x:Name="Win_Title" Margin="10,0" FontSize="14" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
          </Border>
-         <AduSkin:AduButtonIcon Grid.Row="0" Grid.Column="1" x:Name="btnClose" VerticalAlignment="Top" Foreground="#000" IconHeight="10" IconWidth="10" Icon="{StaticResource Icon_SystemClose}" Width="40" CornerRadius="0,6,0,6" Height="40" FontSize="14" HorizontalAlignment="Right"   Background="Transparent" BorderThickness="0" Click="btnClose_Click"/>
+         <AduSkin:AduButtonIcon Grid.Row="0" Grid.Column="1" x:Name="btnClose" VerticalAlignment="Top" Foreground="#000" AduAttach:IconElement.PathData="{StaticResource Icon_SystemClose}" AduAttach:IconElement.Width="10" Width="40" CornerRadius="0,6,0,6" Height="40" FontSize="14" HorizontalAlignment="Right"   Background="Transparent" BorderThickness="0" Click="btnClose_Click"/>
          <Grid Grid.Row="1" Background="White" MinHeight="69" Grid.ColumnSpan="2">
             <DockPanel>
                <Image Name="Image_MessageBox" Width="32" Height="32" HorizontalAlignment="Left" DockPanel.Dock="Left" Margin="30,0,0,0" Visibility="Collapsed"/>
