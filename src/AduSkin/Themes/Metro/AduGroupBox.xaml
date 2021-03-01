@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
@@ -21,10 +21,7 @@
                                 <RowDefinition Height="40"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Border Grid.Row="0" Padding="10,4" 
-                                    CornerRadius="6,0,0,0"
-                                    BorderBrush="{TemplateBinding Foreground}" 
-                                    BorderThickness="4,0,0,0">
+                            <Border Grid.Row="0" Padding="10,4" CornerRadius="6,0,0,0" BorderBrush="{TemplateBinding Foreground}" BorderThickness="4,0,0,0">
                                 <Metro:MetroTextBlock FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}" VerticalAlignment="Center" Text="{TemplateBinding Header}" />
                             </Border>
                             <Border Grid.Row="1" >

@@ -1,4 +1,4 @@
-﻿<Metro:MetroWindow
+<Metro:MetroWindow
     x:Class="AduSkin.Demo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="AduSkin.Demo" MinWidth="600" MinHeight="350"
     d:DesignHeight="1200" d:DesignWidth="1600"
-    BorderThickness="0" WindowStyle="None"
+    BorderThickness="0"
     Background="#FFF" mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource Locator},Path=Main}">
     <Metro:MetroWindow.Menu>
