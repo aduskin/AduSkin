@@ -2,82 +2,93 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
-    <!--子菜单-->
-    <Style TargetType="{x:Type Metro:MetroMenuItem}">
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="Foreground" Value="{StaticResource Brush}"/>
-        <Setter Property="MinWidth" Value="200"/>
-        <Setter Property="AduAttach:BorderElement.BorderBrush" Value="Transparent" />
-        <Setter Property="AduAttach:BorderElement.BorderThickness" Value="0" />
-        <Setter Property="AduAttach:BorderElement.CornerRadius" Value="6" />
-        <Setter Property="Padding" Value="0,6"/>
-        <Setter Property="Background" Value="#1E1F23"/><!--菜单背景色-->
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Metro:MetroMenuItem}">
-                    <Grid>
-                        <Grid >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="0" x:Name="subWidth"/>
-                            </Grid.ColumnDefinitions>
-                            <Rectangle x:Name="backRectangle" Grid.ColumnSpan="3" Fill="#888" Opacity="0" Height="30" /><!--行高-->
-                            <Image Grid.Column="0" x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="10,3,0,3"/>
-                            <Metro:MetroTextBlock x:Name="title" Grid.Column="1" VerticalAlignment="Center" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" Margin="8,3,10,3"/>
-                            <Polyline Grid.Column="2" Points="0,0 5,5 0,10" Stroke="{TemplateBinding Foreground}" VerticalAlignment="Center" Margin="5,0,8,0"/>
-                        </Grid>
-                        <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" HorizontalOffset="-10" VerticalOffset="-20" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="Fade" Placement="Right">
-                            <Grid RenderOptions.ClearTypeHint="Enabled" Background="#00000000">
-                                 <Border Grid.Row="1" Margin="20" Padding="{TemplateBinding Padding}"
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   <!--子菜单-->
+   <Style TargetType="{x:Type Metro:MetroMenuItem}">
+      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+      <Setter Property="SnapsToDevicePixels" Value="True"/>
+      <Setter Property="Foreground" Value="{StaticResource Brush}"/>
+      <Setter Property="MinWidth" Value="200"/>
+      <Setter Property="AduAttach:BorderElement.BorderBrush" Value="Transparent" />
+      <Setter Property="AduAttach:BorderElement.BorderThickness" Value="0" />
+      <Setter Property="AduAttach:BorderElement.CornerRadius" Value="6" />
+      <Setter Property="Padding" Value="0,6"/>
+      <Setter Property="Background" Value="#1E1F23"/><!--菜单背景色-->
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Metro:MetroMenuItem}">
+               <Grid>
+                  <Grid >
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0" x:Name="subWidth"/>
+                     </Grid.ColumnDefinitions>
+                     <Rectangle x:Name="backRectangle" Grid.ColumnSpan="3" Fill="#888" Opacity="0" Height="30" />
+                     <Grid Grid.Column="0">
+                        <Image x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" HorizontalAlignment="Center"/>
+                        <Path x:Name="checkicon" Visibility="Collapsed" Width="14" Height="14" Stretch="Uniform" Fill="{TemplateBinding Foreground}" Data="{StaticResource Icon_Checked2}" HorizontalAlignment="Center"/>
+                     </Grid>
+                     <Metro:MetroTextBlock x:Name="title" Grid.Column="1" VerticalAlignment="Center" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" Margin="0,3,10,3"/>
+                     <Polyline Grid.Column="2" Points="0,0 5,5 0,10" Stroke="{TemplateBinding Foreground}" VerticalAlignment="Center" Margin="5,0,8,0"/>
+                  </Grid>
+                  <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" HorizontalOffset="-10" VerticalOffset="-20" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="Fade" Placement="Right">
+                     <Grid RenderOptions.ClearTypeHint="Enabled" Background="#00000000">
+                        <Border Grid.Row="1" Margin="20" Padding="{TemplateBinding Padding}"
                                       BorderBrush="{TemplateBinding AduAttach:BorderElement.BorderBrush}" 
                                       BorderThickness="{TemplateBinding AduAttach:BorderElement.BorderThickness}" 
                                       CornerRadius="{TemplateBinding AduAttach:BorderElement.CornerRadius}" 
-                                      Background="{TemplateBinding Background}" ><!--菜单边框-->
-                                    <Border.Effect>
-                                        <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
-                                    </Border.Effect>
-                                    <Grid>
-                                        <Polyline Points="5,0 0,5 5,10" Fill="{TemplateBinding Background}" Margin="-5,10,0,0"/>
-                                        <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="True" KeyboardNavigation.TabNavigation="Cycle"/>
-                                    </Grid>
-                                </Border>
-                            </Grid>
-                        </Popup>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="icon" Property="Opacity" Value="0.5"/>
-                            <Setter TargetName="title" Property="Opacity" Value="0.5"/>
-                        </Trigger>
-                        <Trigger Property="Role" Value="SubmenuHeader">
-                            <Setter TargetName="subWidth" Property="Width" Value="Auto"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.15" Duration="0:0:0.1"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.1"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                                      Background="{TemplateBinding Background}">
+                           <Border.Effect>
+                              <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
+                           </Border.Effect>
+                           <Grid>
+                              <Polyline Points="5,0 0,5 5,10" Fill="{TemplateBinding Background}" Margin="-5,10,0,0"/>
+                              <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="True" KeyboardNavigation.TabNavigation="Cycle"/>
+                           </Grid>
+                        </Border>
+                     </Grid>
+                  </Popup>
+               </Grid>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter TargetName="icon" Property="Opacity" Value="0.5"/>
+                     <Setter TargetName="title" Property="Opacity" Value="0.5"/>
+                  </Trigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="IsCheckable" Value="True" />
+                        <Condition Property="IsChecked" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <Setter TargetName="checkicon" Property="Visibility" Value="Visible"/>
+                     <Setter TargetName="icon" Property="Visibility" Value="Collapsed"/>
+                  </MultiTrigger>
+                  <Trigger Property="Role" Value="SubmenuHeader">
+                     <Setter TargetName="subWidth" Property="Width" Value="Auto"/>
+                  </Trigger>
+                  <Trigger Property="IsMouseOver" Value="True">
+                     <Trigger.EnterActions>
+                        <BeginStoryboard>
+                           <Storyboard>
+                              <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.15" Duration="0:0:0.1"/>
+                           </Storyboard>
+                        </BeginStoryboard>
+                     </Trigger.EnterActions>
+                     <Trigger.ExitActions>
+                        <BeginStoryboard>
+                           <Storyboard>
+                              <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.1"/>
+                           </Storyboard>
+                        </BeginStoryboard>
+                     </Trigger.ExitActions>
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 
 </ResourceDictionary>

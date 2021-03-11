@@ -44,16 +44,25 @@
                         <Path Stretch="Uniform" Width="160" Margin="0,0" Opacity=".9"  Fill="#FFF" Data="M1182.121057 0c72.852126 0.77283 131.947874 24.086541 177.280805 69.921811 46.112201 45.448855 69.554717 103.134189 70.333987 173.062441 0 55.933585-17.047346 105.658767-51.148478 149.162666l-272.609409 342.621384H1429.735849V856.553459h-483.018868v-15.09595c-10.098314 48.926591-31.969409 88.58566-65.593962 118.964327-45.719346 41.616906-101.234314 62.805333-166.544906 63.578164-63.391396-0.77283-117.940327-21.961258-163.659673-63.578164C515.954314 930.326541 493.32327 891.13761 483.018868 842.835723V856.553459H0v-114.791044l330.732679-414.874566c12.783899-16.706013 21.51044-32.239899 26.153862-46.614541 3.104201-13.595371 4.649862-26.417912 4.649862-38.454742 0-31.853484-9.879346-59.63673-29.644478-83.323975-20.537962-23.700126-49.596377-35.936604-87.188126-36.709434-33.321862 0-61.027824 10.677937-83.117887 32.046692-22.862893 21.362314-36.426063 51.470491-40.683069 90.318088H0c3.097761-70.701082 26.739925-129.165686 70.90717-175.393811C115.473711 23.700126 170.312453 0.77927 235.410516 0 308.256201 0.77283 367.35195 24.086541 412.691321 69.921811 458.803522 115.370667 482.246038 173.056 483.018868 242.990692c0 55.933585-17.047346 105.658767-51.148478 149.162666l-272.609409 342.621384H476.578616V409.619321c0.77283-77.836881 25.548478-137.756981 74.339824-179.747422C596.637786 188.248553 651.193157 167.446541 714.578113 167.446541c65.310591 0 120.82556 20.802013 166.544906 62.418918 45.687145 41.282013 69.664201 99.856101 71.93761 175.741585l0.096604 4.012277v324.067019l324.292427-406.798491c12.03683-15.714214 20.467119-30.410868 25.290868-44.064201l0.862994-2.55034c3.104201-13.595371 4.649862-26.417912 4.649862-38.454742 0-31.853484-9.879346-59.63673-29.644478-83.323975-20.537962-23.700126-49.596377-35.936604-87.188126-36.709434-33.321862 0-61.027824 10.677937-83.117887 32.046692-22.862893 21.362314-36.426063 51.470491-40.683069 90.318088H946.716981c3.097761-70.701082 26.739925-129.165686 70.90717-175.393811C1062.190692 23.700126 1117.029434 0.77927 1182.127497 0zM1668.025157 167.446541v850.113207h-119.717836V296.303094L1429.735849 384.933836v-129.449056L1548.307321 167.446541H1668.025157zM714.578113 288.239899c-75.994969 1.52634-115.151698 43.568302-117.495949 126.125887l-0.064403 2.769308v357.176353c1.53922 85.159447 40.728151 128.122365 117.560352 128.895195 75.608553-0.76639 114.958491-42.795472 118.049812-126.100126l0.090163-2.788629V417.128654c-2.30561-84.380176-41.687748-127.343094-118.139975-128.888755z"/>
                      </Grid>
                   </Metro:AduFlatButton>
-                  <Popup  PopupAnimation="Fade" 
-                                        Height="300"
-                                       PlacementTarget="{Binding ElementName=OpenReward}" 
-                                       Placement="Bottom" AllowsTransparency="True" 
-                                       StaysOpen="False" IsOpen="{Binding IsOpenReward}" HorizontalOffset="-141" VerticalOffset="6">
-                     <Border Background="#fff" Margin="20" Padding="4" BorderBrush="#04000000" BorderThickness="1">
+                  <Popup PopupAnimation="Fade" Height="230" Width="340" PlacementTarget="{Binding ElementName=OpenReward}" 
+                                    Placement="Bottom" AllowsTransparency="True" IsOpen="{Binding IsOpenReward}" StaysOpen="False" HorizontalOffset="-50" VerticalOffset="6">
+                     <Border Background="#fff" Margin="20" Padding="4" CornerRadius="3" BorderBrush="#04000000" BorderThickness="1">
                         <Border.Effect>
-                           <DropShadowEffect BlurRadius="20" Opacity="0.5" Direction="270" ShadowDepth="0" Color="Black"/>
+                           <DropShadowEffect BlurRadius="20" Opacity="0.2" Direction="270" ShadowDepth="0" Color="Black"/>
                         </Border.Effect>
-                        <Image Source="http://r.photo.store.qq.com/psc?/V12WtbKq3d7FCg/Ub*4aHxmnNgAqL6c0lJ4K7cZWH6n9JCrAjQhf*97z2rt7uHA0A8mJmZZRcYIdSlbD8emiWJFAjoFU1Iegz8KYC6QGms9PeMJGWeFCw2qCCg!/r"/>
+                        <StackPanel Margin="0,10">
+                           <UniformGrid Columns="2">
+                              <StackPanel>
+                                 <TextBlock FontSize="16" Text="支付宝" HorizontalAlignment="Center" Foreground="#3399FF"/>
+                                 <Image Width="120" Height="120" Source="http://m.qpic.cn/psc?/V12WtbKq3d7FCg/ruAMsa53pVQWN7FLK88i5i.E7kji6g6vbNhQMB*dUSedlhf0R6lXK68tVUSxFySLZvg3jRMuCEhLdRv5Mb*2RTaP7E33Ft4mJ3rPdEjHjMQ!/b&amp;bo=.QICA*kCAgMBCS4!&amp;rf=viewer_4"/>
+                              </StackPanel>
+                              <StackPanel>
+                                 <TextBlock FontSize="16" Text="微信" HorizontalAlignment="Center" Foreground="#129611"/>
+                                 <Image Width="120" Height="120" Source="http://m.qpic.cn/psc?/V12WtbKq3d7FCg/ruAMsa53pVQWN7FLK88i5qgkLIK97iDKThLo2O3Wa1DdyryWT1VA.PSo289S7PWRUksBj8rVFEUpsIKvvl2uRJcuNsqj8Xsr9oF0A6gCELY!/b&amp;bo=rAKwAqwCsAIBCS4!&amp;rf=viewer_4"/>
+                              </StackPanel>
+                           </UniformGrid>
+                           <TextBlock FontSize="16" Text="(*召)" HorizontalAlignment="Center"/>
+                        </StackPanel>
                      </Border>
                   </Popup>
                </Grid>
@@ -126,12 +135,38 @@
                      </Metro:HCShield.ToolTip>
                   </Metro:HCShield>
                </StackPanel>
+               <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="0,10,0,0" >
+                  <Metro:AduPathIconButton PathData="{StaticResource Icon_Bilibli}" Height="40" Width="80" PathWidth="60" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://space.bilibili.com/331470401"
+                              NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
+                     <Metro:AduPathIconButton.ToolTip>
+                        <Metro:AduToolTip Content="我的Bilibili" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
+                     </Metro:AduPathIconButton.ToolTip>
+                  </Metro:AduPathIconButton>
+                  <Metro:AduPathIconButton PathData="{StaticResource Icon_QQGroup}" Height="40" Width="80" PathWidth="30" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=jlEc6blJ" 
+                                    NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
+                     <Metro:AduPathIconButton.ToolTip>
+                        <Metro:AduToolTip Content="一个小圈子的日常" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
+                     </Metro:AduPathIconButton.ToolTip>
+                  </Metro:AduPathIconButton>
+                  <Metro:AduPathIconButton PathData="{StaticResource Icon_WeiBo}" Height="40" Width="80" PathWidth="30" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://weibo.com/2576515331" 
+                                    NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
+                     <Metro:AduPathIconButton.ToolTip>
+                        <Metro:AduToolTip Content="关注微博" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
+                     </Metro:AduPathIconButton.ToolTip>
+                  </Metro:AduPathIconButton>
+                  <Metro:AduPathIconButton Name="btnDS" PathData="{StaticResource Icon_RedEnvelopes}" Height="40" Width="80" PathWidth="20" Command="{Binding OpenDemo}" CommandParameter="Reward" 
+                                    NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
+                     <Metro:AduPathIconButton.ToolTip>
+                        <Metro:AduToolTip Content="赞助打赏" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
+                     </Metro:AduPathIconButton.ToolTip>
+                  </Metro:AduPathIconButton>
+               </StackPanel>
                <Metro:TransitioningContentControl TransitionMode="Bottom2Top">
                   <StackPanel>
-                     <TextBlock  HorizontalAlignment="Center" Foreground="#FFF" FontSize="30" Margin="0,20,0,0" FontWeight="Light" Text="Welcome To AduSkin" />
+                     <TextBlock  HorizontalAlignment="Center" Foreground="#FFF" FontSize="30" Margin="0,10,0,0" FontWeight="Light" Text="Welcome To AduSkin" />
                      <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FFF" Text="且随疾风前行，身后一许流星" Margin="0,0,0,20"/>
-                     <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FF14D4E5" Text="Version 1.1.1.9" />
-                     <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="#FF14D4E5" Text="Copyright ©AduSkin 2019 - 2020" />
+                     <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FF14D4E5" Text="Version 1.2.0.0" />
+                     <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="#FF14D4E5" Text="Copyright ©AduSkin 2019 - 2021" />
                   </StackPanel>
                </Metro:TransitioningContentControl>
             </StackPanel>
