@@ -268,7 +268,7 @@
 
                      <!--  Popup showing items  -->
                      <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Fade" >
-                        <Border CornerRadius="3" RenderTransformOrigin="0.5,0" BorderThickness="1" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                        <Border CornerRadius="0" RenderTransformOrigin="0.5,0" BorderThickness="1" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
                            <Border.RenderTransform>
                               <TransformGroup>
                                  <ScaleTransform />

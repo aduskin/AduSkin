@@ -14,7 +14,7 @@
       <Setter Property="AduAttach:BorderElement.BorderBrush" Value="Transparent" />
       <Setter Property="AduAttach:BorderElement.BorderThickness" Value="0" />
       <Setter Property="AduAttach:BorderElement.CornerRadius" Value="6" />
-      <Setter Property="Padding" Value="0,6"/>
+      <Setter Property="Padding" Value="0"/>
       <Setter Property="Background" Value="#1E1F23"/><!--菜单背景色-->
       <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Template">

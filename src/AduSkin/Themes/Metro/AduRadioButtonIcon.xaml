@@ -26,12 +26,12 @@
                         Padding="{TemplateBinding Padding}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
-                        <WrapPanel
+                        <StackPanel
                             VerticalAlignment="Center"
                             Orientation="Horizontal"
                             SnapsToDevicePixels="True">
                             <Border>
-                                <Path x:Name="Icon" Width="{TemplateBinding AduAttach:IconElement.Width}" Margin="{TemplateBinding AduAttach:IconElement.Margin}" Fill="{TemplateBinding Foreground}" Stretch="Uniform" Data="{TemplateBinding AduAttach:IconElement.PathData}" />
+                                <Path x:Name="Icon" VerticalAlignment="Center" Width="{TemplateBinding AduAttach:IconElement.Width}" Margin="{TemplateBinding AduAttach:IconElement.Margin}" Fill="{TemplateBinding Foreground}" Stretch="Uniform" Data="{TemplateBinding AduAttach:IconElement.PathData}" />
                             </Border>
                             <TextBlock
                                 x:Name="contentPresenter"
@@ -43,7 +43,7 @@
                                 Text="{TemplateBinding Content}"
                                 Focusable="False"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                        </WrapPanel>
+                        </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True" >
