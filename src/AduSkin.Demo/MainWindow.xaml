@@ -42,7 +42,7 @@
     </Metro:MetroWindow.Menu>
     <Metro:MetroWindow.ContextMenu>
         <Metro:MetroContextMenu>
-            <Metro:MetroMenuItem Header="二级菜单" />
+            <Metro:MetroMenuItem Header="二级菜单" IsCheckable="True" IsChecked="True"/>
             <Metro:MetroMenuItem Header="二级菜单" IsEnabled="False" />
             <Metro:MetroMenuItem Header="二级菜单" />
             <Metro:MetroMenuSeparator />

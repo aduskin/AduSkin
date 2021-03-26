@@ -144,7 +144,6 @@ namespace AduSkin.Controls.Metro
          }
       }
 
-      private int _Count;
       /// <summary>
       /// 属性.
       /// </summary>

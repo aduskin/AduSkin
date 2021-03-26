@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AduSkin.Demo.UserControls.CarouselContainer"
+<UserControl x:Class="AduSkin.Demo.UserControls.CarouselContainer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,60 +6,45 @@
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Metro:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Height="350" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Metro:Carousel.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding imgpath}" Stretch="UniformToFill" >
-                            <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform ScaleX="1" ScaleY="1" />
-                                </TransformGroup>
-                            </Image.RenderTransform>
-                        </Image>
-                        <Metro:AduButtonIcon
-                                        x:Name="PlayBtn"
-                                        Background="Transparent"
-                                        Margin="10,50" Width="60"
-                                        HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.PlayRecommendClick}"
-                                        CommandParameter="{Binding}"
-                                        Foreground="#fff"
-                                        Icon="{StaticResource Icon_Desgin}"
-                                        IconHeight="16"
-                                        IconWidth="25"
-                                        Visibility="Hidden" />
-                        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
-                            <TextBlock Text="{Binding name}" Background="#50000000" Padding="6,0" Foreground="#FFF" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
-                            <TextBlock Text="{Binding info}" Background="#50000000" Padding="6,2" Foreground="#FFF" FontSize="14" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
-                        </StackPanel>
-                    </Grid>
-                    <DataTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="PlayBtn" Property="Visibility" Value="Visible" />
-                        </Trigger>
-                        <!-- 鼠标进入事件 -->
-                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
-                                    <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <!-- 鼠标离开事件 -->
-                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" AutoReverse="False" />
-                                    <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" AutoReverse="False" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </DataTemplate.Triggers>
-                </DataTemplate>
-            </Metro:Carousel.ItemTemplate>
-        </Metro:Carousel>
-    </Grid>
+   <Grid>
+      <Metro:Carousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Height="350" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center">
+         <Metro:Carousel.ItemTemplate>
+            <DataTemplate>
+               <Grid>
+                  <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding imgpath}" Stretch="UniformToFill" >
+                     <Image.RenderTransform>
+                        <TransformGroup>
+                           <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </TransformGroup>
+                     </Image.RenderTransform>
+                  </Image>
+                  <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+                     <TextBlock Text="{Binding name}" Background="#50000000" Padding="6,0" Foreground="#FFF" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
+                     <TextBlock Text="{Binding info}" Background="#50000000" Padding="6,2" Foreground="#FFF" FontSize="14" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
+                  </StackPanel>
+               </Grid>
+               <DataTemplate.Triggers>
+                  <!-- 鼠标进入事件 -->
+                  <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                     <BeginStoryboard>
+                        <Storyboard>
+                           <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
+                           <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" From="1" To="1.1" Duration="0:0:0.3" AutoReverse="False" />
+                        </Storyboard>
+                     </BeginStoryboard>
+                  </EventTrigger>
+                  <!-- 鼠标离开事件 -->
+                  <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                     <BeginStoryboard>
+                        <Storyboard>
+                           <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" AutoReverse="False" />
+                           <DoubleAnimation Storyboard.TargetName="cover" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" AutoReverse="False" />
+                        </Storyboard>
+                     </BeginStoryboard>
+                  </EventTrigger>
+               </DataTemplate.Triggers>
+            </DataTemplate>
+         </Metro:Carousel.ItemTemplate>
+      </Metro:Carousel>
+   </Grid>
 </UserControl>
