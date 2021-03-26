@@ -88,7 +88,7 @@
                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="一款简单漂亮的WPF UI，融合多个开源框架的组件，为个人定制的UI，可供学者参考和使用 ，商业用途请联系作者！" />
                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="Nuget 搜索 'AduSkin' 可直接导包使用" Margin="10"/>
                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="具体使用请参考 AduSkin.Demo" Margin="0"/>
-               <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="本框架支持 .Net 4.5 .Net Core 3.1 版本" Margin="10"/>
+               <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="本框架支持 .Net 4.5 .Net 4.7 .Net Core 3.1 版本" Margin="10"/>
                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="技术交流" Margin="0"/>
                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
                   <Metro:HCShield Subject="QQ" Status="1280429435" Color="#4A8AF4" Margin="10,0" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes">
@@ -151,7 +151,7 @@
                   <Metro:AduPathIconButton PathData="{StaticResource Icon_WeiBo}" Height="40" Width="80" PathWidth="30" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://weibo.com/2576515331" 
                                     NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
                      <Metro:AduPathIconButton.ToolTip>
-                        <Metro:AduToolTip Content="关注微博" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
+                        <Metro:AduToolTip Content="关注我的微博" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
                      </Metro:AduPathIconButton.ToolTip>
                   </Metro:AduPathIconButton>
                   <Metro:AduPathIconButton Name="btnDS" PathData="{StaticResource Icon_RedEnvelopes}" Height="40" Width="80" PathWidth="20" Command="{Binding OpenDemo}" CommandParameter="Reward" 

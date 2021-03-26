@@ -1,4 +1,4 @@
-﻿using AduSkin.Demo.Data;
+using AduSkin.Demo.Data;
 using AduSkin.Demo.Models;
 using AduSkin.Demo.UserControls;
 using AduSkin.Demo.Views;
