@@ -35,6 +35,7 @@ HandyControl、Arthas、WPF.UI
 ### 支持者
 
 <a href="https://github.com/Haku-Men" target="_blank"><img width="64px" src="https://avatars2.githubusercontent.com/u/13210002?s=460&u=ae17e9b33173d1e2af00bccfc76c6ce540b0cdbf&v=4"></a>
+<a href="https://github.com/Curtain98" target="_blank"><img width="64px" src="https://avatars.githubusercontent.com/u/54660599?v=4"></a>
 
 ### 赞助支持
 如果你觉得本框架还不错的话，可以赞助我防脱洗发水，Haha
