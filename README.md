@@ -82,6 +82,10 @@ Install-Package VideoLAN.LibVLC.Windows
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/project/AduMusic.jpg)
 
+> 【AZai】
+
+![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/project/azai.png)
+
 > 【AduShopping】
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/project/AduShopping.gif)
