@@ -24,6 +24,14 @@ Nuget 搜索"AduSkin" 可直接导包使用
 
 HandyControl、Arthas、WPF.UI
 
+### 版权和协议
+
+AduSkin 项目基于 LGPL-3.0 开源协议开放项目源代码。本项目版权由项目发起人、开发者AduSkin所有。
+
+依照 LGPL-3.0 协议规定：
+
+您可以在任何商业软件中引用 AduSkin 的生成库而无需支付任何与版权相关的费用; 如果您的项目使用并修改了 AduSkin 的源代码，那么您的项目也需要使用 LGPL 协议进行开源，并且在您的衍生项目中保留 AduSkin 的版权信息：Using by AduSkin。
+
 ### 贡献者
 
 <a href="https://github.com/aduskin" target="_blank"><img width="64px" src="https://avatars2.githubusercontent.com/u/33409777?s=460&u=536aecd59ce72fa64b09d2279821227bc6a721da&v=4"></a>
