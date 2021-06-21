@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls.Metro;
+using AduSkin.Controls.Metro;
 using AduSkin.Demo.Models;
 using System.Collections.ObjectModel;
 
@@ -41,7 +41,7 @@ namespace AduSkin.Demo.Views
          {
             ID = 1,
             Name = "“Shadow” 心理FM PC客户端, 众多贴心新功能等你去发现！",
-            Cover = "http://r.photo.store.qq.com/psb?/V12WtbKq3d7FCg/QnUb2ALu57Ig8YXGJXS0nZvaLKxeUhhImdjsiVFOqgc!/r/dDcBAAAAAAAA",
+            Cover = "http://m.qpic.cn/psc?/V12WtbKq3d7FCg/45NBuzDIW489QBoVep5mcd*RuyMAAEPwPETX7aEl05kVsaPx4L9m2bWiIMCWbehhLJZXnN1BSqihQPiaMhMA*ZuiyYRfFCxKSD2.oekIFwI!/b&bo=CgX0AgoF9AIDORw!&rf=viewer_4",
             Link = "https://github.com/aduskin/Shadow-FM",
             Likes = "99+",
             Shares = "99+",
