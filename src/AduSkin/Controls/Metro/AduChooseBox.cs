@@ -1,4 +1,5 @@
-﻿using System;
+using AduSkin.Utility.Element;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,15 +11,17 @@ namespace AduSkin.Controls.Metro
     {
         #region private fields
         private Button PART_ChooseButton;
-        #endregion
+      #endregion
 
-        #region DependencyProperty
+      #region DependencyProperty
 
-        #region ChooseButtonStyle
-        /// <summary>
-        /// 获取或者设置选择按钮的样式
-        /// </summary>
-        public Style ChooseButtonStyle
+      public CornerRadius CornerRadius { get { return (CornerRadius)GetValue(CornerRadiusProperty); } set { SetValue(CornerRadiusProperty, value); } }
+      public static readonly DependencyProperty CornerRadiusProperty = ElementBase.Property<AduChooseBox, CornerRadius>("CornerRadiusProperty");
+      #region ChooseButtonStyle
+      /// <summary>
+      /// 获取或者设置选择按钮的样式
+      /// </summary>
+      public Style ChooseButtonStyle
         {
             get { return (Style)GetValue(ChooseButtonStyleProperty); }
             set { SetValue(ChooseButtonStyleProperty, value); }

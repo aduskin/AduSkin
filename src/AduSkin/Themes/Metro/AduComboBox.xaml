@@ -267,8 +267,8 @@
                      </TextBox>
 
                      <!--  Popup showing items  -->
-                     <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Fade" >
-                        <Border CornerRadius="0" RenderTransformOrigin="0.5,0" BorderThickness="1" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                     <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" VerticalOffset="-1" Focusable="False" AllowsTransparency="True" PopupAnimation="Fade" >
+                        <Border CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" RenderTransformOrigin="0.5,0" Margin="20" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,6" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
                            <Border.RenderTransform>
                               <TransformGroup>
                                  <ScaleTransform />
@@ -278,7 +278,7 @@
                               </TransformGroup>
                            </Border.RenderTransform>
                            <Border.Effect>
-                              <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="0" Opacity="0.5"/>
+                              <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="0" Opacity="0.1"/>
                            </Border.Effect>
                            <Adu:MetroScrollViewer Margin="0" MaxHeight="{TemplateBinding MaxDropDownHeight}" 
                                                   SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">

@@ -7,8 +7,9 @@
    <PathGeometry x:Key="icon" Figures="M147.01175 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273 44.792159 0 81.109296-36.329417 81.109296-81.108273C228.121046 467.194538 191.804932 430.890704 147.01175 430.890704zM511.999488 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273 44.792159 0 81.109296-36.329417 81.109296-81.108273C593.108784 467.194538 556.791647 430.890704 511.999488 430.890704zM876.987227 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273s81.108273-36.329417 81.108273-81.108273C958.094476 467.194538 921.778362 430.890704 876.987227 430.890704z" />
    <Style TargetType="{x:Type Adu:AduChooseBox}">
       <Setter Property="Background" Value="White" />
-      <Setter Property="BorderBrush" Value="#FF000000" />
+      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
       <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="2" />
       <Setter Property="FontSize" Value="12" />
       <Setter Property="Foreground" Value="Black" />
       <Setter Property="Height" Value="30" />
@@ -26,11 +27,11 @@
                      <ColumnDefinition Width="*" />
                      <ColumnDefinition Width="auto" />
                   </Grid.ColumnDefinitions>
-                  <Border x:Name="border" Grid.ColumnSpan="2" 
+                  <Border x:Name="border" Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="#FF000000" Opacity="0.15"/>
+                  <Border x:Name="bordermove" Grid.ColumnSpan="2" Opacity="0"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
-                        CornerRadius="2"
-                        Opacity="0.15"
+                        CornerRadius="{TemplateBinding CornerRadius}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                         UseLayoutRounding="{TemplateBinding UseLayoutRounding}"/>
@@ -40,12 +41,15 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           HorizontalScrollBarVisibility="Hidden"
                                           VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}" />
-                  <Button x:Name="PART_ChooseButton" Grid.Column="1" Width="{TemplateBinding ChooseButtonWidth}" 
+                  <Button x:Name="PART_ChooseButton" Grid.Column="1" Width="{TemplateBinding ChooseButtonWidth}" Foreground="{TemplateBinding BorderBrush}"
                                     Style="{TemplateBinding ChooseButtonStyle}" />
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsKeyboardFocused" Value="true">
-                     <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Brush}" />
+                     <Setter TargetName="bordermove" Property="Opacity" Value="1" />
+                  </Trigger>
+                  <Trigger Property="IsMouseOver" Value="true">
+                     <Setter TargetName="bordermove" Property="Opacity" Value="1" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -68,7 +72,7 @@
                         <ControlTemplate.Triggers>
                            <Trigger Property="IsMouseOver" Value="True">
                               <Setter Property="Cursor" Value="Hand" />
-                              <Setter TargetName="icon" Property="Fill" Value="{StaticResource Brush}" />
+                              <Setter TargetName="icon" Property="Fill" Value="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" />
                            </Trigger>
                         </ControlTemplate.Triggers>
                      </ControlTemplate>
