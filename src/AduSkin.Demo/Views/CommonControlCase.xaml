@@ -290,10 +290,10 @@
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel>
-                     <Metro:AduFormLable Title="日期选择" >
+                     <Metro:AduFormLable Title="日期选择" ErrorVisibility="Collapsed" ErrorMessage="12312">
                         <Metro:AduDatePicker CornerRadius="3"/>
                      </Metro:AduFormLable>
-                     <Metro:AduFormLable Title="下拉选择" Margin="0,10,0,0">
+                     <Metro:AduFormLable Title="下拉选择" Margin="0,10,0,0" ErrorVisibility="Visible" ErrorMessage="3232">
                         <Metro:AduComboBox>
                            <ComboBoxItem Content="上海" Tag="1" IsSelected="True"/>
                            <ComboBoxItem Content="北京" Tag="1" />

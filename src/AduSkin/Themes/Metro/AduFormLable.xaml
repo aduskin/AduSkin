@@ -22,20 +22,21 @@
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{TemplateBinding TitleWidth}" MinWidth="{TemplateBinding TitleMinWidth}"/>
                         <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition x:Name="gridError"/>
                      </Grid.ColumnDefinitions>
                      <TextBlock Grid.Column="0" Text="{TemplateBinding Title}" HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}" VerticalAlignment="{TemplateBinding TitleVerticalAlignment}"/>
                      <ContentPresenter Grid.Column="1" Margin="10,0" 
                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                            Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"
                            ContentTemplate="{TemplateBinding ContentTemplate}" RecognizesAccessKey="True" SnapsToDevicePixels="True" />
-                     <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding ErrorForeground}" Text="{TemplateBinding ErrorMessage}" Visibility="{TemplateBinding ErrorVisibility}"/>
+                     <TextBlock x:Name="txtError" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding ErrorForeground}" Text="{TemplateBinding ErrorMessage}" Visibility="{TemplateBinding ErrorVisibility}"/>
                   </Grid>
                </Border>
                <ControlTemplate.Triggers>
-                  <Trigger Property="IsKeyboardFocused" Value="true">
-                     <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Brush}" />
-                  </Trigger>
+                  <DataTrigger Binding="{Binding Path=ErrorVisibility}" Value="Collapsed">
+                     <Setter TargetName="txtError" Property="Visibility" Value="Collapsed"/>
+                     <Setter TargetName="gridError" Property="Width" Value="0"/>
+                  </DataTrigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
          </Setter.Value>
