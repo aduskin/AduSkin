@@ -39,7 +39,7 @@ namespace AduSkin.Demo.ViewModel
                 "暂不使用",
                 MessageBoxImage.Exclamation);
 
-               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotificationShow.AddNotification(new NotificationModel()
                {
                   Title = "返回结果",
                   Content = result.ToString()
