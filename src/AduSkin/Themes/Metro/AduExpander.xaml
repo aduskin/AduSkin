@@ -24,7 +24,6 @@
                             <ContentPresenter
                                 Grid.Column="1"
                                 Margin="2,0,0,0"
-                                HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 Content="{TemplateBinding Content}"
                                 ContentStringFormat="{TemplateBinding ContentStringFormat}"

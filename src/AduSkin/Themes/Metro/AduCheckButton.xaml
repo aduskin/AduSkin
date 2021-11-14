@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
 
@@ -24,31 +24,35 @@
                               Data="{TemplateBinding PathData}"
                               Fill="{TemplateBinding NormalPathColor}"
                               Stretch="Uniform" />
-                            <TextBlock x:Name="txt" Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}" VerticalAlignment="Center" Foreground="{TemplateBinding NormalPathColor}"></TextBlock>
-                        </StackPanel>
+                     <ContentPresenter x:Name="contentPresenter" Grid.Column="1"
+                                  Margin="{TemplateBinding Padding}" Focusable="False" RecognizesAccessKey="True"
+                                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                  </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="path" Property="Fill" Value="{Binding CheckedPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-                            <Setter TargetName="txt" Property="Foreground" Value="{Binding CheckedPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <Setter Property="Foreground" Value="{Binding CheckedPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="False">
                             <Setter TargetName="path" Property="Fill" Value="{Binding NormalPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-                            <Setter TargetName="txt" Property="Foreground" Value="{Binding NormalPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <Setter Property="Foreground" Value="{Binding NormalPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Cursor" Value="Hand" />
                             <Setter TargetName="path" Property="Fill" Value="{Binding MouseOverPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                            <Setter TargetName="txt" Property="Foreground" Value="{Binding MouseOverPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <Setter Property="Foreground" Value="{Binding MouseOverPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="path" Property="Fill" Value="{Binding PressedPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                            <Setter TargetName="txt" Property="Foreground" Value="{Binding PressedPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <Setter Property="Foreground" Value="{Binding PressedPathColor, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter TargetName="path" Property="Fill" Value="#888" />
-                            <Setter TargetName="txt" Property="Foreground" Value="#888"/>
+                            <Setter Property="Foreground" Value="#888"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
