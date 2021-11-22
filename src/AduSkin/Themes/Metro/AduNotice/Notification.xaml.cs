@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,53 +15,53 @@ using System.Collections.ObjectModel;
 namespace AduSkin.Controls.Metro
 {
     /// <summary>
-    /// Notifiaction.xaml 的交互逻辑
+    /// Notification.xaml 的交互逻辑
     /// </summary>
-    public partial class Notifiaction : Window
+    public partial class Notification : Window
     {
         private const byte MAX_NOTIFICATIONS = 8;
         private int count;
-        private readonly ObservableCollection<NotifiactionModel> buffer = new ObservableCollection<NotifiactionModel>();
-        private ObservableCollection<NotifiactionModel> NotifiactionList = new ObservableCollection<NotifiactionModel>();
+        private readonly ObservableCollection<NotificationModel> buffer = new ObservableCollection<NotificationModel>();
+        private ObservableCollection<NotificationModel> NotificationList = new ObservableCollection<NotificationModel>();
         private const double topOffset = 40;
         private const double leftOffset = 350;
 
-        public Notifiaction()
+        public Notification()
         {
             InitializeComponent();
 
-            this.NotificationsControl.DataContext = this.NotifiactionList;
+            this.NotificationsControl.DataContext = this.NotificationList;
             this.Top = SystemParameters.WorkArea.Top + topOffset;
             this.Left = SystemParameters.WorkArea.Left + SystemParameters.WorkArea.Width - this.Width;
             this.Height = SystemParameters.WorkArea.Height; 
         }
 
-        public void AddNotifiaction(NotifiactionModel notification)
+        public void AddNotification(NotificationModel notification)
         {
             notification.Id = count++;
-            if (NotifiactionList.Count + 1 > MAX_NOTIFICATIONS)
+            if (NotificationList.Count + 1 > MAX_NOTIFICATIONS)
                 buffer.Add(notification);
             else
-                NotifiactionList.Add(notification);
+                NotificationList.Add(notification);
 
             //Show window if there're notifications
-            if (NotifiactionList.Count > 0 && !IsActive)
+            if (NotificationList.Count > 0 && !IsActive)
                 Show();
         }
 
-        public void RemoveNotification(NotifiactionModel notification)
+        public void RemoveNotification(NotificationModel notification)
         {
-            if (NotifiactionList.Contains(notification))
-                NotifiactionList.Remove(notification);
+            if (NotificationList.Contains(notification))
+                NotificationList.Remove(notification);
 
             if (buffer.Count > 0)
             {
-                NotifiactionList.Add(buffer[0]);
+                NotificationList.Add(buffer[0]);
                 buffer.RemoveAt(0);
             }
 
             //Close window if there's nothing to show
-            if (NotifiactionList.Count < 1)
+            if (NotificationList.Count < 1)
                 Hide();
         }
 
@@ -70,11 +70,11 @@ namespace AduSkin.Controls.Metro
             if (e.NewSize.Height != 0.0)
                 return;
             var element = sender as Grid;
-            RemoveNotification(NotifiactionList.First(n => n.Id == Int32.Parse(element.Tag.ToString())));
+            RemoveNotification(NotificationList.First(n => n.Id == Int32.Parse(element.Tag.ToString())));
         }
     }
 
-    public class NotifiactionModel
+    public class NotificationModel
     {
         /// <summary>
         /// Id不需要赋值
@@ -91,20 +91,20 @@ namespace AduSkin.Controls.Metro
         /// <summary>
         /// 通知类型
         /// </summary>
-        public EnumPromptType NotifiactionType { get; set; }
+        public EnumPromptType NotificationType { get; set; }
     }
 
    public class NoticeManager
    {
-      public static Notifiaction NotifiactionShow { get;set;}
+      public static Notification NotificationShow { get;set;}
 
       public static void Initialize() 
       {
-         NotifiactionShow = new Notifiaction();
+         NotificationShow = new Notification();
       }
-      public static void ExitNotifiaction()
+      public static void ExitNotification()
       {
-         NotifiactionShow?.Close();
+         NotificationShow?.Close();
       }
    }
 }

@@ -1,10 +1,10 @@
-<Window x:Class="AduSkin.Controls.Metro.Notifiaction" 
+<Window x:Class="AduSkin.Controls.Metro.Notification" 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Adu="clr-namespace:AduSkin.Controls.Metro" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="Notifiaction" Width="300" MinHeight="700" 
+        Title="Notification" Width="300" MinHeight="700" 
         AllowsTransparency="True"
         Background="Transparent" ShowActivated="False" 
         ShowInTaskbar="False" Topmost="True"
@@ -20,7 +20,7 @@
             <DoubleAnimation Duration="0:0:0.3" From="70" Storyboard.TargetProperty="Height" To="0" />
         </Storyboard>
 
-        <DataTemplate x:Key="NotifiactionTemplate">
+        <DataTemplate x:Key="NotificationTemplate">
             <Grid x:Name="NoticeGrid" Margin="8" Tag="{Binding Path=Id}"
                   RenderTransformOrigin="1,0.5" SizeChanged="NoticeGrid_SizeChanged">
                 <Grid.RenderTransform>
@@ -68,22 +68,22 @@
                 </Border>
             </Grid>
             <DataTemplate.Triggers>
-                <DataTrigger Binding="{Binding NotifiactionType}" Value="Info">
+                <DataTrigger Binding="{Binding NotificationType}" Value="Info">
                     <Setter TargetName="Icon" Property="Data" Value="{StaticResource InfoIcon}" />
                     <Setter TargetName="Icon" Property="Fill" Value="#3399FF" />
                     <!--<Setter TargetName="Border" Property="Background" Value="#3399FF" />-->
                 </DataTrigger>
-                <DataTrigger Binding="{Binding NotifiactionType}" Value="Warn">
+                <DataTrigger Binding="{Binding NotificationType}" Value="Warn">
                     <Setter TargetName="Icon" Property="Data" Value="{StaticResource WarnIcon}" />
                     <Setter TargetName="Icon" Property="Fill" Value="#FF9900" />
                     <!--<Setter TargetName="Border" Property="Background" Value="#FF9900" />-->
                 </DataTrigger>
-                <DataTrigger Binding="{Binding NotifiactionType}" Value="Error">
+                <DataTrigger Binding="{Binding NotificationType}" Value="Error">
                     <Setter TargetName="Icon" Property="Data" Value="{StaticResource ErrorIcon}" />
                     <Setter TargetName="Icon" Property="Fill" Value="#FF5500" />
                     <!--<Setter TargetName="Border" Property="Background" Value="#FF5500" />-->
                 </DataTrigger>
-                <DataTrigger Binding="{Binding NotifiactionType}" Value="Success">
+                <DataTrigger Binding="{Binding NotificationType}" Value="Success">
                     <Setter TargetName="Icon" Property="Data" Value="{StaticResource SelectedIcon}" />
                     <Setter TargetName="Icon" Property="Fill" Value="#61B891" />
                     <!--<Setter TargetName="Border" Property="Background" Value="#61B891" />-->
@@ -138,6 +138,6 @@
     </Window.Resources>
     <ItemsControl x:Name="NotificationsControl"
                   FocusVisualStyle="{x:Null}"
-                  ItemTemplate="{StaticResource NotifiactionTemplate}"
+                  ItemTemplate="{StaticResource NotificationTemplate}"
                   ItemsSource="{Binding .}" />
 </Window>

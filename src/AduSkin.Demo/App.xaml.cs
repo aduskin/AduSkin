@@ -23,7 +23,7 @@ namespace AduSkin.Demo
       }
       protected override void OnExit(ExitEventArgs e)
       {
-         NoticeManager.ExitNotifiaction();
+         NoticeManager.ExitNotification();
          base.OnExit(e);
       }
    }
