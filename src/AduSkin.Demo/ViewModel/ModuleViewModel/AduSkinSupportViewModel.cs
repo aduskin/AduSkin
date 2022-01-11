@@ -23,6 +23,7 @@ namespace AduSkin.Demo.ViewModel
          AllSupports.Add(new SupportUser("不染", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=906247584&spec=100", "", new string[] { SupportType.Money.ToString() + "：50元" }));
          AllSupports.Add(new SupportUser("MiFaFa", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=2447786794&spec=100", "", new string[] { SupportType.Money.ToString() + "：66元" }));
          AllSupports.Add(new SupportUser("✘小浪", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=2398387230&spec=100", "", new string[] { SupportType.Money.ToString() + "：100元" }));
+         AllSupports.Add(new SupportUser("城管小队长", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=857869725&spec=100", "", new string[] { SupportType.Money.ToString() + "：100元" }));
       }
       private ObservableCollection<SupportUser> _AllSupports =new ObservableCollection<SupportUser>();
       /// <summary>
