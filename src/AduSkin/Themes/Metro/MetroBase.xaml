@@ -9,9 +9,10 @@
         ShadowDepth="0"
         Color="#000" />
     <SolidColorBrush x:Key="Brush" Color="#EE796F" />
-   <SolidColorBrush x:Key="DefaultWhiteBrush" Color="#FFF" />
+    <SolidColorBrush x:Key="DefaultWhiteBrush" Color="#FFF" />
     <SolidColorBrush x:Key="SelectForeground" Color="#666" />
     <SolidColorBrush x:Key="DefaultBrush" Color="#EE796F" />
+    <SolidColorBrush x:Key="DefaultControlBorder" Color="#DBDBDB" />
     <SolidColorBrush x:Key="DefaultBorderBrush" Color="#10000000" />
     <SolidColorBrush x:Key="DefaultBackground" Color="#EEEEEE" />
    <!--ShadowColor-->

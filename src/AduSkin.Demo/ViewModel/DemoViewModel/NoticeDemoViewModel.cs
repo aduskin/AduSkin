@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls;
+using AduSkin.Controls;
 using AduSkin.Controls.Metro;
 using AduSkin.Demo.Models;
 using GalaSoft.MvvmLight;
@@ -19,31 +19,31 @@ namespace AduSkin.Demo.ViewModel
          switch (e)
          {
             case "Error":
-               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotificationShow.AddNotification(new NotificationModel()
                {
                   Title = "这是Error通知标题",
                   Content = "这条通知不会自动关闭，需要点击关闭按钮",
-                  NotifiactionType = EnumPromptType.Error
+                  NotificationType = EnumPromptType.Error
                });
                return;
             case "Success":
-               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotificationShow.AddNotification(new NotificationModel()
                {
                   Title = "这是Success通知标题",
                   Content = "这条通知不会自动关闭，需要点击关闭按钮这条通知不会自动关闭，需要点击关闭按钮这条通知不会自动关闭，需要点击关闭按钮",
-                  NotifiactionType = EnumPromptType.Success
+                  NotificationType = EnumPromptType.Success
                });
                return;
             case "Warm":
-               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotificationShow.AddNotification(new NotificationModel()
                {
                   Title = "这是Warn通知标题",
                   Content = "这条通知不会自动关闭，需要点击关闭按钮",
-                  NotifiactionType = EnumPromptType.Warn
+                  NotificationType = EnumPromptType.Warn
                });
                return;
             case "Info":
-               NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
+               NoticeManager.NotificationShow.AddNotification(new NotificationModel()
                {
                   Title = "这是Info通知标题",
                   Content = "这条通知不会自动关闭"

@@ -168,9 +168,11 @@
             </Grid>
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
-                  <StackPanel Orientation="Horizontal">
-                     <Metro:AduIntegerUpDown Width="100" Height="30" Margin="10,0" Maximum="20"
+                  <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                     <Metro:AduIntegerUpDown Width="100" Maximum="20"
                                           Minimum="0" Value="15" UpDownOrientation="Horizontal" />
+                     <Metro:AduIntegerUpDown Width="100" Height="30" Margin="10,0" Maximum="20"
+                                          Minimum="0" Value="15" UpDownOrientation="Vertical" />
                   </StackPanel>
                </Border>
             </Grid>

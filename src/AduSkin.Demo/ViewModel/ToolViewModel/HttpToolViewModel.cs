@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls;
+using AduSkin.Controls;
 using AduSkin.Controls.Metro;
 using AduSkin.Demo.Models;
 using AduSkin.Utility;
@@ -213,18 +213,18 @@ namespace AduSkin.Demo.ViewModel
       public void ShowResult()
       {
          if (Result != null)
-            NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
+            NoticeManager.NotificationShow.AddNotification(new NotificationModel()
             {
                Title = Result.AbsoluteUri,
                Content = Result.ToStringX().ToString(),
-               NotifiactionType = EnumPromptType.Success
+               NotificationType = EnumPromptType.Success
             });
          else
-            NoticeManager.NotifiactionShow.AddNotifiaction(new NotifiactionModel()
+            NoticeManager.NotificationShow.AddNotification(new NotificationModel()
             {
                Title = "请求失败！",
                Content = "未请求到任何数据",
-               NotifiactionType = EnumPromptType.Error
+               NotificationType = EnumPromptType.Error
             });
       }
 
