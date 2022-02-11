@@ -3,7 +3,8 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="pack://application:,,,/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type Adu:SegmentItem}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="1, 0, 0, 0" />
@@ -71,9 +72,9 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}" 
                             SnapsToDevicePixels="true" UseLayoutRounding="True">
-                        <ScrollViewer Focusable="false" Padding="{TemplateBinding Padding}">
+                        <Adu:MetroScrollViewer Focusable="false" Padding="{TemplateBinding Padding}">
                             <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                        </ScrollViewer>
+                        </Adu:MetroScrollViewer>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
