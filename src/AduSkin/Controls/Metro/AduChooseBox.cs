@@ -104,6 +104,14 @@ namespace AduSkin.Controls.Metro
                     }
                     break;
                 case EnumChooseBoxType.MultiFile:
+                    System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
+                    openFileDialog.Multiselect = true;
+                    //"文本文件|*.*|C#文件|*.cs|所有文件|*.*"
+                    //openFileDialog.Filter = this.Filter;
+                    if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        this.Text = openFileDialog.FileName;
+                    }
                     break;
                 case EnumChooseBoxType.Folder:
                     System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
