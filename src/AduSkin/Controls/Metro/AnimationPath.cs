@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
@@ -13,7 +13,7 @@ namespace AduSkin.Controls.Metro
 {
     public class AnimationPath : Shape
     {
-        private bool _isLoaded;
+        private bool _isRendered;
 
         /// <summary>
         ///     故事版
@@ -131,20 +131,23 @@ namespace AduSkin.Controls.Metro
         public AnimationPath()
         {
             Utility.Refresh(this);
-            Loaded += (s, e) =>
-            {
-                if (_isLoaded) return;
-                UpdatePath();
-                _isLoaded = true;
-            };
+        }
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+           if (!_isRendered)
+           {
+              _isRendered = true;
+              UpdatePath();
+           }
+           base.OnRender(drawingContext);
         }
 
         /// <summary>
         ///     动画完成事件
         /// </summary>
         public static readonly RoutedEvent CompletedEvent =
-            EventManager.RegisterRoutedEvent("Completed", RoutingStrategy.Bubble,
-                typeof(EventHandler), typeof(AnimationPath));
+              EventManager.RegisterRoutedEvent("Completed", RoutingStrategy.Bubble,
+                  typeof(EventHandler), typeof(AnimationPath));
 
         /// <summary>
         ///     动画完成事件
