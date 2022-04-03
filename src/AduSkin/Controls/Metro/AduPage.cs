@@ -305,7 +305,7 @@ namespace AduSkin.Controls.Metro
          _panelMain.Children.Clear();
          if (PageIndex > 1 && PageIndex < MaxPageCount)
          {
-            var selectButton = CreateButton(PageIndex);
+            var selectButton = CreateButton(PageIndex, true);
             _panelMain.Children.Add(selectButton);
             selectButton.IsChecked = true;
             _buttonFirst.IsChecked = false;
@@ -350,15 +350,17 @@ namespace AduSkin.Controls.Metro
 
       private void ButtonNext_OnClick(object sender, RoutedEventArgs e) => PageIndex++;
 
-      private AduRadioButton CreateButton(int page)
+      private AduRadioButton CreateButton(int page, bool isSelected = false)
       {
          return new AduRadioButton
-         { 
+         {
             Content = page.ToString(),
             Tag = page.ToString(),
-            IconVisibility=Visibility.Collapsed,
-            Width=40,
-            HorizontalAlignment=HorizontalAlignment.Center
+            IconVisibility = Visibility.Collapsed,
+            Opacity = isSelected ? 1 : 0.8,
+            FontWeight = isSelected ? FontWeight.FromOpenTypeWeight(600) : FontWeight.FromOpenTypeWeight(400),
+            Width = 40,
+            HorizontalAlignment = HorizontalAlignment.Center
          };
       }
 

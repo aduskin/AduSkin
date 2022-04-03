@@ -109,7 +109,7 @@
                <!-- End Yes Button -->
 
                <!-- OK Button -->
-               <AduSkin:AduFlatButton x:Name="Button_OK" MinWidth="88" MaxWidth="160" Margin="35,0,5,0" HorizontalAlignment="Right" Height="26"
+               <AduSkin:AduFlatButton x:Name="Button_OK" IsDefault="True" MinWidth="88" MaxWidth="160" Margin="35,0,5,0" HorizontalAlignment="Right" Height="26"
                         Click="Button_OK_Click">
                   <Label Name="Label_Ok" Padding="0" Margin="10,0" Foreground="#FFF">_OK</Label>
                </AduSkin:AduFlatButton>

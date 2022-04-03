@@ -1,10 +1,11 @@
-﻿using System.Windows;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 namespace AduSkin.Controls.Metro.Base
 {
-   public class AduButtonBase : ButtonBase
+   public class AduButtonBase : Button
    {
       #region AduSkin
       public Geometry Icon
