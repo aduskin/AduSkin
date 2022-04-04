@@ -96,7 +96,7 @@
 
       <Setter Property="Shell:WindowChrome.WindowChrome">
          <Setter.Value>
-            <Shell:WindowChrome CaptionHeight="27" CornerRadius="5" GlassFrameThickness="-1" NonClientFrameEdges="None" ResizeBorderThickness="5" UseAeroCaptionButtons="False" />
+            <Shell:WindowChrome CaptionHeight="40" CornerRadius="5" GlassFrameThickness="-1" NonClientFrameEdges="None" ResizeBorderThickness="5" UseAeroCaptionButtons="False" />
          </Setter.Value>
       </Setter>
       <Setter Property="Template">
@@ -117,7 +117,7 @@
                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="2" x:Name="menu">
-                           <ContentPresenter Margin="0,32,-120,0" Content="{TemplateBinding Menu}" />
+                           <ContentPresenter HorizontalAlignment="Right" Content="{TemplateBinding Menu}" />
                         </Grid>
                         <Grid x:Name="winContent" Grid.Row="1" Grid.ColumnSpan="4" Background="{TemplateBinding Background}">
                            <AdornerDecorator>
