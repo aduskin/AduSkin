@@ -156,7 +156,6 @@
       <Setter Property="TextElement.FontSize" Value="12" />
       <Setter Property="ToggleButtonColor" Value="#FFF" />
       <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
-      <Setter Property="MinHeight" Value="20" />
       <Setter Property="MinHeight" Value="26" />
       <Setter Property="Background" Value="#FFF"/>
       <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
