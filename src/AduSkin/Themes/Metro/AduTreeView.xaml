@@ -1,0 +1,136 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:converter="clr-namespace:AduSkin.Controls.Converter">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   <HierarchicalDataTemplate x:Key="ItemNode" ItemsSource="{Binding Children,Mode=TwoWay}">
+      <Border x:Name="bg" Background="Transparent" Height="30">
+         <TextBlock Text="{Binding Name}" ToolTip="{Binding Name}" FontSize="13" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"/>
+      </Border>
+   </HierarchicalDataTemplate>
+
+   <Style  x:Key="DefaultTreeViewItem" TargetType="{x:Type TreeViewItem}">
+      <Setter Property="MinHeight" Value="30" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="IsExpanded" Value="{Binding IsOpen}" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type TreeViewItem}">
+               <ControlTemplate.Resources>
+                  <converter:IndentConverter  x:Key="indentConverter"/>
+               </ControlTemplate.Resources>
+               <Grid Background="Transparent">
+                  <Grid.RowDefinitions>
+                     <RowDefinition/>
+                     <RowDefinition/>
+                  </Grid.RowDefinitions>
+                  <Border Name="itemBackground" Background="{TemplateBinding Background}"  
+                                BorderBrush="{TemplateBinding BorderBrush}"  
+                                BorderThickness="{TemplateBinding BorderThickness}"  
+                                Padding="{TemplateBinding Padding}">
+                     <Grid Background="Transparent">
+                        <Grid x:Name="ItemRoot" Margin="{Binding Converter={StaticResource indentConverter},RelativeSource={RelativeSource TemplatedParent}}" Background="Transparent">
+                           <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="20" />
+                              <ColumnDefinition Width="*"/>
+                           </Grid.ColumnDefinitions>
+                           <ToggleButton x:Name="Expander" Margin="4,0" ClickMode="Press" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}">
+                              <ToggleButton.Style>
+                                 <Style TargetType="{x:Type ToggleButton}">
+                                    <Setter Property="Focusable" Value="False"/>
+                                    <Setter Property="Width" Value="16"/>
+                                    <Setter Property="Height" Value="14"/>
+                                    <Setter Property="Template">
+                                       <Setter.Value>
+                                          <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                             <Border Background="Transparent"  Padding="2">
+                                                <Path x:Name="ExpandPath" Data="M352.19299999 96.196l415.63200001 415.804-415.632 415.803-63.445-63.616 352.017-352.209-352.017-352.102z" Stretch="Uniform" Width="12" Fill="{StaticResource Brush}"/>
+                                             </Border>
+                                             <ControlTemplate.Triggers>
+                                                <Trigger Property="IsChecked" Value="True">
+                                                   <Setter Property="RenderTransform" TargetName="ExpandPath">
+                                                      <Setter.Value>
+                                                         <RotateTransform Angle="90" CenterY="3" CenterX="3"/>
+                                                      </Setter.Value>
+                                                   </Setter>
+                                                   <Setter Property="Margin" TargetName="ExpandPath" Value="0,0,0,0"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                </Trigger>
+                                             </ControlTemplate.Triggers>
+                                          </ControlTemplate>
+                                       </Setter.Value>
+                                    </Setter>
+                                 </Style>
+                              </ToggleButton.Style>
+                           </ToggleButton>
+                           <ContentPresenter Grid.Column="1" Margin="5,0" x:Name="PART_Header" ContentSource="Header" HorizontalAlignment="Stretch" ></ContentPresenter>
+                        </Grid>
+                     </Grid>
+                  </Border>
+                  <ItemsPresenter x:Name="ItemsHost" Grid.Row="1"/>
+               </Grid>
+               <ControlTemplate.Triggers>
+                  <DataTrigger Binding="{Binding IsGrouping}" Value="false">
+                     <Setter Property="Visibility" TargetName="Expander" Value="Hidden"/>
+                  </DataTrigger>
+                  <Trigger Property="HasItems" Value="False">
+                     <Setter Property="Visibility" TargetName="Expander" Value="Collapsed"/>
+                  </Trigger>
+                  <Trigger Property="IsExpanded" Value="False">
+                     <Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed"/>
+                  </Trigger>
+                  <Trigger Property="IsSelected" Value="True">
+                     <Setter Property="Background" TargetName="itemBackground" Value="#20000000"/>
+                  </Trigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="IsFocused" Value="False"/>
+                        <Condition SourceName="itemBackground" Property="IsMouseOver" Value="true"/>
+                     </MultiTrigger.Conditions>
+                     <Setter Property="Background" Value=" #10000000" TargetName="itemBackground"/>
+                  </MultiTrigger>
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+
+   <Style TargetType="{x:Type AduSkin:AduTreeView}">
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+      <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+      <Setter Property="ItemContainerStyle" Value="{StaticResource DefaultTreeViewItem}"/>
+      <Setter Property="ItemTemplate" Value="{StaticResource ItemNode}"/>
+      <Setter Property="Padding" Value="0"/>
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type AduSkin:AduTreeView}">
+               <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                  <AduSkin:MetroScrollViewer Background="{TemplateBinding Background}" CanContentScroll="false" Focusable="false"
+                                HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+                     <ItemsPresenter />
+                  </AduSkin:MetroScrollViewer>
+               </Border>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsEnabled" Value="false">
+                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+
+   <Style x:Key="NorTreeView" TargetType="{x:Type TreeView}" BasedOn="{StaticResource TreeViewBase}">
+      <Setter Property="ItemTemplate" Value="{StaticResource ItemNode}"/>
+   </Style>
+</ResourceDictionary>

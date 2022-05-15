@@ -117,7 +117,7 @@
                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="2" x:Name="menu">
-                           <ContentPresenter HorizontalAlignment="Right" Content="{TemplateBinding Menu}" />
+                           <ContentPresenter Content="{TemplateBinding Menu}" />
                         </Grid>
                         <Grid x:Name="winContent" Grid.Row="1" Grid.ColumnSpan="4" Background="{TemplateBinding Background}">
                            <AdornerDecorator>

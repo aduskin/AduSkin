@@ -1,19 +1,13 @@
-﻿<UserControl x:Class="AduSkin.Demo.UserControls.TreeMenu"
+<UserControl x:Class="AduSkin.Demo.UserControls.TreeMenu"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AduSkin.Demo.UserControls"
+             xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/AduTreeView.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
-    <Grid>
-        <TreeView x:Name="TreeViewCompany" BorderThickness="0" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-    </Grid>
+   <Grid>
+      <AduSkin:AduTreeView  x:Name="TreeViewCompany"/>
+   </Grid>
 </UserControl>

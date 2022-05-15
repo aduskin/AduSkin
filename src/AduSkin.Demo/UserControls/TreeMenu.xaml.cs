@@ -1,4 +1,4 @@
-﻿using AduSkin.Demo.Models;
+using AduSkin.Demo.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,12 +32,12 @@ namespace AduSkin.Demo.UserControls
                 new CompanyModel()
                 {
                     IsGrouping=true,
-                    DisplayName="公司(3/3)",
+                    Name="公司(3/3)",
                     Children=new ObservableCollection<CompanyModel>()
                     {
                         new CompanyModel(){
                             IsGrouping=true,
-                            DisplayName="部门(2/3)",
+                            Name="部门(2/3)",
                             Children=new ObservableCollection<CompanyModel>()
                             {
                                 new CompanyModel(){
@@ -65,7 +65,7 @@ namespace AduSkin.Demo.UserControls
                         },
                          new CompanyModel(){
                             IsGrouping=true,
-                            DisplayName="部门(1/1)",
+                            Name="部门(1/1)",
                             Children=new ObservableCollection<CompanyModel>()
                             {
                                 new CompanyModel(){
@@ -78,7 +78,7 @@ namespace AduSkin.Demo.UserControls
                             }
                         }, new CompanyModel(){
                             IsGrouping=true,
-                            DisplayName="部门(1/1)",
+                            Name="部门(1/1)",
                             Children=new ObservableCollection<CompanyModel>()
                             {
                                 new CompanyModel(){

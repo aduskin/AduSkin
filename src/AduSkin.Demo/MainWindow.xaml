@@ -12,7 +12,7 @@
     Background="#FFF" mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource Locator},Path=Main}">
     <Metro:MetroWindow.Menu>
-        <Metro:MetroTitleMenu Height="40">
+        <Metro:MetroTitleMenu Height="40" HorizontalAlignment="Right">
             <Metro:MetroTitleMenuItem Header="联系">
                 <Metro:MetroMenuItem Header="QQ"  Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes"/>
                 <Metro:MetroMenuItem Header="QQ群" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb"/>
@@ -73,7 +73,11 @@
                 <Style TargetType="TabPanel">
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                 </Style>
-            </Metro:AduTabControl.Resources>
+            <Style TargetType="{x:Type Metro:AduTabItem}">
+               <Setter Property="Width" Value="120"/>
+               <Setter Property="Height" Value="50"/>
+            </Style>
+         </Metro:AduTabControl.Resources>
             <Metro:AduTabItem Header="实用案例">
                 <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,1,0,0">
                     <ContentControl  Content="{Binding PracticalCase}"/>
