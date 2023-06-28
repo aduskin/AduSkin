@@ -11,6 +11,7 @@
       <Setter Property="Foreground" Value="#000"/>
       <Setter Property="ErrorForeground" Value="{StaticResource ErrorBrush}"/>
       <Setter Property="TitleWidth" Value="50"/>
+      <Setter Property="TitleMinWidth" Value="50"/>
       <Setter Property="TitleHorizontalAlignment" Value="Right"/>
       <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
       <Setter Property="VerticalContentAlignment" Value="Stretch"/>
@@ -23,11 +24,11 @@
                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" MinHeight="{TemplateBinding MinHeight}">
                   <Grid>
                      <Grid.ColumnDefinitions>
-                        <ColumnDefinition MinWidth="{TemplateBinding TitleWidth}"/>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition MinWidth="{TemplateBinding TitleMinWidth}" Width="auto"/>
+                        <ColumnDefinition />
                         <ColumnDefinition x:Name="gridError" Width="auto"/>
                      </Grid.ColumnDefinitions>
-                     <TextBlock Grid.Column="0" Text="{TemplateBinding Title}" HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}" VerticalAlignment="{TemplateBinding TitleVerticalAlignment}"/>
+                     <TextBlock Grid.Column="0" Text="{TemplateBinding Title}" Width="{TemplateBinding TitleWidth}" HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}" VerticalAlignment="{TemplateBinding TitleVerticalAlignment}"/>
                      <ContentPresenter Grid.Column="1" Margin="5,0" 
                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                            Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"

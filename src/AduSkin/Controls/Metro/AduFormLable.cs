@@ -11,6 +11,8 @@ namespace AduSkin.Controls.Metro
       public static readonly DependencyProperty TitleProperty = ElementBase.Property<AduFormLable, string>("TitleProperty", "");
       //标题宽度
       public static readonly DependencyProperty TitleWidthProperty = ElementBase.Property<AduFormLable, double>("TitleWidthProperty");
+      //标题最小宽度
+      public static readonly DependencyProperty TitleMinWidthProperty = ElementBase.Property<AduFormLable, double>("TitleMinWidthProperty");
       //标题靠左右
       public static readonly DependencyProperty TitleHorizontalAlignmentProperty = ElementBase.Property<AduFormLable, HorizontalAlignment>("TitleHorizontalAlignmentProperty", HorizontalAlignment.Center);
       //标题靠上下
@@ -25,6 +27,7 @@ namespace AduSkin.Controls.Metro
       public static readonly DependencyProperty ErrorVisibilityProperty = ElementBase.Property<AduFormLable, Visibility>("ErrorVisibilityProperty", Visibility.Collapsed);
 
       public string Title { get { return (string)GetValue(TitleProperty); } set { SetValue(TitleProperty, value); } }
+      public double TitleMinWidth { get { return (double)GetValue(TitleMinWidthProperty); } set { SetValue(TitleMinWidthProperty, value); } }
       public double TitleWidth { get { return (double)GetValue(TitleWidthProperty); } set { SetValue(TitleWidthProperty, value); } }
       public HorizontalAlignment TitleHorizontalAlignment { get { return (HorizontalAlignment)GetValue(TitleHorizontalAlignmentProperty); } set { SetValue(TitleHorizontalAlignmentProperty, value); } }
       public HorizontalAlignment TitleVerticalAlignment { get { return (HorizontalAlignment)GetValue(TitleVerticalAlignmentProperty); } set { SetValue(TitleVerticalAlignmentProperty, value); } }

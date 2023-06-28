@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1000">
+             d:DesignHeight="2000" d:DesignWidth="1000">
    <Grid Background="{StaticResource DefaultBackground}" >
       <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
          <Metro:MetroWaterfallFlow x:Name="waterfallFlow" ListWidth="300">
@@ -302,7 +302,10 @@
                            <ComboBoxItem Content="广州" Tag="1" />
                         </Metro:AduComboBox>
                      </Metro:AduFormLable>
-                     <Metro:AduFormLable Title="密码" Margin="0,10,0,0" TitleWidth="82" ErrorMessage="请输入0-6位字母" ErrorVisibility="Visible">
+                     <Metro:AduFormLable Title="用户名" Margin="0,10,0,0"  >
+                        <Metro:MetroTextBox/>
+                     </Metro:AduFormLable>
+                     <Metro:AduFormLable Title="密码" Margin="0,10,0,0"  ErrorMessage="请输入0-6位字母" ErrorVisibility="Visible">
                         <Metro:AduPasswordBox/>
                      </Metro:AduFormLable>
                      <Metro:AduFormLable Title="选择目录" Margin="0,10,0,0">
