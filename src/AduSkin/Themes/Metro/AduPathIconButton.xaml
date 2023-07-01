@@ -16,7 +16,7 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Foreground" Value="#000000" />
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="#00000000" />
         <Setter Property="MouseOverBackground" Value="Transparent" />
         <Setter Property="PressedBackground" Value="Transparent" />
         <Setter Property="NormalPathColor" Value="{StaticResource Brush}" />
@@ -32,6 +32,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Adu:AduPathIconButton}">
                     <Border x:Name="border" Padding="{TemplateBinding Padding}"
+                            Width="{TemplateBinding Width}" MaxWidth="{TemplateBinding MaxWidth}" MinWidth="{TemplateBinding MinWidth}"
+                            Height="{TemplateBinding Height}" MaxHeight="{TemplateBinding MaxHeight}" MinHeight="{TemplateBinding MinHeight}"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
