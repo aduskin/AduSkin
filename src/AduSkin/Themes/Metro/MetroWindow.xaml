@@ -133,26 +133,26 @@
                         </Grid>
                         <Grid Grid.Column="3" x:Name="sysButton" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                              <Button x:Name="minimizedButton" Click="Minimized" Style="{StaticResource buttonStyle}">
+                              <Button x:Name="minimizedButton" Style="{StaticResource buttonStyle}">
                                  <Button.Content>
                                     <Path Width="11" Height="2" Data="{StaticResource Icon_SysMin}" Fill="{TemplateBinding SysButtonColor}"  Stretch="Fill" />
                                  </Button.Content>
                               </Button>
-                              <Button x:Name="maximizedButton" Click="Maximized" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
+                              <Button x:Name="maximizedButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
                                  <Button.Content>
                                     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                                        <Path Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SysMax}" />
                                     </Grid>
                                  </Button.Content>
                               </Button>
-                              <Button x:Name="normalButton" Click="Normal" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
+                              <Button x:Name="normalButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
                                  <Button.Content>
                                     <Grid Margin="0,2,3,0" HorizontalAlignment="Center" VerticalAlignment="Center">
                                        <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemRestore}" />
                                     </Grid>
                                  </Button.Content>
                               </Button>
-                              <Button x:Name="closeButton" Click="Close" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
+                              <Button x:Name="closeButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
                                  <Button.Content>
                                     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                                        <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemClose}" />

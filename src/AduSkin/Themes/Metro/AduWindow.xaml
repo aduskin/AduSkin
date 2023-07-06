@@ -100,7 +100,6 @@
                                 <StackPanel Visibility="{TemplateBinding SysButtonVisible}" HorizontalAlignment="Right" Orientation="Horizontal" Margin="{TemplateBinding SysButtonMargin}" VerticalAlignment="Top" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                                     <Button
                                             x:Name="minimizedButton"
-                                            Click="Minimized"
                                             Style="{StaticResource buttonStyle}">
                                         <Button.Content>
                                             <Path
@@ -113,7 +112,6 @@
                                     </Button>
                                     <Button
                                             x:Name="maximizedButton"
-                                            Click="Maximized"
                                             Style="{StaticResource buttonStyle}">
                                         <Button.Content>
                                             <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -123,7 +121,6 @@
                                     </Button>
                                     <Button
                                             x:Name="normalButton"
-                                            Click="Normal"
                                             Style="{StaticResource buttonStyle}">
                                         <Button.Content>
                                             <Grid
@@ -136,7 +133,6 @@
                                     </Button>
                                     <Button
                                             x:Name="closeButton"
-                                            Click="Close"
                                             Style="{StaticResource buttonStyle}">
                                         <Button.Content>
                                             <Grid HorizontalAlignment="Center" VerticalAlignment="Center">

@@ -2,6 +2,7 @@ using AduSkin.Themes;
 using AduSkin.Utility.Element;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -11,6 +12,7 @@ namespace AduSkin.Controls.Metro
 {
    public partial class AduWindow : Window
    {
+      private Button _btnMinimized, _btnMaximized, _btnNormal, _btnClose;
       public static readonly DependencyProperty IsSubWindowShowProperty = ElementBase.Property<AduWindow, bool>("IsSubWindowShowProperty", false);
       public static readonly DependencyProperty MenuProperty = ElementBase.Property<AduWindow, object>("MenuProperty", null);
       public static readonly new DependencyProperty BorderBrushProperty = ElementBase.Property<AduWindow, Brush>("BorderBrushProperty");
@@ -92,11 +94,61 @@ namespace AduSkin.Controls.Metro
          Utility.Refresh(this);
       }
 
+      /// <summary>在派生类中重写时，每当应用程序代码或内部进程调用 <see cref="FrameworkElement.ApplyTemplate" /> 时调用。</summary>
+      public override void OnApplyTemplate()
+      {
+         _btnMinimized = (Button)GetTemplateChild("minimizedButton");
+         _btnMaximized = (Button)GetTemplateChild("maximizedButton");
+         _btnNormal = (Button)GetTemplateChild("normalButton");
+         _btnClose = (Button)GetTemplateChild("closeButton");
+         BindSystemButtonEvent();
+         base.OnApplyTemplate();
+      }
+
       static AduWindow()
       {
          ElementBase.DefaultStyle<AduWindow>(DefaultStyleKeyProperty);
       }
 
+      /// <summary>给系统按钮绑定事件</summary>
+      private void BindSystemButtonEvent()
+      {
+         _btnMinimized.Click += Minimized;
+         _btnMaximized.Click += Maximized;
+         _btnNormal.Click += Normal;
+         _btnClose.Click += Close;
+      }
 
+      /// <summary>窗口最小化按钮事件</summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      private void Minimized(object sender, RoutedEventArgs e)
+      {
+         GetWindow(sender as FrameworkElement).WindowState = WindowState.Minimized;
+      }
+
+      /// <summary>窗口最大化按钮事件</summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      private void Maximized(object sender, RoutedEventArgs e)
+      {
+         GetWindow(sender as FrameworkElement).WindowState = WindowState.Maximized;
+      }
+
+      /// <summary>还原窗口按钮事件</summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      private void Normal(object sender, RoutedEventArgs e)
+      {
+         Window.GetWindow(sender as FrameworkElement).WindowState = WindowState.Normal;
+      }
+
+      /// <summary>关闭窗口按钮事件</summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      private void Close(object sender, RoutedEventArgs e)
+      {
+         Window.GetWindow(sender as FrameworkElement).Close();
+      }
    }
 }
