@@ -1,5 +1,4 @@
 <ResourceDictionary
-    x:Class="AduSkin.Themes.Metro.MetroWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
@@ -103,65 +102,67 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroWindow}">
                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                  <Grid Background="#ffffff">
+                  <Grid Background="{StaticResource DefaultWhiteBrush}" x:Name="WindowGrid">
                      <Border Margin="-1" BorderBrush="#000000" BorderThickness="{Binding BorderThickness, ElementName=border}" Opacity="0.15" />
-                     <Grid x:Name="windowGrid" Background="{TemplateBinding BorderBrush}">
+                     <Grid x:Name="WIdowGrid">
                         <Grid.RowDefinitions>
-                           <RowDefinition x:Name="titleSize" Height="40" />
+                           <RowDefinition x:Name="TitleHeight" Height="40" />
                            <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                           <ColumnDefinition x:Name="iconSize" Width="36" />
-                           <ColumnDefinition Width="Auto" />
-                           <ColumnDefinition />
-                           <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="2" x:Name="menu">
-                           <ContentPresenter Content="{TemplateBinding Menu}" />
+                        <Grid x:Name="PART_Title" Background="{TemplateBinding BorderBrush}">
+                           <Grid.ColumnDefinitions>
+                              <ColumnDefinition x:Name="iconSize" Width="36" />
+                              <ColumnDefinition Width="Auto" />
+                              <ColumnDefinition />
+                              <ColumnDefinition Width="Auto" />
+                           </Grid.ColumnDefinitions>
+                           <Grid x:Name="icon" Grid.Column="0" Margin="7,0,0,0">
+                              <Metro:MetroImage Source="{TemplateBinding Icon}" />
+                              <Rectangle Fill="{TemplateBinding TitleForeground}" Opacity="0" />
+                           </Grid>
+                           <Grid Grid.Column="1" x:Name="title">
+                              <Metro:MetroTextBlock Margin="10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{TemplateBinding TitleForeground}" FontSize="{TemplateBinding TitleFontSize}" Text="{TemplateBinding Title}" />
+                           </Grid>
+                           <Grid Grid.Column="2" x:Name="menu">
+                              <ContentPresenter Content="{TemplateBinding Menu}" />
+                           </Grid>
+                           <Grid Grid.Column="3" x:Name="PART_SysButton" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                              <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                 <Button x:Name="PART_MinimizedButton" Style="{StaticResource buttonStyle}">
+                                    <Button.Content>
+                                       <Path Width="11" Height="2" Data="{StaticResource Icon_SysMin}" Fill="{TemplateBinding SysButtonColor}"  Stretch="Fill" />
+                                    </Button.Content>
+                                 </Button>
+                                 <Button x:Name="PART_MaximizedButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
+                                    <Button.Content>
+                                       <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                          <Path Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SysMax}" />
+                                       </Grid>
+                                    </Button.Content>
+                                 </Button>
+                                 <Button x:Name="PART_NormalButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
+                                    <Button.Content>
+                                       <Grid Margin="0,2,3,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                          <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemRestore}" />
+                                       </Grid>
+                                    </Button.Content>
+                                 </Button>
+                                 <Button x:Name="PART_CloseButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
+                                    <Button.Content>
+                                       <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                          <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemClose}" />
+                                       </Grid>
+                                    </Button.Content>
+                                 </Button>
+                              </StackPanel>
+                           </Grid>
                         </Grid>
-                        <Grid x:Name="winContent" Grid.Row="1" Grid.ColumnSpan="4" Background="{TemplateBinding Background}">
+                        <Grid x:Name="PART_Content" Grid.Row="1" Background="{TemplateBinding Background}">
                            <AdornerDecorator>
-                              <ContentPresenter />
+                              <ContentPresenter/>
                            </AdornerDecorator>
                         </Grid>
-                        <Grid x:Name="icon" Grid.Column="0" Margin="7,0,0,0">
-                           <Metro:MetroImage Source="{TemplateBinding Icon}" />
-                           <Rectangle Fill="{TemplateBinding TitleForeground}" Opacity="0" />
-                        </Grid>
-                        <Grid Grid.Column="1" x:Name="title">
-                           <Metro:MetroTextBlock Margin="10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{TemplateBinding TitleForeground}" FontSize="{TemplateBinding TitleFontSize}" Text="{TemplateBinding Title}" />
-                        </Grid>
-                        <Grid Grid.Column="3" x:Name="sysButton" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
-                           <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                              <Button x:Name="minimizedButton" Click="Minimized" Style="{StaticResource buttonStyle}">
-                                 <Button.Content>
-                                    <Path Width="11" Height="2" Data="{StaticResource Icon_SysMin}" Fill="{TemplateBinding SysButtonColor}"  Stretch="Fill" />
-                                 </Button.Content>
-                              </Button>
-                              <Button x:Name="maximizedButton" Click="Maximized" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
-                                 <Button.Content>
-                                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                       <Path Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SysMax}" />
-                                    </Grid>
-                                 </Button.Content>
-                              </Button>
-                              <Button x:Name="normalButton" Click="Normal" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
-                                 <Button.Content>
-                                    <Grid Margin="0,2,3,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                       <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemRestore}" />
-                                    </Grid>
-                                 </Button.Content>
-                              </Button>
-                              <Button x:Name="closeButton" Click="Close" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
-                                 <Button.Content>
-                                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                       <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemClose}" />
-                                    </Grid>
-                                 </Button.Content>
-                              </Button>
-                           </StackPanel>
-                        </Grid>
-                        <Rectangle x:Name="disableRectangle" Grid.RowSpan="2" Grid.ColumnSpan="4" Fill="#FF000000" IsHitTestVisible="False" Opacity="0" />
+                        <Rectangle x:Name="disableRectangle" Grid.RowSpan="2" Fill="#FF000000" IsHitTestVisible="False" Opacity="0" />
                      </Grid>
                   </Grid>
                   <VisualStateManager.VisualStateGroups>
@@ -181,43 +182,41 @@
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="ResizeMode" Value="NoResize">
-                     <Setter TargetName="minimizedButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_MinimizedButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_MaximizedButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_NormalButton" Property="Visibility" Value="Collapsed" />
                   </Trigger>
                   <Trigger Property="ResizeMode" Value="CanMinimize">
-                     <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_MaximizedButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_NormalButton" Property="Visibility" Value="Collapsed" />
                   </Trigger>
                   <Trigger Property="WindowState" Value="Maximized">
-                     <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
-                     <!--<Setter TargetName="windowGrid" Property="Margin" Value="8" />-->
-                     <Setter TargetName="windowGrid" Property="Margin" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Shell:WindowChrome.WindowChrome).ResizeBorderThickness}" />
+                     <Setter TargetName="PART_MaximizedButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="TitleHeight" Property="Height" Value="50" />
+                     <Setter TargetName="PART_Title" Property="Margin" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Shell:WindowChrome.WindowChrome).ResizeBorderThickness}" />
                      <Setter TargetName="border" Property="BorderThickness" Value="0" />
                   </Trigger>
                   <Trigger Property="WindowState" Value="Normal">
-                     <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_NormalButton" Property="Visibility" Value="Collapsed" />
                   </Trigger>
                   <Trigger Property="Icon" Value="{x:Null}">
                      <Setter TargetName="iconSize" Property="Width" Value="0" />
                      <Setter Property="MinWidth" Value="120" />
                   </Trigger>
                   <Trigger Property="WindowStyle" Value="ToolWindow">
-                     <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="minimizedButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_MaximizedButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_NormalButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_MinimizedButton" Property="Visibility" Value="Collapsed" />
                   </Trigger>
                   <Trigger Property="WindowStyle" Value="None">
-                     <Setter TargetName="maximizedButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="normalButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="minimizedButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="closeButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="sysButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="icon" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="title" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="menu" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="winContent" Property="Grid.Row" Value="0" />
-                     <Setter TargetName="winContent" Property="Grid.RowSpan" Value="2" />
+                     <Setter TargetName="PART_MaximizedButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_NormalButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_MinimizedButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_SysButton" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_Title" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="PART_Content" Property="Grid.Row" Value="0" />
+                     <Setter TargetName="PART_Content" Property="Grid.RowSpan" Value="2" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>

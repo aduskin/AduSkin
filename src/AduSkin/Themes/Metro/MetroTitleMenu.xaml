@@ -11,7 +11,7 @@
 
       <Setter Property="VerticalAlignment" Value="Center"/>
       <Setter Property="Height" Value="auto"/>
-      <Setter Property="Background" Value="#fff"/>
+      <Setter Property="Background" Value="{StaticResource Brush}"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroTitleMenu}">

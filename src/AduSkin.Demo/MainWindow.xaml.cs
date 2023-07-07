@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls;
+using AduSkin.Controls;
 using AduSkin.Controls.Metro;
 using AduSkin.Demo.Models;
 using AduSkin.Demo.UserControls;
@@ -21,12 +21,7 @@ namespace AduSkin.Demo
       public MainWindow()
       {
          InitializeComponent();
-         this.Closed += delegate{Application.Current.Shutdown();};
-         Theme.ColorChange += delegate
-         {
-            // 不要通过XAML来绑定颜色，无法获取到通知
-            BorderBrush = Theme.CurrentColor.OpaqueSolidColorBrush;
-         };
+         this.Closed += delegate { Application.Current.Shutdown(); };
       }
    }
 }

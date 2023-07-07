@@ -74,7 +74,7 @@ namespace AduSkin.Controls.Metro
 
       public AduPage()
       {
-         Utility.Refresh(this);
+         
          CommandBindings.Add(new CommandBinding(ControlCommands.Prev, ButtonPrev_OnClick));
          CommandBindings.Add(new CommandBinding(ControlCommands.Next, ButtonNext_OnClick));
          CommandBindings.Add(new CommandBinding(ControlCommands.Selected, ToggleButton_OnChecked));

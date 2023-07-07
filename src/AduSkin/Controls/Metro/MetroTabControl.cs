@@ -15,7 +15,7 @@ namespace AduSkin.Controls.Metro
         {
             Loaded += delegate { ElementBase.GoToState(this, "SelectionLoaded"); };
             SelectionChanged += delegate (object sender, SelectionChangedEventArgs e) { if (e.Source is MetroTabControl) { SelectionState(); } };
-            Utility.Refresh(this);
+            
         }
 
         static MetroTabControl()

@@ -27,19 +27,19 @@ namespace AduSkin.Controls.Metro
       #endregion
 
       #region DependencyProperty
-      #region Watermark
+      #region InputHint
 
       /// <summary>
       /// 获取或者设置水印
       /// </summary>
-      public string Watermark
+      public string InputHint
       {
-         get { return (string)GetValue(WatermarkProperty); }
-         set { SetValue(WatermarkProperty, value); }
+         get { return (string)GetValue(InputHintProperty); }
+         set { SetValue(InputHintProperty, value); }
       }
 
-      public static readonly DependencyProperty WatermarkProperty =
-          DependencyProperty.Register("Watermark", typeof(string), typeof(AduPasswordBox));
+      public static readonly DependencyProperty InputHintProperty =
+          DependencyProperty.Register("InputHint", typeof(string), typeof(AduPasswordBox));
 
       #endregion
       #region CornerRadius
@@ -311,7 +311,7 @@ namespace AduSkin.Controls.Metro
       #region Constructors
       public AduPasswordBox()
       {
-         Utility.Refresh(this);
+         
       }
 
       static AduPasswordBox()

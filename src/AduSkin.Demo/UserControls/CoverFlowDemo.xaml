@@ -7,12 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-      <AduSkin:CoverFlow Grid.Row="0" x:Name="CoverFlowMain" Width="500" Height="200">
-         <AduSkin:CoverFlow.ItemTemplate>
+      <AduSkin:AduCoverFlow Grid.Row="0" x:Name="CoverFlowMain" Width="500" Height="200">
+         <AduSkin:AduCoverFlow.ItemTemplate>
             <DataTemplate>
                <Image x:Name="cover" Source="{Binding imgpath}" Stretch="UniformToFill"/>
             </DataTemplate>
-         </AduSkin:CoverFlow.ItemTemplate>
-      </AduSkin:CoverFlow>
+         </AduSkin:AduCoverFlow.ItemTemplate>
+      </AduSkin:AduCoverFlow>
    </Grid>
 </UserControl>

@@ -31,7 +31,7 @@ namespace AduSkin.Controls.Metro
 
         public MetroExpander()
         {
-            Utility.Refresh(this);
+            
 
             Loaded += delegate
             {

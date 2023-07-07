@@ -10,7 +10,7 @@ namespace AduSkin.Controls.Metro
    {
       public AduButtonIcon()
       {
-         Utility.Refresh(this);
+         
       }
 
       static AduButtonIcon()

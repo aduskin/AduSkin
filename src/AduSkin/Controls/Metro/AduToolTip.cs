@@ -47,7 +47,7 @@ namespace AduSkin.Controls.Metro
         #region Override方法
         public AduToolTip()
         {
-         Utility.Refresh(this);
+         
          this.Initialized += (o, e) =>
             {
                 this.mPlacement = this.PlacementEx;

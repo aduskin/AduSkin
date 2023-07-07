@@ -13,7 +13,7 @@ namespace AduSkin.Controls.Metro
    {
       public AduLoading()
       {
-         Utility.Refresh(this);
+         
       }
 
       #region Private属性

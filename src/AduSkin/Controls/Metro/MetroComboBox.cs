@@ -15,7 +15,7 @@ namespace AduSkin.Controls.Metro
 
         public MetroComboBox()
         {
-            Utility.Refresh(this);
+            
         }
 
         static MetroComboBox()

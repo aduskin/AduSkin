@@ -23,7 +23,7 @@ namespace AduSkin.Controls.Metro
 
         public MetroScrollViewer()
         {
-            Utility.Refresh(this);
+            
         }
 
         static MetroScrollViewer()

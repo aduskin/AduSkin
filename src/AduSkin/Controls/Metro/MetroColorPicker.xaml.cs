@@ -74,7 +74,7 @@ namespace AduSkin.Controls.Metro
         private void Initialize(HsbaColor hsbaColor)
         {
             // 绑定主题
-            Utility.Refresh(this);
+            
 
             // 设置当前初始颜色
             currentColor = hsbaColor;

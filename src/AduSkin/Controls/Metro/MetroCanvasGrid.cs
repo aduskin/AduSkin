@@ -20,7 +20,7 @@ namespace AduSkin.Controls.Metro
 
         public MetroCanvasGrid()
         {
-            Utility.Refresh(this);
+            
         }
 
         static MetroCanvasGrid()

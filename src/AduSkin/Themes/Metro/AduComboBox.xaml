@@ -158,6 +158,7 @@
       <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="MinHeight" Value="26" />
       <Setter Property="Background" Value="#FFF"/>
+      <Setter Property="Foreground" Value="{StaticResource Brush}"/>
       <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
       <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="ToggleButtonColor" Value="{StaticResource Brush}" />
@@ -165,7 +166,7 @@
       <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemStyle}" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Padding" Value="5,0,0,0" />
-      <Setter Property="Watermark" Value="请选择..." />
+      <Setter Property="InputHint" Value="请选择..." />
       <Setter Property="CornerRadius" Value="3" />
       <Setter Property="Control.Template">
          <Setter.Value>
@@ -214,7 +215,7 @@
                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                        FontSize="{TemplateBinding FontSize}"
                                        Opacity="0.4" IsHitTestVisible="False"
-                                       Text="{TemplateBinding Watermark}">
+                                       Text="{TemplateBinding InputHint}">
                         <TextBlock.Style>
                            <Style TargetType="{x:Type TextBlock}">
                               <Style.Triggers>

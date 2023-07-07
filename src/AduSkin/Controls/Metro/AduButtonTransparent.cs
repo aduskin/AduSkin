@@ -11,7 +11,7 @@ namespace AduSkin.Controls.Metro
    {
       public AduButtonTransparent()
       {
-         Utility.Refresh(this);
+         
       }
 
       static AduButtonTransparent()

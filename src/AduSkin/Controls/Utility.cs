@@ -66,14 +66,14 @@ namespace AduSkin.Controls
             }
             if (control is AduDIYCheckBox) { (control as AduDIYCheckBox).NormalPathColor = mw.BorderBrush; }
             if (control is AduTimeSelector) { (control as AduTimeSelector).Foreground = mw.BorderBrush; }
-            if (control is SegmentItem) { (control as SegmentItem).SelectForeground = mw.BorderBrush; }
+            if (control is AduSegmentItem) { (control as AduSegmentItem).SelectForeground = mw.BorderBrush; }
             if (control is AduSlider) { (control as AduSlider).Background = mw.BorderBrush; }
             if (control is AduPasswordBox) { (control as AduPasswordBox).BorderBrush = mw.BorderBrush; }
             if (control is AduCheckBox) { (control as AduCheckBox).Foreground = mw.BorderBrush; }
             if (control is AduComboBox) { (control as AduComboBox).Foreground = mw.BorderBrush; }
             if (control is AduComboBox) { (control as AduComboBox).ToggleButtonColor = mw.BorderBrush; }
             if (control is AduRadioButton) { (control as AduRadioButton).Foreground = mw.BorderBrush; }
-            if (control is AduTabItem) { (control as AduTabItem).Foreground = mw.BorderBrush; }
+            if (control is AduManageableTabItem) { (control as AduManageableTabItem).Foreground = mw.BorderBrush; }
             if (control is AduFlatRadionButton) { (control as MetroTitleMenuItem).Foreground = mw.BorderBrush; }
             if (control is AduIndexRadionButton) { (control as AduIndexRadionButton).BorderBrush = mw.BorderBrush; }
             if (control is AduLoading) { (control as AduLoading).Foreground = mw.BorderBrush; }
@@ -82,11 +82,8 @@ namespace AduSkin.Controls
             if (control is AduRadioButtonIcon) { (control as AduRadioButtonIcon).SelectColor = mw.BorderBrush; }
             if (control is AduNumericUpDownBase) { (control as AduNumericUpDownBase).Background = mw.BorderBrush; }
             if (control is AduPathIconButton) { (control as AduPathIconButton).NormalPathColor = mw.BorderBrush; }
-
-            if (control is RatingBar) { (control as RatingBar).SelectedColor = mw.BorderBrush; }
-            if (control is AnimationPath) { (control as AnimationPath).Stroke = mw.BorderBrush; }
-            //if (control is SegmentControl) { (control as SegmentControl).BorderBrush = (control as SegmentControl).Foreground =  mw.BorderBrush; }
-
+            if (control is AduRatingBar) { (control as AduRatingBar).SelectedColor = mw.BorderBrush; }
+            if (control is AduAnimationPath) { (control as AduAnimationPath).Stroke = mw.BorderBrush; }
          }
       }
    }

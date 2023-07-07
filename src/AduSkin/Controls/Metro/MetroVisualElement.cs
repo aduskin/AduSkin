@@ -21,7 +21,7 @@ namespace AduSkin.Controls.Metro
 
         public MetroVisualElement()
         {
-            Utility.Refresh(this);
+            
         }
 
         static MetroVisualElement()

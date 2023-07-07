@@ -46,13 +46,13 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPasswordBox.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduUpload.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDataGrid.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduDatePicker.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduCalendar.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduCalendarItem.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduCalendarButton.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduCalendarDayButton.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduTimePicker.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDatePickers/AduTimeSelector.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduDatePicker.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduCalendar.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduCalendarItem.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduCalendarButton.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduCalendarDayButton.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduTimePicker.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduTimeSelector.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFlatButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPathIconButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFlatRadionButton.xaml" />
@@ -60,13 +60,13 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduGroupBoxNor.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduSegmentControl.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduNavigationPanel.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduLoading/AduLoading.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Loading/AduLoading.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFlatSilder.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDIYRadionButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDIYCheckBox.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduCheckButton.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/RatingBar.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/RatingBarButton.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/AduRatingBar.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/AduRatingBarButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTimeLine.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduIndexRadionButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduListBox.xaml"/>
@@ -77,12 +77,12 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduChooseBox.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFormLable.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTreeView.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCShield.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTransitioningContentControl.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTabControl.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCRunningBlock.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/HCTimeBarNew.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Cover/CoverFlow.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Cover/CoverView.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduShield.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTransitioningContentControl.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduManageableTabControl.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduRunningBlock.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTimeBarNew.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Cover/AduCoverFlow.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Cover/AduCoverView.xaml" />
    </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

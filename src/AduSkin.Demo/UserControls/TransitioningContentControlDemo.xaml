@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AduSkin.Demo.UserControls.TransitioningContentControlDemo"
+<UserControl x:Class="AduSkin.Demo.UserControls.TransitioningContentControlDemo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,42 +13,42 @@
         </Grid.RowDefinitions>
         <Metro:MetroSwitch HorizontalAlignment="Center" IsChecked="True" Name="ButtonVisibilitySwitch" /> 
         <UniformGrid Visibility="{Binding IsChecked,ElementName=ButtonVisibilitySwitch,Converter={StaticResource Boolean2VisibilityConverter}}" Grid.Row="1" Rows="4" Columns="3">
-            <Metro:TransitioningContentControl>
+            <Metro:AduTransitioningContentControl>
                 <Label HorizontalAlignment="Stretch" Content="Right2Left" VerticalAlignment="Center" Margin="20" />
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionMode="Left2Right">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionMode="Left2Right">
                 <Label HorizontalAlignment="Stretch" Content="Left2Right" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionMode="Bottom2Top">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionMode="Bottom2Top">
                 <Label HorizontalAlignment="Stretch" Content="Bottom2Top" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionMode="Top2Bottom">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionMode="Top2Bottom">
                 <Label HorizontalAlignment="Stretch" Content="Top2Bottom" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionMode="Right2LeftWithFade">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionMode="Right2LeftWithFade">
                 <Label HorizontalAlignment="Stretch" Content="Right2LeftWithFade" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionMode="Left2RightWithFade">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionMode="Left2RightWithFade">
                 <Label HorizontalAlignment="Stretch" Content="Left2RightWithFade" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionMode="Bottom2TopWithFade">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionMode="Bottom2TopWithFade">
                 <Label HorizontalAlignment="Stretch" Content="Bottom2TopWithFade" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionMode="Top2BottomWithFade">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionMode="Top2BottomWithFade">
                 <Label HorizontalAlignment="Stretch" Content="Top2BottomWithFade" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionMode="Right2LeftWithFade">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionMode="Right2LeftWithFade">
                 <Label HorizontalAlignment="Stretch" Content="Right2LeftWithFade" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionStoryboard="{StaticResource Custom1Transition}">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionStoryboard="{StaticResource Custom1Transition}">
                 <Label HorizontalAlignment="Stretch" Content="Custom1" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionStoryboard="{StaticResource Custom2Transition}">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionStoryboard="{StaticResource Custom2Transition}">
                 <Label HorizontalAlignment="Stretch" Content="Custom2" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
-            <Metro:TransitioningContentControl TransitionStoryboard="{StaticResource Custom3Transition}">
+            </Metro:AduTransitioningContentControl>
+            <Metro:AduTransitioningContentControl TransitionStoryboard="{StaticResource Custom3Transition}">
                 <Label HorizontalAlignment="Stretch" Content="Custom3" VerticalAlignment="Center" Margin="20"/>
-            </Metro:TransitioningContentControl>
+            </Metro:AduTransitioningContentControl>
         </UniformGrid>
     </Grid>
 </UserControl>

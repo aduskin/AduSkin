@@ -29,7 +29,7 @@ namespace AduSkin.Controls.Metro
 
         public MetroProgressBar()
         {
-            Utility.Refresh(this);
+            
             ValueChanged += delegate
             {
                 if (Hint == null||Hint.EndsWith(" %"))

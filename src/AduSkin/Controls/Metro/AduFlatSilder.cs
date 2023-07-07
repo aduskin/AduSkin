@@ -107,7 +107,7 @@ namespace AduSkin.Controls.Metro
 
       public AduFlatSilder()
       {
-         Utility.Refresh(this);
+         
       }
       #endregion
 

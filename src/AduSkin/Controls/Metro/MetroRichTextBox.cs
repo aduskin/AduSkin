@@ -43,7 +43,7 @@ namespace AduSkin.Controls.Metro
         public MetroRichTextBox()
         {
             ContextMenu = null;
-            Utility.Refresh(this);
+            
             Loaded += delegate
             {
                 SetColor();

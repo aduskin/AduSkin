@@ -43,7 +43,7 @@ namespace AduSkin.Controls.Metro
             SelectionChanged += delegate (object sender, SelectionChangedEventArgs e) { if (e.Source is MetroMenuTabControl) { SelectionState(); } };
             CommandBindings.Add(new CommandBinding(IconModeClickCommand, delegate { IconMode = !IconMode; GoToState();}));
 
-            Utility.Refresh(this);
+            
         }
 
         static MetroMenuTabControl()

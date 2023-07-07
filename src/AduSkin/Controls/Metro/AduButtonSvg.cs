@@ -8,7 +8,7 @@ namespace AduSkin.Controls.Metro
    {
       public AduButtonSvg()
       {
-         Utility.Refresh(this);
+         
       }
 
       static AduButtonSvg()

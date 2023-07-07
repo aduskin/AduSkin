@@ -15,7 +15,7 @@
 
 
    <!--#region 左边样式-->
-   <Style x:Key="LeftIndicatorStyle" TargetType="{x:Type Adu:SegmentControl}">
+   <Style x:Key="LeftIndicatorStyle" TargetType="{x:Type Adu:AduSegmentControl}">
       <Setter Property="Padding" Value="0" />
       <Setter Property="CornerRadius" Value="0" />
       <Setter Property="VerticalAlignment" Value="Top" />
@@ -31,14 +31,14 @@
       </Setter>
    </Style>
 
-   <Style x:Key="LeftIndicatorItemStyle" TargetType="{x:Type Adu:SegmentItem}">
+   <Style x:Key="LeftIndicatorItemStyle" TargetType="{x:Type Adu:AduSegmentItem}">
       <Setter Property="Padding" Value="0" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="Background" Value="Transparent" />
       <Setter Property="HorizontalContentAlignment" Value="Right" />
       <Setter Property="Template">
          <Setter.Value>
-            <ControlTemplate TargetType="{x:Type Adu:SegmentItem}">
+            <ControlTemplate TargetType="{x:Type Adu:AduSegmentItem}">
                <Border x:Name="Bd"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
@@ -90,7 +90,7 @@
    <!--#endregion-->
 
    <!--#region 右边样式-->
-   <Style x:Key="RightIndicatorStyle" TargetType="{x:Type Adu:SegmentControl}">
+   <Style x:Key="RightIndicatorStyle" TargetType="{x:Type Adu:AduSegmentControl}">
       <Setter Property="Padding" Value="0" />
       <Setter Property="CornerRadius" Value="0" />
       <Setter Property="VerticalAlignment" Value="Top" />
@@ -106,14 +106,14 @@
       </Setter>
    </Style>
 
-   <Style x:Key="RightIndicatorItemStyle" TargetType="{x:Type Adu:SegmentItem}">
+   <Style x:Key="RightIndicatorItemStyle" TargetType="{x:Type Adu:AduSegmentItem}">
       <Setter Property="Padding" Value="0" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="Background" Value="Transparent" />
       <Setter Property="HorizontalContentAlignment" Value="Left" />
       <Setter Property="Template">
          <Setter.Value>
-            <ControlTemplate TargetType="{x:Type Adu:SegmentItem}">
+            <ControlTemplate TargetType="{x:Type Adu:AduSegmentItem}">
                <Border x:Name="Bd"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
@@ -182,7 +182,7 @@
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
          </Grid.ColumnDefinitions>
-         <Adu:SegmentControl x:Name="PART_Indicator" SelectedIndex="0"
+         <Adu:AduSegmentControl x:Name="PART_Indicator" SelectedIndex="0"
                                 HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
                                 Margin="{TemplateBinding IndicatorMargin}"
                              Foreground="{TemplateBinding Foreground}"
@@ -206,7 +206,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
          </Grid.RowDefinitions>
-         <Adu:SegmentControl x:Name="PART_Indicator" SelectedIndex="0"
+         <Adu:AduSegmentControl x:Name="PART_Indicator" SelectedIndex="0"
                                 HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
                                 Margin="{TemplateBinding IndicatorMargin}"
                                 ItemsSource="{TemplateBinding ItemsSource}"
@@ -227,7 +227,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
          </Grid.ColumnDefinitions>
-         <Adu:SegmentControl x:Name="PART_Indicator" Grid.Column="1" SelectedIndex="0"
+         <Adu:AduSegmentControl x:Name="PART_Indicator" Grid.Column="1" SelectedIndex="0"
                                 HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
                                 Margin="{TemplateBinding IndicatorMargin}"
                                 ItemsSource="{TemplateBinding ItemsSource}"
@@ -248,7 +248,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
          </Grid.RowDefinitions>
-         <Adu:SegmentControl x:Name="PART_Indicator" Grid.Row="1" SelectedIndex="0"
+         <Adu:AduSegmentControl x:Name="PART_Indicator" Grid.Row="1" SelectedIndex="0"
                                 HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
                                 Margin="{TemplateBinding IndicatorMargin}"
                                 ItemsSource="{TemplateBinding ItemsSource}"

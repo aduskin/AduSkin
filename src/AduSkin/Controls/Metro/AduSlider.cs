@@ -11,7 +11,7 @@ namespace AduSkin.Controls.Metro
     {
         public AduSlider()
         {
-            Utility.Refresh(this);
+            
         }
 
         static AduSlider()

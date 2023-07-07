@@ -20,7 +20,7 @@ namespace AduSkin.Controls.Metro
 
         public MetroButton()
         {
-            Utility.Refresh(this);
+            
         }
 
         static MetroButton()

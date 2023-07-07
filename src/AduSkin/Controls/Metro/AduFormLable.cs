@@ -38,7 +38,7 @@ namespace AduSkin.Controls.Metro
 
       public AduFormLable()
       {
-         Utility.Refresh(this);
+         
       }
 
       static AduFormLable()

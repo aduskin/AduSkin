@@ -9,7 +9,7 @@ namespace AduSkin.Controls.Metro
    {
       public AduComboBox()
       {
-         Utility.Refresh(this);
+         
       }
       static AduComboBox()
       {
@@ -26,15 +26,15 @@ namespace AduSkin.Controls.Metro
          set { SetValue(CornerRadiusProperty, value); }
       }
 
-      public static readonly DependencyProperty WatermarkProperty = DependencyProperty.Register("Watermark"
+      public static readonly DependencyProperty InputHintProperty = DependencyProperty.Register("InputHint"
             , typeof(string), typeof(AduComboBox));
       /// <summary>
       /// 文本输入框的水印
       /// </summary>
-      public string Watermark
+      public string InputHint
       {
-         get { return (string)GetValue(WatermarkProperty); }
-         set { SetValue(WatermarkProperty, value); }
+         get { return (string)GetValue(InputHintProperty); }
+         set { SetValue(InputHintProperty, value); }
       }
 
       public static readonly DependencyProperty ComBoxItemPanelBackgroundProperty = DependencyProperty.Register("ComBoxItemPanelBackground"

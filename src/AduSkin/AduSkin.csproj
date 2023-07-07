@@ -7,7 +7,7 @@
     <NoWarn>$(NoWarn);0067</NoWarn>
     <PackageIcon>logo.png</PackageIcon>
     <PackageIconUrl />
-    <Version>1.1.1.9</Version>
+    <Version>1.2.0.0</Version>
     <Description>一款简单漂亮的WPF UI
 A Beautiful WPF Control UI</Description>
     <Platforms>AnyCPU;x64</Platforms>

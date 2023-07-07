@@ -9,7 +9,7 @@ namespace AduSkin.Controls.Metro
     {
       public AduCheckBox()
       {
-         Utility.Refresh(this);
+         
       }
 
       static AduCheckBox()

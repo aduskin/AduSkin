@@ -11,7 +11,7 @@ namespace AduSkin.Controls.Metro
     {
         public AduDataGrid()
         {
-            Utility.Refresh(this);
+            
         }
 
         static AduDataGrid()

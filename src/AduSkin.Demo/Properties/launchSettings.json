@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AduSkin.Demo": {
+      "commandName": "Project",
+      "workingDirectory": "..\\Debugx64\\"
+    }
+  }
+}

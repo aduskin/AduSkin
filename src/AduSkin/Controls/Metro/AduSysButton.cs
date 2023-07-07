@@ -11,7 +11,7 @@ namespace AduSkin.Controls.Metro
    {
       public AduSysButton()
       {
-         Utility.Refresh(this);
+         
       }
 
       static AduSysButton()

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AduSkin.Demo.UserControls.MultiFunctionTabControl"
+<UserControl x:Class="AduSkin.Demo.UserControls.MultiFunctionTabControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,21 +9,21 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AduSkin;component/Themes/Metro/HCTabControl.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/AduSkin;component/Themes/Metro/AduManageableTabControl.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel Width="800">
-        <Metro:HCTabControl ShowOverflowButton="False" ShowContextMenu="True" IsEnableAnimation="True" IsDraggable="False" ShowCloseButton="True" ShowScrollButton="True" Width="800" IsScrollable="True" Height="300">
-            <Metro:HCTabItem Header="TabItem1" IsSelected="True">
+        <Metro:AduManageableTabControl ShowOverflowButton="False" ShowContextMenu="True" IsEnableAnimation="True" IsDraggable="False" ShowCloseButton="True" ShowScrollButton="True" Width="800" IsScrollable="True" Height="300">
+            <Metro:AduManageableTabItem Header="TabItem1" IsSelected="True">
                 <TextBlock Text="多功能TabControl" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Metro:HCTabItem>
-            <Metro:HCTabItem Header="TabItem2"/>
-            <Metro:HCTabItem Header="TabItem3"/>
-            <Metro:HCTabItem Header="TabItem4"/>
-            <Metro:HCTabItem Header="TabItem5"/>
-            <Metro:HCTabItem Header="TabItem6"/>
-            <Metro:HCTabItem Header="TabItem7"/>
-        </Metro:HCTabControl>
+            </Metro:AduManageableTabItem>
+            <Metro:AduManageableTabItem Header="TabItem2"/>
+            <Metro:AduManageableTabItem Header="TabItem3"/>
+            <Metro:AduManageableTabItem Header="TabItem4"/>
+            <Metro:AduManageableTabItem Header="TabItem5"/>
+            <Metro:AduManageableTabItem Header="TabItem6"/>
+            <Metro:AduManageableTabItem Header="TabItem7"/>
+        </Metro:AduManageableTabControl>
     </StackPanel>
 </UserControl>

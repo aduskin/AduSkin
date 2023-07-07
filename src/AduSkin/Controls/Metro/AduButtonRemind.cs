@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls.Metro.Base;
+using AduSkin.Controls.Metro.Base;
 using AduSkin.Utility.Element;
 using System.Windows;
 
@@ -8,7 +8,7 @@ namespace AduSkin.Controls.Metro
    {
       public AduButtonRemind()
       {
-         Utility.Refresh(this);
+         
       }
 
       static AduButtonRemind()

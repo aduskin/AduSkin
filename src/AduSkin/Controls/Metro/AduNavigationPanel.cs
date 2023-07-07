@@ -1,4 +1,4 @@
-﻿using AduSkin.Controls.Helper;
+using AduSkin.Controls.Helper;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace AduSkin.Controls.Metro
     {
         #region private fields
 
-        private SegmentControl PART_Indicator;
+        private AduSegmentControl PART_Indicator;
         private ContentPresenter PART_ContentPresenter;
 
         private ScrollViewer mScrollViewer;
@@ -160,7 +160,7 @@ namespace AduSkin.Controls.Metro
             base.OnApplyTemplate();
 
             this.Loaded += NavigationPanel_Loaded;
-            this.PART_Indicator = this.GetTemplateChild("PART_Indicator") as SegmentControl;
+            this.PART_Indicator = this.GetTemplateChild("PART_Indicator") as AduSegmentControl;
             this.PART_ContentPresenter = this.GetTemplateChild("PART_ContentPresenter") as ContentPresenter;
             if (this.PART_Indicator != null)
             {

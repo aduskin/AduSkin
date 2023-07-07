@@ -6,6 +6,6 @@
              xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
    <Grid>
-      <AduSkin:HCTimeBarNew BorderThickness="0" Margin="32" Width="600"  VerticalAlignment="Center" BorderBrush="{StaticResource PrimaryBrush}"/>
+      <AduSkin:AduTimeBarNew BorderThickness="0" Margin="32" Width="600"  VerticalAlignment="Center" BorderBrush="{StaticResource PrimaryBrush}"/>
    </Grid>
 </UserControl>

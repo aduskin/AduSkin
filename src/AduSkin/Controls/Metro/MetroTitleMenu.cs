@@ -7,7 +7,7 @@ namespace AduSkin.Controls.Metro
     {
         public MetroTitleMenu()
         {
-            Utility.Refresh(this);
+            
         }
 
         static MetroTitleMenu()

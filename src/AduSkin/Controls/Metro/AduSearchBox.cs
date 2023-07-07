@@ -48,7 +48,7 @@ namespace AduSkin.Controls.Metro
             Loaded += delegate { ErrorCheck(); };
             TextChanged += delegate { ErrorCheck(); };
             CommandBindings.Add(new CommandBinding(ButtonClickCommand, delegate { if (ButtonClick != null) { ButtonClick(this, null); } }));
-            Utility.Refresh(this);
+            
         }
 
         void ErrorCheck()
