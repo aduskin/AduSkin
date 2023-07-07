@@ -54,7 +54,7 @@ namespace AduSkin.Controls.Metro
         public MetroColorPicker()
         {
             InitializeComponent();
-            Loaded += delegate { Initialize(Background == null ? new HsbaColor(0.0, 1.0, 1.0, 1.0) : new HsbaColor(Background)); };
+            Loaded += delegate { Initialize(); };
         }
 
         public MetroColorPicker(string hexColor)
@@ -71,8 +71,12 @@ namespace AduSkin.Controls.Metro
 
         public Action ColorPickerClosed { get; set; }
 
-        private void Initialize(HsbaColor hsbaColor)
+        private void Initialize(HsbaColor hsbaColor = null)
         {
+            if (hsbaColor == null)
+            {
+                hsbaColor = Background == null ? new HsbaColor(0.0, 1.0, 1.0, 1.0) : new HsbaColor(Background);
+            }
             // 绑定主题
             Utility.Refresh(this);
 
