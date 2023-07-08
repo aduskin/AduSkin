@@ -86,9 +86,9 @@ namespace AduSkin.Controls.Metro
          if (_MinimizedButton != null)
             _MinimizedButton.Click += delegate { this.WindowState = WindowState.Minimized; };
          if (_MaximizedButton != null)
-            _MaximizedButton.Click += delegate { this.WindowState = WindowState.Maximized; this.Padding = new Thickness(10); };
+            _MaximizedButton.Click += delegate { this.WindowState = WindowState.Maximized;  };
          if (_NormalButton != null)
-            _NormalButton.Click += delegate { this.WindowState = WindowState.Normal; this.Padding = new Thickness(0); };
+            _NormalButton.Click += delegate { this.WindowState = WindowState.Normal; };
          if (_CloseButton != null)
             _CloseButton.Click += delegate { this.Close(); };
       }

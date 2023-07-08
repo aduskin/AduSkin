@@ -101,7 +101,7 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroWindow}">
-               <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+               <Border x:Name="PART_WindowBorder" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                   <Grid Background="{StaticResource DefaultWhiteBrush}" x:Name="WindowGrid">
                      <Border Margin="-1" BorderBrush="#000000" BorderThickness="{Binding BorderThickness, ElementName=border}" Opacity="0.15" />
                      <Grid x:Name="WIdowGrid">
@@ -192,9 +192,7 @@
                   </Trigger>
                   <Trigger Property="WindowState" Value="Maximized">
                      <Setter TargetName="PART_MaximizedButton" Property="Visibility" Value="Collapsed" />
-                     <Setter TargetName="TitleHeight" Property="Height" Value="50" />
-                     <Setter TargetName="PART_Title" Property="Margin" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Shell:WindowChrome.WindowChrome).ResizeBorderThickness}" />
-                     <Setter TargetName="border" Property="BorderThickness" Value="0" />
+                     <Setter TargetName="PART_WindowBorder" Property="BorderThickness" Value="6" />
                   </Trigger>
                   <Trigger Property="WindowState" Value="Normal">
                      <Setter TargetName="PART_NormalButton" Property="Visibility" Value="Collapsed" />
