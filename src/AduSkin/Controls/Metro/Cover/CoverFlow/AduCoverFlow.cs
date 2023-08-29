@@ -195,6 +195,7 @@ namespace AduSkin.Controls.Metro
          get => (int)GetValue(PageIndexProperty);
          internal set
          {
+            if (!_itemShowList.TryGetValue(value, out var item)) return;
             CurrentItem = _itemShowList[value].CurrentItemData;
             SetValue(PageIndexProperty, value);
          }
@@ -301,7 +302,11 @@ namespace AduSkin.Controls.Metro
       /// </summary>
       /// <param name="index"></param>
       /// <param name="animated"></param>
-      private void Move(int index, bool animated) => _itemShowList[index].Move(PageIndex, animated);
+      private void Move(int index, bool animated)
+      {
+         if (!_itemShowList.TryGetValue(index, out _)) return;
+         _itemShowList[index].Move(PageIndex, animated);
+      }
 
       private void Viewport3D_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
       {
