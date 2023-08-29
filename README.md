@@ -39,6 +39,7 @@ AduSkin 项目基于 LGPL-3.0 开源协议开放项目源代码。本项目版�
 <a href="https://github.com/guanguanchuangyu" target="_blank"><img width="64px" src="https://avatars0.githubusercontent.com/u/25916858?s=460&u=7eab6998abb6a32d8a87f2a453e5d382cfff97e4&v=4"></a>
 <a href="https://github.com/dotnet9" target="_blank"><img width="64px" src="https://avatars2.githubusercontent.com/u/19390373?s=460&u=b0c81b21f8e3e54e6eea706c19ec85277968104d&v=4"></a>
 <a href="https://github.com/NaBian" target="_blank"><img width="64px" src="https://avatars2.githubusercontent.com/u/17383395?s=460&u=a69534a99739df0346b14a3726437714e5c17a76&v=4"></a>
+<a href="https://github.com/iexapl" target="_blank"><img width="64px" src="https://avatars.githubusercontent.com/u/1246117?v=4"></a>
 
 ### 支持者
 
