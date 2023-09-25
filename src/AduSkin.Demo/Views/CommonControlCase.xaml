@@ -4,7 +4,7 @@
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
+            xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="2000" d:DesignWidth="1000">
    <Grid Background="{StaticResource DefaultBackground}" >
@@ -55,35 +55,35 @@
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
                   <Metro:AduCalendar x:Name="Calendar1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                           AduAttach:ElementBackground.MouseOverBackground="{StaticResource DefaultBrush}"
-                           AduAttach:ElementBackground.SelectedBackground="{StaticResource DefaultBrush}"
-                           AduAttach:ElementBackground.HighlightBackground="{StaticResource DefaultBrush}"
-                           AduAttach:ElementForeground.SelectedForeground="#FFF"
-                           AduAttach:ElementForeground.MouseOverForeground="#FFF"
-                           AduAttach:ElementForeground.HighlightForeground="#FFF"/>
+                           AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource DefaultBrush}"
+                           AduAttach:BackgroundAttach.SelectedBackground="{StaticResource DefaultBrush}"
+                           AduAttach:BackgroundAttach.HighlightBackground="{StaticResource DefaultBrush}"
+                           AduAttach:ForegroundAttach.SelectedForeground="#FFF"
+                           AduAttach:ForegroundAttach.MouseOverForeground="#FFF"
+                           AduAttach:ForegroundAttach.HighlightForeground="#FFF"/>
                </Border>
             </Grid>
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel>
                      <Metro:AduDatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="4" Width="200" VerticalAlignment="Center" Height="28" Type="DateTime"  CornerRadius="3" DateStringFormat="yyyy/MM/dd"
-                              AduAttach:ElementBackground.PanelBackground="{StaticResource DefaultWhiteBrush}"
-                              AduAttach:ElementBackground.MouseOverBackground="{StaticResource DefaultBrush}"
-                              AduAttach:ElementBackground.SelectedBackground="{StaticResource DefaultBrush}"
-                              AduAttach:ElementBackground.HighlightBackground="{StaticResource DefaultBrush}"
-                              AduAttach:ElementForeground.SelectedForeground="{StaticResource DefaultWhiteBrush}"
-                              AduAttach:ElementForeground.MouseOverForeground="{StaticResource DefaultWhiteBrush}"
-                              AduAttach:ElementForeground.HighlightForeground="{StaticResource DefaultWhiteBrush}"/>
+                              AduAttach:BackgroundAttach.PanelBackground="{StaticResource DefaultWhiteBrush}"
+                              AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource DefaultBrush}"
+                              AduAttach:BackgroundAttach.SelectedBackground="{StaticResource DefaultBrush}"
+                              AduAttach:BackgroundAttach.HighlightBackground="{StaticResource DefaultBrush}"
+                              AduAttach:ForegroundAttach.SelectedForeground="{StaticResource DefaultWhiteBrush}"
+                              AduAttach:ForegroundAttach.MouseOverForeground="{StaticResource DefaultWhiteBrush}"
+                              AduAttach:ForegroundAttach.HighlightForeground="{StaticResource DefaultWhiteBrush}"/>
                      <Metro:AduDatePicker x:Name="Date2" Margin="4" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" CornerRadius="3"
-                                          AduAttach:ElementBackground.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
+                                          AduAttach:BackgroundAttach.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
                      <Metro:AduDatePicker x:Name="Date3" Margin="4" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" CornerRadius="3" IsShowShortCuts="True" 
-                                          AduAttach:ElementBackground.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
+                                          AduAttach:BackgroundAttach.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
                      <Metro:AduDatePicker x:Name="Date4" Margin="4" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" Type="SingleDateRange" CornerRadius="3" DateStringFormat="yyyy/MM/dd" IsShowShortCuts="True" 
-                                          AduAttach:ElementBackground.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
+                                          AduAttach:BackgroundAttach.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
                      <Metro:AduDatePicker x:Name="Date5" HorizontalAlignment="Left" Margin="4" Width="240" VerticalAlignment="Center" Height="28" Type="SingleDateRange" CornerRadius="3"
-                                          AduAttach:ElementBackground.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
+                                          AduAttach:BackgroundAttach.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
                      <Metro:AduDatePicker x:Name="Date6" HorizontalAlignment="Left" Margin="4" Width="240" VerticalAlignment="Center" Height="28" Type="SingleDateRange" CornerRadius="3"
-                                          AduAttach:ElementBackground.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
+                                          AduAttach:BackgroundAttach.PanelBackground="{StaticResource DefaultWhiteBrush}"/>
                   </StackPanel>
                </Border>
             </Grid>
@@ -105,34 +105,34 @@
                      <Metro:AduRadioButtonIcon
                                                             Content="盒子"
                                                             IsChecked="True"
-                                                            AduAttach:IconElement.PathData="{StaticResource Icon_Desgin2}"
-                                                            AduAttach:IconElement.Margin="20,0"
-                                                            AduAttach:IconElement.Width="16"/>
+                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Desgin2}"
+                                                            AduAttach:PathDataAttach.Margin="20,0"
+                                                            AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
                                                             Content="菜单"
-                                                            AduAttach:IconElement.PathData="{StaticResource Icon_Fold}"
-                                                            AduAttach:IconElement.Margin="20,0"
-                                                            AduAttach:IconElement.Width="16"/>
+                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Fold}"
+                                                            AduAttach:PathDataAttach.Margin="20,0"
+                                                            AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
                                                             Content="轮播"
-                                                            AduAttach:IconElement.PathData="{StaticResource Icon_Carousel}"
-                                                            AduAttach:IconElement.Margin="20,0"
-                                                            AduAttach:IconElement.Width="16"/>
+                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Carousel}"
+                                                            AduAttach:PathDataAttach.Margin="20,0"
+                                                            AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
                                                             Content="组"
-                                                            AduAttach:IconElement.PathData="{StaticResource Icon_Group}"
-                                                            AduAttach:IconElement.Margin="20,0"
-                                                            AduAttach:IconElement.Width="16"/>
+                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Group}"
+                                                            AduAttach:PathDataAttach.Margin="20,0"
+                                                            AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
                                                             Content="时间轴"
-                                                            AduAttach:IconElement.PathData="{StaticResource Icon_TimeLine}"
-                                                            AduAttach:IconElement.Margin="20,0"
-                                                            AduAttach:IconElement.Width="16"/>
+                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_TimeLine}"
+                                                            AduAttach:PathDataAttach.Margin="20,0"
+                                                            AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
                                                             Content="瀑布流"
-                                                            AduAttach:IconElement.PathData="{StaticResource Icon_Waterfall}"
-                                                            AduAttach:IconElement.Margin="20,0"
-                                                            AduAttach:IconElement.Width="16"/>
+                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Waterfall}"
+                                                            AduAttach:PathDataAttach.Margin="20,0"
+                                                            AduAttach:PathDataAttach.Width="16"/>
                   </StackPanel>
                </Border>
             </Grid>
@@ -140,12 +140,12 @@
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel>
                      <StackPanel Orientation="Horizontal">
-                        <Metro:AduCheckBox Content="禁用未选择" FontSize="14" IconWidth="16" IsChecked="False" IsEnabled="False" />
-                        <Metro:AduCheckBox Content="默认未选择" FontSize="14" IconWidth="16" IsChecked="False" />
+                        <Metro:AduCheckBox Content="禁用未选择" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="False" IsEnabled="False" />
+                        <Metro:AduCheckBox Content="默认未选择" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="False" />
                      </StackPanel>
                      <StackPanel Orientation="Horizontal">
-                        <Metro:AduCheckBox Content="禁用已选择" FontSize="14" IconWidth="16" IsChecked="True" IsEnabled="False" />
-                        <Metro:AduCheckBox Content="默认已选择" FontSize="14" IconWidth="16" IsChecked="True" />
+                        <Metro:AduCheckBox Content="禁用已选择" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" IsEnabled="False" />
+                        <Metro:AduCheckBox Content="默认已选择" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
                      </StackPanel>
                   </StackPanel>
                </Border>
@@ -187,16 +187,16 @@
                      <StackPanel>
                         <Metro:AduNoExpander Header="不可折叠" IsExpanded="True">
                            <StackPanel HorizontalAlignment="Left">
-                              <Metro:AduRadioButton Content="单选框" FontSize="14" IconWidth="16" IsChecked="True" />
-                              <Metro:AduRadioButton Content="单选框" FontSize="14" IconWidth="16" />
+                              <Metro:AduRadioButton Content="单选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
+                              <Metro:AduRadioButton Content="单选框" FontSize="14" AduAttach:PathDataAttach.Width="16" />
                            </StackPanel>
                         </Metro:AduNoExpander>
-                        <Metro:AduExpander Header="可折叠" IsEnabled="True" IsExpanded="True" AduAttach:IconElement.PathData="{StaticResource Icon_Logo}" AduAttach:IconElement.Width="14" AduAttach:IconElement.Margin="4,0,10,2">
+                        <Metro:AduExpander Header="可折叠" IsEnabled="True" IsExpanded="True" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}" AduAttach:PathDataAttach.Width="14" AduAttach:PathDataAttach.Margin="4,0,10,2">
                            <StackPanel>
-                              <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
-                              <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
-                              <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
-                              <Metro:AduCheckBox Content="复选框" FontSize="14" IconWidth="16" IsChecked="True" />
+                              <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
+                              <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
+                              <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
+                              <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
                            </StackPanel>
                         </Metro:AduExpander>
                      </StackPanel>
@@ -235,12 +235,12 @@
                         <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
-                                                                IconWidth="16"
+                                                                AduAttach:PathDataAttach.Width="16"
                                                                 IsEnabled="False" />
                         <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
-                                                                IconWidth="16"
+                                                                AduAttach:PathDataAttach.Width="16"
                                                                 IsChecked="True"
                                                                 IsEnabled="False" />
                      </StackPanel>
@@ -248,12 +248,12 @@
                         <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
-                                                                IconWidth="16"
+                                                                AduAttach:PathDataAttach.Width="16"
                                                                 IsChecked="False" />
                         <Metro:AduRadioButton
                                                                 Content="禁用已选择"
                                                                 FontSize="14"
-                                                                IconWidth="16"
+                                                                AduAttach:PathDataAttach.Width="16"
                                                                 IsChecked="True" />
                      </StackPanel>
                   </StackPanel>
@@ -394,15 +394,10 @@
                         <Metro:AduFlatButton Name="btnShowAdu" Margin="10" Content="正确颜色" Type="error" />
                      </StackPanel>
                      <StackPanel Orientation="Horizontal">
-                        <Metro:AduSysButton Foreground="#555" Margin="10" CornerRadius="6" Height="40" Width="40" Icon="{StaticResource Icon_Browser}" Content="" />
-                        <Metro:AduButtonTransparent Width="40"  Margin="10" CornerRadius="3" Foreground="#000" Icon="{StaticResource Icon_Map}" IconHeight="18" />
-                        <Metro:AduButtonSvg Icon="{StaticResource Icon_Logo}"  IconHeight="22" IconWidth="20" Foreground="#999" Height="40" Width="40" />
-                     </StackPanel>
-                     <StackPanel Orientation="Horizontal">
-                        <Metro:AduButtonIcon Height="40" AduAttach:IconElement.PathData="{StaticResource Icon_Logo}"
-                                    AduAttach:IconElement.Margin="0,0" AduAttach:IconElement.Width="16"
-                                    Margin="10" Width="120" CornerRadius="6" Content="hehhe" Foreground="#000" />
-                        <Metro:AduCheckButton Margin="10" Content="AduSkin" PathData="{StaticResource Icon_Logo}" CheckedPathColor="#F34336" NormalPathColor="#555555" MouseOverPathColor="#0293EC" PressedPathColor="#FF9900"/>
+                        <Metro:AduButtonSvg AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}"  AduAttach:PathDataAttach.Width="20" Foreground="#999" Height="40" Width="40" />
+                        <Metro:AduButtonIcon Height="40" Margin="10" Content="hehhe" Foreground="#000"  VerticalContentAlignment="Center" 
+                              AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}" AduAttach:PathBrushAttach.NormalPathColor="{StaticResource DefaultBrush}"
+                              AduAttach:PathDataAttach.Width="16" AduAttach:PathDataAttach.Margin="0,0,10,0" AduAttach:BorderAttach.CornerRadius="6"/>
                         <Metro:AduDIYCheckBox />
                      </StackPanel>
                   </StackPanel>
@@ -411,10 +406,10 @@
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel Orientation="Horizontal">
-                     <Metro:AduButtonRemind Icon="{StaticResource Icon_Demo}" AduButtonState="Green" IconHeight="22" IconWidth="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
-                     <Metro:AduButtonRemind Icon="{StaticResource Icon_Demo}" AduButtonState="Red" IconHeight="22" IconWidth="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
-                     <Metro:AduButtonRemind Icon="{StaticResource Icon_Demo}" AduButtonState="Blue" IconHeight="22" IconWidth="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
-                     <Metro:AduButtonRemind Icon="{StaticResource Icon_Demo}" AduButtonState="None" IconHeight="22" IconWidth="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
+                     <Metro:AduButtonRemind AduAttach:PathDataAttach.PathData="{StaticResource Icon_Demo}" AduButtonState="Green" AduAttach:PathDataAttach.Width="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
+                     <Metro:AduButtonRemind AduAttach:PathDataAttach.PathData="{StaticResource Icon_Demo}" AduButtonState="Red" AduAttach:PathDataAttach.Width="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
+                     <Metro:AduButtonRemind AduAttach:PathDataAttach.PathData="{StaticResource Icon_Demo}" AduButtonState="Blue" AduAttach:PathDataAttach.Width="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
+                     <Metro:AduButtonRemind AduAttach:PathDataAttach.PathData="{StaticResource Icon_Demo}" AduButtonState="None" AduAttach:PathDataAttach.Width="20" Foreground="{StaticResource DefaultBrush}" Hint="99+" Height="40" Width="40" />
                   </StackPanel>
                </Border>
             </Grid>

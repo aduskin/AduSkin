@@ -12,7 +12,7 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Background" Value="White" />
         <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="AduAttach:IconElement.Margin" Value="10,0" />
+        <Setter Property="AduAttach:PathDataAttach.Margin" Value="10,0" />
         <Setter Property="Foreground" Value="#888" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="BorderThickness" Value="2,0,0,0"></Setter>
@@ -31,7 +31,7 @@
                             Orientation="Horizontal"
                             SnapsToDevicePixels="True">
                             <Border>
-                                <Path x:Name="Icon" VerticalAlignment="Center" Width="{TemplateBinding AduAttach:IconElement.Width}" Margin="{TemplateBinding AduAttach:IconElement.Margin}" Fill="{TemplateBinding Foreground}" Stretch="Uniform" Data="{TemplateBinding AduAttach:IconElement.PathData}" />
+                                <Path x:Name="Icon" VerticalAlignment="Center" Width="{TemplateBinding AduAttach:PathDataAttach.Width}" Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" Fill="{TemplateBinding Foreground}" Stretch="Uniform" Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" />
                             </Border>
                             <TextBlock
                                 x:Name="contentPresenter"

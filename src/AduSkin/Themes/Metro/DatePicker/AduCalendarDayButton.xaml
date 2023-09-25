@@ -17,12 +17,12 @@
       <Setter Property="FontSize" Value="12" />
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="AduAttach:ElementBackground.HighlightBackground" Value="#05FFFFFF"/>
-      <Setter Property="AduAttach:ElementBackground.SelectedBackground" Value="#20000000"/>
-      <Setter Property="AduAttach:ElementBackground.MouseOverBackground" Value="#10FFFFFF"/>
-      <Setter Property="AduAttach:ElementForeground.HighlightForeground" Value="#DCDCDE"/>
-      <Setter Property="AduAttach:ElementForeground.SelectedForeground" Value="#FFF"/>
-      <Setter Property="AduAttach:ElementForeground.MouseOverForeground" Value="#FFF"/>
+      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="#05FFFFFF"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="#20000000"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="#10FFFFFF"/>
+      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="#DCDCDE"/>
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="#FFF"/>
+      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="#FFF"/>
       <Setter Property="Margin" Value="1" />
       <Setter Property="Foreground" Value="{DynamicResource Control.Static.Foreground}" />
       <Setter Property="Background" Value="Transparent" />
@@ -60,27 +60,27 @@
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.MouseOverBackground)}" />
+                     <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.MouseOverBackground)}" />
                      <Setter Property="Foreground" Value="#FFF" />
                      <Setter Property="Cursor" Value="Hand" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter TargetName="SelectedBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}" />
+                     <Setter TargetName="SelectedBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}" />
                      <Setter Property="Foreground" Value="#FFF" />
                   </Trigger>
                   <Trigger Property="IsBelongCurrentMonth" Value="False">
                      <Setter Property="Opacity" Value=".4" />
                   </Trigger>
                   <Trigger Property="IsHighlight" Value="True">
-                     <Setter TargetName="HighlightBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.HighlightBackground)}" />
-                     <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.HighlightForeground)}" />
+                     <Setter TargetName="HighlightBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.HighlightBackground)}" />
+                     <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}" />
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsSelected" Value="False" />
                         <Condition Property="IsToday" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="TodayBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}" />
+                     <Setter TargetName="TodayBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>

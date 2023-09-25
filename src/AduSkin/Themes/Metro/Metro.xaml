@@ -35,13 +35,11 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTabItem.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduButtonIcon.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduSlider.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduButtonTransparent.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduButtonRemind.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduExpander.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduGroupBox.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduRadioButtonIcon.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduButtonSvg.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduSysButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduComboBox.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPasswordBox.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduUpload.xaml" />
@@ -64,7 +62,6 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFlatSilder.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDIYRadionButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDIYCheckBox.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduCheckButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/AduRatingBar.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/AduRatingBarButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTimeLine.xaml" />

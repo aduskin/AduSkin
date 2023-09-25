@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+        xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
         xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
         BorderBrush="#3E3E45"
@@ -117,8 +118,8 @@
                                             </Grid.ColumnDefinitions>
                                             <Image Grid.Row="0" Grid.ColumnSpan="2" Stretch="UniformToFill" Source="{Binding Cover}"/>
                                             <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left">
-                                                <Adu:AduButtonIcon Content="{Binding Likes}" Width="70" Height="30" CornerRadius="3" IconTextMargin="10" FontSize="12" Foreground="#FFF" IconWidth="16" Icon="{StaticResource Icon_Like}"/>
-                                                <Adu:AduButtonIcon Content="{Binding Shares}" Width="70" Height="30" CornerRadius="3" IconTextMargin="10" FontSize="12" Foreground="#FFF" Icon="{StaticResource Icon_Dynamic}"/>
+                                    <Adu:AduButtonIcon Content="{Binding Likes}" Width="70" Height="30" AduAttach:BorderAttach.CornerRadius="3" AduAttach:PathDataAttach.Margin="10" FontSize="12" Foreground="#FFF" AduAttach:PathDataAttach.Width="16" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Like}"/>
+                                    <Adu:AduButtonIcon Content="{Binding Shares}" Width="70" Height="30" AduAttach:BorderAttach.CornerRadius="3" AduAttach:PathDataAttach.Margin="10" FontSize="12" Foreground="#FFF" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Dynamic}"/>
                                                 <Adu:AduFlatButton Width="80" MouseOverBackground="#000" Foreground="{StaticResource DefaultBrush}" ToolTip="点击进入Demo查看" FontSize="15" FontWeight="Light" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}" Content="查看案例" Background="Transparent" HorizontalAlignment="Right"/>
                                             </StackPanel>
 

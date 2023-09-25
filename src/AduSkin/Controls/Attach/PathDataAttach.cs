@@ -3,10 +3,13 @@ using System.Windows.Media;
 
 namespace AduSkin.Controls.Attach
 {
-    public class IconElement
+    public class PathDataAttach
     {
+      /// <summary>
+      /// 默认图标
+      /// </summary>
         public static readonly DependencyProperty PathDataProperty = DependencyProperty.RegisterAttached(
-            "PathData", typeof(Geometry), typeof(IconElement), new PropertyMetadata(default(Geometry)));
+            "PathData", typeof(Geometry), typeof(PathDataAttach), new PropertyMetadata(default(Geometry)));
 
         public static void SetPathData(DependencyObject element, Geometry value)
             => element.SetValue(PathDataProperty, value);
@@ -14,8 +17,11 @@ namespace AduSkin.Controls.Attach
         public static Geometry GetPathData(DependencyObject element) 
             => (Geometry) element.GetValue(PathDataProperty);
 
+      /// <summary>
+      /// 选中图标
+      /// </summary>
         public static readonly DependencyProperty SelectedPathDataProperty = DependencyProperty.RegisterAttached(
-            "SelectedPathData", typeof(Geometry), typeof(IconElement), new PropertyMetadata(default(Geometry)));
+            "SelectedPathData", typeof(Geometry), typeof(PathDataAttach), new PropertyMetadata(default(Geometry)));
 
         public static void SetSelectedPathData(DependencyObject element, Geometry value)
             => element.SetValue(SelectedPathDataProperty, value);
@@ -23,8 +29,11 @@ namespace AduSkin.Controls.Attach
         public static Geometry GetSelectedPathData(DependencyObject element) 
             => (Geometry) element.GetValue(SelectedPathDataProperty);
 
+      /// <summary>
+      /// 图标宽度
+      /// </summary>
         public static readonly DependencyProperty WidthProperty = DependencyProperty.RegisterAttached(
-            "Width", typeof(double), typeof(IconElement), new PropertyMetadata(double.NaN));
+            "Width", typeof(double), typeof(PathDataAttach), new PropertyMetadata(double.NaN));
 
         public static void SetWidth(DependencyObject element, double value)
             => element.SetValue(WidthProperty, value);
@@ -32,8 +41,11 @@ namespace AduSkin.Controls.Attach
         public static double GetWidth(DependencyObject element)
             => (double) element.GetValue(WidthProperty);
 
+      /// <summary>
+      /// 图标边距
+      /// </summary>
         public static readonly DependencyProperty MarginProperty = DependencyProperty.RegisterAttached(
-            "Margin", typeof(Thickness), typeof(IconElement));
+            "Margin", typeof(Thickness), typeof(PathDataAttach));
 
         public static void SetMargin(DependencyObject element, Thickness value)
             => element.SetValue(MarginProperty, value);

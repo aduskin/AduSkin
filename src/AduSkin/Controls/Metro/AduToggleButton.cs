@@ -23,29 +23,7 @@ namespace AduSkin.Controls.Metro
       {
          get { return (CornerRadius)GetValue(CornerRadiusProperty); }
          set { SetValue(CornerRadiusProperty, value); }
-      }
-
-      //public static readonly DependencyProperty BorderThicknessProperty = DependencyProperty.Register("BorderThickness"
-      //    , typeof(Thickness), typeof(AduToggleButton));
-      ///// <summary>
-      ///// 边框
-      ///// </summary>
-      //public Thickness BorderThickness
-      //{
-      //   get { return (Thickness)GetValue(BorderThicknessProperty); }
-      //   set { SetValue(BorderThicknessProperty, value); }
-      //}
-
-      //public static readonly DependencyProperty BorderBrushProperty = DependencyProperty.Register("BorderBrush"
-      //    , typeof(SolidColorBrush), typeof(AduToggleButton));
-      ///// <summary>
-      ///// 边框色
-      ///// </summary>
-      //public SolidColorBrush BorderBrush
-      //{
-      //   get { return (SolidColorBrush)GetValue(BorderBrushProperty); }
-      //   set { SetValue(BorderBrushProperty, value); }
-      //}
+      } 
       #endregion
 
       #region Constructors

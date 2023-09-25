@@ -9,9 +9,9 @@
    <Style TargetType="{x:Type Metro:MetroContextMenu}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>
-      <Setter Property="AduAttach:BorderElement.BorderBrush" Value="Transparent" />
-      <Setter Property="AduAttach:BorderElement.BorderThickness" Value="0" />
-      <Setter Property="AduAttach:BorderElement.CornerRadius" Value="6" />
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="Transparent" />
+      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0" />
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6" />
       <Setter Property="Padding" Value="0"/>
       <Setter Property="VerticalOffset" Value="-20"/>
       <Setter Property="HorizontalOffset" Value="-20"/>
@@ -20,9 +20,9 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroContextMenu}">
                <Grid Background="#00000000">
-                  <Border BorderBrush="{TemplateBinding AduAttach:BorderElement.BorderBrush}" 
-                          BorderThickness="{TemplateBinding AduAttach:BorderElement.BorderThickness}" 
-                          CornerRadius="{TemplateBinding AduAttach:BorderElement.CornerRadius}" 
+                  <Border BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
+                          BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
+                          CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                           Background="{TemplateBinding Background}" Margin="20" Padding="{TemplateBinding Padding}">
                      <!--右键菜单-->
                      <Border.Effect>

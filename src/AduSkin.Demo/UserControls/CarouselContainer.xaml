@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+              xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -26,9 +27,8 @@
                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.PlayRecommendClick}"
                                         CommandParameter="{Binding}"
                                         Foreground="#fff"
-                                        Icon="{StaticResource Icon_Desgin}"
-                                        IconHeight="16"
-                                        IconWidth="25"
+                                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Desgin}"
+                                        AduAttach:PathDataAttach.Width="16"
                                         Visibility="Hidden" />
                         <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
                             <TextBlock Text="{Binding name}" Background="#50000000" Padding="6,0" Foreground="#FFF" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>

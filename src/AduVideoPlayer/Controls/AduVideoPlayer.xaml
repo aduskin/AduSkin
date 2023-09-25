@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Vlc="clr-namespace:Vlc.DotNet.Wpf;assembly=Vlc.DotNet.Wpf"
                     xmlns:AduVideoPlayer="clr-namespace:AduVideoPlayer.Controls"
+                    xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin">
 
     <Geometry x:Key="icon_stop" >M896 1024H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h768a128 128 0 0 1 128 128v768a128 128 0 0 1-128 128z</Geometry>
@@ -73,11 +74,11 @@
                                             </Grid.ColumnDefinitions>
 
                                             <Adu:AduPathIconButton x:Name="PART_Btn_Slower" Grid.Row="0" Grid.Column="0"
-                                                MouseOverPathColor="{StaticResource icon_hover_color}"
-                                                NormalPathColor="{StaticResource icon_normal_color}"
-                                                PathData="{StaticResource icon_faster}"
-                                                PathWidth="12"
-                                                PressedPathColor="{StaticResource icon_pressed_color}"
+                                                AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}"
+                                                AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}"
+                                                AduAttach:PathDataAttach.PathData="{StaticResource icon_faster}"
+                                                AduAttach:PathDataAttach.Width="12"
                                                 RenderTransformOrigin="0.5, 0.5">
                                                 <Adu:AduPathIconButton.RenderTransform>
                                                     <RotateTransform Angle="180" />
@@ -85,8 +86,8 @@
                                             </Adu:AduPathIconButton>
                                             <Adu:AduFlatSilder x:Name="PART_Slider" Grid.Row="0" DecreaseColor="{StaticResource icon_normal_color}"  Grid.Column="1" Grid.ColumnSpan="3"
                                                 Background="Transparent" IsMoveToPointEnabled="True" IsVideoVisibleWhenPressThumb="False" SnapsToDevicePixels="True" UseLayoutRounding="True" />
-                                            <Adu:AduPathIconButton x:Name="PART_Btn_Faster" Grid.Row="0" Grid.Column="4" MouseOverPathColor="{StaticResource icon_hover_color}" NormalPathColor="{StaticResource icon_normal_color}"
-                                                PathData="{StaticResource icon_faster}" PathWidth="12" PressedPathColor="{StaticResource icon_pressed_color}" />
+                                            <Adu:AduPathIconButton x:Name="PART_Btn_Faster" Grid.Row="0" Grid.Column="4" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}" AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                AduAttach:PathDataAttach.PathData="{StaticResource icon_faster}" AduAttach:PathDataAttach.Width="12" AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" />
                                             <Grid Grid.Row="1" Grid.ColumnSpan="5">
                                                 <TextBlock x:Name="PART_Video_Time" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0">
                                                 <Run x:Name="PART_Time_Current" />
@@ -95,53 +96,53 @@
                                                 </TextBlock>
                                                 <StackPanel  HorizontalAlignment="Center" Orientation="Horizontal">
                                                     <Adu:AduPathIconButton x:Name="PART_Btn_Stop"
-                                                        DisabledPathColor="{StaticResource icon_disabled_color}"
-                                                        MouseOverPathColor="{StaticResource icon_hover_color}"
-                                                        NormalPathColor="{StaticResource icon_normal_color}"
-                                                        PathData="{StaticResource icon_stop}"
-                                                        PathWidth="11"
-                                                        PressedPathColor="{StaticResource icon_pressed_color}" />
-                                                    <Adu:AduPathIconButton x:Name="PART_Btn_Previous" Margin="25,0,0,0" DisabledPathColor="{StaticResource icon_disabled_color}" MouseOverPathColor="{StaticResource icon_hover_color}" NormalPathColor="{StaticResource icon_normal_color}" PathData="{StaticResource icon_next}"
-                                                        PathWidth="11" PressedPathColor="{StaticResource icon_pressed_color}" RenderTransformOrigin="0.5, 0.5">
+                                                        AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource icon_disabled_color}"
+                                                        AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}"
+                                                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                        AduAttach:PathDataAttach.PathData="{StaticResource icon_stop}"
+                                                        AduAttach:PathDataAttach.Width="11"
+                                                        AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" />
+                                                    <Adu:AduPathIconButton x:Name="PART_Btn_Previous" Margin="25,0,0,0" AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource icon_disabled_color}" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}" AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}" AduAttach:PathDataAttach.PathData="{StaticResource icon_next}"
+                                                        AduAttach:PathDataAttach.Width="11" AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" RenderTransformOrigin="0.5, 0.5">
                                                         <Adu:AduPathIconButton.RenderTransform>
                                                             <RotateTransform Angle="180" />
                                                         </Adu:AduPathIconButton.RenderTransform>
                                                     </Adu:AduPathIconButton>
-                                                    <Adu:AduPathIconButton x:Name="PART_Btn_Pause" Margin="25,0,0,0" DisabledPathColor="{StaticResource icon_disabled_color}" MouseOverPathColor="{StaticResource icon_hover_color}" NormalPathColor="{StaticResource icon_normal_color}"
-                                                        PathData="{StaticResource icon_pause}" PathWidth="17" PressedPathColor="{StaticResource icon_pressed_color}" Visibility="Collapsed" />
+                                                    <Adu:AduPathIconButton x:Name="PART_Btn_Pause" Margin="25,0,0,0" AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource icon_disabled_color}" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}" AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                        AduAttach:PathDataAttach.PathData="{StaticResource icon_pause}" AduAttach:PathDataAttach.Width="17" AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" Visibility="Collapsed" />
                                                     <Adu:AduPathIconButton x:Name="PART_Btn_Play" Margin="25,0,0,0"
-                                                        DisabledPathColor="{StaticResource icon_disabled_color}"
-                                                        MouseOverPathColor="{StaticResource icon_hover_color}"
-                                                        NormalPathColor="{StaticResource icon_normal_color}"
-                                                        PathData="{StaticResource icon_play}"
-                                                        PathWidth="17"
-                                                        PressedPathColor="{StaticResource icon_pressed_color}" />
+                                                        AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource icon_disabled_color}"
+                                                        AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}"
+                                                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                        AduAttach:PathDataAttach.PathData="{StaticResource icon_play}"
+                                                        AduAttach:PathDataAttach.Width="17"
+                                                        AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" />
                                                     <Adu:AduPathIconButton x:Name="PART_Btn_Next" Margin="25,0,0,0"
-                                                        DisabledPathColor="{StaticResource icon_disabled_color}"
-                                                        MouseOverPathColor="{StaticResource icon_hover_color}"
-                                                        NormalPathColor="{StaticResource icon_normal_color}"
-                                                        PathData="{StaticResource icon_next}"
-                                                        PathWidth="11"
-                                                        PressedPathColor="{StaticResource icon_pressed_color}" />
+                                                        AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource icon_disabled_color}"
+                                                        AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}"
+                                                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                        AduAttach:PathDataAttach.PathData="{StaticResource icon_next}"
+                                                        AduAttach:PathDataAttach.Width="11"
+                                                        AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" />
                                                     <Adu:AduPathIconButton x:Name="PART_Btn_Screenshot" Margin="25,0,0,0"
-                                                        DisabledPathColor="{StaticResource icon_disabled_color}"
-                                                        MouseOverPathColor="{StaticResource icon_hover_color}"
-                                                        NormalPathColor="{StaticResource icon_normal_color}"
-                                                        PathData="{StaticResource icon_screenshot}"
-                                                        PathWidth="16"
-                                                        PressedPathColor="{StaticResource icon_pressed_color}" />
+                                                        AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource icon_disabled_color}"
+                                                        AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}"
+                                                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                        AduAttach:PathDataAttach.PathData="{StaticResource icon_screenshot}"
+                                                        AduAttach:PathDataAttach.Width="16"
+                                                        AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" />
                                                 </StackPanel>
                                                 <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
-                                                    <Adu:AduPathIconButton x:Name="PART_Btn_OpenFile" Margin="20,0" PathData="{StaticResource icon_openfile}" PathWidth="16"
-                                                        DisabledPathColor="{StaticResource icon_disabled_color}" MouseOverPathColor="{StaticResource icon_hover_color}" NormalPathColor="{StaticResource icon_normal_color}"
-                                                         PressedPathColor="{StaticResource icon_pressed_color}" />
+                                                    <Adu:AduPathIconButton x:Name="PART_Btn_OpenFile" Margin="20,0" AduAttach:PathDataAttach.PathData="{StaticResource icon_openfile}" AduAttach:PathDataAttach.Width="16"
+                                                        AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource icon_disabled_color}" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}" AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                         AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" />
                                                     <Adu:AduPathIconButton x:Name="PART_Btn_Volume" Margin="0,0,0,0"
-                                                        DisabledPathColor="{StaticResource icon_disabled_color}"
-                                                        MouseOverPathColor="{StaticResource icon_hover_color}"
-                                                        NormalPathColor="{StaticResource icon_normal_color}"
-                                                        PathData="{StaticResource icon_volume_large}"
-                                                        PathWidth="11"
-                                                        PressedPathColor="{StaticResource icon_pressed_color}" />
+                                                        AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource icon_disabled_color}"
+                                                        AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource icon_hover_color}"
+                                                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource icon_normal_color}"
+                                                        AduAttach:PathDataAttach.PathData="{StaticResource icon_volume_large}"
+                                                        AduAttach:PathDataAttach.Width="11"
+                                                        AduAttach:PathBrushAttach.PressedPathColor="{StaticResource icon_pressed_color}" />
                                                     <Adu:AduFlatSilder x:Name="PART_Volume_Slider" DecreaseColor="{StaticResource icon_normal_color}" Margin="10,0" VerticalAlignment="Stretch"
                                                         Value="{Binding Volume, RelativeSource={RelativeSource Mode=TemplatedParent}}" Maximum="1000"
                                                         Background="Transparent" IsMoveToPointEnabled="True" IsVideoVisibleWhenPressThumb="False"

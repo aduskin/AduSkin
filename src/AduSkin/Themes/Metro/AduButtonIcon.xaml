@@ -6,21 +6,21 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
-   <Style x:Key="{x:Type Adu:AduButtonIcon}" Style.TargetType="{x:Type Adu:AduButtonIcon}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-      <Setter Setter.Property="FrameworkElement.FocusVisualStyle" Setter.Value="{x:Null}" />
-      <Setter Setter.Property="UIElement.SnapsToDevicePixels" Setter.Value="True" />
-      <Setter Setter.Property="Control.Foreground" Setter.Value="#FFFFFFFF" />
-      <Setter Setter.Property="FrameworkElement.Cursor" Setter.Value="Hand" />
+   <Style TargetType="{x:Type Adu:AduButtonIcon}">
+      <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="Foreground" Value="#FFFFFFFF" />
+      <Setter Property="Background" Value="#00FFFFFF" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="12"/>
+      <Setter Property="AduAttach:PathDataAttach.Margin" Value="0"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}"/>
+      <Setter Property="Cursor" Value="Hand" />
       <Setter Property="MinWidth" Value="100"/>
-      <Setter Property="Cursor" Value="Hand"/>
-      <Setter Setter.Property="Control.Background" Setter.Value="#00FFFFFF" />
-      <Setter Setter.Property="FrameworkElement.MinWidth" Setter.Value="30" />
-      <Setter Setter.Property="FrameworkElement.MinHeight" Setter.Value="30" />
-      <Setter Setter.Property="FontSize" Setter.Value="14" />
-      <Setter Setter.Property="IconHeight" Setter.Value="14" />
-      <Setter Setter.Property="IconWidth" Setter.Value="14" />
-      <Setter Setter.Property="CornerRadius" Setter.Value="0" />
-      <Setter Setter.Property="Control.Template">
+      <Setter Property="MinHeight" Value="30" />
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate ControlTemplate.TargetType="{x:Type Adu:AduButtonIcon}">
                <Grid>
@@ -44,13 +44,14 @@
                         <VisualState x:Name="Disabled" />
                      </VisualStateGroup>
                   </VisualStateManager.VisualStateGroups>
-                  <Border Border.Name="back" Border.Background="{TemplateBinding Control.Background}" FrameworkElement.Margin="0,0,0,0" Padding="{TemplateBinding Padding}">
+                  <Border Border.Name="back" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Margin="0,0,0,0" Padding="{TemplateBinding Padding}">
                      <Grid>
                         <StackPanel StackPanel.Orientation="Horizontal" FrameworkElement.HorizontalAlignment="Center">
-                           <Path FrameworkElement.Name="icon" Data="{TemplateBinding AduAttach:IconElement.PathData}" 
-                                              Width="{TemplateBinding AduAttach:IconElement.Width}" Margin="{TemplateBinding AduAttach:IconElement.Margin}" 
-                                              Shape.Fill="{TemplateBinding Control.Foreground}" Shape.Stretch="Uniform" />
-                           <TextBlock TextBlock.Name="contentPresenter"  Grid.Column="1" TextBlock.FontSize="{TemplateBinding Control.FontSize}" TextBlock.Foreground="{TemplateBinding Control.Foreground}" TextBlock.TextTrimming="CharacterEllipsis" FrameworkElement.HorizontalAlignment="Left" FrameworkElement.VerticalAlignment="Center" TextBlock.Text="{TemplateBinding ContentControl.Content}" UIElement.Focusable="False" UIElement.SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                           <Path FrameworkElement.Name="icon" Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" 
+                                 Width="{TemplateBinding AduAttach:PathDataAttach.Width}" Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
+                                 Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" Shape.Stretch="Uniform" 
+                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                           <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
                         </StackPanel>
                      </Grid>
                   </Border>

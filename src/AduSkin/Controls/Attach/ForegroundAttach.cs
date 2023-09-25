@@ -3,13 +3,13 @@ using System.Windows.Media;
 
 namespace AduSkin.Controls.Attach
 {
-   public class ElementForeground
+   public class ForegroundAttach
    {
       /// <summary>
       /// 默认颜色
       /// </summary>
       public static readonly DependencyProperty NormalForegroundProperty = DependencyProperty.RegisterAttached(
-            "NormalForeground", typeof(SolidColorBrush), typeof(ElementForeground), new PropertyMetadata(default(SolidColorBrush)));
+            "NormalForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetNormalForeground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(NormalForegroundProperty, value);
@@ -21,7 +21,7 @@ namespace AduSkin.Controls.Attach
       /// 选中颜色
       /// </summary>
       public static readonly DependencyProperty SelectedForegroundProperty = DependencyProperty.RegisterAttached(
-            "SelectedForeground", typeof(SolidColorBrush), typeof(ElementForeground), new PropertyMetadata(default(SolidColorBrush)));
+            "SelectedForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetSelectedForeground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(SelectedForegroundProperty, value);
@@ -33,7 +33,7 @@ namespace AduSkin.Controls.Attach
       /// 高亮颜色
       /// </summary>
       public static readonly DependencyProperty HighlightForegroundProperty = DependencyProperty.RegisterAttached(
-            "HighlightForeground", typeof(SolidColorBrush), typeof(ElementForeground), new PropertyMetadata(default(SolidColorBrush)));
+            "HighlightForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetHighlightForeground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(HighlightForegroundProperty, value);
@@ -45,7 +45,7 @@ namespace AduSkin.Controls.Attach
       /// 鼠标悬浮颜色
       /// </summary>
       public static readonly DependencyProperty MouseOverForegroundProperty = DependencyProperty.RegisterAttached(
-            "MouseOverForeground", typeof(SolidColorBrush), typeof(ElementForeground), new PropertyMetadata(default(SolidColorBrush)));
+            "MouseOverForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetMouseOverForeground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(MouseOverForegroundProperty, value);
@@ -54,10 +54,10 @@ namespace AduSkin.Controls.Attach
           => (SolidColorBrush)element.GetValue(MouseOverForegroundProperty);
 
       /// <summary>
-      /// 鼠标悬浮颜色
+      /// 鼠标按下颜色
       /// </summary>
       public static readonly DependencyProperty PressedForegroundProperty = DependencyProperty.RegisterAttached(
-            "PressedForeground", typeof(SolidColorBrush), typeof(ElementForeground), new PropertyMetadata(default(SolidColorBrush)));
+            "PressedForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetPressedForeground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(PressedForegroundProperty, value);
@@ -69,7 +69,7 @@ namespace AduSkin.Controls.Attach
       /// 禁用颜色
       /// </summary>
       public static readonly DependencyProperty DisabledForegroundProperty = DependencyProperty.RegisterAttached(
-            "DisabledForeground", typeof(SolidColorBrush), typeof(ElementForeground), new PropertyMetadata(default(SolidColorBrush)));
+            "DisabledForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetDisabledForeground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(DisabledForegroundProperty, value);

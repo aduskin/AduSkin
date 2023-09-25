@@ -6,6 +6,7 @@
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
              xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
+             xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
    <UserControl.DataContext>
@@ -70,23 +71,6 @@ M530.2 600.1c6 4.4 8.6 11.2 6.8 18.4-0.9 3.7 4.9 5.3 5.8 1.6 2.5-10-1.4-19.2-9.6
                   </Popup>
                </Grid>
             </Metro:AduTransitioningContentControl>
-            <Metro:AduTransitioningContentControl TransitionStoryboard="{StaticResource Custom2Transition}">
-               <TextBlock HorizontalAlignment="Center">
-                    <Hyperlink Name="aduskincom" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"
-                                FontSize="14" Foreground="#ffffff" TextDecorations="{x:Null}">
-                        <StackPanel Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0,20">
-                            <StackPanel.ToolTip>
-                                <Metro:AduToolTip Content="点击进入源码库" IsShowShadow="True" FontSize="12" Padding="10,6" PlacementEx="BottomCenter" />
-                            </StackPanel.ToolTip>
-                            <StackPanel Orientation="Horizontal">
-                                <Metro:AduButtonSvg IconWidth="28" IconHeight="28" Icon="{StaticResource Icon_Logo}" VerticalAlignment="Center" Foreground="{StaticResource DefaultWhiteBrush}"/>
-                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="{StaticResource DefaultWhiteBrush}" Text="duSkin" />
-                            </StackPanel>
-                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="{StaticResource DefaultWhiteBrush}" Text="追求极致，永臻完美" />
-                        </StackPanel>
-                    </Hyperlink>
-                </TextBlock>
-            </Metro:AduTransitioningContentControl>
             <StackPanel Margin="0,10">
                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="一款简单漂亮的WPF UI，融合多个开源框架的组件，为个人定制的UI，可供学者参考和使用 ，商业用途请联系作者！" />
                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="12" Text="Nuget 搜索 'AduSkin' 可直接导包使用" Margin="10"/>
@@ -139,26 +123,26 @@ M530.2 600.1c6 4.4 8.6 11.2 6.8 18.4-0.9 3.7 4.9 5.3 5.8 1.6 2.5-10-1.4-19.2-9.6
                   </Metro:AduShield>
                </StackPanel>
                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="0,10,0,0" >
-                  <Metro:AduPathIconButton PathData="{StaticResource Icon_Bilibli}" Height="40" Width="80" PathWidth="60" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://space.bilibili.com/331470401"
-                              NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
+                  <Metro:AduPathIconButton AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bilibli}" Height="40" Width="80" AduAttach:PathDataAttach.Width="60" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://space.bilibili.com/331470401"
+                              AduAttach:PathBrushAttach.NormalPathColor="{StaticResource DefaultWhiteBrush}" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource DefaultWhiteBrush}" AduAttach:PathBrushAttach.PressedPathColor="{StaticResource DefaultWhiteBrush}">
                      <Metro:AduPathIconButton.ToolTip>
                         <Metro:AduToolTip Content="我的Bilibili" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
                      </Metro:AduPathIconButton.ToolTip>
                   </Metro:AduPathIconButton>
-                  <Metro:AduPathIconButton PathData="{StaticResource Icon_QQGroup}" Height="40" Width="80" PathWidth="30" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=jlEc6blJ" 
-                                    NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
+                  <Metro:AduPathIconButton AduAttach:PathDataAttach.PathData="{StaticResource Icon_QQGroup}" Height="40" Width="80" AduAttach:PathDataAttach.Width="30" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=jlEc6blJ" 
+                                    AduAttach:PathBrushAttach.NormalPathColor="{StaticResource DefaultWhiteBrush}" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource DefaultWhiteBrush}" AduAttach:PathBrushAttach.PressedPathColor="{StaticResource DefaultWhiteBrush}">
                      <Metro:AduPathIconButton.ToolTip>
                         <Metro:AduToolTip Content="一个小圈子的日常" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
                      </Metro:AduPathIconButton.ToolTip>
                   </Metro:AduPathIconButton>
-                  <Metro:AduPathIconButton PathData="{StaticResource Icon_WeiBo}" Height="40" Width="80" PathWidth="30" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://weibo.com/2576515331" 
-                                    NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
+                  <Metro:AduPathIconButton AduAttach:PathDataAttach.PathData="{StaticResource Icon_WeiBo}" Height="40" Width="80" AduAttach:PathDataAttach.Width="30" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="https://weibo.com/2576515331" 
+                                    AduAttach:PathBrushAttach.NormalPathColor="{StaticResource DefaultWhiteBrush}" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource DefaultWhiteBrush}" AduAttach:PathBrushAttach.PressedPathColor="{StaticResource DefaultWhiteBrush}">
                      <Metro:AduPathIconButton.ToolTip>
                         <Metro:AduToolTip Content="关注微博" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
                      </Metro:AduPathIconButton.ToolTip>
                   </Metro:AduPathIconButton>
-                  <Metro:AduPathIconButton Name="btnDS" PathData="{StaticResource Icon_RedEnvelopes}" Height="40" Width="80" PathWidth="20" Command="{Binding OpenDemo}" CommandParameter="Reward" 
-                                    NormalPathColor="{StaticResource DefaultWhiteBrush}" MouseOverPathColor="{StaticResource DefaultWhiteBrush}" PressedPathColor="{StaticResource DefaultWhiteBrush}">
+                  <Metro:AduPathIconButton Name="btnDS" AduAttach:PathDataAttach.PathData="{StaticResource Icon_RedEnvelopes}" Height="40" Width="80" AduAttach:PathDataAttach.Width="20" Command="{Binding OpenDemo}" CommandParameter="Reward" 
+                                    AduAttach:PathBrushAttach.NormalPathColor="{StaticResource DefaultWhiteBrush}" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource DefaultWhiteBrush}" AduAttach:PathBrushAttach.PressedPathColor="{StaticResource DefaultWhiteBrush}">
                      <Metro:AduPathIconButton.ToolTip>
                         <Metro:AduToolTip Content="赞助打赏" PlacementEx="BottomCenter" FontSize="12" Background="{StaticResource DefaultBrush}"/>
                      </Metro:AduPathIconButton.ToolTip>
@@ -167,9 +151,9 @@ M530.2 600.1c6 4.4 8.6 11.2 6.8 18.4-0.9 3.7 4.9 5.3 5.8 1.6 2.5-10-1.4-19.2-9.6
                <Metro:AduTransitioningContentControl TransitionMode="Bottom2Top">
                   <StackPanel>
                      <TextBlock  HorizontalAlignment="Center" Foreground="#FFF" FontSize="30" Margin="0,10,0,0" FontWeight="Light" Text="Welcome To AduSkin" />
-                     <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FFF" Text="且随疾风前行，身后一许流星" Margin="0,0,0,20"/>
-                     <TextBlock  HorizontalAlignment="Center" FontSize="16" FontWeight="Light" Foreground="#FF14D4E5" Text="Version 1.3.0.0" />
-                     <TextBlock  HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="#FF14D4E5" Text="Copyright ©AduSkin 2019 - 2023" />
+                     <TextBlock  HorizontalAlignment="Center" FontSize="16" Foreground="#FFF" Text="且随疾风前行，身后一许流星" Margin="0,0,0,20"/>
+                     <TextBlock  HorizontalAlignment="Center" FontSize="16" Foreground="#FFF" Text="Version 1.3.0.0" />
+                     <TextBlock  HorizontalAlignment="Center" FontSize="14" Foreground="#FFF" Text="Copyright ©AduSkin 2019 - 2023" />
                   </StackPanel>
                </Metro:AduTransitioningContentControl>
             </StackPanel>

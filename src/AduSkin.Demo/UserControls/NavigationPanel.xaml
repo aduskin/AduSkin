@@ -10,7 +10,7 @@
     <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="1">
         <Metro:AduNavigationPanel x:Name="navigationPanel" Grid.Row="1" 
                                   MaxHeight="300" Width="500" Foreground="{StaticResource DefaultBrush}"
-                                  AduAttach:ElementBackground.SelectedBackground="Red"
+                                  AduAttach:BackgroundAttach.SelectedBackground="Red"
                                 IndicatorMargin="0" IndicatorHorizontalAlignment="Center" 
                                 IndicatorSelectedIndex="0" IndicatorPlacement="Left">
             <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">

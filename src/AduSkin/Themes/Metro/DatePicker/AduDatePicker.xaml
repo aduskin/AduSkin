@@ -137,14 +137,14 @@
       <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="BorderThickness" Value="1" />
-      <Setter Property="AduAttach:ElementBackground.PanelBackground" Value="{StaticResource DefaultWhiteBrush}"/>
-      <Setter Property="AduAttach:ElementBackground.MouseOverBackground" Value="{StaticResource Brush}"/>
-      <Setter Property="AduAttach:ElementBackground.SelectedBackground" Value="{StaticResource Brush}"/>
-      <Setter Property="AduAttach:ElementBackground.HighlightBackground" Value="{StaticResource DefaultBorderBrush}"/>
-      <Setter Property="AduAttach:ElementForeground.SelectedForeground" Value="{StaticResource DefaultWhiteBrush}"/>
-      <Setter Property="AduAttach:ElementForeground.MouseOverForeground" Value="{StaticResource DefaultWhiteBrush}"/>
-      <Setter Property="AduAttach:ElementForeground.HighlightForeground" Value="{StaticResource DefaultWhiteBrush}"/>
-      <Setter Property="AduAttach:ElementBackground.PanelBackground" Value="#1E1F23" />
+      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{StaticResource DefaultWhiteBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="{StaticResource DefaultBorderBrush}"/>
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource DefaultWhiteBrush}"/>
+      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{StaticResource DefaultWhiteBrush}"/>
+      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{StaticResource DefaultWhiteBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="#1E1F23" />
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Stretch" />
       <Setter Property="Template">
@@ -195,7 +195,7 @@
                                        PlacementTarget="{Binding ElementName=Root}"
                                        StaysOpen="False" VerticalOffset="1">
                            <Grid Margin="10">
-                              <Border Background="{TemplateBinding AduAttach:ElementBackground.PanelBackground}" CornerRadius="3" SnapsToDevicePixels="True" UseLayoutRounding="True">
+                              <Border Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}" CornerRadius="3" SnapsToDevicePixels="True" UseLayoutRounding="True">
                                  <Border.Effect>
                                     <DropShadowEffect BlurRadius="10" Opacity="0.2" ShadowDepth="0" Color="Brown" />
                                  </Border.Effect>
@@ -215,11 +215,11 @@
 
                                     <ItemsControl x:Name="SingleDateShortCuts" Grid.RowSpan="2" Width="100" BorderBrush="{DynamicResource Divider}"
                                                               BorderThickness="0,0,1,0" SnapsToDevicePixels="True" Tag="快捷菜单" Visibility="Collapsed">
-                                       <Button x:Name="PART_Btn_Today" Content="今天" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                                       <Button x:Name="PART_Btn_Today" Content="今天" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
                                                             Style="{StaticResource ShortCutButtonStyle}" />
-                                       <Button x:Name="PART_Btn_Yestday" Content="昨天" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                                       <Button x:Name="PART_Btn_Yestday" Content="昨天" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
                                                             Style="{StaticResource ShortCutButtonStyle}" />
-                                       <Button x:Name="PART_Btn_AWeekAgo" Content="一周前" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                                       <Button x:Name="PART_Btn_AWeekAgo" Content="一周前" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
                                                             Style="{StaticResource ShortCutButtonStyle}" />
                                        <ItemsControl.ItemsPanel>
                                           <ItemsPanelTemplate>
@@ -230,11 +230,11 @@
 
                                     <ItemsControl x:Name="SingleDateRangeShortCuts" Grid.RowSpan="2" Width="100" BorderBrush="{DynamicResource Divider}"
                                                               BorderThickness="0,0,1,0" SnapsToDevicePixels="True" Tag="快捷菜单" Visibility="Collapsed">
-                                       <Button x:Name="PART_Btn_RecentlyAWeek" Content="最近一周" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                                       <Button x:Name="PART_Btn_RecentlyAWeek" Content="最近一周" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
                                                             Style="{StaticResource ShortCutButtonStyle}" />
-                                       <Button x:Name="PART_Btn_RecentlyAMonth" Content="最近一个月" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                                       <Button x:Name="PART_Btn_RecentlyAMonth" Content="最近一个月" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
                                                             Style="{StaticResource ShortCutButtonStyle}" />
-                                       <Button x:Name="PART_Btn_RecentlyThreeMonth" Content="最近三个月" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                                       <Button x:Name="PART_Btn_RecentlyThreeMonth" Content="最近三个月" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
                                                             Style="{StaticResource ShortCutButtonStyle}" />
                                        <ItemsControl.ItemsPanel>
                                           <ItemsPanelTemplate>
@@ -244,36 +244,36 @@
                                     </ItemsControl>
 
                                     <AduPicker:AduCalendar x:Name="PART_Calendar" Grid.Column="1" BorderThickness="0"
-                                                AduAttach:ElementBackground.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.PanelBackground)}"
-                                                AduAttach:ElementBackground.MouseOverBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.MouseOverBackground)}"
-                                                AduAttach:ElementBackground.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
-                                                AduAttach:ElementBackground.HighlightBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.HighlightBackground)}"
-                                                AduAttach:ElementForeground.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.SelectedForeground)}"
-                                                AduAttach:ElementForeground.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.MouseOverForeground)}"
-                                                AduAttach:ElementForeground.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.HighlightForeground)}" />
+                                                AduAttach:BackgroundAttach.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.PanelBackground)}"
+                                                AduAttach:BackgroundAttach.MouseOverBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.MouseOverBackground)}"
+                                                AduAttach:BackgroundAttach.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
+                                                AduAttach:BackgroundAttach.HighlightBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.HighlightBackground)}"
+                                                AduAttach:ForegroundAttach.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.SelectedForeground)}"
+                                                AduAttach:ForegroundAttach.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.MouseOverForeground)}"
+                                                AduAttach:ForegroundAttach.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}" />
                                     <AduPicker:AduCalendar x:Name="PART_Calendar_Second" Grid.Column="2" Margin="-2,0,0,0" BorderThickness="0" Type="Second" Visibility="Collapsed" 
-                                                AduAttach:ElementBackground.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.PanelBackground)}"
-                                                AduAttach:ElementBackground.MouseOverBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.MouseOverBackground)}"
-                                                AduAttach:ElementBackground.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
-                                                AduAttach:ElementBackground.HighlightBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.HighlightBackground)}"
-                                                AduAttach:ElementForeground.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.SelectedForeground)}"
-                                                AduAttach:ElementForeground.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.MouseOverForeground)}"
-                                                AduAttach:ElementForeground.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.HighlightForeground)}" />
+                                                AduAttach:BackgroundAttach.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.PanelBackground)}"
+                                                AduAttach:BackgroundAttach.MouseOverBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.MouseOverBackground)}"
+                                                AduAttach:BackgroundAttach.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
+                                                AduAttach:BackgroundAttach.HighlightBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.HighlightBackground)}"
+                                                AduAttach:ForegroundAttach.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.SelectedForeground)}"
+                                                AduAttach:ForegroundAttach.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.MouseOverForeground)}"
+                                                AduAttach:ForegroundAttach.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}" />
 
                                     <Border x:Name="ButtonLayout" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="{DynamicResource Divider}" BorderThickness="0,1,0,0" Padding="0,7" Visibility="Collapsed">
                                        <DockPanel>
-                                          <ToggleButton x:Name="ChooseTime" Margin="7,0,0,0" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}" BorderThickness="0" Content="选择时间"
+                                          <ToggleButton x:Name="ChooseTime" Margin="7,0,0,0" Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}" BorderThickness="0" Content="选择时间"
                                                    DockPanel.Dock="Left" Visibility="Collapsed" Style="{StaticResource ChooseTimeToggleButton}"/>
                                           <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right" Orientation="Horizontal">
                                              <Adu:AduFlatButton x:Name="PART_ClearDate" Width="40" Height="22" Margin="0,0,5,0"
                                                    HorizontalAlignment="Right" Content="清空" Foreground="#657180" Background="Transparent" />
-                                             <Adu:AduFlatButton x:Name="PART_ConfirmSelected" Width="40" Height="22" Margin="0,0,7,0" Background="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
+                                             <Adu:AduFlatButton x:Name="PART_ConfirmSelected" Width="40" Height="22" Margin="0,0,7,0" Background="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
                                                    HorizontalAlignment="Right" Content="确定" />
                                           </StackPanel>
 
                                           <Popup x:Name="PART_Popup_TimeSelector" AllowsTransparency="True" Placement="Top" PlacementTarget="{Binding ElementName=ButtonLayout}"
                                                    IsOpen="{Binding IsChecked, ElementName=ChooseTime}" Width="{Binding Path=ActualWidth, ElementName=ButtonLayout}">
-                                             <AduPicker:AduTimeSelector x:Name="PART_TimeSelector" BorderThickness="0" AduAttach:ElementBackground.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.PanelBackground)}"
+                                             <AduPicker:AduTimeSelector x:Name="PART_TimeSelector" BorderThickness="0" AduAttach:BackgroundAttach.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.PanelBackground)}"
                                                    Height="{Binding Path=ActualHeight, ElementName=PART_Calendar}"/>
                                           </Popup>
                                        </DockPanel>

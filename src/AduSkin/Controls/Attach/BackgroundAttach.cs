@@ -3,14 +3,14 @@ using System.Windows.Media;
 
 namespace AduSkin.Controls.Attach
 {
-   public class ElementBackground
+   public class BackgroundAttach
    {
       /// <summary>
       /// Panel背景色
       /// Combox下拉、日期选择面板
       /// </summary>
       public static readonly DependencyProperty PanelBackgroundProperty = DependencyProperty.RegisterAttached(
-            "PanelBackground", typeof(SolidColorBrush), typeof(ElementBackground), new PropertyMetadata(default(SolidColorBrush)));
+            "PanelBackground", typeof(SolidColorBrush), typeof(BackgroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetPanelBackground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(PanelBackgroundProperty, value);
@@ -22,7 +22,7 @@ namespace AduSkin.Controls.Attach
       /// 默认颜色
       /// </summary>
       public static readonly DependencyProperty NormalBackgroundProperty = DependencyProperty.RegisterAttached(
-            "NormalBackground", typeof(SolidColorBrush), typeof(ElementBackground), new PropertyMetadata(default(SolidColorBrush)));
+            "NormalBackground", typeof(SolidColorBrush), typeof(BackgroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetNormalBackground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(NormalBackgroundProperty, value);
@@ -34,7 +34,7 @@ namespace AduSkin.Controls.Attach
       /// 高亮颜色
       /// </summary>
       public static readonly DependencyProperty HighlightBackgroundProperty = DependencyProperty.RegisterAttached(
-            "HighlightBackground", typeof(SolidColorBrush), typeof(ElementBackground), new PropertyMetadata(default(SolidColorBrush)));
+            "HighlightBackground", typeof(SolidColorBrush), typeof(BackgroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetHighlightBackground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(HighlightBackgroundProperty, value);
@@ -46,7 +46,7 @@ namespace AduSkin.Controls.Attach
       /// 选中颜色
       /// </summary>
       public static readonly DependencyProperty SelectedBackgroundProperty = DependencyProperty.RegisterAttached(
-            "SelectedBackground", typeof(SolidColorBrush), typeof(ElementBackground), new PropertyMetadata(default(SolidColorBrush)));
+            "SelectedBackground", typeof(SolidColorBrush), typeof(BackgroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetSelectedBackground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(SelectedBackgroundProperty, value);
@@ -58,7 +58,7 @@ namespace AduSkin.Controls.Attach
       /// 鼠标悬浮颜色
       /// </summary>
       public static readonly DependencyProperty MouseOverBackgroundProperty = DependencyProperty.RegisterAttached(
-            "MouseOverBackground", typeof(SolidColorBrush), typeof(ElementBackground), new PropertyMetadata(default(SolidColorBrush)));
+            "MouseOverBackground", typeof(SolidColorBrush), typeof(BackgroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetMouseOverBackground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(MouseOverBackgroundProperty, value);
@@ -70,7 +70,7 @@ namespace AduSkin.Controls.Attach
       /// 鼠标悬浮颜色
       /// </summary>
       public static readonly DependencyProperty PressedBackgroundProperty = DependencyProperty.RegisterAttached(
-            "PressedBackground", typeof(SolidColorBrush), typeof(ElementBackground), new PropertyMetadata(default(SolidColorBrush)));
+            "PressedBackground", typeof(SolidColorBrush), typeof(BackgroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetPressedBackground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(PressedBackgroundProperty, value);
@@ -82,7 +82,7 @@ namespace AduSkin.Controls.Attach
       /// 禁用颜色
       /// </summary>
       public static readonly DependencyProperty DisabledBackgroundProperty = DependencyProperty.RegisterAttached(
-            "DisabledBackground", typeof(SolidColorBrush), typeof(ElementBackground), new PropertyMetadata(default(SolidColorBrush)));
+            "DisabledBackground", typeof(SolidColorBrush), typeof(BackgroundAttach), new PropertyMetadata(default(SolidColorBrush)));
 
       public static void SetDisabledBackground(DependencyObject element, SolidColorBrush value)
           => element.SetValue(DisabledBackgroundProperty, value);

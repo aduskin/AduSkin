@@ -11,9 +11,9 @@
       <Setter Property="SnapsToDevicePixels" Value="True"/>
       <Setter Property="Foreground" Value="{StaticResource Brush}"/>
       <Setter Property="MinWidth" Value="200"/>
-      <Setter Property="AduAttach:BorderElement.BorderBrush" Value="Transparent" />
-      <Setter Property="AduAttach:BorderElement.BorderThickness" Value="0" />
-      <Setter Property="AduAttach:BorderElement.CornerRadius" Value="6" />
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="Transparent" />
+      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0" />
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6" />
       <Setter Property="Padding" Value="0"/>
       <Setter Property="Background" Value="#1E1F23"/><!--菜单背景色-->
       <Setter Property="Cursor" Value="Hand"/>
@@ -38,9 +38,9 @@
                   <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" HorizontalOffset="-10" VerticalOffset="-20" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="Fade" Placement="Right">
                      <Grid RenderOptions.ClearTypeHint="Enabled" Background="#00000000">
                         <Border Grid.Row="1" Margin="20" Padding="{TemplateBinding Padding}"
-                                      BorderBrush="{TemplateBinding AduAttach:BorderElement.BorderBrush}" 
-                                      BorderThickness="{TemplateBinding AduAttach:BorderElement.BorderThickness}" 
-                                      CornerRadius="{TemplateBinding AduAttach:BorderElement.CornerRadius}" 
+                                      BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
+                                      BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
+                                      CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                                       Background="{TemplateBinding Background}">
                            <Border.Effect>
                               <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>

@@ -269,12 +269,12 @@ namespace AduSkin.Controls.Metro
             for (int k = 0; k < 7; k++)
             {
                AduCalendarDayButton calendarDayButton = new AduCalendarDayButton();
-               ElementBackground.SetSelectedBackground(calendarDayButton, ElementBackground.GetSelectedBackground(this));
-               ElementBackground.SetMouseOverBackground(calendarDayButton, ElementBackground.GetMouseOverBackground(this));
-               ElementBackground.SetHighlightBackground(calendarDayButton, ElementBackground.GetHighlightBackground(this));
-               ElementForeground.SetSelectedForeground(calendarDayButton, ElementForeground.GetSelectedForeground(this));
-               ElementForeground.SetMouseOverForeground(calendarDayButton, ElementForeground.GetMouseOverForeground(this));
-               ElementForeground.SetHighlightForeground(calendarDayButton, ElementForeground.GetHighlightForeground(this));
+               BackgroundAttach.SetSelectedBackground(calendarDayButton, BackgroundAttach.GetSelectedBackground(this));
+               BackgroundAttach.SetMouseOverBackground(calendarDayButton, BackgroundAttach.GetMouseOverBackground(this));
+               BackgroundAttach.SetHighlightBackground(calendarDayButton, BackgroundAttach.GetHighlightBackground(this));
+               ForegroundAttach.SetSelectedForeground(calendarDayButton, ForegroundAttach.GetSelectedForeground(this));
+               ForegroundAttach.SetMouseOverForeground(calendarDayButton, ForegroundAttach.GetMouseOverForeground(this));
+               ForegroundAttach.SetHighlightForeground(calendarDayButton, ForegroundAttach.GetHighlightForeground(this));
                calendarDayButton.Owner = this.Owner;
                calendarDayButton.SetValue(Grid.RowProperty, j);
                calendarDayButton.SetValue(Grid.ColumnProperty, k);

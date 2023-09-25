@@ -1,41 +1,42 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
-                    xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro">
+                    xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
 
-    <PathGeometry x:Key="Icon_Left" Figures="M614.997333 511.146667l314.88 285.354666a30.549333 30.549333 0 0 1 0 46.336 37.888 37.888 0 0 1-25.6 9.557334 38.058667 38.058667 0 0 1-25.6-9.728L512.512 511.146667l366.165333-331.776a38.741333 38.741333 0 0 1 51.2 0 30.72 30.72 0 0 1 0 46.421333L614.997333 511.146667z m-428.032 0l314.88 285.354666a30.549333 30.549333 0 0 1 0 46.336 37.888 37.888 0 0 1-25.6 9.557334 38.229333 38.229333 0 0 1-25.6-9.728L84.48 511.146667l366.165333-331.776a38.741333 38.741333 0 0 1 51.2 0 30.72 30.72 0 0 1 0 46.421333L186.965333 511.146667z" />
-    <PathGeometry x:Key="Icon_Right" Figures="M533.7 481.1L178 125.4c-17.3-17.3-45.5-17.3-62.8 0-17.3 17.3-17.3 45.5 0 62.8l324.3 324.3-324.2 324.3c-17.3 17.3-17.3 45.5 0 62.8 17.3 17.3 45.5 17.3 62.8 0l355.7-355.7c17.2-17.3 17.2-45.5-0.1-62.8z M906.7 481.1L551 125.4c-17.3-17.3-45.5-17.3-62.8 0-17.3 17.3-17.3 45.5 0 62.8l324.3 324.3-324.2 324.3c-17.3 17.3-17.3 45.5 0 62.8 17.3 17.3 45.5 17.3 62.8 0l355.7-355.7c17.2-17.3 17.2-45.5-0.1-62.8z"/>
+   <PathGeometry x:Key="Icon_Left" Figures="M614.997333 511.146667l314.88 285.354666a30.549333 30.549333 0 0 1 0 46.336 37.888 37.888 0 0 1-25.6 9.557334 38.058667 38.058667 0 0 1-25.6-9.728L512.512 511.146667l366.165333-331.776a38.741333 38.741333 0 0 1 51.2 0 30.72 30.72 0 0 1 0 46.421333L614.997333 511.146667z m-428.032 0l314.88 285.354666a30.549333 30.549333 0 0 1 0 46.336 37.888 37.888 0 0 1-25.6 9.557334 38.229333 38.229333 0 0 1-25.6-9.728L84.48 511.146667l366.165333-331.776a38.741333 38.741333 0 0 1 51.2 0 30.72 30.72 0 0 1 0 46.421333L186.965333 511.146667z" />
+   <PathGeometry x:Key="Icon_Right" Figures="M533.7 481.1L178 125.4c-17.3-17.3-45.5-17.3-62.8 0-17.3 17.3-17.3 45.5 0 62.8l324.3 324.3-324.2 324.3c-17.3 17.3-17.3 45.5 0 62.8 17.3 17.3 45.5 17.3 62.8 0l355.7-355.7c17.2-17.3 17.2-45.5-0.1-62.8z M906.7 481.1L551 125.4c-17.3-17.3-45.5-17.3-62.8 0-17.3 17.3-17.3 45.5 0 62.8l324.3 324.3-324.2 324.3c-17.3 17.3-17.3 45.5 0 62.8 17.3 17.3 45.5 17.3 62.8 0l355.7-355.7c17.2-17.3 17.2-45.5-0.1-62.8z"/>
 
-    <PathGeometry x:Key="SelectedIcon" Figures="M512 145.656381c-197.47763 0-358.157169 160.679539-358.157169 358.157169 0 197.503213 160.653957 358.157169 358.157169 358.157169s358.157169-160.653957 358.157169-358.157169C870.157169 306.33592 709.50219 145.656381 512 145.656381zM684.83437 444.73706l-205.751061 207.986985c-0.051165 0.051165-0.154519 0.076748-0.205685 0.154519-0.076748 0.051165-0.076748 0.154519-0.154519 0.205685-1.644453 1.593288-3.674693 2.569522-5.575995 3.64911-0.950651 0.539282-1.721201 1.362021-2.724041 1.747807-3.083222 1.233084-6.346545 1.87572-9.610892 1.87572-3.288906 0-6.604418-0.642636-9.713222-1.926886-1.027399-0.436952-1.850138-1.310855-2.826372-1.850138-1.901303-1.079588-3.880377-2.030239-5.52483-3.64911-0.051165-0.051165-0.076748-0.154519-0.128937-0.205685-0.051165-0.076748-0.154519-0.076748-0.205685-0.154519L341.220429 548.577057c-9.893324-10.175757-9.662057-26.441209 0.5137-36.334533 10.175757-9.867742 26.415626-9.68764 36.334533 0.5137l82.922594 85.209684L648.319735 408.582629c9.970072-10.099009 26.26213-10.201339 36.334533-0.205685C694.701089 418.372599 694.804443 434.638051 684.83437 444.73706z" />
-    <Style x:Key="ButtonStyle" TargetType="{x:Type Adu:AduPathIconButton}">
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Width" Value="30" />
-        <Setter Property="Height" Value="70" />
-        <Setter Property="Background" Value="#22000000" />
-        <Setter Property="MouseOverBackground" Value="#44000000" />
-        <Setter Property="PressedBackground" Value="#55000000" />
-        <Setter Property="CornerRadius" Value="0" />
-        <Setter Property="PathWidth" Value="10" />
-        <Setter Property="NormalPathColor" Value="White" />
-        <Setter Property="MouseOverPathColor" Value="White" />
-        <Setter Property="PressedPathColor" Value="White" />
-    </Style>
+   <PathGeometry x:Key="SelectedIcon" Figures="M512 145.656381c-197.47763 0-358.157169 160.679539-358.157169 358.157169 0 197.503213 160.653957 358.157169 358.157169 358.157169s358.157169-160.653957 358.157169-358.157169C870.157169 306.33592 709.50219 145.656381 512 145.656381zM684.83437 444.73706l-205.751061 207.986985c-0.051165 0.051165-0.154519 0.076748-0.205685 0.154519-0.076748 0.051165-0.076748 0.154519-0.154519 0.205685-1.644453 1.593288-3.674693 2.569522-5.575995 3.64911-0.950651 0.539282-1.721201 1.362021-2.724041 1.747807-3.083222 1.233084-6.346545 1.87572-9.610892 1.87572-3.288906 0-6.604418-0.642636-9.713222-1.926886-1.027399-0.436952-1.850138-1.310855-2.826372-1.850138-1.901303-1.079588-3.880377-2.030239-5.52483-3.64911-0.051165-0.051165-0.076748-0.154519-0.128937-0.205685-0.051165-0.076748-0.154519-0.076748-0.205685-0.154519L341.220429 548.577057c-9.893324-10.175757-9.662057-26.441209 0.5137-36.334533 10.175757-9.867742 26.415626-9.68764 36.334533 0.5137l82.922594 85.209684L648.319735 408.582629c9.970072-10.099009 26.26213-10.201339 36.334533-0.205685C694.701089 418.372599 694.804443 434.638051 684.83437 444.73706z" />
+   <Style x:Key="ButtonStyle" TargetType="{x:Type Adu:AduPathIconButton}">
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="Width" Value="30" />
+      <Setter Property="Height" Value="70" />
+      <Setter Property="Background" Value="#22000000" />
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="#44000000" />
+      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="#55000000" />
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0" />
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="10" />
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="White" />
+      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="White" />
+      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="White" />
+   </Style>
 
    <Style TargetType="{x:Type AduSkin:AduCarousel}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="#D7DDE4" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="UseLayoutRounding" Value="True" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Grid Background="Transparent">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderBrush" Value="#D7DDE4" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="UseLayoutRounding" Value="True" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate>
+               <Grid Background="Transparent">
+                  <Grid.RowDefinitions>
+                     <RowDefinition Height="*" />
+                     <RowDefinition Height="auto" />
+                  </Grid.RowDefinitions>
+                  <Border BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}" HorizontalAlignment="Center" 
                                 VerticalAlignment="Center" ClipToBounds="True" CornerRadius="0"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
@@ -45,39 +46,39 @@
                                                   Height="{TemplateBinding Height}"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                   UseLayoutRounding="{TemplateBinding UseLayoutRounding}"/>
-                        </Border>
-                        <StackPanel x:Name="PART_IndexPanel" Grid.Row="1" 
+                  </Border>
+                  <StackPanel x:Name="PART_IndexPanel" Grid.Row="1" 
                                     Margin="0,10,0,0"
                                     Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-                        <Adu:AduPathIconButton x:Name="PART_LastButton" HorizontalAlignment="Left" PathData="{StaticResource Icon_Left}" Margin="0,0,0,0"
+                  <Adu:AduPathIconButton x:Name="PART_LastButton" HorizontalAlignment="Left" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Left}" Margin="0,0,0,0"
                                             Style="{StaticResource ButtonStyle}"/>
-                        <Adu:AduPathIconButton x:Name="PART_NextButton" HorizontalAlignment="Right" PathData="{StaticResource Icon_Right}" Margin="0,0,0,0"
+                  <Adu:AduPathIconButton x:Name="PART_NextButton" HorizontalAlignment="Right" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Right}" Margin="0,0,0,0"
                                             Style="{StaticResource ButtonStyle}"/>
 
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="PART_LastButton" Storyboard.TargetProperty="(UIElement.Opacity)"
+                  <VisualStateManager.VisualStateGroups>
+                     <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                           <Storyboard>
+                              <DoubleAnimation Storyboard.TargetName="PART_LastButton" Storyboard.TargetProperty="(UIElement.Opacity)"
                                                          From="1" To="0" Duration="0:0:0.25"/>
-                                        <DoubleAnimation Storyboard.TargetName="PART_NextButton" Storyboard.TargetProperty="(UIElement.Opacity)"
+                              <DoubleAnimation Storyboard.TargetName="PART_NextButton" Storyboard.TargetProperty="(UIElement.Opacity)"
                                                          From="1" To="0" Duration="0:0:0.25"/>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="MouseOver">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="PART_LastButton" Storyboard.TargetProperty="(UIElement.Opacity)"
+                           </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                           <Storyboard>
+                              <DoubleAnimation Storyboard.TargetName="PART_LastButton" Storyboard.TargetProperty="(UIElement.Opacity)"
                                                          From="0" To="1" Duration="0:0:0.25"/>
-                                        <DoubleAnimation Storyboard.TargetName="PART_NextButton" Storyboard.TargetProperty="(UIElement.Opacity)"
+                              <DoubleAnimation Storyboard.TargetName="PART_NextButton" Storyboard.TargetProperty="(UIElement.Opacity)"
                                                          From="0" To="1" Duration="0:0:0.25"/>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                           </Storyboard>
+                        </VisualState>
+                     </VisualStateGroup>
+                  </VisualStateManager.VisualStateGroups>
+               </Grid>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 </ResourceDictionary>

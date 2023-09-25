@@ -12,12 +12,12 @@
    <Style TargetType="{x:Type Adu:AduCalendar}">
       <Setter Property="Foreground" Value="{DynamicResource Control.Static.Foreground}" />
       <Setter Property="Background" Value="{DynamicResource Control.Static.Background}" />
-      <Setter Property="AduAttach:ElementBackground.HighlightBackground" Value="#05000000"/>
-      <Setter Property="AduAttach:ElementBackground.SelectedBackground" Value="#20000000"/>
-      <Setter Property="AduAttach:ElementBackground.MouseOverBackground" Value="#10000000"/>
-      <Setter Property="AduAttach:ElementForeground.HighlightForeground" Value="#FFF"/>
-      <Setter Property="AduAttach:ElementForeground.SelectedForeground" Value="#FFF"/>
-      <Setter Property="AduAttach:ElementForeground.MouseOverForeground" Value="#FFF"/>
+      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="#05000000"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="#20000000"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="#10000000"/>
+      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="#FFF"/>
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="#FFF"/>
+      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="#FFF"/>
       <Setter Property="BorderBrush" Value="{DynamicResource Divider}" />
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -27,16 +27,16 @@
             <ControlTemplate TargetType="{x:Type Adu:AduCalendar}">
                <Grid x:Name="PART_Root" HorizontalAlignment="Center">
                   <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                                Background="{TemplateBinding AduAttach:ElementBackground.PanelBackground}"
+                                Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="0" SnapsToDevicePixels="True" UseLayoutRounding="True">
                      <Adu:AduCalendarItem x:Name="PART_CalendarItem" Grid.Row="1"
-                                 AduAttach:ElementBackground.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.SelectedBackground)}"
-                                 AduAttach:ElementBackground.HighlightBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.HighlightBackground)}"
-                                 AduAttach:ElementBackground.MouseOverBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementBackground.MouseOverBackground)}"
-                                 AduAttach:ElementForeground.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.MouseOverForeground)}"
-                                 AduAttach:ElementForeground.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.HighlightForeground)}"
-                                 AduAttach:ElementForeground.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ElementForeground.SelectedForeground)}"
+                                 AduAttach:BackgroundAttach.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
+                                 AduAttach:BackgroundAttach.HighlightBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.HighlightBackground)}"
+                                 AduAttach:BackgroundAttach.MouseOverBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.MouseOverBackground)}"
+                                 AduAttach:ForegroundAttach.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.MouseOverForeground)}"
+                                 AduAttach:ForegroundAttach.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}"
+                                 AduAttach:ForegroundAttach.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.SelectedForeground)}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"

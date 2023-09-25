@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="Notification" Width="300" MinHeight="700" 
+        xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach"
         AllowsTransparency="True"
         Background="Transparent" ShowActivated="False" 
         ShowInTaskbar="False" Topmost="True"
@@ -60,9 +61,9 @@
                                    TextWrapping="Wrap" />
 
                      <Adu:AduPathIconButton x:Name="PART_CloseButton" Grid.ColumnSpan="2" Margin="0" HorizontalAlignment="Right"
-                                            VerticalAlignment="Center" MouseOverPathColor="#446CB3" NormalPathColor="#99A5C2"
-                                            PathData="{StaticResource Icon_SystemClose}"
-                                            PathWidth="10" />
+                                            VerticalAlignment="Center" AduAttach:PathBrushAttach.MouseOverPathColor="#446CB3" AduAttach:PathBrushAttach.NormalPathColor="#99A5C2"
+                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_SystemClose}"
+                                            AduAttach:PathDataAttach.Width="10" />
                   </Grid>
                </Border>
             </Grid>

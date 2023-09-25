@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              xmlns:ViewModel="clr-namespace:AduSkin.Demo.ViewModel"
+              xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -28,11 +29,13 @@
             <AduSkin:AduComboBox VerticalAlignment="Center" CornerRadius="4" Height="32" ItemsSource="{Binding HttpTypList}" SelectedItem="{Binding CurrentHttpType}" DisplayMemberPath="CodeName" />
             <AduSkin:AduComboBox Grid.Column="1" Height="32" Width="80" Margin="4,0" CornerRadius="4" VerticalAlignment="Center" ItemsSource="{Binding CodeTypeList}" SelectedItem="{Binding CurrentCodeType}" DisplayMemberPath="CodeName"/>
             <AduSkin:MetroTextBox Grid.Column="2" Height="32" CornerRadius="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Text="{Binding ToUrlTxt}" InputHint="输入接口地址"/>
-            <AduSkin:AduPathIconButton Grid.Column="3" Command="{Binding ToRequest}" VerticalAlignment="Center" PathData="{StaticResource Icon_To}" PathWidth="14"/>
+            <AduSkin:AduPathIconButton Grid.Column="3" Command="{Binding ToRequest}" VerticalAlignment="Center" 
+                                       AduAttach:PathDataAttach.PathData="{StaticResource Icon_To}" AduAttach:PathDataAttach.Width="14"/>
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel Orientation="Horizontal">
-                <AduSkin:AduButtonIcon Icon="{StaticResource Icon_Insert}" Command="{Binding AddRequestCodeCommand}" CommandParameter="Param"  VerticalAlignment="Center" Width="80" CornerRadius="3" IconWidth="20" IconTextMargin="4" IconHeight="20" Content="请求参" Foreground="{StaticResource ShadowColor}"/>
+                <AduSkin:AduButtonIcon AduAttach:PathDataAttach.PathData="{StaticResource Icon_Insert}" Command="{Binding AddRequestCodeCommand}" CommandParameter="Param"  VerticalAlignment="Center" Width="80" 
+                                       AduAttach:BorderAttach.CornerRadius="3" AduAttach:PathDataAttach.Width="20" AduAttach:PathDataAttach.Margin="4"  Content="请求参" Foreground="{StaticResource ShadowColor}"/>
             </StackPanel>
         </Grid>
         <AduSkin:AduDataGrid Grid.Row="2" CanUserResizeColumns="False" CanUserSortColumns="False" IsEnabled="{Binding RequestParamState}"
@@ -58,16 +61,20 @@
                 <DataGridTemplateColumn Width="60" Header="操作">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <AduSkin:AduButtonIcon Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=DataContext.RemoveParameter}"
-                                CommandParameter="{Binding}" Width="30" Margin="10,0" CornerRadius="3" HorizontalAlignment="Left" Foreground="{StaticResource ShadowColor}" Icon="{StaticResource Icon_Delete}" />
-                        </DataTemplate>
+                     <AduSkin:AduButtonIcon Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=DataContext.RemoveParameter}"
+                           CommandParameter="{Binding}" Width="30" Margin="10,0"
+                           AduAttach:BorderAttach.CornerRadius="3" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Delete}" 
+                           HorizontalAlignment="Left" Foreground="{StaticResource ShadowColor}" />
+                  </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </AduSkin:AduDataGrid>
         <Grid Grid.Row="3">
             <StackPanel Orientation="Horizontal">
-                <AduSkin:AduButtonIcon Icon="{StaticResource Icon_Insert}" Command="{Binding AddRequestCodeCommand}" CommandParameter="Header" VerticalAlignment="Center" Width="80" CornerRadius="3" IconWidth="20" IconTextMargin="4" IconHeight="20" Content="请求头" Foreground="{StaticResource ShadowColor}"/>
+                <AduSkin:AduButtonIcon AduAttach:PathDataAttach.PathData="{StaticResource Icon_Insert}" 
+                                       Command="{Binding AddRequestCodeCommand}" CommandParameter="Header" VerticalAlignment="Center" Width="80" 
+                                       AduAttach:BorderAttach.CornerRadius="3" AduAttach:PathDataAttach.Width="20" AduAttach:PathDataAttach.Margin="4" Content="请求头" Foreground="{StaticResource ShadowColor}"/>
             </StackPanel>
         </Grid>
         <AduSkin:AduDataGrid Grid.Row="4" CanUserResizeColumns="False" CanUserSortColumns="False" IsEnabled="{Binding RequestParamState}"
@@ -94,7 +101,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <AduSkin:AduButtonIcon Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=DataContext.RemoveHeader}"
-                                CommandParameter="{Binding}" Width="30" Margin="10,0" CornerRadius="3" HorizontalAlignment="Left" Foreground="{StaticResource ShadowColor}" Icon="{StaticResource Icon_Delete}" />
+                                CommandParameter="{Binding}" Width="30" Margin="10,0" AduAttach:BorderAttach.CornerRadius="3" HorizontalAlignment="Left" Foreground="{StaticResource ShadowColor}" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Delete}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

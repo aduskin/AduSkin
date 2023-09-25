@@ -64,7 +64,6 @@ namespace AduSkin.Controls
                dataPicker.Foreground = mw.BorderBrush;
                dataPicker.BorderBrush = mw.BorderBrush;
             }
-            if (control is AduDIYCheckBox) { (control as AduDIYCheckBox).NormalPathColor = mw.BorderBrush; }
             if (control is AduTimeSelector) { (control as AduTimeSelector).Foreground = mw.BorderBrush; }
             if (control is AduSegmentItem) { (control as AduSegmentItem).SelectForeground = mw.BorderBrush; }
             if (control is AduSlider) { (control as AduSlider).Background = mw.BorderBrush; }
@@ -81,7 +80,6 @@ namespace AduSkin.Controls
             if (control is AduFlatSilder) { (control as AduFlatSilder).DecreaseColor = mw.BorderBrush; }
             if (control is AduRadioButtonIcon) { (control as AduRadioButtonIcon).SelectColor = mw.BorderBrush; }
             if (control is AduNumericUpDownBase) { (control as AduNumericUpDownBase).Background = mw.BorderBrush; }
-            if (control is AduPathIconButton) { (control as AduPathIconButton).NormalPathColor = mw.BorderBrush; }
             if (control is AduRatingBar) { (control as AduRatingBar).SelectedColor = mw.BorderBrush; }
             if (control is AduAnimationPath) { (control as AduAnimationPath).Stroke = mw.BorderBrush; }
          }

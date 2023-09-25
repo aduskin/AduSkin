@@ -37,9 +37,9 @@
                   <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" HorizontalOffset="-20" VerticalOffset="-10" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="Fade" Placement="Bottom">
                      <Grid RenderOptions.ClearTypeHint="Enabled" Background="#00000000">
                         <Border Grid.Row="1" Background="{TemplateBinding Background}" Margin="20" Padding="0"
-                                        BorderBrush="{TemplateBinding AduAttach:BorderElement.BorderBrush}" 
-                                        BorderThickness="{TemplateBinding AduAttach:BorderElement.BorderThickness}" 
-                                        CornerRadius="{TemplateBinding AduAttach:BorderElement.CornerRadius}">
+                                        BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
+                                        BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
+                                        CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}">
                            <Border.Effect>
                               <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
                            </Border.Effect>
