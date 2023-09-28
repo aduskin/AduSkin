@@ -52,5 +52,17 @@ namespace AduSkin.Controls.Attach
 
         public static Thickness GetMargin(DependencyObject element)
             => (Thickness) element.GetValue(MarginProperty);
-    }
+
+      /// <summary>
+      /// 图标可见性
+      /// </summary>
+      public static readonly DependencyProperty VisibilityProperty = DependencyProperty.RegisterAttached(
+          "Visibility", typeof(Visibility), typeof(PathDataAttach), new PropertyMetadata(default(Visibility)));
+
+      public static void SetVisibility(DependencyObject element, Visibility value)
+          => element.SetValue(VisibilityProperty, value);
+
+      public static Visibility GetVisibility(DependencyObject element)
+          => (Visibility)element.GetValue(VisibilityProperty);
+   }
 }

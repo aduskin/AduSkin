@@ -1,3 +1,4 @@
+using AduSkin.Controls.Attach;
 using AduSkin.Controls.Data;
 using AduSkin.Controls.Tools.Extension;
 using AduSkin.Interactivity;
@@ -6,6 +7,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace AduSkin.Controls.Metro
 {
@@ -74,7 +76,7 @@ namespace AduSkin.Controls.Metro
 
       public AduPage()
       {
-         
+
          CommandBindings.Add(new CommandBinding(ControlCommands.Prev, ButtonPrev_OnClick));
          CommandBindings.Add(new CommandBinding(ControlCommands.Next, ButtonNext_OnClick));
          CommandBindings.Add(new CommandBinding(ControlCommands.Selected, ToggleButton_OnChecked));
@@ -352,16 +354,18 @@ namespace AduSkin.Controls.Metro
 
       private AduRadioButton CreateButton(int page, bool isSelected = false)
       {
-         return new AduRadioButton
+         var rbt = new AduRadioButton
          {
             Content = page.ToString(),
             Tag = page.ToString(),
-            IconVisibility = Visibility.Collapsed,
             Opacity = isSelected ? 1 : 0.8,
             FontWeight = isSelected ? FontWeight.FromOpenTypeWeight(600) : FontWeight.FromOpenTypeWeight(400),
             Width = 40,
             HorizontalAlignment = HorizontalAlignment.Center
          };
+         PathDataAttach.SetVisibility(rbt, Visibility.Collapsed);
+         PathDataAttach.SetMargin(rbt, new Thickness(0));
+         return rbt;
       }
 
       private void ToggleButton_OnChecked(object sender, RoutedEventArgs e)

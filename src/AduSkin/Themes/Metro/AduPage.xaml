@@ -35,13 +35,13 @@
                                     <interactivity:EventToCommand Command="interactivity:ControlCommands.Selected" PassEventArgsToCommand="True" />
                                 </interactivity:RoutedEventTrigger>
                             </interactivity:Interaction.Triggers>
-                            <Adu:AduRadioButton x:Name="PART_ButtonFirst" Content="首页" Tag="1" IsChecked="True" IconVisibility="Collapsed"/>
+                     <Adu:AduRadioButton x:Name="PART_ButtonFirst" Content="首页" Tag="1" IsChecked="True" AduAttach:PathDataAttach.Visibility="Collapsed"/>
                             <TextBlock Name="PART_TextBlockLeft" Margin="10,0" FontSize="16" Text="..." Foreground="{DynamicResource Brush}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                             <StackPanel Name="PART_PanelMain" Orientation="Horizontal"/>
 
                             <TextBlock Name="PART_TextBlockRight" Margin="10,0" FontSize="16" Text="..." Foreground="{DynamicResource Brush}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <Adu:AduRadioButton x:Name="PART_ButtonLast" Content="末页" Tag="10"  IconVisibility="Collapsed"/>
+                     <Adu:AduRadioButton x:Name="PART_ButtonLast" Content="末页" Tag="10" AduAttach:PathDataAttach.Visibility="Collapsed"/>
                         </StackPanel>
                         <!--向右切换-->
                   <Adu:AduPathIconButton x:Name="PART_ButtonRight" Grid.Column="2" Command="interactivity:ControlCommands.Next" Margin="5,0" AduAttach:PathDataAttach.PathData="{StaticResource Icon_RightArrow2}" AduAttach:PathDataAttach.Width="16"/>

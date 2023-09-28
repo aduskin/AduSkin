@@ -196,7 +196,8 @@
                               <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
                               <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
                               <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
-                              <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
+                              <Metro:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" AduAttach:PathDataAttach.PathData="{StaticResource Icon_NoChecked}" AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Checked}"/>
+                              <Metro:AduCheckBox FontSize="14" AduAttach:PathDataAttach.Margin="0" AduAttach:PathDataAttach.Width="16" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Plugin}" AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Browser}"  />
                            </StackPanel>
                         </Metro:AduExpander>
                      </StackPanel>

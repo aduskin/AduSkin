@@ -60,7 +60,6 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduNavigationPanel.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Loading/AduLoading.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFlatSilder.xaml" />
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDIYRadionButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduDIYCheckBox.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/AduRatingBar.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/RatingBar/AduRatingBarButton.xaml" />
