@@ -13,6 +13,7 @@
       <Setter Property="TitleWidth" Value="50"/>
       <Setter Property="TitleMinWidth" Value="50"/>
       <Setter Property="TitleHorizontalAlignment" Value="Right"/>
+      <Setter Property="TitleForeground" Value="Black"/>
       <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
       <Setter Property="VerticalContentAlignment" Value="Stretch"/>
       <Setter Property="BorderBrush" Value="Transparent"/>
@@ -28,7 +29,12 @@
                         <ColumnDefinition />
                         <ColumnDefinition x:Name="gridError" Width="auto"/>
                      </Grid.ColumnDefinitions>
-                     <TextBlock Grid.Column="0" Text="{TemplateBinding Title}" Width="{TemplateBinding TitleWidth}" HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}" VerticalAlignment="{TemplateBinding TitleVerticalAlignment}"/>
+                     <TextBlock Grid.Column="0" 
+                                Text="{TemplateBinding Title}"
+                                Foreground="{TemplateBinding TitleForeground}"
+                                Width="{TemplateBinding TitleWidth}" 
+                                HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}" 
+                                VerticalAlignment="{TemplateBinding TitleVerticalAlignment}"/>
                      <ContentPresenter Grid.Column="1" Margin="5,0" 
                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                            Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"

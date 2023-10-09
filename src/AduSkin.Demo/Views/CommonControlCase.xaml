@@ -103,36 +103,42 @@
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel>
                      <Metro:AduRadioButtonIcon
-                                                            Content="盒子"
-                                                            IsChecked="True"
-                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Desgin2}"
-                                                            AduAttach:PathDataAttach.Margin="20,0"
-                                                            AduAttach:PathDataAttach.Width="16"/>
+                        Content="盒子"
+                        IsChecked="True"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Desgin2}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource ShadowColor}"
+                        AduAttach:PathDataAttach.Margin="20,0"
+                        AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
-                                                            Content="菜单"
-                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Fold}"
-                                                            AduAttach:PathDataAttach.Margin="20,0"
-                                                            AduAttach:PathDataAttach.Width="16"/>
+                        Content="菜单"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Fold}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource ShadowColor}"
+                        AduAttach:PathDataAttach.Margin="20,0"
+                        AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
-                                                            Content="轮播"
-                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Carousel}"
-                                                            AduAttach:PathDataAttach.Margin="20,0"
-                                                            AduAttach:PathDataAttach.Width="16"/>
+                        Content="轮播"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Carousel}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource ShadowColor}"
+                        AduAttach:PathDataAttach.Margin="20,0"
+                        AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
-                                                            Content="组"
-                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Group}"
-                                                            AduAttach:PathDataAttach.Margin="20,0"
-                                                            AduAttach:PathDataAttach.Width="16"/>
+                        Content="组"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Group}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource ShadowColor}"
+                        AduAttach:PathDataAttach.Margin="20,0"
+                        AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
-                                                            Content="时间轴"
-                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_TimeLine}"
-                                                            AduAttach:PathDataAttach.Margin="20,0"
-                                                            AduAttach:PathDataAttach.Width="16"/>
+                        Content="时间轴"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_TimeLine}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource ShadowColor}"
+                        AduAttach:PathDataAttach.Margin="20,0"
+                        AduAttach:PathDataAttach.Width="16"/>
                      <Metro:AduRadioButtonIcon
-                                                            Content="瀑布流"
-                                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Waterfall}"
-                                                            AduAttach:PathDataAttach.Margin="20,0"
-                                                            AduAttach:PathDataAttach.Width="16"/>
+                        Content="瀑布流"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Waterfall}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource ShadowColor}"
+                        AduAttach:PathDataAttach.Margin="20,0"
+                        AduAttach:PathDataAttach.Width="16"/>
                   </StackPanel>
                </Border>
             </Grid>
@@ -293,7 +299,7 @@
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel>
-                     <Metro:AduFormLable Title="日期选择" ErrorVisibility="Collapsed">
+                     <Metro:AduFormLable Title="日期选择" ErrorVisibility="Collapsed" TitleForeground="Red">
                         <Metro:AduDatePicker CornerRadius="3"/>
                      </Metro:AduFormLable>
                      <Metro:AduFormLable Title="下拉选择" Margin="0,10,0,0">
