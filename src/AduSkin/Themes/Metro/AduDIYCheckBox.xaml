@@ -6,13 +6,18 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <Geometry x:Key="icon_pause"  >M773.888 43.847h-66.66c-36.827 0-66.664 29.85-66.664 66.679V910.47c0 36.828 29.84 66.66 66.665 66.66h66.659c36.817 0 66.669-29.833 66.669-66.66V110.52c-0.001-36.825-29.85-66.676-66.669-66.676zM307.258 43.847h-66.67c-36.827 0-66.664 29.85-66.664 66.679V910.47c0 36.828 29.84 66.66 66.665 66.66h66.669c36.805 0 66.659-29.833 66.659-66.66V110.52c-0.001-36.825-29.85-66.676-66.66-66.676z</Geometry>
-    <Geometry x:Key="icon_play" >M868.909262 463.136929L269.805528 25.493776C252.809677 8.497925 223.066938 0 197.573162 0 159.332499 0 129.58976 25.493776 129.58976 67.983402v883.784233c0 42.489627 33.991701 72.232365 80.73029 72.232365 21.244813 0 42.489627-8.497925 59.485478-21.244813l594.854771-412.149378c16.995851-16.995851 25.493776-38.240664 25.493776-59.485477 4.248963-29.742739-4.248963-50.987552-21.244813-67.983403z</Geometry>
+   <Geometry x:Key="icon_play" >M868.909262 463.136929L269.805528 25.493776C252.809677 8.497925 223.066938 0 197.573162 0 159.332499 0 129.58976 25.493776 129.58976 67.983402v883.784233c0 42.489627 33.991701 72.232365 80.73029 72.232365 21.244813 0 42.489627-8.497925 59.485478-21.244813l594.854771-412.149378c16.995851-16.995851 25.493776-38.240664 25.493776-59.485477 4.248963-29.742739-4.248963-50.987552-21.244813-67.983403z</Geometry>
 
-    <Style TargetType="{x:Type Adu:AduDIYCheckBox}">
+   <Style TargetType="{x:Type Adu:AduDIYCheckBox}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="Foreground" Value="#000000" />
       <Setter Property="Background" Value="#00000000"/>
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="IsChecked" Value="True"/>
       <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="Transparent" />
       <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="Transparent" />
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}" />
@@ -22,53 +27,49 @@
       <Setter Property="AduAttach:PathDataAttach.Width" Value="13" />
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource icon_pause}"/>
       <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{StaticResource icon_play}"/>
-      <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="HorizontalContentAlignment" Value="Center" />
-      <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="Padding" Value="0" />
-      <Setter Property="IsChecked" Value="True"/>
       <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Adu:AduDIYCheckBox}">
-                  <Border x:Name="border" 
-                          Height="{TemplateBinding Height}"
-                          Width="{TemplateBinding Width}"
-                          Padding="{TemplateBinding Padding}"
-                          CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
-                          BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}"
-                          BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}"
-                          SnapsToDevicePixels="true" UseLayoutRounding="True">
-                        <Path x:Name="path"
-                              Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
-                              Margin="0,0,0,0" VerticalAlignment="Center"
-                              Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
-                              Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
-                              Stretch="Uniform" />
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsChecked" Value="False">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Adu:AduDIYCheckBox}">
+               <Border x:Name="border" 
+                     Height="{TemplateBinding Height}"
+                     Width="{TemplateBinding Width}"
+                     Padding="{TemplateBinding Padding}"
+                     Background="{TemplateBinding Background}"
+                     CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                     BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}"
+                     BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}"
+                     SnapsToDevicePixels="true" UseLayoutRounding="True">
+                  <Path x:Name="path"
+                        Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+                        Margin="0,0,0,0" VerticalAlignment="Center"
+                        Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+                        Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+                        Stretch="Uniform" />
+               </Border>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsChecked" Value="False">
                      <Setter TargetName="path" Property="Data" Value="{Binding (AduAttach:PathDataAttach.PathData), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="True">
+                  </Trigger>
+                  <Trigger Property="IsChecked" Value="True">
                      <Setter TargetName="path" Property="Data" Value="{Binding (AduAttach:PathDataAttach.SelectedPathData), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Cursor" Value="Hand" />
+                  </Trigger>
+                  <Trigger Property="IsMouseOver" Value="true">
+                     <Setter Property="Cursor" Value="Hand" />
                      <Setter TargetName="border" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.MouseOverPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
+                  </Trigger>
+                  <Trigger Property="IsPressed" Value="true">
                      <Setter TargetName="border" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.PressedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.PressedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="false">
-                           <Setter TargetName="border" Property="Background" Value="Transparent" />
-                            <Setter TargetName="path" Property="Fill" Value="#888" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                  </Trigger>
+                  <Trigger Property="IsEnabled" Value="false">
+                     <Setter TargetName="border" Property="Background" Value="Transparent" />
+                     <Setter TargetName="path" Property="Fill" Value="#888" />
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 
 </ResourceDictionary>
