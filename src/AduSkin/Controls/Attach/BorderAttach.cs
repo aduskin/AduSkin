@@ -12,13 +12,13 @@ namespace AduSkin.Controls.Attach
       /// 边框色
       /// </summary>
       public static readonly DependencyProperty BorderBrushProperty = DependencyProperty.RegisterAttached(
-            "BorderBrush", typeof(SolidColorBrush), typeof(BorderAttach));
+            "BorderBrush", typeof(Brush), typeof(BorderAttach));
 
-      public static void SetBorderBrush(DependencyObject element, SolidColorBrush value)
+      public static void SetBorderBrush(DependencyObject element, Brush value)
           => element.SetValue(BorderBrushProperty, value);
 
-      public static SolidColorBrush GetBorderBrush(DependencyObject element)
-          => (SolidColorBrush)element.GetValue(BorderBrushProperty);
+      public static Brush GetBorderBrush(DependencyObject element)
+          => (Brush)element.GetValue(BorderBrushProperty);
 
       /// <summary>
       /// 边框厚度

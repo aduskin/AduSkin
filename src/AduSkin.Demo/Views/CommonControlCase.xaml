@@ -411,7 +411,7 @@
                                               AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
                                               AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
                                               AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultBrush}"
-                                              AduAttach:PathBrushAttach.NormalPathColor="#90000000"
+                                              AduAttach:PathBrushAttach.NormalPathColor="{StaticResource PrimaryBrush}"
                                               AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
                                               AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
                                               AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 

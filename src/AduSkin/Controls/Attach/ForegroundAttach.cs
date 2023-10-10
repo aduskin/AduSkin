@@ -9,72 +9,72 @@ namespace AduSkin.Controls.Attach
       /// 默认颜色
       /// </summary>
       public static readonly DependencyProperty NormalForegroundProperty = DependencyProperty.RegisterAttached(
-            "NormalForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
+            "NormalForeground", typeof(Brush), typeof(ForegroundAttach), new PropertyMetadata(default(Brush)));
 
-      public static void SetNormalForeground(DependencyObject element, SolidColorBrush value)
+      public static void SetNormalForeground(DependencyObject element, Brush value)
           => element.SetValue(NormalForegroundProperty, value);
 
-      public static SolidColorBrush GetNormalForeground(DependencyObject element)
-          => (SolidColorBrush)element.GetValue(NormalForegroundProperty);
+      public static Brush GetNormalForeground(DependencyObject element)
+          => (Brush)element.GetValue(NormalForegroundProperty);
 
       /// <summary>
       /// 选中颜色
       /// </summary>
       public static readonly DependencyProperty SelectedForegroundProperty = DependencyProperty.RegisterAttached(
-            "SelectedForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
+            "SelectedForeground", typeof(Brush), typeof(ForegroundAttach), new PropertyMetadata(default(Brush)));
 
-      public static void SetSelectedForeground(DependencyObject element, SolidColorBrush value)
+      public static void SetSelectedForeground(DependencyObject element, Brush value)
           => element.SetValue(SelectedForegroundProperty, value);
 
-      public static SolidColorBrush GetSelectedForeground(DependencyObject element)
-          => (SolidColorBrush)element.GetValue(SelectedForegroundProperty);
+      public static Brush GetSelectedForeground(DependencyObject element)
+          => (Brush)element.GetValue(SelectedForegroundProperty);
 
       /// <summary>
       /// 高亮颜色
       /// </summary>
       public static readonly DependencyProperty HighlightForegroundProperty = DependencyProperty.RegisterAttached(
-            "HighlightForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
+            "HighlightForeground", typeof(Brush), typeof(ForegroundAttach), new PropertyMetadata(default(Brush)));
 
-      public static void SetHighlightForeground(DependencyObject element, SolidColorBrush value)
+      public static void SetHighlightForeground(DependencyObject element, Brush value)
           => element.SetValue(HighlightForegroundProperty, value);
 
-      public static SolidColorBrush GetHighlightForeground(DependencyObject element)
-          => (SolidColorBrush)element.GetValue(HighlightForegroundProperty);
+      public static Brush GetHighlightForeground(DependencyObject element)
+          => (Brush)element.GetValue(HighlightForegroundProperty);
 
       /// <summary>
       /// 鼠标悬浮颜色
       /// </summary>
       public static readonly DependencyProperty MouseOverForegroundProperty = DependencyProperty.RegisterAttached(
-            "MouseOverForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
+            "MouseOverForeground", typeof(Brush), typeof(ForegroundAttach), new PropertyMetadata(default(Brush)));
 
-      public static void SetMouseOverForeground(DependencyObject element, SolidColorBrush value)
+      public static void SetMouseOverForeground(DependencyObject element, Brush value)
           => element.SetValue(MouseOverForegroundProperty, value);
 
-      public static SolidColorBrush GetMouseOverForeground(DependencyObject element)
-          => (SolidColorBrush)element.GetValue(MouseOverForegroundProperty);
+      public static Brush GetMouseOverForeground(DependencyObject element)
+          => (Brush)element.GetValue(MouseOverForegroundProperty);
 
       /// <summary>
       /// 鼠标按下颜色
       /// </summary>
       public static readonly DependencyProperty PressedForegroundProperty = DependencyProperty.RegisterAttached(
-            "PressedForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
+            "PressedForeground", typeof(Brush), typeof(ForegroundAttach), new PropertyMetadata(default(Brush)));
 
-      public static void SetPressedForeground(DependencyObject element, SolidColorBrush value)
+      public static void SetPressedForeground(DependencyObject element, Brush value)
           => element.SetValue(PressedForegroundProperty, value);
 
-      public static SolidColorBrush GetPressedForeground(DependencyObject element)
-          => (SolidColorBrush)element.GetValue(PressedForegroundProperty);
+      public static Brush GetPressedForeground(DependencyObject element)
+          => (Brush)element.GetValue(PressedForegroundProperty);
 
       /// <summary>
       /// 禁用颜色
       /// </summary>
       public static readonly DependencyProperty DisabledForegroundProperty = DependencyProperty.RegisterAttached(
-            "DisabledForeground", typeof(SolidColorBrush), typeof(ForegroundAttach), new PropertyMetadata(default(SolidColorBrush)));
+            "DisabledForeground", typeof(Brush), typeof(ForegroundAttach), new PropertyMetadata(default(Brush)));
 
-      public static void SetDisabledForeground(DependencyObject element, SolidColorBrush value)
+      public static void SetDisabledForeground(DependencyObject element, Brush value)
           => element.SetValue(DisabledForegroundProperty, value);
 
-      public static SolidColorBrush GetDisabledForeground(DependencyObject element)
-          => (SolidColorBrush)element.GetValue(DisabledForegroundProperty);
+      public static Brush GetDisabledForeground(DependencyObject element)
+          => (Brush)element.GetValue(DisabledForegroundProperty);
    }
 }
