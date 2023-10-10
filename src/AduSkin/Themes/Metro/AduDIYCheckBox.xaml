@@ -22,6 +22,7 @@
       <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="Transparent" />
       <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="Transparent" />
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}" />
+      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="#000000" />
       <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="#000000" />
       <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="#000000"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="13" />
