@@ -213,7 +213,11 @@
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel>
-                     <Metro:AduSlider Maximum="1000" Value="500" Margin="0,10" Height="3"/>
+                     <Metro:AduSlider Maximum="1000" Value="500" Margin="0,10" Height="20"
+                           AduAttach:PathDataAttach.Width="10" 
+                           AduAttach:BorderAttach.CornerRadius="3"
+                           AduAttach:BackgroundAttach.PanelBackground="#10000000"
+                           AduAttach:PathBrushAttach.NormalPathColor="#90000000"/>
                      <Metro:AduFlatSilder Maximum="1000" Value="500" Margin="0,10" Height="17"/>
                   </StackPanel>
                </Border>
