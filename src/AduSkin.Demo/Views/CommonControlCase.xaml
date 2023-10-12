@@ -409,18 +409,31 @@
                         <Metro:AduButtonIcon Height="40" Margin="10" Content="hehhe" Foreground="#000"  VerticalContentAlignment="Center" 
                               AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}" AduAttach:PathBrushAttach.NormalPathColor="{StaticResource DefaultBrush}"
                               AduAttach:PathDataAttach.Width="16" AduAttach:PathDataAttach.Margin="0,0,10,0" AduAttach:BorderAttach.CornerRadius="6"/>
-                        <Metro:AduDIYCheckBox AduAttach:BorderAttach.BorderThickness="1" 
-                                              AduAttach:PathDataAttach.Width="14"
-                                              AduAttach:BorderAttach.BorderBrush="#30000000" 
-                                              AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
-                                              AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
-                                              AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultBrush}"
-                                              AduAttach:PathBrushAttach.NormalPathColor="{StaticResource PrimaryBrush}"
-                                              AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
-                                              AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
-                                              AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 
-                                              AduAttach:BorderAttach.CornerRadius="15" 
-                                              Width="30" Height="30"/>
+                        <Metro:AduDIYCheckBox 
+                           AduAttach:BorderAttach.BorderThickness="1" 
+                           AduAttach:BorderAttach.BorderBrush="#30000000" 
+                           AduAttach:BorderAttach.CornerRadius="15"    
+                           AduAttach:PathDataAttach.Width="14"
+                           AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
+                           AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
+                           AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultBrush}"
+                           AduAttach:PathBrushAttach.NormalPathColor="{StaticResource PrimaryBrush}"
+                           AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
+                           AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
+                           AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 
+                           Width="30" Height="30"/>
+                        <Metro:AduPathIconButton Margin="10,0"
+                            BorderThickness="1" BorderBrush="#30000000" 
+                            AduAttach:BorderAttach.CornerRadius="15" 
+                            AduAttach:PathDataAttach.Width="14"
+                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
+                            AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
+                            AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultBrush}"
+                            AduAttach:PathBrushAttach.NormalPathColor="{StaticResource PrimaryBrush}"
+                            AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
+                            AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
+                            AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 
+                            Width="30" Height="30"/>
                      </StackPanel>
                   </StackPanel>
                </Border>
