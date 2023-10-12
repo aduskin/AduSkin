@@ -42,11 +42,10 @@
                             SnapsToDevicePixels="true" UseLayoutRounding="True">
                   <Path x:Name="path"
                               Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
-                              Margin="0,0,0,0" VerticalAlignment="Center"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"
                               Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
                               Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
                               Stretch="Uniform" />
-
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsDefaulted" Value="true">
