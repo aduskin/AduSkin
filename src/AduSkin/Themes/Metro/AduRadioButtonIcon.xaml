@@ -14,7 +14,9 @@
       <Setter Property="Foreground" Value="#888" />
       <Setter Property="Padding" Value="0" />
       <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="Transparent"/>
+      <Setter Property="AduAttach:BorderAttach.SelectedBorderBrush" Value="Transparent"/>
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="2,0,0,0"/>
+      <Setter Property="AduAttach:BorderAttach.SelectedBorderThickness" Value="2,0,0,0"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="10,0" />
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}"/>
       <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{StaticResource Brush}"/>
@@ -22,21 +24,19 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Adu:AduRadioButtonIcon}">
                <Border
-                        x:Name="templateRoot"
+                        x:Name="boder"
                         Background="#00FFFFFF"
                         Margin="{TemplateBinding Margin}"
                         Padding="{TemplateBinding Padding}"
                         BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}"
                         BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}">
                   <StackPanel VerticalAlignment="Center" Orientation="Horizontal" SnapsToDevicePixels="True">
-                     <Border>
-                        <Path x:Name="Icon" VerticalAlignment="Center" Stretch="Uniform" 
+                     <Path x:Name="Icon" VerticalAlignment="Center" Stretch="Uniform" 
                               Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" 
                               Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
                               Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
                               Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" />
-                     </Border>
-                     <TextBlock x:Name="contentPresenter" Grid.Column="1"
+                        <TextBlock x:Name="contentPresenter" Grid.Column="1"
                                 Text="{TemplateBinding Content}"
                                 Foreground="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
                                 Margin="0,0,5,0" Focusable="False"
@@ -46,16 +46,17 @@
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True" >
-                     <Setter TargetName="templateRoot" Property="Opacity" Value=".7" />
+                     <Setter TargetName="boder" Property="Opacity" Value=".7" />
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False" />
                   <Trigger Property="IsPressed" Value="True" />
                   <Trigger Property="IsChecked" Value="True">
-                     <Setter TargetName="templateRoot" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-                     <Setter TargetName="templateRoot" Property="Opacity" Value=".8" />
-                     <Setter TargetName="templateRoot" Property="BorderThickness" Value="2,0,0,0" />
+                     <Setter TargetName="boder" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                     <Setter TargetName="boder" Property="Opacity" Value=".8" />
+                     <Setter TargetName="boder" Property="BorderThickness" Value="{Binding (AduAttach:BorderAttach.SelectedBorderThickness), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="boder" Property="BorderBrush" Value="{Binding (AduAttach:BorderAttach.SelectedBorderBrush), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="Icon" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter TargetName="templateRoot" Property="BorderBrush" Value="{Binding (AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="boder" Property="BorderBrush" Value="{Binding (AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="contentPresenter" Property="Foreground" Value="{Binding (AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                   </Trigger>
                </ControlTemplate.Triggers>
