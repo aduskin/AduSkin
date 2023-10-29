@@ -30,7 +30,7 @@ namespace AduSkin.Controls.Metro
       public double TitleMinWidth { get { return (double)GetValue(TitleMinWidthProperty); } set { SetValue(TitleMinWidthProperty, value); } }
       public double TitleWidth { get { return (double)GetValue(TitleWidthProperty); } set { SetValue(TitleWidthProperty, value); } }
       public HorizontalAlignment TitleHorizontalAlignment { get { return (HorizontalAlignment)GetValue(TitleHorizontalAlignmentProperty); } set { SetValue(TitleHorizontalAlignmentProperty, value); } }
-      public HorizontalAlignment TitleVerticalAlignment { get { return (HorizontalAlignment)GetValue(TitleVerticalAlignmentProperty); } set { SetValue(TitleVerticalAlignmentProperty, value); } }
+      public VerticalAlignment TitleVerticalAlignment { get { return (VerticalAlignment)GetValue(TitleVerticalAlignmentProperty); } set { SetValue(TitleVerticalAlignmentProperty, value); } }
       public Brush TitleForeground { get { return (Brush)GetValue(TitleForegroundProperty); } set { SetValue(TitleForegroundProperty, value); } }
       public string ErrorMessage { get { return (string)GetValue(ErrorMessageProperty); } set { SetValue(ErrorMessageProperty, value); } }
       public Brush ErrorForeground { get { return (Brush)GetValue(ErrorForegroundProperty); } set { SetValue(ErrorForegroundProperty, value); } }

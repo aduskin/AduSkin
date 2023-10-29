@@ -291,5 +291,9 @@ namespace AduSkin.Controls
       /// 文件夹
       /// </summary>
       Folder,
+      /// <summary>
+      /// 保存文件
+      /// </summary>
+      SaveFile
    }
 }
