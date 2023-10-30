@@ -4,7 +4,7 @@
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-   
+
    <Style TargetType="{x:Type AduSkin:AduFormLable}">
       <Setter Property="MinHeight" Value="30"/>
       <Setter Property="FontSize" Value="12"/>
@@ -16,6 +16,7 @@
       <Setter Property="TitleForeground" Value="Black"/>
       <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
       <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+      <Setter Property="TitlePadding" Value="0"/>
       <Setter Property="BorderBrush" Value="Transparent"/>
       <Setter Property="Template">
          <Setter.Value>
@@ -33,6 +34,7 @@
                                 Text="{TemplateBinding Title}"
                                 Foreground="{TemplateBinding TitleForeground}"
                                 Width="{TemplateBinding TitleWidth}" 
+                                Margin="{TemplateBinding TitlePadding}"
                                 HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}" 
                                 VerticalAlignment="{TemplateBinding TitleVerticalAlignment}"/>
                      <ContentPresenter Grid.Column="1" Margin="5,0" 
