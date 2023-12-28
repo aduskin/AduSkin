@@ -10,6 +10,8 @@
    <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Width" Value="40" />
       <Setter Property="Height" Value="40" />
@@ -20,8 +22,8 @@
                   <Rectangle
                             x:Name="backRectangle"
                             Fill="{TemplateBinding Background}"
-                            Opacity="0" />
-                  <ContentPresenter />
+                            Opacity="0"/>
+                  <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                   <VisualStateManager.VisualStateGroups>
                      <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
@@ -129,30 +131,16 @@
                            <Grid Grid.Column="3" x:Name="PART_SysButton" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                               <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                                  <Button x:Name="PART_MinimizedButton" Style="{StaticResource buttonStyle}">
-                                    <Button.Content>
-                                       <Path Width="11" Height="2" Data="{StaticResource Icon_SysMin}" Fill="{TemplateBinding SysButtonColor}"  Stretch="Fill" />
-                                    </Button.Content>
+                                    <Path Width="11" Fill="{TemplateBinding SysButtonColor}"  Stretch="Uniform" Data="{StaticResource Icon_SysMin}" />
                                  </Button>
                                  <Button x:Name="PART_MaximizedButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
-                                    <Button.Content>
-                                       <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                          <Path Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SysMax}" />
-                                       </Grid>
-                                    </Button.Content>
+                                    <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SysMax}" />
                                  </Button>
                                  <Button x:Name="PART_NormalButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
-                                    <Button.Content>
-                                       <Grid Margin="0,2,3,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                          <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemRestore}" />
-                                       </Grid>
-                                    </Button.Content>
+                                    <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SystemRestore}" />
                                  </Button>
                                  <Button x:Name="PART_CloseButton" Foreground="{TemplateBinding TitleForeground}" Style="{StaticResource buttonStyle}">
-                                    <Button.Content>
-                                       <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                          <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemClose}" />
-                                       </Grid>
-                                    </Button.Content>
+                                    <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SystemClose}" />
                                  </Button>
                               </StackPanel>
                            </Grid>

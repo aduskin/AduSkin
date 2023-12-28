@@ -10,13 +10,15 @@
    <Style x:Key="buttonStyle" TargetType="Button">
       <Setter Property="Width" Value="40" />
       <Setter Property="Height" Value="30" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="Background" Value="Transparent" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="Button">
                <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}">
-                  <ContentPresenter />
+                  <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
@@ -80,30 +82,16 @@
                         </AdornerDecorator>
                         <StackPanel Visibility="{TemplateBinding SysButtonVisible}" HorizontalAlignment="Right" Orientation="Horizontal" Margin="{TemplateBinding SysButtonMargin}" VerticalAlignment="Top" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                            <Button x:Name="PART_MinimizedButton" Style="{StaticResource buttonStyle}">
-                              <Button.Content>
-                                 <Path Width="11" Height="2" Data="{StaticResource Icon_SysMin}" Fill="{TemplateBinding SysButtonColor}" Stretch="Fill" />
-                              </Button.Content>
+                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SysMin}" />
                            </Button>
                            <Button x:Name="PART_MaximizedButton" Style="{StaticResource buttonStyle}">
-                              <Button.Content>
-                                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Path Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SysMax}" />
-                                 </Grid>
-                              </Button.Content>
+                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SysMax}" />
                            </Button>
                            <Button x:Name="PART_NormalButton" Style="{StaticResource buttonStyle}">
-                              <Button.Content>
-                                 <Grid Margin="0,2,3,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemRestore}" />
-                                 </Grid>
-                              </Button.Content>
+                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SystemRestore}" />
                            </Button>
                            <Button x:Name="PART_CloseButton" Style="{StaticResource buttonStyle}">
-                              <Button.Content>
-                                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Path  Width="11" Height="11" Margin="0,0,0,0" Shape.Fill="{TemplateBinding SysButtonColor}" Shape.Stretch="Fill" Path.Data="{StaticResource Icon_SystemClose}" />
-                                 </Grid>
-                              </Button.Content>
+                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SystemClose}" />
                            </Button>
                         </StackPanel>
                         <Rectangle x:Name="disableRectangle" Grid.RowSpan="2" Grid.ColumnSpan="4" Fill="#FF000000" IsHitTestVisible="False" Opacity="0" />
