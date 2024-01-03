@@ -19,7 +19,7 @@
       </Grid.RowDefinitions>
       <StackPanel  VerticalAlignment="Center" Margin="0,10">
          <TextBlock Style="{StaticResource H2}" Text="技术支持和赞助" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}"/>
-         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="赞助支持请点赞【虎年红包】，完成后联系作者可加入赞助墙，感谢大佬的支持！" FontWeight="Light" Foreground="{StaticResource DefaultBrush}"/>
+         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="赞助支持请点赞【龙年红包】，完成后联系作者可加入赞助墙，感谢大佬的支持！" FontWeight="Light" Foreground="{StaticResource DefaultBrush}"/>
          <Border HorizontalAlignment="Center" Padding="0,10">
             <StackPanel >
                <UniformGrid Columns="2">
