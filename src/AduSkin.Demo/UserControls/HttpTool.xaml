@@ -26,9 +26,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
-            <AduSkin:AduComboBox VerticalAlignment="Center" CornerRadius="4" Height="32" ItemsSource="{Binding HttpTypList}" SelectedItem="{Binding CurrentHttpType}" DisplayMemberPath="CodeName" />
-            <AduSkin:AduComboBox Grid.Column="1" Height="32" Width="80" Margin="4,0" CornerRadius="4" VerticalAlignment="Center" ItemsSource="{Binding CodeTypeList}" SelectedItem="{Binding CurrentCodeType}" DisplayMemberPath="CodeName"/>
-            <AduSkin:MetroTextBox Grid.Column="2" Height="32" CornerRadius="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Text="{Binding ToUrlTxt}" InputHint="输入接口地址"/>
+         <AduSkin:AduComboBox VerticalAlignment="Center" AduAttach:BorderAttach.CornerRadius="4" Height="32" ItemsSource="{Binding HttpTypList}" SelectedItem="{Binding CurrentHttpType}" DisplayMemberPath="CodeName" />
+            <AduSkin:AduComboBox Grid.Column="1" Height="32" Width="80" Margin="4,0" AduAttach:BorderAttach.CornerRadius="4" VerticalAlignment="Center" ItemsSource="{Binding CodeTypeList}" SelectedItem="{Binding CurrentCodeType}" DisplayMemberPath="CodeName"/>
+         <AduSkin:MetroTextBox Grid.Column="2" Height="32" AduAttach:BorderAttach.CornerRadius="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Text="{Binding ToUrlTxt}" InputHint="输入接口地址"/>
             <AduSkin:AduPathIconButton Grid.Column="3" Command="{Binding ToRequest}" VerticalAlignment="Center" 
                                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_To}" AduAttach:PathDataAttach.Width="14"/>
         </Grid>

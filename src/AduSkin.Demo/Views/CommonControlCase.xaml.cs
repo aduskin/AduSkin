@@ -1,7 +1,8 @@
-﻿using AduSkin.Utility.Media;
+using AduSkin.Utility.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -91,6 +92,12 @@ namespace AduSkin.Demo.UserControls
          rt3.Add("   ");
          rt3.Add("颜色3", new RgbaColor(0, 0, 255, 255), delegate { MessageBox.Show("你点击了我！"); });
          rt3.AddLine();
+         #endregion
+
+         #region 下拉框
+         site.ItemsSource = new List<string>() { "上海", "北京", "成都" };
+         size.ItemsSource = new List<string>() { "1080*1920", "768*1366", "760*1024" };
+         subject.ItemsSource = new List<string>() { "语文", "数学", "英语" };
          #endregion
 
          #region 进度条

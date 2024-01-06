@@ -1,54 +1,10 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
-      xmlns:Converters="clr-namespace:AduSkin.Controls.Converter"
       xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-   <!--下拉按钮-->
-   <Style TargetType="ToggleButton" x:Key="ComboxStyleBtn">
-      <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
-      <Setter Property="Cursor" Value="Hand"></Setter>
-      <Setter Property="Template">
-         <Setter.Value>
-            <ControlTemplate>
-               <Border x:Name="Back" HorizontalAlignment="Right" Background="#00000000" BorderThickness="0" BorderBrush="Transparent" Height="20" Width="20">
-                  <Path Name="PathFill" Width="10" Height="6" Fill="{TemplateBinding Foreground}" Stretch="Fill" Margin="0,0,6,0" Data="{StaticResource Icon_DropDowm}" />
-               </Border>
-               <ControlTemplate.Triggers>
-                  <Trigger Property="IsMouseOver" Value="True">
-                     <Setter TargetName="PathFill" Property="Opacity" Value=".5"></Setter>
-                  </Trigger>
-               </ControlTemplate.Triggers>
-            </ControlTemplate>
-         </Setter.Value>
-      </Setter>
-   </Style>
-
-   <Converters:StringIsEmptyConverter x:Key="StringIsEmptyConverter" />
-
-   <SolidColorBrush x:Key="BorderColor" Color="#00D3D6DB" />
-   <SolidColorBrush x:Key="ComboBox.BorderBrush" Color="#ABADB3" />
-   <SolidColorBrush x:Key="ComboBox.Popup.BorderBrush" Color="#C8C8C8" />
-   <SolidColorBrush x:Key="ComboBox.Normal.Background" Color="#FFFFFF" />
-   <SolidColorBrush x:Key="ComboBox.Disabled.Foreground" Color="#888" />
-   <SolidColorBrush x:Key="ComboBox.Disabled.Background" Color="#00eeeeee" />
-   <SolidColorBrush x:Key="ComboBox.Disabled.BorderBrush" Color="#00888888" />
-
-   <SolidColorBrush x:Key="Light.Border.Normal" Color="#D7DDE4" />
-   <SolidColorBrush x:Key="Light.Border.MouseOver" Color="#5CADFF" />
-   <SolidColorBrush x:Key="Light.Border.Pressed" Color="#5CADFF" />
-   <SolidColorBrush x:Key="Light.Border.Disabled" Color="#D7DDE4" />
-
-   <SolidColorBrush x:Key="Brush.Item.MouseOver.Background" Color="#E2E2E2" />
-   <SolidColorBrush x:Key="Brush.Item.Selected.Background" Color="#47A3FF" />
-   <SolidColorBrush x:Key="Brush.Item.MouseOver.Foreground" Color="#000000" />
-   <SolidColorBrush x:Key="Brush.Item.Selected.Foreground" Color="#FFFFFF" />
-
-   <PathGeometry x:Key="IsSelectedIcon" Figures="M416.058904 776.794805c-10.475586 0-20.951171-3.996011-28.943193-11.989055L131.272789 508.962827c-15.985066-15.985066-15.985066-41.901319 0-57.886385s41.901319-15.985066 57.886385 0l226.898707 226.898707 418.780899-418.780899c15.985066-15.985066 41.901319-15.985066 57.886385 0s15.985066 41.901319 0 57.886385L445.002097 764.80575C437.010075 772.797771 426.53449 776.794805 416.058904 776.794805z" />
-   <PathGeometry x:Key="Arrow.Down" Figures="M191.814654 383.980301 832.184323 383.980301 512 767.996418Z" />
-   <PathGeometry x:Key="Arrow.Up" Figures="M832.185 640.020h-640.37l320.184-384.016z" />
 
    <ControlTemplate x:Key="ComboBoxToggleButtonTemplate" TargetType="{x:Type AduSkin:AduToggleButton}">
       <Grid Background="Transparent">
@@ -56,16 +12,9 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
          </Grid.ColumnDefinitions>
-         <Border Grid.ColumnSpan="2" x:Name="ShadowBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
-
-         <Border Name="Border" Grid.ColumnSpan="2"
-                    BorderBrush="#D9D9D9"
-                    BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}"
-                    SnapsToDevicePixels="True" UseLayoutRounding="True" />
-
-         <Border Name="ButtonBorder" Grid.Column="1" Margin="1, 1, 1, 1"
-                    CornerRadius="{TemplateBinding CornerRadius}"
-                    Padding="5,0,8,0">
+         <Border x:Name="ShadowBorder" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+         <Border Name="Border" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" BorderBrush="#D9D9D9" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" UseLayoutRounding="True" />
+         <Border Name="ButtonBorder" Grid.Column="1" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Margin="1, 1, 1, 1" Padding="5,0,8,0">
             <Path Name="Arrow" Grid.Column="1" Width="10" HorizontalAlignment="Center"
                       VerticalAlignment="Center"
                       Data="{StaticResource Icon_DropDowm}"
@@ -82,7 +31,6 @@
                </Path.RenderTransform>
             </Path>
          </Border>
-
          <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="CheckStates">
                <VisualState x:Name="Checked">
@@ -110,36 +58,41 @@
             <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
          </MultiTrigger>
          <Trigger Property="UIElement.IsEnabled" Value="False">
-            <Setter TargetName="Border" Property="Panel.Background" Value="{StaticResource ComboBox.Disabled.Background}" />
-            <Setter TargetName="ButtonBorder" Property="Panel.Background" Value="{StaticResource ComboBox.Disabled.Background}" />
-            <Setter TargetName="ButtonBorder" Property="Border.BorderBrush" Value="{StaticResource ComboBox.Disabled.BorderBrush}" />
-            <Setter Property="TextElement.Foreground" Value="{StaticResource ComboBox.Disabled.Foreground}" />
+            <Setter TargetName="Border" Property="Panel.Background" Value="{StaticResource DisabledBackground}" />
+            <Setter TargetName="ButtonBorder" Property="Panel.Background" Value="{StaticResource DisabledBackground}" />
+            <Setter TargetName="ButtonBorder" Property="Border.BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+            <Setter Property="TextElement.Foreground" Value="{StaticResource DisabledForeground}" />
             <Setter TargetName="Arrow" Property="Stroke" Value="#999" />
             <Setter TargetName="Arrow" Property="StrokeThickness" Value="0" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
 
-   
    <Style x:Key="ComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
-      <Setter Property="Height" Value="30"></Setter>
-      <Setter Property="MinHeight" Value="22"></Setter>
-      <Setter Property="MinWidth" Value="30"></Setter>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource Brush}" />
+      <Setter Property="Height" Value="30"/>
+      <Setter Property="MinHeight" Value="22"/>
+      <Setter Property="MinWidth" Value="30"/>
+      <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-               <Border Name="Back"  BorderThickness="0,0,0,0" Background="{TemplateBinding Background}" BorderBrush="Transparent"  Padding="10,0">
-                  <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0"></ContentPresenter>
-               </Border>
+               <Grid>
+                  <Border Name="bg" BorderThickness="0,0,0,0" Background="{TemplateBinding Background}" BorderBrush="Transparent" />
+                  <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0"/>
+               </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter Property="Background" Value="#10000000" />
+                     <Setter TargetName="bg"  Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter Property="Background" Value="#20000000" />
+                     <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
+                     <Setter TargetName="bg" Property="Opacity" Value=".5" />
+                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -158,6 +111,7 @@
       <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="MinHeight" Value="26" />
       <Setter Property="Background" Value="#FFF"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="Foreground" Value="{StaticResource Brush}"/>
       <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
       <Setter Property="BorderThickness" Value="1"/>
@@ -167,7 +121,6 @@
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Padding" Value="5,0,0,0" />
       <Setter Property="InputHint" Value="请选择..." />
-      <Setter Property="CornerRadius" Value="3" />
       <Setter Property="Control.Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduComboBox}">
@@ -199,7 +152,7 @@
                      <ColumnDefinition Width="*" />
                   </Grid.ColumnDefinitions>
                   <Grid Grid.Column="1">
-                     <AduSkin:AduToggleButton x:Name="ToggleButton" ClickMode="Press" Focusable="False" CornerRadius="{TemplateBinding CornerRadius}"
+                     <AduSkin:AduToggleButton x:Name="ToggleButton" ClickMode="Press" Focusable="False" AduAttach:BorderAttach.CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
                                     IsChecked="{Binding Path=IsDropDownOpen,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
                                     Template="{StaticResource ComboBoxToggleButtonTemplate}" Foreground="{TemplateBinding ToggleButtonColor}"
                                     BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"
@@ -256,7 +209,7 @@
 
                      <!--  Popup showing items  -->
                      <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" VerticalOffset="-1" AllowsTransparency="True" PopupAnimation="Fade" >
-                        <Border RenderTransformOrigin="0.5,0" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,3" Margin="10" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                        <Border RenderTransformOrigin="0.5,0" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,3" Margin="10" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
                            <Border.RenderTransform>
                               <TransformGroup>
                                  <ScaleTransform />
@@ -268,11 +221,19 @@
                            <Border.Effect>
                               <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="0" Opacity="0.2"/>
                            </Border.Effect>
-                           <AduSkin:MetroScrollViewer Margin="0" MaxHeight="{TemplateBinding MaxDropDownHeight}" 
-                                                  SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
-                              <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
-                              <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
-                           </AduSkin:MetroScrollViewer>
+                           <Grid>
+                              <Grid.RowDefinitions>
+                                 <RowDefinition Height="auto"/>
+                                 <RowDefinition/>
+                              </Grid.RowDefinitions>
+                              <AduSkin:MetroTextBox  x:Name="PART_FilterTextBox"
+                                    Height="26" Margin="5,2,5,5" InputHint="请输入关键字"
+                                    Visibility="{Binding IsShowFilterBox, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibility}}" />
+                              <AduSkin:MetroScrollViewer Grid.Row="1" Margin="0" MaxHeight="{TemplateBinding MaxDropDownHeight}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                                 <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                                 <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                              </AduSkin:MetroScrollViewer>
+                           </Grid>
                         </Border>
                      </Popup>
                   </Grid>
