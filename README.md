@@ -53,7 +53,7 @@ AduSkin 项目基于 LGPL-3.0 开源协议开放项目源代码。本项目版�
 
 # 组件展示
 
-![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(2).png)
+![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover.jpg)
 
 ![image](https://github.com/aduskin/AduSkin/blob/master/screenshot/Cover%20(1).png)
 
