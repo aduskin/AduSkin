@@ -8,17 +8,16 @@
         xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
         BorderBrush="#3E3E45"
-        Background="{StaticResource ShadowColor}"       
-        ResizeMode="CanMinimize"
+        Background="{StaticResource DefaultWhiteBrush}"       
         BorderThickness="1"
-        SysButtonColor="{StaticResource DefaultBrush}"
+        SysButtonColor="{StaticResource ShadowColor}"
         SysButtonMargin="14"
         SysButtonVisible="Visible"
         Title="AduSkinDemo" 
-        MinWidth="600" MinHeight="350" MaxWidth="1100"
-        d:DesignHeight="1200" d:DesignWidth="1100" >
+        MinWidth="600" MinHeight="350" 
+        d:DesignHeight="1200" d:DesignWidth="1100" Width="800">
     <Adu:AduTransitioningContentControl>
-        <Grid Background="{StaticResource ShadowColor}">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
                 <RowDefinition />
@@ -46,8 +45,8 @@
                 Foreground="{StaticResource DefaultBrush}"
                 Text="追求极致，永臻完美" />
             </StackPanel>
-            <Grid Grid.Row="1" Grid.Column="1">
-                <Adu:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,20" >
+            <Grid Grid.Row="1" Grid.ColumnSpan="3">
+                <Adu:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,20" Padding="20,0">
                     <StackPanel>
                         <Adu:AduCarousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
                             <Adu:AduCarousel.ItemTemplate>

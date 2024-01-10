@@ -7,25 +7,47 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml" />
    </ResourceDictionary.MergedDictionaries>
 
-   <Style x:Key="buttonStyle" TargetType="Button">
+   <Style x:Key="SysButtonBaseStyle" TargetType="{x:Type Button}">
       <Setter Property="Width" Value="40" />
       <Setter Property="Height" Value="30" />
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Cursor" Value="Hand" />
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="#E6E7E8" />
+      <Setter Property="Foreground" Value="#444" />
+   </Style>
+
+   <Style x:Key="SysDefaultButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource SysButtonBaseStyle}">
       <Setter Property="Template">
          <Setter.Value>
-            <ControlTemplate TargetType="Button">
-               <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}">
+            <ControlTemplate TargetType="{x:Type Button}">
+               <Grid>
+                  <Border x:Name="backRectangle" Opacity="0" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="3"/>
                   <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-               </Border>
+               </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter Property="Background" Value="#10FFFFFF" />
+                     <Setter TargetName="backRectangle" Property="Opacity" Value="1" />
+                     <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
                   </Trigger>
-                  <Trigger Property="IsPressed" Value="True">
-                     <Setter Property="Opacity" Value="0.8" />
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+
+   <Style x:Key="SysCloseButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource SysButtonBaseStyle}">
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+               <Grid>
+                  <Border x:Name="backRectangle" Opacity="0" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="3"/>
+                  <Path x:Name="path" Width="11" Fill="{TemplateBinding Foreground}" Stretch="Uniform" Data="{StaticResource Icon_SystemClose}" />
+               </Grid>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsMouseOver" Value="True">
+                     <Setter TargetName="backRectangle" Property="Opacity" Value="1" />
+                     <Setter TargetName="path" Property="Fill" Value="{StaticResource DefaultWhiteBrush}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -81,18 +103,20 @@
                            <ContentPresenter />
                         </AdornerDecorator>
                         <StackPanel Visibility="{TemplateBinding SysButtonVisible}" HorizontalAlignment="Right" Orientation="Horizontal" Margin="{TemplateBinding SysButtonMargin}" VerticalAlignment="Top" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
-                           <Button x:Name="PART_MinimizedButton" Style="{StaticResource buttonStyle}">
-                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SysMin}" />
+                           <Button x:Name="PART_MinimizedButton" Style="{StaticResource SysDefaultButtonStyle}">
+                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}"
+                                    Stretch="Uniform" Data="{StaticResource Icon_SysMin}" />
                            </Button>
-                           <Button x:Name="PART_MaximizedButton" Style="{StaticResource buttonStyle}">
-                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SysMax}" />
+                           <Button x:Name="PART_MaximizedButton" Style="{StaticResource SysDefaultButtonStyle}">
+                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}"
+                                    Stretch="Uniform" Data="{StaticResource Icon_SysMax}" />
                            </Button>
-                           <Button x:Name="PART_NormalButton" Style="{StaticResource buttonStyle}">
-                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SystemRestore}" />
+                           <Button x:Name="PART_NormalButton" Style="{StaticResource SysDefaultButtonStyle}">
+                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}"
+                                    Stretch="Uniform" Data="{StaticResource Icon_SystemRestore}" />
                            </Button>
-                           <Button x:Name="PART_CloseButton" Style="{StaticResource buttonStyle}">
-                              <Path Width="11" Fill="{TemplateBinding SysButtonColor}" Stretch="Uniform" Data="{StaticResource Icon_SystemClose}" />
-                           </Button>
+                           <Button x:Name="PART_CloseButton" Style="{StaticResource SysCloseButtonStyle}"
+                                                Background="{StaticResource Brush}" Foreground="{TemplateBinding SysButtonColor}"/>
                         </StackPanel>
                         <Rectangle x:Name="disableRectangle" Grid.RowSpan="2" Grid.ColumnSpan="4" Fill="#FF000000" IsHitTestVisible="False" Opacity="0" />
                      </Grid>
