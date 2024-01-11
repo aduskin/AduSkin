@@ -17,7 +17,7 @@
         MinWidth="600" MinHeight="350" 
         d:DesignHeight="1200" d:DesignWidth="1100" Width="800">
     <Adu:AduTransitioningContentControl>
-        <Grid>
+        <Grid Background="{StaticResource ShadowColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
                 <RowDefinition />

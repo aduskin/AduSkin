@@ -27,7 +27,7 @@
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter TargetName="backRectangle" Property="Opacity" Value="1" />
+                     <Setter TargetName="backRectangle" Property="Opacity" Value=".4" />
                      <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
                   </Trigger>
                </ControlTemplate.Triggers>
