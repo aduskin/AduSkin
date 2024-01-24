@@ -7,95 +7,96 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <HierarchicalDataTemplate x:Key="ItemNode" ItemsSource="{Binding Children,Mode=TwoWay}">
-      <Border x:Name="bg" Background="Transparent" Height="30">
+      <Border x:Name="bg" Background="Transparent" Height="30" Cursor="Hand">
          <TextBlock Text="{Binding Name}" ToolTip="{Binding Name}" FontSize="13" VerticalAlignment="Center" Margin="0,0,0,0" TextTrimming="CharacterEllipsis"/>
       </Border>
    </HierarchicalDataTemplate>
 
-   <Style  x:Key="DefaultTreeViewItem" TargetType="{x:Type TreeViewItem}">
-      <Setter Property="MinHeight" Value="30" />
-      <Setter Property="Background" Value="Transparent" />
+   <Style x:Key="DefaultTreeViewItem" TargetType="{x:Type TreeViewItem}">
+      <Setter Property="MinHeight" Value="24" />
+      <Setter Property="Background" Value="#00000000" />
       <Setter Property="IsExpanded" Value="{Binding IsOpen}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type TreeViewItem}">
                <ControlTemplate.Resources>
-                  <converter:IndentConverter  x:Key="indentConverter"/>
+                  <converter:IndentConverter x:Key="indentConverter"/>
                </ControlTemplate.Resources>
                <Grid Background="Transparent">
                   <Grid.RowDefinitions>
                      <RowDefinition/>
                      <RowDefinition/>
                   </Grid.RowDefinitions>
-                  <Border Name="itemBackground" Background="{TemplateBinding Background}"  
-                                BorderBrush="{TemplateBinding BorderBrush}"  
-                                BorderThickness="{TemplateBinding BorderThickness}"  
-                                Padding="{TemplateBinding Padding}">
-                     <Grid Background="Transparent">
-                        <Grid x:Name="ItemRoot" Margin="{Binding Converter={StaticResource indentConverter},RelativeSource={RelativeSource TemplatedParent}}" Background="Transparent">
-                           <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="20" />
-                              <ColumnDefinition Width="*"/>
-                           </Grid.ColumnDefinitions>
-                           <ToggleButton x:Name="Expander" Margin="4,0" ClickMode="Press" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}">
-                              <ToggleButton.Style>
-                                 <Style TargetType="{x:Type ToggleButton}">
-                                    <Setter Property="Focusable" Value="False"/>
-                                    <Setter Property="Width" Value="16"/>
-                                    <Setter Property="Height" Value="14"/>
-                                    <Setter Property="Template">
-                                       <Setter.Value>
-                                          <ControlTemplate TargetType="{x:Type ToggleButton}">
-                                             <Border Background="Transparent"  Padding="2">
-                                                <Path x:Name="ExpandPath" Data="M352.19299999 96.196l415.63200001 415.804-415.632 415.803-63.445-63.616 352.017-352.209-352.017-352.102z" Stretch="Uniform" Width="12" Fill="{StaticResource Brush}"/>
-                                             </Border>
-                                             <ControlTemplate.Triggers>
-                                                <Trigger Property="IsChecked" Value="True">
-                                                   <Setter Property="RenderTransform" TargetName="ExpandPath">
-                                                      <Setter.Value>
-                                                         <RotateTransform Angle="90" CenterY="3" CenterX="3"/>
-                                                      </Setter.Value>
-                                                   </Setter>
-                                                   <Setter Property="Margin" TargetName="ExpandPath" Value="0,0,0,0"/>
-                                                </Trigger>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                </Trigger>
-                                             </ControlTemplate.Triggers>
-                                          </ControlTemplate>
-                                       </Setter.Value>
-                                    </Setter>
-                                 </Style>
-                              </ToggleButton.Style>
-                           </ToggleButton>
-                           <ContentPresenter Grid.Column="1" Margin="5,0" x:Name="PART_Header" ContentSource="Header" HorizontalAlignment="Stretch" ></ContentPresenter>
-                        </Grid>
-                     </Grid>
+                  <Border Name="itemBackground" CornerRadius="6"
+                        Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
                   </Border>
-                  <ItemsPresenter x:Name="ItemsHost" Grid.Row="1"/>
+                  <Grid x:Name="ItemRoot" Background="Transparent"
+   Margin="{Binding Converter={StaticResource indentConverter}, RelativeSource={RelativeSource TemplatedParent}}">
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                     </Grid.ColumnDefinitions>
+                     <ToggleButton x:Name="Expander" Margin="4,0,0,0" ClickMode="Press"
+                                   IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}">
+                        <ToggleButton.Style>
+                           <Style TargetType="{x:Type ToggleButton}">
+                              <Setter Property="Focusable" Value="False"/>
+                              <Setter Property="Margin" Value="2,0,0,0"/>
+                              <Setter Property="Width" Value="16" />
+                              <Setter Property="Height" Value="16" />
+                              <Setter Property="Template">
+                                 <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                       <Border Padding="2" Background="Transparent" >
+                                          <Path x:Name="ExpandPath" Width="12" Height="10" Fill="{TemplateBinding Foreground}" Stretch="Uniform" 
+                                Data="M352.19299999 96.196l415.63200001 415.804-415.632 415.803-63.445-63.616 352.017-352.209-352.017-352.102z"/>
+                                       </Border>
+                                       <ControlTemplate.Triggers>
+                                          <Trigger Property="IsChecked" Value="True">
+                                             <Setter TargetName="ExpandPath" Property="Margin" Value="0,3,0,0"/>
+                                             <Setter TargetName="ExpandPath" Property="RenderTransform">
+                                                <Setter.Value>
+                                                   <RotateTransform Angle="90" CenterX="3" CenterY="3" />
+                                                </Setter.Value>
+                                             </Setter>
+                                          </Trigger>
+                                       </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                 </Setter.Value>
+                              </Setter>
+                           </Style>
+                        </ToggleButton.Style>
+                     </ToggleButton>
+                     <ContentPresenter x:Name="PART_Header" Grid.Column="1" Margin="5,0" HorizontalAlignment="Stretch" ContentSource="Header" />
+                  </Grid>
+                  <ItemsPresenter x:Name="ItemsHost" Grid.Row="1" />
                </Grid>
                <ControlTemplate.Triggers>
-                  <DataTrigger Binding="{Binding IsGrouping}" Value="false">
-                     <Setter Property="Visibility" TargetName="Expander" Value="Hidden"/>
-                  </DataTrigger>
                   <Trigger Property="HasItems" Value="False">
-                     <Setter Property="Visibility" TargetName="Expander" Value="Collapsed"/>
+                     <Setter TargetName="Expander" Property="Visibility" Value="Collapsed" />
                   </Trigger>
                   <Trigger Property="IsExpanded" Value="False">
-                     <Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed"/>
+                     <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter Property="Background" TargetName="itemBackground" Value="#20000000"/>
+                     <Setter TargetName="itemBackground" Property="Background" Value="{StaticResource Brush}" />
+                     <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
+                     <Setter TargetName="Expander" Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
-                        <Condition Property="IsFocused" Value="False"/>
-                        <Condition SourceName="itemBackground" Property="IsMouseOver" Value="true"/>
+                        <Condition Property="IsFocused" Value="False" />
+                        <Condition SourceName="ItemRoot" Property="IsMouseOver" Value="true" />
                      </MultiTrigger.Conditions>
-                     <Setter Property="Background" Value=" #10000000" TargetName="itemBackground"/>
+                     <Setter TargetName="itemBackground" Property="Background" Value="{StaticResource Brush}" />
+                     <Setter TargetName="itemBackground" Property="Opacity" Value=".15" />
                   </MultiTrigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                     <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -130,7 +131,7 @@
       </Setter>
    </Style>
 
-   <Style x:Key="NorTreeView" TargetType="{x:Type TreeView}" BasedOn="{StaticResource TreeViewBase}">
+   <Style x:Key="DefaultTreeView" TargetType="{x:Type TreeView}" BasedOn="{StaticResource TreeViewBase}">
       <Setter Property="ItemTemplate" Value="{StaticResource ItemNode}"/>
    </Style>
 </ResourceDictionary>

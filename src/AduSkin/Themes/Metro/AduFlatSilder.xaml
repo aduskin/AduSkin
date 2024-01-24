@@ -5,7 +5,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <sys:Double x:Key="Slider.Horizontal.RepeatButton.Height">3.0</sys:Double>
+   <sys:Double x:Key="Slider.Horizontal.RepeatButton.Height">5</sys:Double>
     <sys:Double x:Key="Slider.Vertical.RepeatButton.Width">2.0</sys:Double>
 
     <SolidColorBrush x:Key="Silder.DecreaseRepeatButton.Background" Color="#44BFA3" />
@@ -71,7 +71,7 @@
     </ControlTemplate>
     <SolidColorBrush x:Key="SliderThumb.Track.Border" Color="#FFD6D6D6" />
     <SolidColorBrush x:Key="SliderThumb.Track.Background" Color="#FFE7EAEA" />
-    <Style x:Key="RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
+    <Style x:Key="RepeatButtonBase" TargetType="{x:Type RepeatButton}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Background" Value="{Binding DecreaseColor, RelativeSource={RelativeSource AncestorType=Adu:AduFlatSilder}}" />
         <Setter Property="Focusable" Value="false" />
@@ -80,15 +80,37 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RepeatButton}">
-                    <Rectangle Width="{TemplateBinding Width}"
+                    <Border Width="{TemplateBinding Width}" CornerRadius="2"
                                Height="{TemplateBinding Height}"
-                               Fill="{TemplateBinding Background}" />
+                               Background="{TemplateBinding Background}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+   <Style x:Key="LeftRepeatButton" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource RepeatButtonBase}">
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type RepeatButton}">
+               <Border Width="{TemplateBinding Width}" CornerRadius="2,0,0,2"
+                           Height="{TemplateBinding Height}"
+                           Background="{TemplateBinding Background}" />
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+   <Style x:Key="RightRepeatButton" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource RepeatButtonBase}">
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type RepeatButton}">
+               <Border Width="{TemplateBinding Width}" CornerRadius="0,2,2,0"
+                        Height="{TemplateBinding Height}"
+                        Background="{TemplateBinding Background}" />
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 
-    <Style x:Key="RepeatButtonVerticalTransparent" TargetType="{x:Type RepeatButton}">
+   <Style x:Key="RepeatButtonVerticalTransparent" TargetType="{x:Type RepeatButton}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Background" Value="{Binding DecreaseColor, RelativeSource={RelativeSource AncestorType=Adu:AduFlatSilder}}" />
         <Setter Property="Focusable" Value="false" />
@@ -170,7 +192,7 @@
                             Margin="5,0" VerticalAlignment="center"
                             Background="Transparent"
                             BorderBrush="{StaticResource SliderThumb.Track.Border}"
-                            BorderThickness="0">
+                            BorderThickness="0" CornerRadius="3">
                         <Canvas Margin="-6,-1">
                             <Rectangle x:Name="PART_SelectionRange"
                                        Height="{StaticResource Slider.Horizontal.RepeatButton.Height}"
@@ -180,10 +202,10 @@
                     </Border>
                     <Track x:Name="PART_Track" Grid.Row="1">
                         <Track.DecreaseRepeatButton>
-                            <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                           <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource LeftRepeatButton}" />
                         </Track.DecreaseRepeatButton>
                         <Track.IncreaseRepeatButton>
-                            <RepeatButton Background="{TemplateBinding IncreaseColor}" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
+                            <RepeatButton Background="{TemplateBinding IncreaseColor}" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RightRepeatButton}" />
                         </Track.IncreaseRepeatButton>
                         <Track.Thumb>
                             <Thumb x:Name="PART_Thumb" HorizontalAlignment="Left" 
