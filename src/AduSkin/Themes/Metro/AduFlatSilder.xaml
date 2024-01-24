@@ -208,7 +208,7 @@
                             <RepeatButton Background="{TemplateBinding IncreaseColor}" Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RightRepeatButton}" />
                         </Track.IncreaseRepeatButton>
                         <Track.Thumb>
-                            <Thumb x:Name="PART_Thumb" HorizontalAlignment="Left" 
+                            <Thumb x:Name="PART_Thumb" HorizontalAlignment="Left" Cursor="Hand"
                                    VerticalAlignment="Center" Focusable="False"
                                    OverridesDefaultStyle="True" 
                                    Template="{StaticResource SliderThumbHorizontalDefault}" />
