@@ -26,6 +26,12 @@
    <SolidColorBrush x:Key="DisabledBackground" Color="#00eeeeee" />
    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#00888888" />
 
+   <!--PathColor-->
+   <SolidColorBrush x:Key="NormalPathColor" Color="#000" />
+   <SolidColorBrush x:Key="MouseOverPathColor" Color="#99000000" />
+   <SolidColorBrush x:Key="PressedPathColor" Color="#80000000" />
+   <SolidColorBrush x:Key="DisabledPathColor" Color="#70000000" />
+   
    <!--StatusColor-->
    <SolidColorBrush x:Key="InfoBrush" Color="#3399FF" />
    <SolidColorBrush x:Key="WarnBrush" Color="#FF9900" />
