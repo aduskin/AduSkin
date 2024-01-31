@@ -76,18 +76,19 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduPicker:AduTimeSelector}">
-               <Grid>
-                  <Border Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"
-              CornerRadius="3" BorderBrush="#FF000000" Opacity="0.15"
-              BorderThickness="{TemplateBinding BorderThickness}"
+               <Border Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"
+              CornerRadius="3" 
               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-              UseLayoutRounding="{TemplateBinding UseLayoutRounding}"/>
-                  <UniformGrid Columns="3">
-                     <ListBox x:Name="PART_Hour" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}"/>
-                     <ListBox x:Name="PART_Minute" BorderThickness="1,0,1,0" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}" />
-                     <ListBox x:Name="PART_Second" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}" />
-                  </UniformGrid>
-               </Grid>
+              UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+                  <Grid>
+                     <Border BorderBrush="#000" Opacity="0.15" CornerRadius="3" BorderThickness="{TemplateBinding BorderThickness}"/>
+                     <UniformGrid Columns="3">
+                        <ListBox x:Name="PART_Hour" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}"/>
+                        <ListBox x:Name="PART_Minute" BorderThickness="1,0,1,0" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}" />
+                        <ListBox x:Name="PART_Second" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}" />
+                     </UniformGrid>
+                  </Grid>
+               </Border>
             </ControlTemplate>
          </Setter.Value>
       </Setter>

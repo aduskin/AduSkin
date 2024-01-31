@@ -106,11 +106,9 @@
                                  Placement="Bottom"
                                  PlacementTarget="{Binding ElementName=Root}"
                                  StaysOpen="False" VerticalOffset="1">
-                           <Border Background="White">
-                              <AduSkin:AduTimeSelector x:Name="PART_TimeSelector" AduAttach:BorderAttach.CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                           <AduSkin:AduTimeSelector x:Name="PART_TimeSelector" AduAttach:BorderAttach.CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
                                                        AduAttach:BackgroundAttach.PanelBackground="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"  
                                                        AduAttach:BorderAttach.BorderThickness="{TemplateBinding BorderThickness}" AduAttach:BorderAttach.BorderBrush="{TemplateBinding BorderBrush}"/>
-                           </Border>
                         </Popup>
                         <AduSkin:MetroTextBox x:Name="PART_TextBox" MouseMoveBackground="Transparent" Background="Transparent" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" BorderThickness="0"
