@@ -6,6 +6,7 @@
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              xmlns:interactivity="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
              xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
+             xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -25,13 +26,14 @@
                 </interactivity:Interaction.Triggers>
             </Metro:AduPage>
         </Grid>
-        <Metro:AduDataGrid Grid.Row="1" x:Name="MyDataGrid" IsReadOnly="True" Width="400" MaxHeight="900" MinHeight="200" Height="Auto" HeadersVisibility="All" AutoGenerateColumns="False" ItemsSource="{Binding ContactList}">
+      <Metro:AduDataGrid Grid.Row="1" x:Name="MyDataGrid" IsReadOnly="True" Background="Transparent" AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource PrimaryBrush}"
+                           Width="400" MaxHeight="900" MinHeight="200" Height="Auto" HeadersVisibility="All" AutoGenerateColumns="False" ItemsSource="{Binding ContactList}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn CanUserResize="False" Header="Select">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
-                           <Metro:AduCheckBox IsChecked="{Binding ElementName = MyDataGrid,Path=DataContext.IsAllChecked}"></Metro:AduCheckBox>
-                        </DataTemplate>
+                        <Metro:AduCheckBox IsChecked="{Binding ElementName = MyDataGrid,Path=DataContext.IsAllChecked}"/>
+                     </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

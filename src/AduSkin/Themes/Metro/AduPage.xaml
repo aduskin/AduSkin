@@ -24,7 +24,10 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <!--向左切换-->
-                  <Adu:AduPathIconButton x:Name="PART_ButtonLeft" Command="interactivity:ControlCommands.Prev" Margin="5,0" RenderTransformOrigin="0.5, 0.5" AduAttach:PathDataAttach.PathData="{StaticResource Icon_RightArrow2}" AduAttach:PathDataAttach.Width="16">
+                  <Adu:AduPathIconButton x:Name="PART_ButtonLeft" Command="interactivity:ControlCommands.Prev" Margin="5,0" 
+                                         RenderTransformOrigin="0.5, 0.5" 
+                                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_RightArrow2}" 
+                                         AduAttach:PathDataAttach.Width="16">
                             <Adu:AduPathIconButton.RenderTransform>
                                 <RotateTransform Angle="180" />
                             </Adu:AduPathIconButton.RenderTransform>
@@ -44,7 +47,9 @@
                      <Adu:AduRadioButton x:Name="PART_ButtonLast" Content="末页" Tag="10" AduAttach:PathDataAttach.Visibility="Collapsed"/>
                         </StackPanel>
                         <!--向右切换-->
-                  <Adu:AduPathIconButton x:Name="PART_ButtonRight" Grid.Column="2" Command="interactivity:ControlCommands.Next" Margin="5,0" AduAttach:PathDataAttach.PathData="{StaticResource Icon_RightArrow2}" AduAttach:PathDataAttach.Width="16"/>
+                  <Adu:AduPathIconButton x:Name="PART_ButtonRight" Grid.Column="2" Command="interactivity:ControlCommands.Next" Margin="5,0" 
+                                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_RightArrow2}" 
+                                         AduAttach:PathDataAttach.Width="16"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

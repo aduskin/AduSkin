@@ -66,7 +66,7 @@
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel>
-                     <Metro:AduTimePicker HorizontalAlignment="Left" Margin="4" Width="200" />
+                     <Metro:AduTimePicker HorizontalAlignment="Left" Margin="4" Width="200"/>
                      <Metro:AduDatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="4" Width="200" VerticalAlignment="Center" Height="28" Type="DateTime"  CornerRadius="3" DateStringFormat="yyyy/MM/dd"
                               AduAttach:BackgroundAttach.PanelBackground="{StaticResource DefaultWhiteBrush}"
                               AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource DefaultBrush}"

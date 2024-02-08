@@ -144,7 +144,8 @@
       <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource DefaultWhiteBrush}"/>
       <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{StaticResource DefaultWhiteBrush}"/>
       <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{StaticResource DefaultWhiteBrush}"/>
-      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="#1E1F23" />
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
+      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Stretch" />
       <Setter Property="Template">
@@ -186,16 +187,17 @@
                         </Grid.ColumnDefinitions>
 
                         <Popup x:Name="PART_Popup_New" 
-                                       MinWidth="{Binding Path=ActualWidth,
-                                                          ElementName=Root}"
+                                       MinWidth="{Binding Path=ActualWidth, ElementName=Root}"
                                        AllowsTransparency="True"
-                                       IsOpen="{Binding Path=IsChecked,
-                                                        ElementName=PART_DropDownButton}"
+                                       IsOpen="{Binding Path=IsChecked, ElementName=PART_DropDownButton}"
                                        Placement="Bottom"
                                        PlacementTarget="{Binding ElementName=Root}"
                                        StaysOpen="False" VerticalOffset="1">
                            <Grid Margin="10">
-                              <Border Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}" CornerRadius="3" SnapsToDevicePixels="True" UseLayoutRounding="True">
+                              <Border CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                                    Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"  
+                                     BorderThickness="{TemplateBinding BorderThickness}" 
+                                     BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True" UseLayoutRounding="True">
                                  <Border.Effect>
                                     <DropShadowEffect BlurRadius="10" Opacity="0.2" ShadowDepth="0" Color="Brown" />
                                  </Border.Effect>
