@@ -9,25 +9,27 @@
    <Style TargetType="{x:Type Metro:MetroMenuItem}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>
-      <Setter Property="Foreground" Value="{StaticResource Brush}"/>
+      <Setter Property="Foreground" Value="White"/>
       <Setter Property="MinWidth" Value="200"/>
       <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="Transparent" />
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0" />
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6" />
       <Setter Property="Padding" Value="0"/>
-      <Setter Property="Background" Value="#1E1F23"/><!--菜单背景色-->
+      <Setter Property="Background" Value="#1E1F23"/>
+      <!--菜单背景色-->
       <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroMenuItem}">
+               <!--<Border x:Name="backRectangle" CornerRadius="6" Background="#888" Opacity="0" Height="30" Margin="6,0">-->
                <Grid>
-                  <Grid >
+                  <Border x:Name="backRectangle" Grid.ColumnSpan="3" CornerRadius="6" Background="#888" Opacity="0" Height="30" Margin="6,0"/>
+                  <Grid Margin="6,0">
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="33"/>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="0" x:Name="subWidth"/>
                      </Grid.ColumnDefinitions>
-                     <Rectangle x:Name="backRectangle" Grid.ColumnSpan="3" Fill="#888" Opacity="0" Height="30" />
                      <Grid Grid.Column="0">
                         <Image x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" HorizontalAlignment="Center"/>
                         <Path x:Name="checkicon" Visibility="Collapsed" Width="14" Height="14" Stretch="Uniform" Fill="{TemplateBinding Foreground}" Data="{StaticResource Icon_Checked2}" HorizontalAlignment="Center"/>
@@ -47,12 +49,13 @@
                            </Border.Effect>
                            <Grid>
                               <Polyline Points="5,0 0,5 5,10" Fill="{TemplateBinding Background}" Margin="-5,10,0,0"/>
-                              <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="True" KeyboardNavigation.TabNavigation="Cycle"/>
+                              <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="True" KeyboardNavigation.TabNavigation="Cycle" Margin="0,6"/>
                            </Grid>
                         </Border>
                      </Grid>
                   </Popup>
                </Grid>
+               <!--</Border>-->
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter TargetName="icon" Property="Opacity" Value="0.5"/>

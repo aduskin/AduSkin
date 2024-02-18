@@ -31,6 +31,7 @@
    <SolidColorBrush x:Key="MouseOverPathColor" Color="#99000000" />
    <SolidColorBrush x:Key="PressedPathColor" Color="#80000000" />
    <SolidColorBrush x:Key="DisabledPathColor" Color="#70000000" />
+   <SolidColorBrush x:Key="DefaultTransparentBrush" Color="#00000000" />
    
    <!--StatusColor-->
    <SolidColorBrush x:Key="InfoBrush" Color="#3399FF" />

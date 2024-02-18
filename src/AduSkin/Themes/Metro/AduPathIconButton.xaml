@@ -5,24 +5,18 @@
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-   <PathGeometry x:Key="DefaultIcon"
-                  Figures="M12,18A6,6,0,0,1,6,12C6,11,6.25,10.03,6.7,9.2L5.24,7.74C4.46,8.97,4,10.43,4,12A8,8,0,0,0,12,20L12,23 16,19 12,15 M12,4L12,1 8,5 12,9 12,6A6,6,0,0,1,18,12C18,13,17.75,13.97,17.3,14.8L18.76,16.26C19.54,15.03,20,13.57,20,12A8,8,0,0,0,12,4z"
-                  FillRule="NonZero" />
-
-   <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
-   <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
-   <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+   <PathGeometry x:Key="DefaultIcon" FillRule="NonZero" 
+                 Figures="M12,18A6,6,0,0,1,6,12C6,11,6.25,10.03,6.7,9.2L5.24,7.74C4.46,8.97,4,10.43,4,12A8,8,0,0,0,12,20L12,23 16,19 12,15 M12,4L12,1 8,5 12,9 12,6A6,6,0,0,1,18,12C18,13,17.75,13.97,17.3,14.8L18.76,16.26C19.54,15.03,20,13.57,20,12A8,8,0,0,0,12,4z"/>
 
    <Style TargetType="{x:Type Adu:AduPathIconButton}">
-      <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-      <Setter Property="BorderBrush" Value="Transparent" />
-      <Setter Property="Foreground" Value="#000000" />
-      <Setter Property="Background" Value="#00000000" />
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="Transparent" />
-      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="Transparent" />
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}" />
-      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="#000000" />
-      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="#000000" />
+      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource DefaultTransparentBrush}"/>
+      <Setter Property="Background" Value="{StaticResource DefaultTransparentBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource DefaultTransparentBrush}" />
+      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="{StaticResource DefaultTransparentBrush}" />
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalPathColor}" />
+      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource NormalPathColor}"/>
+      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource NormalPathColor}"/>
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource DefaultIcon}" />
       <Setter Property="AduAttach:PathDataAttach.Width" Value="13" />
       <Setter Property="BorderThickness" Value="0" />
@@ -32,20 +26,21 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Adu:AduPathIconButton}">
-               <Border x:Name="border" Padding="{TemplateBinding Padding}"
-                            Width="{TemplateBinding Width}" MaxWidth="{TemplateBinding MaxWidth}" MinWidth="{TemplateBinding MinWidth}"
-                            Height="{TemplateBinding Height}" MaxHeight="{TemplateBinding MaxHeight}" MinHeight="{TemplateBinding MinHeight}"
-                            CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            SnapsToDevicePixels="true" UseLayoutRounding="True">
+               <Border x:Name="border"
+                     Padding="{TemplateBinding Padding}"
+                     Width="{TemplateBinding Width}" MaxWidth="{TemplateBinding MaxWidth}" MinWidth="{TemplateBinding MinWidth}"
+                     Height="{TemplateBinding Height}" MaxHeight="{TemplateBinding MaxHeight}" MinHeight="{TemplateBinding MinHeight}"
+                     CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                     Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     SnapsToDevicePixels="true" UseLayoutRounding="True">
                   <Path x:Name="path"
-                              Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"
-                              Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
-                              Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
-                              Stretch="Uniform" />
+                     Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"
+                     Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+                     Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+                     Stretch="Uniform" />
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsDefaulted" Value="true">

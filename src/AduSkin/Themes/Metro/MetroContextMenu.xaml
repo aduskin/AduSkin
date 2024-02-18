@@ -28,7 +28,7 @@
                      <Border.Effect>
                         <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
                      </Border.Effect>
-                     <ItemsPresenter/>
+                     <ItemsPresenter Margin="0,6"/>
                   </Border>
                </Grid>
             </ControlTemplate>

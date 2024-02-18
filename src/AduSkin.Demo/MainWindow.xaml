@@ -12,17 +12,17 @@
     DataContext="{Binding Source={StaticResource Locator},Path=Main}">
    <Metro:MetroWindow.Menu>
       <Metro:MetroTitleMenu Height="40" HorizontalAlignment="Right">
-         <Metro:MetroTitleMenuItem Header="联系">
+         <Metro:MetroTitleMenuItem Header="联系" Metro:BorderAttach.CornerRadius="6">
             <Metro:MetroMenuItem Header="QQ"  Command="Metro:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes"/>
             <Metro:MetroMenuItem Header="QQ群" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb"/>
             <Metro:MetroMenuItem Header="邮箱" Command="Metro:ControlCommands.OpenLink" CommandParameter="mailto:1280429435@qq.com" />
          </Metro:MetroTitleMenuItem>
-         <Metro:MetroTitleMenuItem Header="源码" >
+         <Metro:MetroTitleMenuItem Header="源码" Metro:BorderAttach.CornerRadius="6">
             <Metro:MetroMenuItem Header="GitHub" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
             <Metro:MetroMenuItem Header="码云" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://gitee.com/aduskin"/>
             <Metro:MetroMenuItem Header="项目案例" Command="{Binding OpenClick}" CommandParameter="AduSkinDemo"/>
          </Metro:MetroTitleMenuItem>
-         <Metro:MetroTitleMenuItem Header="关于">
+         <Metro:MetroTitleMenuItem Header="关于" Metro:BorderAttach.CornerRadius="6">
             <Metro:MetroMenuItem Header="Nuget" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://www.nuget.org/packages/aduskin"/>
             <Metro:MetroMenuItem Header="微博" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://weibo.com/sentiment562520"/>
             <Metro:MetroMenuItem Header="博客园" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://www.cnblogs.com/aduskin"/>

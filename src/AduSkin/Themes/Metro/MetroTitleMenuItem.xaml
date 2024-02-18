@@ -18,40 +18,40 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroTitleMenuItem}">
                <Grid>
-                  <Grid.ColumnDefinitions>
-                     <ColumnDefinition Width="Auto"/>
-                     <ColumnDefinition Width="0"/>
-                  </Grid.ColumnDefinitions>
-                  <Rectangle x:Name="backRectangle" Fill="#ffffff" Opacity="0"/>
-                  <Grid x:Name="title" Background="#00000000" VerticalAlignment="Center" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                      <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" x:Name="iconWidth"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="0" x:Name="subWidth"/>
+                        <ColumnDefinition Width="0"/>
                      </Grid.ColumnDefinitions>
-                     <Image x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="10,0,0,0"/>
-                     <Metro:MetroTextBlock Grid.Column="1" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" Margin="10,0" VerticalAlignment="Center"/>
-                     <Polyline Grid.Column="2" Points="0,0 5,5 10,0" Stroke="#ffffff" VerticalAlignment="Center"  Margin="0,0,10,0"/>
-                  </Grid>
-                  <Rectangle Grid.Column="3" Fill="#ffffff" Opacity="0.2" Height="12"/>
-                  <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" HorizontalOffset="-20" VerticalOffset="-10" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="Fade" Placement="Bottom">
-                     <Grid RenderOptions.ClearTypeHint="Enabled" Background="#00000000">
-                        <Border Grid.Row="1" Background="{TemplateBinding Background}" Margin="20" Padding="0"
-                                        BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
-                                        BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
-                                        CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}">
-                           <Border.Effect>
-                              <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
-                           </Border.Effect>
-                           <Grid>
-                              <Polyline HorizontalAlignment="Left" Points="0,5 5,0 10,5" Fill="{TemplateBinding Background}" Margin="14,-5,0,0"/>
-                              <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="True" KeyboardNavigation.TabNavigation="Cycle"/>
-                           </Grid>
-                        </Border>
+                     <Rectangle x:Name="backRectangle" Fill="#ffffff" Opacity="0"/>
+                     <Grid x:Name="title" Background="#00000000" VerticalAlignment="Center" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="Auto" x:Name="iconWidth"/>
+                           <ColumnDefinition Width="Auto"/>
+                           <ColumnDefinition Width="0" x:Name="subWidth"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="10,0,0,0"/>
+                        <Metro:MetroTextBlock Grid.Column="1" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" Margin="10,0" VerticalAlignment="Center"/>
+                        <Polyline Grid.Column="2" Points="0,0 5,5 10,0" Stroke="#ffffff" VerticalAlignment="Center"  Margin="0,0,10,0"/>
                      </Grid>
-                  </Popup>
-               </Grid>
-               <ControlTemplate.Triggers>
+                     <Rectangle Grid.Column="3" Fill="#ffffff" Opacity="0.2" Height="12"/>
+                     <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" HorizontalOffset="-20" VerticalOffset="-10" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="Fade" Placement="Bottom">
+                        <Grid RenderOptions.ClearTypeHint="Enabled" Background="#00000000">
+                           <Border Grid.Row="1" Background="{TemplateBinding Background}" Margin="20" Padding="0"
+                         BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
+                         BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
+                         CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}">
+                              <Border.Effect>
+                                 <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
+                              </Border.Effect>
+                              <Grid>
+                                 <Polyline HorizontalAlignment="Left" Points="0,5 5,0 10,5" Fill="{TemplateBinding Background}" Margin="14,-5,0,0"/>
+                                 <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="True" KeyboardNavigation.TabNavigation="Cycle" Margin="0,6"/>
+                              </Grid>
+                           </Border>
+                        </Grid>
+                     </Popup>
+                  </Grid>
+                  <ControlTemplate.Triggers>
                   <Trigger Property="Icon" Value="{x:Null}">
                      <Setter TargetName="iconWidth" Property="Width" Value="0"/>
                   </Trigger>
