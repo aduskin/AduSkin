@@ -10,6 +10,7 @@
    <Style TargetType="{x:Type Metro:MetroTitleMenuItem}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="Height" Value="40"/>
       <Setter Property="Background" Value="#1E1F23"/>
       <Setter Property="Foreground" Value="#FFF"/>
