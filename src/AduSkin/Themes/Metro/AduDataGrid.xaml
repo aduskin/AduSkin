@@ -45,8 +45,6 @@
                      <ColumnDefinition Width="*" />
                      <ColumnDefinition Width="auto" />
                   </Grid.ColumnDefinitions>
-                  <Border x:Name="BackgroundBorder" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6"
-                                Grid.ColumnSpan="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" />
                   <ContentPresenter x:Name="HeaderContent"
                                           Content="{TemplateBinding Content}"
                                           ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -110,7 +108,7 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type DataGridRow}">
                <Grid>
-                  <Border x:Name="back" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Background="{TemplateBinding AduAttach:BackgroundAttach.NormalBackground}"/>
+                  <Border x:Name="back" Opacity=".3" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Background="{TemplateBinding AduAttach:BackgroundAttach.NormalBackground}"/>
                   <SelectiveScrollingGrid Margin="0,4">
                      <SelectiveScrollingGrid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -134,7 +132,7 @@
                <ControlTemplate.Triggers>
                   <Trigger Property="IsSelected" Value="True">
                      <Setter TargetName="back" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter Property="Foreground" Value="#FFF" />
+                     <Setter TargetName="back" Property="Opacity" Value=".4"/>
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
@@ -142,15 +140,13 @@
                         <Condition Property="Selector.IsSelectionActive" Value="True" />
                      </MultiTrigger.Conditions>
                      <Setter TargetName="back" Property="Background" Value="{Binding  (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter TargetName="back" Property="Opacity" Value=".8"/>
-                     <Setter Property="Foreground" Value="#FFF" />
+                     <Setter TargetName="back" Property="Opacity" Value=".7"/>
                   </MultiTrigger>
                   <MultiDataTrigger>
                      <MultiDataTrigger.Conditions>
                         <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True" />
                      </MultiDataTrigger.Conditions>
-                     <Setter TargetName="back" Property="Opacity" Value=".7" />
-                     <Setter Property="Foreground" Value="#000" />
+                     <Setter TargetName="back" Property="Opacity" Value=".5" />
                   </MultiDataTrigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -224,11 +220,10 @@
                             Background="{TemplateBinding Background}"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                   <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
-                                          Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                                          Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
-
+                           Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                           Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
                   </ContentPresenter>
                </Border>
                <ControlTemplate.Triggers>
@@ -245,11 +240,9 @@
    <Style TargetType="{x:Type Adu:AduDataGrid}">
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="MinRowHeight" Value="25" />
-      <Setter Property="Background" Value="{StaticResource DefaultBackground}" />
+      <Setter Property="Background" Value="{StaticResource DefaultWhiteBrush}" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="BorderThickness" Value="0" />
-      <!--<Setter Property="HorizontalGridLinesBrush" Value="{StaticResource GridLinesBrush}" />
-        <Setter Property="VerticalGridLinesBrush" Value="{StaticResource GridLinesBrush}" />-->
       <Setter Property="ColumnHeaderStyle" Value="{StaticResource DefaultDataGridColumnHeader}" />
       <Setter Property="RowHeaderStyle" Value="{StaticResource DefaultDataGridRowHeader}" />
       <Setter Property="CellStyle" Value="{StaticResource DefaultDataGridCell}" />
@@ -290,8 +283,12 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="DataGrid">
-               <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" x:Name="border" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
-                            Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+               <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                       BorderThickness="{TemplateBinding BorderThickness}"
+                       CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                       Background="{TemplateBinding Background}"
+                       Padding="{TemplateBinding Padding}" 
+                       SnapsToDevicePixels="True">
                   <Adu:MetroScrollViewer x:Name="DG_ScrollViewer" Focusable="false" >
                      <ScrollViewer.Template>
                         <ControlTemplate TargetType="{x:Type ScrollViewer}" >
