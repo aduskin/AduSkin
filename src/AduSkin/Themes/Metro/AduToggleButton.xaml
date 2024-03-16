@@ -5,10 +5,8 @@
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-   <Geometry x:Key="icon_pause"  >M773.888 43.847h-66.66c-36.827 0-66.664 29.85-66.664 66.679V910.47c0 36.828 29.84 66.66 66.665 66.66h66.659c36.817 0 66.669-29.833 66.669-66.66V110.52c-0.001-36.825-29.85-66.676-66.669-66.676zM307.258 43.847h-66.67c-36.827 0-66.664 29.85-66.664 66.679V910.47c0 36.828 29.84 66.66 66.665 66.66h66.669c36.805 0 66.659-29.833 66.659-66.66V110.52c-0.001-36.825-29.85-66.676-66.66-66.676z</Geometry>
-   <Geometry x:Key="icon_play" >M868.909262 463.136929L269.805528 25.493776C252.809677 8.497925 223.066938 0 197.573162 0 159.332499 0 129.58976 25.493776 129.58976 67.983402v883.784233c0 42.489627 33.991701 72.232365 80.73029 72.232365 21.244813 0 42.489627-8.497925 59.485478-21.244813l594.854771-412.149378c16.995851-16.995851 25.493776-38.240664 25.493776-59.485477 4.248963-29.742739-4.248963-50.987552-21.244813-67.983403z</Geometry>
-
-   <Style TargetType="{x:Type Adu:AduDIYCheckBox}">
+   
+   <Style TargetType="{x:Type Adu:AduToggleButton}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="Foreground" Value="#000000" />
@@ -27,11 +25,11 @@
       <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="#000000"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="13" />
       <Setter Property="AduAttach:PathDataAttach.Width" Value="13" />
-      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource icon_pause}"/>
-      <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{StaticResource icon_play}"/>
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_Pause}"/>
+      <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{StaticResource Icon_Play}"/>
       <Setter Property="Template">
          <Setter.Value>
-            <ControlTemplate TargetType="{x:Type Adu:AduDIYCheckBox}">
+            <ControlTemplate TargetType="{x:Type Adu:AduToggleButton}">
                <Border x:Name="border" 
                      Height="{TemplateBinding Height}"
                      Width="{TemplateBinding Width}"

@@ -11,6 +11,7 @@
       <Setter Property="SnapsToDevicePixels" Value="True"/>
       <Setter Property="Foreground" Value="White"/>
       <Setter Property="MinWidth" Value="200"/>
+      <Setter Property="Height" Value="32"/>
       <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="Transparent" />
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0" />
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6" />
@@ -21,9 +22,8 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroMenuItem}">
-               <!--<Border x:Name="backRectangle" CornerRadius="6" Background="#888" Opacity="0" Height="30" Margin="6,0">-->
                <Grid>
-                  <Border x:Name="backRectangle" Grid.ColumnSpan="3" CornerRadius="6" Background="#888" Opacity="0" Height="30" Margin="6,0"/>
+                  <Border x:Name="backRectangle" Grid.ColumnSpan="3" CornerRadius="6" Background="#888" Opacity="0" Height="{TemplateBinding Height}" Margin="6,0"/>
                   <Grid Margin="6,0">
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="33"/>
@@ -55,7 +55,6 @@
                      </Grid>
                   </Popup>
                </Grid>
-               <!--</Border>-->
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter TargetName="icon" Property="Opacity" Value="0.5"/>
