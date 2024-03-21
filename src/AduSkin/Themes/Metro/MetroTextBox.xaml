@@ -44,6 +44,7 @@
       <Setter Property="AcceptsReturn" Value="False"/>
       <Setter Property="TextWrapping" Value="NoWrap"/>
       <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
       <Setter Property="Background" Value="#FFFFFFFF"/>
       <Setter Property="MouseMoveBackground" Value="#FFFFFFFF"/>
       <Setter Property="BorderBrush" Value="{StaticResource Brush}"/>
