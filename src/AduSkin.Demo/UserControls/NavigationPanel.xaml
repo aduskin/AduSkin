@@ -7,31 +7,31 @@
              xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="1">
-        <Metro:AduNavigationPanel x:Name="navigationPanel" Grid.Row="1" 
+   <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="1">
+      <Metro:AduNavigationPanel x:Name="navigationPanel" Grid.Row="1" 
                                   MaxHeight="300" Width="500" Foreground="{StaticResource DefaultBrush}"
                                   AduAttach:BackgroundAttach.SelectedBackground="Red"
                                 IndicatorMargin="0" IndicatorHorizontalAlignment="Center" 
                                 IndicatorSelectedIndex="0" IndicatorPlacement="Left">
-            <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
-                <StackPanel >
-                    <Metro:AduGroupBoxNor Header="常规设置" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" Height="300" FontSize="14" HeaderPadding="10,6">
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="常规设置" />
-                    </Metro:AduGroupBoxNor>
-                    <Metro:AduGroupBoxNor Header="歌词面板" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" FontSize="14" Height="300" HeaderPadding="10,6">
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="歌词面板" />
-                    </Metro:AduGroupBoxNor>
-                    <Metro:AduGroupBoxNor Header="下载与缓存" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" FontSize="14" Height="300" HeaderPadding="10,6">
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="下载与缓存" />
-                    </Metro:AduGroupBoxNor>
-                    <Metro:AduGroupBoxNor Header="桌面歌词" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" FontSize="14" Height="300" HeaderPadding="10,6">
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="桌面歌词" />
-                    </Metro:AduGroupBoxNor>
-                    <Metro:AduGroupBoxNor Header="快捷键" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" FontSize="14" Height="300">
-                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="快捷键" />
-                    </Metro:AduGroupBoxNor>
-                </StackPanel>
-            </Metro:MetroScrollViewer>
-        </Metro:AduNavigationPanel>
-    </Border>
+         <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
+            <StackPanel >
+               <Metro:AduGroupBoxLight Header="常规设置" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" Height="300" FontSize="14" HeaderPadding="10,6">
+                  <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="常规设置" />
+               </Metro:AduGroupBoxLight>
+               <Metro:AduGroupBoxLight Header="歌词面板" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" FontSize="14" Height="300" HeaderPadding="10,6">
+                  <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="歌词面板" />
+               </Metro:AduGroupBoxLight>
+               <Metro:AduGroupBoxLight Header="下载与缓存" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" FontSize="14" Height="300" HeaderPadding="10,6">
+                  <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="下载与缓存" />
+               </Metro:AduGroupBoxLight>
+               <Metro:AduGroupBoxLight Header="桌面歌词" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" FontSize="14" Height="300" HeaderPadding="10,6">
+                  <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="桌面歌词" />
+               </Metro:AduGroupBoxLight>
+               <Metro:AduGroupBoxLight Header="快捷键" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource DefaultBorderBrush}" FontSize="14" Height="300">
+                  <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="{StaticResource DefaultBrush}" Text="快捷键" />
+               </Metro:AduGroupBoxLight>
+            </StackPanel>
+         </Metro:MetroScrollViewer>
+      </Metro:AduNavigationPanel>
+   </Border>
 </UserControl>

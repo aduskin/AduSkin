@@ -19,7 +19,7 @@ namespace AduSkin.Controls.Metro
         private ContentPresenter PART_ContentPresenter;
 
         private ScrollViewer mScrollViewer;
-        private List<AduGroupBoxNor> mHeaderList;
+        private List<AduGroupBoxLight> mHeaderList;
 
 
         #endregion
@@ -211,7 +211,7 @@ namespace AduSkin.Controls.Metro
 
         private void NavigationPanel_Loaded(object sender, RoutedEventArgs e)
         {
-            mHeaderList = VisualHelper.FindVisualChildrenEx<AduGroupBoxNor>(this.PART_ContentPresenter);
+            mHeaderList = VisualHelper.FindVisualChildrenEx<AduGroupBoxLight>(this.PART_ContentPresenter);
             if (mHeaderList != null)
             {
                 List<object> list = new List<object>();

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace AduSkin.Controls.Metro
 {
-    public class AduGroupBoxNor : HeaderedContentControl
+    public class AduGroupBoxLight : HeaderedContentControl
     {
         #region Private属性
 
@@ -25,7 +25,7 @@ namespace AduSkin.Controls.Metro
         }
 
         public static readonly DependencyProperty HeaderBackgroundProperty =
-            DependencyProperty.Register("HeaderBackground", typeof(Brush), typeof(AduGroupBoxNor));
+            DependencyProperty.Register("HeaderBackground", typeof(Brush), typeof(AduGroupBoxLight));
 
         #endregion
 
@@ -38,7 +38,7 @@ namespace AduSkin.Controls.Metro
         }
         
         public static readonly DependencyProperty HorizontalHeaderAlignmentProperty =
-            DependencyProperty.Register("HorizontalHeaderAlignment", typeof(HorizontalAlignment), typeof(AduGroupBoxNor), new PropertyMetadata(HorizontalAlignment.Stretch));
+            DependencyProperty.Register("HorizontalHeaderAlignment", typeof(HorizontalAlignment), typeof(AduGroupBoxLight), new PropertyMetadata(HorizontalAlignment.Stretch));
 
         #endregion
 
@@ -51,7 +51,7 @@ namespace AduSkin.Controls.Metro
         }
         
         public static readonly DependencyProperty HeaderPaddingProperty =
-            DependencyProperty.Register("HeaderPadding", typeof(Thickness), typeof(AduGroupBoxNor));
+            DependencyProperty.Register("HeaderPadding", typeof(Thickness), typeof(AduGroupBoxLight));
 
         #endregion
 
@@ -64,11 +64,11 @@ namespace AduSkin.Controls.Metro
         }
 
         public static readonly DependencyProperty CornerRadiusProperty =
-            DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(AduGroupBoxNor), new PropertyMetadata(new CornerRadius(0), CornerRadiusCallback));
+            DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(AduGroupBoxLight), new PropertyMetadata(new CornerRadius(0), CornerRadiusCallback));
 
         private static void CornerRadiusCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            AduGroupBoxNor groupBox = d as AduGroupBoxNor;
+            AduGroupBoxLight groupBox = d as AduGroupBoxLight;
             if(groupBox != null)
             {
                 CornerRadius radius = (CornerRadius)e.NewValue;
@@ -91,25 +91,17 @@ namespace AduSkin.Controls.Metro
         }
         
         public static readonly DependencyProperty CornerRadiusInnerProperty =
-            DependencyProperty.Register("CornerRadiusInner", typeof(CornerRadius), typeof(AduGroupBoxNor));
+            DependencyProperty.Register("CornerRadiusInner", typeof(CornerRadius), typeof(AduGroupBoxLight));
 
         #endregion
 
         #endregion
 
         #region Constructors
-        static AduGroupBoxNor()
+        static AduGroupBoxLight()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AduGroupBoxNor), new FrameworkPropertyMetadata(typeof(AduGroupBoxNor)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AduGroupBoxLight), new FrameworkPropertyMetadata(typeof(AduGroupBoxLight)));
         }
-        #endregion
-
-        #region Override方法
-
-        #endregion
-
-        #region Private方法
-
         #endregion
     }
 }
