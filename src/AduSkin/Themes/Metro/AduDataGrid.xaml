@@ -108,7 +108,7 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type DataGridRow}">
                <Grid>
-                  <Border x:Name="back" Opacity=".3" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Background="{TemplateBinding AduAttach:BackgroundAttach.NormalBackground}"/>
+                  <Border x:Name="back" Background="{TemplateBinding Background}"/>
                   <SelectiveScrollingGrid Margin="0,4">
                      <SelectiveScrollingGrid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -152,6 +152,16 @@
             </ControlTemplate>
          </Setter.Value>
       </Setter>
+      <Style.Triggers>
+         <!-- 偶数行背景色 -->
+         <Trigger Property="AlternationIndex" Value="0">
+            <Setter Property="Background" Value="#05000000"/>
+         </Trigger>
+         <!-- 奇数行背景色 -->
+         <Trigger Property="AlternationIndex" Value="1">
+            <Setter Property="Background" Value="#10000000"/>
+         </Trigger>
+      </Style.Triggers>
    </Style>
 
    <!--行头调整高度样式 -->
@@ -238,6 +248,7 @@
 
    <!--表格DataGrid样式-->
    <Style TargetType="{x:Type Adu:AduDataGrid}">
+      <Setter Property="AlternationCount" Value="2"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="MinRowHeight" Value="25" />
       <Setter Property="Background" Value="{StaticResource DefaultWhiteBrush}" />

@@ -54,6 +54,13 @@
             </Grid>
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
+                  <AduSkin:AduGroupBoxLight Header="标题" Width="280">
+                     <TextBlock Text="内容" Margin="10"/>
+                  </AduSkin:AduGroupBoxLight>
+               </Border>
+            </Grid>
+            <Grid>
+               <Border Style="{StaticResource ShowControlBorder}">
                   <AduSkin:AduCalendar x:Name="Calendar1" HorizontalAlignment="Center" VerticalAlignment="Center"
                            AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource DefaultBrush}"
                            AduAttach:BackgroundAttach.SelectedBackground="{StaticResource DefaultBrush}"
