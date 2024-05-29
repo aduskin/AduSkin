@@ -161,8 +161,19 @@
    <!--  加减按钮位于右侧，并以上下排列  -->
    <ControlTemplate x:Key="VerticalUpDown" TargetType="{x:Type Adu:AduNumericUpDownBase}">
       <Grid>
-         <Border x:Name="border" CornerRadius="3" Background="White" BorderBrush="{StaticResource DefaultControlBorder}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True"/>
-         <Border x:Name="bordermove" CornerRadius="3" Opacity="0" Background="White" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True"/>
+         <Border x:Name="border" 
+                 CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                 Background="{TemplateBinding Background}" 
+                 BorderBrush="{StaticResource DefaultControlBorder}" 
+                 BorderThickness="{TemplateBinding BorderThickness}" 
+                 SnapsToDevicePixels="True"/>
+         <Border x:Name="bordermove" 
+                 CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                 Opacity="0" 
+                 Background="{TemplateBinding Background}" 
+                 BorderBrush="{TemplateBinding BorderBrush}" 
+                 BorderThickness="{TemplateBinding BorderThickness}" 
+                 SnapsToDevicePixels="True"/>
          <Grid>
             <Grid.ColumnDefinitions>
                <ColumnDefinition Width="*" />
@@ -240,8 +251,19 @@
    <!--  加减按钮位于两侧  -->
    <ControlTemplate x:Key="HorizontalUpDown" TargetType="{x:Type Adu:AduNumericUpDownBase}">
       <Grid>
-         <Border x:Name="border" CornerRadius="3" Background="White" BorderBrush="{StaticResource DefaultControlBorder}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True"/>
-         <Border x:Name="bordermove" CornerRadius="3" Opacity="0" Background="White" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True"/>
+         <Border x:Name="border" 
+              CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+              Background="{TemplateBinding Background}" 
+              BorderBrush="{StaticResource DefaultControlBorder}" 
+              BorderThickness="{TemplateBinding BorderThickness}" 
+              SnapsToDevicePixels="True"/>
+         <Border x:Name="bordermove" 
+              CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+              Opacity="0" 
+              Background="{TemplateBinding Background}" 
+              BorderBrush="{TemplateBinding BorderBrush}" 
+              BorderThickness="{TemplateBinding BorderThickness}" 
+              SnapsToDevicePixels="True"/>
          <Grid>
             <Grid.ColumnDefinitions>
                <ColumnDefinition Width="24" />
@@ -290,9 +312,10 @@
 
    <!--  控件样式，以UpDownOrientation来控制控件呈现方式  -->
    <Style TargetType="{x:Type Adu:AduNumericUpDownBase}">
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="{StaticResource DefaultWhiteBrush}" />
       <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
       <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="HorizontalContentAlignment" Value="Left" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Text" Value="{Binding Value, RelativeSource={RelativeSource Mode=Self}}" />
