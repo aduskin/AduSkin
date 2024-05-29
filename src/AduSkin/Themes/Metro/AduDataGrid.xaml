@@ -96,8 +96,8 @@
    <!--行样式-->
    <Style x:Key="DefaultDataGridRow" TargetType="{x:Type DataGridRow}">
       <Setter Property="AduAttach:BackgroundAttach.NormalBackground" Value="White"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource Brush}"/>
-      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource MouseOverBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource SelectedBackground}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="Foreground" Value="#000" />
       <Setter Property="Background" Value="#FFF" />
@@ -132,22 +132,18 @@
                <ControlTemplate.Triggers>
                   <Trigger Property="IsSelected" Value="True">
                      <Setter TargetName="back" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter TargetName="back" Property="Opacity" Value=".4"/>
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsSelected" Value="True" />
                         <Condition Property="Selector.IsSelectionActive" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="back" Property="Background" Value="{Binding  (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="back" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="back" Property="Opacity" Value=".7"/>
                   </MultiTrigger>
-                  <MultiDataTrigger>
-                     <MultiDataTrigger.Conditions>
-                        <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True" />
-                     </MultiDataTrigger.Conditions>
-                     <Setter TargetName="back" Property="Opacity" Value=".5" />
-                  </MultiDataTrigger>
+                  <Trigger Property="IsMouseOver" Value="True">
+                     <Setter TargetName="back" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                  </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
          </Setter.Value>
@@ -155,11 +151,11 @@
       <Style.Triggers>
          <!-- 偶数行背景色 -->
          <Trigger Property="AlternationIndex" Value="0">
-            <Setter Property="Background" Value="#05000000"/>
+            <Setter Property="Background" Value="{StaticResource AlternationIndexBackground0}"/>
          </Trigger>
          <!-- 奇数行背景色 -->
          <Trigger Property="AlternationIndex" Value="1">
-            <Setter Property="Background" Value="#10000000"/>
+            <Setter Property="Background" Value="{StaticResource AlternationIndexBackground1}"/>
          </Trigger>
       </Style.Triggers>
    </Style>
@@ -202,10 +198,15 @@
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
                   </Border>
-                  <Thumb x:Name="PART_TopHeaderGripper" VerticalContentAlignment="Top"
-                               VerticalAlignment="Top" Background="Transparent" Style="{StaticResource DefaultRowHeaderGripperStyle}" />
-                  <Thumb x:Name="PART_BottomHeaderGripper" VerticalContentAlignment="Bottom"
-                               VerticalAlignment="Bottom" Style="{StaticResource DefaultRowHeaderGripperStyle}" />
+                  <Thumb x:Name="PART_TopHeaderGripper"
+                        VerticalContentAlignment="Top"
+                        VerticalAlignment="Top" 
+                        Background="Transparent" 
+                        Style="{StaticResource DefaultRowHeaderGripperStyle}" />
+                  <Thumb x:Name="PART_BottomHeaderGripper" 
+                        VerticalContentAlignment="Bottom"
+                        VerticalAlignment="Bottom" 
+                        Style="{StaticResource DefaultRowHeaderGripperStyle}" />
                </Grid>
             </ControlTemplate>
          </Setter.Value>
@@ -213,8 +214,7 @@
    </Style>
 
    <!--单元格样式-->
-   <Style x:Key="DefaultDataGridCell"
-           TargetType="{x:Type DataGridCell}">
+   <Style x:Key="DefaultDataGridCell" TargetType="{x:Type DataGridCell}">
       <Setter Property="Background" Value="Transparent" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="BorderThickness" Value="0" />
@@ -238,7 +238,7 @@
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter Property="Foreground" Value="#fff" />
+                     <Setter Property="Foreground" Value="#000" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -248,8 +248,8 @@
 
    <!--表格DataGrid样式-->
    <Style TargetType="{x:Type Adu:AduDataGrid}">
-      <Setter Property="AlternationCount" Value="2"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
+      <Setter Property="AlternationCount" Value="2"/>
       <Setter Property="MinRowHeight" Value="25" />
       <Setter Property="Background" Value="{StaticResource DefaultWhiteBrush}" />
       <Setter Property="BorderBrush" Value="Transparent" />
@@ -281,8 +281,13 @@
                <Setter Property="Template">
                   <Setter.Value>
                      <ControlTemplate TargetType="Separator">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" BorderThickness="{TemplateBinding BorderThickness}">
-                           <Rectangle Fill="Red" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" />
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}" 
+                                Padding="{TemplateBinding Padding}" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                           <Rectangle Fill="{StaticResource DefaultBorderBrush}" 
+                                      Height="{TemplateBinding Height}" 
+                                      Width="{TemplateBinding Width}" />
                         </Border>
                      </ControlTemplate>
                   </Setter.Value>
@@ -293,7 +298,7 @@
       <!--DataGrid控件模板-->
       <Setter Property="Template">
          <Setter.Value>
-            <ControlTemplate TargetType="DataGrid">
+            <ControlTemplate TargetType="{x:Type Adu:AduDataGrid}">
                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
                        BorderThickness="{TemplateBinding BorderThickness}"
                        CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
@@ -311,12 +316,12 @@
                               Stretch="Uniform" Width="80" Height="80"/>
                         <TextBlock x:Name="message"
                            FontSize="15"
-                           Foreground="#D4D4D4"
+                           Foreground="{StaticResource PlaceHolderColor}"
                            HorizontalAlignment="Center"
                            Margin="0,20"
                            Text="{TemplateBinding AduAttach:PlaceHolderAttach.Message}" />
                      </StackPanel>
-                     <Adu:MetroScrollViewer x:Name="DG_ScrollViewer" Focusable="false" >
+                     <Adu:MetroScrollViewer Focusable="false" >
                         <ScrollViewer.Template>
                            <ControlTemplate TargetType="{x:Type ScrollViewer}" >
                               <Grid>
@@ -363,14 +368,12 @@
                      <Setter Property="AduAttach:PlaceHolderAttach.PathData" Value="{StaticResource Icon_Loading}"/>
                      <Setter Property="AduAttach:PlaceHolderAttach.Message" Value="加载中...."/>
                   </Trigger>
+                  <DataTrigger Binding="{Binding Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
+                     <Setter Property="AduAttach:PlaceHolderAttach.PlaceHolderVisible" Value="Visible"/>
+                  </DataTrigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
          </Setter.Value>
       </Setter>
-      <Style.Triggers>
-         <DataTrigger Binding="{Binding Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
-            <Setter Property="AduAttach:PlaceHolderAttach.PlaceHolderVisible" Value="Visible"/>
-         </DataTrigger>
-      </Style.Triggers>
    </Style>
 </ResourceDictionary>

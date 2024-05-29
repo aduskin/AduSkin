@@ -17,13 +17,22 @@
    <SolidColorBrush x:Key="DefaultWhiteBrush" Color="#FFF" />
    <SolidColorBrush x:Key="SelectForeground" Color="#666" />
    <SolidColorBrush x:Key="DefaultBrush" Color="#EE796F" />
+   <SolidColorBrush x:Key="DefaultTransparent" Color="#00000000" />
    <SolidColorBrush x:Key="DefaultControlBorder" Color="#DBDBDB" />
    <SolidColorBrush x:Key="DefaultBorderBrush" Color="#D9D9D9" />
-   <SolidColorBrush x:Key="DefaultBackground" Color="#EEEEEE" />
+   
    <SolidColorBrush x:Key="ShadowColor" Color="#2D2D30" />
 
    <SolidColorBrush x:Key="DisabledForeground" Color="#888" />
+   
+   <!--Background-->
+   <SolidColorBrush x:Key="DefaultBackground" Color="#EEEEEE" />
    <SolidColorBrush x:Key="DisabledBackground" Color="#00eeeeee" />
+   <SolidColorBrush x:Key="MouseOverBackground" Color="#16000000" />
+   <SolidColorBrush x:Key="SelectedBackground" Color="#12000000" /> 
+   <SolidColorBrush x:Key="AlternationIndexBackground0" Color="#06000000" />
+   <SolidColorBrush x:Key="AlternationIndexBackground1" Color="#00000000" />
+
    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#00888888" />
    <SolidColorBrush x:Key="PlaceHolderColor" Color="#80D4D4D4" />
 

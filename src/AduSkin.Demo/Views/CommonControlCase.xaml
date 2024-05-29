@@ -97,14 +97,21 @@
             </Grid>
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
-                  <StackPanel>
-                     <AduSkin:AduLoading Margin="0,0,0,20" SpeedRatio=".5" Type="Cogs" IsActived="True"/>
-                     <AduSkin:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="SingleRound" IsActived="True"/>
-                     <AduSkin:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="DoubleRound" IsActived="True"/>
-                     <AduSkin:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Apple" IsActived="True"/>
-                     <AduSkin:AduLoading Margin="0,0,0,20" SpeedRatio="1" Type="Lines" IsActived="True" Height="30"/>
-                     <AduSkin:AduLoading Margin="0,0,0,0" SpeedRatio="1" Type="Rotate" IsActived="True" Width="40" Height="40"/>
-                  </StackPanel>
+                  <UniformGrid Columns="3">
+                     <UniformGrid.Resources>
+                        <Style TargetType="AduSkin:AduLoading">
+                           <Setter Property="Height" Value="30"/>
+                           <Setter Property="Width" Value="30"/>
+                           <Setter Property="Margin" Value="10"/>
+                        </Style>
+                     </UniformGrid.Resources>
+                     <AduSkin:AduLoading SpeedRatio=".5" Type="Cogs" IsActived="True"/>
+                     <AduSkin:AduLoading SpeedRatio="1" Type="SingleRound" IsActived="True"/>
+                     <AduSkin:AduLoading SpeedRatio="1" Type="DoubleRound" IsActived="True"/>
+                     <AduSkin:AduLoading SpeedRatio="1" Type="Apple" IsActived="True"/>
+                     <AduSkin:AduLoading SpeedRatio="1" Type="Lines" IsActived="True" />
+                     <AduSkin:AduLoading SpeedRatio="1" Type="Rotate" IsActived="True"/>
+                  </UniformGrid>
                </Border>
             </Grid>
             <Grid>
