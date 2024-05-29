@@ -1,4 +1,4 @@
-﻿using AduSkin.Utility.Element;
+using AduSkin.Utility.Element;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -18,8 +18,5 @@ namespace AduSkin.Controls.Metro
         {
             ElementBase.DefaultStyle<AduDataGrid>(DefaultStyleKeyProperty);
         }
-
-        #region AduSkin
-        #endregion
     }
 }

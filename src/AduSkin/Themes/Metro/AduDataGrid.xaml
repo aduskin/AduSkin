@@ -259,17 +259,17 @@
       <Setter Property="CellStyle" Value="{StaticResource DefaultDataGridCell}" />
       <Setter Property="RowStyle" Value="{StaticResource DefaultDataGridRow}" />
       <Setter Property="HeadersVisibility" Value="All" />
+      <Setter Property="AduAttach:PlaceHolderAttach.PathData" Value="{StaticResource Icon_Null}"/>
       <Setter Property="EnableRowVirtualization" Value="True" />
       <Setter Property="EnableColumnVirtualization" Value="False" />
-      <Setter Property="Padding" Value="6" />
       <Setter Property="AutoGenerateColumns" Value="False" />
       <Setter Property="IsReadOnly" Value="True" />
       <Setter Property="SelectionMode" Value="Single" />
       <Setter Property="SelectionUnit" Value="FullRow" />
       <Setter Property="GridLinesVisibility" Value="None" />
-      <Setter Property="AlternationCount" Value="2"></Setter>
+      <Setter Property="AlternationCount" Value="2"/>
       <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
-      <Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="True"></Setter>
+      <Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="True"/>
       <Setter Property="VirtualizingStackPanel.VirtualizationMode" Value="Recycling" />
       <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False" />
       <!--列头移动列时候分割线样式-->
@@ -300,56 +300,77 @@
                        Background="{TemplateBinding Background}"
                        Padding="{TemplateBinding Padding}" 
                        SnapsToDevicePixels="True">
-                  <Adu:MetroScrollViewer x:Name="DG_ScrollViewer" Focusable="false" >
-                     <ScrollViewer.Template>
-                        <ControlTemplate TargetType="{x:Type ScrollViewer}" >
-                           <Grid>
-                              <Grid.ColumnDefinitions>
-                                 <ColumnDefinition x:Name="col_rowheader" Width="1" />
-                                 <ColumnDefinition Width="*" />
-                                 <ColumnDefinition Width="Auto" />
-                              </Grid.ColumnDefinitions>
-                              <Grid.RowDefinitions>
-                                 <RowDefinition Height="Auto" />
-                                 <RowDefinition Height="*" />
-                                 <RowDefinition Height="Auto" />
-                              </Grid.RowDefinitions>
-                              <!--表格头部-->
-                              <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Column="1" Grid.ColumnSpan="2"
+                  <Grid>
+                     <StackPanel
+                        HorizontalAlignment="Center"
+                        Margin="0,40,0,0"
+                        VerticalAlignment="Center"
+                        Visibility="{TemplateBinding AduAttach:PlaceHolderAttach.PlaceHolderVisible}">
+                        <Path x:Name="placeholder" Data="{TemplateBinding AduAttach:PlaceHolderAttach.PathData}" 
+                              Fill="{StaticResource PlaceHolderColor}"
+                              Stretch="Uniform" Width="80" Height="80"/>
+                        <TextBlock x:Name="message"
+                           FontSize="15"
+                           Foreground="#D4D4D4"
+                           HorizontalAlignment="Center"
+                           Margin="0,20"
+                           Text="{TemplateBinding AduAttach:PlaceHolderAttach.Message}" />
+                     </StackPanel>
+                     <Adu:MetroScrollViewer x:Name="DG_ScrollViewer" Focusable="false" >
+                        <ScrollViewer.Template>
+                           <ControlTemplate TargetType="{x:Type ScrollViewer}" >
+                              <Grid>
+                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="col_rowheader" Width="1" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                 </Grid.ColumnDefinitions>
+                                 <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                 </Grid.RowDefinitions>
+                                 <!--表格头部-->
+                                 <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Column="1" Grid.ColumnSpan="2"
                                                     Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
-                              <!--主数据区-->
-                              <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                                 <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" />
-                              </Grid>
-                              <!--垂直滑动条-->
-                              <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" BorderBrush="#000" Style="{StaticResource scrollBarStyle}" HorizontalAlignment="Right" Maximum="{TemplateBinding ScrollableHeight}"
+                                 <!--主数据区-->
+                                 <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                    <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" />
+                                 </Grid>
+                                 <!--垂直滑动条-->
+                                 <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" BorderBrush="#000" Style="{StaticResource scrollBarStyle}" HorizontalAlignment="Right" Maximum="{TemplateBinding ScrollableHeight}"
                                                    Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
                                                    Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
                                                    ViewportSize="{TemplateBinding ViewportHeight}" />
-                              <!--横向滑动条-->
-                              <ScrollBar x:Name="PART_HorizontalScrollBar" Style="{StaticResource scrollBarStyle1}" FlowDirection="RightToLeft" BorderBrush="#000" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+                                 <!--横向滑动条-->
+                                 <ScrollBar x:Name="PART_HorizontalScrollBar" Style="{StaticResource scrollBarStyle1}" FlowDirection="RightToLeft" BorderBrush="#000" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
                                                        Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal"
                                                        Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
                                                        Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
                                                        ViewportSize="{TemplateBinding ViewportWidth}" />
-                           </Grid>
-                        </ControlTemplate>
-                     </ScrollViewer.Template>
-                     <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                  </Adu:MetroScrollViewer>
+                              </Grid>
+                           </ControlTemplate>
+                        </ScrollViewer.Template>
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                     </Adu:MetroScrollViewer>
+                  </Grid>
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="false">
-                     <Setter Property="Opacity" Value=".5" TargetName="border" />
+                     <Setter TargetName="border" Property="Opacity" Value=".5"/>
+                  </Trigger>
+                  <Trigger Property="AduAttach:PlaceHolderAttach.IsLoading" Value="true">
+                     <Setter Property="AduAttach:PlaceHolderAttach.PathData" Value="{StaticResource Icon_Loading}"/>
+                     <Setter Property="AduAttach:PlaceHolderAttach.Message" Value="加载中...."/>
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
          </Setter.Value>
       </Setter>
       <Style.Triggers>
-         <Trigger Property="IsGrouping" Value="true">
-            <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
-         </Trigger>
+         <DataTrigger Binding="{Binding Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
+            <Setter Property="AduAttach:PlaceHolderAttach.PlaceHolderVisible" Value="Visible"/>
+         </DataTrigger>
       </Style.Triggers>
    </Style>
 </ResourceDictionary>

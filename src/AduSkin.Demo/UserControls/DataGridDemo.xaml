@@ -3,54 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+             xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              xmlns:interactivity="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
              xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
              xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <viewmodel:DataGridDemoViewModel/>
-    </UserControl.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid >
-            <Metro:AduPage MaxPageCount="10" PageIndex="1">
-                <interactivity:Interaction.Triggers>
-                    <interactivity:EventTrigger EventName="PageUpdated">
-                        <interactivity:EventToCommand Command="{Binding PageUpdatedCmd}" PassEventArgsToCommand="True" />
-                    </interactivity:EventTrigger>
-                </interactivity:Interaction.Triggers>
-            </Metro:AduPage>
-        </Grid>
-      <Metro:AduDataGrid Grid.Row="1" x:Name="MyDataGrid" IsReadOnly="True" Background="Transparent" AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource PrimaryBrush}"
-                           Width="400" MaxHeight="900" MinHeight="200" Height="Auto" HeadersVisibility="All" AutoGenerateColumns="False" ItemsSource="{Binding ContactList}">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn CanUserResize="False" Header="Select">
-                    <DataGridTemplateColumn.HeaderTemplate>
-                        <DataTemplate>
-                        <Metro:AduCheckBox IsChecked="{Binding ElementName = MyDataGrid,Path=DataContext.IsAllChecked}"/>
-                     </DataTemplate>
-                    </DataGridTemplateColumn.HeaderTemplate>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Metro:AduCheckBox Margin="10,0,0,0" IsChecked="{Binding IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn CanUserResize="False" Header="Header">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding Header}" Width="32" Height="32" Stretch="Uniform"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Width="Auto" Binding="{Binding UserName}" Header="Name"/>
-                <DataGridTextColumn Width="1*" Binding="{Binding Describe}" Header="Remark"/>
-            </DataGrid.Columns>
-        </Metro:AduDataGrid>
-    </Grid>
+   <UserControl.DataContext>
+      <viewmodel:DataGridDemoViewModel/>
+   </UserControl.DataContext>
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="40"/>
+         <RowDefinition/>
+      </Grid.RowDefinitions>
+      <AduSkin:AduPage MaxPageCount="10" PageIndex="1">
+         <interactivity:Interaction.Triggers>
+            <interactivity:EventTrigger EventName="PageUpdated">
+               <interactivity:EventToCommand Command="{Binding PageUpdatedCmd}" PassEventArgsToCommand="True" />
+            </interactivity:EventTrigger>
+         </interactivity:Interaction.Triggers>
+      </AduSkin:AduPage>
+      <AduSkin:AduDataGrid Grid.Row="1"
+                           IsReadOnly="True" 
+                           Background="Transparent" 
+                           AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource PrimaryBrush}"
+                           Width="400" 
+                           MaxHeight="900" 
+                           MinHeight="200" 
+                           Height="Auto" 
+                           HeadersVisibility="All" 
+                           AutoGenerateColumns="False" 
+                           ItemsSource="{Binding ContactList}">
+         <DataGrid.Columns>
+            <DataGridTemplateColumn CanUserResize="False" Header="Select">
+               <DataGridTemplateColumn.HeaderTemplate>
+                  <DataTemplate>
+                     <AduSkin:AduCheckBox IsChecked="{Binding Path=DataContext.IsAllChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource AncestorType=AduSkin:AduDataGrid}}"/>
+                  </DataTemplate>
+               </DataGridTemplateColumn.HeaderTemplate>
+               <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                     <AduSkin:AduCheckBox Margin="10,0,0,0" IsChecked="{Binding IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
+                  </DataTemplate>
+               </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn CanUserResize="False" Header="Header">
+               <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                     <Image Source="{Binding Header}" Width="32" Height="32" Stretch="Uniform"/>
+                  </DataTemplate>
+               </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn Width="Auto" Binding="{Binding UserName}" Header="Name"/>
+            <DataGridTextColumn Width="1*" Binding="{Binding Describe}" Header="Remark"/>
+         </DataGrid.Columns>
+      </AduSkin:AduDataGrid>
+   </Grid>
 </UserControl>
