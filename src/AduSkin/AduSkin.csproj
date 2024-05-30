@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net48;net47;net45</TargetFrameworks>
+    <TargetFrameworks>net45;net48;net47;netcoreapp3.1;net6-windows;</TargetFrameworks>
     <GenerateDocumentFile>true</GenerateDocumentFile>
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
