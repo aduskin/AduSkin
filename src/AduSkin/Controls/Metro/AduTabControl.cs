@@ -1,4 +1,4 @@
-﻿using AduSkin.Utility.Element;
+using AduSkin.Utility.Element;
 using System.Windows.Controls;
 
 namespace AduSkin.Controls.Metro
@@ -6,9 +6,7 @@ namespace AduSkin.Controls.Metro
     public class AduTabControl : TabControl
     {
         void SelectionState()
-        {
-            ElementBase.GoToState(this, "SelectionStart");
-            ElementBase.GoToState(this, "SelectionEnd");
+        { 
         }
 
         public AduTabControl()
