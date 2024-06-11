@@ -45,7 +45,8 @@
          </AduSkin:AduTransitioningContentControl>
          <!--</Popup>-->
       </StackPanel>
-      <ListBox Grid.Row="1" ItemsSource="{Binding AllSupports}" BorderThickness="0,2" BorderBrush="{StaticResource DefaultBorderBrush}" Margin="40,0,40,40" Background="Transparent">
+      <ListBox Grid.Row="1" ItemsSource="{Binding AllSupports}" BorderThickness="0,2" BorderBrush="{StaticResource DefaultBorderBrush}" 
+               Margin="40,0,40,40" Background="Transparent">
          <ListBox.Resources>
             <Style TargetType="ListBoxItem">
                <Setter Property="BorderThickness" Value="0" />
