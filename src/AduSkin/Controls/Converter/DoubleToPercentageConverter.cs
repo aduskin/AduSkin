@@ -8,14 +8,14 @@ using System.Windows.Data;
 using System.Windows;
 
 namespace AduSkin.Controls.Converter
-{ 
+{
    public class DoubleToPercentageConverter : IValueConverter
    {
       public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
       {
-         if (parameter is double dvalue)
+         if (value is double dvalue)
          {
-            return $"{dvalue * 100}%";
+            return $"{dvalue * 100.0}%";
          }
          return $"0%";
       }
