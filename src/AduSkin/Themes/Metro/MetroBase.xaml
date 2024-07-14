@@ -37,7 +37,7 @@
    <SolidColorBrush x:Key="PlaceHolderColor" Color="#80D4D4D4" />
 
    <!--PathColor-->
-   <SolidColorBrush x:Key="NormalPathColor" Color="#000" />
+   <SolidColorBrush x:Key="NormalPathColor" Color="#90000000" />
    <SolidColorBrush x:Key="MouseOverPathColor" Color="#99000000" />
    <SolidColorBrush x:Key="PressedPathColor" Color="#80000000" />
    <SolidColorBrush x:Key="DisabledPathColor" Color="#70000000" />

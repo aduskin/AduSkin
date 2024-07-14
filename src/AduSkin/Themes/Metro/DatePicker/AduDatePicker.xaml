@@ -144,6 +144,9 @@
       <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource DefaultWhiteBrush}"/>
       <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{StaticResource DefaultWhiteBrush}"/>
       <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{StaticResource DefaultWhiteBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource Brush}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -155,15 +158,12 @@
                   <Border x:Name="Root"
                             Width="{TemplateBinding Width}"
                             Background="{TemplateBinding Background}"
-                            BorderBrush="#FF000000"
-                                Opacity=".15"
+                            BorderBrush="{StaticResource DefaultBorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
-                            
+                            CornerRadius="{TemplateBinding CornerRadius}" 
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                            UseLayoutRounding="True">
-                  </Border>
-                  <Border x:Name="showborder" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" Visibility="Collapsed"></Border>
+                            UseLayoutRounding="True"/>
+                  <Border x:Name="showborder" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" Visibility="Collapsed"/>
                   <Grid x:Name="PART_Root"
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
@@ -172,13 +172,13 @@
                         <ColumnDefinition Width="Auto" />
                      </Grid.ColumnDefinitions>
                      <DatePickerTextBox x:Name="PART_TextBox_New" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Stretch"
-                                               Padding="{TemplateBinding Padding}"
-                                               VerticalContentAlignment="Center"
-                                               BorderBrush="{DynamicResource MonthViewTodayBackground}"
-                                               Focusable="{TemplateBinding Focusable}"
-                                               Foreground="{TemplateBinding Foreground}"
-                                               IsReadOnly="True" 
-                                               Style="{StaticResource DatePickerTextBoxStyle}" />
+                           Padding="{TemplateBinding Padding}"
+                           VerticalContentAlignment="Center"
+                           BorderBrush="{DynamicResource MonthViewTodayBackground}"
+                           Focusable="{TemplateBinding Focusable}"
+                           Foreground="{TemplateBinding Foreground}"
+                           IsReadOnly="True" 
+                           Style="{StaticResource DatePickerTextBoxStyle}" />
                      <Grid x:Name="PART_DisabledVisual" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                                   IsHitTestVisible="False" Opacity="0">
                         <Grid.ColumnDefinitions>
@@ -287,12 +287,15 @@
                      </Grid>
 
                      <ToggleButton x:Name="PART_DropDownButton" Grid.Row="0" Grid.Column="1" Margin="3,0,0,0"
-                                          HorizontalAlignment="Left" VerticalAlignment="Center" Focusable="False" Foreground="{TemplateBinding Foreground}"
-                                          IsChecked="{Binding IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}">
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Focusable="False"
+                           AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+                           AduAttach:PathBrushAttach.MouseOverPathColor="{TemplateBinding AduAttach:PathBrushAttach.MouseOverPathColor}"
+                           AduAttach:PathBrushAttach.PressedPathColor="{TemplateBinding AduAttach:PathBrushAttach.PressedPathColor}"
+                           IsChecked="{Binding IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}">
                         <ToggleButton.Template>
                            <ControlTemplate  TargetType="{x:Type ToggleButton}">
                               <Grid VerticalAlignment="Stretch" Background="Transparent">
-                                 <Path x:Name="path" Width="14" Margin="5,0" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Stretch="Uniform">
+                                 <Path x:Name="path" Width="14" Margin="5,0" VerticalAlignment="Center" Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" Stretch="Uniform">
                                     <Path.Data>
                                        <GeometryGroup>
                                           <PathGeometry Figures="{StaticResource Date_BottomPart}" />
@@ -305,6 +308,10 @@
                                  <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Cursor" Value="Hand" />
                                     <Setter TargetName="path" Property="Opacity" Value=".8" />
+                                    <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.MouseOverPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                                 </Trigger>
+                                 <Trigger Property="IsPressed" Value="true">
+                                    <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.PressedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                                  </Trigger>
                                  <Trigger Property="IsChecked" Value="True">
                                     <Setter TargetName="path" Property="Opacity" Value=".7" />
@@ -317,6 +324,9 @@
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
+                     <Setter Property="Visibility" TargetName="showborder" Value="Visible" />
+                  </Trigger>
+                  <Trigger Property="IsFocused" Value="True">
                      <Setter Property="Visibility" TargetName="showborder" Value="Visible" />
                   </Trigger>
                   <DataTrigger Binding="{Binding Source={x:Static SystemParameters.HighContrast}}" Value="false">

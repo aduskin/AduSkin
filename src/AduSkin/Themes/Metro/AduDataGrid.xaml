@@ -254,6 +254,7 @@
       <Setter Property="Background" Value="{StaticResource DefaultWhiteBrush}" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="RowHeaderWidth" Value="0"/>
       <Setter Property="ColumnHeaderStyle" Value="{StaticResource DefaultDataGridColumnHeader}" />
       <Setter Property="RowHeaderStyle" Value="{StaticResource DefaultDataGridRowHeader}" />
       <Setter Property="CellStyle" Value="{StaticResource DefaultDataGridCell}" />
