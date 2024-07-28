@@ -209,7 +209,15 @@
 
                      <!--  Popup showing items  -->
                      <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" VerticalOffset="-1" AllowsTransparency="True" PopupAnimation="Fade" >
-                        <Border RenderTransformOrigin="0.5,0" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding ComBoxItemPanelBackground}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Padding="0,3" Margin="10" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                        <Border RenderTransformOrigin="0.5,0" 
+                                CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding ComBoxItemPanelBackground}" 
+                                MaxHeight="{TemplateBinding MaxDropDownHeight}" 
+                                Padding="0,3" Margin="10" 
+                                MinWidth="{TemplateBinding ActualWidth}" 
+                                x:Name="DropDown" SnapsToDevicePixels="True">
                            <Border.RenderTransform>
                               <TransformGroup>
                                  <ScaleTransform />

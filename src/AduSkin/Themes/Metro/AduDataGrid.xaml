@@ -344,16 +344,23 @@
                                     <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" />
                                  </Grid>
                                  <!--垂直滑动条-->
-                                 <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" BorderBrush="#000" Style="{StaticResource scrollBarStyle}" HorizontalAlignment="Right" Maximum="{TemplateBinding ScrollableHeight}"
-                                                   Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
-                                                   Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                                   ViewportSize="{TemplateBinding ViewportHeight}" />
+                                 <ScrollBar x:Name="PART_VerticalScrollBar" BorderBrush="#000" 
+                                       Style="{StaticResource scrollBarStyle}" 
+                                       Orientation="Vertical" HorizontalAlignment="Right" 
+                                       Maximum="{TemplateBinding ScrollableHeight}"
+                                       Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" 
+                                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                       Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                       ViewportSize="{TemplateBinding ViewportHeight}"/>
                                  <!--横向滑动条-->
-                                 <ScrollBar x:Name="PART_HorizontalScrollBar" Style="{StaticResource scrollBarStyle1}" FlowDirection="RightToLeft" BorderBrush="#000" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
-                                                       Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal"
-                                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
-                                                       Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                                       ViewportSize="{TemplateBinding ViewportWidth}" />
+                                 <ScrollBar x:Name="PART_HorizontalScrollBar" 
+                                       Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+                                       Style="{StaticResource scrollBarStyle1}" 
+                                       FlowDirection="RightToLeft" BorderBrush="#000" 
+                                       Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal"
+                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                       Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                       ViewportSize="{TemplateBinding ViewportWidth}"/>
                               </Grid>
                            </ControlTemplate>
                         </ScrollViewer.Template>

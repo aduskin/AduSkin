@@ -20,9 +20,8 @@
    <SolidColorBrush x:Key="DefaultTransparent" Color="#00000000" />
    <SolidColorBrush x:Key="DefaultControlBorder" Color="#DBDBDB" />
    <SolidColorBrush x:Key="DefaultBorderBrush" Color="#D9D9D9" />
-   
-   <SolidColorBrush x:Key="ShadowColor" Color="#2D2D30" />
 
+   <SolidColorBrush x:Key="ShadowColor" Color="#2D2D30" />
    <SolidColorBrush x:Key="DisabledForeground" Color="#888" />
    
    <!--Background-->
