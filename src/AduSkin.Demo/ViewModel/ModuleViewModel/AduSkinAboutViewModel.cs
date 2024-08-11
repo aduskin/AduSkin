@@ -1,21 +1,17 @@
-﻿using AduSkin.Demo.Views;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AduSkin.Demo.Views;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class AduSkinAboutViewModel : ViewModelBase
+   public partial class AduSkinAboutViewModel : ObservableObject
    {
       /// <summary>
       /// 命令Command
       /// </summary>
-      public ICommand OpenDemo => new RelayCommand<string>((e) =>
+      [RelayCommand]
+      public void OpenDemo(string e)
       {
          switch (e)
          {
@@ -28,10 +24,8 @@ namespace AduSkin.Demo.ViewModel
             case "Reward":
                IsOpenReward = true;
                return;
-            default:
-               break;
          }
-      });
+      }
 
 
       private bool _IsOpenReward;
@@ -41,7 +35,7 @@ namespace AduSkin.Demo.ViewModel
       public bool IsOpenReward
       {
          get { return _IsOpenReward; }
-         set { Set(ref _IsOpenReward, value); }
+         set { SetProperty(ref _IsOpenReward, value); }
       }
    }
 }

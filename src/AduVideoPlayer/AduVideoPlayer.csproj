@@ -1,13 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <TargetFrameworks>net45;net48;net47;netcoreapp3.1;net6-windows;</TargetFrameworks>
+    <TargetFrameworks>net48;net47;netcoreapp3.1;net6-windows;</TargetFrameworks>
     <GenerateDocumentFile>true</GenerateDocumentFile>
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
     <NoWarn>$(NoWarn);0067</NoWarn>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
-
   <PropertyGroup>
     <Version>1.1.1.5</Version>
     <Authors>Adu</Authors>
@@ -21,18 +20,12 @@
     <PackageTags>AduSkin WPF Controls</PackageTags>
     <PackageReleaseNotes>Add new controls and demo</PackageReleaseNotes>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="System.Management" Version="4.7.0" />
     <PackageReference Include="Vlc.DotNet.Wpf" Version="3.1.0-develop364" />
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.3.0" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
-
-  <ItemGroup Condition="$(TargetFramework) == 'net48'">
-    <Reference Include="System.Web" />
-  </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\AduSkin\AduSkin.csproj" />
   </ItemGroup>
-
 </Project>

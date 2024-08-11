@@ -1,27 +1,21 @@
-﻿using AduSkin.Demo.Data;
+using AduSkin.Demo.Data;
 using AduSkin.Demo.Models;
 using AduSkin.Demo.UserControls;
 using AduSkin.Demo.Views;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class MainViewModel : ViewModelBase
+   public partial class MainViewModel : ObservableObject
    {
       public MainViewModel()
       {
 
-      }
-
+      } 
 
       private int _SelectedModularIndex;
       /// <summary>
@@ -30,8 +24,9 @@ namespace AduSkin.Demo.ViewModel
       public int SelectedModularIndex
       {
          get { return _SelectedModularIndex; }
-         set { 
-            Set(ref _SelectedModularIndex, value);
+         set
+         {
+            SetProperty(ref _SelectedModularIndex, value);
             if (value == 2)
                MainBackground = new SolidColorBrush(Color.FromRgb(28, 64, 139));
             else if (value == 3)
@@ -48,22 +43,21 @@ namespace AduSkin.Demo.ViewModel
       public SolidColorBrush MainBackground
       {
          get { return _MainBackground; }
-         set { Set(ref _MainBackground, value); }
+         set { SetProperty(ref _MainBackground, value); }
       }
       /// <summary>
       /// 命令Command
       /// </summary>
-      public ICommand OpenClick => new RelayCommand<string>((e) =>
+      [RelayCommand]
+      private void OpenClick(object e)
       {
          switch (e)
          {
             case "AduSkinDemo":
                new AduSkinDemo().Show();
                return;
-            default:
-               break;
          }
-      });
+      }
 
       /// <summary>
       /// 常见控件
@@ -72,7 +66,7 @@ namespace AduSkin.Demo.ViewModel
       public UserControl CommonControlCase
       {
          get { return _CommonControlCase; }
-         set { Set(ref _CommonControlCase, value); }
+         set { SetProperty(ref _CommonControlCase, value); }
       }
       /// <summary>
       /// 实用案例
@@ -81,7 +75,7 @@ namespace AduSkin.Demo.ViewModel
       public UserControl PracticalCase
       {
          get { return _PracticalCase; }
-         set { Set(ref _PracticalCase, value); }
+         set { SetProperty(ref _PracticalCase, value); }
       }
       /// <summary>
       /// 关于
@@ -90,7 +84,7 @@ namespace AduSkin.Demo.ViewModel
       public UserControl AduSkinAbout
       {
          get { return _AduSkinAbout; }
-         set { Set(ref _AduSkinAbout, value); }
+         set { SetProperty(ref _AduSkinAbout, value); }
       }
       /// <summary>
       /// 支持与赞助
@@ -99,7 +93,7 @@ namespace AduSkin.Demo.ViewModel
       public UserControl AduSkinSupport
       {
          get { return _AduSkinSupport; }
-         set { Set(ref _AduSkinSupport, value); }
+         set { SetProperty(ref _AduSkinSupport, value); }
       }
    }
 }

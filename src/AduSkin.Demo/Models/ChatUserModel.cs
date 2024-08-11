@@ -1,9 +1,10 @@
 using AduSkin.Controls;
-using GalaSoft.MvvmLight;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace AduSkin.Demo.Models
 {
-   public class ChatUserModel:ViewModelBase
+   public class ChatUserModel : ObservableObject
    {
       public string SortID { get; set; }
 
@@ -17,17 +18,16 @@ namespace AduSkin.Demo.Models
 
       public ContactType ContactType { get; set; } = ContactType.Single;
 
-      private bool m_IsChecked;
-      public bool IsChecked 
+      private bool _IsChecked;
+      public bool IsChecked
       {
          get
          {
-            return m_IsChecked;
+            return _IsChecked;
          }
          set
          {
-            m_IsChecked = value;
-            RaisePropertyChanged("IsChecked");
+            SetProperty(ref _IsChecked, value);
          }
       }
    }

@@ -2,19 +2,17 @@ using AduSkin.Controls;
 using AduSkin.Controls.Metro;
 using AduSkin.Demo.Models;
 using AduSkin.Utility;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class HttpToolViewModel : ViewModelBase
+   public partial class HttpToolViewModel : ObservableObject
    {
       public HttpToolViewModel()
       {
@@ -60,7 +58,7 @@ namespace AduSkin.Demo.ViewModel
       public ObservableCollection<Sys_Code> HttpTypList
       {
          get { return _HttpTypList; }
-         set { Set(ref _HttpTypList, value); }
+         set { SetProperty(ref _HttpTypList, value); }
       }
 
 
@@ -71,7 +69,7 @@ namespace AduSkin.Demo.ViewModel
       public Sys_Code CurrentHttpType
       {
          get { return _CurrentHttpType; }
-         set { Set(ref _CurrentHttpType, value); }
+         set { SetProperty(ref _CurrentHttpType, value); }
       }
 
       private ObservableCollection<Sys_Code> _CodeTypeList;
@@ -81,7 +79,7 @@ namespace AduSkin.Demo.ViewModel
       public ObservableCollection<Sys_Code> CodeTypeList
       {
          get { return _CodeTypeList; }
-         set { Set(ref _CodeTypeList, value); }
+         set { SetProperty(ref _CodeTypeList, value); }
       }
 
       private Sys_Code _CurrentCodeType;
@@ -91,7 +89,7 @@ namespace AduSkin.Demo.ViewModel
       public Sys_Code CurrentCodeType
       {
          get { return _CurrentCodeType; }
-         set { Set(ref _CurrentCodeType, value); }
+         set { SetProperty(ref _CurrentCodeType, value); }
       }
 
       private ObservableCollection<Sys_Code> _RequestParameter;
@@ -101,7 +99,7 @@ namespace AduSkin.Demo.ViewModel
       public ObservableCollection<Sys_Code> RequestParameter
       {
          get { return _RequestParameter; }
-         set { Set(ref _RequestParameter, value); }
+         set { SetProperty(ref _RequestParameter, value); }
       }
 
 
@@ -112,7 +110,7 @@ namespace AduSkin.Demo.ViewModel
       public ObservableCollection<Sys_Code> RequestHead
       {
          get { return _RequestHead; }
-         set { Set(ref _RequestHead, value); }
+         set { SetProperty(ref _RequestHead, value); }
       }
 
       private string _ToUrlTxt;
@@ -122,7 +120,7 @@ namespace AduSkin.Demo.ViewModel
       public string ToUrlTxt
       {
          get { return _ToUrlTxt; }
-         set { Set(ref _ToUrlTxt, value); }
+         set { SetProperty(ref _ToUrlTxt, value); }
       }
       #endregion
 
@@ -130,29 +128,32 @@ namespace AduSkin.Demo.ViewModel
       /// <summary>
       /// 添加请求参数
       /// </summary>
-      public ICommand AddRequestCodeCommand => new RelayCommand<string>((e) =>
+      [RelayCommand]
+      public void AddRequestCode(string e)
       {
          if (e == "Param")
             RequestParameter.Add(new Sys_Code("", ""));
          else
             RequestHead.Add(new Sys_Code());
-      });
+      }
 
       /// <summary>
       /// 删除当前参数
       /// </summary>    
-      public ICommand RemoveParameter => new RelayCommand<Sys_Code>((e) =>
+      [RelayCommand]
+      public void RemoveParameter(Sys_Code e)
       {
          RequestParameter.Remove(e);
-      });
+      }
 
       /// <summary>
       /// 删除请求头
       /// </summary>    
-      public ICommand RemoveHeader => new RelayCommand<Sys_Code>((e) =>
+      [RelayCommand]
+      public void RemoveHeader(Sys_Code e)
       {
          RequestHead.Remove(e);
-      });
+      }
 
       #region 请求方法
       public TaskFactory _task = new TaskFactory();
@@ -160,7 +161,8 @@ namespace AduSkin.Demo.ViewModel
       /// <summary>
       /// 开始请求
       /// </summary>
-      public ICommand ToRequest => new RelayCommand(() =>
+      [RelayCommand]
+      public void ToRequest(object s)
       {
          if (!string.IsNullOrEmpty(ToUrlTxt))
          {
@@ -199,16 +201,16 @@ namespace AduSkin.Demo.ViewModel
             }
             //Action task = () =>
             //{
-               if (CurrentHttpType.CodeValue.ToUpper() == "GET")
-                  Result = HttpHelper.Http_Get(RequestUrl, Headers, Parameters, (Encode)Enum.Parse(typeof(Encode), RequestEnCode.ToUpper()));
-               else
-                  Result = HttpHelper.Http_Post(RequestUrl, Headers, Parameters, (Encode)Enum.Parse(typeof(Encode), RequestEnCode.ToUpper()));
+            if (CurrentHttpType.CodeValue.ToUpper() == "GET")
+               Result = HttpHelper.Http_Get(RequestUrl, Headers, Parameters, (Encode)Enum.Parse(typeof(Encode), RequestEnCode.ToUpper()));
+            else
+               Result = HttpHelper.Http_Post(RequestUrl, Headers, Parameters, (Encode)Enum.Parse(typeof(Encode), RequestEnCode.ToUpper()));
             //};
             //Task[] tasks = new Task[] { _task.StartNew(task) };
             //_task.ContinueWhenAll(tasks, (action => { ShowResult(); }));
             ShowResult();
          }
-      });
+      }
 
       public void ShowResult()
       {

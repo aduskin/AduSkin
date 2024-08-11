@@ -5,11 +5,14 @@
     xmlns:Metro="https://github.com/aduskin"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:vm="clr-namespace:AduSkin.Demo.ViewModel"
     Title="AduSkin.Demo" MinWidth="600" MinHeight="350"
     d:DesignHeight="1200" d:DesignWidth="1600"
     BorderThickness="0"
-    Background="#FFF" mc:Ignorable="d"
-    DataContext="{Binding Source={StaticResource Locator},Path=Main}">
+    Background="#FFF" mc:Ignorable="d" >
+   <Window.DataContext>
+      <vm:MainViewModel/>
+   </Window.DataContext>
    <Metro:MetroWindow.Menu>
       <Metro:MetroTitleMenu Height="40" HorizontalAlignment="Right">
          <Metro:MetroTitleMenuItem Header="联系" Metro:BorderAttach.CornerRadius="6">
@@ -20,7 +23,7 @@
          <Metro:MetroTitleMenuItem Header="源码" Metro:BorderAttach.CornerRadius="6">
             <Metro:MetroMenuItem Header="GitHub" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
             <Metro:MetroMenuItem Header="码云" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://gitee.com/aduskin"/>
-            <Metro:MetroMenuItem Header="项目案例" Command="{Binding OpenClick}" CommandParameter="AduSkinDemo"/>
+            <Metro:MetroMenuItem Header="项目案例" Command="{Binding OpenClickCommand}" CommandParameter="AduSkinDemo"/>
          </Metro:MetroTitleMenuItem>
          <Metro:MetroTitleMenuItem Header="关于" Metro:BorderAttach.CornerRadius="6">
             <Metro:MetroMenuItem Header="Nuget" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://www.nuget.org/packages/aduskin"/>

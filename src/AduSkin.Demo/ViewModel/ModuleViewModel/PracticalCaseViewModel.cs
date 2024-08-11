@@ -1,7 +1,7 @@
 using AduSkin.Demo.Data.Enum;
 using AduSkin.Demo.Models;
 using AduSkin.Demo.UserControls;
-using GalaSoft.MvvmLight;
+using CommunityToolkit.Mvvm.ComponentModel; 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Windows.Data;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class PracticalCaseViewModel: ViewModelBase
+   public class PracticalCaseViewModel: ObservableObject
    {
       public PracticalCaseViewModel()
       {
@@ -64,13 +64,13 @@ namespace AduSkin.Demo.ViewModel
          set 
          {
             
-            Set(ref _SelectedDemoType, value);
+            SetProperty(ref _SelectedDemoType, value);
             if (value == 0)
                CurrentShowControl = _AllControl.First();
             else if (value == 1)
                CurrentShowTool = _AllTool.First();
-            RaisePropertyChanged("IsShowCode");
-            RaisePropertyChanged("SearchKey");
+            OnPropertyChanged("IsShowCode");
+            OnPropertyChanged("SearchKey");
          }
       }
 
@@ -82,7 +82,7 @@ namespace AduSkin.Demo.ViewModel
       public IEnumerable<ControlModel> AllControl
       {
          get { return _AllControl; }
-         set { Set(ref _AllControl, value); }
+         set { SetProperty(ref _AllControl, value); }
       }
 
       private CollectionViewSource _SearchControl = new CollectionViewSource();
@@ -94,7 +94,7 @@ namespace AduSkin.Demo.ViewModel
          get { return _SearchControl; }
          set
          {
-            Set(ref _SearchControl, value);
+            SetProperty(ref _SearchControl, value);
          }
       }
       #endregion
@@ -107,7 +107,7 @@ namespace AduSkin.Demo.ViewModel
       public IEnumerable<ControlModel> AllTool
       {
          get { return _AllTool; }
-         set { Set(ref _AllTool, value); }
+         set { SetProperty(ref _AllTool, value); }
       }
 
       private CollectionViewSource _SearchTool = new CollectionViewSource();
@@ -119,7 +119,7 @@ namespace AduSkin.Demo.ViewModel
          get { return _SearchTool; }
          set
          {
-            Set(ref _SearchTool, value);
+            SetProperty(ref _SearchTool, value);
          }
       }
       #endregion
@@ -150,7 +150,7 @@ namespace AduSkin.Demo.ViewModel
       public string CurrentShowCode
       {
          get { return _CurrentShowCode; }
-         set { Set(ref _CurrentShowCode, value); }
+         set { SetProperty(ref _CurrentShowCode, value); }
       }
 
       private ControlModel _CurrentShowControl;
@@ -161,11 +161,11 @@ namespace AduSkin.Demo.ViewModel
       {
          get { return _CurrentShowControl; }
          set {
-            Set(ref _CurrentShowControl, value);
-            RaisePropertyChanged("Content");
-            RaisePropertyChanged("Title");
-            RaisePropertyChanged("IsShowCode");
-            RaisePropertyChanged("ShowCodeHeight");
+            SetProperty(ref _CurrentShowControl, value);
+            OnPropertyChanged("Content");
+            OnPropertyChanged("Title");
+            OnPropertyChanged("IsShowCode");
+            OnPropertyChanged("ShowCodeHeight");
          }
       }
 
@@ -178,11 +178,11 @@ namespace AduSkin.Demo.ViewModel
          get { return _CurrentShowTool; }
          set
          {
-            Set(ref _CurrentShowTool, value);
-            RaisePropertyChanged("Content");
-            RaisePropertyChanged("Title");
-            RaisePropertyChanged("IsShowCode");
-            RaisePropertyChanged("ShowCodeHeight");
+            SetProperty(ref _CurrentShowTool, value);
+            OnPropertyChanged("Content");
+            OnPropertyChanged("Title");
+            OnPropertyChanged("IsShowCode");
+            OnPropertyChanged("ShowCodeHeight");
          }
       }
 
@@ -194,7 +194,7 @@ namespace AduSkin.Demo.ViewModel
       {
          get { return _ShowCodeTypeIndex; }
          set {
-            Set(ref _ShowCodeTypeIndex, value);
+            SetProperty(ref _ShowCodeTypeIndex, value);
             if (value == 0)
                CurrentShowCode = CurrentShowControl.XAML;
             else
@@ -221,11 +221,10 @@ namespace AduSkin.Demo.ViewModel
                if (CurrentShowControl == null)
                   return null;
                return (UserControl)Activator.CreateInstance(CurrentShowTool.Content);
-            }
-               
+            } 
          }
          set { 
-            Set(ref _content, value);
+            SetProperty(ref _content, value);
          }
       }
       /// <summary>
@@ -249,7 +248,7 @@ namespace AduSkin.Demo.ViewModel
                return CurrentShowTool.Title;
             }
          }
-         set { Set(ref _Title, value); }
+         set { SetProperty(ref _Title, value); }
       }
       /// <summary>
       /// 搜索关键字
@@ -262,7 +261,7 @@ namespace AduSkin.Demo.ViewModel
          }
          set
          {
-            Set(ref _SearchKey, value);
+            SetProperty(ref _SearchKey, value);
             if (SelectedDemoType == 0)
                if (_SearchControl != null)
                   _SearchControl.View.Refresh();

@@ -13,7 +13,7 @@
    </UserControl.DataContext>
    <Grid>
       <Grid.ColumnDefinitions>
-         <ColumnDefinition Width="250"/>
+         <ColumnDefinition Width="300"/>
          <ColumnDefinition/>
       </Grid.ColumnDefinitions>
       <Border Background="#FFF" BorderThickness="0,0,1,0" BorderBrush="{StaticResource DefaultBorderBrush}">
@@ -36,114 +36,10 @@
                   </Style>
                </Metro:AduTabControl.Resources>
                <Metro:AduTabItem Header="案例">
-                  <ListBox ItemsSource="{Binding SearchControl.View}" BorderThickness="0" Background="Transparent" SelectedItem="{Binding CurrentShowControl}">
-                     <ListBox.Resources>
-                        <Style TargetType="ListBoxItem">
-                           <Setter Property="Background" Value="Transparent" />
-                           <Setter Property="BorderThickness" Value="0" />
-                           <Setter Property="Padding" Value="0" />
-                           <Setter Property="Cursor" Value="Hand"></Setter>
-                        </Style>
-                     </ListBox.Resources>
-                     <ListBox.ItemTemplate>
-                        <DataTemplate>
-                           <Border MinHeight="40" Width="250" Background="#00000000" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0 1 0 0">
-                              <Grid>
-                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="80" x:Name="state"/>
-                                 </Grid.ColumnDefinitions>
-                                 <TextBlock Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource DefaultBrush}" Metro:TextBlockService.HighlightText="{Binding ElementName=SearchKey,Path=Text}" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                 <Border Grid.Column="1" x:Name="states" Background="{StaticResource DefaultBrush}" CornerRadius="8" Height="15" MinWidth="30" Padding="4,0" HorizontalAlignment="Center">
-                                    <TextBlock x:Name="stateName" Text="NEW" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF"/>
-                                 </Border>
-                              </Grid>
-                           </Border>
-                           <DataTemplate.Triggers>
-                              <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"  Value="True">
-                                 <Setter TargetName="Bd" Property="Background" Value="#EAEAEA" />
-                              </DataTrigger>
-                              <DataTrigger Binding="{Binding Path=State}"  Value="New">
-                                 <Setter TargetName="state" Property="Width" Value="80" />
-                                 <Setter TargetName="stateName" Property="Text" Value="NEW" />
-                              </DataTrigger>
-                              <DataTrigger Binding="{Binding Path=State}"  Value="InDev">
-                                 <Setter TargetName="state" Property="Width" Value="80" />
-                                 <Setter TargetName="states" Property="Background" Value="#3399FF" />
-                                 <Setter TargetName="stateName" Property="Text" Value="InDev" />
-                              </DataTrigger>
-                              <DataTrigger Binding="{Binding Path=State}"  Value="Nor">
-                                 <Setter TargetName="state" Property="Width" Value="0" />
-                                 <Setter TargetName="states" Property="Visibility" Value="Collapsed" />
-                              </DataTrigger>
-                              <MultiTrigger>
-                                 <MultiTrigger.Conditions>
-                                    <Condition Property="IsMouseOver" Value="True" />
-                                 </MultiTrigger.Conditions>
-                                 <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke" />
-                              </MultiTrigger>
-                              <Trigger Property="IsEnabled" Value="False">
-                                 <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
-                              </Trigger>
-                           </DataTemplate.Triggers>
-                        </DataTemplate>
-                     </ListBox.ItemTemplate>
-                  </ListBox>
+                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" ItemsSource="{Binding SearchControl.View}" SelectedItem="{Binding CurrentShowControl}"/>
                </Metro:AduTabItem>
                <Metro:AduTabItem Header="工具">
-                  <ListBox ItemsSource="{Binding SearchTool.View}" BorderThickness="0" Background="Transparent" SelectedItem="{Binding CurrentShowTool}">
-                     <ListBox.Resources>
-                        <Style TargetType="ListBoxItem">
-                           <Setter Property="Background" Value="Transparent" />
-                           <Setter Property="BorderThickness" Value="0" />
-                           <Setter Property="Padding" Value="0" />
-                           <Setter Property="Cursor" Value="Hand"></Setter>
-                        </Style>
-                     </ListBox.Resources>
-                     <ListBox.ItemTemplate>
-                        <DataTemplate>
-                           <Border MinHeight="40" Width="250" Background="#00000000" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0 1 0 0">
-                              <Grid>
-                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="80" x:Name="state"/>
-                                 </Grid.ColumnDefinitions>
-                                 <TextBlock Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource DefaultBrush}" Metro:TextBlockService.HighlightText="{Binding ElementName=SearchKey,Path=Text}" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                 <Border Grid.Column="1" x:Name="states" Background="{StaticResource DefaultBrush}" CornerRadius="8" Height="15" MinWidth="30" Padding="4,0" HorizontalAlignment="Center">
-                                    <TextBlock Text="NEW" x:Name="stateName" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF"/>
-                                 </Border>
-                              </Grid>
-                           </Border>
-                           <DataTemplate.Triggers>
-                              <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"  Value="True">
-                                 <Setter TargetName="Bd" Property="Background" Value="#EAEAEA" />
-                              </DataTrigger>
-                              <DataTrigger Binding="{Binding Path=State}"  Value="New">
-                                 <Setter TargetName="state" Property="Width" Value="80" />
-                                 <Setter TargetName="stateName" Property="Text" Value="NEW" />
-                              </DataTrigger>
-                              <DataTrigger Binding="{Binding Path=State}"  Value="InDev">
-                                 <Setter TargetName="state" Property="Width" Value="80" />
-                                 <Setter TargetName="states" Property="Background" Value="#3399FF" />
-                                 <Setter TargetName="stateName" Property="Text" Value="InDev" />
-                              </DataTrigger>
-                              <DataTrigger Binding="{Binding Path=State}"  Value="Nor">
-                                 <Setter TargetName="state" Property="Width" Value="0" />
-                                 <Setter TargetName="states" Property="Visibility" Value="Collapsed" />
-                              </DataTrigger>
-                              <MultiTrigger>
-                                 <MultiTrigger.Conditions>
-                                    <Condition Property="IsMouseOver" Value="True" />
-                                 </MultiTrigger.Conditions>
-                                 <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke" />
-                              </MultiTrigger>
-                              <Trigger Property="IsEnabled" Value="False">
-                                 <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
-                              </Trigger>
-                           </DataTemplate.Triggers>
-                        </DataTemplate>
-                     </ListBox.ItemTemplate>
-                  </ListBox>
+                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" ItemsSource="{Binding SearchTool.View}" SelectedItem="{Binding CurrentShowTool}"/>
                </Metro:AduTabItem>
             </Metro:AduTabControl>
          </Grid>

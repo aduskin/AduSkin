@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <TargetFrameworks>net45;net48;net47;netcoreapp3.1;net6-windows;</TargetFrameworks>
+    <TargetFrameworks>net47;netcoreapp3.1;net6-windows;</TargetFrameworks>
     <GenerateDocumentFile>true</GenerateDocumentFile>
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
@@ -9,27 +9,34 @@
     <OutputType>WinExe</OutputType>
     <StartupObject />
     <Platforms>AnyCPU;x64</Platforms>
-  </PropertyGroup>
-  
+     <LangVersion>9.0</LangVersion>
+  </PropertyGroup> 
   <ItemGroup>
     <ProjectReference Include="..\AduSkin\AduSkin.csproj" />
     <ProjectReference Include="..\AduVideoPlayer\AduVideoPlayer.csproj" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="CommonServiceLocator" Version="2.0.5" />
-    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.8.1" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
   </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' != 'net45'">
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.0" />
-  </ItemGroup>
-
   <ItemGroup>
     <Resource Include="Resources/**" />
     <Resource Include="logo.ico" />
     <Resource Include="logo.png" />
   </ItemGroup>
-
+  <ItemGroup Condition="'$(TargetFramework)' == 'net47'">
+    <PackageReference Include="CommunityToolkit.Mvvm">
+      <Version>8.2.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <PackageReference Include="CommunityToolkit.Mvvm">
+      <Version>8.2.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6-windows'">
+    <PackageReference Include="CommunityToolkit.Mvvm">
+      <Version>8.2.2</Version>
+    </PackageReference>
+  </ItemGroup>
 </Project>

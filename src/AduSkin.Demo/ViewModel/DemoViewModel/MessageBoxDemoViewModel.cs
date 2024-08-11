@@ -1,20 +1,19 @@
 using AduSkin.Controls.Metro;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.Generic;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class MessageBoxDemoViewModel : ViewModelBase
+   public partial class MessageBoxDemoViewModel : ObservableObject
    {
       /// <summary>
       /// 命令Command
       /// </summary>
-      public ICommand OpenMessageBox => new RelayCommand<string>((e) =>
+      [RelayCommand]
+      private void OpenMessageBox(string? e)
       {
          switch (e)
          {
@@ -48,6 +47,6 @@ namespace AduSkin.Demo.ViewModel
             default:
                break;
          }
-      });
+      } 
    }
 }

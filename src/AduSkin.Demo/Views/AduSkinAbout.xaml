@@ -38,7 +38,7 @@
          <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Metro:AduTransitioningContentControl TransitionMode="Left2RightWithFade">
                <Grid>
-                  <Metro:AduFlatButton x:Name="OpenReward" Command="{Binding OpenDemo}" Background="Transparent" MinWidth="200" Height="Auto" CommandParameter="Reward">
+                  <Metro:AduFlatButton x:Name="OpenReward" Command="{Binding OpenDemoCommand}" Background="Transparent" MinWidth="200" Height="Auto" CommandParameter="Reward">
                      <Metro:AduFlatButton.ToolTip>
                         <Metro:AduToolTip Content="打赏龙年红包" IsShowShadow="True" FontSize="20" FontWeight="Bold" Foreground="#FFF000" Background="#231815" Padding="20,10" PlacementEx="BottomCenter" />
                      </Metro:AduFlatButton.ToolTip>

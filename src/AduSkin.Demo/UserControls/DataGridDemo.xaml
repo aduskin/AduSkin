@@ -20,7 +20,7 @@
       <AduSkin:AduPage MaxPageCount="10" PageIndex="1">
          <interactivity:Interaction.Triggers>
             <interactivity:EventTrigger EventName="PageUpdated">
-               <interactivity:EventToCommand Command="{Binding PageUpdatedCmd}" PassEventArgsToCommand="True" />
+               <interactivity:EventToCommand Command="{Binding PageUpdatedCommand}" PassEventArgsToCommand="True" />
             </interactivity:EventTrigger>
          </interactivity:Interaction.Triggers>
       </AduSkin:AduPage>

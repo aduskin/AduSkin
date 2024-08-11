@@ -12,11 +12,11 @@
    </UserControl.DataContext>
    <Grid>
       <WrapPanel>
-         <AduSkin:AduFlatButton Content="普通弹框" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="普通弹框"/>
-         <AduSkin:AduFlatButton Content="普通弹框2" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="普通弹框2"/>
-         <AduSkin:AduFlatButton Content="确认取消弹框" Type="success" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="确认取消弹框"/>
-         <AduSkin:AduFlatButton Content="带图标确认取消弹框" Type="error" Width="130" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="带图标确认取消弹框"/>
-         <AduSkin:AduFlatButton Content="自定义弹框" Type="warning" Margin="5" Command="{Binding OpenMessageBox}" CommandParameter="自定义弹框"/>
+         <AduSkin:AduFlatButton Content="普通弹框" Margin="5" Command="{Binding OpenMessageBoxCommand}" CommandParameter="普通弹框"/>
+         <AduSkin:AduFlatButton Content="普通弹框2" Margin="5" Command="{Binding OpenMessageBoxCommand}" CommandParameter="普通弹框2"/>
+         <AduSkin:AduFlatButton Content="确认取消弹框" Type="success" Margin="5" Command="{Binding OpenMessageBoxCommand}" CommandParameter="确认取消弹框"/>
+         <AduSkin:AduFlatButton Content="带图标确认取消弹框" Type="error" Width="130" Margin="5" Command="{Binding OpenMessageBoxCommand}" CommandParameter="带图标确认取消弹框"/>
+         <AduSkin:AduFlatButton Content="自定义弹框" Type="warning" Margin="5" Command="{Binding OpenMessageBoxCommand}" CommandParameter="自定义弹框"/>
       </WrapPanel>
    </Grid>
 </UserControl>

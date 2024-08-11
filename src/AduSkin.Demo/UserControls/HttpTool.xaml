@@ -8,104 +8,104 @@
               xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <ViewModel:HttpToolViewModel/>
-    </UserControl.DataContext>
-    <Grid Width="400" >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="200"/>
-        </Grid.RowDefinitions>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="90"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="40"/>
-            </Grid.ColumnDefinitions>
+   <UserControl.DataContext>
+      <ViewModel:HttpToolViewModel/>
+   </UserControl.DataContext>
+   <Grid Width="400" >
+      <Grid.RowDefinitions>
+         <RowDefinition Height="40"/>
+         <RowDefinition Height="40"/>
+         <RowDefinition Height="200"/>
+         <RowDefinition Height="40"/>
+         <RowDefinition Height="200"/>
+      </Grid.RowDefinitions>
+      <Grid>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="40"/>
+         </Grid.ColumnDefinitions>
          <AduSkin:AduComboBox VerticalAlignment="Center" AduAttach:BorderAttach.CornerRadius="4" Height="32" ItemsSource="{Binding HttpTypList}" SelectedItem="{Binding CurrentHttpType}" DisplayMemberPath="CodeName" />
-            <AduSkin:AduComboBox Grid.Column="1" Height="32" Width="80" Margin="4,0" AduAttach:BorderAttach.CornerRadius="4" VerticalAlignment="Center" ItemsSource="{Binding CodeTypeList}" SelectedItem="{Binding CurrentCodeType}" DisplayMemberPath="CodeName"/>
+         <AduSkin:AduComboBox Grid.Column="1" Height="32" Width="80" Margin="4,0" AduAttach:BorderAttach.CornerRadius="4" VerticalAlignment="Center" ItemsSource="{Binding CodeTypeList}" SelectedItem="{Binding CurrentCodeType}" DisplayMemberPath="CodeName"/>
          <AduSkin:MetroTextBox Grid.Column="2" Height="32" AduAttach:BorderAttach.CornerRadius="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Text="{Binding ToUrlTxt}" InputHint="输入接口地址"/>
-            <AduSkin:AduPathIconButton Grid.Column="3" Command="{Binding ToRequest}" VerticalAlignment="Center" 
+         <AduSkin:AduPathIconButton Grid.Column="3" Command="{Binding ToRequestCommand}" VerticalAlignment="Center" 
                                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_To}" AduAttach:PathDataAttach.Width="14"/>
-        </Grid>
-        <Grid Grid.Row="1">
-            <StackPanel Orientation="Horizontal">
-                <AduSkin:AduButtonIcon AduAttach:PathDataAttach.PathData="{StaticResource Icon_Insert}" Command="{Binding AddRequestCodeCommand}" CommandParameter="Param"  VerticalAlignment="Center" Width="80" 
+      </Grid>
+      <Grid Grid.Row="1">
+         <StackPanel Orientation="Horizontal">
+            <AduSkin:AduButtonIcon AduAttach:PathDataAttach.PathData="{StaticResource Icon_Insert}" Command="{Binding AddRequestCodeCommand}" CommandParameter="Param"  VerticalAlignment="Center" Width="80" 
                                        AduAttach:BorderAttach.CornerRadius="3" AduAttach:PathDataAttach.Width="20" AduAttach:PathDataAttach.Margin="4"  Content="请求参" Foreground="{StaticResource ShadowColor}"/>
-            </StackPanel>
-        </Grid>
-        <AduSkin:AduDataGrid Grid.Row="2" CanUserResizeColumns="False" CanUserSortColumns="False" IsEnabled="{Binding RequestParamState}"
+         </StackPanel>
+      </Grid>
+      <AduSkin:AduDataGrid Grid.Row="2" CanUserResizeColumns="False" CanUserSortColumns="False" IsEnabled="{Binding RequestParamState}"
                 Visibility="{Binding RequestParameterVisibility}" BorderThickness="0" GridLinesVisibility="None" Margin="0,2,0,0"
                 ItemsSource="{Binding RequestParameter}" VerticalScrollBarVisibility="Disabled" >
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Width="6*" Header="参数名">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox TabIndex="-1" Background="Transparent" BorderThickness="0,0,0,0" Height="40" VerticalContentAlignment="Center"  FocusVisualStyle="{x:Null}"
+         <DataGrid.Columns>
+            <DataGridTemplateColumn Width="6*" Header="参数名">
+               <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                     <TextBox TabIndex="-1" Background="Transparent" BorderThickness="0,0,0,0" Height="40" VerticalContentAlignment="Center"  FocusVisualStyle="{x:Null}"
                                 Margin="10,0" FontSize="14px" FontWeight="Bold" Foreground="{StaticResource ShadowColor}"  Text="{Binding CodeName,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="5*" Header="值">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox Height="40" TabIndex="0" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0,0,0,0" FocusVisualStyle="{x:Null}" 
+                  </DataTemplate>
+               </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="5*" Header="值">
+               <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                     <TextBox Height="40" TabIndex="0" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0,0,0,0" FocusVisualStyle="{x:Null}" 
                                 FontSize="14px" FontWeight="Bold" Foreground="{StaticResource ShadowColor}" Text="{Binding CodeValue,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="60" Header="操作">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                     <AduSkin:AduButtonIcon Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=DataContext.RemoveParameter}"
+                  </DataTemplate>
+               </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="60" Header="操作">
+               <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                     <AduSkin:AduButtonIcon Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=DataContext.RemoveParameterCommand}"
                            CommandParameter="{Binding}" Width="30" Margin="10,0"
                            AduAttach:BorderAttach.CornerRadius="3" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Delete}" 
                            HorizontalAlignment="Left" Foreground="{StaticResource ShadowColor}" />
                   </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </AduSkin:AduDataGrid>
-        <Grid Grid.Row="3">
-            <StackPanel Orientation="Horizontal">
-                <AduSkin:AduButtonIcon AduAttach:PathDataAttach.PathData="{StaticResource Icon_Insert}" 
+               </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+         </DataGrid.Columns>
+      </AduSkin:AduDataGrid>
+      <Grid Grid.Row="3">
+         <StackPanel Orientation="Horizontal">
+            <AduSkin:AduButtonIcon AduAttach:PathDataAttach.PathData="{StaticResource Icon_Insert}" 
                                        Command="{Binding AddRequestCodeCommand}" CommandParameter="Header" VerticalAlignment="Center" Width="80" 
                                        AduAttach:BorderAttach.CornerRadius="3" AduAttach:PathDataAttach.Width="20" AduAttach:PathDataAttach.Margin="4" Content="请求头" Foreground="{StaticResource ShadowColor}"/>
-            </StackPanel>
-        </Grid>
-        <AduSkin:AduDataGrid Grid.Row="4" CanUserResizeColumns="False" CanUserSortColumns="False" IsEnabled="{Binding RequestParamState}"
+         </StackPanel>
+      </Grid>
+      <AduSkin:AduDataGrid Grid.Row="4" CanUserResizeColumns="False" CanUserSortColumns="False" IsEnabled="{Binding RequestParamState}"
                 Visibility="{Binding RequestParameterVisibility}" BorderThickness="0" GridLinesVisibility="None" Margin="0,2,0,0"
                 ItemsSource="{Binding RequestHead}" VerticalScrollBarVisibility="Disabled" >
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Width="6*" Header="请求头">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox TabIndex="-1" Background="Transparent" BorderThickness="0,0,0,0" Height="40" VerticalContentAlignment="Center"  FocusVisualStyle="{x:Null}"
+         <DataGrid.Columns>
+            <DataGridTemplateColumn Width="6*" Header="请求头">
+               <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                     <TextBox TabIndex="-1" Background="Transparent" BorderThickness="0,0,0,0" Height="40" VerticalContentAlignment="Center"  FocusVisualStyle="{x:Null}"
                                 Margin="10,0" FontSize="14px" FontWeight="Bold" Foreground="{StaticResource ShadowColor}"  Text="{Binding CodeName,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="5*" Header="值">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox Height="40" TabIndex="0" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0,0,0,0" FocusVisualStyle="{x:Null}" 
+                  </DataTemplate>
+               </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="5*" Header="值">
+               <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                     <TextBox Height="40" TabIndex="0" VerticalContentAlignment="Center" Background="Transparent" BorderThickness="0,0,0,0" FocusVisualStyle="{x:Null}" 
                                 FontSize="14px" FontWeight="Bold" Foreground="{StaticResource ShadowColor}" Text="{Binding CodeValue,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="60" Header="操作">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <AduSkin:AduButtonIcon Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=DataContext.RemoveHeader}"
+                  </DataTemplate>
+               </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="60" Header="操作">
+               <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                     <AduSkin:AduButtonIcon Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}, Path=DataContext.RemoveHeaderCommand}"
                                 CommandParameter="{Binding}" Width="30" Margin="10,0" AduAttach:BorderAttach.CornerRadius="3" HorizontalAlignment="Left" Foreground="{StaticResource ShadowColor}" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Delete}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </AduSkin:AduDataGrid>
-    </Grid>
+                  </DataTemplate>
+               </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+         </DataGrid.Columns>
+      </AduSkin:AduDataGrid>
+   </Grid>
 </UserControl>

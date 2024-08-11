@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin">
     <Style x:Key="Title" TargetType="TextBlock">
@@ -69,8 +69,61 @@
             </DoubleAnimation.EasingFunction>
         </DoubleAnimation>
     </Storyboard>
-
-    <Style TargetType="{x:Type ListBox}">
+   <Style x:Key="DemoListBoxItem" TargetType="{x:Type ListBoxItem}">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="ListBoxItem">
+               <Border MinHeight="40" Width="300" Background="#00000000" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0 1 0 0">
+                  <Grid>
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="80" x:Name="state"/>
+                     </Grid.ColumnDefinitions>
+                     <TextBlock Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource DefaultBrush}" Metro:TextBlockService.HighlightText="{Binding ElementName=SearchKey,Path=Text}" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                     <Border Grid.Column="1" x:Name="states" Background="{StaticResource DefaultBrush}" CornerRadius="8" Height="15" MinWidth="30" Padding="4,0" HorizontalAlignment="Center">
+                        <TextBlock Text="NEW" x:Name="stateName" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF"/>
+                     </Border>
+                  </Grid>
+               </Border>
+               <ControlTemplate.Triggers>
+                  <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"  Value="True">
+                     <Setter TargetName="Bd" Property="Background" Value="#EAEAEA" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Path=State}"  Value="New">
+                     <Setter TargetName="state" Property="Width" Value="80" />
+                     <Setter TargetName="stateName" Property="Text" Value="NEW" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Path=State}"  Value="InDev">
+                     <Setter TargetName="state" Property="Width" Value="80" />
+                     <Setter TargetName="states" Property="Background" Value="#3399FF" />
+                     <Setter TargetName="stateName" Property="Text" Value="InDev" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Path=State}"  Value="Nor">
+                     <Setter TargetName="state" Property="Width" Value="0" />
+                     <Setter TargetName="states" Property="Visibility" Value="Collapsed" />
+                  </DataTrigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke" />
+                  </MultiTrigger>
+                  <Trigger Property="IsSelected" Value="True">
+                     <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke" />
+                  </Trigger>
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate> 
+         </Setter.Value>
+      </Setter>
+   </Style>
+   <Style TargetType="{x:Type ListBox}">
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="ItemsPanel">

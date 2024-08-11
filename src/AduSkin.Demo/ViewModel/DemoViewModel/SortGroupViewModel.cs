@@ -1,19 +1,13 @@
-﻿using AduSkin.Controls;
+using AduSkin.Controls;
 using AduSkin.Demo.Models;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class SortGroupViewModel:ViewModelBase
+   public class SortGroupViewModel : ObservableObject
    {
       public SortGroupViewModel()
       {
@@ -167,7 +161,7 @@ namespace AduSkin.Demo.ViewModel
             {
                IsOpenSortList = true;
             }
-            Set(ref _CurrentChatUserModel, value);
+            SetProperty(ref _CurrentChatUserModel, value);
          }
       }
 
@@ -178,7 +172,7 @@ namespace AduSkin.Demo.ViewModel
       public bool IsOpenSortList
       {
          get { return _IsOpenSortList; }
-         set { Set(ref _IsOpenSortList, value); }
+         set { SetProperty(ref _IsOpenSortList, value); }
       }
    }
 }

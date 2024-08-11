@@ -1,20 +1,19 @@
 using AduSkin.Controls;
 using AduSkin.Controls.Metro;
-using AduSkin.Demo.Models;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
-using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class NoticeDemoViewModel: ViewModelBase
+   public partial class NoticeDemoViewModel : ObservableObject
    {
       #region 右侧弹框
       /// <summary>
       /// 命令Command
       /// </summary>
-      public ICommand OpenMsg => new RelayCommand<string>((e) =>
+      [RelayCommand]
+      public void OpenMsg(string e)
       {
          switch (e)
          {
@@ -49,10 +48,8 @@ namespace AduSkin.Demo.ViewModel
                   Content = "这条通知不会自动关闭"
                });
                return;
-            default:
-               break;
          }
-      });
+      }
       #endregion
    }
 }

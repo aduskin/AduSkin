@@ -1,17 +1,15 @@
 using AduSkin.Controls.Data;
-using AduSkin.Demo.Models;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+using AduSkin.Demo.Models; 
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class DataGridDemoViewModel:ViewModelBase
+   public partial class DataGridDemoViewModel: ObservableObject
    {
       public DataGridDemoViewModel()
       {
@@ -89,7 +87,7 @@ namespace AduSkin.Demo.ViewModel
       public ObservableCollection<ChatUserModel> ContactList
       {
          get { return contactList; }
-         set { Set(ref contactList, value); }
+         set { SetProperty(ref contactList, value); }
       }
 
       private bool _IsAllChecked;
@@ -101,22 +99,23 @@ namespace AduSkin.Demo.ViewModel
          get { return _IsAllChecked; }
          set
          {
-            Set(ref _IsAllChecked, value);
+            SetProperty(ref _IsAllChecked, value);
             foreach (var item in ContactList)
                item.IsChecked = IsAllChecked;
          }
       }
 
-      /// <summary>
-      ///     页码改变命令
-      /// </summary>
-      public RelayCommand<FunctionEventArgs<int>> PageUpdatedCmd =>
-          new Lazy<RelayCommand<FunctionEventArgs<int>>>(() =>
-              new RelayCommand<FunctionEventArgs<int>>(PageUpdated)).Value;
+      ///// <summary>
+      /////     
+      ///// </summary>
+      //public RelayCommand<FunctionEventArgs<int>> PageUpdatedCmd =>
+      //    new Lazy<RelayCommand<FunctionEventArgs<int>>>(() =>
+      //        new RelayCommand<FunctionEventArgs<int>>(PageUpdated)).Value;
 
       /// <summary>
       ///     页码改变
       /// </summary>
+      [RelayCommand]
       private void PageUpdated(FunctionEventArgs<int> info)
       {
          ContactList = new ObservableCollection<ChatUserModel>(TotalContactList.Skip((info.Info - 1) * 10).Take(10).ToList());
