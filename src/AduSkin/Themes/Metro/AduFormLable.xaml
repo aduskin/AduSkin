@@ -9,7 +9,6 @@
       <Setter Property="MinHeight" Value="30"/>
       <Setter Property="FontSize" Value="12"/>
       <Setter Property="Foreground" Value="#000"/>
-      <Setter Property="ErrorForeground" Value="{StaticResource ErrorBrush}"/>
       <Setter Property="TitleWidth" Value="50"/>
       <Setter Property="TitleMinWidth" Value="50"/>
       <Setter Property="TitleHorizontalAlignment" Value="Right"/>
@@ -21,35 +20,33 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduFormLable}">
-               <Border x:Name="border" Background="{TemplateBinding Background}"
-                     BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" Opacity="1"
-                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" MinHeight="{TemplateBinding MinHeight}">
+               <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="2" Opacity="1"
+                     BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" 
+                     MinHeight="{TemplateBinding MinHeight}">
                   <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition MinWidth="{TemplateBinding TitleMinWidth}" Width="auto"/>
                         <ColumnDefinition />
-                        <ColumnDefinition x:Name="gridError" Width="auto"/>
+                        <ColumnDefinition x:Name="prompt" Width="auto"/>
                      </Grid.ColumnDefinitions>
-                     <TextBlock Grid.Column="0" 
-                                Text="{TemplateBinding Title}"
-                                Foreground="{TemplateBinding TitleForeground}"
-                                Width="{TemplateBinding TitleWidth}" 
-                                Margin="{TemplateBinding TitlePadding}"
-                                HorizontalAlignment="{TemplateBinding TitleHorizontalAlignment}" 
-                                VerticalAlignment="{TemplateBinding TitleVerticalAlignment}"/>
-                     <ContentPresenter Grid.Column="1" Margin="5,0" 
+                     <TextBlock Text="{TemplateBinding Title}"
+                           Foreground="{TemplateBinding TitleForeground}"
+                           Width="{TemplateBinding TitleWidth}" 
+                           MinWidth="{TemplateBinding TitleMinWidth}"
+                           Margin="{TemplateBinding TitlePadding}"
+                           TextAlignment="{TemplateBinding TitleHorizontalAlignment}" 
+                           VerticalAlignment="{TemplateBinding TitleVerticalAlignment}"/>
+                     <ContentPresenter Grid.Column="1" Margin="5,0,0,0" 
                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                            Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"
                            ContentTemplate="{TemplateBinding ContentTemplate}" RecognizesAccessKey="True" SnapsToDevicePixels="True" />
-                     <TextBlock x:Name="txtError" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding ErrorForeground}" Text="{TemplateBinding ErrorMessage}" Visibility="{TemplateBinding ErrorVisibility}"/>
+                     <TextBlock x:Name="txtPrompt" Grid.Column="2" Margin="5,0,0,0" 
+                           VerticalAlignment="Center" HorizontalAlignment="Left" 
+                           FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding PromptForeground}" 
+                           Text="{TemplateBinding Prompt}" Visibility="{TemplateBinding PromptVisibility}"/>
                   </Grid>
                </Border>
-               <ControlTemplate.Triggers>
-                  <DataTrigger Binding="{Binding Path=ErrorVisibility}" Value="Collapsed">
-                     <Setter TargetName="txtError" Property="Visibility" Value="Collapsed"/>
-                     <Setter TargetName="gridError" Property="Width" Value="0"/>
-                  </DataTrigger>
-               </ControlTemplate.Triggers>
             </ControlTemplate>
          </Setter.Value>
       </Setter>

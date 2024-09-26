@@ -313,7 +313,7 @@
             <Grid>
                <Border Style="{StaticResource ShowControlBorder}">
                   <StackPanel>
-                     <AduSkin:AduFormLable Title="日期选择" ErrorVisibility="Collapsed" TitleForeground="Red">
+                     <AduSkin:AduFormLable Title="日期选择" TitleForeground="Red" PromptVisibility="Visible" Prompt="选择" PromptForeground="Blue">
                         <AduSkin:AduDatePicker CornerRadius="3"/>
                      </AduSkin:AduFormLable>
                      <AduSkin:AduFormLable Title="下拉选择" Margin="0,10,0,0">
@@ -326,7 +326,7 @@
                      <AduSkin:AduFormLable Title="用户名" Margin="0,10,0,0"  >
                         <AduSkin:MetroTextBox/>
                      </AduSkin:AduFormLable>
-                     <AduSkin:AduFormLable Title="密码" Margin="0,10,0,0"  ErrorMessage="请输入0-6位字母" ErrorVisibility="Visible">
+                     <AduSkin:AduFormLable Title="密码" Margin="0,10,0,0"  Prompt="请输入0-6位字母" PromptVisibility="Visible" TitleHorizontalAlignment="Right" TitleWidth="50">
                         <AduSkin:AduPasswordBox/>
                      </AduSkin:AduFormLable>
                      <AduSkin:AduFormLable Title="选择目录" Margin="0,10,0,0">
