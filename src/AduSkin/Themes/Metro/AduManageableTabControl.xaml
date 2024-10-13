@@ -7,7 +7,7 @@
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="MetroBase.xaml"/>
       <ResourceDictionary Source="AduConverter.xaml"/>
-      <ResourceDictionary Source="AduPathIconButton.xaml"/>
+      <ResourceDictionary Source="AduFlatButton.xaml"/>
       <ResourceDictionary Source="AduContextMenuButton.xaml"/>
       <ResourceDictionary Source="MetroScrollViewer.xaml"/>
    </ResourceDictionary.MergedDictionaries>
@@ -57,15 +57,11 @@
                         </LinearGradientBrush>
                      </ContentPresenter.OpacityMask>
                   </ContentPresenter>
-                  <AduSkin:AduPathIconButton Grid.Column="1" Focusable="False" Command="interactivity:ControlCommands.Close" 
-                           Visibility="{TemplateBinding ShowCloseButton,Converter={StaticResource BoolToVisibility}}" 
-                           Background="{StaticResource DefaultTransparentBrush}" 
-                           AduAttach:BackgroundAttach.NormalBackground="{StaticResource DefaultTransparentBrush}"
-                           AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource DefaultTransparentBrush}"
-                           AduAttach:PathBrushAttach.NormalPathColor="{StaticResource Brush}" 
-                           AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource Brush}"
-                           AduAttach:PathDataAttach.Width="8"  
-                           AduAttach:PathDataAttach.PathData="{StaticResource Icon_SystemClose}" Width="28" Height="28"/>
+                  <AduSkin:AduFlatButton Grid.Column="1" Focusable="False" Command="interactivity:ControlCommands.Close" 
+                           Visibility="{TemplateBinding ShowCloseButton,Converter={StaticResource BoolToVisibility}}"  
+                           Background="{StaticResource DefaultTransparent}"  Width="28" Height="28">
+                     <Path Data="{StaticResource Icon_SystemClose}" Width="8" Stretch="Uniform" Fill="{StaticResource NormalPathColor}"/>
+                  </AduSkin:AduFlatButton>
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsSelected" Value="true">
@@ -122,11 +118,17 @@
                <RowDefinition Height="Auto"/>
                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Visibility="{TemplateBinding ShowScrollButton,Converter={StaticResource BoolToVisibility}}" Margin="0,-1,0,0" Grid.Row="0" Grid.Column="0" BorderThickness="0,0,1,1" BorderBrush="{DynamicResource DefaultBorderBrush}" Background="Transparent" HorizontalAlignment="Left" Panel.ZIndex="2">
+            <Border Visibility="{TemplateBinding ShowScrollButton,Converter={StaticResource BoolToVisibility}}" 
+                    Margin="0,-1,0,0" Grid.Row="0" Grid.Column="0" BorderThickness="0,0,1,1" 
+                    BorderBrush="{DynamicResource DefaultBorderBrush}" Background="Transparent" 
+                    HorizontalAlignment="Left" Panel.ZIndex="2">
                <Border.CacheMode>
                   <BitmapCache SnapsToDevicePixels="True"/>
                </Border.CacheMode>
-               <AduSkin:AduPathIconButton x:Name="PART_ScrollButtonLeft" Focusable="False" Width="30" AduAttach:PathDataAttach.Width="7" AduAttach:PathDataAttach.PathData="{StaticResource Icon_LeftArrow}" Foreground="{DynamicResource PrimaryTextBrush}"/>
+               <AduSkin:AduFlatButton x:Name="PART_ScrollButtonLeft" Width="30" Height="30" 
+                     Background="{StaticResource DefaultTransparent}" >
+                  <Path Data="{StaticResource Icon_LeftArrow}" Width="7" Stretch="Uniform" Fill="{StaticResource NormalPathColor}"/>
+               </AduSkin:AduFlatButton>
             </Border>
             <AduSkin:MetroScrollViewer x:Name="PART_OverflowScrollviewer" HorizontalScrollBarVisibility="Hidden" CanMouseWheel="True" IsEnableInertia="True" Grid.Row="0" Grid.Column="1" IsDeferredScrollingEnabled="True" >
                <Border Background="{TemplateBinding Background}" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderBrush}" Name="PART_HeaderBorder">
@@ -142,12 +144,18 @@
                   </AduSkin:AduManageableTabPanel>
                </Border>
             </AduSkin:MetroScrollViewer>
-            <Border Margin="0,-1,0,0" Grid.Row="0" Grid.Column="2" BorderThickness="1,0,0,1" BorderBrush="{DynamicResource DefaultBorderBrush}" Background="Transparent" HorizontalAlignment="Right">
+            <Border Margin="0,-1,0,0" Grid.Row="0" Grid.Column="2" BorderThickness="1,0,0,1" 
+                    BorderBrush="{DynamicResource DefaultBorderBrush}" 
+                    Background="Transparent" HorizontalAlignment="Right" >
                <Border.CacheMode>
                   <BitmapCache SnapsToDevicePixels="True"/>
                </Border.CacheMode>
                <StackPanel Orientation="Horizontal">
-                  <AduSkin:AduPathIconButton Focusable="False" AduAttach:PathDataAttach.PathData="{StaticResource Icon_RightArrow}"  Visibility="{TemplateBinding ShowScrollButton,Converter={StaticResource BoolToVisibility}}" Width="30" AduAttach:PathDataAttach.Width="7" Foreground="{DynamicResource Brush}" Background="Transparent" x:Name="PART_ScrollButtonRight"/>
+                  <AduSkin:AduFlatButton x:Name="PART_ScrollButtonRight"
+                     Width="30" Height="30" Background="{StaticResource DefaultTransparent}"  
+                     Visibility="{TemplateBinding ShowScrollButton,Converter={StaticResource BoolToVisibility}}" >
+                     <Path Data="{StaticResource Icon_RightArrow}" Width="7" Stretch="Uniform" Fill="{StaticResource NormalPathColor}"/>
+                  </AduSkin:AduFlatButton>
                   <Border Visibility="{Binding Visibility,ElementName=PART_OverflowButton}" Width="1" Background="{DynamicResource BorderBrush}"/>
                   <AduSkin:AduContextMenuButton x:Name="PART_OverflowButton" Visibility="Collapsed" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Menu}" AduAttach:PathDataAttach.Width="3" Width="30"/>
                </StackPanel>

@@ -37,9 +37,9 @@ namespace AduSkin.Controls.Metro
 
         private MetroScrollViewer _scrollViewerOverflow;
 
-        private ButtonBase _buttonScrollLeft;
+        private AduFlatButton _buttonScrollLeft;
 
-        private ButtonBase _buttonScrollRight;
+        private AduFlatButton _buttonScrollRight;
 
         private Border _headerBorder;
 
@@ -284,8 +284,8 @@ namespace AduSkin.Controls.Metro
 
             _buttonOverflow = GetTemplateChild(OverflowButtonKey) as AduContextMenuButton;
             _scrollViewerOverflow = GetTemplateChild(OverflowScrollviewer) as MetroScrollViewer;
-            _buttonScrollLeft = GetTemplateChild(ScrollButtonLeft) as ButtonBase;
-            _buttonScrollRight = GetTemplateChild(ScrollButtonRight) as ButtonBase;
+            _buttonScrollLeft = GetTemplateChild(ScrollButtonLeft) as AduFlatButton;
+            _buttonScrollRight = GetTemplateChild(ScrollButtonRight) as AduFlatButton;
             _headerBorder = GetTemplateChild(HeaderBorder) as Border;
 
             if (_buttonScrollLeft != null) _buttonScrollLeft.Click += ButtonScrollLeft_Click;

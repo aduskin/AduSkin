@@ -14,7 +14,8 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel Width="800">
-        <Metro:AduManageableTabControl ShowOverflowButton="False" ShowContextMenu="True" IsEnableAnimation="True" IsDraggable="False" ShowCloseButton="True" ShowScrollButton="True" Width="800" IsScrollable="True" Height="300">
+        <Metro:AduManageableTabControl ShowOverflowButton="False" ShowContextMenu="True" IsEnableAnimation="True" 
+                                       IsDraggable="False" ShowCloseButton="True" ShowScrollButton="True" Width="800" IsScrollable="True" Height="300">
             <Metro:AduManageableTabItem Header="TabItem1" IsSelected="True">
                 <TextBlock Text="多功能TabControl" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Metro:AduManageableTabItem>
