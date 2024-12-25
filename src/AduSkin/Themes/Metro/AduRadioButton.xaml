@@ -12,17 +12,27 @@
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="FontSize" Value="12"/>
-      <Setter Property="Background" Value="#00000000"/>
+      <Setter Property="Background" Value="{StaticResource DefaultTransparent}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource DefaultTransparent}"/>
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource Brush}"/> 
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_SingleNoChecked}"/>
       <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{StaticResource Icon_SingleChecked}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="14"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="4,0"/>
       <Setter Property="AduAttach:PathDataAttach.Visibility" Value="Visible"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0"/>
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{StaticResource DefaultTransparent}"/>
+      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduRadioButton}">
-               <Border Background="{TemplateBinding Background}">
+               <Border x:Name="border" Background="{TemplateBinding Background}" 
+                       CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                       BorderThickness="{TemplateBinding BorderThickness}"
+                       BorderBrush="{TemplateBinding BorderBrush}">
                   <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                      <Path x:Name="path" VerticalAlignment="Center" Stretch="Uniform"
                                 Visibility="{TemplateBinding AduAttach:PathDataAttach.Visibility}"
@@ -36,8 +46,18 @@
                <ControlTemplate.Triggers>
                   <Trigger Property="IsChecked" Value="True">
                      <Setter TargetName="path" Property="Data" Value="{Binding Path=(AduAttach:PathDataAttach.SelectedPathData), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                     <Setter TargetName="border" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                   </Trigger>
-                  <Trigger Property="IsEnabled" Value="False">
+                  <Trigger Property="IsMouseOver" Value="true">
+                     <Setter TargetName="border" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.MouseOverPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                  </Trigger>
+                  <Trigger Property="IsPressed" Value="true">
+                     <Setter TargetName="border" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.PressedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.PressedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                  </Trigger>
+                  <Trigger Property="IsEnabled" Value="false">
                      <Setter Property="Opacity" Value=".5"/>
                   </Trigger>
                </ControlTemplate.Triggers>
