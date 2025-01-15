@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
@@ -9,7 +9,7 @@ namespace AduSkin.Controls.Converter
     {
         public object Convert(object value, System.Type targetType, object parameter, CultureInfo culture)
         {
-            return value == null || value.ToString() == "" ? Visibility.Hidden : Visibility.Visible;
+            return value == null || string.IsNullOrEmpty(value as string) ? Visibility.Collapsed : Visibility.Visible;
         }
 
         public object ConvertBack(object value, System.Type targetType, object parameter, CultureInfo culture)
