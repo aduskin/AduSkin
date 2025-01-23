@@ -28,21 +28,23 @@
    <Style x:Key="LeftIndicatorItemStyle" TargetType="{x:Type Adu:AduSegmentItem}">
       <Setter Property="Padding" Value="0" />
       <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource NormalBrush}"/>
       <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="HorizontalContentAlignment" Value="Right" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Adu:AduSegmentItem}">
-               <Border x:Name="Bd"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}"
-                            SnapsToDevicePixels="true" UseLayoutRounding="True">
-                  <ContentPresenter x:Name="content" Margin="20,8,20,8" 
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+               <Border x:Name="Bd" 
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  Padding="{TemplateBinding Padding}"
+                  SnapsToDevicePixels="true" UseLayoutRounding="True">
+                  <ContentPresenter x:Name="content" Margin="20,8,20,8" Opacity="{StaticResource NotSelectedOpacity}"
+                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
@@ -53,7 +55,7 @@
                         <Condition Property="IsMouseOver" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />-->
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
                      <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
                   </MultiTrigger>
                   <MultiTrigger>
@@ -61,16 +63,18 @@
                         <Condition Property="Selector.IsSelectionActive" Value="False" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{Binding SelectBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter TargetName="content" Property="Opacity" Value=".45" />
+                     <Setter TargetName="Bd" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="content" Property="Opacity" Value="1" />
+                     <!--<Setter  Property="Foreground" Value="{Binding (AduAttach:ForegroundAttach.SelectedForeground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />-->
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="Selector.IsSelectionActive" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{Binding SelectBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter TargetName="content" Property="Opacity" Value=".45" />
+                     <Setter TargetName="Bd" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="content" Property="Opacity" Value="1" />
+                     <!--<Setter  Property="Foreground" Value="{Binding (AduAttach:ForegroundAttach.SelectedForeground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />-->
                   </MultiTrigger>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{StaticResource NormalBlack20}" />
@@ -175,19 +179,19 @@
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
          </Grid.ColumnDefinitions>
-         <Adu:AduSegmentControl x:Name="PART_Indicator" SelectedIndex="0"
-                                HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
-                                Margin="{TemplateBinding IndicatorMargin}"
-                             Foreground="{TemplateBinding Foreground}"
-                             AduAttach:BackgroundAttach.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
-                             AduAttach:ForegroundAttach.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.SelectedForeground)}"  
-                             ItemsSource="{TemplateBinding ItemsSource}"
-                                DisplayMemberPath="Header"
-                                Style="{TemplateBinding IndicatorStyle}"
-                                ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
+         <Adu:AduSegmentControl x:Name="PART_Indicator" SelectedIndex="0" 
+            AduAttach:BackgroundAttach.SelectedBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
+            AduAttach:ForegroundAttach.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.SelectedForeground)}"  
+            ItemsSource="{TemplateBinding ItemsSource}"
+            DisplayMemberPath="Header"
+            HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
+            Margin="{TemplateBinding IndicatorMargin}"
+            Foreground="{TemplateBinding Foreground}"
+            Style="{TemplateBinding IndicatorStyle}"
+            ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
          <ContentPresenter x:Name="PART_ContentPresenter" Grid.Column="1"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
       </Grid>
    </ControlTemplate>
    <!--#endregion-->
@@ -221,15 +225,15 @@
             <ColumnDefinition Width="auto" />
          </Grid.ColumnDefinitions>
          <Adu:AduSegmentControl x:Name="PART_Indicator" Grid.Column="1" SelectedIndex="0"
-                                HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
-                                Margin="{TemplateBinding IndicatorMargin}"
-                                ItemsSource="{TemplateBinding ItemsSource}"
-                                DisplayMemberPath="Header"
-                                Style="{TemplateBinding IndicatorStyle}"
-                                ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
+               HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
+               Margin="{TemplateBinding IndicatorMargin}"
+               ItemsSource="{TemplateBinding ItemsSource}"
+               DisplayMemberPath="Header"
+               Style="{TemplateBinding IndicatorStyle}"
+               ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
          <ContentPresenter x:Name="PART_ContentPresenter" Grid.Column="0"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
       </Grid>
    </ControlTemplate>
    <!--#endregion-->
@@ -259,6 +263,7 @@
       <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="Foreground" Value="{StaticResource NormalBrush}" />
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource NormalBrush}" />
       <Setter Property="BorderThickness" Value="1" /> 
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Center" />

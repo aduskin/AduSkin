@@ -9,10 +9,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
    <Border BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="1">
       <Metro:AduNavigationPanel x:Name="navigationPanel" Grid.Row="1" 
-                                  MaxHeight="300" Width="500" Foreground="{StaticResource NormalBrush}"
-                                  AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
-                                IndicatorMargin="0" IndicatorHorizontalAlignment="Center" 
-                                IndicatorSelectedIndex="0" IndicatorPlacement="Left">
+         MaxHeight="300" Width="500" Foreground="{StaticResource NormalBrush}"
+         AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
+         AduAttach:ForegroundAttach.SelectedForeground="{StaticResource NormalBrush}"
+         IndicatorMargin="0" IndicatorHorizontalAlignment="Center" 
+         IndicatorSelectedIndex="0" IndicatorPlacement="Left">
          <Metro:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
             <StackPanel >
                <Metro:AduGroupBoxLight Header="常规设置" HeaderBackground="Transparent" BorderThickness="0" BorderBrush="{StaticResource NormalBorderBrush}" Height="300" FontSize="14" HeaderPadding="10,6">
