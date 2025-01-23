@@ -79,7 +79,7 @@
                <StackPanel>
                   <AduSkin:AduTimePicker HorizontalAlignment="Left" Margin="4" Width="200" />
                   <AduSkin:AduDatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="4" Width="200" 
-                     VerticalAlignment="Center" Height="28" Type="DateTime"  CornerRadius="3" DateStringFormat="yyyy/MM/dd"
+                     VerticalAlignment="Center" Height="28" Type="DateTime" DateStringFormat="yyyy/MM/dd"
                      AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"
                      AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBrush}"
                      AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
@@ -88,20 +88,20 @@
                      AduAttach:ForegroundAttach.MouseOverForeground="{StaticResource NormalWhite}"
                      AduAttach:ForegroundAttach.HighlightForeground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date2" Margin="4" Width="200" 
-                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" CornerRadius="3"
+                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28"
                      AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date3" Margin="4" Width="200"
-                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" CornerRadius="3" IsShowShortCuts="True" 
+                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" IsShowShortCuts="True" 
                      AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date4" Margin="4" Width="200" 
                      VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" Type="SingleDateRange"
-                     CornerRadius="3" DateStringFormat="yyyy/MM/dd" IsShowShortCuts="True" 
+                     DateStringFormat="yyyy/MM/dd" IsShowShortCuts="True" 
                      AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date5" HorizontalAlignment="Left" Margin="4" Width="240" 
-                     VerticalAlignment="Center" Height="28" Type="SingleDateRange" CornerRadius="3"
+                     VerticalAlignment="Center" Height="28" Type="SingleDateRange"
                      AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date6" HorizontalAlignment="Left" Margin="4" Width="240" 
-                     VerticalAlignment="Center" Height="28" Type="SingleDateRange" CornerRadius="3"
+                     VerticalAlignment="Center" Height="28" Type="SingleDateRange"
                      AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                </StackPanel>
             </Border>

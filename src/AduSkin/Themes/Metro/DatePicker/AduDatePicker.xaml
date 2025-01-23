@@ -150,7 +150,6 @@
       <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource NormalBrush}"/>
       <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource NormalBrush}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
-      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
       <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>
       <Setter Property="Padding" Value="5,0,0,0"/>
@@ -165,12 +164,12 @@
                      Background="{TemplateBinding Background}"
                      BorderBrush="{StaticResource NormalBorderBrush}"
                      BorderThickness="{TemplateBinding BorderThickness}"
-                     CornerRadius="{TemplateBinding CornerRadius}" 
+                     CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                      UseLayoutRounding="True"/>
                   <Border x:Name="showborder" 
                      BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" 
-                     CornerRadius="{TemplateBinding CornerRadius}" Visibility="Collapsed"/>
+                     CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Visibility="Collapsed"/>
                   <Grid x:Name="PART_Root" Margin="1"
                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
@@ -179,9 +178,8 @@
                         <ColumnDefinition Width="Auto" />
                      </Grid.ColumnDefinitions>
                      <DatePickerTextBox x:Name="PART_TextBox_New"
-                           HorizontalContentAlignment="Stretch"
-                           Padding="{TemplateBinding Padding}"
-                           VerticalContentAlignment="Center"
+                           HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center"
+                           Padding="{TemplateBinding Padding}" 
                            AduAttach:BorderAttach.CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
                            BorderBrush="{StaticResource NormalBorderBrush}"
                            Focusable="{TemplateBinding Focusable}"

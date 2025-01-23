@@ -351,19 +351,6 @@ namespace AduSkin.Controls.Metro
 
       #endregion
 
-      #region CornerRadius
-
-      public CornerRadius CornerRadius
-      {
-         get { return (CornerRadius)GetValue(CornerRadiusProperty); }
-         set { SetValue(CornerRadiusProperty, value); }
-      }
-
-      public static readonly DependencyProperty CornerRadiusProperty =
-          DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(AduDatePicker));
-
-      #endregion
-
       #region IsShowConfirm
       /// <summary>
       /// 获取或设置是否显示确认按钮
