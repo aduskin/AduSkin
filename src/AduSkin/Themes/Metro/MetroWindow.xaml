@@ -4,7 +4,7 @@
     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
     xmlns:Shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml" />
    </ResourceDictionary.MergedDictionaries>
 
    <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
@@ -19,38 +19,27 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Button}">
                <Grid>
-                  <Rectangle
-                            x:Name="backRectangle"
-                            Fill="{TemplateBinding Background}"
-                            Opacity="0"/>
+                  <Rectangle x:Name="backRectangle"
+                            Fill="{TemplateBinding Background}" Opacity="0"/>
                   <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                   <VisualStateManager.VisualStateGroups>
                      <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
                            <Storyboard>
-                              <DoubleAnimation
-                                            Storyboard.TargetName="backRectangle"
-                                            Storyboard.TargetProperty="(UIElement.Opacity)"
-                                            To="0"
-                                            Duration="0:0:0.1" />
+                              <DoubleAnimation Storyboard.TargetName="backRectangle"  Storyboard.TargetProperty="(UIElement.Opacity)"
+                                            To="0" Duration="0:0:0.1" />
                            </Storyboard>
                         </VisualState>
                         <VisualState x:Name="MouseOver">
                            <Storyboard>
-                              <DoubleAnimation
-                                            Storyboard.TargetName="backRectangle"
-                                            Storyboard.TargetProperty="(UIElement.Opacity)"
-                                            To="0.15"
-                                            Duration="0:0:0.1" />
+                              <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)"
+                                            To="0.15" Duration="0:0:0.1" />
                            </Storyboard>
                         </VisualState>
                         <VisualState x:Name="Pressed">
                            <Storyboard>
-                              <DoubleAnimation
-                                            Storyboard.TargetName="backRectangle"
-                                            Storyboard.TargetProperty="(UIElement.Opacity)"
-                                            To="0.05"
-                                            Duration="0:0:0.1" />
+                              <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)"
+                                            To="0.05" Duration="0:0:0.1" />
                            </Storyboard>
                         </VisualState>
                         <VisualState x:Name="Disabled" />
@@ -66,12 +55,12 @@
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
 
-      <Setter Property="Background" Value="#FFF3F3F3" />
+      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
       <Setter Property="WindowStyle" Value="SingleBorderWindow" />
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
-      <Setter Property="Foreground" Value="#FF000000" />
-      <Setter Property="TitleForeground" Value="#ffffff" />
-      <Setter Property="SysButtonColor" Value="#ffffff" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
+      <Setter Property="TitleForeground" Value="{StaticResource NormalWhite}" />
+      <Setter Property="SysButtonColor" Value="{StaticResource NormalWhite}" />
       <Setter Property="Icon" Value="/AduSkin;component/Resources/logo.ico" />
       <Setter Property="BorderThickness" Value="1" />
 
@@ -104,7 +93,7 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroWindow}">
                <Border x:Name="PART_WindowBorder" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                  <Grid Background="{StaticResource DefaultWhiteBrush}" x:Name="WindowGrid">
+                  <Grid Background="{StaticResource NormalWhite}" x:Name="WindowGrid">
                      <Border Margin="-1" BorderBrush="#000000" BorderThickness="{Binding BorderThickness, ElementName=border}" Opacity="0.15" />
                      <Grid x:Name="WIdowGrid">
                         <Grid.RowDefinitions>

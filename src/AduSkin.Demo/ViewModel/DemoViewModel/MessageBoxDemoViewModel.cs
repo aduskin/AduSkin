@@ -13,7 +13,7 @@ namespace AduSkin.Demo.ViewModel
       /// 命令Command
       /// </summary>
       [RelayCommand]
-      private void OpenMessageBox(string? e)
+      private void OpenMessageBox(string e)
       {
          switch (e)
          {

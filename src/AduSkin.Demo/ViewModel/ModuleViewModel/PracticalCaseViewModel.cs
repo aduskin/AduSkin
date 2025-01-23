@@ -1,7 +1,7 @@
 using AduSkin.Demo.Data.Enum;
 using AduSkin.Demo.Models;
 using AduSkin.Demo.UserControls;
-using CommunityToolkit.Mvvm.ComponentModel; 
+using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,15 +11,15 @@ using System.Windows.Data;
 
 namespace AduSkin.Demo.ViewModel
 {
-   public class PracticalCaseViewModel: ObservableObject
+   public class PracticalCaseViewModel : ObservableObject
    {
       public PracticalCaseViewModel()
       {
          #region 工具栏
-         _AllTool = new List<ControlModel>()
+         AllTool = new List<ControlModel>()
          {
             //new ControlModel("百度翻译", typeof(BaiduTranslate),DemoType.Tool),
-            new ControlModel("接口调试工具", typeof(HttpTool),DemoType.Tool,ControlState.InDev),
+            new ControlModel("接口调试工具", typeof(HttpTool), DemoType.Tool, ControlState.InDev),
          };
          _SearchTool.Source = _AllTool;
          _SearchTool.View.Culture = new System.Globalization.CultureInfo("zh-CN");
@@ -28,7 +28,7 @@ namespace AduSkin.Demo.ViewModel
          #endregion
 
          #region 实用控件
-         _AllControl = new List<ControlModel>()
+         AllControl = new List<ControlModel>()
          {
             new ControlModel("Win10菜单", typeof(SortGroup)),
             new ControlModel("图片上传", typeof(UploadPic)),
@@ -36,20 +36,20 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("折叠菜单", typeof(ExpanderMenu)),
             new ControlModel("导航容器", typeof(NavigationPanel)),
             new ControlModel("轮播容器", typeof(CarouselContainer)),
-            new ControlModel("封面流", typeof(CoverFlowDemo),DemoType.Demo,ControlState.New),
+            new ControlModel("封面流", typeof(CoverFlowDemo), DemoType.Demo, ControlState.New),
             new ControlModel("时间轴", typeof(TimeLine)),
-            new ControlModel("时间线", typeof(TimeBarDemo),DemoType.Demo,ControlState.New),
+            new ControlModel("时间线", typeof(TimeBarDemo), DemoType.Demo, ControlState.New),
             new ControlModel("树形菜单", typeof(TreeMenu)),
-            new ControlModel("数据列表", typeof(DataGridDemo),DemoType.Demo),
+            new ControlModel("数据列表", typeof(DataGridDemo), DemoType.Demo),
             new ControlModel("多功能Tab", typeof(MultiFunctionTabControl)),
-            new ControlModel("右键菜单", typeof(ContextMenuDemo),DemoType.Demo),
+            new ControlModel("右键菜单", typeof(ContextMenuDemo), DemoType.Demo),
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
-            new ControlModel("过渡容器", typeof(TransitioningContentControlDemo),DemoType.Demo),
-            new ControlModel("消息弹框", typeof(MessageBoxDemo),DemoType.Demo,ControlState.New),
+            new ControlModel("过渡容器", typeof(TransitioningContentControlDemo), DemoType.Demo),
+            new ControlModel("消息弹框", typeof(MessageBoxDemo), DemoType.Demo, ControlState.New),
          };
-         _SearchControl.Source= _AllControl;
+         _SearchControl.Source = _AllControl;
          _SearchControl.View.Culture = new System.Globalization.CultureInfo("zh-CN");
-         _SearchControl.View.Filter = (obj) => ((obj as ControlModel).Title+ (obj as ControlModel).TitlePinyin).ToLower().Contains(SearchKey.ToLower());
+         _SearchControl.View.Filter = (obj) => ((obj as ControlModel).Title + (obj as ControlModel).TitlePinyin).ToLower().Contains(SearchKey.ToLower());
          _SearchControl.View.SortDescriptions.Add(new SortDescription(nameof(ControlModel.Title), ListSortDirection.Ascending));
          #endregion
       }
@@ -61,14 +61,14 @@ namespace AduSkin.Demo.ViewModel
       public int SelectedDemoType
       {
          get { return _SelectedDemoType; }
-         set 
+         set
          {
-            
+
             SetProperty(ref _SelectedDemoType, value);
             if (value == 0)
                CurrentShowControl = _AllControl.First();
             else if (value == 1)
-               CurrentShowTool = _AllTool.First();
+               CurrentShowTool = _AllTool.FirstOrDefault();
             OnPropertyChanged("IsShowCode");
             OnPropertyChanged("SearchKey");
          }
@@ -134,7 +134,7 @@ namespace AduSkin.Demo.ViewModel
       /// </summary>
       public double ShowCodeHeight
       {
-         get 
+         get
          {
             if (CurrentShowControl?.Type == DemoType.Demo && SelectedDemoType == 0)
                return 40;
@@ -160,7 +160,8 @@ namespace AduSkin.Demo.ViewModel
       public ControlModel CurrentShowControl
       {
          get { return _CurrentShowControl; }
-         set {
+         set
+         {
             SetProperty(ref _CurrentShowControl, value);
             OnPropertyChanged("Content");
             OnPropertyChanged("Title");
@@ -193,7 +194,8 @@ namespace AduSkin.Demo.ViewModel
       public int ShowCodeTypeIndex
       {
          get { return _ShowCodeTypeIndex; }
-         set {
+         set
+         {
             SetProperty(ref _ShowCodeTypeIndex, value);
             if (value == 0)
                CurrentShowCode = CurrentShowControl.XAML;
@@ -208,8 +210,8 @@ namespace AduSkin.Demo.ViewModel
       private UserControl _content;
       public UserControl Content
       {
-         get {
-
+         get
+         {
             if (SelectedDemoType == 0)
             {
                if (CurrentShowControl == null)
@@ -221,9 +223,10 @@ namespace AduSkin.Demo.ViewModel
                if (CurrentShowControl == null)
                   return null;
                return (UserControl)Activator.CreateInstance(CurrentShowTool.Content);
-            } 
+            }
          }
-         set { 
+         set
+         {
             SetProperty(ref _content, value);
          }
       }
@@ -233,8 +236,9 @@ namespace AduSkin.Demo.ViewModel
       private string _Title;
       public string Title
       {
-         get {
-            
+         get
+         {
+
             if (SelectedDemoType == 0)
             {
                if (CurrentShowControl == null)
@@ -253,11 +257,12 @@ namespace AduSkin.Demo.ViewModel
       /// <summary>
       /// 搜索关键字
       /// </summary>
-      private string _SearchKey="";
+      private string _SearchKey = "";
       public string SearchKey
       {
-         get {
-            return _SearchKey; 
+         get
+         {
+            return _SearchKey;
          }
          set
          {
@@ -265,9 +270,9 @@ namespace AduSkin.Demo.ViewModel
             if (SelectedDemoType == 0)
                if (_SearchControl != null)
                   _SearchControl.View.Refresh();
-            else if (SelectedDemoType == 1)
-               if (_SearchTool != null)
-                  _SearchTool.View.Refresh();
+               else if (SelectedDemoType == 1)
+                  if (_SearchTool != null)
+                     _SearchTool.View.Refresh();
          }
       }
    }

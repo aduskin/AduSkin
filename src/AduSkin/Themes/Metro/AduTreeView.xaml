@@ -4,7 +4,7 @@
                     xmlns:converter="clr-namespace:AduSkin.Controls.Converter">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <HierarchicalDataTemplate x:Key="ItemNode" ItemsSource="{Binding Children,Mode=TwoWay}">
       <Border x:Name="bg" Background="Transparent" Height="30" Cursor="Hand">
@@ -83,16 +83,16 @@
                      <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter TargetName="itemBackground" Property="Background" Value="{StaticResource Brush}" />
-                     <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
-                     <Setter TargetName="Expander" Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
+                     <Setter TargetName="itemBackground" Property="Background" Value="{StaticResource NormalBrush}" />
+                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+                     <Setter TargetName="Expander" Property="Foreground" Value="{StaticResource NormalWhite}" />
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsFocused" Value="False" />
                         <Condition SourceName="ItemRoot" Property="IsMouseOver" Value="true" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="itemBackground" Property="Background" Value="{StaticResource Brush}" />
+                     <Setter TargetName="itemBackground" Property="Background" Value="{StaticResource NormalBrush}" />
                      <Setter TargetName="itemBackground" Property="Opacity" Value=".15" />
                   </MultiTrigger>
                   <Trigger Property="IsEnabled" Value="False">

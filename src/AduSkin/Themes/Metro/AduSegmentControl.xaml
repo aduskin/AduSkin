@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
-      <ResourceDictionary Source="pack://application:,,,/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <Style TargetType="{x:Type Adu:AduSegmentItem}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -22,7 +22,7 @@
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter Property="Foreground" Value="White" />
+                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
                      <Setter TargetName="PART_ItemBorder" Property="Background" Value="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
                   </Trigger>
                   <Trigger Property="IsFirstItem" Value="True">
@@ -42,16 +42,16 @@
 
    <SolidColorBrush x:Key="ListBox.Static.Background" Color="Transparent" />
    <SolidColorBrush x:Key="ListBox.Static.Border" Color="#0079FF" />
-   <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF" />
+   <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="{DynamicResource WhiteColor}" />
    <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9" />
 
    <Style TargetType="{x:Type Adu:AduSegmentControl}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="Padding" Value="-1,-1" />
       <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}" />
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
       <Setter Property="BorderThickness" Value="1,1,1,1" />
-      <Setter Property="Foreground" Value="{StaticResource Brush}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}" />
       <Setter Property="FontFamily" Value="微软雅黑" />
       <Setter Property="FontSize" Value="12" />
       <Setter Property="CornerRadius" Value="5" />

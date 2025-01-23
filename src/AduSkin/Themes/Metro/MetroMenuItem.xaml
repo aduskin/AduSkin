@@ -3,7 +3,7 @@
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--子菜单-->
    <Style TargetType="{x:Type Metro:MetroMenuItem}">

@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:controls="clr-namespace:AduSkin.Controls.Tools.Extension">
@@ -14,7 +14,7 @@
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Opacity=".6" SnapsToDevicePixels="true" Stroke="#fff" StrokeThickness="2" StrokeDashArray="1 1"/>
+                    <Rectangle Opacity=".6" SnapsToDevicePixels="true" Stroke="{DynamicResource NormalWhite}" StrokeThickness="2" StrokeDashArray="1 1"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -69,7 +69,7 @@
                     <Condition Property="IsSelected" Value="true"/>
                     <Condition Property="Selector.IsSelectionActive" Value="false"/>
                 </MultiTrigger.Conditions>
-                <Setter Property="Background" Value="{DynamicResource DarkDefaultBrush}"/>
+                <Setter Property="Background" Value="{DynamicResource DarkNormalBrush}"/>
                 <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
             </MultiTrigger>
             <Trigger Property="IsEnabled" Value="false">

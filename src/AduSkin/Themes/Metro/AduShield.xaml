@@ -2,14 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style  TargetType="{x:Type Adu:AduShield}">
         <Setter Property="Height" Value="20"/>
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Foreground" Value="#FFF"/>
+        <Setter Property="Foreground" Value="{DynamicResource NormalWhite}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="BorderBrush" Value="#FFF"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalWhite}"/>
         <Setter Property="Color" Value="{StaticResource  Brush}"/>
         <Setter Property="Template">
             <Setter.Value>

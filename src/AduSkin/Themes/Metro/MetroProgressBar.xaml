@@ -3,7 +3,7 @@
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Converter:CornerRadiusToDouble x:Key="CornerRadiusToDouble"/>

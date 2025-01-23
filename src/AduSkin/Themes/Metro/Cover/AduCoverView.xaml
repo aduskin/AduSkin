@@ -2,6 +2,10 @@
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro">
 
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
    <Style x:Key="CoverViewItemBaseStyle" TargetType="AduSkin:AduCoverViewItem">
       <Setter Property="Focusable" Value="False"/>
       <Setter Property="Template">

@@ -26,20 +26,19 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid Height="300">
-        <ListBox x:Name="ListBoxContact" BorderBrush="{StaticResource DefaultBorderBrush}" Width="300" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding ContactList}" Style="{StaticResource StackPanelVerticalListBox}" SelectedItem="{Binding CurrentChatUserModel}">
+        <ListBox x:Name="ListBoxContact" BorderBrush="{StaticResource NormalBorderBrush}" Width="300" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" Style="{StaticResource StackPanelVerticalListBox}" 
+                 ItemsSource="{Binding ContactList}" SelectedItem="{Binding CurrentChatUserModel}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Adu:AduContactItem HeaderImage="{Binding Header}" Style="{DynamicResource ContactItem}" Type="{Binding ContactType}" UserName="{Binding UserName}" SortID="{Binding SortID}"/>
+                    <Adu:AduContactItem HeaderImage="{Binding Header}" Style="{DynamicResource ContactItem}" 
+                           Type="{Binding ContactType}" UserName="{Binding UserName}" SortID="{Binding SortID}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Border Background="#F5F6FA" Visibility="{Binding IsOpenSortList,Converter={StaticResource BoolToVisibility}}" Width="300">
-            <ItemsControl
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                ItemsSource="{Binding SortID}" 
-                Margin="40"
-                FocusVisualStyle="{x:Null}">
+        <Border Background="{StaticResource NormalWhite}" Visibility="{Binding IsOpenSortList,Converter={StaticResource BoolToVisibility}}" Width="300">
+         <ItemsControl ItemsSource="{Binding SortID}" 
+                VerticalAlignment="Center"  HorizontalAlignment="Center" Margin="40" FocusVisualStyle="{x:Null}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel />
@@ -47,8 +46,10 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Adu:AduFlatButton Width="40" Margin="5,5" Height="40" Background="Transparent" FontSize="20" FontWeight="Light" Foreground="#666" Content="{Binding SortID}" Command="{Binding  Path=ToGroup,ElementName=ListSortGroup}" CommandParameter="{Binding}"></Adu:AduFlatButton>
-                    </DataTemplate>
+                  <Adu:AduFlatButton Width="40" Margin="5,5" Height="40" Background="{StaticResource NormalTransparentBrush}" 
+                                           FontSize="20" FontWeight="Light" Foreground="{StaticResource NormalBlack}" Content="{Binding SortID}"
+                                           Command="{Binding  Path=ToGroup,ElementName=ListSortGroup}" CommandParameter="{Binding}"/>
+               </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </Border>

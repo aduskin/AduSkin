@@ -2,92 +2,89 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:AduPicker="clr-namespace:AduSkin.Controls.Metro"
                      xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
-   <SolidColorBrush x:Key="Control.Static.Foreground" Color="#DCDCDE" />
-   <SolidColorBrush x:Key="Control.Static.Background" Color="#2C2C3A" />
-   <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#393947" />
-   <SolidColorBrush x:Key="Item.MouseOver.Foreground" Color="#DCDCDE" />
-   <SolidColorBrush x:Key="Item.Selected.Background" Color="#C54955" />
-   <SolidColorBrush x:Key="Item.Selected.Foreground" Color="#FFFFFF" />
-   <SolidColorBrush x:Key="Item.Disabled.Foreground" Color="#7D7D85" />
-   <SolidColorBrush x:Key="Calendar.WeekHeader.Foreground" Color="#76767E" />
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type AduPicker:AduCalendarDayButton}">
       <Setter Property="MinWidth" Value="28" />
       <Setter Property="MinHeight" Value="28" />
       <Setter Property="FontSize" Value="12" />
+      <Setter Property="Margin" Value="1" />
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="#05FFFFFF"/>
-      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="#20000000"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="#10FFFFFF"/>
+      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="{StaticResource NormalWhite10}"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource NormalBlack20}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalWhite10}"/>
       <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="#DCDCDE"/>
-      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="#FFF"/>
-      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="#FFF"/>
-      <Setter Property="Margin" Value="1" />
-      <Setter Property="Foreground" Value="{DynamicResource Control.Static.Foreground}" />
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduPicker:AduCalendarDayButton}">
-               <Grid MinWidth="{TemplateBinding MinWidth}"
-                          MinHeight="{TemplateBinding MinHeight}"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Background="{TemplateBinding Background}">
+               <Grid MinWidth="{TemplateBinding MinWidth}" MinHeight="{TemplateBinding MinHeight}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Background="{TemplateBinding Background}">
                   <Border x:Name="HighlightBackground" Margin="-1,1" />
-
                   <Border x:Name="border"
-                            Margin="{TemplateBinding Margin}"
-                            CornerRadius="14"
-                            SnapsToDevicePixels="True"
-                            UseLayoutRounding="True" />
+                        Margin="{TemplateBinding Margin}"
+                        CornerRadius="14"
+                        SnapsToDevicePixels="True"
+                        UseLayoutRounding="True" />
                   <Border x:Name="SelectedBackground"
-                            Margin="{TemplateBinding Margin}"
-                            CornerRadius="3" />
+                        Margin="{TemplateBinding Margin}"
+                        CornerRadius="3" />
                   <Border x:Name="TodayBackground"
-                            Width="6"
-                            Height="6"
-                            Margin="0,2,2,0"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Top"
-                            CornerRadius="100"
-                            SnapsToDevicePixels="True"
-                            UseLayoutRounding="True" />
+                        Width="6"
+                        Height="6"
+                        Margin="0,2,2,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        CornerRadius="100"
+                        SnapsToDevicePixels="True"
+                        UseLayoutRounding="True" />
                   <ContentPresenter x:Name="NormalText"
-                            Margin="{TemplateBinding Padding}"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        Margin="{TemplateBinding Padding}"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.MouseOverBackground)}" />
-                     <Setter Property="Foreground" Value="#FFF" />
+                     <Setter TargetName="border" Property="Background" 
+                        Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.MouseOverBackground)}" />
+                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
                      <Setter Property="Cursor" Value="Hand" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter TargetName="SelectedBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}" />
-                     <Setter Property="Foreground" Value="#FFF" />
+                     <Setter TargetName="SelectedBackground" Property="Background" 
+                        Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}" />
+                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
                   </Trigger>
                   <Trigger Property="IsBelongCurrentMonth" Value="False">
                      <Setter Property="Opacity" Value=".4" />
                   </Trigger>
                   <Trigger Property="IsHighlight" Value="True">
-                     <Setter TargetName="HighlightBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.HighlightBackground)}" />
-                     <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}" />
+                     <Setter TargetName="HighlightBackground" Property="Background" 
+                        Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.HighlightBackground)}" />
+                     <Setter Property="Foreground" 
+                        Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}" />
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsSelected" Value="False" />
                         <Condition Property="IsToday" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="TodayBackground" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}" />
+                     <Setter TargetName="TodayBackground" Property="Background" 
+                        Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsSelected" Value="True" />
                         <Condition Property="IsToday" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="TodayBackground" Property="Background" Value="#FFFFFF" />
+                     <Setter TargetName="TodayBackground" Property="Background" Value="{StaticResource NormalWhite}" />
                   </MultiTrigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>

@@ -12,7 +12,7 @@
     Height="450" 
     MinHeight="300" 
     BorderThickness="1"
-    BorderBrush="{StaticResource DefaultBrush}"
+    BorderBrush="{StaticResource NormalBrush}"
     Width="800" 
     TitleForeground="#444"
     MinWidth="600" Closed="AduWindow_Closed">

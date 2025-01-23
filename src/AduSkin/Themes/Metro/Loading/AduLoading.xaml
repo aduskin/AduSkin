@@ -4,7 +4,7 @@
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
 
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
       <ResourceDictionary Source="DoubleRound.xaml"/>
       <ResourceDictionary Source="SingleRound.xaml"/>
       <ResourceDictionary Source="Cogs.xaml"/>
@@ -17,13 +17,13 @@
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type AduSkin:AduLoading}">
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_LoadingRotate}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="20"/>
       <Setter Property="Background" Value="Transparent" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="Foreground" Value="{StaticResource Brush}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}" />
       <Setter Property="Width" Value="40" />
       <Setter Property="Height" Value="40" />
       <Setter Property="VerticalAlignment" Value="Center" />

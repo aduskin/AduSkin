@@ -9,7 +9,7 @@
     Title="AduSkin.Demo" MinWidth="600" MinHeight="350"
     d:DesignHeight="1200" d:DesignWidth="1600"
     BorderThickness="0"
-    Background="#FFF" mc:Ignorable="d" >
+    Background="{DynamicResource NormalWhite}" mc:Ignorable="d" >
    <Window.DataContext>
       <vm:MainViewModel/>
    </Window.DataContext>
@@ -62,7 +62,7 @@
       </Metro:MetroContextMenu>
    </Metro:MetroWindow.ContextMenu>
    <Grid Background="{Binding MainBackground}">
-      <Metro:AduTabControl Background="#FFF" SelectedIndex="{Binding SelectedModularIndex}">
+      <Metro:AduTabControl Background="{DynamicResource NormalWhite}" SelectedIndex="{Binding SelectedModularIndex}">
          <Metro:AduTabControl.Resources>
             <Style TargetType="TabPanel">
                <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -73,24 +73,22 @@
             </Style>
          </Metro:AduTabControl.Resources>
          <Metro:AduTabItem Header="实用案例">
-            <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,1,0,0">
+            <Border BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,1,0,0">
                <ContentControl  Content="{Binding PracticalCase}"/>
             </Border>
          </Metro:AduTabItem>
          <Metro:AduTabItem Header="常用控件">
-            <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,1,0,0">
+            <Border BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,1,0,0">
                <ContentControl Content="{Binding CommonControlCase}"/>
             </Border>
          </Metro:AduTabItem>
          <Metro:AduTabItem Header="关于AduSkin">
-            <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="0,0,0,0">
+            <Border BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,0,0,0">
                <ContentControl Content="{Binding AduSkinAbout}"/>
             </Border>
          </Metro:AduTabItem>
          <Metro:AduTabItem Header="技术支持">
-            <Border >
-               <ContentControl Content="{Binding AduSkinSupport}"/>
-            </Border>
+            <ContentControl Content="{Binding AduSkinSupport}"/>
          </Metro:AduTabItem>
       </Metro:AduTabControl>
    </Grid>

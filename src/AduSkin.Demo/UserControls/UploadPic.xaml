@@ -12,7 +12,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
       <Adu:AduPathIconButton Click="AduPathIconButton_Click" 
-                             AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource DefaultBrush}" 
+                             AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource NormalBrush}" 
                              AduAttach:PathBrushAttach.PressedPathColor="{StaticResource DefaultMouseOverBrush}"
                              AduAttach:PathDataAttach.Width="50"
                              AduAttach:PathDataAttach.PathData="{StaticResource Icon_InsertImage}" 
@@ -32,7 +32,7 @@
                             </Border>
                             <Border x:Name="delete" Visibility="Collapsed" Background="#50000000">
                                 <Adu:AduPathIconButton Click="Delete_Click"
-                                                       AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource DefaultBrush}" 
+                                                       AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource NormalBrush}" 
                                                        AduAttach:PathBrushAttach.PressedPathColor="{StaticResource DefaultMouseOverBrush}" 
                                                        AduAttach:PathDataAttach.Width="30" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Delete}"/>
                             </Border>

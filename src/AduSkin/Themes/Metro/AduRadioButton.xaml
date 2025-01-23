@@ -3,28 +3,28 @@
                     xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <!--多选按钮-->
    <Style TargetType="{x:Type AduSkin:AduRadioButton}">
-      <Setter Property="Foreground" Value="{StaticResource Brush}"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="FontSize" Value="12"/>
-      <Setter Property="Background" Value="{StaticResource DefaultTransparent}"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource DefaultTransparent}"/>
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}"/>
-      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource Brush}"/>
-      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{StaticResource Brush}"/>
-      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource Brush}"/> 
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalTransparentBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource NormalBrush}"/> 
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_SingleNoChecked}"/>
       <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{StaticResource Icon_SingleChecked}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="14"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="4,0"/>
       <Setter Property="AduAttach:PathDataAttach.Visibility" Value="Visible"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0"/>
-      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{StaticResource DefaultTransparent}"/>
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0"/>
       <Setter Property="Template">
          <Setter.Value>

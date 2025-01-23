@@ -3,7 +3,7 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--调整列头宽度样式-->
@@ -72,7 +72,7 @@
                   </MultiTrigger>
                   <!--可排序列鼠标样式-->
                   <Trigger Property="CanUserSort" Value="True">
-                     <Setter Property="Cursor" Value="Hand"></Setter>
+                     <Setter Property="Cursor" Value="Hand"/>
                   </Trigger>
                   <!--升序-->
                   <Trigger Property="SortDirection" Value="Ascending">
@@ -100,7 +100,7 @@
       <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource SelectedBackground}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="Foreground" Value="#000" />
-      <Setter Property="Background" Value="#FFF" />
+      <Setter Property="Background" Value="{DynamicResource NormalWhite}" />
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="Margin" Value="0,2" />
       <Setter Property="Height" Value="Auto"/>
@@ -251,7 +251,7 @@
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="AlternationCount" Value="2"/>
       <Setter Property="MinRowHeight" Value="25" />
-      <Setter Property="Background" Value="{StaticResource DefaultWhiteBrush}" />
+      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="RowHeaderWidth" Value="0"/>
@@ -286,7 +286,7 @@
                                 Background="{TemplateBinding Background}" 
                                 Padding="{TemplateBinding Padding}" 
                                 BorderThickness="{TemplateBinding BorderThickness}">
-                           <Rectangle Fill="{StaticResource DefaultBorderBrush}" 
+                           <Rectangle Fill="{StaticResource NormalBorderBrush}" 
                                       Height="{TemplateBinding Height}" 
                                       Width="{TemplateBinding Width}" />
                         </Border>
@@ -313,11 +313,11 @@
                         VerticalAlignment="Center"
                         Visibility="{TemplateBinding AduAttach:PlaceHolderAttach.PlaceHolderVisible}">
                         <Path x:Name="placeholder" Data="{TemplateBinding AduAttach:PlaceHolderAttach.PathData}" 
-                              Fill="{StaticResource PlaceHolderColor}"
+                              Fill="{StaticResource PlaceHolderBrush}"
                               Stretch="Uniform" Width="80" Height="80"/>
                         <TextBlock x:Name="message"
                            FontSize="15"
-                           Foreground="{StaticResource PlaceHolderColor}"
+                           Foreground="{StaticResource PlaceHolderBrush}"
                            HorizontalAlignment="Center"
                            Margin="0,20"
                            Text="{TemplateBinding AduAttach:PlaceHolderAttach.Message}" />

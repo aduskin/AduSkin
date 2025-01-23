@@ -3,7 +3,7 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml" />
    </ResourceDictionary.MergedDictionaries>
    <SolidColorBrush x:Key="UpDownButton.Static.Background">#0037BC9B</SolidColorBrush>
    <SolidColorBrush x:Key="UpDownButton.Static.Foreground">#B299A5</SolidColorBrush>
@@ -164,7 +164,7 @@
          <Border x:Name="border" 
                  CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                  Background="{TemplateBinding Background}" 
-                 BorderBrush="{StaticResource DefaultControlBorder}" 
+                 BorderBrush="{StaticResource NormalBorderBrush}" 
                  BorderThickness="{TemplateBinding BorderThickness}" 
                  SnapsToDevicePixels="True"/>
          <Border x:Name="bordermove" 
@@ -209,9 +209,9 @@
                   <RowDefinition Height="1" />
                   <RowDefinition Height="*" />
                </Grid.RowDefinitions>
-               <Rectangle x:Name="leftBorder" Grid.Column="0" Grid.RowSpan="3" Fill="{StaticResource DefaultControlBorder}" Margin="0,0,0,1"/>
+               <Rectangle x:Name="leftBorder" Grid.Column="0" Grid.RowSpan="3" Fill="{StaticResource NormalBorderBrush}" Margin="0,0,0,1"/>
                <Button x:Name="PART_UP" Grid.Column="1" Style="{StaticResource UpButtonStyle}" />
-               <Rectangle x:Name="centerBorder" Grid.Column="1" Grid.Row="1" Fill="{StaticResource DefaultControlBorder}" Margin="0,0,1,0"/>
+               <Rectangle x:Name="centerBorder" Grid.Column="1" Grid.Row="1" Fill="{StaticResource NormalBorderBrush}" Margin="0,0,1,0"/>
                <Button x:Name="PART_DOWN" Grid.Column="1" Grid.Row="2" Style="{StaticResource DownButtonStyle}" />
             </Grid>
          </Grid>
@@ -254,7 +254,7 @@
          <Border x:Name="border" 
               CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
               Background="{TemplateBinding Background}" 
-              BorderBrush="{StaticResource DefaultControlBorder}" 
+              BorderBrush="{StaticResource NormalBorderBrush}" 
               BorderThickness="{TemplateBinding BorderThickness}" 
               SnapsToDevicePixels="True"/>
          <Border x:Name="bordermove" 
@@ -282,9 +282,9 @@
                   <Path Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Left" Data="M0,0 5,5 10,0Z" Fill="{Binding TipBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                </Grid>
             </Popup>
-            <Button x:Name="PART_DOWN" Grid.Column="0" Style="{StaticResource DecreaseButtonStyle}" BorderThickness="0,0,1,0" BorderBrush="{StaticResource DefaultControlBorder}"/>
+            <Button x:Name="PART_DOWN" Grid.Column="0" Style="{StaticResource DecreaseButtonStyle}" BorderThickness="0,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}"/>
             <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"  Margin="4,0"/>
-            <Button x:Name="PART_UP" Grid.Column="2" Style="{StaticResource AddButtonStyle}" BorderThickness="1,0,0,0" BorderBrush="{StaticResource DefaultControlBorder}"/>
+            <Button x:Name="PART_UP" Grid.Column="2" Style="{StaticResource AddButtonStyle}" BorderThickness="1,0,0,0" BorderBrush="{StaticResource NormalBorderBrush}"/>
          </Grid>
       </Grid>
 
@@ -312,8 +312,8 @@
 
    <!--  控件样式，以UpDownOrientation来控制控件呈现方式  -->
    <Style TargetType="{x:Type Adu:AduNumericUpDownBase}">
-      <Setter Property="Background" Value="{StaticResource DefaultWhiteBrush}" />
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
+      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="HorizontalContentAlignment" Value="Left" />

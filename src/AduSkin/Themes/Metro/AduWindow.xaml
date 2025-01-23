@@ -4,7 +4,7 @@
     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
     xmlns:Shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml" />
    </ResourceDictionary.MergedDictionaries>
 
    <Style x:Key="SysButtonBaseStyle" TargetType="{x:Type Button}">
@@ -28,7 +28,7 @@
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="backRectangle" Property="Opacity" Value=".4" />
-                     <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
+                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -47,7 +47,7 @@
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="backRectangle" Property="Opacity" Value="1" />
-                     <Setter TargetName="path" Property="Fill" Value="{StaticResource DefaultWhiteBrush}" />
+                     <Setter TargetName="path" Property="Fill" Value="{StaticResource NormalWhite}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -58,9 +58,9 @@
    <Style TargetType="{x:Type Metro:AduWindow}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
-      <Setter Property="SysButtonColor" Value="{StaticResource Brush}" />
-      <Setter Property="Background" Value="#FFF3F3F3" />
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
+      <Setter Property="SysButtonColor" Value="{StaticResource NormalBrush}" />
+      <Setter Property="Background" Value="{DynamicResource NormalWhite}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
       <Setter Property="Foreground" Value="#FF000000" />
       <Setter Property="SysButtonMargin" Value="10" />
       <Setter Property="Icon" Value="/AduSkin;component/Resources/logo.ico" />
@@ -96,7 +96,7 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:AduWindow}">
                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                  <Grid Background="#ffffff">
+                  <Grid Background="{DynamicResource NormalWhite}">
                      <Border Margin="-1" BorderBrush="#000000"  BorderThickness="{Binding BorderThickness, ElementName=border}" Opacity="0.15" />
                      <Grid x:Name="windowGrid" Background="{TemplateBinding Background}">
                         <AdornerDecorator>
@@ -116,7 +116,7 @@
                                     Stretch="Uniform" Data="{StaticResource Icon_SystemRestore}" />
                            </Button>
                            <Button x:Name="PART_CloseButton" Style="{StaticResource SysCloseButtonStyle}"
-                                                Background="{StaticResource Brush}" Foreground="{TemplateBinding SysButtonColor}"/>
+                                                Background="{StaticResource NormalBrush}" Foreground="{TemplateBinding SysButtonColor}"/>
                         </StackPanel>
                         <Rectangle x:Name="disableRectangle" Grid.RowSpan="2" Grid.ColumnSpan="4" Fill="#FF000000" IsHitTestVisible="False" Opacity="0" />
                      </Grid>

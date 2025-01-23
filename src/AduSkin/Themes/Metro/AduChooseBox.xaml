@@ -2,12 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
-   </ResourceDictionary.MergedDictionaries>
-   <PathGeometry x:Key="icon" Figures="M147.01175 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273 44.792159 0 81.109296-36.329417 81.109296-81.108273C228.121046 467.194538 191.804932 430.890704 147.01175 430.890704zM511.999488 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273 44.792159 0 81.109296-36.329417 81.109296-81.108273C593.108784 467.194538 556.791647 430.890704 511.999488 430.890704zM876.987227 430.890704c-44.791136 0-81.108273 36.303834-81.108273 81.109296 0 44.778856 36.316114 81.108273 81.108273 81.108273s81.108273-36.329417 81.108273-81.108273C958.094476 467.194538 921.778362 430.890704 876.987227 430.890704z" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries> 
    <Style TargetType="{x:Type Adu:AduChooseBox}">
-      <Setter Property="Background" Value="White" />
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
+      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="CornerRadius" Value="2" />
       <Setter Property="FontSize" Value="12" />
@@ -27,7 +26,8 @@
                      <ColumnDefinition Width="*" />
                      <ColumnDefinition Width="auto" />
                   </Grid.ColumnDefinitions>
-                  <Border x:Name="border" Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="#FF000000" Opacity="0.15"/>
+                  <Border x:Name="border" Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}"
+                     CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{StaticResource NormalBlack}" Opacity="0.15"/>
                   <Border x:Name="bordermove" Grid.ColumnSpan="2" Opacity="0"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -36,13 +36,14 @@
                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                         UseLayoutRounding="{TemplateBinding UseLayoutRounding}"/>
                   <ScrollViewer x:Name="PART_ContentHost" Grid.Column="0"
-                                          Margin="{TemplateBinding Padding}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalScrollBarVisibility="Hidden"
-                                          VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}" />
-                  <Button x:Name="PART_ChooseButton" Grid.Column="1" Width="{TemplateBinding ChooseButtonWidth}" Foreground="{TemplateBinding BorderBrush}"
-                                    Style="{TemplateBinding ChooseButtonStyle}" />
+                        Margin="{TemplateBinding Padding}"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        HorizontalScrollBarVisibility="Hidden"
+                        VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}" />
+                  <Button x:Name="PART_ChooseButton" Grid.Column="1" Width="{TemplateBinding ChooseButtonWidth}" 
+                        Foreground="{TemplateBinding BorderBrush}"
+                        Style="{TemplateBinding ChooseButtonStyle}" />
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsKeyboardFocused" Value="true">
@@ -63,11 +64,9 @@
                <Setter Property="Template">
                   <Setter.Value>
                      <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}">
-                           <Path x:Name="icon" Data="{StaticResource icon}" Width="12" Fill="#50000000" Stretch="Uniform"
-                                          HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                           <Path x:Name="icon" Data="{StaticResource Icon_ChooseFile}" Width="12" Fill="#50000000" Stretch="Uniform"
+                              HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                            <Trigger Property="IsMouseOver" Value="True">

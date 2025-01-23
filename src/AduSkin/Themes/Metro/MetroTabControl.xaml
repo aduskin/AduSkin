@@ -3,7 +3,7 @@
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Converter:DoubleToThickness x:Key="DoubleToThickness"/>
@@ -39,29 +39,13 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                        <!-- 标题栏模糊效果，自带滚动条（如果内容不需要滚动的时候就用不了了） -->
-                        <!--
-                        <Border x:Name="contentPanel" Grid.RowSpan="2" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
-                            <Metro:MetroScrollViewer x:Name="content" VerticalMargin="{Binding ActualHeight,ElementName=headerPanel,Converter={StaticResource DoubleToThickness},ConverterParameter=Top}">
-                                <Grid Margin="{Binding ActualHeight,ElementName=headerPanel,Converter={StaticResource DoubleToThickness},ConverterParameter=Top}">
-                                    <ContentPresenter ContentSource="SelectedContent" Margin="{TemplateBinding Padding}"/>
-                                </Grid>
-                            </Metro:MetroScrollViewer>
-                        </Border>
-                        -->
-                        <!-- 正常模式 -->
-                        <Border x:Name="contentPanel" Grid.Row="1" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
-                            <ContentPresenter x:Name="content" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}"/>
-                        </Border>
-                        <!--<Rectangle Fill="#f3f3f3"/>-->
-                        <Rectangle/>
-                        <!--
-                        <Metro:MetroVisualElement Visual="{Binding ElementName=contentPanel}" VisualOpacity="0.5" VisualBlurRadius="30" ClipToBounds="True"/>
-                        -->
-                        <Rectangle Height="1" Fill="#888" Opacity="0.1" VerticalAlignment="Bottom"/>
-                        <!--<Rectangle Fill="#ffffff" Opacity="0.5" Margin="0,0,0,1"/>-->
-                        <Rectangle Fill="#ffffff" Opacity="0" Margin="0,0,0,1"/>
+                        </VisualStateManager.VisualStateGroups> 
+                  <Border x:Name="contentPanel" Grid.Row="1" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                     <ContentPresenter x:Name="content" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}"/>
+                  </Border>
+                  <Rectangle/>
+                  <Rectangle Height="1" Fill="#888" Opacity="0.1" VerticalAlignment="Bottom"/>
+                  <Rectangle Fill="{DynamicResource NormalWhite}" Opacity="0" Margin="0,0,0,1"/>
                         <TabPanel x:Name="headerPanel" IsItemsHost="true" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1" Margin="10,0"/>
                     </Grid>
                 </ControlTemplate>

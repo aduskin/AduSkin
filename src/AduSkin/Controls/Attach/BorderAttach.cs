@@ -79,5 +79,17 @@ namespace AduSkin.Controls.Attach
 
       public static CornerRadius GetSetSelectedCornerRadius(DependencyObject element)
           => (CornerRadius)element.GetValue(BorderThicknessProperty);
+
+      /// <summary>
+      /// 边框边距
+      /// </summary>
+      public static readonly DependencyProperty MarginProperty = DependencyProperty.RegisterAttached(
+            "Margin", typeof(Thickness), typeof(BorderAttach));
+
+      public static void SetMargin(DependencyObject element, Thickness value)
+          => element.SetValue(MarginProperty, value);
+
+      public static Thickness GetMargin(DependencyObject element)
+          => (Thickness)element.GetValue(MarginProperty);
    }
 }

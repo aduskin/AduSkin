@@ -3,24 +3,18 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduControls="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
-
-   <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#F3F3F3" />
-   <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da" />
-   <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3DDADADA" />
-   <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA" />
-   <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#3D26A0DA" />
-   <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA" />
-   <SolidColorBrush x:Key="Item.SelectedActive.foreground" Color="#000" />
-
-
-
+   
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+  
    <!--#region 左边样式-->
    <Style x:Key="LeftIndicatorStyle" TargetType="{x:Type Adu:AduSegmentControl}">
       <Setter Property="Padding" Value="0" />
       <Setter Property="CornerRadius" Value="0" />
       <Setter Property="VerticalAlignment" Value="Top" />
       <Setter Property="BorderThickness" Value="0,0,1,0" />
-      <Setter Property="BorderBrush" Value="#10000000" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBlack10}" />
       <Setter Property="VerticalAlignment" Value="Stretch" />
       <Setter Property="ItemsPanel">
          <Setter.Value>
@@ -34,7 +28,7 @@
    <Style x:Key="LeftIndicatorItemStyle" TargetType="{x:Type Adu:AduSegmentItem}">
       <Setter Property="Padding" Value="0" />
       <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="HorizontalContentAlignment" Value="Right" />
       <Setter Property="Template">
          <Setter.Value>
@@ -52,16 +46,15 @@
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsMouseOver" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />-->
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
+                     <!--<Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />-->
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
@@ -80,7 +73,7 @@
                      <Setter TargetName="content" Property="Opacity" Value=".45" />
                   </MultiTrigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{StaticResource NormalBlack20}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -95,7 +88,7 @@
       <Setter Property="CornerRadius" Value="0" />
       <Setter Property="VerticalAlignment" Value="Top" />
       <Setter Property="BorderThickness" Value="1,0,0,0" />
-      <Setter Property="BorderBrush" Value="#D7DDE4" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBlackBrush30}" />
       <Setter Property="VerticalAlignment" Value="Stretch" />
       <Setter Property="ItemsPanel">
          <Setter.Value>
@@ -107,9 +100,9 @@
    </Style>
 
    <Style x:Key="RightIndicatorItemStyle" TargetType="{x:Type Adu:AduSegmentItem}">
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="Padding" Value="0" />
-      <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" /> 
       <Setter Property="HorizontalContentAlignment" Value="Left" />
       <Setter Property="Template">
          <Setter.Value>
@@ -131,42 +124,42 @@
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
 
-                     <Border x:Name="markline" Grid.Column="0" Background="#003399FF" SnapsToDevicePixels="True"
+                     <Border x:Name="markline" Grid.Column="0" Background="{StaticResource NormalTransparentBrush}" SnapsToDevicePixels="True"
                                     UseLayoutRounding="True" />
                   </Grid>
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsMouseOver" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource Item.MouseOver.Border}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="Selector.IsSelectionActive" Value="False" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
-                     <Setter TargetName="markline" Property="Background" Value="#3399FF" />
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
+                     <Setter TargetName="markline" Property="Background" Value="{StaticResource NormalBlue}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="Selector.IsSelectionActive" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="markline" Property="Background" Value="#3399FF" />
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
-                     <Setter Property="Foreground" Value="#3399FF" />
+                     <Setter TargetName="markline" Property="Background" Value="{StaticResource NormalBlue}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
+                     <Setter Property="Foreground" Value="{StaticResource NormalBlue}" />
                   </MultiTrigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{StaticResource NormalBlack90}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -207,15 +200,15 @@
             <RowDefinition Height="*" />
          </Grid.RowDefinitions>
          <Adu:AduSegmentControl x:Name="PART_Indicator" SelectedIndex="0"
-                                HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
-                                Margin="{TemplateBinding IndicatorMargin}"
-                                ItemsSource="{TemplateBinding ItemsSource}"
-                                DisplayMemberPath="Header"
-                                Style="{TemplateBinding IndicatorStyle}"
-                                ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
+               HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
+               Margin="{TemplateBinding IndicatorMargin}"
+               ItemsSource="{TemplateBinding ItemsSource}"
+               DisplayMemberPath="Header"
+               Style="{TemplateBinding IndicatorStyle}"
+               ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}"/>
          <ContentPresenter x:Name="PART_ContentPresenter" Grid.Row="1"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
       </Grid>
    </ControlTemplate>
    <!--#endregion-->
@@ -249,24 +242,24 @@
             <RowDefinition Height="auto" />
          </Grid.RowDefinitions>
          <Adu:AduSegmentControl x:Name="PART_Indicator" Grid.Row="1" SelectedIndex="0"
-                                HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
-                                Margin="{TemplateBinding IndicatorMargin}"
-                                ItemsSource="{TemplateBinding ItemsSource}"
-                                DisplayMemberPath="Header"
-                                Style="{TemplateBinding IndicatorStyle}"
-                                ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}" />
+               HorizontalAlignment="{TemplateBinding IndicatorHorizontalAlignment}"
+               Margin="{TemplateBinding IndicatorMargin}"
+               ItemsSource="{TemplateBinding ItemsSource}"
+               DisplayMemberPath="Header"
+               Style="{TemplateBinding IndicatorStyle}"
+               ItemContainerStyle="{TemplateBinding IndicatorItemContainerStyle}" />
          <ContentPresenter x:Name="PART_ContentPresenter" Grid.Row="0"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
       </Grid>
    </ControlTemplate>
    <!--#endregion-->
 
    <Style TargetType="{x:Type AduControls:AduNavigationPanel}">
-      <Setter Property="Background" Value="Transparent" />
-      <Setter Property="BorderBrush" Value="Transparent" />
-      <Setter Property="BorderThickness" Value="1" />
-      <Setter Property="Foreground" Value="{StaticResource DefaultBrush}" />
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}" />
+      <Setter Property="BorderThickness" Value="1" /> 
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="SnapsToDevicePixels" Value="True" />

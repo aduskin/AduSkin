@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type Metro:MetroTabItem}">
@@ -36,7 +36,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Image x:Name="icon" Grid.Column="0" Width="12" Height="12" Margin="10,0,-5,0" VerticalAlignment="Center" Source="{TemplateBinding Icon}" Opacity="0.7"/>
-                                <Metro:MetroTextBlock x:Name="title" Grid.Column="1" Text="{TemplateBinding Header}" Foreground="#FFF" VerticalAlignment="Center" Margin="10,0" Opacity="0.5"/>
+                                <Metro:MetroTextBlock x:Name="title" Grid.Column="1" Text="{TemplateBinding Header}" Foreground="{DynamicResource NormalWhite}" VerticalAlignment="Center" Margin="10,0" Opacity="0.5"/>
                             </Grid>
                         </Border>
                     </Grid>

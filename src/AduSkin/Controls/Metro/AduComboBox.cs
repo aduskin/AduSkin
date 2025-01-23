@@ -1,10 +1,8 @@
 using AduSkin.Utility.Element;
-using System;
-using System.Collections.ObjectModel;
+using System; 
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
+using System.Windows.Controls; 
 using System.Windows.Media;
 using AduSkin.Controls.Helper;
 using System.Windows.Data;

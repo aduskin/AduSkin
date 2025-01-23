@@ -3,7 +3,7 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    
    <Style TargetType="RepeatButton" x:Key="AduRepeatButton">
@@ -35,7 +35,7 @@
    
    <Style TargetType="{x:Type Adu:AduSlider}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-      <Setter Property="Background" Value="{StaticResource Brush}"/>
+      <Setter Property="Background" Value="{StaticResource NormalBrush}"/>
       <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="#10000000" />
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="#90211F1F"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0"/>

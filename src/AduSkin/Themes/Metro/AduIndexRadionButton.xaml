@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <PathGeometry x:Key="Icon_UnChecked" Figures="M122.8 123h773v757.3h-773V123z m37.5 42.5v672.1h698.1V165.5H160.3z" />
     <PathGeometry x:Key="Icon_Checked" Figures="M671.763 859.723h-616.87c-28.392 0-51.406 22.604-51.406 50.488v70.459c0 27.885 23.014 50.489 51.406 50.489h616.87c28.391 0 51.406-22.604 51.406-50.489v-70.459c0-27.885-23.015-50.488-51.406-50.488z" />
 
     <Style TargetType="{x:Type Adu:AduIndexRadionButton}">
-        <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
         <Setter Property="Width" Value="28" />
         <Setter Property="Height" Value="30" />
         <Setter Property="Template">

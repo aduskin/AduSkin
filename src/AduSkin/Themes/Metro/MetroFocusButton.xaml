@@ -1,9 +1,9 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Converter="clr-namespace:AduSkin.Controls.Converter"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Converter:DoubleToThickness x:Key="DoubleToThickness"/>
@@ -13,14 +13,14 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
 
-        <Setter Property="Background" Value="#00000000"/>
+        <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
         <Setter Property="Padding" Value="0"/>
 
-        <Setter Property="Foreground" Value="#00ffffff"/>
-        <Setter Property="MouseMoveForeground" Value="#4CFFFFFF"/>
+        <Setter Property="Foreground" Value="{StaticResource NormalTransparentBrush}"/>
+        <Setter Property="MouseMoveForeground" Value="{StaticResource NormalTransparentBrush}"/>
 
-        <Setter Property="BorderBrush" Value="#ffffff"/>
-        <Setter Property="MouseMoveBorderBrush" Value="#ffffff"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalWhite}"/>
+        <Setter Property="MouseMoveBorderBrush" Value="{DynamicResource NormalWhite}"/>
 
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="MouseMoveBorderThickness" Value="1"/>

@@ -1,12 +1,10 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
 
-    <!--<ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Base/AduCoverFlowBaseStyle.xaml"/>
-    </ResourceDictionary.MergedDictionaries>-->
-
-   <!--<Style BasedOn="{StaticResource AduCoverFlowBaseStyle}" TargetType="AduSkin:AduCoverFlow"/>-->
    <Style TargetType="AduSkin:AduCoverFlow">
       <Setter Property="Focusable" Value="False"/>
       <Setter Property="Template">

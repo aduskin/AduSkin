@@ -3,7 +3,7 @@
       xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
       xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <ControlTemplate x:Key="ComboBoxToggleButtonTemplate" TargetType="{x:Type AduSkin:AduToggleButton}">
@@ -16,7 +16,7 @@
             Name="Border"
             Grid.ColumnSpan="2"
             Background="{TemplateBinding Background}"
-            BorderBrush="{StaticResource DefaultBorderBrush}"
+            BorderBrush="{StaticResource NormalBorderBrush}"
             BorderThickness="{TemplateBinding BorderThickness}"
             CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
             SnapsToDevicePixels="True"
@@ -36,7 +36,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Data="{StaticResource Icon_DropDowm}"
-                Fill="{StaticResource DefaultBorderBrush}"
+                Fill="{StaticResource NormalBorderBrush}"
                 RenderTransformOrigin="0.5,0.5"
                 SnapsToDevicePixels="True"
                 Stretch="Uniform"
@@ -90,7 +90,7 @@
          <Trigger Property="UIElement.IsEnabled" Value="False">
             <Setter TargetName="Border" Property="Panel.Background" Value="{StaticResource TranspantBrush}" />
             <Setter TargetName="ButtonBorder" Property="Panel.Background" Value="{StaticResource TranspantBrush}" />
-            <Setter Property="TextElement.Foreground" Value="{StaticResource DisabledForeground}" />
+            <Setter Property="TextElement.Foreground" Value="{StaticResource DisabledForegroundBrush}" />
             <Setter TargetName="Arrow" Property="Stroke" Value="#999" />
             <Setter TargetName="Arrow" Property="StrokeThickness" Value="0" />
             <Setter Property="Cursor" Value="No" />
@@ -100,7 +100,7 @@
 
    <Style TargetType="AduSkin:AduCheckComboBoxItem">
       <Setter Property="Background" Value="Transparent" />
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource Brush}" />
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalBrush}" />
       <Setter Property="MinHeight" Value="30"/>
       <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Template">
@@ -109,7 +109,7 @@
                <Border x:Name="bg"
                     Padding="5,0"
                     Background="{TemplateBinding Background}"
-                    BorderBrush="{StaticResource DefaultBorderBrush}"
+                    BorderBrush="{StaticResource NormalBorderBrush}"
                     BorderThickness="0">
                   <AduSkin:AduCheckBox
                         x:Name="ck" VerticalAlignment="Stretch"
@@ -125,8 +125,8 @@
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="bg"  Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter TargetName="ck" Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
-                     <Setter TargetName="ck" Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource DefaultWhiteBrush}" />
+                     <Setter TargetName="ck" Property="Foreground" Value="{StaticResource NormalWhite}" />
+                     <Setter TargetName="ck" Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalWhite}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -135,12 +135,12 @@
    </Style>
 
    <Style TargetType="{x:Type AduSkin:AduCheckComboBox}">
-      <Setter Property="Background" Value="{StaticResource DefaultWhiteBrush}" />
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
-      <Setter Property="Foreground" Value="{StaticResource Brush}" />
-      <Setter Property="ToggleButtonColor" Value="{StaticResource Brush}" />
-      <Setter Property="ComBoxItemPanelBackground" Value="{StaticResource DefaultWhiteBrush}" />
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource Brush}" />
+      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}" />
+      <Setter Property="ToggleButtonColor" Value="{StaticResource NormalBrush}" />
+      <Setter Property="ComBoxItemPanelBackground" Value="{StaticResource NormalWhite}" />
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalBrush}" />
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="MinHeight" Value="25" />
       <Setter Property="Height" Value="30" />

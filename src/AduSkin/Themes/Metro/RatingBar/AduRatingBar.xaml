@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
@@ -16,7 +16,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="UnSelectedColor" Value="#D7DDE4" />
-        <Setter Property="SelectedColor" Value="{StaticResource Brush}" />
+        <Setter Property="SelectedColor" Value="{StaticResource NormalBrush}" />
         <!--在Content里面直接使用StringFormat是无效的，必须使用ContentStringFormat-->
         <Setter Property="Content" Value="{Binding Value, RelativeSource={RelativeSource Mode=Self}}" />
         <Setter Property="ContentStringFormat" Value="{}{0}分" />

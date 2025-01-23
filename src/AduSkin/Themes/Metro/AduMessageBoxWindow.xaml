@@ -26,7 +26,7 @@
    <Window.Resources>
       <ResourceDictionary>
          <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml" />
+            <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml" />
          </ResourceDictionary.MergedDictionaries>
          <Storyboard x:Key="LoadStoryboard">
             <DoubleAnimation
@@ -55,7 +55,7 @@
          <BeginStoryboard Storyboard="{StaticResource LoadStoryboard}" />
       </EventTrigger>
    </Window.Triggers>
-   <Border x:Name="window" RenderTransformOrigin="0.5,0.5" CornerRadius="6" Background="#fff" BorderThickness="0,0,0,0">
+   <Border x:Name="window" RenderTransformOrigin="0.5,0.5" CornerRadius="6" Background="{DynamicResource NormalWhite}" BorderThickness="0,0,0,0">
       <Border.RenderTransform>
          <TransformGroup>
             <ScaleTransform />
@@ -74,7 +74,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="40"/>
          </Grid.ColumnDefinitions>
-         <Border Grid.Row="0" Background="#FFF" CornerRadius="6,0,0,0">
+         <Border Grid.Row="0" Background="{DynamicResource NormalWhite}" CornerRadius="6,0,0,0">
             <TextBlock x:Name="Win_Title" Margin="10,0" FontSize="14" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
          </Border>
          <AduSkin:AduPathIconButton Grid.Row="0" Grid.Column="1" x:Name="btnClose"
@@ -100,28 +100,28 @@
                <!-- Cancel Button -->
                <AduSkin:AduFlatButton x:Name="Button_Cancel" Type="ghost" MinWidth="88" MaxWidth="160" Height="26" Margin="5,0" HorizontalAlignment="Right" Visibility="Collapsed" IsCancel="True"
                         DockPanel.Dock="Right" Click="Button_Cancel_Click">
-                  <Label Name="Label_Cancel" Padding="0" Margin="10,0" Foreground="{StaticResource ShadowColor}">_Cancel</Label>
+                  <Label Name="Label_Cancel" Padding="0" Margin="10,0" Foreground="{StaticResource ShadowBrush}">_Cancel</Label>
                </AduSkin:AduFlatButton>
                <!-- End Cancel Button -->
 
                <!-- No Button -->
-               <AduSkin:AduFlatButton x:Name="Button_No" Type="ghost" Background="#FFF" BorderBrush="{StaticResource DefaultBorderBrush}" MinWidth="88" MaxWidth="160" Height="26" Margin="5,0" HorizontalAlignment="Right" Visibility="Collapsed"
+               <AduSkin:AduFlatButton x:Name="Button_No" Type="ghost" Background="{DynamicResource NormalWhite}" BorderBrush="{StaticResource NormalBorderBrush}" MinWidth="88" MaxWidth="160" Height="26" Margin="5,0" HorizontalAlignment="Right" Visibility="Collapsed"
                         DockPanel.Dock="Right" Click="Button_No_Click">
-                  <Label Name="Label_No" Padding="0" Margin="10,0" Foreground="{StaticResource ShadowColor}">_No</Label>
+                  <Label Name="Label_No" Padding="0" Margin="10,0" Foreground="{StaticResource ShadowBrush}">_No</Label>
                </AduSkin:AduFlatButton>
                <!-- End No Button -->
 
                <!-- Yes Button -->
                <AduSkin:AduFlatButton x:Name="Button_Yes" MinWidth="88" MaxWidth="160" Height="26" Margin="35,0,5,0" HorizontalAlignment="Right" Visibility="Collapsed"
                         DockPanel.Dock="Right" Click="Button_Yes_Click">
-                  <Label Name="Label_Yes" Padding="0" Margin="10,0" Foreground="#FFF">_Yes</Label>
+                  <Label Name="Label_Yes" Padding="0" Margin="10,0" Foreground="{DynamicResource NormalWhite}">_Yes</Label>
                </AduSkin:AduFlatButton>
                <!-- End Yes Button -->
 
                <!-- OK Button -->
                <AduSkin:AduFlatButton x:Name="Button_OK" IsDefault="True" MinWidth="88" MaxWidth="160" Margin="35,0,5,0" HorizontalAlignment="Right" Height="26"
                         Click="Button_OK_Click">
-                  <Label Name="Label_Ok" Padding="0" Margin="10,0" Foreground="#FFF">_OK</Label>
+                  <Label Name="Label_Ok" Padding="0" Margin="10,0" Foreground="{DynamicResource NormalWhite}">_OK</Label>
                </AduSkin:AduFlatButton>
                <!-- End OK Button -->
 

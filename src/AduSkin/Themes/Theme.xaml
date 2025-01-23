@@ -1,0 +1,96 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
+   xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
+
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/IconLibrary.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Converters.xaml" />
+   </ResourceDictionary.MergedDictionaries>
+
+   <!--Opacity-->
+   <sys:Double x:Key="NormalOpacity">1</sys:Double>
+   <sys:Double x:Key="PressedOpacity">0.9</sys:Double>
+   <sys:Double x:Key="MouseOverOpacity">0.8</sys:Double>
+   <sys:Double x:Key="DisableOpacity">0.5</sys:Double>
+
+   <!--Color-->
+   <Color x:Key="WhiteColor" >#FFFFFF</Color>
+   <Color x:Key="WhiteBlack" >#000000</Color>
+   <Color x:Key="TransparentColor" >#00000000</Color>
+
+   <!--Shadow-->
+   <DropShadowEffect x:Key="TextShadow-Black" BlurRadius="6" Opacity="0.2" ShadowDepth="0" Color="{StaticResource WhiteBlack}" />
+   <DropShadowEffect x:Key="CardShadow-Black" BlurRadius="20" Opacity="0.1"  Direction="270" Color="{StaticResource WhiteBlack}" />
+ 
+   <!--NormalBrush-->
+   <SolidColorBrush x:Key="NormalWhiteTest" Color="#7160E8" />
+   <!--White-->
+   <SolidColorBrush x:Key="NormalWhite" Color="#FFFFFF" />
+   <SolidColorBrush x:Key="NormalWhite05" Color="#05FFFFFF" />
+   <SolidColorBrush x:Key="NormalWhite10" Color="#10FFFFFF" />
+   <SolidColorBrush x:Key="NormalWhite30" Color="#30FFFFFF" />
+   <!--Black-->
+   <SolidColorBrush x:Key="NormalBlack" Color="#000000" />
+   <SolidColorBrush x:Key="NormalBlack08" Color="#08000000" />
+   <SolidColorBrush x:Key="NormalBlack10" Color="#10000000" />
+   <SolidColorBrush x:Key="NormalBlack20" Color="#20000000" />
+   <SolidColorBrush x:Key="NormalBlack90" Color="#90000000" />
+   <!--Blue-->
+   <SolidColorBrush x:Key="NormalBlue" Color="#3399FF" />
+   <SolidColorBrush x:Key="NormalBlue10" Color="#103399FF" />
+   <SolidColorBrush x:Key="NormalBlue80" Color="#803399FF" />
+   <SolidColorBrush x:Key="NormalBlue90" Color="#903399FF" />
+   <!--Transparent-->
+   <SolidColorBrush x:Key="NormalTransparentBrush" Color="#00000000" />
+
+   <!--Theme-->
+   <SolidColorBrush x:Key="Brush" Color="#EE796F" />
+   <SolidColorBrush x:Key="NormalBrush" Color="#EE796F" />
+
+   <!--Shadow-->
+   <SolidColorBrush x:Key="ShadowBrush" Color="#2D2D30" />
+
+   <!--Foreground-->
+   <SolidColorBrush x:Key="SelectedForegroundBrush" Color="#666" />
+   <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+   <!--Background-->
+   <SolidColorBrush x:Key="DefaultBackground" Color="#EEEEEE" />
+   <SolidColorBrush x:Key="DisabledBackground" Color="#00eeeeee" />
+   <SolidColorBrush x:Key="MouseOverBackground" Color="#16000000" />
+   <SolidColorBrush x:Key="PressedBackground" Color="#15000000" />
+   <SolidColorBrush x:Key="SelectedBackground" Color="#12000000" />
+   <SolidColorBrush x:Key="AlternationIndexBackground0" Color="#06000000" />
+   <SolidColorBrush x:Key="AlternationIndexBackground1" Color="#00000000" />
+
+   <!--Border-->
+   <SolidColorBrush x:Key="DisabledBorderBrush" Color="#00888888" />
+   <SolidColorBrush x:Key="NormalBorderBrush" Color="#D9D9D9" />
+   <SolidColorBrush x:Key="NormalBorderBlackBrush30" Color="#30000000" />
+   <SolidColorBrush x:Key="NormalBorderBlackBrush90" Color="#90000000" />
+   <SolidColorBrush x:Key="MouseOverBorderBrush" Color="#FFD9D9D9" />
+
+   <!--PlaceHolder-->
+   <SolidColorBrush x:Key="PlaceHolderBrush" Color="#80D4D4D4" />
+
+   <!--Path-->
+   <SolidColorBrush x:Key="NormalPathColor" Color="#90000000" />
+   <SolidColorBrush x:Key="MouseOverPathColor" Color="#99000000" />
+   <SolidColorBrush x:Key="PressedPathColor" Color="#80000000" />
+   <SolidColorBrush x:Key="DisabledPathColor" Color="#70000000" />
+
+   <!--图标色-->
+   <SolidColorBrush x:Key="NormalPathBrush" Color="#90000000" />
+   <SolidColorBrush x:Key="MouseOverPathBrush" Color="#99000000" />
+   <SolidColorBrush x:Key="PressedPathBrush" Color="#80000000" />
+   <SolidColorBrush x:Key="DisabledPathBrush" Color="#70000000" />
+
+   <!--Status-->
+   <SolidColorBrush x:Key="InfoBrush" Color="#3399FF" />
+   <SolidColorBrush x:Key="WarnBrush" Color="#FF9900" />
+   <SolidColorBrush x:Key="ErrorBrush" Color="#FF5500" />
+   <SolidColorBrush x:Key="SuccessBrush" Color="#61B891" />
+</ResourceDictionary>

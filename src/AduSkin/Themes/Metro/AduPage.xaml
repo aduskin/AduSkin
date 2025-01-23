@@ -4,7 +4,7 @@
                     xmlns:interactivity="clr-namespace:AduSkin.Interactivity"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduRadioButton.xaml"/>
         <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduPathIconButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>

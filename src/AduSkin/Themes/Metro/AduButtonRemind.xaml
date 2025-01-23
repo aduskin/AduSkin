@@ -3,8 +3,9 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
+   
    <Style TargetType="{x:Type Adu:AduButtonRemind}">
       <Setter Property="SnapsToDevicePixels" Value="True"/>
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
@@ -26,7 +27,7 @@
                                   Shape.Fill="{TemplateBinding Foreground}" Shape.Stretch="Uniform" 
                                   Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" />
                      <Border x:Name="tagback" HorizontalAlignment="Right" CornerRadius="8" VerticalAlignment="Top" Margin="0,0,2,-4"  MinWidth="16" Height="16" Background="#2B2833" Padding="4,0">
-                        <TextBlock Text="{TemplateBinding Hint}" Foreground="#fff" HorizontalAlignment="Center" FontSize="9" VerticalAlignment="Center" Margin="0,0,0,1"/>
+                        <TextBlock Text="{TemplateBinding Hint}" Foreground="{DynamicResource NormalWhite}" HorizontalAlignment="Center" FontSize="9" VerticalAlignment="Center" Margin="0,0,0,1"/>
                      </Border>
                   </Grid>
                </Border>

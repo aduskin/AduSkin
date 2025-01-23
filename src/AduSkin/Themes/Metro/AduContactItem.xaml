@@ -1,8 +1,12 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:AduSkin.Controls.Metro">
-    <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#11000000" />
-    <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#fff" />
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#11000000" />
+    <SolidColorBrush x:Key="Item.MouseOver.Border" Color="{DynamicResource DarkPrimaryColor}" />
     <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#60000000" />
     <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#50000000" />
     <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#50000000" />
@@ -129,7 +133,7 @@
 
     <Style x:Key="ContactItem" TargetType="controls:AduContactItem">
         <Setter Property="Focusable" Value="False"/>
-        <Setter Property="Background" Value="#fff"/>
+        <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
         <Setter Property="Foreground" Value="#000"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="MinHeight" Value="50"/>

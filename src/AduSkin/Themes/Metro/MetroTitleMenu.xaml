@@ -3,7 +3,7 @@
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type Metro:MetroTitleMenu}">
@@ -12,7 +12,7 @@
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="VerticalAlignment" Value="Center"/>
       <Setter Property="Height" Value="auto"/>
-      <Setter Property="Background" Value="{StaticResource Brush}"/>
+      <Setter Property="Background" Value="{StaticResource NormalBrush}"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroTitleMenu}">

@@ -1,105 +1,130 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin">
-    <Style x:Key="Title" TargetType="TextBlock">
-        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-        <Setter Property="Foreground" Value="#303030"></Setter>
-        <Setter Property="TextAlignment" Value="Center"></Setter>
-        <Setter Property="TextWrapping" Value="Wrap"></Setter>
-    </Style>
-    <Style x:Key="H1" TargetType="TextBlock" BasedOn="{StaticResource Title}">
-        <Setter Property="FontSize" Value="42"></Setter>
-    </Style>
-    <Style x:Key="H2" TargetType="TextBlock" BasedOn="{StaticResource Title}">
-        <Setter Property="FontSize" Value="30"></Setter>
-    </Style>
-    <Style x:Key="H3" TargetType="TextBlock" BasedOn="{StaticResource Title}">
-        <Setter Property="FontSize" Value="24"></Setter>
-    </Style>
-    <Style x:Key="H4" TargetType="TextBlock" BasedOn="{StaticResource Title}">
-        <Setter Property="FontSize" Value="18"></Setter>
-    </Style>
-    <Style x:Key="H5" TargetType="TextBlock" BasedOn="{StaticResource Title}">
-        <Setter Property="FontSize" Value="12"></Setter>
-    </Style>
+   
+   
+   <Style x:Key="Title" TargetType="TextBlock">
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+      <Setter Property="Foreground" Value="#303030"/>
+      <Setter Property="TextAlignment" Value="Center"/>
+      <Setter Property="TextWrapping" Value="Wrap"/>
+   </Style>
+   <Style x:Key="H1" TargetType="TextBlock" BasedOn="{StaticResource Title}">
+      <Setter Property="FontSize" Value="42"/>
+   </Style>
+   <Style x:Key="H2" TargetType="TextBlock" BasedOn="{StaticResource Title}">
+      <Setter Property="FontSize" Value="30"/>
+   </Style>
+   <Style x:Key="H3" TargetType="TextBlock" BasedOn="{StaticResource Title}">
+      <Setter Property="FontSize" Value="24"/>
+   </Style>
+   <Style x:Key="H4" TargetType="TextBlock" BasedOn="{StaticResource Title}">
+      <Setter Property="FontSize" Value="18"/>
+   </Style>
+   <Style x:Key="H5" TargetType="TextBlock" BasedOn="{StaticResource Title}">
+      <Setter Property="FontSize" Value="12"/>
+   </Style>
 
-    <Style x:Key="MenuItem" TargetType="Border">
-        <Setter Property="Cursor" Value="Hand"></Setter>
-        <Setter Property="Background" Value="#00000000"/>
-        <Setter Property="Padding" Value="25 10 10 10"></Setter>
-        <Setter Property="BorderThickness" Value="0 1 0 0"></Setter>
-        <Setter Property="BorderBrush" Value="#EBEBEB"></Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="WhiteSmoke"></Setter>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
+   <Style x:Key="MenuItem" TargetType="Border">
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Padding" Value="25 10 10 10"/>
+      <Setter Property="BorderThickness" Value="0 1 0 0"/>
+      <Style.Triggers>
+         <Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
+         </Trigger>
+      </Style.Triggers>
+   </Style>
 
-    <Style x:Key="ShowControlBorder" TargetType="Border">
-        <Setter Property="CornerRadius" Value="6"></Setter>
-        <Setter Property="Background" Value="#FFF"/>
-        <Setter Property="Margin" Value="5"/>
-        <Setter Property="Padding" Value="10 10 10 10"></Setter>
-        <Setter Property="BorderThickness" Value="0"></Setter>
-        <Setter Property="BorderBrush" Value="#EBEBEB"></Setter>
-        <Setter Property="Effect" Value="{StaticResource CardShadow}"></Setter>
-    </Style>
+   <Style x:Key="FocusVisual">
+      <Setter Property="Control.Template">
+         <Setter.Value>
+            <ControlTemplate>
+               <Rectangle Style="{StaticResource RectangleFocusVisual}" RadiusX="4" RadiusY="4"/>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 
-    <Storyboard x:Key="Custom1Transition" x:Shared="False">
-        <DoubleAnimation From="50" To="0" Duration="0:0:0.4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-            <DoubleAnimation.EasingFunction>
-                <ElasticEase Oscillations="1"/>
-            </DoubleAnimation.EasingFunction>
-        </DoubleAnimation>
-    </Storyboard>
+   <Style x:Key="BaseStyle" TargetType="Control">
+      <Setter Property="Foreground" Value="{StaticResource MainContentForegroundBrush}"/>
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+   </Style>
 
-    <Storyboard x:Key="Custom2Transition" x:Shared="False">
-        <DoubleAnimation From="10" To="0" Duration="0:0:0.4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
-            <DoubleAnimation.EasingFunction>
-                <ElasticEase Oscillations="1"/>
-            </DoubleAnimation.EasingFunction>
-        </DoubleAnimation>
-    </Storyboard>
+   <Style x:Key="ShowControlBorder" TargetType="Border"> 
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBlack10}"/>
+      <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="Margin" Value="10"/>
+      <Setter Property="Padding" Value="10"/>
+      <Setter Property="CornerRadius" Value="10"/>
+      <Setter Property="Effect" Value="{StaticResource PanelShadow}"/>
+   </Style>
 
-    <Storyboard x:Key="Custom3Transition" x:Shared="False">
-        <DoubleAnimation From=".8" To="1" Duration="0:0:0.4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
-            <DoubleAnimation.EasingFunction>
-                <ElasticEase Oscillations="1"/>
-            </DoubleAnimation.EasingFunction>
-        </DoubleAnimation>
-    </Storyboard>
+   <Storyboard x:Key="Custom1Transition" x:Shared="False">
+      <DoubleAnimation From="50" To="0" Duration="0:0:0.4"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+         <DoubleAnimation.EasingFunction>
+            <ElasticEase Oscillations="1"/>
+         </DoubleAnimation.EasingFunction>
+      </DoubleAnimation>
+   </Storyboard>
+
+   <Storyboard x:Key="Custom2Transition" x:Shared="False">
+      <DoubleAnimation From="10" To="0" Duration="0:0:0.4"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+         <DoubleAnimation.EasingFunction>
+            <ElasticEase Oscillations="1"/>
+         </DoubleAnimation.EasingFunction>
+      </DoubleAnimation>
+   </Storyboard>
+
+   <Storyboard x:Key="Custom3Transition" x:Shared="False">
+      <DoubleAnimation From=".8" To="1" Duration="0:0:0.4"
+                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+         <DoubleAnimation.EasingFunction>
+            <ElasticEase Oscillations="1"/>
+         </DoubleAnimation.EasingFunction>
+      </DoubleAnimation>
+   </Storyboard>
+   
+   <!--DemoList-->
    <Style x:Key="DemoListBoxItem" TargetType="{x:Type ListBoxItem}">
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="Padding" Value="0" />
       <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="ListBoxItem">
-               <Border MinHeight="40" Width="300" Background="#00000000" x:Name="Bd" BorderBrush="#EBEBEB" BorderThickness="0 1 0 0">
+               <Border  x:Name="Bd" MinHeight="40" Width="300" Background="{StaticResource NormalTransparentBrush}"
+                       BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0 1 0 0">
                   <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="80" x:Name="state"/>
                      </Grid.ColumnDefinitions>
-                     <TextBlock Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource DefaultBrush}" Metro:TextBlockService.HighlightText="{Binding ElementName=SearchKey,Path=Text}" Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                     <Border Grid.Column="1" x:Name="states" Background="{StaticResource DefaultBrush}" CornerRadius="8" Height="15" MinWidth="30" Padding="4,0" HorizontalAlignment="Center">
-                        <TextBlock Text="NEW" x:Name="stateName" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF"/>
+                     <TextBlock Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource NormalBrush}" 
+                                Metro:TextBlockService.HighlightText="{Binding ElementName=SearchKey,Path=Text}" 
+                                Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                     <Border Grid.Column="1" x:Name="states" Background="{StaticResource NormalBrush}" 
+                             CornerRadius="8" Height="15" MinWidth="30" Padding="4,0" HorizontalAlignment="Center">
+                        <TextBlock Text="NEW" x:Name="stateName" FontSize="9" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" Foreground="{StaticResource NormalWhite}"/>
                      </Border>
                   </Grid>
                </Border>
-               <ControlTemplate.Triggers>
-                  <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"  Value="True">
-                     <Setter TargetName="Bd" Property="Background" Value="#EAEAEA" />
-                  </DataTrigger>
+               <ControlTemplate.Triggers> 
                   <DataTrigger Binding="{Binding Path=State}"  Value="New">
                      <Setter TargetName="state" Property="Width" Value="80" />
                      <Setter TargetName="stateName" Property="Text" Value="NEW" />
                   </DataTrigger>
                   <DataTrigger Binding="{Binding Path=State}"  Value="InDev">
                      <Setter TargetName="state" Property="Width" Value="80" />
-                     <Setter TargetName="states" Property="Background" Value="#3399FF" />
+                     <Setter TargetName="states" Property="Background" Value="{StaticResource NormalBlue}" />
                      <Setter TargetName="stateName" Property="Text" Value="InDev" />
                   </DataTrigger>
                   <DataTrigger Binding="{Binding Path=State}"  Value="Nor">
@@ -110,53 +135,55 @@
                      <MultiTrigger.Conditions>
                         <Condition Property="IsMouseOver" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke" />
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalBlack5}" />
                   </MultiTrigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke" />
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalBlack10}" />
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{StaticResource NormalBlack}" />
                   </Trigger>
                </ControlTemplate.Triggers>
-            </ControlTemplate> 
+            </ControlTemplate>
          </Setter.Value>
       </Setter>
    </Style>
+   
    <Style TargetType="{x:Type ListBox}">
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="ItemsPanel">
-            <Setter.Value>
-                <ItemsPanelTemplate>
-                    <StackPanel IsItemsHost="True"  />
-                </ItemsPanelTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ListBox">
-                    <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
-                        <Metro:MetroScrollViewer Focusable="false" HorizontalScrollBarVisibility="Disabled">
-                            <ItemsPresenter Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                        </Metro:MetroScrollViewer>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="ItemsPanel">
+         <Setter.Value>
+            <ItemsPanelTemplate>
+               <StackPanel IsItemsHost="True"  />
+            </ItemsPanelTemplate>
+         </Setter.Value>
+      </Setter>
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="ListBox">
+               <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" 
+                            Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                  <Metro:MetroScrollViewer Focusable="false" HorizontalScrollBarVisibility="Disabled">
+                     <ItemsPresenter Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                  </Metro:MetroScrollViewer>
+               </Border>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 
-    <!--空MenuHeader-->
-    <Style x:Key="MenuItem_NonStyle" TargetType="{x:Type MenuItem}">
-        <Setter Property="Height" Value="Auto" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Margin="1">
-                        <ContentPresenter x:Name="Presenter" ContentSource="Header" Margin="{TemplateBinding Padding}" />
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+   <!--空MenuHeader-->
+   <Style x:Key="MenuItem_NonStyle" TargetType="{x:Type MenuItem}">
+      <Setter Property="Height" Value="Auto" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type MenuItem}">
+               <Grid Margin="1">
+                  <ContentPresenter x:Name="Presenter" ContentSource="Header" Margin="{TemplateBinding Padding}" />
+               </Grid>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 </ResourceDictionary>

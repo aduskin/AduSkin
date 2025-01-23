@@ -2,9 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
-
-   <PathGeometry x:Key="Left" Figures="M352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256" />
-   <PathGeometry x:Key="DoubleLeft" Figures="M614.997333 511.146667l314.88 285.354666a30.549333 30.549333 0 0 1 0 46.336 37.888 37.888 0 0 1-25.6 9.557334 38.058667 38.058667 0 0 1-25.6-9.728L512.512 511.146667l366.165333-331.776a38.741333 38.741333 0 0 1 51.2 0 30.72 30.72 0 0 1 0 46.421333L614.997333 511.146667z m-428.032 0l314.88 285.354666a30.549333 30.549333 0 0 1 0 46.336 37.888 37.888 0 0 1-25.6 9.557334 38.229333 38.229333 0 0 1-25.6-9.728L84.48 511.146667l366.165333-331.776a38.741333 38.741333 0 0 1 51.2 0 30.72 30.72 0 0 1 0 46.421333L186.965333 511.146667z" />
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
 
    <ControlTemplate x:Key="HeaderButtonTemplate" TargetType="{x:Type Button}">
       <Grid Cursor="Hand">
@@ -19,18 +19,12 @@
                <VisualState x:Name="Normal" />
                <VisualState x:Name="MouseOver">
                   <Storyboard>
-                     <DoubleAnimation Storyboard.TargetName="buttonContent"
-                                Storyboard.TargetProperty="Opacity"
-                                To=".7"
-                                Duration="0:0:0.3" />
+                     <DoubleAnimation Storyboard.TargetName="buttonContent" Storyboard.TargetProperty="Opacity" To=".7" Duration="0:0:0.3" />
                   </Storyboard>
                </VisualState>
                <VisualState x:Name="Disabled">
                   <Storyboard>
-                     <DoubleAnimation Storyboard.TargetName="buttonContent"
-                                Storyboard.TargetProperty="Opacity"
-                                To=".5"
-                                Duration="0" />
+                     <DoubleAnimation Storyboard.TargetName="buttonContent" Storyboard.TargetProperty="Opacity" To=".5" Duration="0" />
                   </Storyboard>
                </VisualState>
             </VisualStateGroup>
@@ -44,11 +38,20 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Adu:AduCalendarItem}">
-               <Grid x:Name="PART_Root" Background="{TemplateBinding Background}">
+               <Grid x:Name="PART_Root">
+                  <Grid.Resources>
+                     <Style TargetType="Adu:AduPathIconButton">
+                        <Setter Property="Width" Value="10"/>
+                        <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalPathBrush}"/>
+                        <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource MouseOverPathBrush}"/>
+                        <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource PressedPathBrush}"/>
+                        <Setter Property="AduAttach:PathDataAttach.Width" Value="5"/>
+                     </Style>
+                  </Grid.Resources>
                   <Grid.ColumnDefinitions>
                      <ColumnDefinition Width="Auto" />
                      <ColumnDefinition Width="Auto" />
-                     <ColumnDefinition Width="*" />
+                     <ColumnDefinition Width="66" />
                      <ColumnDefinition Width="Auto" />
                      <ColumnDefinition Width="Auto" />
                   </Grid.ColumnDefinitions>
@@ -56,70 +59,52 @@
                      <RowDefinition Height="Auto" MinHeight="30" />
                      <RowDefinition />
                   </Grid.RowDefinitions>
-
+                  <Border Background="{TemplateBinding Background}"  Grid.RowSpan="2" Grid.ColumnSpan="5"
+                          CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"/>
+                  
                   <Adu:AduPathIconButton x:Name="PART_PreviousYearButton"
-                            Grid.Column="0"
-                            Margin="15,0,0,0"
-                            AduAttach:PathBrushAttach.NormalPathColor="#C3CEE1"
-                            AduAttach:PathBrushAttach.MouseOverPathColor="#FFF"
-                            AduAttach:PathDataAttach.PathData="{StaticResource DoubleLeft}" />
+                     Grid.Column="0" Margin="15,0,0,0"
+                     AduAttach:PathDataAttach.Width="10"
+                     AduAttach:PathDataAttach.PathData="{StaticResource Icon_DoubleLeft}" />
+
                   <Adu:AduPathIconButton x:Name="PART_PreviousMonthButton"
-                            Grid.Column="1"
-                            Width="10"
-                            Margin="15,0,0,0"
-                            AduAttach:PathBrushAttach.NormalPathColor="#C3CEE1"
-                            AduAttach:PathBrushAttach.MouseOverPathColor="#FFF"
-                            AduAttach:PathDataAttach.PathData="{StaticResource Left}"
-                            AduAttach:PathDataAttach.Width="6" />
+                            Grid.Column="1" Margin="15,0,0,0" 
+                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_LeftArrow}"/>
 
                   <Adu:AduPathIconButton x:Name="PART_NextMonthButton"
-                            Grid.Column="3"
-                            Width="10"
-                            Margin="0,0,15,0"
-                            AduAttach:PathBrushAttach.NormalPathColor="#C3CEE1"
-                            AduAttach:PathBrushAttach.MouseOverPathColor="#FFF"
-                            AduAttach:PathDataAttach.PathData="{StaticResource Left}"
-                            AduAttach:PathDataAttach.Width="6"
-                            RenderTransformOrigin="0.5,0.5">
+                        Grid.Column="3" Margin="0,0,15,0" 
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_LeftArrow}" 
+                        RenderTransformOrigin="0.5,0.5">
                      <Adu:AduPathIconButton.LayoutTransform>
                         <RotateTransform Angle="180" />
                      </Adu:AduPathIconButton.LayoutTransform>
                   </Adu:AduPathIconButton>
 
                   <Adu:AduPathIconButton x:Name="PART_NextYearButton"
-                            Grid.Column="4"
-                            Margin="0,0,15,0"
-                            AduAttach:PathBrushAttach.NormalPathColor="#C3CEE1"
-                            AduAttach:PathBrushAttach.MouseOverPathColor="#FFF"
-                            AduAttach:PathDataAttach.PathData="{StaticResource DoubleLeft}"
-                            RenderTransformOrigin="0.5,0.5">
+                     Grid.Column="4" Margin="0,0,15,0" 
+                     AduAttach:PathDataAttach.Width="10"
+                     AduAttach:PathDataAttach.PathData="{StaticResource Icon_DoubleLeft}"
+                     RenderTransformOrigin="0.5,0.5">
                      <Adu:AduPathIconButton.LayoutTransform>
                         <RotateTransform Angle="180" />
                      </Adu:AduPathIconButton.LayoutTransform>
                   </Adu:AduPathIconButton>
 
-                  <Button x:Name="PART_HeaderButton"
-                            Grid.Row="0"
-                            Grid.Column="2"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Stretch"
-                            Focusable="False"
-                            FontSize="12"
-                            Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Adu:AduCalendar}}"
-                            Template="{StaticResource HeaderButtonTemplate}" />
+                  <Button x:Name="PART_HeaderButton" Grid.Row="0" Grid.Column="2" Width="66"
+                        HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                        Focusable="False" FontSize="12"
+                        Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Adu:AduCalendar}}"
+                        Template="{StaticResource HeaderButtonTemplate}" />
 
                   <!--  月视图，1号~31号，分为49格  -->
-                  <Border Grid.Row="1"
-                                Grid.ColumnSpan="5"
-                                Padding="10"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{DynamicResource Divider}"
-                                BorderThickness="0,1,0,0"
-                                SnapsToDevicePixels="True"
-                                UseLayoutRounding="True">
-                     <Grid x:Name="PART_MonthView"
-                                  HorizontalAlignment="Stretch"
-                                  Visibility="Visible">
+                  <Border Grid.Row="1" Grid.ColumnSpan="5" Padding="10"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{StaticResource NormalBlack10}"
+                        CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                        BorderThickness="0,1,0,0"
+                        SnapsToDevicePixels="True"
+                        UseLayoutRounding="True">
+                     <Grid x:Name="PART_MonthView" HorizontalAlignment="Stretch" Visibility="Visible">
                         <Grid.ColumnDefinitions>
                            <ColumnDefinition />
                            <ColumnDefinition />
@@ -142,14 +127,9 @@
                   </Border>
 
                   <!--  年视图，分为12格  -->
-                  <Border Grid.Row="1"
-                                Grid.Column="0"
-                                Grid.ColumnSpan="5"
-                                Padding="10">
-                     <Grid x:Name="PART_YearView"
-                                  HorizontalAlignment="Stretch"
-                                  VerticalAlignment="Stretch"
-                                  Visibility="Hidden">
+                  <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Padding="10">
+                     <Grid x:Name="PART_YearView" Visibility="Hidden"
+                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
                            <ColumnDefinition />
                            <ColumnDefinition />

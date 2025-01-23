@@ -4,55 +4,62 @@
     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
+
    <Style TargetType="{x:Type Adu:AduRadioButtonIcon}">
+      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{StaticResource NormalTransparentBrush}"/>
+      <Setter Property="AduAttach:BorderAttach.SelectedBorderBrush" Value="{StaticResource NormalTransparentBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="2,0,0,0"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0"/>
+      <Setter Property="AduAttach:BorderAttach.Margin" Value="0,8"/>
+      <Setter Property="AduAttach:BorderAttach.SelectedBorderThickness" Value="2,0,0,0"/>
+      <Setter Property="AduAttach:PathDataAttach.Margin" Value="2,0" />
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="14" />
+      <Setter Property="Padding" Value="0" />
       <Setter Property="Height" Value="30" />
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-      <Setter Property="Background" Value="White" />
-      <Setter Property="Foreground" Value="#888" />
-      <Setter Property="Padding" Value="0" />
-      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="Transparent"/>
-      <Setter Property="AduAttach:BorderAttach.SelectedBorderBrush" Value="Transparent"/>
-      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="2,0,0,0"/>
-      <Setter Property="AduAttach:BorderAttach.SelectedBorderThickness" Value="2,0,0,0"/>
-      <Setter Property="AduAttach:PathDataAttach.Margin" Value="10,0" />
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}"/>
-      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{StaticResource Brush}"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Adu:AduRadioButtonIcon}">
-               <Border
-                        x:Name="boder"
-                        Background="#00FFFFFF"
-                        Margin="{TemplateBinding Margin}"
-                        Padding="{TemplateBinding Padding}"
+               <Border Background="{TemplateBinding Background}">
+                  <Grid Margin="{TemplateBinding Margin}">
+                     <Border x:Name="boder" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                        Padding="{TemplateBinding Padding}" Margin="{TemplateBinding AduAttach:BorderAttach.Margin}"
                         BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}"
-                        BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}">
-                  <StackPanel VerticalAlignment="Center" Orientation="Horizontal" SnapsToDevicePixels="True">
-                     <Path x:Name="Icon" VerticalAlignment="Center" Stretch="Uniform" 
-                              Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" 
-                              Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
-                              Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
-                              Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" />
-                        <TextBlock x:Name="contentPresenter" Grid.Column="1"
-                                Text="{TemplateBinding Content}"
-                                Foreground="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
-                                Margin="0,0,5,0" Focusable="False"
-                                HorizontalAlignment="Left" VerticalAlignment="Center"
-                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                  </StackPanel>
+                        BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}"/>
+                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal" SnapsToDevicePixels="True">
+                        <Path x:Name="Icon" VerticalAlignment="Center" Stretch="Uniform" 
+                           Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" 
+                           Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
+                           Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
+                           Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" />
+                        <TextBlock x:Name="contentPresenter" Focusable="False"
+                           Text="{TemplateBinding Content}"
+                           Foreground="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"  
+                           HorizontalAlignment="Left" VerticalAlignment="Center"
+                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                     </StackPanel>
+                  </Grid>
                </Border>
                <ControlTemplate.Triggers>
-                  <Trigger Property="IsMouseOver" Value="True" >
-                     <Setter TargetName="boder" Property="Opacity" Value=".7" />
+                  <Trigger Property="IsMouseOver" Value="True">
+                     <Setter Property="Opacity" Value="{StaticResource MouseOverOpacity}" />
                   </Trigger>
-                  <Trigger Property="IsEnabled" Value="False" />
-                  <Trigger Property="IsPressed" Value="True" />
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
+                  </Trigger>
+                  <Trigger Property="IsPressed" Value="False">
+                     <Setter Property="Opacity" Value="{StaticResource PressedOpacity}" />
+                  </Trigger>
                   <Trigger Property="IsChecked" Value="True">
+                     <Setter Property="Opacity" Value="{StaticResource NormalOpacity}" />
                      <Setter TargetName="boder" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-                     <Setter TargetName="boder" Property="Opacity" Value=".8" />
                      <Setter TargetName="boder" Property="BorderThickness" Value="{Binding (AduAttach:BorderAttach.SelectedBorderThickness), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="boder" Property="BorderBrush" Value="{Binding (AduAttach:BorderAttach.SelectedBorderBrush), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="Icon" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />

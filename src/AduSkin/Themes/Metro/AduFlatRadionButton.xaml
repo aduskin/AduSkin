@@ -36,7 +36,7 @@
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <!--<Setter TargetName="bd" Property="Stroke" Value="#DDDBD5"/>
-                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>-->
+                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrushBrush}"/>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -2,17 +2,17 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <Style TargetType="{x:Type Adu:AduTabItem}">
-      <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
-      <Setter Property="FontSize" Value="12"></Setter>
-      <Setter Property="Opacity" Value="1"></Setter>
-      <Setter Property="Foreground" Value="{StaticResource Brush}"></Setter>
-      <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-      <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
-      <Setter Property="FontFamily" Value="微软雅黑"></Setter>
-      <Setter Property="VerticalAlignment" Value="Center"></Setter>
+      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="Opacity" Value="1"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="FontFamily" Value="微软雅黑"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
       <Setter Property="Height" Value="40" />
       <Setter Property="Width" Value="80"/>
       <Setter Property="Template" >
@@ -42,9 +42,8 @@
                   <Trigger Property="IsMouseOver" Value="true" >
                   </Trigger>
                   <Trigger Property="IsSelected" Value="true">
-                     <Setter Property="Opacity" Value=".8"></Setter>
-                     <!--<Setter Property="BorderBrush" TargetName="y" Value="#999"></Setter>-->
-                     <Setter Property="Visibility" TargetName="y" Value="Visible"></Setter>
+                     <Setter Property="Opacity" Value=".8"/> 
+                     <Setter Property="Visibility" TargetName="y" Value="Visible"/>
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -60,7 +59,7 @@
       </Setter>
       <Style.Triggers>
          <Trigger Property="IsSelected" Value="true">
-            <Setter Property="Opacity" Value=".8"></Setter>
+            <Setter Property="Opacity" Value=".8"/>
          </Trigger>
       </Style.Triggers>
    </Style>

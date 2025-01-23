@@ -6,13 +6,14 @@
              d1p1:Ignorable="d" 
              xmlns:vm="clr-namespace:AduSkin.Demo.ViewModel"
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
-    <Application.Resources>
-        <ResourceDictionary> 
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/BaseStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/ShowControl.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/Converter.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
+   <Application.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/AduTreeView.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/BaseStyle.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/ShowControl.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/Converter.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </Application.Resources>
 </Application>

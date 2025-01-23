@@ -13,7 +13,7 @@
     <Window.Resources>
       <ResourceDictionary>
          <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+            <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
          </ResourceDictionary.MergedDictionaries>
 
          <Storyboard x:Key="CollapseStoryboard">
@@ -31,15 +31,15 @@
                      <TranslateTransform />
                   </TransformGroup>
                </Grid.RenderTransform>
-               <Border Background="#FFFFFF" CornerRadius="2,0,0,2" SnapsToDevicePixels="True" UseLayoutRounding="True">
+               <Border Background="{DynamicResource NormalWhite}" CornerRadius="2,0,0,2" SnapsToDevicePixels="True" UseLayoutRounding="True">
                   <Border.Effect>
                      <DropShadowEffect BlurRadius="20" Opacity="0.2" ShadowDepth="10" Color="Black" />
                   </Border.Effect>
                </Border>
 
-               <Border x:Name="Border" CornerRadius="2,0,0,2" Background="#fff"/>
+               <Border x:Name="Border" CornerRadius="2,0,0,2" Background="{DynamicResource NormalWhite}"/>
 
-               <Border Margin="5,0,0,0" Background="#FFFFFF" CornerRadius="0,2,2,0" Padding="10">
+               <Border Margin="5,0,0,0" Background="{DynamicResource NormalWhite}" CornerRadius="0,2,2,0" Padding="10">
                   <Grid>
                      <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -60,10 +60,12 @@
                                    Text="{Binding Content}"
                                    TextWrapping="Wrap" />
 
-                     <Adu:AduPathIconButton x:Name="PART_CloseButton" Grid.ColumnSpan="2" Margin="0" HorizontalAlignment="Right"
-                                            VerticalAlignment="Center" AduAttach:PathBrushAttach.MouseOverPathColor="#446CB3" AduAttach:PathBrushAttach.NormalPathColor="#99A5C2"
-                                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_SystemClose}"
-                                            AduAttach:PathDataAttach.Width="10" />
+                     <Adu:AduPathIconButton x:Name="PART_CloseButton" Grid.ColumnSpan="2" Margin="0" 
+                              HorizontalAlignment="Right" VerticalAlignment="Center" 
+                              AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource MouseOverPathBrush}" 
+                              AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalPathBrush}"
+                              AduAttach:PathDataAttach.PathData="{StaticResource Icon_SystemClose}"
+                              AduAttach:PathDataAttach.Width="10" />
                   </Grid>
                </Border>
             </Grid>

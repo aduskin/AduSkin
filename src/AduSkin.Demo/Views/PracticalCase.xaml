@@ -16,18 +16,23 @@
          <ColumnDefinition Width="300"/>
          <ColumnDefinition/>
       </Grid.ColumnDefinitions>
-      <Border Background="#FFF" BorderThickness="0,0,1,0" BorderBrush="{StaticResource DefaultBorderBrush}">
+      <Border Background="{StaticResource NormalWhite}" BorderThickness="0,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}">
          <Grid >
             <Grid.RowDefinitions>
-               <RowDefinition Height="Auto"></RowDefinition>
-               <RowDefinition Height="Auto"></RowDefinition>
-               <RowDefinition Height="*"></RowDefinition>
+               <RowDefinition Height="Auto"/>
+               <RowDefinition Height="Auto"/>
+               <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Border Background="#05000000">
-               <TextBlock Foreground="#999" Style="{StaticResource H5}"  Padding="0,20,0,0" HorizontalAlignment="Center">搜索你要找的案例</TextBlock>
+               <TextBlock Foreground="#999" Style="{StaticResource H5}" 
+                        Padding="0,20,0,0" HorizontalAlignment="Center">搜索你要找的案例</TextBlock>
             </Border>
             <Border Background="#05000000" Grid.Row="1">
-               <Metro:MetroTextBox x:Name="SearchKey" CaretBrush="#000" Background="#10000000" BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center" VerticalContentAlignment="Center" CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  InputHint="Search you need Demo..." />
+               <Metro:MetroTextBox x:Name="SearchKey" CaretBrush="#000" Background="#10000000" 
+                        BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                        VerticalAlignment="Center" VerticalContentAlignment="Center" 
+                        CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  
+                        InputHint="Search you need Demo..." />
             </Border>
             <Metro:AduTabControl Grid.Row="2" SelectedIndex="{Binding SelectedDemoType}">
                <Metro:AduTabControl.Resources>
@@ -36,17 +41,19 @@
                   </Style>
                </Metro:AduTabControl.Resources>
                <Metro:AduTabItem Header="案例">
-                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" ItemsSource="{Binding SearchControl.View}" SelectedItem="{Binding CurrentShowControl}"/>
+                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" 
+                           ItemsSource="{Binding SearchControl.View}" SelectedItem="{Binding CurrentShowControl}"/>
                </Metro:AduTabItem>
                <Metro:AduTabItem Header="工具">
-                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" ItemsSource="{Binding SearchTool.View}" SelectedItem="{Binding CurrentShowTool}"/>
+                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}"
+                           ItemsSource="{Binding SearchTool.View}" SelectedItem="{Binding CurrentShowTool}"/>
                </Metro:AduTabItem>
             </Metro:AduTabControl>
          </Grid>
       </Border>
       <Grid Background="{StaticResource MainContentForegroundDrawingBrush}" Grid.Column="1">
          <Border HorizontalAlignment="Center" VerticalAlignment="Center" Padding="40,0,40,40" Margin="20"
-                 MinWidth="400" Background="#FFF" CornerRadius="6" Effect="{StaticResource CardShadow}">
+                 MinWidth="400" Background="{StaticResource NormalWhite}" CornerRadius="6" Effect="{StaticResource CardShadow}">
             <Grid>
                <Grid.RowDefinitions>
                   <RowDefinition Height="60"/>

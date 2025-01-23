@@ -18,8 +18,8 @@
          <RowDefinition/>
       </Grid.RowDefinitions>
       <StackPanel  VerticalAlignment="Center" Margin="0,10">
-         <TextBlock Style="{StaticResource H2}" Text="技术支持和赞助" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}"/>
-         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="赞助支持请点赞【龙年红包】，完成后联系作者可加入赞助墙，感谢大佬的支持！" FontWeight="Light" Foreground="{StaticResource DefaultBrush}"/>
+         <TextBlock Style="{StaticResource H2}" Text="技术支持和赞助" FontWeight="Bold" Foreground="{StaticResource NormalBrush}"/>
+         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="赞助支持请点赞【龙年红包】，完成后联系作者可加入赞助墙，感谢大佬的支持！" FontWeight="Light" Foreground="{StaticResource NormalBrush}"/>
          <Border HorizontalAlignment="Center" Padding="0,10">
             <StackPanel >
                <UniformGrid Columns="2">
@@ -36,20 +36,23 @@
             </StackPanel>
          </Border>
          <AduSkin:AduTransitioningContentControl TransitionStoryboard="{StaticResource Custom2Transition}">
-            <AduSkin:AduPathIconButton Name="OpenReward" Command="{Binding OpenCommand}" CommandParameter="Reward" AduAttach:PathDataAttach.Width="40" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource DefaultBrush}" 
-                                       AduAttach:PathBrushAttach.PressedPathColor="{StaticResource DefaultBrush}" HorizontalAlignment="Center" AduAttach:PathDataAttach.PathData="M813.4 153.4c-5.1 9.3-13.5 15.7-23 18.4L706.6 196l-24.2-83.8c-2.8-9.5-1.9-19.9 3.3-29.3C696 64.3 719.4 57.5 738 67.8c13.2 7.3 20.5 21.3 19.9 35.4 11.6-8.1 27.3-9.4 40.5-2.1 18.5 10.3 25.2 33.7 15 52.3z M873.3 483.2c-23.5-49.7-82-73.3-137.1-78-55.1-4.7-110.2 4.7-165.4 0-6.7-0.7-14.1-2-18.2-6.7-6.1-6.7-3.4-18.2-0.7-26.9 21.5-68.6 37-147.9 1.3-210.4-14.8-25.5-41-47.7-70.6-46.4-20.8 1.3-40.3 14.1-53.1 30.3-12.8 16.1-21.5 35.6-29.6 55.1-40.3 92.8-83.4 184.2-129.1 274.3-4.7 9.4-10.1 19.5-18.2 25.5-13.4 10.1-30.9 10.1-47.1 9.4-20.2-0.7-41-1.3-61.8-2-4.7 0-10.1 0-13.4 3.4-2.7 2.7-3.4 7.4-3.4 12.1 0 13.4-0.7 26.9-0.7 40.3 0 6.1 0.7 12.1 4.7 16.1 3.4 3.4 8.1 3.4 12.8 3.4 26.2 0.7 53.1 0.7 79.3 0.7 19.5 0 39.7-0.7 57.1-8.7 28.2-14.1 43.7-44.4 57.1-73.3 43.7-94.1 87.4-188.9 131.1-283 1.3-3.4 3.4-7.4 6.7-9.4 8.7-5.4 18.2 5.4 21.5 15.5 17.5 55.1-27.6 110.9-23.5 168.1 2 32.9 22.2 63.9 50.4 80 30.9 17.5 67.9 17.5 102.8 16.8 39.7 0 80-0.7 119.7-1.3 16.8 0 35.6 0 48.4 10.8 19.5 15.5 16.8 45 12.8 69.9-14.8 86-32.3 171.4-52.4 256.1-3.4 14.1-7.4 29.6-17.5 40.3-16.1 16.8-41.7 18.2-65.2 18.2H330.7V683.7h-78.2v199.4h-81.7c-6.7 0-14.8 0.7-18.8 6.1-3.4 4-3.4 10.1-3.4 15.5 0 26.9-6 53.8 29.6 53.8 163.4 0 326.7-0.7 490.1-0.7 8.7 0 17.5 0 26.2-0.7 26.2-0.7 51.8-4.7 72.6-21.5 36.3-24.2 48.4-70.6 58.5-112.9 16.1-67.2 31.6-134.4 47.1-201.7 10-45.7 20.8-95.5 0.6-137.8z">
+            <AduSkin:AduPathIconButton Name="OpenReward" Command="{Binding OpenCommand}" CommandParameter="Reward" AduAttach:PathDataAttach.Width="40" AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource NormalBrush}" 
+                                       AduAttach:PathBrushAttach.PressedPathColor="{StaticResource NormalBrush}" HorizontalAlignment="Center" AduAttach:PathDataAttach.PathData="M813.4 153.4c-5.1 9.3-13.5 15.7-23 18.4L706.6 196l-24.2-83.8c-2.8-9.5-1.9-19.9 3.3-29.3C696 64.3 719.4 57.5 738 67.8c13.2 7.3 20.5 21.3 19.9 35.4 11.6-8.1 27.3-9.4 40.5-2.1 18.5 10.3 25.2 33.7 15 52.3z M873.3 483.2c-23.5-49.7-82-73.3-137.1-78-55.1-4.7-110.2 4.7-165.4 0-6.7-0.7-14.1-2-18.2-6.7-6.1-6.7-3.4-18.2-0.7-26.9 21.5-68.6 37-147.9 1.3-210.4-14.8-25.5-41-47.7-70.6-46.4-20.8 1.3-40.3 14.1-53.1 30.3-12.8 16.1-21.5 35.6-29.6 55.1-40.3 92.8-83.4 184.2-129.1 274.3-4.7 9.4-10.1 19.5-18.2 25.5-13.4 10.1-30.9 10.1-47.1 9.4-20.2-0.7-41-1.3-61.8-2-4.7 0-10.1 0-13.4 3.4-2.7 2.7-3.4 7.4-3.4 12.1 0 13.4-0.7 26.9-0.7 40.3 0 6.1 0.7 12.1 4.7 16.1 3.4 3.4 8.1 3.4 12.8 3.4 26.2 0.7 53.1 0.7 79.3 0.7 19.5 0 39.7-0.7 57.1-8.7 28.2-14.1 43.7-44.4 57.1-73.3 43.7-94.1 87.4-188.9 131.1-283 1.3-3.4 3.4-7.4 6.7-9.4 8.7-5.4 18.2 5.4 21.5 15.5 17.5 55.1-27.6 110.9-23.5 168.1 2 32.9 22.2 63.9 50.4 80 30.9 17.5 67.9 17.5 102.8 16.8 39.7 0 80-0.7 119.7-1.3 16.8 0 35.6 0 48.4 10.8 19.5 15.5 16.8 45 12.8 69.9-14.8 86-32.3 171.4-52.4 256.1-3.4 14.1-7.4 29.6-17.5 40.3-16.1 16.8-41.7 18.2-65.2 18.2H330.7V683.7h-78.2v199.4h-81.7c-6.7 0-14.8 0.7-18.8 6.1-3.4 4-3.4 10.1-3.4 15.5 0 26.9-6 53.8 29.6 53.8 163.4 0 326.7-0.7 490.1-0.7 8.7 0 17.5 0 26.2-0.7 26.2-0.7 51.8-4.7 72.6-21.5 36.3-24.2 48.4-70.6 58.5-112.9 16.1-67.2 31.6-134.4 47.1-201.7 10-45.7 20.8-95.5 0.6-137.8z">
                <AduSkin:AduPathIconButton.ToolTip>
-                  <AduSkin:AduToolTip Content="打 赏 龙 年 红 包" IsShowShadow="True" FontSize="18" Foreground="#FFF000" Background="#231815" Padding="20,10" PlacementEx="BottomCenter" />
+                  <AduSkin:AduToolTip Content="打 赏 龙 年 红 包" IsShowShadow="True" FontSize="18" 
+                                      Foreground="{DynamicResource NormalWhite}" Background="#231815" Padding="20,10" PlacementEx="BottomCenter" />
                </AduSkin:AduPathIconButton.ToolTip>
             </AduSkin:AduPathIconButton>
          </AduSkin:AduTransitioningContentControl>
          <!--</Popup>-->
       </StackPanel>
-      <ListBox Grid.Row="1" ItemsSource="{Binding AllSupports}" BorderThickness="0,2" BorderBrush="{StaticResource DefaultBorderBrush}" 
+      <ListBox Grid.Row="1" ItemsSource="{Binding AllSupports}" 
+               BorderThickness="0,2" BorderBrush="{StaticResource NormalBorderBrush}" 
                Margin="40,0,40,40" Background="Transparent">
          <ListBox.Resources>
             <Style TargetType="ListBoxItem">
                <Setter Property="BorderThickness" Value="0" />
+               <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
                <Setter Property="Margin" Value="10" />
                <Setter Property="Padding" Value="0" />
                <Setter Property="Cursor" Value="Hand"/>
@@ -62,7 +65,8 @@
          </ListBox.ItemsPanel>
          <ListBox.ItemTemplate>
             <DataTemplate>
-               <Border MinHeight="100" Background="#FAFBFC" x:Name="Bd" BorderBrush="#06000000" BorderThickness="0,0,0,1">
+               <Border MinHeight="100" Background="{StaticResource NormalWhite}" x:Name="Bd" 
+                       BorderBrush="{StaticResource NormalTransparentBrush}" BorderThickness="1" CornerRadius="20">
                   <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
@@ -76,7 +80,7 @@
                      <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,20,0">
                         <TextBlock Text="{Binding Name}" FontSize="14"  TextAlignment="Left" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" MaxWidth="150">
                            <TextBlock.ToolTip>
-                              <AduSkin:AduToolTip Content="{Binding Name}" IsShowShadow="True" FontSize="12" FontWeight="Bold" Foreground="{StaticResource DefaultBrush}" Background="{StaticResource ShadowColor}" Padding="20,10" PlacementEx="TopCenter" />
+                              <AduSkin:AduToolTip Content="{Binding Name}" IsShowShadow="True" FontSize="12" FontWeight="Bold" Foreground="{StaticResource NormalBrush}" Background="{StaticResource ShadowBrush}" Padding="20,10" PlacementEx="TopCenter" />
                            </TextBlock.ToolTip>
                         </TextBlock>
                         <ItemsControl
@@ -92,7 +96,7 @@
                            <ItemsControl.ItemTemplate>
                               <DataTemplate>
                                  <Border VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="2" Background="#EE796F" CornerRadius="2">
-                                    <TextBlock  Text="{Binding }" Margin="4,2" FontSize="10" Foreground="#FFF" />
+                                    <TextBlock  Text="{Binding }" Margin="4,2" FontSize="10" Foreground="{DynamicResource NormalWhite}" />
                                  </Border>
                                  <DataTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
@@ -114,7 +118,8 @@
                      <MultiTrigger.Conditions>
                         <Condition Property="IsMouseOver" Value="True" />
                      </MultiTrigger.Conditions>
-                     <!--<Setter TargetName="Bd" Property="Background" Value="#F7F7F7" />-->
+                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBorderBrush}" />
                   </MultiTrigger>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />

@@ -3,36 +3,35 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                      xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
-   </ResourceDictionary.MergedDictionaries>
-   <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#10FFFFFF" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries> 
 
    <Style x:Key="ItemStyle" TargetType="{x:Type AduPicker:AduTimeButton}">
-      <Setter Property="Background" Value="Transparent" />
-      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Padding" Value="0,5" />
-      <Setter Property="Foreground" Value="{StaticResource Brush}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduPicker:AduTimeButton}">
                <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
-                            SnapsToDevicePixels="True" UseLayoutRounding="True">
+                        SnapsToDevicePixels="True" UseLayoutRounding="True">
                   <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
+                     <Setter Property="Background" Value="{StaticResource NormalWhite10}" />
                      <Setter Property="Cursor" Value="Hand" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="False">
                      <Setter Property="Opacity" Value=".7" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter Property="Background" Value="{StaticResource Item.MouseOver.Background}" />
+                     <Setter Property="Background" Value="{StaticResource NormalWhite10}" />
                      <Setter Property="FontWeight" Value="Bold" />
                   </Trigger>
                </ControlTemplate.Triggers>
@@ -42,12 +41,12 @@
    </Style>
 
    <Style x:Key="TimeItemsStyle" TargetType="{x:Type ListBox}">
-      <Setter Property="HorizontalContentAlignment" Value="Center" />
-      <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="Background" Value="Transparent"/>
-      <Setter Property="ItemContainerStyle" Value="{StaticResource ItemStyle}" />
-      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/> 
+      <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="ItemContainerStyle" Value="{StaticResource ItemStyle}" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type ListBox}">
@@ -66,8 +65,9 @@
    </Style>
 
    <Style TargetType="{x:Type AduPicker:AduTimeSelector}">
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
       <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="Background" Value="#4B4B4B" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="UseLayoutRounding" Value="True" />
@@ -76,16 +76,21 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduPicker:AduTimeSelector}">
-               <Border Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"
-              CornerRadius="3" 
-              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-              UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+               <Border Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}" 
+                     CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                     UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
                   <Grid>
-                     <Border BorderBrush="#000" Opacity="0.15" CornerRadius="3" BorderThickness="{TemplateBinding BorderThickness}"/>
-                     <UniformGrid Columns="3">
-                        <ListBox x:Name="PART_Hour" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}"/>
-                        <ListBox x:Name="PART_Minute" BorderThickness="1,0,1,0" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}" />
-                        <ListBox x:Name="PART_Second" BorderBrush="{StaticResource DefaultBorderBrush}" Style="{StaticResource TimeItemsStyle}" />
+                     <Border CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                           BorderBrush="{TemplateBinding BorderBrush}" 
+                           BorderThickness="{TemplateBinding BorderThickness}"/>
+                     <UniformGrid Columns="3" Margin="0,6">
+                        <ListBox x:Name="PART_Hour" BorderBrush="{StaticResource NormalBorderBrush}" 
+                              Style="{StaticResource TimeItemsStyle}"/>
+                        <ListBox x:Name="PART_Minute" BorderThickness="1,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}" 
+                              Style="{StaticResource TimeItemsStyle}" />
+                        <ListBox x:Name="PART_Second" BorderBrush="{StaticResource NormalBorderBrush}" 
+                              Style="{StaticResource TimeItemsStyle}" />
                      </UniformGrid>
                   </Grid>
                </Border>

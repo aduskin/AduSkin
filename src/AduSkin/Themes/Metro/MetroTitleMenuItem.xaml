@@ -4,7 +4,7 @@
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--顶部菜单-->
    <Style TargetType="{x:Type Metro:MetroTitleMenuItem}">
@@ -13,7 +13,7 @@
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="Height" Value="40"/>
       <Setter Property="Background" Value="#1E1F23"/>
-      <Setter Property="Foreground" Value="#FFF"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalWhite}"/>
       <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Template">
          <Setter.Value>
@@ -23,7 +23,7 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="0"/>
                      </Grid.ColumnDefinitions>
-                     <Rectangle x:Name="backRectangle" Fill="#ffffff" Opacity="0"/>
+                     <Rectangle x:Name="backRectangle" Fill="{DynamicResource NormalWhite}" Opacity="0"/>
                      <Grid x:Name="title" Background="#00000000" VerticalAlignment="Center" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                         <Grid.ColumnDefinitions>
                            <ColumnDefinition Width="Auto" x:Name="iconWidth"/>
@@ -31,16 +31,21 @@
                            <ColumnDefinition Width="0" x:Name="subWidth"/>
                         </Grid.ColumnDefinitions>
                         <Image x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" Margin="10,0,0,0"/>
-                        <Metro:MetroTextBlock Grid.Column="1" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" Margin="10,0" VerticalAlignment="Center"/>
-                        <Polyline Grid.Column="2" Points="0,0 5,5 10,0" Stroke="#ffffff" VerticalAlignment="Center"  Margin="0,0,10,0"/>
+                        <Metro:MetroTextBlock Grid.Column="1" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" 
+                              Margin="10,0" VerticalAlignment="Center"/>
+                        <Polyline Grid.Column="2" Points="0,0 5,5 10,0" Stroke="{DynamicResource NormalWhite}"
+                              VerticalAlignment="Center"  Margin="0,0,10,0"/>
                      </Grid>
-                     <Rectangle Grid.Column="3" Fill="#ffffff" Opacity="0.2" Height="12"/>
-                     <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" HorizontalOffset="-20" VerticalOffset="-10" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="Fade" Placement="Bottom">
+                     <Rectangle Grid.Column="3" Fill="{DynamicResource NormalWhite}" Opacity="0.2" Height="12"/>
+                     <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" 
+                            HorizontalOffset="-20" VerticalOffset="-10"
+                            IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
+                            PopupAnimation="Fade" Placement="Bottom">
                         <Grid RenderOptions.ClearTypeHint="Enabled" Background="#00000000">
                            <Border Grid.Row="1" Background="{TemplateBinding Background}" Margin="20" Padding="0"
-                         BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
-                         BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
-                         CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}">
+                               BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
+                               BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
+                               CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}">
                               <Border.Effect>
                                  <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
                               </Border.Effect>

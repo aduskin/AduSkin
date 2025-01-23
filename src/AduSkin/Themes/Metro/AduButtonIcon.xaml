@@ -3,19 +3,18 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type Adu:AduButtonIcon}">
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
-      <Setter Property="Foreground" Value="#FFFFFFFF" />
-      <Setter Property="Background" Value="#00FFFFFF" />
-      <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="12"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="0"/>
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource Brush}"/>
+      <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="MinWidth" Value="100"/>
       <Setter Property="MinHeight" Value="30" />
@@ -44,14 +43,20 @@
                         <VisualState x:Name="Disabled" />
                      </VisualStateGroup>
                   </VisualStateManager.VisualStateGroups>
-                  <Border Border.Name="back" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Margin="0,0,0,0" Padding="{TemplateBinding Padding}">
+                  <Border Border.Name="back" Padding="{TemplateBinding Padding}"
+                          Background="{TemplateBinding Background}" 
+                          CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" >
                      <Grid>
                         <StackPanel StackPanel.Orientation="Horizontal" FrameworkElement.HorizontalAlignment="Center">
-                           <Path FrameworkElement.Name="icon" Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" 
-                                 Width="{TemplateBinding AduAttach:PathDataAttach.Width}" Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
-                                 Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" Shape.Stretch="Uniform" 
-                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-                           <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                           <Path FrameworkElement.Name="icon" Shape.Stretch="Uniform" 
+                                 Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" 
+                                 Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
+                                 Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
+                                 Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" 
+                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                           <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
                         </StackPanel>
                      </Grid>
                   </Border>

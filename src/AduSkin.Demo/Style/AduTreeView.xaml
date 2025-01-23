@@ -19,7 +19,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Border Background="{StaticResource DefaultBrush}" Width="40" Height="40" CornerRadius="3" HorizontalAlignment="Left" Grid.Column="0" Grid.RowSpan="2">
+                <Border Background="{StaticResource NormalBrush}" Width="40" Height="40" CornerRadius="3" HorizontalAlignment="Left" Grid.Column="0" Grid.RowSpan="2">
                      <TextBlock Text="{Binding SurName}" FontSize="23" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Border>
                 <TextBlock Text="{Binding Name}"  FontSize="13" Grid.Column="1" Margin="0,4,0,0" TextTrimming="CharacterEllipsis"/>
@@ -122,7 +122,7 @@
                                 <Condition Property="IsFocused" Value="False"/>
                                 <Condition SourceName="itemBackground" Property="IsMouseOver" Value="true"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value=" #fff" TargetName="itemBackground"/>
+                            <Setter Property="Background" Value=" {DynamicResource NormalWhite}" TargetName="itemBackground"/>
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
@@ -137,8 +137,8 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.PanningMode" Value="Both" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource DefaultTreeViewItem}"></Setter>
-        <Setter Property="ItemTemplate" Value="{StaticResource ItemNode}"></Setter>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource DefaultTreeViewItem}"/>
+        <Setter Property="ItemTemplate" Value="{StaticResource ItemNode}"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>

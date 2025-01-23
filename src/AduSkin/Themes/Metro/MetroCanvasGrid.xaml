@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml" />
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type Metro:MetroCanvasGrid}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{StaticResource Brush}" />
+        <Setter Property="Background" Value="{StaticResource NormalBrush}" />
         <Setter Property="GridOpacity" Value="0.2" />
         <Setter Property="Viewport" Value="0 0 10 10" />
         <Setter Property="Template">

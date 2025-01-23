@@ -3,14 +3,14 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type Adu:AduButtonSvg}" >
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="Cursor" Value="Hand"/>
-      <Setter Property="Foreground" Value="#FFFFFFFF" />
+      <Setter Property="Foreground" Value="{DynamicResource NormalWhite}" />
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="MinWidth" Value="100"/>
       <Setter Property="Background" Value="#00FFFFFF" />
@@ -18,7 +18,7 @@
       <Setter Property="MinHeight" Value="30" />
       <Setter Property="FontSize" Value="14" />
       <Setter Property="Padding" Value="8,6" />
-      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_Project2}" />
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_Logo}" />
       <Setter Property="AduAttach:PathDataAttach.Width" Value="14" />
       <Setter Property="Template">
          <Setter.Value>
@@ -26,17 +26,11 @@
                <Grid Name="border" Background="#00000000">
                   <Path Name="icon" Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
                               Fill="{TemplateBinding Foreground}" Stretch="Uniform" Path.Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" />
-                  <Adu:AduRipple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"     
-                                    ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                    Padding="{TemplateBinding Padding}" 
-                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                </Grid>
 
                <ControlTemplate.Triggers >
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter Property="Opacity" Value=".8"></Setter>
+                     <Setter Property="Opacity" Value=".8"/>
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>

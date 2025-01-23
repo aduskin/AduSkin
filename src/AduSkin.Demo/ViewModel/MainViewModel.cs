@@ -15,7 +15,7 @@ namespace AduSkin.Demo.ViewModel
       public MainViewModel()
       {
 
-      } 
+      }
 
       private int _SelectedModularIndex;
       /// <summary>

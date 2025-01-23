@@ -3,7 +3,7 @@
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <Converter:StringToVisibility x:Key="StringToVisibility"/>
@@ -45,9 +45,9 @@
       <Setter Property="TextWrapping" Value="NoWrap"/>
       <Setter Property="VerticalAlignment" Value="Center"/>
       <Setter Property="VerticalContentAlignment" Value="Center"/>
-      <Setter Property="Background" Value="#FFFFFFFF"/>
-      <Setter Property="MouseMoveBackground" Value="#FFFFFFFF"/>
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
+      <Setter Property="MouseMoveBackground" Value="{DynamicResource NormalWhite}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}"/>
       <Setter Property="Foreground" Value="#A5000000"/>
       <Setter Property="TitleForeground" Value="#A5000000"/>
       <Setter Property="TitleMinWidth" Value="80"/>
@@ -76,14 +76,20 @@
                               <ColumnDefinition Width="Auto" x:Name="buttonWidth1"/>
                               <ColumnDefinition Width="Auto" x:Name="buttonWidth2"/>
                            </Grid.ColumnDefinitions>
-                           <Image Grid.Column="0" Width="16" Height="16" Margin="6,6,0,6" Source="{TemplateBinding Icon}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                           <Image Grid.Column="0" Width="16" Height="16" Margin="6,6,0,6" Source="{TemplateBinding Icon}" 
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                            <Grid x:Name="hideInputHint" Opacity="0" Grid.Column="1">
-                              <Metro:MetroTextBlock x:Name="inputHint" Margin="6,5,5,5" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding InputHint}" Padding="{TemplateBinding Padding}" HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Opacity="0" IsHitTestVisible="False"/>
+                              <Metro:MetroTextBlock x:Name="inputHint" Margin="6,5,5,5"  Padding="{TemplateBinding Padding}" 
+                                    Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding InputHint}"  
+                                    HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Opacity="0" IsHitTestVisible="False"/>
                            </Grid>
                            <ScrollViewer Grid.Column="1" x:Name="PART_ContentHost" Margin="5" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
                            <Rectangle Grid.Column="2" Width="1" Height="11" Margin="5,0,0,0" Fill="#FF000000" Opacity="0.15" VerticalAlignment="Center"/>
-                           <Button x:Name="button" Focusable="False" Grid.Column="3" Content="{TemplateBinding ButtonTitle}" Margin="0,6" Style="{StaticResource buttonStyle}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Command="Metro:MetroTextBox.ButtonClickCommand"/>
+                           <Button x:Name="button" Focusable="False" Grid.Column="3" Content="{TemplateBinding ButtonTitle}" 
+                                   Margin="0,6" Style="{StaticResource buttonStyle}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                   Command="Metro:MetroTextBox.ButtonClickCommand"/>
                         </Grid>
                      </Grid>
                   </Border>
@@ -91,7 +97,8 @@
                      <Grid>
                         <StackPanel Visibility="{TemplateBinding PopupHint, Converter={StaticResource StringToVisibility}}">
                            <Border x:Name="popupborder" CornerRadius="2" Background="{TemplateBinding BorderBrush}">
-                              <Metro:MetroTextBlock x:Name="popupText" Text="{TemplateBinding PopupHint}" Margin="8,6" Foreground="#FFFFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                              <Metro:MetroTextBlock x:Name="popupText" Text="{TemplateBinding PopupHint}" Margin="8,6"
+                                       Foreground="{DynamicResource NormalWhite}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                            </Border>
                            <Polygon x:Name="popuppolygon" Points="0,0 10,0 5,5 0,0" Fill="{TemplateBinding BorderBrush}" Margin="10,0,0,0"/>
                         </StackPanel>
@@ -102,14 +109,14 @@
                   <Trigger Property="IsEnabled" Value="false">
                      <Setter Property="Opacity" TargetName="content" Value="0.5"/>
                      <Setter Property="Opacity" TargetName="title" Value="0.35"/>
-                     <Setter Property="Background" TargetName="back" Value="#FFFAFAFA"/>
+                     <Setter Property="Background" TargetName="back" Value="{DynamicResource NormalWhite}"/>
                      <Setter Property="Opacity" TargetName="inputHint" Value="0.5"/>
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="true">
                      <Setter Property="Opacity" TargetName="border" Value="0"/>
                      <Setter Property="Opacity" TargetName="bordermove" Value="1"/>
-                     <Setter Property="BorderBrush" TargetName="bordertrue" Value="#ff6fae5f"/>
-                     <Setter Property="BorderBrush" TargetName="borderfalse" Value="#ffe67979"/>
+                     <Setter Property="BorderBrush" TargetName="bordertrue" Value="{StaticResource SuccessBrush}"/>
+                     <Setter Property="BorderBrush" TargetName="borderfalse" Value="{StaticResource ErrorBrush}"/>
 
                      <Setter Property="Background" TargetName="back" Value="{Binding MouseMoveBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
                   </Trigger>

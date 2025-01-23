@@ -26,13 +26,13 @@
                                         HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=DataContext.PlayRecommendClick}"
                                         CommandParameter="{Binding}"
-                                        Foreground="#fff"
+                                        Foreground="{DynamicResource NormalWhite}"
                                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_Desgin}"
                                         AduAttach:PathDataAttach.Width="16"
                                         Visibility="Hidden" />
                         <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
-                            <TextBlock Text="{Binding name}" Background="#50000000" Padding="6,0" Foreground="#FFF" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
-                            <TextBlock Text="{Binding info}" Background="#50000000" Padding="6,2" Foreground="#FFF" FontSize="14" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
+                            <TextBlock Text="{Binding name}" Background="#50000000" Padding="6,0" Foreground="{DynamicResource NormalWhite}" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
+                            <TextBlock Text="{Binding info}" Background="#50000000" Padding="6,2" Foreground="{DynamicResource NormalWhite}" FontSize="14" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
                         </StackPanel>
                     </Grid>
                     <DataTemplate.Triggers>

@@ -5,11 +5,11 @@
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
 
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="MetroBase.xaml"/>
-      <ResourceDictionary Source="AduConverter.xaml"/>
-      <ResourceDictionary Source="AduFlatButton.xaml"/>
-      <ResourceDictionary Source="AduContextMenuButton.xaml"/>
-      <ResourceDictionary Source="MetroScrollViewer.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Converters.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFlatButton.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduContextMenuButton.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <AduSkin:MetroContextMenu x:Key="TabItemMenu" x:Shared="False">
@@ -23,7 +23,7 @@
       <Setter Property="Foreground" Value="#000"/>
       <Setter Property="Background" Value="#EEEEEE"/>
       <Setter Property="BorderThickness" Value="1,0,0,1"/>
-      <Setter Property="BorderBrush" Value="{DynamicResource DefaultBorderBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
       <Setter Property="Margin" Value="0"/>
       <Setter Property="Padding" Value="16,0"/>
       <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -44,12 +44,13 @@
                      <ColumnDefinition/>
                      <ColumnDefinition Width="Auto"/>
                   </Grid.ColumnDefinitions>
-                  <Border Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}" x:Name="mainBorder" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" Margin="0">
+                  <Border Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}" x:Name="mainBorder" 
+                        BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" Margin="0">
                      <Border Margin="0,0,0,-1" x:Name="innerBorder" Background="White" Opacity="0"/>
                   </Border>
                   <ContentPresenter Grid.Column="0" x:Name="contentPresenter" ContentSource="Header" Focusable="False" 
-                                    HorizontalAlignment="Stretch" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
-                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center">
+                        HorizontalAlignment="Stretch" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center">
                      <ContentPresenter.OpacityMask>
                         <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                            <GradientStop Offset="1"/>
@@ -58,8 +59,8 @@
                      </ContentPresenter.OpacityMask>
                   </ContentPresenter>
                   <AduSkin:AduFlatButton Grid.Column="1" Focusable="False" Command="interactivity:ControlCommands.Close" 
-                           Visibility="{TemplateBinding ShowCloseButton,Converter={StaticResource BoolToVisibility}}"  
-                           Background="{StaticResource DefaultTransparent}"  Width="28" Height="28">
+                        Visibility="{TemplateBinding ShowCloseButton,Converter={StaticResource BoolToVisibility}}"  
+                        Background="{StaticResource NormalTransparentBrush}"  Width="28" Height="28">
                      <Path Data="{StaticResource Icon_SystemClose}" Width="8" Stretch="Uniform" Fill="{StaticResource NormalPathColor}"/>
                   </AduSkin:AduFlatButton>
                </Grid>
@@ -85,7 +86,7 @@
                <RowDefinition Height="Auto"/>
                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Background="{TemplateBinding Background}" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderBrush}">
+            <Border Background="{TemplateBinding Background}" BorderThickness="0,0,0,1" BorderBrush="{StaticResource NormalBorderBrush}">
                <AduSkin:AduManageableTabPanel MinHeight="{TemplateBinding TabItemHeight}" TabItemHeight="{TemplateBinding TabItemHeight}" TabItemWidth="{TemplateBinding TabItemWidth}" IsEnableTabFill="{TemplateBinding IsEnableTabFill}" Margin="0,0,-1,-1" x:Name="PART_HeaderPanel" HorizontalAlignment="Left" Background="{DynamicResource SecondaryTextBrush}" IsItemsHost="true" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1">
                   <interactivity:Interaction.Behaviors>
                      <interactivity:FluidMoveBehavior AppliesTo="Children" Duration="{Binding FluidMoveDuration,ElementName=PART_HeaderPanel}">
@@ -96,18 +97,24 @@
                   </interactivity:Interaction.Behaviors>
                </AduSkin:AduManageableTabPanel>
             </Border>
-            <Border x:Name="contentPanel" Background="{DynamicResource SecondaryRegionBrush}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
-               <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            <Border x:Name="contentPanel" Grid.Row="1" Background="{DynamicResource SecondaryRegionBrush}"
+                    KeyboardNavigation.DirectionalNavigation="Contained" 
+                    KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+               <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" 
+                     Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
             </Border>
-            <Border Visibility="{Binding Visibility,ElementName=PART_OverflowButton}" Margin="0,-1,0,0" Grid.Row="0" Grid.Column="0" BorderThickness="1,0,0,1" BorderBrush="{DynamicResource BorderBrush}" Background="Transparent" HorizontalAlignment="Right">
-               <AduSkin:AduContextMenuButton x:Name="PART_OverflowButton" Visibility="Collapsed" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Menu}" AduAttach:PathDataAttach.Width="3" Width="30" />
+            <Border Visibility="{Binding Visibility,ElementName=PART_OverflowButton}" Margin="0,-1,0,0" 
+                     BorderThickness="1,0,0,1" BorderBrush="{DynamicResource BorderBrush}" Background="Transparent" HorizontalAlignment="Right">
+               <AduSkin:AduContextMenuButton x:Name="PART_OverflowButton" Visibility="Collapsed" 
+                     AduAttach:PathDataAttach.PathData="{StaticResource Icon_Menu}" AduAttach:PathDataAttach.Width="3" Width="30" />
             </Border>
          </Grid>
       </Border>
    </ControlTemplate>
 
    <ControlTemplate x:Key="TabControlPlusScrollableTemplate" TargetType="AduSkin:AduManageableTabControl">
-      <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+      <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+              Background="{TemplateBinding Background}">
          <Grid x:Name="templateRoot" ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
             <Grid.ColumnDefinitions>
                <ColumnDefinition Width="Auto"/>
@@ -120,20 +127,26 @@
             </Grid.RowDefinitions>
             <Border Visibility="{TemplateBinding ShowScrollButton,Converter={StaticResource BoolToVisibility}}" 
                     Margin="0,-1,0,0" Grid.Row="0" Grid.Column="0" BorderThickness="0,0,1,1" 
-                    BorderBrush="{DynamicResource DefaultBorderBrush}" Background="Transparent" 
+                    BorderBrush="{DynamicResource NormalBorderBrush}" Background="Transparent" 
                     HorizontalAlignment="Left" Panel.ZIndex="2">
                <Border.CacheMode>
                   <BitmapCache SnapsToDevicePixels="True"/>
                </Border.CacheMode>
                <AduSkin:AduFlatButton x:Name="PART_ScrollButtonLeft" Width="30" Height="30" 
-                     Background="{StaticResource DefaultTransparent}" >
+                     Background="{StaticResource NormalTransparentBrush}" >
                   <Path Data="{StaticResource Icon_LeftArrow}" Width="7" Stretch="Uniform" Fill="{StaticResource NormalPathColor}"/>
                </AduSkin:AduFlatButton>
             </Border>
-            <AduSkin:MetroScrollViewer x:Name="PART_OverflowScrollviewer" HorizontalScrollBarVisibility="Hidden" CanMouseWheel="True" IsEnableInertia="True" Grid.Row="0" Grid.Column="1" IsDeferredScrollingEnabled="True" >
-               <Border Background="{TemplateBinding Background}" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderBrush}" Name="PART_HeaderBorder">
-                  <AduSkin:AduManageableTabPanel x:Name="PART_HeaderPanel" MinHeight="{TemplateBinding TabItemHeight}" TabItemHeight="{TemplateBinding TabItemHeight}" TabItemWidth="{TemplateBinding TabItemWidth}" IsEnableTabFill="{TemplateBinding IsEnableTabFill}" Margin="0,0,-1,-1" 
-                                                  HorizontalAlignment="Left" Background="{DynamicResource SecondaryTextBrush}" IsItemsHost="true" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1">
+            <AduSkin:MetroScrollViewer x:Name="PART_OverflowScrollviewer" 
+                  Grid.Row="0" Grid.Column="1" IsDeferredScrollingEnabled="True"
+                  HorizontalScrollBarVisibility="Hidden" CanMouseWheel="True" IsEnableInertia="True"  >
+               <Border Name="PART_HeaderBorder" Background="{TemplateBinding Background}" 
+                       BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderBrush}">
+                  <AduSkin:AduManageableTabPanel x:Name="PART_HeaderPanel" Margin="0,0,-1,-1" 
+                        MinHeight="{TemplateBinding TabItemHeight}" TabItemHeight="{TemplateBinding TabItemHeight}"
+                        TabItemWidth="{TemplateBinding TabItemWidth}" IsEnableTabFill="{TemplateBinding IsEnableTabFill}" 
+                        HorizontalAlignment="Left" Background="{DynamicResource SecondaryTextBrush}" 
+                        IsItemsHost="true" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1">
                      <interactivity:Interaction.Behaviors>
                         <interactivity:FluidMoveBehavior AppliesTo="Children" Duration="{Binding FluidMoveDuration,ElementName=PART_HeaderPanel}">
                            <interactivity:FluidMoveBehavior.EaseX>
@@ -145,23 +158,27 @@
                </Border>
             </AduSkin:MetroScrollViewer>
             <Border Margin="0,-1,0,0" Grid.Row="0" Grid.Column="2" BorderThickness="1,0,0,1" 
-                    BorderBrush="{DynamicResource DefaultBorderBrush}" 
+                    BorderBrush="{DynamicResource NormalBorderBrush}" 
                     Background="Transparent" HorizontalAlignment="Right" >
                <Border.CacheMode>
                   <BitmapCache SnapsToDevicePixels="True"/>
                </Border.CacheMode>
                <StackPanel Orientation="Horizontal">
                   <AduSkin:AduFlatButton x:Name="PART_ScrollButtonRight"
-                     Width="30" Height="30" Background="{StaticResource DefaultTransparent}"  
+                     Width="30" Height="30" Background="{StaticResource NormalTransparentBrush}"  
                      Visibility="{TemplateBinding ShowScrollButton,Converter={StaticResource BoolToVisibility}}" >
                      <Path Data="{StaticResource Icon_RightArrow}" Width="7" Stretch="Uniform" Fill="{StaticResource NormalPathColor}"/>
                   </AduSkin:AduFlatButton>
                   <Border Visibility="{Binding Visibility,ElementName=PART_OverflowButton}" Width="1" Background="{DynamicResource BorderBrush}"/>
-                  <AduSkin:AduContextMenuButton x:Name="PART_OverflowButton" Visibility="Collapsed" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Menu}" AduAttach:PathDataAttach.Width="3" Width="30"/>
+                  <AduSkin:AduContextMenuButton x:Name="PART_OverflowButton" Visibility="Collapsed" Width="30"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Menu}" AduAttach:PathDataAttach.Width="3"/>
                </StackPanel>
             </Border>
-            <Border x:Name="contentPanel" Background="{DynamicResource SecondaryRegionBrush}" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
-               <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            <Border x:Name="contentPanel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                    Background="{DynamicResource SecondaryRegionBrush}" KeyboardNavigation.DirectionalNavigation="Contained" 
+                    KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+               <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"
+                     Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
             </Border>
          </Grid>
       </Border>
@@ -169,8 +186,8 @@
 
    <Style TargetType="AduSkin:AduManageableTabControl">
       <Setter Property="Padding" Value="0"/>
-      <Setter Property="Background" Value="#FFF"/>
-      <Setter Property="BorderBrush" Value="{DynamicResource DefaultBorderBrush}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
       <Setter Property="HorizontalContentAlignment" Value="Center"/>
       <Setter Property="VerticalContentAlignment" Value="Center"/>
       <Setter Property="BorderThickness" Value="1"/>
@@ -196,7 +213,8 @@
          <Setter.Value>
             <ControlTemplate TargetType="TabControl">
                <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
-                  <Grid x:Name="templateRoot" Background="{TemplateBinding Background}" ClipToBounds="true" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                  <Grid x:Name="templateRoot" Background="{TemplateBinding Background}" ClipToBounds="true" 
+                        SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition x:Name="ColumnDefinition0"/>
                         <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
@@ -205,9 +223,14 @@
                         <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
                         <RowDefinition x:Name="RowDefinition1" Height="*"/>
                      </Grid.RowDefinitions>
-                     <UniformGrid Rows="1" x:Name="headerPanel" Background="Transparent" Grid.Column="0" IsItemsHost="true" Margin="0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
-                     <Border x:Name="contentPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource DefaultBorderBrush}" Background="{TemplateBinding Background}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
-                        <ContentPresenter x:Name="PART_SelectedContentHost"  ContentSource="SelectedContent" Margin="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                     <UniformGrid Rows="1" x:Name="headerPanel" Background="Transparent" Grid.Column="0" IsItemsHost="true" 
+                           Margin="0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
+                     <Border x:Name="contentPanel" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                           BorderThickness="0,1,0,0" BorderBrush="{DynamicResource NormalBorderBrush}" Background="{TemplateBinding Background}"
+                           KeyboardNavigation.DirectionalNavigation="Contained" 
+                           KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                        <ContentPresenter x:Name="PART_SelectedContentHost"  ContentSource="SelectedContent"
+                           Margin="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                      </Border>
                   </Grid>
                </Border>

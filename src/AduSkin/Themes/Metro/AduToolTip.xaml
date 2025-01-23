@@ -3,7 +3,7 @@
                     xmlns:Converters="clr-namespace:AduSkin.Controls.Converter" 
                     xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Converters:OffsetConverter x:Key="OffsetConverter" />
 
@@ -14,7 +14,7 @@
         <Setter Property="Padding" Value="10" />
         <Setter Property="BorderBrush" Value="#585D6B" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Background" Value="{StaticResource Brush}" />
+      <Setter Property="Background" Value="{StaticResource NormalBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type AduSkin:AduToolTip}">

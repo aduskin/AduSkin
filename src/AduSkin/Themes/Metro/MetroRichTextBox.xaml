@@ -1,8 +1,8 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+        <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type Metro:MetroRichTextBox}">
@@ -11,17 +11,17 @@
 
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="2"/>
-        <Setter Property="Background" Value="#ffffff"/>
+        <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
         <!--
-        <Setter Property="CaretBrush" Value="{StaticResource Brush}"/>
-        <Setter Property="SelectionBrush" Value="{StaticResource Brush}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource NormalBrush}"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource NormalBrush}"/>
         -->
         <Setter Property="Foreground" Value="#BF000000"/>
         <Setter Property="Padding" Value="1,3"/>
         <Setter Property="SelectionOpacity" Value="0.2"/>
         <Setter Property="BorderBrush" Value="#26000000"/>
         <Setter Property="MouseMoveBorderBrush" Value="{x:Null}"/>
-        <Setter Property="MouseMoveThemeBorderBrush" Value="{StaticResource Brush}"/>
+        <Setter Property="MouseMoveThemeBorderBrush" Value="{StaticResource NormalBrush}"/>
         <Setter Property="IsDocumentEnabled" Value="True"/>
 
         <Setter Property="AcceptsReturn" Value="True"/>

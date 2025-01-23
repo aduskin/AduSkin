@@ -3,18 +3,21 @@
       xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
       xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <ControlTemplate x:Key="ComboBoxToggleButtonTemplate" TargetType="{x:Type AduSkin:AduToggleButton}">
-      <Grid Background="Transparent">
+      <Grid Background="{StaticResource NormalTransparentBrush}">
          <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
          </Grid.ColumnDefinitions>
-         <Border x:Name="ShadowBorder" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
-         <Border Name="Border" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" BorderBrush="#D9D9D9" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" UseLayoutRounding="True" />
-         <Border Name="ButtonBorder" Grid.Column="1" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Margin="1, 1, 1, 1" Padding="5,0,8,0">
+         <Border x:Name="ShadowBorder" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                 Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+         <Border Name="Border" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                 BorderBrush="#D9D9D9" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" UseLayoutRounding="True" />
+         <Border Name="ButtonBorder" Grid.Column="1" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                 Margin="1, 1, 1, 1" Padding="5,0,8,0">
             <Path Name="Arrow" Grid.Column="1" Width="10" HorizontalAlignment="Center"
                       VerticalAlignment="Center"
                       Data="{StaticResource Icon_DropDowm}"
@@ -61,15 +64,15 @@
             <Setter TargetName="Border" Property="Panel.Background" Value="{StaticResource DisabledBackground}" />
             <Setter TargetName="ButtonBorder" Property="Panel.Background" Value="{StaticResource DisabledBackground}" />
             <Setter TargetName="ButtonBorder" Property="Border.BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
-            <Setter Property="TextElement.Foreground" Value="{StaticResource DisabledForeground}" />
-            <Setter TargetName="Arrow" Property="Stroke" Value="#999" />
+            <Setter Property="TextElement.Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource DisabledForegroundBrush}" />
             <Setter TargetName="Arrow" Property="StrokeThickness" Value="0" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
 
    <Style x:Key="ComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource Brush}" />
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalBrush}" />
       <Setter Property="Height" Value="30"/>
       <Setter Property="MinHeight" Value="22"/>
       <Setter Property="MinWidth" Value="30"/>
@@ -87,10 +90,10 @@
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="bg"  Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
+                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter Property="Foreground" Value="{StaticResource DefaultWhiteBrush}" />
+                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
                      <Setter TargetName="bg" Property="Opacity" Value=".5" />
                      <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                   </Trigger>
@@ -101,26 +104,24 @@
    </Style>
 
    <Style TargetType="{x:Type AduSkin:AduComboBox}">
-      <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
-      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
-      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-      <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
-      <Setter Property="TextElement.Foreground" Value="#FFF" />
-      <Setter Property="TextElement.FontSize" Value="12" />
-      <Setter Property="ToggleButtonColor" Value="#FFF" />
-      <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
-      <Setter Property="MinHeight" Value="26" />
-      <Setter Property="Background" Value="#FFF"/>
-      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
-      <Setter Property="Foreground" Value="{StaticResource Brush}"/>
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
+      <Setter Property="UIElement.SnapsToDevicePixels" Value="True"/>
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+      <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+      <Setter Property="MinHeight" Value="26"/>
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="ToggleButtonColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="ComBoxItemPanelBackground" Value="{StaticResource NormalWhite}"/>   
+      <Setter Property="Background" Value="{StaticResource NormalWhite}"/> 
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}"/>
       <Setter Property="BorderThickness" Value="1"/>
-      <Setter Property="ToggleButtonColor" Value="{StaticResource Brush}" />
-      <Setter Property="ComBoxItemPanelBackground" Value="#FFF" />
-      <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemStyle}" />
-      <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="Padding" Value="5,0,0,0" />
-      <Setter Property="InputHint" Value="请选择..." />
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
+      <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemStyle}"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Padding" Value="5,0,0,0"/>
+      <Setter Property="InputHint" Value="请选择..."/>
       <Setter Property="Control.Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduComboBox}">

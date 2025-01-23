@@ -3,7 +3,7 @@
                     xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
                      xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroBase.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
   
    <ControlTemplate x:Key="TopDock" TargetType="{x:Type AduSkin:AduTabControl}">
