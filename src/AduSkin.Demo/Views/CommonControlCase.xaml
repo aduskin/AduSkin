@@ -12,17 +12,17 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <AduSkin:AduAnimationPath Width="100" Height="100" VerticalAlignment="Center" 
-            Data="{StaticResource Icon_Github}" Stretch="Uniform" 
-            Stroke="{StaticResource NormalBrush}" StrokeThickness="3"  Duration="0:0:6" />
+                  Data="{StaticResource Icon_Github}" Stretch="Uniform" 
+                  Stroke="{StaticResource NormalBrush}" StrokeThickness="3"  Duration="0:0:6" />
             </Border>
          </Grid>
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <WrapPanel Orientation="Horizontal">
                   <AduSkin:MetroColorPicker x:Name="color1" Width="50" Height="50" Padding="5" 
-                           Background="#EE796F" DefaultColor="#EE796F" />
+                     Background="#EE796F" DefaultColor="#EE796F" />
                   <AduSkin:MetroColorPicker x:Name="color2" Width="50" Height="50" Padding="5" 
-                           Background="#6D819A" DefaultColor="#6D819A" IsEnabled="False" />
+                     Background="#6D819A" DefaultColor="#6D819A" IsEnabled="False" />
                </WrapPanel>
             </Border>
          </Grid>
@@ -66,12 +66,12 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <AduSkin:AduCalendar x:Name="Calendar1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                           AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBrush}"
-                           AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
-                           AduAttach:BackgroundAttach.HighlightBackground="{StaticResource NormalBrush}"
-                           AduAttach:ForegroundAttach.SelectedForeground="{StaticResource NormalWhite}"
-                           AduAttach:ForegroundAttach.MouseOverForeground="{StaticResource NormalWhite}"
-                           AduAttach:ForegroundAttach.HighlightForeground="{StaticResource NormalWhite}"/>
+                  AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBrush}"
+                  AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
+                  AduAttach:BackgroundAttach.HighlightBackground="{StaticResource NormalBrush}"
+                  AduAttach:ForegroundAttach.SelectedForeground="{StaticResource NormalWhite}"
+                  AduAttach:ForegroundAttach.MouseOverForeground="{StaticResource NormalWhite}"
+                  AduAttach:ForegroundAttach.HighlightForeground="{StaticResource NormalWhite}"/>
             </Border>
          </Grid>
          <Grid>
@@ -79,30 +79,30 @@
                <StackPanel>
                   <AduSkin:AduTimePicker HorizontalAlignment="Left" Margin="4" Width="200" />
                   <AduSkin:AduDatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="4" Width="200" 
-                        VerticalAlignment="Center" Height="28" Type="DateTime"  CornerRadius="3" DateStringFormat="yyyy/MM/dd"
-                        AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"
-                        AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBrush}"
-                        AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
-                        AduAttach:BackgroundAttach.HighlightBackground="{StaticResource NormalBrush}"
-                        AduAttach:ForegroundAttach.SelectedForeground="{StaticResource NormalWhite}"
-                        AduAttach:ForegroundAttach.MouseOverForeground="{StaticResource NormalWhite}"
-                        AduAttach:ForegroundAttach.HighlightForeground="{StaticResource NormalWhite}"/>
+                     VerticalAlignment="Center" Height="28" Type="DateTime"  CornerRadius="3" DateStringFormat="yyyy/MM/dd"
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"
+                     AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBrush}"
+                     AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
+                     AduAttach:BackgroundAttach.HighlightBackground="{StaticResource NormalBrush}"
+                     AduAttach:ForegroundAttach.SelectedForeground="{StaticResource NormalWhite}"
+                     AduAttach:ForegroundAttach.MouseOverForeground="{StaticResource NormalWhite}"
+                     AduAttach:ForegroundAttach.HighlightForeground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date2" Margin="4" Width="200" 
-                        VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" CornerRadius="3"
-                        AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
+                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" CornerRadius="3"
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date3" Margin="4" Width="200"
-                        VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" CornerRadius="3" IsShowShortCuts="True" 
-                        AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
+                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" CornerRadius="3" IsShowShortCuts="True" 
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date4" Margin="4" Width="200" 
-                        VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" Type="SingleDateRange"
-                        CornerRadius="3" DateStringFormat="yyyy/MM/dd" IsShowShortCuts="True" 
-                        AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
+                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" Type="SingleDateRange"
+                     CornerRadius="3" DateStringFormat="yyyy/MM/dd" IsShowShortCuts="True" 
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date5" HorizontalAlignment="Left" Margin="4" Width="240" 
-                        VerticalAlignment="Center" Height="28" Type="SingleDateRange" CornerRadius="3"
-                        AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
+                     VerticalAlignment="Center" Height="28" Type="SingleDateRange" CornerRadius="3"
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                   <AduSkin:AduDatePicker x:Name="Date6" HorizontalAlignment="Left" Margin="4" Width="240" 
-                        VerticalAlignment="Center" Height="28" Type="SingleDateRange" CornerRadius="3"
-                        AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
+                     VerticalAlignment="Center" Height="28" Type="SingleDateRange" CornerRadius="3"
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
                </StackPanel>
             </Border>
          </Grid>
@@ -398,38 +398,38 @@
                   </StackPanel>
                   <StackPanel Orientation="Horizontal">
                      <AduSkin:AduButtonSvg AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}"  AduAttach:PathDataAttach.Width="20" 
-                              Foreground="#999" Height="40" Width="40" />
+                        Foreground="#999" Height="40" Width="40" />
                      <AduSkin:AduButtonIcon Height="40" Margin="10" Content="hehhe" Foreground="#000"  VerticalContentAlignment="Center" 
-                              AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}" 
-                              AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
-                              AduAttach:PathDataAttach.Width="16" 
-                              AduAttach:PathDataAttach.Margin="0,0,10,0" 
-                              AduAttach:BorderAttach.CornerRadius="6"/>
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}" 
+                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
+                        AduAttach:PathDataAttach.Width="16" 
+                        AduAttach:PathDataAttach.Margin="0,0,10,0" 
+                        AduAttach:BorderAttach.CornerRadius="6"/>
                      <AduSkin:AduToggleButton 
-                           AduAttach:BorderAttach.BorderThickness="1" 
-                           AduAttach:BorderAttach.BorderBrush="#30000000" 
-                           AduAttach:BorderAttach.CornerRadius="15"    
-                           AduAttach:PathDataAttach.Width="14"
-                           AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
-                           AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
-                           AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource NormalBrush}"
-                           AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
-                           AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
-                           AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
-                           AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 
-                           Width="30" Height="30"/>
+                        AduAttach:BorderAttach.BorderThickness="1" 
+                        AduAttach:BorderAttach.BorderBrush="#30000000" 
+                        AduAttach:BorderAttach.CornerRadius="15"    
+                        AduAttach:PathDataAttach.Width="14"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
+                        AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource NormalBrush}"
+                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
+                        AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
+                        AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
+                        AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 
+                        Width="30" Height="30"/>
                      <AduSkin:AduPathIconButton Margin="10,0"
-                            BorderThickness="1" BorderBrush="#30000000" 
-                            AduAttach:BorderAttach.CornerRadius="15" 
-                            AduAttach:PathDataAttach.Width="14"
-                            AduAttach:PathDataAttach.PathData="{StaticResource Icon_CopyCode}"
-                            AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_CopyCode}"
-                            AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource NormalBrush}"
-                            AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
-                            AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
-                            AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
-                            AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 
-                            Width="30" Height="30"/>
+                        BorderThickness="1" BorderBrush="#30000000" 
+                        AduAttach:BorderAttach.CornerRadius="15" 
+                        AduAttach:PathDataAttach.Width="14"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_CopyCode}"
+                        AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_CopyCode}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource NormalBrush}"
+                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
+                        AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
+                        AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
+                        AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 
+                        Width="30" Height="30"/>
                   </StackPanel>
                </StackPanel>
             </Border>
