@@ -1,18 +1,25 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
+      xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
-   </ResourceDictionary.MergedDictionaries> 
-   <Style TargetType="{x:Type Adu:AduChooseBox}">
+   </ResourceDictionary.MergedDictionaries>
+
+   <Style TargetType="{x:Type AduSkin:AduChooseBox}">
       <Setter Property="Background" Value="{StaticResource NormalWhite}" />
       <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}" />
+      <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,8,0"/>
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="10" />
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_ChooseFile}" />
+      <Setter Property="AduAttach:InputAttach.InputHint" Value="请选择..."/>
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="CornerRadius" Value="2" />
       <Setter Property="FontSize" Value="12" />
       <Setter Property="Foreground" Value="Black" />
       <Setter Property="Height" Value="30" />
-      <Setter Property="Padding" Value="2,0" />
+      <Setter Property="Padding" Value="4,0" />
       <Setter Property="ChooseButtonWidth" Value="20" />
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -20,30 +27,68 @@
       <Setter Property="UseLayoutRounding" Value="True" />
       <Setter Property="Template">
          <Setter.Value>
-            <ControlTemplate TargetType="{x:Type Adu:AduChooseBox}">
+            <ControlTemplate TargetType="{x:Type AduSkin:AduChooseBox}">
                <Grid>
-                  <Grid.ColumnDefinitions>
-                     <ColumnDefinition Width="*" />
-                     <ColumnDefinition Width="auto" />
-                  </Grid.ColumnDefinitions>
-                  <Border x:Name="border" Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}"
-                     CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{StaticResource NormalBlack}" Opacity="0.15"/>
-                  <Border x:Name="bordermove" Grid.ColumnSpan="2" Opacity="0"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        CornerRadius="{TemplateBinding CornerRadius}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                        UseLayoutRounding="{TemplateBinding UseLayoutRounding}"/>
-                  <ScrollViewer x:Name="PART_ContentHost" Grid.Column="0"
-                        Margin="{TemplateBinding Padding}"
+                  <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}"
+                      CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{StaticResource NormalBlack}" Opacity="0.15"/>
+                  <Border x:Name="bordermove" Opacity="0"
+                     Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     CornerRadius="{TemplateBinding CornerRadius}"
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                     UseLayoutRounding="{TemplateBinding UseLayoutRounding}"/>
+                  <Grid>
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                     </Grid.ColumnDefinitions>
+                     
+                     <TextBlock HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                        Text="{TemplateBinding AduAttach:InputAttach.InputHint}" Margin="{TemplateBinding Padding}"
+                        FontSize="{TemplateBinding FontSize}" Opacity="0.2">
+                        <TextBlock.Style>
+                           <Style TargetType="{x:Type TextBlock}">
+                              <Style.Triggers>
+                                 <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                       <Condition Binding="{Binding IsKeyboardFocused, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type AduSkin:AduChooseBox}}}" Value="True" />
+                                       <Condition Binding="{Binding Text.IsEmpty, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type AduSkin:AduChooseBox}}}" Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                 </MultiDataTrigger>
+                                 <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                       <Condition Binding="{Binding IsKeyboardFocused, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type AduSkin:AduChooseBox}}}" Value="True" />
+                                       <Condition Binding="{Binding Text.IsEmpty, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type AduSkin:AduChooseBox}}}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                 </MultiDataTrigger>
+                                 <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                       <Condition Binding="{Binding IsKeyboardFocused, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type AduSkin:AduChooseBox}}}" Value="False" />
+                                       <Condition Binding="{Binding Text.IsEmpty, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type AduSkin:AduChooseBox}}}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                 </MultiDataTrigger>
+                              </Style.Triggers>
+                           </Style>
+                        </TextBlock.Style>
+                     </TextBlock>
+
+                     <ScrollViewer x:Name="PART_ContentHost" 
                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                         HorizontalScrollBarVisibility="Hidden"
                         VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}" />
-                  <Button x:Name="PART_ChooseButton" Grid.Column="1" Width="{TemplateBinding ChooseButtonWidth}" 
-                        Foreground="{TemplateBinding BorderBrush}"
+                     
+                     <Button x:Name="PART_ChooseButton" Grid.Column="1" Cursor="Hand" Width="auto" 
+                        AduAttach:PathDataAttach.Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
+                        AduAttach:PathDataAttach.Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
+                        AduAttach:PathDataAttach.PathData="{TemplateBinding AduAttach:PathDataAttach.PathData}" 
+                        AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
                         Style="{TemplateBinding ChooseButtonStyle}" />
+                  </Grid>
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsKeyboardFocused" Value="true">
@@ -64,14 +109,18 @@
                <Setter Property="Template">
                   <Setter.Value>
                      <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                           <Path x:Name="icon" Data="{StaticResource Icon_ChooseFile}" Width="12" Fill="#50000000" Stretch="Uniform"
+                        <Border Background="{TemplateBinding Background}" 
+                              BorderBrush="{TemplateBinding BorderBrush}" 
+                              BorderThickness="{TemplateBinding BorderThickness}">
+                           <Path x:Name="icon" Stretch="Uniform" Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}"
+                              Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" 
+                              Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
+                              Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"  
                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                            <Trigger Property="IsMouseOver" Value="True">
-                              <Setter Property="Cursor" Value="Hand" />
-                              <Setter TargetName="icon" Property="Fill" Value="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" />
+                              <Setter TargetName="icon" Property="Opacity" Value="{StaticResource MouseOverOpacity}" />
                            </Trigger>
                         </ControlTemplate.Triggers>
                      </ControlTemplate>

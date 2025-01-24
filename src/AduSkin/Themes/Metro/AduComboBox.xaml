@@ -13,17 +13,18 @@
             <ColumnDefinition Width="auto" />
          </Grid.ColumnDefinitions>
          <Border x:Name="ShadowBorder" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                 Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+            Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
          <Border Name="Border" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                 BorderBrush="#D9D9D9" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" UseLayoutRounding="True" />
-         <Border Name="ButtonBorder" Grid.Column="1" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                 Margin="1, 1, 1, 1" Padding="5,0,8,0">
-            <Path Name="Arrow" Grid.Column="1" Width="10" HorizontalAlignment="Center"
-                      VerticalAlignment="Center"
-                      Data="{StaticResource Icon_DropDowm}"
-                      Fill="{TemplateBinding Foreground}"
-                      RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="Uniform"
-                      UseLayoutRounding="True">
+            BorderBrush="#D9D9D9" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" UseLayoutRounding="True" />
+         <Border Name="ButtonBorder" Grid.Column="1" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}">
+            <Path Name="Arrow" Grid.Column="1" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Margin="{TemplateBinding  AduAttach:PathDataAttach.Margin}"
+               Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+               Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+               Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+               RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="Uniform"
+               UseLayoutRounding="True">
                <Path.RenderTransform>
                   <TransformGroup>
                      <ScaleTransform />
@@ -104,6 +105,16 @@
    </Style>
 
    <Style TargetType="{x:Type AduSkin:AduComboBox}">
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_DropDowm}"/>
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="10"/>
+      <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,6,0"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/> 
+      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
+      <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalBlack}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="UIElement.SnapsToDevicePixels" Value="True"/>
       <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
       <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
@@ -111,17 +122,10 @@
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="MinHeight" Value="26"/>
       <Setter Property="FontSize" Value="12"/>
-      <Setter Property="ToggleButtonColor" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="ComBoxItemPanelBackground" Value="{StaticResource NormalWhite}"/>   
-      <Setter Property="Background" Value="{StaticResource NormalWhite}"/> 
-      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="BorderThickness" Value="1"/>
-      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemStyle}"/>
       <Setter Property="VerticalContentAlignment" Value="Center"/>
       <Setter Property="Padding" Value="5,0,0,0"/>
-      <Setter Property="InputHint" Value="请选择..."/>
+      <Setter Property="AduAttach:InputAttach.InputHint" Value="请选择..."/>
       <Setter Property="Control.Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduComboBox}">
@@ -153,23 +157,28 @@
                      <ColumnDefinition Width="*" />
                   </Grid.ColumnDefinitions>
                   <Grid Grid.Column="1">
-                     <AduSkin:AduToggleButton x:Name="ToggleButton" ClickMode="Press" Focusable="False" AduAttach:BorderAttach.CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
-                                    IsChecked="{Binding Path=IsDropDownOpen,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
-                                    Template="{StaticResource ComboBoxToggleButtonTemplate}" Foreground="{TemplateBinding ToggleButtonColor}"
-                                    BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"/>
-                     <ContentPresenter Name="ContentSite" Margin="5, 3, 25, 3" HorizontalAlignment="Left"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Content="{TemplateBinding ComboBox.SelectionBoxItem}"
-                                              ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}"
-                                              ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                              IsHitTestVisible="False" />
+                     <AduSkin:AduToggleButton x:Name="ToggleButton" ClickMode="Press" Focusable="False" 
+                           AduAttach:PathDataAttach.PathData="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+                           AduAttach:PathDataAttach.Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+                           AduAttach:PathDataAttach.Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
+                           AduAttach:BorderAttach.CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                           AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+                           IsChecked="{Binding Path=IsDropDownOpen,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
+                           Template="{StaticResource ComboBoxToggleButtonTemplate}" 
+                           Background="{TemplateBinding Background}"
+                           BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+                     <ContentPresenter Name="ContentSite" Margin="5, 3, 25, 3" 
+                           HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                           Content="{TemplateBinding ComboBox.SelectionBoxItem}"
+                           ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}"
+                           ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                           IsHitTestVisible="False" />
                      <TextBlock Margin="{TemplateBinding Padding}"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                       FontSize="{TemplateBinding FontSize}"
-                                       Opacity="0.25" IsHitTestVisible="False"
-                                       Text="{TemplateBinding InputHint}">
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                           FontSize="{TemplateBinding FontSize}"
+                           Opacity="0.25" IsHitTestVisible="False"
+                           Text="{TemplateBinding AduAttach:InputAttach.InputHint}">
                         <TextBlock.Style>
                            <Style TargetType="{x:Type TextBlock}">
                               <Style.Triggers>
@@ -196,9 +205,10 @@
                            </Style>
                         </TextBlock.Style>
                      </TextBlock>
-                     <TextBox Name="PART_EditableTextBox" Margin="5, 3, 25, 3" HorizontalAlignment="Stretch"
-                                     VerticalAlignment="Center" Background="Transparent" Focusable="True" IsReadOnly="False"
-                                     Visibility="Hidden" Text="{TemplateBinding ComboBox.SelectionBoxItem}" Foreground="{TemplateBinding Foreground}">
+                     <TextBox Name="PART_EditableTextBox" Margin="5, 3, 25, 3" Focusable="True" IsReadOnly="False"
+                           HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                           Background="Transparent" Foreground="{TemplateBinding Foreground}" 
+                           Visibility="Hidden" Text="{TemplateBinding ComboBox.SelectionBoxItem}" >
                         <TextBox.Template>
                            <ControlTemplate TargetType="TextBox">
                               <Border x:Name="OuterBorder" Background="Transparent">
@@ -211,14 +221,14 @@
                      <!--  Popup showing items  -->
                      <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" VerticalOffset="-1" AllowsTransparency="True" PopupAnimation="Fade" >
                         <Border RenderTransformOrigin="0.5,0" 
-                                CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                Background="{TemplateBinding ComBoxItemPanelBackground}" 
-                                MaxHeight="{TemplateBinding MaxDropDownHeight}" 
-                                Padding="0,3" Margin="10" 
-                                MinWidth="{TemplateBinding ActualWidth}" 
-                                x:Name="DropDown" SnapsToDevicePixels="True">
+                              CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                              BorderBrush="{TemplateBinding BorderBrush}" 
+                              BorderThickness="{TemplateBinding BorderThickness}" 
+                              Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}" 
+                              MaxHeight="{TemplateBinding MaxDropDownHeight}" 
+                              Padding="0,3" Margin="10" 
+                              MinWidth="{TemplateBinding ActualWidth}" 
+                              x:Name="DropDown" SnapsToDevicePixels="True">
                            <Border.RenderTransform>
                               <TransformGroup>
                                  <ScaleTransform />
@@ -236,7 +246,7 @@
                                  <RowDefinition/>
                               </Grid.RowDefinitions>
                               <AduSkin:MetroTextBox  x:Name="PART_FilterTextBox"
-                                    Height="26" Margin="5,2,5,5" InputHint="请输入关键字"
+                                    Height="26" Margin="5,2,5,5" AduAttach:InputAttach.InputHint="请输入关键字"
                                     Visibility="{Binding IsShowFilterBox, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibility}}" />
                               <AduSkin:MetroScrollViewer Grid.Row="1" Margin="0" MaxHeight="{TemplateBinding MaxDropDownHeight}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
                                  <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->

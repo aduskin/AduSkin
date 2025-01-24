@@ -1,8 +1,8 @@
 using AduSkin.Utility.Element;
-using System; 
+using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls; 
+using System.Windows.Controls;
 using System.Windows.Media;
 using AduSkin.Controls.Helper;
 using System.Windows.Data;
@@ -34,41 +34,7 @@ namespace AduSkin.Controls.Metro
          get { return (bool)GetValue(IsShowFilterBoxProperty) && ItemsSource != null; }
          set { SetValue(IsShowFilterBoxProperty, value); }
       }
-
-      public static readonly DependencyProperty InputHintProperty = DependencyProperty.Register("InputHint"
-            , typeof(string), typeof(AduComboBox));
-      /// <summary>
-      /// 文本输入框的水印
-      /// </summary>
-      public string InputHint
-      {
-         get { return (string)GetValue(InputHintProperty); }
-         set { SetValue(InputHintProperty, value); }
-      }
-
-      public static readonly DependencyProperty ComBoxItemPanelBackgroundProperty = DependencyProperty.Register("ComBoxItemPanelBackground"
-            , typeof(Brush), typeof(AduComboBox), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(255, 255, 255))));
-      /// <summary>
-      /// 下拉列表背景色
-      /// </summary>
-      public Brush ComBoxItemPanelBackground
-      {
-         get { return (Brush)GetValue(ComBoxItemPanelBackgroundProperty); }
-         set { SetValue(ComBoxItemPanelBackgroundProperty, value); }
-      }
-
-      public static readonly DependencyProperty ToggleButtonColorProperty = DependencyProperty.Register("ToggleButtonColor"
-            , typeof(Brush), typeof(AduComboBox), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(238, 121, 111))));
-      /// <summary>
-      /// 下拉列表背景色
-      /// </summary>
-      public Brush ToggleButtonColor
-      {
-         get { return (Brush)GetValue(ToggleButtonColorProperty); }
-         set { SetValue(ToggleButtonColorProperty, value); }
-      }
       #endregion
-
 
       public override void OnApplyTemplate()
       {

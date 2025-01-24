@@ -5,60 +5,16 @@
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-
-   <Style x:Key="TimePickerTextBoxStyle" TargetType="{x:Type TextBox}">
-      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
-      <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
-      <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
-      <Setter Property="HorizontalContentAlignment" Value="Left" />
-      <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-      <Setter Property="AllowDrop" Value="true" />
-      <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
-      <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
-      <Setter Property="Template">
-         <Setter.Value>
-            <ControlTemplate TargetType="{x:Type TextBox}">
-               <Border x:Name="border"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            SnapsToDevicePixels="True" UseLayoutRounding="True">
-                  <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
-                                      HorizontalScrollBarVisibility="Hidden" 
-                                      VerticalScrollBarVisibility="Hidden" />
-               </Border>
-               <ControlTemplate.Triggers>
-                  <Trigger Property="IsEnabled" Value="false">
-                     <Setter TargetName="border" Property="Opacity" Value="0.56" />
-                  </Trigger>
-                  <Trigger Property="IsMouseOver" Value="true">
-                     <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
-                  </Trigger>
-                  <Trigger Property="IsKeyboardFocused" Value="true">
-                     <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
-                  </Trigger>
-               </ControlTemplate.Triggers>
-            </ControlTemplate>
-         </Setter.Value>
-      </Setter>
-   </Style>
-
+ 
    <ControlTemplate x:Key="DropDownButtonTemplate" TargetType="{x:Type ToggleButton}">
-      <Grid VerticalAlignment="Stretch" Background="{StaticResource NormalTransparentBrush}">
-         <Path x:Name="path" Width="16" VerticalAlignment="Center" Fill="#9EA7B4"
-                  Stretch="Uniform" Margin="5,0" Data="{StaticResource Icon_Clock}"/>
-      </Grid>
-      <ControlTemplate.Triggers>
-         <Trigger Property="IsMouseOver" Value="True">
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter TargetName="path" Property="Fill" Value="#657180" />
-         </Trigger>
-         <Trigger Property="IsChecked" Value="True">
-            <Setter TargetName="path" Property="Fill" Value="#657180" />
-         </Trigger>
-      </ControlTemplate.Triggers>
+      <Border Background="{StaticResource NormalTransparentBrush}"
+         Padding="{TemplateBinding Padding}">
+         <Path x:Name="path" Stretch="Uniform" 
+            Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}"
+            Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+            Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+            Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"/>
+      </Border>
    </ControlTemplate>
 
    <Style TargetType="{x:Type AduSkin:AduTimePicker}">
@@ -67,6 +23,10 @@
       <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{StaticResource NormalWhite}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_Clock}"/>
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="15"/>
+      <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,4,0"/>
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="UseLayoutRounding" Value="True" />
@@ -96,12 +56,12 @@
                         <ColumnDefinition Width="auto" />
                      </Grid.ColumnDefinitions>
                      <Popup x:Name="PART_Popup"
-                           MinWidth="{Binding Path=ActualWidth,ElementName=Root}"
-                           Height="{TemplateBinding DropDownHeight}" AllowsTransparency="True"
-                           IsOpen="{Binding Path=IsChecked, ElementName=PART_ToggleButton}"
-                           Placement="Bottom" Effect="{StaticResource TextShadow-Black}"
-                           PlacementTarget="{Binding ElementName=Root}"
-                           StaysOpen="False" VerticalOffset="1">
+                        MinWidth="{Binding Path=ActualWidth,ElementName=Root}"
+                        Height="{TemplateBinding DropDownHeight}" AllowsTransparency="True"
+                        IsOpen="{Binding Path=IsChecked, ElementName=PART_ToggleButton}"
+                        Placement="Bottom" Effect="{StaticResource TextShadow-Black}"
+                        PlacementTarget="{Binding ElementName=Root}"
+                        StaysOpen="False" VerticalOffset="1">
                         <Grid Margin="20">
                            <Border CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
                               Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"  
@@ -113,16 +73,21 @@
                            </Border>
                         </Grid>
                      </Popup>
-                     <AduSkin:MetroTextBox x:Name="PART_TextBox" MouseMoveBackground="Transparent" Background="Transparent" 
-                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" BorderThickness="0"
-                           Padding="{TemplateBinding Padding}" FontFamily="{TemplateBinding FontFamily}" />
-                     <ToggleButton x:Name="PART_ToggleButton" Grid.Column="1"
-                         Template="{StaticResource DropDownButtonTemplate}"/>
+                     <AduSkin:MetroTextBox x:Name="PART_TextBox" 
+                        MouseMoveBackground="{StaticResource NormalTransparentBrush}" Background="{StaticResource NormalTransparentBrush}" 
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" BorderThickness="0"
+                        Padding="{TemplateBinding Padding}" FontFamily="{TemplateBinding FontFamily}" />
+                     <ToggleButton x:Name="PART_ToggleButton" Grid.Column="1" Cursor="Hand"
+                        AduAttach:PathDataAttach.PathData="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+                        AduAttach:PathDataAttach.Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+                        AduAttach:PathDataAttach.Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}"
+                        AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+                        Template="{StaticResource DropDownButtonTemplate}"/>
                   </Grid>
                </Grid>
                <ControlTemplate.Triggers>
-                  <Trigger Property="IsMouseOver" Value="True"> 
+                  <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="border" Property="Opacity" Value="1" />
                      <Setter TargetName="PART_TimeSelector" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
                   </Trigger>

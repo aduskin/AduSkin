@@ -32,7 +32,7 @@
                         BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                         VerticalAlignment="Center" VerticalContentAlignment="Center" 
                         CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  
-                        InputHint="Search you need Demo..." />
+                        AduAttach:InputAttach.InputHint="Search you need Demo..." />
             </Border>
             <Metro:AduTabControl Grid.Row="2" SelectedIndex="{Binding SelectedDemoType}">
                <Metro:AduTabControl.Resources>

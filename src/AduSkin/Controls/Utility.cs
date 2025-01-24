@@ -70,7 +70,6 @@ namespace AduSkin.Controls
             if (control is AduPasswordBox) { (control as AduPasswordBox).BorderBrush = mw.BorderBrush; }
             if (control is AduCheckBox) { (control as AduCheckBox).Foreground = mw.BorderBrush; }
             if (control is AduComboBox) { (control as AduComboBox).Foreground = mw.BorderBrush; }
-            if (control is AduComboBox) { (control as AduComboBox).ToggleButtonColor = mw.BorderBrush; }
             if (control is AduRadioButton) { (control as AduRadioButton).Foreground = mw.BorderBrush; }
             if (control is AduManageableTabItem) { (control as AduManageableTabItem).Foreground = mw.BorderBrush; }
             if (control is AduFlatRadionButton) { (control as MetroTitleMenuItem).Foreground = mw.BorderBrush; }

@@ -29,18 +29,14 @@
             Padding="5,0,8,0"
             Background="{TemplateBinding Background}"
             CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}">
-            <Path
-                Name="Arrow"
-                Grid.Column="1"
-                Width="10"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Data="{StaticResource Icon_DropDowm}"
-                Fill="{StaticResource NormalBorderBrush}"
-                RenderTransformOrigin="0.5,0.5"
-                SnapsToDevicePixels="True"
-                Stretch="Uniform"
-                UseLayoutRounding="True">
+            <Path Name="Arrow" Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Center" 
+               Data="{StaticResource Icon_DropDowm}"
+               Fill="{StaticResource NormalBorderBrush}"
+               RenderTransformOrigin="0.5,0.5"
+               SnapsToDevicePixels="True"
+               Stretch="Uniform" Width="12"
+               UseLayoutRounding="True">
                <Path.RenderTransform>
                   <TransformGroup>
                      <ScaleTransform />
@@ -221,16 +217,10 @@
                               <RowDefinition Height="auto" />
                               <RowDefinition />
                            </Grid.RowDefinitions>
-                           <AduSkin:MetroTextBox
-                                    x:Name="PART_FilterTextBox"
-                                    Height="26"
-                                    Margin="5,5,5,3"
-                                    InputHint="请输入关键字"
-                                    Visibility="{Binding IsShowFilterBox, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibility}}" />
-                           <AduSkin:MetroScrollViewer
-                                    Grid.Row="1"
-                                    Margin="0,3,0,3"
-                                    SnapsToDevicePixels="True">
+                           <AduSkin:MetroTextBox x:Name="PART_FilterTextBox" Height="26" Margin="5,5,5,3"
+                              AduAttach:InputAttach.InputHint="请输入关键字"
+                              Visibility="{Binding IsShowFilterBox, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibility}}" />
+                           <AduSkin:MetroScrollViewer Grid.Row="1" Margin="0,3,0,3" SnapsToDevicePixels="True">
                               <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
                            </AduSkin:MetroScrollViewer>
                         </Grid>

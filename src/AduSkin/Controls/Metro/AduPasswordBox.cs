@@ -1,4 +1,4 @@
-﻿using AduSkin.Utility.Element;
+using AduSkin.Utility.Element;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,48 +26,8 @@ namespace AduSkin.Controls.Metro
 
       #endregion
 
-      #region DependencyProperty
-      #region InputHint
+      #region DependencyProperty  
 
-      /// <summary>
-      /// 获取或者设置水印
-      /// </summary>
-      public string InputHint
-      {
-         get { return (string)GetValue(InputHintProperty); }
-         set { SetValue(InputHintProperty, value); }
-      }
-
-      public static readonly DependencyProperty InputHintProperty =
-          DependencyProperty.Register("InputHint", typeof(string), typeof(AduPasswordBox));
-
-      #endregion
-      #region CornerRadius
-
-      public CornerRadius CornerRadius
-      {
-         get { return (CornerRadius)GetValue(CornerRadiusProperty); }
-         set { SetValue(CornerRadiusProperty, value); }
-      }
-
-      public static readonly DependencyProperty CornerRadiusProperty =
-          DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(AduPasswordBox), new PropertyMetadata(CornerRadiusChanged));
-
-      private static void CornerRadiusChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-      {
-         AduPasswordBox textbox = d as AduPasswordBox;
-         if (textbox != null && e.NewValue != null)
-         {
-            textbox.OnCornerRadiusChanged((CornerRadius)e.NewValue);
-         }
-      }
-      public void OnCornerRadiusChanged(CornerRadius newValue)
-      {
-         //根据密码框边框圆角自动设置图标背景框圆角
-         this.IconCornerRadius = new CornerRadius(newValue.TopLeft, 0, 0, newValue.BottomLeft);
-      }
-
-      #endregion
       #region IsShowIcon
 
       /// <summary>
@@ -83,142 +43,8 @@ namespace AduSkin.Controls.Metro
       public static readonly DependencyProperty IsShowIconProperty =
           DependencyProperty.Register("IsShowIcon", typeof(bool), typeof(AduPasswordBox), new PropertyMetadata(true));
 
-      #endregion
+      #endregion 
 
-      #region IconBackground
-
-      /// <summary>
-      /// 获取或者设置图标边框背景色
-      /// </summary>
-      [Bindable(true), Description("获取或者设置图标边框背景色")]
-      public Brush IconBackground
-      {
-         get { return (Brush)GetValue(IconBackgroundProperty); }
-         set { SetValue(IconBackgroundProperty, value); }
-      }
-
-      public static readonly DependencyProperty IconBackgroundProperty =
-          DependencyProperty.Register("IconBackground", typeof(Brush), typeof(AduPasswordBox));
-
-      #endregion
-
-      #region IconForeground
-
-      /// <summary>
-      /// 获取或者设置图标的颜色
-      /// </summary>
-      [Bindable(true), Description("获取或者设置图标的颜色")]
-      public Brush IconForeground
-      {
-         get { return (Brush)GetValue(IconForegroundProperty); }
-         set { SetValue(IconForegroundProperty, value); }
-      }
-
-      public static readonly DependencyProperty IconForegroundProperty =
-          DependencyProperty.Register("IconForeground", typeof(Brush), typeof(AduPasswordBox));
-
-      #endregion
-
-      #region IconBorderBrush
-
-      /// <summary>
-      /// 获取或者设置图标边框的颜色
-      /// </summary>
-      [Bindable(true), Description("获取或者设置图标边框背景色")]
-      public Brush IconBorderBrush
-      {
-         get { return (Brush)GetValue(IconBorderBrushProperty); }
-         set { SetValue(IconBorderBrushProperty, value); }
-      }
-
-      public static readonly DependencyProperty IconBorderBrushProperty =
-          DependencyProperty.Register("IconBorderBrush", typeof(Brush), typeof(AduPasswordBox));
-
-      #endregion
-
-      #region IconBorderThickness
-
-      /// <summary>
-      /// 获取或者设置图标边框的粗细与大小
-      /// </summary>
-      public Thickness IconBorderThickness
-      {
-         get { return (Thickness)GetValue(IconBorderThicknessProperty); }
-         set { SetValue(IconBorderThicknessProperty, value); }
-      }
-
-      public static readonly DependencyProperty IconBorderThicknessProperty =
-          DependencyProperty.Register("IconBorderThickness", typeof(Thickness), typeof(AduPasswordBox));
-
-      #endregion
-
-      #region IconWidth
-
-      /// <summary>
-      /// 获取或者设置图标的大小
-      /// </summary>
-      [Bindable(true), Description("获取或者设置图标的大小")]
-      public double IconWidth
-      {
-         get { return (double)GetValue(IconWidthProperty); }
-         set { SetValue(IconWidthProperty, value); }
-      }
-
-      public static readonly DependencyProperty IconWidthProperty =
-          DependencyProperty.Register("IconWidth", typeof(double), typeof(AduPasswordBox));
-
-      #endregion
-
-      #region IconPadding
-
-      /// <summary>
-      /// 获取或者设置图标的内边距
-      /// </summary>
-      [Bindable(true), Description("获取或者设置图标的内边距")]
-      public Thickness IconPadding
-      {
-         get { return (Thickness)GetValue(IconPaddingProperty); }
-         set { SetValue(IconPaddingProperty, value); }
-      }
-
-      public static readonly DependencyProperty IconPaddingProperty =
-          DependencyProperty.Register("IconPadding", typeof(Thickness), typeof(AduPasswordBox));
-
-      #endregion
-
-      #region IconCornerRadius
-
-      /// <summary>
-      /// 获取或者设置图标边框的圆角（可以不用手动设置，系统会根据密码框的圆角值自动设置该值）
-      /// </summary>
-      [Bindable(true), Description("获取或者设置图标边框的圆角（可以不用手动设置，系统会根据密码框的圆角值自动设置该值）")]
-      public CornerRadius IconCornerRadius
-      {
-         get { return (CornerRadius)GetValue(IconCornerRadiusProperty); }
-         set { SetValue(IconCornerRadiusProperty, value); }
-      }
-
-      public static readonly DependencyProperty IconCornerRadiusProperty =
-          DependencyProperty.Register("IconCornerRadius", typeof(CornerRadius), typeof(AduPasswordBox));
-
-      #endregion
-
-      #region IconPathData
-
-      /// <summary>
-      /// 获取或者设置密码框图标
-      /// </summary>
-      [Bindable(true), Description("获取或者设置密码框图标")]
-      public PathGeometry IconPathData
-      {
-         get { return (PathGeometry)GetValue(IconPathDataProperty); }
-         set { SetValue(IconPathDataProperty, value); }
-      }
-
-      public static readonly DependencyProperty IconPathDataProperty =
-          DependencyProperty.Register("IconPathData", typeof(PathGeometry), typeof(AduPasswordBox));
-
-      #endregion
       #region IsCanSeePassword
 
       /// <summary>
@@ -283,9 +109,7 @@ namespace AduSkin.Controls.Metro
 
       #region Private DependencyProperty
 
-      #region ShowPassword
-      public static readonly DependencyProperty MouseMoveBackgroundProperty = ElementBase.Property<AduPasswordBox, Brush>("MouseMoveBackgroundProperty");
-      public Brush MouseMoveBackground { get { return (Brush)GetValue(MouseMoveBackgroundProperty); } set { SetValue(MouseMoveBackgroundProperty, value); } }
+      #region ShowPassword 
       public bool ShowPassword
       {
          get { return (bool)GetValue(ShowPasswordProperty); }
@@ -302,8 +126,7 @@ namespace AduSkin.Controls.Metro
          {
             passwordBox.SelectionStart = passwordBox.Text.Length + 1;
          }
-      }
-
+      } 
       #endregion
 
       #endregion
@@ -311,7 +134,7 @@ namespace AduSkin.Controls.Metro
       #region Constructors
       public AduPasswordBox()
       {
-         
+
       }
 
       static AduPasswordBox()
@@ -352,7 +175,7 @@ namespace AduSkin.Controls.Metro
 
       private void SetEvent()
       {
-         this.TextChanged += ZPasswordBox_TextChanged;
+         this.TextChanged += PasswordBox_TextChanged;
          if (this.PART_SeePassword != null)
          {
             this.PART_SeePassword.Checked += (o, e) =>
@@ -403,7 +226,7 @@ namespace AduSkin.Controls.Metro
 
       #region Event Implement Function
 
-      private void ZPasswordBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+      private void PasswordBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
       {
          if (!this.mIsHandledTextChanged)
             return;

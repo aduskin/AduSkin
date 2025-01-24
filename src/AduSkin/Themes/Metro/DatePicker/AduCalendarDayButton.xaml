@@ -16,7 +16,7 @@
       <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="{StaticResource NormalWhite10}"/>
       <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource NormalBlack20}"/>
       <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalWhite10}"/>
-      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="#DCDCDE"/>
+      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{StaticResource NormalBlack90}"/>
       <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource NormalWhite}"/>
       <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{StaticResource NormalWhite}"/>
       <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>

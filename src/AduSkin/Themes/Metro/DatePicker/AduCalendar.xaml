@@ -13,7 +13,7 @@
    <Converters:CalendarDayButtonTypeConverter x:Key="CalendarDayButtonTypeConverter" />
 
    <Style TargetType="{x:Type Adu:AduCalendar}">
-      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="#05000000"/>
+      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="{StaticResource NormalBlack05}"/>
       <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource NormalBlack20}"/>
       <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalBlack10}"/>
       <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{StaticResource NormalWhite}"/>
