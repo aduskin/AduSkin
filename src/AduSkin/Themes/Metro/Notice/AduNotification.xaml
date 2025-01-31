@@ -31,15 +31,15 @@
                      <TranslateTransform />
                   </TransformGroup>
                </Grid.RenderTransform>
-               <Border Background="{DynamicResource NormalWhite}" CornerRadius="2,0,0,2" SnapsToDevicePixels="True" UseLayoutRounding="True">
+               <Border Background="{StaticResource NormalWhite}" CornerRadius="6,0,0,6" SnapsToDevicePixels="True" UseLayoutRounding="True">
                   <Border.Effect>
-                     <DropShadowEffect BlurRadius="20" Opacity="0.2" ShadowDepth="10" Color="Black" />
+                     <DropShadowEffect BlurRadius="20" Opacity="0.1" ShadowDepth="10" Color="Black" />
                   </Border.Effect>
                </Border>
 
-               <Border x:Name="Border" CornerRadius="2,0,0,2" Background="{DynamicResource NormalWhite}"/>
+               <Border x:Name="Border" CornerRadius="6,0,0,6" Background="{StaticResource NormalWhite}" BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="1"/>
 
-               <Border Margin="5,0,0,0" Background="{DynamicResource NormalWhite}" CornerRadius="0,2,2,0" Padding="10">
+               <Border Background="{StaticResource NormalWhite}" CornerRadius="6,0,0,6" Margin="1" Padding="10">
                   <Grid>
                      <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />

@@ -24,7 +24,7 @@ namespace AduSkin.Controls.Metro
       /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
       /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult Show(string messageBoxText, string caption)
+      public static MessageBoxResult Show(string messageBoxText, string caption = "提示")
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption);
          msg.ShowDialog();
@@ -54,7 +54,7 @@ namespace AduSkin.Controls.Metro
       /// <param name="messageBoxText">A System.String that specifies the text to display.</param>
       /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult Show(Window owner, string messageBoxText, string caption)
+      public static MessageBoxResult Show(Window owner, string messageBoxText, string caption = "提示")
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption);
          msg.Owner = owner;
@@ -70,7 +70,7 @@ namespace AduSkin.Controls.Metro
       /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
       /// <param name="button">A System.Windows.MessageBoxButton value that specifies which button or buttons to display.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button)
+      public static MessageBoxResult Show(string messageBoxText, string caption = "提示", MessageBoxButton button = MessageBoxButton.OK)
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, button);
          msg.ShowDialog();
@@ -86,7 +86,8 @@ namespace AduSkin.Controls.Metro
       /// <param name="button">A System.Windows.MessageBoxButton value that specifies which button or buttons to display.</param>
       /// <param name="icon">A System.Windows.MessageBoxImage value that specifies the icon to display.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon)
+      public static MessageBoxResult Show(string messageBoxText, string caption = "提示",
+         MessageBoxButton button = MessageBoxButton.OK, MessageBoxImage icon = MessageBoxImage.Information)
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, button, icon);
          msg.ShowDialog();
@@ -101,7 +102,8 @@ namespace AduSkin.Controls.Metro
       /// <param name="caption">A System.String that specifies the title bar caption to display.</param>
       /// <param name="okButtonText">A System.String that specifies the text to display within the OK button.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult ShowOK(string messageBoxText, string caption, string okButtonText)
+      public static MessageBoxResult ShowOK(string messageBoxText, string caption = "提示",
+         string okButtonText = "好的")
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, MessageBoxButton.OK);
          msg.OkButtonText = okButtonText;
@@ -119,7 +121,8 @@ namespace AduSkin.Controls.Metro
       /// <param name="okButtonText">A System.String that specifies the text to display within the OK button.</param>
       /// <param name="icon">A System.Windows.MessageBoxImage value that specifies the icon to display.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult ShowOK(string messageBoxText, string caption, string okButtonText, MessageBoxImage icon)
+      public static MessageBoxResult ShowOK(string messageBoxText, string caption = "提示",
+         string okButtonText = "好的", MessageBoxImage icon = MessageBoxImage.Information)
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, MessageBoxButton.OK, icon);
          msg.OkButtonText = okButtonText;
@@ -138,7 +141,8 @@ namespace AduSkin.Controls.Metro
       /// <param name="okButtonText">A System.String that specifies the text to display within the OK button.</param>
       /// <param name="cancelButtonText">A System.String that specifies the text to display within the Cancel button.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult ShowOKCancel(string messageBoxText, string caption, string okButtonText, string cancelButtonText)
+      public static MessageBoxResult ShowOKCancel(string messageBoxText, string caption = "提示",
+         string okButtonText = "好的", string cancelButtonText = "取消")
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, MessageBoxButton.OKCancel);
          msg.OkButtonText = okButtonText;
@@ -159,7 +163,9 @@ namespace AduSkin.Controls.Metro
       /// <param name="cancelButtonText">A System.String that specifies the text to display within the Cancel button.</param>
       /// <param name="icon">A System.Windows.MessageBoxImage value that specifies the icon to display.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult ShowOKCancel(string messageBoxText, string caption, string okButtonText, string cancelButtonText, MessageBoxImage icon)
+      public static MessageBoxResult ShowOKCancel(string messageBoxText, string caption = "提示",
+         string okButtonText = "好的", string cancelButtonText = "取消",
+         MessageBoxImage icon = MessageBoxImage.Information)
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, MessageBoxButton.OKCancel, icon);
          msg.OkButtonText = okButtonText;
@@ -179,7 +185,7 @@ namespace AduSkin.Controls.Metro
       /// <param name="yesButtonText">A System.String that specifies the text to display within the Yes button.</param>
       /// <param name="noButtonText">A System.String that specifies the text to display within the No button.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult ShowYesNo(string messageBoxText, string caption, string yesButtonText, string noButtonText)
+      public static MessageBoxResult ShowYesNo(string messageBoxText, string caption = "提示", string yesButtonText = "好的", string noButtonText = "不")
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, MessageBoxButton.YesNo);
          msg.YesButtonText = yesButtonText;
@@ -200,7 +206,9 @@ namespace AduSkin.Controls.Metro
       /// <param name="noButtonText">A System.String that specifies the text to display within the No button.</param>
       /// <param name="icon">A System.Windows.MessageBoxImage value that specifies the icon to display.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult ShowYesNo(string messageBoxText, string caption, string yesButtonText, string noButtonText, MessageBoxImage icon)
+      public static MessageBoxResult ShowYesNo(string messageBoxText, string caption = "提示",
+         string yesButtonText = "好的", string noButtonText = "不",
+         MessageBoxImage icon = MessageBoxImage.Information)
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, MessageBoxButton.YesNo, icon);
          msg.YesButtonText = yesButtonText;
@@ -221,7 +229,8 @@ namespace AduSkin.Controls.Metro
       /// <param name="noButtonText">A System.String that specifies the text to display within the No button.</param>
       /// <param name="cancelButtonText">A System.String that specifies the text to display within the Cancel button.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult ShowYesNoCancel(string messageBoxText, string caption, string yesButtonText, string noButtonText, string cancelButtonText)
+      public static MessageBoxResult ShowYesNoCancel(string messageBoxText, string caption = "提示",
+         string yesButtonText = "好的", string noButtonText = "不", string cancelButtonText = "取消")
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, MessageBoxButton.YesNoCancel);
          msg.YesButtonText = yesButtonText;
@@ -244,7 +253,9 @@ namespace AduSkin.Controls.Metro
       /// <param name="cancelButtonText">A System.String that specifies the text to display within the Cancel button.</param>
       /// <param name="icon">A System.Windows.MessageBoxImage value that specifies the icon to display.</param>
       /// <returns>A System.Windows.MessageBoxResult value that specifies which message box button is clicked by the user.</returns>
-      public static MessageBoxResult ShowYesNoCancel(string messageBoxText, string caption, string yesButtonText, string noButtonText, string cancelButtonText, MessageBoxImage icon)
+      public static MessageBoxResult ShowYesNoCancel(string messageBoxText, string caption = "提示",
+         string yesButtonText = "好的", string noButtonText = "不", string cancelButtonText = "取消",
+         MessageBoxImage icon = MessageBoxImage.Information)
       {
          AduMessageBoxWindow msg = new AduMessageBoxWindow(messageBoxText, caption, MessageBoxButton.YesNoCancel, icon);
          msg.YesButtonText = yesButtonText;

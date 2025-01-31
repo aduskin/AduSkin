@@ -8,17 +8,19 @@
         xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach"
         mc:Ignorable="d"
         Icon="../../Resources/logo.ico"
-        Background="Transparent" AllowsTransparency="True" WindowStyle="None" BorderThickness="30" 
+        Background="Transparent" AllowsTransparency="True" 
+        WindowStyle="None" BorderThickness="30" 
         MouseLeftButtonDown="Window_MouseLeftButtonDown" 
         WindowStartupLocation="CenterScreen"
         ShowInTaskbar="False" Topmost="True"
         ResizeMode="NoResize" SizeToContent="WidthAndHeight"
-        TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="Display" 
+        TextOptions.TextRenderingMode="ClearType" UseLayoutRounding="True"
         Title="AduMessageBox" MinHeight="155" MaxWidth="470" MinWidth="154">
    <Window.Effect>
       <DropShadowEffect
-            BlurRadius="20"
-            Opacity="0.2"
+            BlurRadius="25"
+            Opacity="0.1"
             ShadowDepth="5"
            Direction="270"
             Color="Black" />
@@ -55,7 +57,8 @@
          <BeginStoryboard Storyboard="{StaticResource LoadStoryboard}" />
       </EventTrigger>
    </Window.Triggers>
-   <Border x:Name="window" RenderTransformOrigin="0.5,0.5" CornerRadius="6" Background="{DynamicResource NormalWhite}" BorderThickness="0,0,0,0">
+   <Border x:Name="window" RenderTransformOrigin="0.5,0.5" CornerRadius="6" 
+           Background="{DynamicResource NormalWhite}" BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="1">
       <Border.RenderTransform>
          <TransformGroup>
             <ScaleTransform />

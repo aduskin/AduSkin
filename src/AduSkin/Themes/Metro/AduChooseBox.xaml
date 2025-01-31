@@ -11,8 +11,8 @@
       <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}" />
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,8,0"/>
-      <Setter Property="AduAttach:PathDataAttach.Width" Value="10" />
-      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_ChooseFile}" />
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="11" />
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_File}" />
       <Setter Property="AduAttach:InputAttach.InputHint" Value="请选择..."/>
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="CornerRadius" Value="2" />

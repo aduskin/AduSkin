@@ -53,7 +53,7 @@
       </Border>
       <Grid Background="{StaticResource MainContentForegroundDrawingBrush}" Grid.Column="1">
          <Border HorizontalAlignment="Center" VerticalAlignment="Center" Padding="40,0,40,40" Margin="20"
-                 MinWidth="400" Background="{StaticResource NormalWhite}" CornerRadius="6" Effect="{StaticResource CardShadow}">
+                 MinWidth="400" Background="{StaticResource NormalWhite}" BorderThickness="1" BorderBrush="{StaticResource NormalBorderBrush}" CornerRadius="6" Effect="{StaticResource CardShadow}">
             <Grid>
                <Grid.RowDefinitions>
                   <RowDefinition Height="60"/>

@@ -3,8 +3,8 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro">
     
     <ControlTemplate x:Key="Apple" TargetType="{x:Type Adu:AduLoading}">
-        <Grid x:Name="PART_Root" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Canvas>
+        <Grid x:Name="PART_Root">
+            <Canvas HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Rectangle x:Name="Rectangle01" Canvas.Left="0" Canvas.Top="2" Width="2"
                            Height="6" Fill="{TemplateBinding Foreground}" Opacity="0.2" RadiusX="1"
                            RadiusY="1" />

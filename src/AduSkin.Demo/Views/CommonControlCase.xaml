@@ -136,13 +136,13 @@
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
-                        Content="菜单"
+                        Content="聊天"
                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_WeChat}"
                         AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
-                        Content="轮播"
+                        Content="福利"
                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_Gift}"
                         AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
                         AduAttach:PathDataAttach.Margin="14,0"
@@ -154,13 +154,13 @@
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
-                        Content="时间轴"
+                        Content="标签"
                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_Tag}"
                         AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
-                        Content="瀑布流"
+                        Content="创意"
                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_Light}"
                         AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
                         AduAttach:PathDataAttach.Margin="14,0"
