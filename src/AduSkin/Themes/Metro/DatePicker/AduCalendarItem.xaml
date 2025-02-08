@@ -1,6 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
@@ -32,15 +32,15 @@
       </Grid>
    </ControlTemplate>
 
-   <Style TargetType="{x:Type Adu:AduCalendarItem}">
-      <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource AncestorType=Adu:AduCalendar}}"/>
+   <Style TargetType="{x:Type AduSkin:AduCalendarItem}">
+      <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource AncestorType=AduSkin:AduCalendar}}"/>
       <Setter Property="Margin" Value="0"/>
       <Setter Property="Template">
          <Setter.Value>
-            <ControlTemplate TargetType="{x:Type Adu:AduCalendarItem}">
+            <ControlTemplate TargetType="{x:Type AduSkin:AduCalendarItem}">
                <Grid x:Name="PART_Root">
                   <Grid.Resources>
-                     <Style TargetType="Adu:AduPathIconButton">
+                     <Style TargetType="AduSkin:AduPathIconButton">
                         <Setter Property="Width" Value="10"/>
                         <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalPathBrush}"/>
                         <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource MouseOverPathBrush}"/>
@@ -62,38 +62,38 @@
                   <Border Background="{TemplateBinding Background}"  Grid.RowSpan="2" Grid.ColumnSpan="5"
                           CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"/>
 
-                  <Adu:AduPathIconButton x:Name="PART_PreviousYearButton"
+                  <AduSkin:AduPathIconButton x:Name="PART_PreviousYearButton"
                      Grid.Column="0" Margin="15,0,0,0"
                      AduAttach:PathDataAttach.Width="10"
                      AduAttach:PathDataAttach.PathData="{StaticResource Icon_DoubleLeft}" />
 
-                  <Adu:AduPathIconButton x:Name="PART_PreviousMonthButton"
+                  <AduSkin:AduPathIconButton x:Name="PART_PreviousMonthButton"
                             Grid.Column="1" Margin="15,0,0,0" 
                             AduAttach:PathDataAttach.PathData="{StaticResource Icon_LeftArrow}"/>
 
-                  <Adu:AduPathIconButton x:Name="PART_NextMonthButton"
+                  <AduSkin:AduPathIconButton x:Name="PART_NextMonthButton"
                         Grid.Column="3" Margin="0,0,15,0" 
                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_LeftArrow}" 
                         RenderTransformOrigin="0.5,0.5">
-                     <Adu:AduPathIconButton.LayoutTransform>
+                     <AduSkin:AduPathIconButton.LayoutTransform>
                         <RotateTransform Angle="180" />
-                     </Adu:AduPathIconButton.LayoutTransform>
-                  </Adu:AduPathIconButton>
+                     </AduSkin:AduPathIconButton.LayoutTransform>
+                  </AduSkin:AduPathIconButton>
 
-                  <Adu:AduPathIconButton x:Name="PART_NextYearButton"
+                  <AduSkin:AduPathIconButton x:Name="PART_NextYearButton"
                      Grid.Column="4" Margin="0,0,15,0" 
                      AduAttach:PathDataAttach.Width="10"
                      AduAttach:PathDataAttach.PathData="{StaticResource Icon_DoubleLeft}"
                      RenderTransformOrigin="0.5,0.5">
-                     <Adu:AduPathIconButton.LayoutTransform>
+                     <AduSkin:AduPathIconButton.LayoutTransform>
                         <RotateTransform Angle="180" />
-                     </Adu:AduPathIconButton.LayoutTransform>
-                  </Adu:AduPathIconButton>
+                     </AduSkin:AduPathIconButton.LayoutTransform>
+                  </AduSkin:AduPathIconButton>
 
                   <Button x:Name="PART_HeaderButton" Grid.Row="0" Grid.Column="2" Width="66"
                         HorizontalAlignment="Center" VerticalAlignment="Stretch"
                         Focusable="False" FontSize="12"
-                        Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Adu:AduCalendar}}"
+                        Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=AduSkin:AduCalendar}}"
                         Template="{StaticResource HeaderButtonTemplate}" />
 
                   <!--  月视图，1号~31号，分为49格  -->
@@ -145,13 +145,13 @@
                   </Border>
                </Grid>
                <ControlTemplate.Triggers>
-                  <DataTrigger Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduCalendar}}}" Value="Year">
+                  <DataTrigger Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType={x:Type AduSkin:AduCalendar}}}" Value="Year">
                      <Setter TargetName="PART_MonthView" Property="Visibility" Value="Hidden" />
                      <Setter TargetName="PART_YearView" Property="Visibility" Value="Visible" />
                      <Setter TargetName="PART_PreviousMonthButton" Property="Visibility" Value="Hidden" />
                      <Setter TargetName="PART_NextMonthButton" Property="Visibility" Value="Hidden" />
                   </DataTrigger>
-                  <DataTrigger Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduCalendar}}}" Value="Decade">
+                  <DataTrigger Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType={x:Type AduSkin:AduCalendar}}}" Value="Decade">
                      <Setter TargetName="PART_MonthView" Property="Visibility" Value="Hidden" />
                      <Setter TargetName="PART_YearView" Property="Visibility" Value="Visible" />
                      <Setter TargetName="PART_PreviousMonthButton" Property="Visibility" Value="Hidden" />
@@ -159,16 +159,16 @@
                   </DataTrigger>
                   <MultiDataTrigger>
                      <MultiDataTrigger.Conditions>
-                        <Condition Binding="{Binding Type, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduCalendar}}}" Value="One" />
-                        <Condition Binding="{Binding Type, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduDatePicker}}}" Value="SingleDateRange" />
+                        <Condition Binding="{Binding Type, RelativeSource={RelativeSource AncestorType={x:Type AduSkin:AduCalendar}}}" Value="One" />
+                        <Condition Binding="{Binding Type, RelativeSource={RelativeSource AncestorType={x:Type AduSkin:AduDatePicker}}}" Value="SingleDateRange" />
                      </MultiDataTrigger.Conditions>
                      <Setter TargetName="PART_NextMonthButton" Property="Visibility" Value="Collapsed" />
                      <Setter TargetName="PART_NextYearButton" Property="Visibility" Value="Collapsed" />
                   </MultiDataTrigger>
                   <MultiDataTrigger>
                      <MultiDataTrigger.Conditions>
-                        <Condition Binding="{Binding Type, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduCalendar}}}" Value="Second" />
-                        <Condition Binding="{Binding Type, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduDatePicker}}}" Value="SingleDateRange" />
+                        <Condition Binding="{Binding Type, RelativeSource={RelativeSource AncestorType={x:Type AduSkin:AduCalendar}}}" Value="Second" />
+                        <Condition Binding="{Binding Type, RelativeSource={RelativeSource AncestorType={x:Type AduSkin:AduDatePicker}}}" Value="SingleDateRange" />
                      </MultiDataTrigger.Conditions>
                      <Setter TargetName="PART_PreviousMonthButton" Property="Visibility" Value="Collapsed" />
                      <Setter TargetName="PART_PreviousYearButton" Property="Visibility" Value="Collapsed" />

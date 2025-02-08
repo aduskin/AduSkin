@@ -25,22 +25,22 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Button}">
                <Border x:Name="Bd"
-                            Background="{StaticResource UpDownButton.Static.Background}"
-                            Padding="2">
-                  <Path x:Name="path" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                              Data="{StaticResource Icon_Up}" Stretch="Uniform" Width="10"
-                              Fill="{StaticResource UpDownButton.Static.Foreground}"
-                              SnapsToDevicePixels="True" UseLayoutRounding="True" />
+                     Background="{TemplateBinding Background}"
+                     BorderThickness="0" Padding="4,0,5,0" SnapsToDevicePixels="True">
+                  <Path x:Name="path" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                     Data="{StaticResource Icon_Up}" Stretch="Uniform" Width="10"
+                     Fill="{StaticResource NormalPathBrush}"
+                     SnapsToDevicePixels="True" UseLayoutRounding="True" />
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="Bd" Property="Opacity" Value="0.8" />
                      <Setter TargetName="Bd" Property="Cursor" Value="Hand" />
-                     <Setter TargetName="path" Property="Fill" Value="#000" />
+                     <Setter TargetName="path" Property="Fill" Value="{StaticResource MouseOverPathBrush}" />
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter Property="Cursor" Value="No" />
-                     <Setter TargetName="path" Property="Fill" Value="#E2E2E2" />
+                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -56,22 +56,22 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Button}">
                <Border x:Name="Bd"
-                            Background="{StaticResource UpDownButton.Static.Background}"
-                            BorderThickness="0" Padding="4,0" SnapsToDevicePixels="True">
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="0" Padding="4,0,5,0" SnapsToDevicePixels="True">
                   <Path x:Name="path" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                              Data="{StaticResource Icon_Down}" Stretch="Uniform" Width="10"
-                              Fill="{StaticResource UpDownButton.Static.Foreground}"
-                              SnapsToDevicePixels="True" UseLayoutRounding="True" />
+                        Data="{StaticResource Icon_Down}" Stretch="Uniform" Width="10"
+                        Fill="{StaticResource NormalPathBrush}"
+                        SnapsToDevicePixels="True" UseLayoutRounding="True" />
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="Bd" Property="Opacity" Value="0.8" />
                      <Setter TargetName="Bd" Property="Cursor" Value="Hand" />
-                     <Setter TargetName="path" Property="Fill" Value="#000" />
+                     <Setter TargetName="path" Property="Fill" Value="{StaticResource MouseOverPathBrush}" />
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter Property="Cursor" Value="No" />
-                     <Setter TargetName="path" Property="Fill" Value="#DBDBDB" />
+                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -199,7 +199,7 @@
                   <Path Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Left" Data="M0,0 5,5 10,0Z" Fill="{Binding TipBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                </Grid>
             </Popup>
-            <Grid x:Name="UpDown" Grid.Column="1" Margin="0,0,-1,-1">
+            <Grid x:Name="UpDown" Grid.Column="1">
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="1" />
                   <ColumnDefinition Width="*" />
@@ -210,9 +210,9 @@
                   <RowDefinition Height="*" />
                </Grid.RowDefinitions>
                <Rectangle x:Name="leftBorder" Grid.Column="0" Grid.RowSpan="3" Fill="{StaticResource NormalBorderBrush}" Margin="0,0,0,1"/>
-               <Button x:Name="PART_UP" Grid.Column="1" Style="{StaticResource UpButtonStyle}" />
+               <Button x:Name="PART_UP" Grid.Column="1" Style="{StaticResource UpButtonStyle}"/>
                <Rectangle x:Name="centerBorder" Grid.Column="1" Grid.Row="1" Fill="{StaticResource NormalBorderBrush}" Margin="0,0,1,0"/>
-               <Button x:Name="PART_DOWN" Grid.Column="1" Grid.Row="2" Style="{StaticResource DownButtonStyle}" />
+               <Button x:Name="PART_DOWN" Grid.Column="1" Grid.Row="2" Style="{StaticResource DownButtonStyle}"/>
             </Grid>
          </Grid>
       </Grid>

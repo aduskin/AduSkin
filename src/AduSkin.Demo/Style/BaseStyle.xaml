@@ -14,6 +14,7 @@
    <SolidColorBrush x:Key="NormalBlack5" Color="#05000000" />
    <SolidColorBrush x:Key="NormalBlack10" Color="#10000000" />
    <SolidColorBrush x:Key="NormalBlack20" Color="#20000000" />
+   <SolidColorBrush x:Key="NormalBlack30" Color="#30000000" />
    <SolidColorBrush x:Key="NormalBlack90" Color="#90000000" />
    <SolidColorBrush x:Key="NormalTransparentBrush" Color="#00000000" />
 

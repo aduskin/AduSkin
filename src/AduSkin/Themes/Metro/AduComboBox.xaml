@@ -87,7 +87,7 @@
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="bg"  Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />

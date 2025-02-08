@@ -65,7 +65,7 @@
    <SolidColorBrush x:Key="MouseOverBackground" Color="#16000000" />
    <SolidColorBrush x:Key="PressedBackground" Color="#15000000" />
    <SolidColorBrush x:Key="SelectedBackground" Color="#12000000" />
-   <SolidColorBrush x:Key="AlternationIndexBackground0" Color="#06000000" />
+   <SolidColorBrush x:Key="AlternationIndexBackground0" Color="#05000000" />
    <SolidColorBrush x:Key="AlternationIndexBackground1" Color="#00000000" />
 
    <!--Border-->

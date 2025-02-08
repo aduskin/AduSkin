@@ -4,12 +4,10 @@
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduCalendar.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduToggleButton.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduCalendar.xaml"/> 
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduTimeSelector.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-
-   <PathFigureCollection x:Key="Date_BottomPart">M704 192 704 128l-32 0 0 64L352 192 352 128l-32 0 0 64L128 192l0 704 768 0L896 192 704 192zM864 864 160 864 160 384l704 0L864 864zM864 352 160 352l0-128 160 0 0 64 32 0 0-64 320 0 0 64 32 0 0-64 160 0L864 352z</PathFigureCollection>
-   <PathFigureCollection x:Key="Date_TopPart">M160 224 160 352 864 352 864 224Z</PathFigureCollection>
 
    <!--  按钮样式  -->
    <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
@@ -27,15 +25,7 @@
    <!--  下拉按钮样式  -->
    <ControlTemplate x:Key="DropDownButtonTemplate" TargetType="{x:Type ToggleButton}">
       <Grid VerticalAlignment="Stretch" Background="{StaticResource NormalTransparentBrush}">
-         <Path x:Name="path" Width="14" Margin="5,0" VerticalAlignment="Center"
-               Fill="#9EA7B4" Stretch="Uniform">
-            <Path.Data>
-               <GeometryGroup>
-                  <PathGeometry Figures="{StaticResource Date_BottomPart}" />
-                  <PathGeometry Figures="{StaticResource Date_TopPart}" />
-               </GeometryGroup>
-            </Path.Data>
-         </Path>
+         <Path x:Name="path" Width="14" Margin="5,0" VerticalAlignment="Center" Fill="#9EA7B4" Stretch="Uniform" Data="{StaticResource Icon_Calendar}"/>
       </Grid>
       <ControlTemplate.Triggers>
          <Trigger Property="IsMouseOver" Value="True">
@@ -50,7 +40,7 @@
 
    <!--  日期文本框样式  -->
    <Style x:Key="DatePickerTextBoxStyle" TargetType="{x:Type DatePickerTextBox}">
-      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
       <Setter Property="BorderThickness" Value="0" />
@@ -149,6 +139,7 @@
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
       <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource NormalBrush}"/>
       <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,6,0"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -179,18 +170,17 @@
                      </Grid.ColumnDefinitions>
                      <DatePickerTextBox x:Name="PART_TextBox_New"
                            HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center"
-                           Padding="{TemplateBinding Padding}" 
+                           Padding="{TemplateBinding Padding}"
                            AduAttach:BorderAttach.CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
                            BorderBrush="{StaticResource NormalBorderBrush}"
                            Focusable="{TemplateBinding Focusable}"
                            Foreground="{TemplateBinding Foreground}"
-                           IsReadOnly="True"  
-                           Style="{StaticResource DatePickerTextBoxStyle}" />
-                     <Grid x:Name="PART_DisabledVisual"
-                           Grid.ColumnSpan="2"
+                           IsReadOnly="True"
+                           Style="{StaticResource DatePickerTextBoxStyle}"/>
+                     <Grid x:Name="PART_DisabledVisual" Grid.ColumnSpan="2"
                            IsHitTestVisible="False" Opacity="0">
                         <Grid.ColumnDefinitions>
-                           <ColumnDefinition Width="*" />
+                           <ColumnDefinition Width="*"/>
                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Popup x:Name="PART_Popup_New" 
@@ -216,7 +206,7 @@
                                        <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
 
-                                    <ItemsControl x:Name="SingleDateShortCuts" Grid.RowSpan="2" Width="100" BorderBrush="{StaticResource NormalBorderBrush}"
+                                    <ItemsControl x:Name="SingleDateShortCuts" Grid.RowSpan="2" Width="100" BorderBrush="{StaticResource NormalBlack10}"
                                           BorderThickness="0,0,1,0" SnapsToDevicePixels="True" Tag="快捷菜单" Visibility="Collapsed">
                                        <Button x:Name="PART_Btn_Today" Content="今天" Style="{StaticResource ShortCutButtonStyle}" 
                                           Foreground="{TemplateBinding Foreground }"/>
@@ -232,7 +222,7 @@
                                     </ItemsControl>
 
                                     <ItemsControl x:Name="SingleDateRangeShortCuts" Grid.RowSpan="2" Width="100" 
-                                          BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,0,1,0" 
+                                          BorderBrush="{StaticResource NormalBlack10}" BorderThickness="0,0,1,0" 
                                           SnapsToDevicePixels="True" Tag="快捷菜单" Visibility="Collapsed">
                                        <Button x:Name="PART_Btn_RecentlyAWeek" Content="最近一周" Style="{StaticResource ShortCutButtonStyle}"
                                           Foreground="{TemplateBinding Foreground }"/>
@@ -266,18 +256,18 @@
                                        AduAttach:ForegroundAttach.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.MouseOverForeground)}"
                                        AduAttach:ForegroundAttach.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}" />
                                     <Border x:Name="ButtonLayout" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Padding="0,7"  Visibility="Collapsed"
-                                            BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,1,0,0">
+                                            BorderBrush="{StaticResource NormalBlack10}" BorderThickness="0,1,0,0">
                                        <DockPanel>
                                           <ToggleButton x:Name="ChooseTime" Margin="7,0,0,0" BorderThickness="0" Content="选择时间"
-                                                   Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"  
-                                                   DockPanel.Dock="Left" Visibility="Collapsed" Style="{StaticResource ChooseTimeToggleButton}"/>
+                                                Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"  
+                                                DockPanel.Dock="Left" Visibility="Collapsed" Style="{StaticResource ChooseTimeToggleButton}"/>
                                           <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right" Orientation="Horizontal">
                                              <Adu:AduFlatButton x:Name="PART_ClearDate" Width="40" Height="22" Margin="0,0,5,0"
-                                                   HorizontalAlignment="Right" Content="清空" Foreground="{StaticResource NormalBlack}" 
-                                                   Background="{StaticResource NormalTransparentBrush}" />
+                                                HorizontalAlignment="Right" Content="清空" Foreground="{StaticResource NormalBlack}" 
+                                                Background="{StaticResource NormalTransparentBrush}"/>
                                              <Adu:AduFlatButton x:Name="PART_ConfirmSelected" Width="40" Height="22" Margin="0,0,7,0" 
-                                                   Background="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
-                                                   HorizontalAlignment="Right" Content="确定" />
+                                                Background="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
+                                                HorizontalAlignment="Right" Content="确定"/>
                                           </StackPanel>
 
                                           <Popup x:Name="PART_Popup_TimeSelector" AllowsTransparency="True" Placement="Top" 
@@ -297,41 +287,17 @@
                         </Popup>
                      </Grid>
 
-                     <ToggleButton x:Name="PART_DropDownButton" Grid.Row="0" Grid.Column="1" Margin="3,0,0,0"
-                           HorizontalAlignment="Left" VerticalAlignment="Center" Focusable="False"
-                           AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
-                           AduAttach:PathBrushAttach.MouseOverPathColor="{TemplateBinding AduAttach:PathBrushAttach.MouseOverPathColor}"
-                           AduAttach:PathBrushAttach.PressedPathColor="{TemplateBinding AduAttach:PathBrushAttach.PressedPathColor}"
-                           IsChecked="{Binding IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}">
-                        <ToggleButton.Template>
-                           <ControlTemplate  TargetType="{x:Type ToggleButton}">
-                              <Grid VerticalAlignment="Stretch" Background="{StaticResource NormalTransparentBrush}">
-                                 <Path x:Name="path" Width="14" Margin="5,0" VerticalAlignment="Center" 
-                                       Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" Stretch="Uniform">
-                                    <Path.Data>
-                                       <GeometryGroup>
-                                          <PathGeometry Figures="{StaticResource Date_BottomPart}" />
-                                          <PathGeometry Figures="{StaticResource Date_TopPart}" />
-                                       </GeometryGroup>
-                                    </Path.Data>
-                                 </Path>
-                              </Grid>
-                              <ControlTemplate.Triggers>
-                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Cursor" Value="Hand" />
-                                    <Setter TargetName="path" Property="Opacity" Value=".8" />
-                                    <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.MouseOverPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                                 </Trigger>
-                                 <Trigger Property="IsPressed" Value="true">
-                                    <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.PressedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                                 </Trigger>
-                                 <Trigger Property="IsChecked" Value="True">
-                                    <Setter TargetName="path" Property="Opacity" Value=".7" />
-                                 </Trigger>
-                              </ControlTemplate.Triggers>
-                           </ControlTemplate>
-                        </ToggleButton.Template>
-                     </ToggleButton>
+                     <Adu:AduToggleButton x:Name="PART_DropDownButton" 
+                        Grid.Row="0" Grid.Column="1" 
+                        VerticalAlignment="Center" Focusable="False"
+                        Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Calendar}"
+                        AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Calendar}"
+                        AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+                        AduAttach:PathBrushAttach.MouseOverPathColor="{TemplateBinding AduAttach:PathBrushAttach.MouseOverPathColor}"
+                        AduAttach:PathBrushAttach.PressedPathColor="{TemplateBinding AduAttach:PathBrushAttach.PressedPathColor}"
+                        IsChecked="{Binding IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"/>
                   </Grid>
                </Grid>
                <ControlTemplate.Triggers>

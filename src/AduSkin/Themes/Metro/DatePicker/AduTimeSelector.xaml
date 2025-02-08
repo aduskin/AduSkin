@@ -85,11 +85,11 @@
                            BorderBrush="{TemplateBinding BorderBrush}" 
                            BorderThickness="{TemplateBinding BorderThickness}"/>
                      <UniformGrid Columns="3" Margin="0,6">
-                        <ListBox x:Name="PART_Hour" BorderBrush="{StaticResource NormalBorderBrush}" 
+                        <ListBox x:Name="PART_Hour" BorderBrush="{StaticResource NormalBlack10}" 
                               Style="{StaticResource TimeItemsStyle}"/>
-                        <ListBox x:Name="PART_Minute" BorderThickness="1,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}" 
+                        <ListBox x:Name="PART_Minute" BorderThickness="1,0,1,0" BorderBrush="{StaticResource NormalBlack10}" 
                               Style="{StaticResource TimeItemsStyle}" />
-                        <ListBox x:Name="PART_Second" BorderBrush="{StaticResource NormalBorderBrush}" 
+                        <ListBox x:Name="PART_Second" BorderBrush="{StaticResource NormalBlack10}" 
                               Style="{StaticResource TimeItemsStyle}" />
                      </UniformGrid>
                   </Grid>

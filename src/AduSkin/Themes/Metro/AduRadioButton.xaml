@@ -8,10 +8,7 @@
 
    <!--多选按钮-->
    <Style TargetType="{x:Type AduSkin:AduRadioButton}">
-      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="Cursor" Value="Hand" />
-      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/> 
       <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
@@ -26,6 +23,9 @@
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0"/>
       <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0"/>
+      <Setter Property="Cursor" Value="Hand" />
+      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+      <Setter Property="FontSize" Value="12"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduRadioButton}">
@@ -35,10 +35,10 @@
                        BorderBrush="{TemplateBinding BorderBrush}">
                   <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                      <Path x:Name="path" VerticalAlignment="Center" Stretch="Uniform"
-                                Visibility="{TemplateBinding AduAttach:PathDataAttach.Visibility}"
-                                Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
-                                Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
-                                Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"/>
+                           Visibility="{TemplateBinding AduAttach:PathDataAttach.Visibility}"
+                           Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+                           Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+                           Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"/>
                      <ContentPresenter VerticalAlignment="Center" Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}"/>
                   </StackPanel>
                </Border>

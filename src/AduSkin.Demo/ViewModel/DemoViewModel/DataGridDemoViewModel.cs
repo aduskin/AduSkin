@@ -105,16 +105,9 @@ namespace AduSkin.Demo.ViewModel
          }
       }
 
-      ///// <summary>
-      /////     
-      ///// </summary>
-      //public RelayCommand<FunctionEventArgs<int>> PageUpdatedCmd =>
-      //    new Lazy<RelayCommand<FunctionEventArgs<int>>>(() =>
-      //        new RelayCommand<FunctionEventArgs<int>>(PageUpdated)).Value;
-
-      /// <summary>
-      ///     页码改变
-      /// </summary>
+      ///<summary>
+      ///页码改变
+      ///</summary>
       [RelayCommand]
       private void PageUpdated(FunctionEventArgs<int> info)
       {

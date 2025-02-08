@@ -10,17 +10,15 @@
     <StartupObject />
     <Platforms>AnyCPU;x64</Platforms>
      <LangVersion>9.0</LangVersion>
-  </PropertyGroup> 
-  <ItemGroup>
-    <ProjectReference Include="..\AduSkin\AduSkin.csproj" />
-    <ProjectReference Include="..\AduVideoPlayer\AduVideoPlayer.csproj" />
-  </ItemGroup>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.8.1" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources/**" />
+    <ProjectReference Include="..\AduSkin\AduSkin.csproj" />
+    <ProjectReference Include="..\AduVideoPlayer\AduVideoPlayer.csproj" />
     <Resource Include="logo.ico" />
     <Resource Include="logo.png" />
   </ItemGroup>

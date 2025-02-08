@@ -74,6 +74,13 @@
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsSelected" Value="False" />
+                        <Condition Property="IsMouseOver" Value="True" />
+                     </MultiTrigger.Conditions>
+                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+                  </MultiTrigger>
+                  <MultiTrigger>
+                     <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="False" />
                         <Condition Property="IsToday" Value="True" />
                      </MultiTrigger.Conditions>
                      <Setter TargetName="TodayBackground" Property="Background" 

@@ -1,35 +1,34 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-   
-   <Style TargetType="{x:Type Adu:AduToggleButton}">
+
+   <Style TargetType="{x:Type AduSkin:AduToggleButton}">
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}" />
+      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{StaticResource NormalBlack}" />
+      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource NormalBlack}" />
+      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource NormalBlack}"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="13" />
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="13" />
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_Pause}"/>
+      <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{StaticResource Icon_Play}"/>
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-      <Setter Property="BorderBrush" Value="Transparent" />
-      <Setter Property="Foreground" Value="#000000" />
-      <Setter Property="Background" Value="#00000000"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="HorizontalContentAlignment" Value="Center"/>
       <Setter Property="VerticalContentAlignment" Value="Center"/>
       <Setter Property="Padding" Value="0" />
       <Setter Property="IsChecked" Value="True"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="Transparent" />
-      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="Transparent" />
-      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="Transparent" />
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}" />
-      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="#000000" />
-      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="#000000" />
-      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="#000000"/>
-      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="13" />
-      <Setter Property="AduAttach:PathDataAttach.Width" Value="13" />
-      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_Pause}"/>
-      <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{StaticResource Icon_Play}"/>
       <Setter Property="Template">
          <Setter.Value>
-            <ControlTemplate TargetType="{x:Type Adu:AduToggleButton}">
+            <ControlTemplate TargetType="{x:Type AduSkin:AduToggleButton}">
                <Border x:Name="border" 
                      Height="{TemplateBinding Height}"
                      Width="{TemplateBinding Width}"
@@ -65,8 +64,8 @@
                      <Setter TargetName="path" Property="Fill" Value="{Binding (AduAttach:PathBrushAttach.PressedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="false">
-                     <Setter TargetName="border" Property="Background" Value="Transparent" />
-                     <Setter TargetName="path" Property="Fill" Value="#888" />
+                     <Setter TargetName="border" Property="Background" Value="{StaticResource NormalTransparentBrush}" />
+                     <Setter TargetName="path" Property="Opacity" Value="{StaticResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>

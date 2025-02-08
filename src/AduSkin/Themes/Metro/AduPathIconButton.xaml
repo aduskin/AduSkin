@@ -34,9 +34,12 @@
                      CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
                      Background="{TemplateBinding Background}"
                      BorderBrush="{TemplateBinding BorderBrush}"
-                     BorderThickness="{TemplateBinding BorderThickness}"/>
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     SnapsToDevicePixels="true" 
+                     UseLayoutRounding="True"/>
                   <Path x:Name="path"
-                     HorizontalAlignment="Center" VerticalAlignment="Center"
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center"
                      Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
                      Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
                      Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
