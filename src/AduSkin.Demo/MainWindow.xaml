@@ -17,11 +17,11 @@
    </Window.DataContext>
    <Metro:MetroWindow.Menu>
       <Metro:MetroTitleMenu Height="40" HorizontalAlignment="Right">
-         <Metro:AduTitleMenuItem Header="联系" Metro:BorderAttach.CornerRadius="6" WindowChrome.IsHitTestVisibleInChrome="True">
-            <Metro:AduTitleMenuItem Header="QQ"  Command="Metro:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes"/>
-            <Metro:AduTitleMenuItem Header="QQ群" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb"/>
-            <Metro:AduTitleMenuItem Header="邮箱" Command="Metro:ControlCommands.OpenLink" CommandParameter="mailto:1280429435@qq.com" />
-         </Metro:AduTitleMenuItem>
+         <Metro:MetroTitleMenuItem Header="联系" Metro:BorderAttach.CornerRadius="6" WindowChrome.IsHitTestVisibleInChrome="True">
+            <Metro:MetroMenuItem Header="QQ"  Command="Metro:ControlCommands.OpenLink" CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes"/>
+            <Metro:MetroMenuItem Header="QQ群" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb"/>
+            <Metro:MetroMenuItem Header="邮箱" Command="Metro:ControlCommands.OpenLink" CommandParameter="mailto:1280429435@qq.com" />
+         </Metro:MetroTitleMenuItem>
          <Metro:MetroTitleMenuItem Header="源码" Metro:BorderAttach.CornerRadius="6">
             <Metro:MetroMenuItem Header="GitHub" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin"/>
             <Metro:MetroMenuItem Header="码云" Command="Metro:ControlCommands.OpenLink" CommandParameter="https://gitee.com/aduskin"/>
