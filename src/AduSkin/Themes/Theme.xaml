@@ -40,6 +40,8 @@
    <SolidColorBrush x:Key="NormalBlack10" Color="#10000000" />
    <SolidColorBrush x:Key="NormalBlack20" Color="#20000000" />
    <SolidColorBrush x:Key="NormalBlack90" Color="#90000000" />
+   <!--Red-->
+   <SolidColorBrush x:Key="NormalRed" Color="#FF4B52" />
    <!--Blue-->
    <SolidColorBrush x:Key="NormalBlue" Color="#3399FF" />
    <SolidColorBrush x:Key="NormalBlue10" Color="#103399FF" />
@@ -53,7 +55,10 @@
    <SolidColorBrush x:Key="NormalBrush" Color="#EE796F" />
 
    <!--Shadow-->
-   <SolidColorBrush x:Key="ShadowBrush" Color="#2D2D30" />
+   <SolidColorBrush x:Key="ShadowBackgroundBrush" Color="#272727" />
+   <SolidColorBrush x:Key="ShadowMouseOverBackgroundBrush" Color="#464646" />
+   <SolidColorBrush x:Key="ShadowPressedBackgroundBrush" Color="#393939" />
+   <SolidColorBrush x:Key="ShadowSelectedBackgroundBrush" Color="#313131" />
 
    <!--Foreground-->
    <SolidColorBrush x:Key="SelectedForegroundBrush" Color="#666" />

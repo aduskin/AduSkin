@@ -1,0 +1,109 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+      xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro" 
+      xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
+   
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/> 
+   </ResourceDictionary.MergedDictionaries>
+
+   <!--一级菜单-->
+   <!--<Style TargetType="AduSkin:AduTitleMenu">
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="Background" Value="{StaticResource ShadowBackgroundBrush}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource ShadowMouseOverBackgroundBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="{StaticResource ShadowPressedBackgroundBrush}"/>
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="AduSkin:AduTitleMenu">
+               <Grid x:Name="bg" Height="30" Width="{TemplateBinding Width}" 
+               Background="{TemplateBinding Background}">
+                  <TextBlock Margin="15 0 15 0" 
+                  VerticalAlignment="Center" 
+                  Text="{Binding Header,RelativeSource={RelativeSource TemplatedParent}}"
+                  Foreground="{TemplateBinding Foreground}"/>
+                  <Popup Placement="Bottom" AllowsTransparency="True" 
+                     Focusable="False" IsOpen="{TemplateBinding IsSubmenuOpen}">
+                     <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                     SnapsToDevicePixels="True">
+                        <StackPanel Background="{TemplateBinding Background}" IsItemsHost="True" 
+                        KeyboardNavigation.DirectionalNavigation="Cycle"/>
+                     </Border>
+                  </Popup>
+               </Grid>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsMouseOver" Value="true">
+                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                  </Trigger>
+                  <Trigger Property="IsSubmenuOpen" Value="true">
+                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>-->
+
+   <!--一级以上菜单栏样式-->
+   <Style TargetType="AduSkin:AduTitleMenuItem">
+      <Setter Property="Background" Value="{StaticResource ShadowBackgroundBrush}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource ShadowMouseOverBackgroundBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="{StaticResource ShadowPressedBackgroundBrush}"/>
+      <Setter Property="MinHeight" Value="30"/>
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="AduSkin:AduTitleMenuItem">
+               <Grid x:Name="bg" Shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                  Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" 
+                  Background="{TemplateBinding Background}">
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="20"/>
+                  </Grid.ColumnDefinitions>
+                  <TextBlock Grid.Column="0" 
+                     Margin="10 0 10 0" 
+                     VerticalAlignment="Center" 
+                     Text="{Binding Header,RelativeSource={RelativeSource TemplatedParent}}"
+                     Foreground="{TemplateBinding Foreground}"/>
+                  <Path x:Name="IsHasItems" 
+                     Grid.Column="1" 
+                     Visibility="Collapsed" 
+                     Width="9"  
+                     Data="{StaticResource Icon_RightArrow}" 
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center" 
+                     Fill="{TemplateBinding Foreground}"/>
+                  <Popup Placement="Right" 
+                     AllowsTransparency="True" 
+                     Focusable="False" 
+                     IsOpen="{TemplateBinding IsSubmenuOpen}">
+                     <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        SnapsToDevicePixels="True">
+                        <StackPanel Background="{TemplateBinding Background}" 
+                           IsItemsHost="True" 
+                           KeyboardNavigation.DirectionalNavigation="Cycle"/>
+                     </Border>
+                  </Popup>
+               </Grid>
+               <ControlTemplate.Triggers>
+                  <Trigger Property="IsMouseOver" Value="true">
+                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                  </Trigger>
+                  <Trigger Property="IsSubmenuOpen" Value="true">
+                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                  </Trigger>
+                  <Trigger Property="HasItems" Value="True">
+                     <Setter TargetName="IsHasItems" Property="Visibility" Value="Visible"/>
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+</ResourceDictionary>
