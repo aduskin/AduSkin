@@ -82,5 +82,7 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTimeBarNew.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Cover/AduCoverFlow.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/Cover/AduCoverView.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/StepBar/AduStepBar.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/StepBar/AduStepBarItem.xaml" />
    </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
