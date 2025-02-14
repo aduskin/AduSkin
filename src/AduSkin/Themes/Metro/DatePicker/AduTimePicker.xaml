@@ -27,6 +27,7 @@
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_Clock}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="15"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,4,0"/>
+      <Setter Property="AduAttach:InputAttach.InputHint" Value="请选择时间"/>
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="UseLayoutRounding" Value="True" />
@@ -73,7 +74,7 @@
                            </Border>
                         </Grid>
                      </Popup>
-                     <AduSkin:MetroTextBox x:Name="PART_TextBox" 
+                     <AduSkin:MetroTextBox x:Name="PART_TextBox" AduAttach:InputAttach.InputHint="{TemplateBinding AduAttach:InputAttach.InputHint}"
                         MouseMoveBackground="{StaticResource NormalTransparentBrush}" Background="{StaticResource NormalTransparentBrush}" 
                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" BorderThickness="0"
