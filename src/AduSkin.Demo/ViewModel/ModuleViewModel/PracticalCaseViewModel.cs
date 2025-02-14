@@ -31,6 +31,7 @@ namespace AduSkin.Demo.ViewModel
          AllControl = new List<ControlModel>()
          {
             new ControlModel("Win10菜单", typeof(SortGroup)),
+            new ControlModel("步骤条", typeof(StepBarDemo)),
             new ControlModel("图片上传", typeof(UploadPic)),
             new ControlModel("视频控件", typeof(VideoPlayer)),
             new ControlModel("折叠菜单", typeof(ExpanderMenu)),
