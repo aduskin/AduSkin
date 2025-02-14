@@ -7,17 +7,17 @@
         xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
         xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
-        BorderBrush="#3E3E45"
-        Background="{StaticResource NormalWhite}"       
+        BorderBrush="#3E3E45"       
         BorderThickness="1"
-        SysButtonColor="{StaticResource ShadowBrush}"
+         Background="{StaticResource ShadowBrush}"
+        SysButtonColor="{StaticResource NormalWhite}"
         SysButtonMargin="14"
         SysButtonVisible="Visible"
         Title="AduSkinDemo" 
         MinWidth="600" MinHeight="350" 
         d:DesignHeight="1200" d:DesignWidth="1100" Width="800">
    <Adu:AduTransitioningContentControl>
-      <Grid Background="{StaticResource ShadowBrush}">
+      <Grid>
          <Grid.RowDefinitions>
             <RowDefinition Height="80" />
             <RowDefinition />
@@ -95,7 +95,7 @@
                         </DataTemplate>
                      </Adu:AduCarousel.ItemTemplate>
                   </Adu:AduCarousel>
-                  <ItemsControl  x:Name="Demos" FocusVisualStyle="{x:Null}">
+                  <ItemsControl  x:Name="Demos" FocusVisualStyle="{x:Null}" MaxWidth="1000">
                      <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                            <StackPanel />
@@ -132,7 +132,7 @@
                            </Border>
                            <DataTemplate.Triggers>
                               <Trigger Property="IsMouseOver" Value="True">
-                                 <Setter TargetName="bg" Property="Background" Value="{StaticResource NormalWhite}" />
+                                 <Setter TargetName="bg" Property="Background" Value="{StaticResource NormalBlack20}" />
                               </Trigger>
                            </DataTemplate.Triggers>
                         </DataTemplate>

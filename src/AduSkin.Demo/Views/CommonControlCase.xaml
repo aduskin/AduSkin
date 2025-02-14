@@ -447,14 +447,14 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel>
-                  <AduSkin:MetroRichTextBox MaxHeight="50" Margin="5" CornerRadius="1" IsEnabled="False">
+                  <AduSkin:MetroRichTextBox MaxHeight="100" Margin="5" CornerRadius="1" IsEnabled="False">
                      <FlowDocument>
                         <Paragraph>
                            <Run Text="禁用" />
                         </Paragraph>
                      </FlowDocument>
                   </AduSkin:MetroRichTextBox>
-                  <AduSkin:MetroRichTextBox x:Name="rt1" MaxHeight="50" Margin="5" CornerRadius="1"  IsReadOnly="True">
+                  <AduSkin:MetroRichTextBox x:Name="rt1" MaxHeight="100" Margin="5" CornerRadius="1"  IsReadOnly="True">
                      <FlowDocument>
                         <Paragraph>
                            <Run Text="阅读模式" />

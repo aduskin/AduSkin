@@ -1,8 +1,10 @@
+using AduSkin.Controls.Metro;
 using AduSkin.Utility.Media;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace AduSkin.Demo.UserControls
@@ -34,9 +36,9 @@ namespace AduSkin.Demo.UserControls
          rt1.AddLine("阅读模式");
          rt1.AddLine();
          rt1.AddLine("添加正常内容");
-         rt1.AddLine("添加正常内容可点击", delegate { MessageBox.Show("你点击了我！"); });
+         rt1.AddLine("添加正常内容可点击", delegate { AduMessageBox.Show("你点击了我！"); });
          rt1.AddLine("添加自定义颜色内容", new RgbaColor(255, 0, 0, 255));
-         rt1.AddLine("添加自定义颜色内容可点击", new RgbaColor(255, 0, 0, 255), delegate { MessageBox.Show("你点击了我！"); });
+         rt1.AddLine("添加自定义颜色内容可点击", new RgbaColor(255, 0, 0, 255), delegate { AduMessageBox.Show("你点击了我！"); });
 
          rt3.Clear();
 
@@ -56,11 +58,11 @@ namespace AduSkin.Demo.UserControls
 
          rt3.AddLine("追加正常内容可点击");
          rt3.AddLine();
-         rt3.Add("正常1", delegate { MessageBox.Show("你点击了我！"); });
+         rt3.Add("正常1", delegate { AduMessageBox.Show("你点击 正常1！"); });
          rt3.Add("   ");
-         rt3.Add("正常2", delegate { MessageBox.Show("你点击了我！"); });
+         rt3.Add("正常2", delegate { AduMessageBox.Show("你点击 正常2！"); });
          rt3.Add("   ");
-         rt3.Add("正常3", delegate { MessageBox.Show("你点击了我！"); });
+         rt3.Add("正常3", delegate { AduMessageBox.Show("你点击 正常3！"); });
          rt3.AddLine();
 
          rt3.AddLine("追加自定义颜色内容");
@@ -74,11 +76,11 @@ namespace AduSkin.Demo.UserControls
 
          rt3.AddLine("追加自定义颜色内容可点击");
          rt3.AddLine();
-         rt3.Add("颜色1", new RgbaColor(255, 0, 0, 255), delegate { MessageBox.Show("你点击了我！"); });
+         rt3.Add("颜色1", new RgbaColor(255, 0, 0, 255), delegate { AduMessageBox.Show("你点击颜色1！"); });
          rt3.Add("   ");
-         rt3.Add("颜色2", new RgbaColor(0, 255, 0, 255), delegate { MessageBox.Show("你点击了我！"); });
+         rt3.Add("颜色2", new RgbaColor(0, 255, 0, 255), delegate { AduMessageBox.Show("你点击颜色2！"); });
          rt3.Add("   ");
-         rt3.Add("颜色3", new RgbaColor(0, 0, 255, 255), delegate { MessageBox.Show("你点击了我！"); });
+         rt3.Add("颜色3", new RgbaColor(0, 0, 255, 255), delegate { AduMessageBox.Show("你点击颜色3！"); });
          rt3.AddLine();
          #endregion
 
