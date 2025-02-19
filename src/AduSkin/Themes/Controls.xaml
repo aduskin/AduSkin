@@ -76,6 +76,7 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduFormLable.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTreeView.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduShield.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduSliderVerifyCode.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTransitioningContentControl.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduManageableTabControl.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduRunningBlock.xaml" />

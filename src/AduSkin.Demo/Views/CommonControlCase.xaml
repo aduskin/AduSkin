@@ -65,6 +65,12 @@
          </Grid>
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
+               <AduSkin:AduSliderVerifyCode Height="150" 
+                   Result="{Binding VerifyResult,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ImageUri="C:\Users\Administrator\Pictures\EPC\cover.jpg"/>
+            </Border>
+         </Grid>
+         <Grid>
+            <Border Style="{StaticResource ShowControlBorder}">
                <AduSkin:AduCalendar x:Name="Calendar1" HorizontalAlignment="Center" VerticalAlignment="Center"
                   AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBrush}"
                   AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"

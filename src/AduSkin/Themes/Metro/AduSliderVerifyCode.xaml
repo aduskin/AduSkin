@@ -1,0 +1,169 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <Geometry x:Key="PuzzlePieceGeometry">M1664 438c0 -103 -59 -189 -168 -189c-122 0 -154 111 -264 111c-80 0 -110 -50 -110 -124c0 -78 32 -153 31 -230v-5c-11 0 -22 0 -33 -1c-103 -10 -207 -30 -311 -30c-71 0 -145 28 -145 110c0 110 111 142 111 264c0 109 -86 168 -189 168c-105 0 -202 -58 -202 -173 c0 -127 97 -182 97 -251c0 -35 -22 -66 -46 -89c-31 -29 -75 -35 -117 -35c-82 0 -164 11 -245 24c-18 3 -37 5 -55 8l-13 2c-2 1 -5 1 -5 2v1024c4 -3 63 -10 73 -12c81 -13 163 -24 245 -24c42 0 86 6 117 35c24 23 46 54 46 89c0 69 -97 124 -97 251 c0 115 97 173 203 173c102 0 188 -59 188 -168c0 -122 -111 -154 -111 -264c0 -82 74 -110 145 -110c115 0 229 26 343 32v-2c-3 -4 -10 -63 -12 -73c-13 -81 -24 -163 -24 -245c0 -42 6 -86 35 -117c23 -24 54 -46 89 -46c69 0 124 97 251 97c115 0 173 -97 173 -202z</Geometry>
+   <Geometry x:Key="Icon_True">M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z</Geometry>
+   <Geometry x:Key="Icon_Right">M1.125 -7.875A0.5625 0.5625 0 0 0 1.6875 -7.3125H14.954625L11.41425 -3.77325A0.5625 0.5625 0 0 0 12.21075 -2.97675L16.71075 -7.47675A0.5625 0.5625 0 0 0 16.71075 -8.27325L12.21075 -12.77325A0.5625 0.5625 0 0 0 11.41425 -11.97675L14.954625 -8.4375H1.6875A0.5625 0.5625 0 0 0 1.125 -7.875z</Geometry>
+
+   <Style x:Key="SliderButtonStyle" TargetType="{x:Type RepeatButton}">
+      <Setter Property="Focusable" Value="false" />
+      <Setter Property="IsTabStop" Value="false" />
+      <Setter Property="OverridesDefaultStyle" Value="true" />
+      <Setter Property="SnapsToDevicePixels" Value="true" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type RepeatButton}">
+               <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                  <Grid Background="{TemplateBinding Background}" />
+               </Border>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+
+   <Style x:Key="SliderThumbStyle" TargetType="{x:Type Thumb}">
+      <Setter Property="OverridesDefaultStyle" Value="true" />
+      <Setter Property="Background" Value="{StaticResource Brush}"/>
+      <Setter Property="SnapsToDevicePixels" Value="true" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Thumb}">
+               <Border  x:Name="bg" Background="{TemplateBinding Background}" CornerRadius="0,0,10,10"
+                             BorderThickness="1" BorderBrush="{StaticResource NormalBorderBrush}">
+                  <Grid>
+                     <AduSkin:AduCheckBox x:Name="PART_CheckBox" AduAttach:PathDataAttach.Margin="0"
+                                          AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_True}"
+                                          AduAttach:PathDataAttach.PathData="{StaticResource Icon_Right}" 
+                                          AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalWhite}"
+                                          AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource NormalWhite}"
+                                           HorizontalAlignment="Center"/>
+                     <Border Background="{StaticResource NormalTransparentBrush}"/>
+                  </Grid>
+               </Border>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+
+   <Style x:Key="SliderTickBarStyle" TargetType="TickBar">
+      <Setter Property="Fill" Value="{StaticResource Brush}" />
+      <Setter Property="Visibility" Value="Collapsed" />
+      <Style.Triggers>
+         <Trigger Property="Placement" Value="Top">
+            <Setter Property="Height" Value="6" />
+            <Setter Property="Margin" Value="0 0 0 3" />
+         </Trigger>
+         <Trigger Property="Placement" Value="Bottom">
+            <Setter Property="Grid.Row" Value="2" />
+            <Setter Property="Height" Value="6" />
+            <Setter Property="Margin" Value="0 3 0 0" />
+         </Trigger>
+
+         <Trigger Property="Placement" Value="Left">
+            <Setter Property="Margin" Value="0 0 3 0" />
+            <Setter Property="Width" Value="6" />
+         </Trigger>
+         <Trigger Property="Placement" Value="Right">
+            <Setter Property="Grid.Column" Value="2" />
+            <Setter Property="Margin" Value="3 0 0 0" />
+            <Setter Property="Width" Value="6" />
+         </Trigger>
+      </Style.Triggers>
+   </Style>
+
+   <ControlTemplate x:Key="HorizontalSlider" TargetType="{x:Type Slider}">
+      <Border Background="White" CornerRadius="0,0,10,10">
+         <Grid>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="Auto" />
+               <RowDefinition Height="Auto" MinHeight="{TemplateBinding Slider.MinHeight}" />
+               <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TickBar x:Name="TopTick" Style="{StaticResource SliderTickBarStyle}" Placement="Top" />
+            <Track x:Name="PART_Track" Grid.Row="1">
+               <Track.DecreaseRepeatButton>
+                  <RepeatButton Height="40" Style="{StaticResource SliderButtonStyle}" Command="Slider.DecreaseLarge"/>
+               </Track.DecreaseRepeatButton>
+               <Track.Thumb>
+                  <Thumb x:Name="PART_Thumb" Width="40" Height="40" Style="{StaticResource SliderThumbStyle}" />
+               </Track.Thumb>
+               <Track.IncreaseRepeatButton>
+                  <RepeatButton Height="40" Style="{StaticResource SliderButtonStyle}" Command="Slider.IncreaseLarge" />
+               </Track.IncreaseRepeatButton>
+            </Track>
+            <TickBar x:Name="BottomTick" Style="{StaticResource SliderTickBarStyle}" Placement="Bottom" />
+            <TextBlock x:Name="TxtTip" Text="向右拖动滑块填充拼图" Foreground="{StaticResource NormalBlack90}"
+               Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed"/>
+         </Grid>
+      </Border>
+      <ControlTemplate.Triggers>
+         <Trigger Property="TickPlacement" Value="TopLeft">
+            <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
+         </Trigger>
+         <Trigger Property="TickPlacement" Value="BottomRight">
+            <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
+         </Trigger>
+         <Trigger Property="TickPlacement" Value="Both">
+            <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
+            <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
+         </Trigger>
+         <Trigger Property="Slider.Value" Value="0">
+            <Setter TargetName="TxtTip" Property="Visibility" Value="Visible" />
+         </Trigger>
+      </ControlTemplate.Triggers>
+   </ControlTemplate>
+
+   <Style x:Key="TempSlider" TargetType="{x:Type Slider}">
+      <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
+      <Setter Property="Background" Value="{StaticResource DefaultBackground}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}" />
+      <Setter Property="Maximum" Value="100" />
+      <Setter Property="Minimum" Value="0" />
+      <Setter Property="Orientation" Value="Horizontal" />
+      <Setter Property="OverridesDefaultStyle" Value="true" />
+      <Setter Property="SnapsToDevicePixels" Value="true" />
+      <Setter Property="Value" Value="0" />
+      <Setter Property="Height" Value="12" />
+      <Setter Property="MinHeight" Value="12" />
+      <Setter Property="Template" Value="{StaticResource HorizontalSlider}" />
+      <Style.Triggers>
+         <Trigger Property="IsEnabled" Value="False">
+            <Setter Property="Background" Value="{StaticResource DefaultBackground}" />
+            <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
+         </Trigger>
+      </Style.Triggers>
+   </Style>
+
+   <Style TargetType="{x:Type AduSkin:AduSliderVerifyCode}">
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type AduSkin:AduSliderVerifyCode}">
+               <Grid>
+                  <Grid.RowDefinitions>
+                     <RowDefinition Height="*"/>
+                     <RowDefinition Height="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Border CornerRadius="10,10,0,0" Background="{TemplateBinding BackgroundImage}">
+                     <Canvas x:Name="PART_Canvas">
+                        <Path x:Name="PART_PathFix" Data="{StaticResource PuzzlePieceGeometry}" Opacity=".3"
+                     Fill="{StaticResource NormalBlack}" Stroke="{StaticResource NormalBorderBrush}" 
+                     SnapsToDevicePixels="True" Stretch="Uniform" Width="48" Height="48"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Path x:Name="PART_Path" Data="{StaticResource PuzzlePieceGeometry}" Stroke="{StaticResource NormalWhite}"
+                     SnapsToDevicePixels="True" Stretch="Uniform" Width="48" Height="48" 
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                     </Canvas>
+                  </Border>
+                  <Slider x:Name="PART_Slider" Height="40" Grid.Row="1" Style="{StaticResource TempSlider}"/>
+               </Grid>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+</ResourceDictionary>
