@@ -9,8 +9,6 @@ Nuget 搜索"AduSkin" 可直接导包使用
 
 具体使用请参考 AduSkin.Demo
 
-2025 寻找重庆WPF工作机会。
-
 WPF UI 外包 可联系我
 
 技术交流
@@ -25,6 +23,8 @@ WPF UI 外包 可联系我
 感谢开源框架
 
 HandyControl、Arthas、WPF.UI
+
+### 2025 目标重庆 寻找.NET WPF工作机会
 
 ### 版权和协议
 
