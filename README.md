@@ -9,7 +9,9 @@ Nuget 搜索"AduSkin" 可直接导包使用
 
 具体使用请参考 AduSkin.Demo
 
-如有 WPF UI 外包 可联系我
+2025 寻找重庆WPF工作机会。
+
+WPF UI 外包 可联系我
 
 技术交流
 
