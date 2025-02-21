@@ -95,8 +95,8 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:AduWindow}">
-               <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                  <Grid Background="{DynamicResource NormalWhite}">
+               <Border x:Name="border" Background="{StaticResource NormalWhite }" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                  <Grid Background="{TemplateBinding Background}">
                      <Border Margin="-1" BorderBrush="#000000"  BorderThickness="{Binding BorderThickness, ElementName=border}" Opacity="0.15" />
                      <Grid x:Name="windowGrid" Background="{TemplateBinding Background}">
                         <AdornerDecorator>

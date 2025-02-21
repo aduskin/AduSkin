@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         BorderBrush="#3E3E45"       
         BorderThickness="1"
-         Background="{StaticResource ShadowBrush}"
+        Background="{StaticResource ShadowBrush}"
         SysButtonColor="{StaticResource NormalWhite}"
         SysButtonMargin="14"
         SysButtonVisible="Visible"
