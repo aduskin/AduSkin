@@ -8,28 +8,28 @@
 
    <ControlTemplate x:Key="Button" TargetType="{x:Type Adu:AduFlatButton}">
       <Border x:Name="border"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}"
-                SnapsToDevicePixels="true" UseLayoutRounding="True">
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{TemplateBinding CornerRadius}"
+            SnapsToDevicePixels="true" UseLayoutRounding="True">
          <Border.OpacityMask>
             <SolidColorBrush Color="#000000" />
          </Border.OpacityMask>
          <AdornerDecorator>
             <ContentPresenter x:Name="contentPresenter" Grid.Column="1"
-                     Margin="{TemplateBinding Padding}"
-                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                     Focusable="False" RecognizesAccessKey="True"
-                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                  Margin="{TemplateBinding Padding}"
+                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                  Focusable="False" RecognizesAccessKey="True"
+                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
          </AdornerDecorator>
          <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="CommonStates">
                <VisualState x:Name="Normal">
                   <Storyboard>
                      <ColorAnimationUsingKeyFrames Storyboard.TargetName="border" 
-                                  Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
+                           Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
                         <EasingColorKeyFrame KeyTime="00:00:0.3" Value="#FF000000" />
                      </ColorAnimationUsingKeyFrames>
                   </Storyboard>
@@ -37,7 +37,7 @@
                <VisualState x:Name="MouseOver">
                   <Storyboard>
                      <ColorAnimationUsingKeyFrames Storyboard.TargetName="border" 
-                                 Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
+                           Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
                         <EasingColorKeyFrame KeyTime="00:00:0.3" Value="#C0000000" />
                      </ColorAnimationUsingKeyFrames>
                   </Storyboard>
@@ -45,7 +45,7 @@
                <VisualState x:Name="Pressed">
                   <Storyboard>
                      <ColorAnimationUsingKeyFrames Storyboard.TargetName="border" 
-                                   Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
+                           Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
                         <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF000000" />
                      </ColorAnimationUsingKeyFrames>
                   </Storyboard>
@@ -60,35 +60,28 @@
          <Trigger Property="IsMouseOver" Value="true">
             <Setter Property="Cursor" Value="Hand" />
          </Trigger>
-         <Trigger Property="IsPressed" Value="true">
-            <!--<Setter TargetName="border" Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}" />-->
-            <!--<Setter TargetName="contentPresenter" Property="Margin" Value="0,0,0,0" />-->
-         </Trigger>
          <Trigger Property="IsEnabled" Value="false">
-            <Setter TargetName="border" Property="Background" Value="{StaticResource DefaultBackground}" />
-            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource NormalBorderBrush}" />
-            <Setter TargetName="border" Property="BorderThickness" Value="1" />
-            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
 
    <ControlTemplate x:Key="Ghost" TargetType="{x:Type Adu:AduFlatButton}">
       <Border x:Name="border"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}"
-                SnapsToDevicePixels="true" UseLayoutRounding="True">
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{TemplateBinding CornerRadius}"
+            SnapsToDevicePixels="true" UseLayoutRounding="True">
          <Border.OpacityMask>
             <SolidColorBrush Color="#000000" />
          </Border.OpacityMask>
          <ContentPresenter x:Name="contentPresenter" Grid.Column="1"
-                  Margin="{TemplateBinding Padding}"
-                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                  Focusable="False" RecognizesAccessKey="True"
-                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+               Margin="{TemplateBinding Padding}"
+               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+               Focusable="False" RecognizesAccessKey="True"
+               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
          <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="CommonStates">
                <VisualState x:Name="Normal">
@@ -108,7 +101,7 @@
                      <ColorAnimation Duration="00:00:0.3" Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)" To="#3091F2" />
                      <ColorAnimation Duration="00:00:0.3" Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)" To="#3091F2" />
                      <ColorAnimationUsingKeyFrames Storyboard.TargetName="border" 
-                                    Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
+                           Storyboard.TargetProperty="(UIElement.OpacityMask).(SolidColorBrush.Color)">
                         <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF000000" />
                      </ColorAnimationUsingKeyFrames>
                   </Storyboard>
@@ -124,28 +117,25 @@
             <Setter Property="Cursor" Value="Hand" />
          </Trigger>
          <Trigger Property="IsEnabled" Value="false">
-            <Setter TargetName="border" Property="Background" Value="{StaticResource DefaultBackground}" />
-            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource NormalBorderBrush}" />
-            <Setter TargetName="border" Property="BorderThickness" Value="1" />
-            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
 
    <ControlTemplate x:Key="Default" TargetType="{x:Type Adu:AduFlatButton}">
       <Border x:Name="border"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}"
-                SnapsToDevicePixels="true" UseLayoutRounding="True">
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{TemplateBinding CornerRadius}"
+            SnapsToDevicePixels="true" UseLayoutRounding="True">
          <AdornerDecorator>
             <ContentPresenter x:Name="contentPresenter" Grid.Column="1"
-                                  Margin="{TemplateBinding Padding}"
-                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                  Focusable="False" RecognizesAccessKey="True"
-                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                  Margin="{TemplateBinding Padding}"
+                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                  Focusable="False" RecognizesAccessKey="True"
+                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
          </AdornerDecorator>
          <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="CommonStates">
@@ -188,15 +178,9 @@
          </Trigger>
          <Trigger Property="IsMouseOver" Value="true">
             <Setter Property="Cursor" Value="Hand" />
-         </Trigger>
-         <Trigger Property="IsPressed" Value="true">
-            <Setter TargetName="contentPresenter" Property="Margin" Value="0,3,0,0" />
-         </Trigger>
+         </Trigger> 
          <Trigger Property="IsEnabled" Value="false">
-            <Setter TargetName="border" Property="Background" Value="{StaticResource DefaultBackground}" />
-            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource NormalBorderBrush}" />
-            <Setter TargetName="border" Property="BorderThickness" Value="1" />
-            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+            <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
