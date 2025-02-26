@@ -1,0 +1,72 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro"
+                    xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <Style TargetType="{x:Type AduSkin:AduBadge}">
+      <Setter Property="Background" Value="{StaticResource WarnBrush}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalWhite}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="Padding" Value="5,1" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="SnapsToDevicePixels" Value="False" />
+      <Setter Property="UseLayoutRounding" Value="False" />
+      <Setter Property="IsDot" Value="False" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type  AduSkin:AduBadge}">
+               <Grid>
+                  <Border x:Name="Bd"
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="9"
+                        Padding="{TemplateBinding Padding}"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                        UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+                     <TextBlock x:Name="BageNumber"
+                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                           FontFamily="{TemplateBinding FontFamily}"
+                           FontSize="{TemplateBinding FontSize}"
+                           FontWeight="{TemplateBinding FontWeight}"
+                           Foreground="{TemplateBinding Foreground}"
+                           Text="{Binding Number,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                  </Border>
+
+                  <Border x:Name="Dot" Width="8" Height="8" Background="{StaticResource NormalRed}" Visibility="Collapsed" CornerRadius="100" />
+               </Grid>
+               <ControlTemplate.Triggers>
+                  <DataTrigger Binding="{Binding Path=(AduSkin:AduBadgeAdorner.Number), Converter={StaticResource NumberConverter}}" Value="3">
+                     <Setter TargetName="BageNumber" Property="Text" Value="99+" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Path=(AduSkin:AduBadgeAdorner.Number), Converter={StaticResource NumberConverter}}" Value="2">
+                     <Setter TargetName="BageNumber" Property="Text" Value="{Binding Path=(AduSkin:AduBadgeAdorner.Number)}" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Path=(AduSkin:AduBadgeAdorner.Number), Converter={StaticResource NumberConverter}}" Value="1">
+                     <Setter TargetName="BageNumber" Property="Text" Value="{Binding Path=(AduSkin:AduBadgeAdorner.Number)}" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Path=Number, Converter={StaticResource NumberConverter}, RelativeSource={RelativeSource Mode=Self}}" Value="3">
+                     <Setter TargetName="BageNumber" Property="Text" Value="99+" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Path=IsDot, RelativeSource={RelativeSource Mode=Self}}" Value="True">
+                     <Setter TargetName="Bd" Property="Visibility" Value="Collapsed" />
+                     <Setter TargetName="Dot" Property="Visibility" Value="Visible" />
+                  </DataTrigger>
+                  <DataTrigger Binding="{Binding Path=IsDot, RelativeSource={RelativeSource Mode=Self}}" Value="False">
+                     <Setter TargetName="Bd" Property="Visibility" Value="Visible" />
+                     <Setter TargetName="Dot" Property="Visibility" Value="Collapsed" />
+                  </DataTrigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+</ResourceDictionary>

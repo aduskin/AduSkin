@@ -191,12 +191,14 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel  >
-                  <AduSkin:AduComboBox x:Name="site" Height="30" IsEditable="True" AduAttach:InputAttach.InputHint="请选择" IsShowFilterBox="True"
-                           Background="{StaticResource NormalTransparentBrush}" Margin="10,10,0,10" AduAttach:BorderAttach.CornerRadius="3"/>
+                  <AduSkin:AduComboBox x:Name="site" Height="30" IsEditable="True" 
+                        AduAttach:InputAttach.InputHint="请选择" IsShowFilterBox="True"
+                        Background="{StaticResource NormalTransparentBrush}" 
+                        Margin="10,10,0,10" AduAttach:BorderAttach.CornerRadius="3"/>
                   <AduSkin:AduComboBox x:Name="size" Width="auto" Height="30" SelectedIndex="0" Margin="10,10,0,10" 
-                           AduAttach:BorderAttach.CornerRadius="3"/>
+                        AduAttach:BorderAttach.CornerRadius="3"/>
                   <AduSkin:AduCheckComboBox x:Name="subject" Width="auto" Height="30" IsShowFilterBox="True"
-                           SelectedIndex="0" Margin="10,10,0,10" AduAttach:BorderAttach.CornerRadius="3"/>
+                        SelectedIndex="0" Margin="10,10,0,10" AduAttach:BorderAttach.CornerRadius="3"/>
                </StackPanel>
             </Border>
          </Grid>
@@ -235,7 +237,7 @@
                            <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
                            <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True"  Margin="0,4"
                                  AduAttach:PathDataAttach.PathData="{StaticResource Icon_NoChecked}" 
-                                 AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Checked}"/> 
+                                 AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Checked}"/>
                         </StackPanel>
                      </AduSkin:AduExpander>
                   </StackPanel>
@@ -384,15 +386,23 @@
                <StackPanel HorizontalAlignment="Center">
                   <StackPanel Orientation="Horizontal">
                      <AduSkin:AduFlatButton Margin="10" Content="默认颜色" IsEnabled="False" Type="success" />
-                     <AduSkin:AduFlatButton Margin="10" Content="默认颜色" Type="success" />
+                     <AduSkin:AduFlatButton Margin="10" Content="默认颜色" Type="success" 
+                        AduSkin:AduBadgeAdorner.BadgeType="Normal" 
+                        AduSkin:AduBadgeAdorner.HasAdorner="True" 
+                        AduSkin:AduBadgeAdorner.IsShowAdorner="True"
+                        AduSkin:AduBadgeAdorner.Number="98"/>
                   </StackPanel>
                   <StackPanel Orientation="Horizontal">
                      <AduSkin:AduFlatButton Margin="10" Content="错误颜色"  IsEnabled="False" Type="warning" />
-                     <AduSkin:AduFlatButton Margin="10" Content="错误颜色" Type="warning" />
+                     <AduSkin:AduFlatButton Margin="10" Content="错误颜色" Type="warning"/>
                   </StackPanel>
                   <StackPanel Orientation="Horizontal">
                      <AduSkin:AduFlatButton Margin="10" Content="错误颜色"  IsEnabled="False" Type="info" />
-                     <AduSkin:AduFlatButton Margin="10" Content="错误颜色" Type="info" />
+                     <AduSkin:AduFlatButton Margin="10" Content="错误颜色" Type="info" 
+                        AduSkin:AduBadgeAdorner.BadgeType="Dot" 
+                        AduSkin:AduBadgeAdorner.HasAdorner="True" 
+                        AduSkin:AduBadgeAdorner.IsShowAdorner="True"
+                        AduSkin:AduBadgeAdorner.Number="98"/>
                   </StackPanel>
                   <StackPanel Orientation="Horizontal">
                      <AduSkin:AduFlatButton  Margin="10" Content="正确颜色" IsEnabled="False" Type="error" />

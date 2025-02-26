@@ -32,6 +32,7 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduCheckBox.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduRadioButton.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTitleMenuItem.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduBadge.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTabControl.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduTabItem.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/AduButtonIcon.xaml" />

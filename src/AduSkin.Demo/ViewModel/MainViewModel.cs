@@ -1,11 +1,8 @@
-using AduSkin.Demo.Data;
-using AduSkin.Demo.Models;
-using AduSkin.Demo.UserControls;
+ using AduSkin.Demo.UserControls;
 using AduSkin.Demo.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Windows.Controls;
-using System.Windows.Input;
+using System.Windows.Controls; 
 using System.Windows.Media;
 
 namespace AduSkin.Demo.ViewModel

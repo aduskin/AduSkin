@@ -5,5 +5,6 @@
    <!--转换器-->
    <Converter:BoolToReVisibility x:Key="BoolToReVisibility"/>
    <Converter:BoolToVisibility x:Key="BoolToVisibility"/>
-   <Converter:StringIsEmptyConverter x:Key="StringIsEmptyConverter"/> 
+   <Converter:StringIsEmptyConverter x:Key="StringIsEmptyConverter"/>
+   <Converter:NumberConverter x:Key="NumberConverter" />
 </ResourceDictionary>
