@@ -194,7 +194,7 @@ namespace AduSkin.Controls.Metro
                   element.Loaded += (s1, e1) =>
                   {
                      var adorner = new AduBadgeAdorner(element);
-                     AdornerLayer.GetAdornerLayer(element).Add(adorner);
+                     AdornerLayer.GetAdornerLayer(element)?.Add(adorner);
                   };
                }
             }

@@ -65,8 +65,8 @@
          </Grid>
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
-               <AduSkin:AduSliderVerifyCode Height="150" 
-                   Result="{Binding VerifyResult,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ImageUri="C:\Users\Administrator\Pictures\EPC\cover.jpg"/>
+               <AduSkin:AduSliderVerifyCode Height="150" ImageUri="pack://application:,,,/Resources/pic.jpg"
+                  Result="{Binding VerifyResult,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
             </Border>
          </Grid>
          <Grid>

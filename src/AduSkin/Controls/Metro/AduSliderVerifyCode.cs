@@ -155,6 +155,7 @@ namespace AduSkin.Controls.Metro
       private void SetBackground(BitmapImage image)
       {
          ImageBrush ib = new ImageBrush();
+         ib.Stretch = Stretch.UniformToFill;
          ib.ImageSource = image;
          BackgroundImage = ib;
       }
