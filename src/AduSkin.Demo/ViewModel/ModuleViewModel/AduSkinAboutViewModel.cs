@@ -27,15 +27,7 @@ namespace AduSkin.Demo.ViewModel
          }
       }
 
-
-      private bool _IsOpenReward;
-      /// <summary>
-      /// 属性.
-      /// </summary>
-      public bool IsOpenReward
-      {
-         get { return _IsOpenReward; }
-         set { SetProperty(ref _IsOpenReward, value); }
-      }
+      [ObservableProperty]
+      private bool _isOpenReward;
    }
 }

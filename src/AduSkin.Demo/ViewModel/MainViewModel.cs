@@ -1,8 +1,8 @@
- using AduSkin.Demo.UserControls;
+using AduSkin.Demo.UserControls;
 using AduSkin.Demo.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Windows.Controls; 
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace AduSkin.Demo.ViewModel
@@ -12,6 +12,20 @@ namespace AduSkin.Demo.ViewModel
       public MainViewModel()
       {
 
+      }
+
+      /// <summary>
+      /// 打开
+      /// </summary>
+      [RelayCommand]
+      private void OpenClick(object e)
+      {
+         switch (e)
+         {
+            case "AduSkinDemo":
+               new AduSkinDemo().Show();
+               return;
+         }
       }
 
       private int _SelectedModularIndex;
@@ -32,65 +46,28 @@ namespace AduSkin.Demo.ViewModel
                MainBackground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
          }
       }
-
-      private SolidColorBrush _MainBackground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
-      /// <summary>
-      /// 属性.
-      /// </summary>
-      public SolidColorBrush MainBackground
-      {
-         get { return _MainBackground; }
-         set { SetProperty(ref _MainBackground, value); }
-      }
-      /// <summary>
-      /// 命令Command
-      /// </summary>
-      [RelayCommand]
-      private void OpenClick(object e)
-      {
-         switch (e)
-         {
-            case "AduSkinDemo":
-               new AduSkinDemo().Show();
-               return;
-         }
-      }
-
+      
+      [ObservableProperty]
+      private SolidColorBrush __mainBackground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
       /// <summary>
       /// 常见控件
       /// </summary>
-      private UserControl _CommonControlCase = new CommonControlCase();
-      public UserControl CommonControlCase
-      {
-         get { return _CommonControlCase; }
-         set { SetProperty(ref _CommonControlCase, value); }
-      }
+      [ObservableProperty]
+      private UserControl _commonControlCase = new CommonControlCase();
       /// <summary>
       /// 实用案例
       /// </summary>
-      private UserControl _PracticalCase = new PracticalCase();
-      public UserControl PracticalCase
-      {
-         get { return _PracticalCase; }
-         set { SetProperty(ref _PracticalCase, value); }
-      }
+      [ObservableProperty]
+      private UserControl _practicalCase = new PracticalCase();
       /// <summary>
       /// 关于
       /// </summary>
-      private UserControl _AduSkinAbout = new AduSkinAbout();
-      public UserControl AduSkinAbout
-      {
-         get { return _AduSkinAbout; }
-         set { SetProperty(ref _AduSkinAbout, value); }
-      }
+      [ObservableProperty]
+      private UserControl _aduSkinAbout = new AduSkinAbout();
       /// <summary>
       /// 支持与赞助
       /// </summary>
-      private UserControl _AduSkinSupport = new AduSkinSupport();
-      public UserControl AduSkinSupport
-      {
-         get { return _AduSkinSupport; }
-         set { SetProperty(ref _AduSkinSupport, value); }
-      }
+      [ObservableProperty]
+      private UserControl _aduSkinSupport = new AduSkinSupport();
    }
 }

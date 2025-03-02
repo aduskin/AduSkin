@@ -24,15 +24,12 @@ namespace AduSkin.Demo.ViewModel
          AllSupports.Add(new SupportUser("✘小浪", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=2398387230&spec=100", "", new string[] { SupportType.Money.ToString() + "：100元" }));
          AllSupports.Add(new SupportUser("懒猫", "", "http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=8080697&spec=100", "", new string[] { SupportType.Money.ToString() + "：100元" }));
       }
-      private ObservableCollection<SupportUser> _AllSupports = new ObservableCollection<SupportUser>();
       /// <summary>
       /// 赞助人
       /// </summary>
-      public ObservableCollection<SupportUser> AllSupports
-      {
-         get { return _AllSupports; }
-         set { SetProperty(ref _AllSupports, value); }
-      }
+      [ObservableProperty]
+      private ObservableCollection<SupportUser> _allSupports = new ObservableCollection<SupportUser>();
+
 
       /// <summary>
       /// 命令Command
@@ -47,15 +44,7 @@ namespace AduSkin.Demo.ViewModel
                return;
          }
       }
-
-      private bool _IsOpenReward;
-      /// <summary>
-      /// 属性.
-      /// </summary>
-      public bool IsOpenReward
-      {
-         get { return _IsOpenReward; }
-         set { SetProperty(ref _IsOpenReward, value); }
-      }
+      [ObservableProperty]
+      private bool _isOpenReward;
    }
 }

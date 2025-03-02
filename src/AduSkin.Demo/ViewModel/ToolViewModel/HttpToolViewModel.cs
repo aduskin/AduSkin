@@ -51,77 +51,48 @@ namespace AduSkin.Demo.ViewModel
       }
 
       #region 页面数据
-      private ObservableCollection<Sys_Code> _HttpTypList;
       /// <summary>
-      /// 请求方式
-      /// </summary>
-      public ObservableCollection<Sys_Code> HttpTypList
-      {
-         get { return _HttpTypList; }
-         set { SetProperty(ref _HttpTypList, value); }
-      }
+      /// 类型
+      /// </summary> 
+      [ObservableProperty]
+      private ObservableCollection<Sys_Code> _httpTypList;
 
-
-      private Sys_Code _CurrentHttpType;
       /// <summary>
       /// 当前请求方式
-      /// </summary>
-      public Sys_Code CurrentHttpType
-      {
-         get { return _CurrentHttpType; }
-         set { SetProperty(ref _CurrentHttpType, value); }
-      }
+      /// </summary> 
+      [ObservableProperty]
+      private Sys_Code _currentHttpType;
 
-      private ObservableCollection<Sys_Code> _CodeTypeList;
       /// <summary>
       /// 编码类型
       /// </summary>
-      public ObservableCollection<Sys_Code> CodeTypeList
-      {
-         get { return _CodeTypeList; }
-         set { SetProperty(ref _CodeTypeList, value); }
-      }
+      [ObservableProperty]
+      private ObservableCollection<Sys_Code> _codeTypeList;
 
-      private Sys_Code _CurrentCodeType;
       /// <summary>
       /// 当前请求编码类型
       /// </summary>
-      public Sys_Code CurrentCodeType
-      {
-         get { return _CurrentCodeType; }
-         set { SetProperty(ref _CurrentCodeType, value); }
-      }
+      [ObservableProperty]
+      private Sys_Code _currentCodeType;
 
-      private ObservableCollection<Sys_Code> _RequestParameter;
       /// <summary>
       /// 属性.
       /// </summary>
-      public ObservableCollection<Sys_Code> RequestParameter
-      {
-         get { return _RequestParameter; }
-         set { SetProperty(ref _RequestParameter, value); }
-      }
+      [ObservableProperty]
+      private ObservableCollection<Sys_Code> _requestParameter;
 
-
-      private ObservableCollection<Sys_Code> _RequestHead;
       /// <summary>
-      /// 属性.
+      /// 请求头
       /// </summary>
-      public ObservableCollection<Sys_Code> RequestHead
-      {
-         get { return _RequestHead; }
-         set { SetProperty(ref _RequestHead, value); }
-      }
+      [ObservableProperty]
 
-      private string _ToUrlTxt;
+      private ObservableCollection<Sys_Code> _requestHead;
+
       /// <summary>
-      /// 属性.
+      /// 请求地址
       /// </summary>
-      public string ToUrlTxt
-      {
-         get { return _ToUrlTxt; }
-         set { SetProperty(ref _ToUrlTxt, value); }
-      }
+      [ObservableProperty]
+      private string _toUrlTxt; 
       #endregion
 
       #region 命令
