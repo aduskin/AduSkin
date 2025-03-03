@@ -1,16 +1,12 @@
-﻿using AduSkin.Demo.Data.Enum;
+using AduSkin.Demo.Data.Enum;
 using AduSkin.Utility.Extend;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AduSkin.Demo.Models
 {
    public class ControlModel
    {
-      public ControlModel(string title, Type content, DemoType type=DemoType.Demo,ControlState state=ControlState.Nor, string xaml= "", string code = "", string tags = "")
+      public ControlModel(string title, Type content, DemoType type = DemoType.Demo, ControlState state = ControlState.Nor, string xaml = "", string code = "", string tags = "")
       {
          Title = title;
          TitlePinyin = StringExtend.GetPinyin(title);

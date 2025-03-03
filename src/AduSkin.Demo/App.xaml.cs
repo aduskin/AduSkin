@@ -1,30 +1,42 @@
-using AduSkin.Controls.Metro;
+using AduSkin.Demo.Servers;
+using AduSkin.Demo.Servers.Contracts;
+using AduSkin.Demo.ViewModel;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.Text;
 using System.Windows;
 
 namespace AduSkin.Demo
 {
    public partial class App : Application
    {
+
+      private static readonly IHost _host = Host.CreateDefaultBuilder()
+          .ConfigureAppConfiguration(c =>
+          {
+             _ = c.SetBasePath(AppContext.BaseDirectory);
+          })
+         .ConfigureServices((context, services) =>
+         {
+            _ = services.AddHostedService<ApplicationHostService>();
+
+            _ = services.AddSingleton<IWindow, MainWindow>();
+            _ = services.AddSingleton<MainViewModel>();
+         }).Build();
       public App()
       {
-#if !NET45
-         // start from net46 , you need to register text encoding provider first to use it!
-         System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-#endif
+         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
       }
-
       protected override void OnStartup(StartupEventArgs e)
       {
-         var splashScreen = new SplashScreen("Resources/aduskin.png");
-         splashScreen.Show(true);
-         base.OnStartup(e);
-         //初始化通知弹框
-         NoticeManager.Initialize();
+         _host.Start();
       }
       protected override void OnExit(ExitEventArgs e)
       {
-         NoticeManager.ExitNotification();
-         base.OnExit(e);
+         _host.StopAsync().Wait();
+         _host.Dispose();
       }
    }
 }

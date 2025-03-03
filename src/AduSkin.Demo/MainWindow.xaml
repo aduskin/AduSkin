@@ -11,10 +11,7 @@
     Title="AduSkin.Demo" MinWidth="600" MinHeight="350"
     d:DesignHeight="1200" d:DesignWidth="1600"
     BorderThickness="0"
-    Background="{DynamicResource NormalWhite}">
-   <Window.DataContext>
-      <vm:MainViewModel/>
-   </Window.DataContext>
+    Background="{DynamicResource NormalWhite}"> 
    <Metro:MetroWindow.Menu>
       <Metro:MetroTitleMenu Height="40" HorizontalAlignment="Right">
          <Metro:MetroTitleMenuItem Header="联系" Metro:BorderAttach.CornerRadius="6" WindowChrome.IsHitTestVisibleInChrome="True">

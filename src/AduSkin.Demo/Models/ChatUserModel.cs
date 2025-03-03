@@ -1,10 +1,9 @@
 using AduSkin.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 
 namespace AduSkin.Demo.Models
 {
-   public class ChatUserModel : ObservableObject
+   public partial class ChatUserModel : ObservableObject
    {
       public string SortID { get; set; }
 
@@ -18,17 +17,7 @@ namespace AduSkin.Demo.Models
 
       public ContactType ContactType { get; set; } = ContactType.Single;
 
+      [ObservableProperty]
       private bool _IsChecked;
-      public bool IsChecked
-      {
-         get
-         {
-            return _IsChecked;
-         }
-         set
-         {
-            SetProperty(ref _IsChecked, value);
-         }
-      }
    }
 }
