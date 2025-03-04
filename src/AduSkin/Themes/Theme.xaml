@@ -25,7 +25,8 @@
    <!--Shadow-->
    <DropShadowEffect x:Key="TextShadow-Black" BlurRadius="6" Opacity="0.2" ShadowDepth="0" Color="{StaticResource WhiteBlack}" />
    <DropShadowEffect x:Key="CardShadow-Black" BlurRadius="20" Opacity="0.1"  Direction="270" Color="{StaticResource WhiteBlack}" />
- 
+   <DropShadowEffect x:Key="PopupShadowBlack" BlurRadius="20" Opacity="0.1"  Direction="270" Color="{StaticResource WhiteBlack}" />
+
    <!--NormalBrush-->
    <SolidColorBrush x:Key="NormalWhiteTest" Color="#7160E8" />
    <!--White-->

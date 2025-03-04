@@ -6,31 +6,25 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--右键菜单-->
-   <Style TargetType="{x:Type Metro:MetroContextMenu}">
+   <Style TargetType="{x:Type Metro:MetroContextMenu}"> 
+      <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
+      <Setter Property="Padding" Value="0"/> 
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>
-      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="Transparent" />
-      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0" />
-      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6" />
-      <Setter Property="Padding" Value="0"/>
-      <Setter Property="VerticalOffset" Value="-20"/>
-      <Setter Property="HorizontalOffset" Value="-20"/>
-      <Setter Property="Background" Value="#1E1F23"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroContextMenu}">
-               <Grid Background="#00000000">
-                  <Border BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
-                          BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
-                          CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                          Background="{TemplateBinding Background}" Margin="20" Padding="{TemplateBinding Padding}">
-                     <!--右键菜单-->
-                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
-                     </Border.Effect>
-                     <ItemsPresenter Margin="0,6"/>
-                  </Border>
-               </Grid>
+               <Border BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
+                  BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
+                  CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                  Background="{TemplateBinding Background}" 
+                  Margin="20" Padding="{TemplateBinding Padding}" 
+                  Effect="{StaticResource PopupShadowBlack}"> 
+                  <ItemsPresenter Margin="0,6"/>
+               </Border>
             </ControlTemplate>
          </Setter.Value>
       </Setter>

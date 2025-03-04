@@ -1,8 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin">
-   
-   
    <Style x:Key="Title" TargetType="TextBlock">
       <Setter Property="HorizontalAlignment" Value="Center"/>
       <Setter Property="Foreground" Value="#303030"/>
@@ -25,6 +23,10 @@
       <Setter Property="FontSize" Value="12"/>
    </Style>
 
+   <Style TargetType="Metro:MetroTitleMenuItem">
+      <Setter Property="Foreground" Value="{StaticResource NormalWhite}"/>
+   </Style>
+   
    <Style x:Key="MenuItem" TargetType="Border">
       <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
       <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
@@ -36,6 +38,12 @@
             <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
          </Trigger>
       </Style.Triggers>
+   </Style>
+
+   <Style TargetType="Path">
+      <Setter Property="Width" Value="24"/>
+      <Setter Property="Fill" Value="{StaticResource NormalBlack90}"/>
+      <Setter Property="Stretch" Value="Uniform"/>
    </Style>
 
    <Style x:Key="FocusVisual">
@@ -54,7 +62,7 @@
       <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
    </Style>
 
-   <Style x:Key="ShowControlBorder" TargetType="Border"> 
+   <Style x:Key="ShowControlBorder" TargetType="Border">
       <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="BorderBrush" Value="{StaticResource NormalBlack10}"/>
       <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
@@ -90,7 +98,7 @@
          </DoubleAnimation.EasingFunction>
       </DoubleAnimation>
    </Storyboard>
-   
+
    <!--DemoList-->
    <Style x:Key="DemoListBoxItem" TargetType="{x:Type ListBoxItem}">
       <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
@@ -117,7 +125,7 @@
                      </Border>
                   </Grid>
                </Border>
-               <ControlTemplate.Triggers> 
+               <ControlTemplate.Triggers>
                   <DataTrigger Binding="{Binding Path=State}"  Value="New">
                      <Setter TargetName="state" Property="Width" Value="80" />
                      <Setter TargetName="stateName" Property="Text" Value="NEW" />
@@ -148,7 +156,7 @@
          </Setter.Value>
       </Setter>
    </Style>
-   
+
    <Style TargetType="{x:Type ListBox}">
       <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
       <Setter Property="BorderThickness" Value="0"/>

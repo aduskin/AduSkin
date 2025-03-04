@@ -7,4 +7,5 @@
    <Converter:BoolToVisibility x:Key="BoolToVisibility"/>
    <Converter:StringIsEmptyConverter x:Key="StringIsEmptyConverter"/>
    <Converter:NumberConverter x:Key="NumberConverter" />
+   <Converter:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
 </ResourceDictionary>

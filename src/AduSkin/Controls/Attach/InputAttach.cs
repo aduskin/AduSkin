@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Media;
-using System.Windows;
+ using System.Windows;
 
 namespace AduSkin.Controls.Attach
 {
@@ -19,5 +15,17 @@ namespace AduSkin.Controls.Attach
 
       public static string GetInputHint(DependencyObject element)
           => (string)element.GetValue(InputHintProperty);
+
+      /// <summary>
+      /// 操作提示
+      /// </summary>
+      public static readonly DependencyProperty OperationHintProperty = DependencyProperty.RegisterAttached(
+            "OperationHint", typeof(string), typeof(InputAttach), new PropertyMetadata(default(string)));
+
+      public static void SetOperationHint(DependencyObject element, string value)
+          => element.SetValue(OperationHintProperty, value);
+
+      public static string GetOperationHint(DependencyObject element)
+          => (string)element.GetValue(OperationHintProperty);
    }
 }

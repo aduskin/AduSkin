@@ -1,24 +1,26 @@
-﻿using AduSkin.Utility.Element;
+using AduSkin.Utility.Element;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace AduSkin.Controls.Metro
 {
-    public class MetroMenuItem : MenuItem
-    {
-        public static readonly new DependencyProperty IconProperty = ElementBase.Property<MetroMenuItem, ImageSource>("IconProperty", null);
+   public class MetroMenuItem : MenuItem
+   {
+      public MetroMenuItem()
+      {
 
-        public new ImageSource Icon { get { return (ImageSource)GetValue(IconProperty); } set { SetValue(IconProperty, value); } }
+      }
 
-        public MetroMenuItem()
-        {
-            
-        }
+      static MetroMenuItem()
+      {
+         ElementBase.DefaultStyle<MetroMenuItem>(DefaultStyleKeyProperty);
+      }
 
-        static MetroMenuItem()
-        {
-            ElementBase.DefaultStyle<MetroMenuItem>(DefaultStyleKeyProperty);
-        }
-    }
+      [Bindable(true)]
+      [Category("Content")]
+      [Localizability(LocalizationCategory.Label)]
+      public new object Icon { get { return (object)GetValue(IconProperty); } set { SetValue(IconProperty, value); } }
+      public static readonly new DependencyProperty IconProperty = ElementBase.Property<MetroMenuItem, object>("IconProperty", null);
+   }
 }

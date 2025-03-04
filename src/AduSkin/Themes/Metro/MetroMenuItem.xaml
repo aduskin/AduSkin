@@ -6,19 +6,20 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--子菜单-->
-   <Style TargetType="{x:Type Metro:MetroMenuItem}">
-      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-      <Setter Property="SnapsToDevicePixels" Value="True"/>
-      <Setter Property="Foreground" Value="White"/>
+   <Style TargetType="{x:Type Metro:MetroMenuItem}"> 
+      <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalBlack}"/>
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{StaticResource NormalBorderBrush}" />
+      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="20"/>
+      <Setter Property="AduAttach:PathDataAttach.Margin" Value="8,0,0,0"/>
       <Setter Property="MinWidth" Value="200"/>
       <Setter Property="Height" Value="32"/>
-      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="Transparent" />
-      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0" />
-      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6" />
       <Setter Property="Padding" Value="0"/>
-      <Setter Property="Background" Value="#1E1F23"/>
-      <!--菜单背景色-->
       <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+      <Setter Property="SnapsToDevicePixels" Value="True"/> 
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroMenuItem}">
@@ -26,39 +27,59 @@
                   <Border x:Name="backRectangle" Grid.ColumnSpan="3" CornerRadius="6" Background="#888" Opacity="0" Height="{TemplateBinding Height}" Margin="6,0"/>
                   <Grid Margin="6,0">
                      <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="33"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="0" x:Name="subWidth"/>
-                     </Grid.ColumnDefinitions>
-                     <Grid Grid.Column="0">
-                        <Image x:Name="icon" Source="{TemplateBinding Icon}" Width="16" Height="16" HorizontalAlignment="Center"/>
-                        <Path x:Name="checkicon" Visibility="Collapsed" Width="14" Height="14" Stretch="Uniform" Fill="{TemplateBinding Foreground}" Data="{StaticResource Icon_Checked2}" HorizontalAlignment="Center"/>
-                     </Grid>
-                     <Metro:MetroTextBlock x:Name="title" Grid.Column="1" VerticalAlignment="Center" Text="{TemplateBinding Header}" Foreground="{TemplateBinding Foreground}" Margin="0,3,10,3"/>
-                     <Polyline Grid.Column="2" Points="0,0 5,5 0,10" Stroke="{TemplateBinding Foreground}" VerticalAlignment="Center" Margin="5,0,8,0"/>
+                     </Grid.ColumnDefinitions> 
+                     <!--图标-->
+                     <ContentPresenter 
+                        Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
+                        Height="{TemplateBinding AduAttach:PathDataAttach.Width}" 
+                        Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Visibility="{TemplateBinding Icon,Converter={StaticResource NullToVisibilityConverter}}"
+                        Content="{TemplateBinding Icon}"  
+                        RecognizesAccessKey="True" SnapsToDevicePixels="True" />
+
+                     <!--标题-->
+                     <ContentPresenter x:Name="HeaderPresenter" 
+                        Grid.Column="1"
+                        Margin="8,0" 
+                        VerticalAlignment="Center"
+                        ContentSource="Header"
+                        RecognizesAccessKey="True"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
+  
+                     <!--选中-->
+                     <Path Grid.Column="3" x:Name="checkicon" Visibility="Collapsed" 
+                        Width="14" Height="14"
+                        Stretch="Uniform" Fill="{TemplateBinding Foreground}" 
+                        Data="{StaticResource Icon_Checked2}" HorizontalAlignment="Center"/>
+
+                     <!--子菜单箭头-->
+                     <Polyline Grid.Column="4" Points="0,0 5,5 0,10" Stroke="{TemplateBinding Foreground}" 
+                           VerticalAlignment="Center" Margin="5,0,8,0"/>
                   </Grid>
-                  <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" HorizontalOffset="-10" VerticalOffset="-20" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="Fade" Placement="Right">
-                     <Grid RenderOptions.ClearTypeHint="Enabled" Background="#00000000">
-                        <Border Grid.Row="1" Margin="20" Padding="{TemplateBinding Padding}"
-                                      BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
-                                      BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
-                                      CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                                      Background="{TemplateBinding Background}">
-                           <Border.Effect>
-                              <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
-                           </Border.Effect>
-                           <Grid>
-                              <Polyline Points="5,0 0,5 5,10" Fill="{TemplateBinding Background}" Margin="-5,10,0,0"/>
-                              <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="True" KeyboardNavigation.TabNavigation="Cycle" Margin="0,6"/>
-                           </Grid>
-                        </Border>
-                     </Grid>
+                  <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False"  
+                         IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                         PopupAnimation="Fade" Placement="Right">
+                     <Border Grid.Row="1" RenderOptions.ClearTypeHint="Enabled" 
+                        Margin="20" Padding="{TemplateBinding Padding}"
+                        BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
+                        BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
+                        CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                        Background="{TemplateBinding Background}"
+                        Effect="{StaticResource PopupShadowBlack}">
+                        <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" 
+                           Grid.IsSharedSizeScope="True" KeyboardNavigation.TabNavigation="Cycle" Margin="0,6"/>
+                     </Border>
                   </Popup>
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter TargetName="icon" Property="Opacity" Value="0.5"/>
-                     <Setter TargetName="title" Property="Opacity" Value="0.5"/>
+                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}"/>
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
@@ -66,7 +87,6 @@
                         <Condition Property="IsChecked" Value="True" />
                      </MultiTrigger.Conditions>
                      <Setter TargetName="checkicon" Property="Visibility" Value="Visible"/>
-                     <Setter TargetName="icon" Property="Visibility" Value="Collapsed"/>
                   </MultiTrigger>
                   <Trigger Property="Role" Value="SubmenuHeader">
                      <Setter TargetName="subWidth" Property="Width" Value="Auto"/>
@@ -75,14 +95,16 @@
                      <Trigger.EnterActions>
                         <BeginStoryboard>
                            <Storyboard>
-                              <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.15" Duration="0:0:0.1"/>
+                              <DoubleAnimation Storyboard.TargetName="backRectangle" 
+                                 Storyboard.TargetProperty="(UIElement.Opacity)" To="0.15" Duration="0:0:0.1"/>
                            </Storyboard>
                         </BeginStoryboard>
                      </Trigger.EnterActions>
                      <Trigger.ExitActions>
                         <BeginStoryboard>
                            <Storyboard>
-                              <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.1"/>
+                              <DoubleAnimation Storyboard.TargetName="backRectangle" 
+                                 Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.1"/>
                            </Storyboard>
                         </BeginStoryboard>
                      </Trigger.ExitActions>

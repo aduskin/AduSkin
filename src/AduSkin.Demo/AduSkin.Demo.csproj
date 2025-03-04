@@ -41,4 +41,7 @@
       <Version>8.2.2</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Menu\" />
+  </ItemGroup>
 </Project>

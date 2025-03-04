@@ -54,24 +54,20 @@
    <Style TargetType="{x:Type Metro:MetroWindow}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
-
-      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
       <Setter Property="WindowStyle" Value="SingleBorderWindow" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
+      <Setter Property="Background" Value="{StaticResource NormalWhite}" /> 
+      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
       <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
-      <Setter Property="TitleForeground" Value="{StaticResource NormalWhite}" />
-      <Setter Property="SysButtonColor" Value="{StaticResource NormalWhite}" />
+      <Setter Property="TitleForeground" Value="{StaticResource NormalBlack}" />
+      <Setter Property="SysButtonColor" Value="{StaticResource NormalBlack}" />
       <Setter Property="Icon" Value="/AduSkin;component/Resources/logo.ico" />
       <Setter Property="BorderThickness" Value="1" />
-
       <Setter Property="FontSize" Value="12" />
       <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
       <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
       <Setter Property="UseLayoutRounding" Value="True" />
-
-      <!--
-
-        相对的解决字体显示模糊的问题
+      
+      <!--  相对的解决字体显示模糊的问题
         <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
         <Setter Property="TextOptions.TextHintingMode" Value="Auto"/>
         <Setter Property="UseLayoutRounding" Value="True"/>
@@ -80,9 +76,7 @@
         <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
 
         清晰的字体，但是不好看
-        <Setter Property="FontFamily" Value="Arial,SimSun"/>
-
-        -->
+        <Setter Property="FontFamily" Value="Arial,SimSun"/> -->
 
       <Setter Property="Shell:WindowChrome.WindowChrome">
          <Setter.Value>
@@ -102,21 +96,20 @@
                         </Grid.RowDefinitions>
                         <Grid x:Name="PART_Title" Background="{TemplateBinding BorderBrush}">
                            <Grid.ColumnDefinitions>
-                              <ColumnDefinition x:Name="iconSize" Width="36" />
+                              <ColumnDefinition x:Name="iconSize" Width="auto" />
                               <ColumnDefinition Width="Auto" />
                               <ColumnDefinition />
                               <ColumnDefinition Width="Auto" />
                            </Grid.ColumnDefinitions>
-                           <Grid x:Name="icon" Grid.Column="0" Margin="7,0,0,0">
-                              <Metro:MetroImage Source="{TemplateBinding Icon}" />
-                              <Rectangle Fill="{TemplateBinding TitleForeground}" Opacity="0" />
-                           </Grid>
-                           <Grid Grid.Column="1" x:Name="title">
-                              <Metro:MetroTextBlock Margin="10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{TemplateBinding TitleForeground}" FontSize="{TemplateBinding TitleFontSize}" Text="{TemplateBinding Title}" />
-                           </Grid>
-                           <Grid Grid.Column="2" x:Name="menu">
-                              <ContentPresenter Content="{TemplateBinding Menu}" />
-                           </Grid>
+                           <Metro:MetroImage x:Name="icon" Grid.Column="0" Margin="10,0" 
+                              Source="{TemplateBinding Icon}" Width="20" Height="20" Stretch="Uniform"/>
+                           
+                           <Metro:MetroTextBlock x:Name="title" Grid.Column="1" 
+                              HorizontalAlignment="Left" VerticalAlignment="Center" 
+                              Foreground="{TemplateBinding TitleForeground}" FontSize="{TemplateBinding TitleFontSize}" Text="{TemplateBinding Title}" />
+                           
+                           <ContentPresenter x:Name="menu" Grid.Column="2" Content="{TemplateBinding Menu}"/>
+                           
                            <Grid Grid.Column="3" x:Name="PART_SysButton" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                               <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                                  <Button x:Name="PART_MinimizedButton" Style="{StaticResource buttonStyle}">
