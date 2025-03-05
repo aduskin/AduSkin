@@ -28,9 +28,9 @@
                   <Grid Margin="6,0">
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="0" x:Name="subWidth"/>
                      </Grid.ColumnDefinitions> 
                      <!--图标-->
@@ -54,15 +54,15 @@
   
                      <!--选中-->
                      <Path Grid.Column="3" x:Name="checkicon" Visibility="Collapsed" 
-                        Width="14" Height="14"
+                        Width="14" Height="14" Margin="0,0,8,0"
                         Stretch="Uniform" Fill="{TemplateBinding Foreground}" 
                         Data="{StaticResource Icon_Checked2}" HorizontalAlignment="Center"/>
 
                      <!--子菜单箭头-->
                      <Polyline Grid.Column="4" Points="0,0 5,5 0,10" Stroke="{TemplateBinding Foreground}" 
-                           VerticalAlignment="Center" Margin="5,0,8,0"/>
+                           VerticalAlignment="Center" Margin="0,0,8,0"/>
                   </Grid>
-                  <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False"  
+                  <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False"  VerticalOffset="-6"
                          IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
                          PopupAnimation="Fade" Placement="Right">
                      <Border Grid.Row="1" RenderOptions.ClearTypeHint="Enabled" 

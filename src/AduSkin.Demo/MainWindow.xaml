@@ -21,7 +21,7 @@
                   CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes">
                <Metro:MetroMenuItem.Icon>
                   <Path Data="{StaticResource Icon_QQ}" />
-               </Metro:MetroMenuItem.Icon>
+               </Metro:MetroMenuItem.Icon> 
             </Metro:MetroMenuItem>
             <Metro:MetroMenuItem Header="QQ群" Command="Metro:ControlCommands.OpenLink" 
                   CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb">
@@ -34,6 +34,14 @@
                <Metro:MetroMenuItem.Icon>
                   <Path Data="{StaticResource Icon_Emil}"/>
                </Metro:MetroMenuItem.Icon>
+            </Metro:MetroMenuItem>
+            <Metro:MetroMenuItem Header="一级菜单">
+               <Metro:MetroMenuItem Header="二级菜单1" IsCheckable="True"/>
+               <Metro:MetroMenuItem Header="二级菜单2" IsCheckable="True"/>
+               <Metro:MetroMenuItem Header="二级菜单3">
+                  <Metro:MetroMenuItem Header="三级菜单1" IsCheckable="True"/>
+                  <Metro:MetroMenuItem Header="三级菜单2" IsCheckable="True"/>
+               </Metro:MetroMenuItem>
             </Metro:MetroMenuItem>
          </Metro:MetroTitleMenuItem>
          <Metro:MetroTitleMenuItem Header="源码" Metro:BorderAttach.CornerRadius="6">
