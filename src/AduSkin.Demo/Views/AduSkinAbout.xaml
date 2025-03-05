@@ -12,6 +12,11 @@
    <UserControl.DataContext>
       <viewmodel:AduSkinAboutViewModel/>
    </UserControl.DataContext>
+   <UserControl.Resources>
+      <Style TargetType="Path">
+         <Setter Property="Stretch" Value="None"/>
+      </Style>
+   </UserControl.Resources>
    <Grid>
       <Grid>
          <Grid.RowDefinitions>
