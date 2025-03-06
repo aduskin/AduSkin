@@ -35,12 +35,34 @@
                   <Path Data="{StaticResource Icon_Emil}"/>
                </Metro:MetroMenuItem.Icon>
             </Metro:MetroMenuItem>
-            <Metro:MetroMenuItem Header="一级菜单">
-               <Metro:MetroMenuItem Header="二级菜单1" IsCheckable="True"/>
-               <Metro:MetroMenuItem Header="二级菜单2" IsCheckable="True"/>
+            <Metro:MetroMenuItem Header="一级菜单"> 
+               <Metro:MetroMenuItem.Icon>
+                  <Path Data="{StaticResource Icon_Menu}"/>
+               </Metro:MetroMenuItem.Icon>
+               <Metro:MetroMenuItem Header="二级菜单1" IsCheckable="True">
+                  <Metro:MetroMenuItem.Icon>
+                     <Path Data="{StaticResource Icon_Menu}"/>
+                  </Metro:MetroMenuItem.Icon>
+               </Metro:MetroMenuItem>
+               <Metro:MetroMenuItem Header="二级菜单2" IsCheckable="True">
+                  <Metro:MetroMenuItem.Icon>
+                     <Path Data="{StaticResource Icon_Menu}"/>
+                  </Metro:MetroMenuItem.Icon>
+               </Metro:MetroMenuItem>
                <Metro:MetroMenuItem Header="二级菜单3">
-                  <Metro:MetroMenuItem Header="三级菜单1" IsCheckable="True"/>
-                  <Metro:MetroMenuItem Header="三级菜单2" IsCheckable="True"/>
+                  <Metro:MetroMenuItem.Icon>
+                     <Path Data="{StaticResource Icon_Menu}"/>
+                  </Metro:MetroMenuItem.Icon>
+                  <Metro:MetroMenuItem Header="三级菜单1" IsCheckable="True">
+                     <Metro:MetroMenuItem.Icon>
+                        <Path Data="{StaticResource Icon_Menu}"/>
+                     </Metro:MetroMenuItem.Icon>
+                  </Metro:MetroMenuItem>
+                  <Metro:MetroMenuItem Header="三级菜单2" IsCheckable="True">
+                     <Metro:MetroMenuItem.Icon>
+                        <Path Data="{StaticResource Icon_Menu}"/>
+                     </Metro:MetroMenuItem.Icon>
+                  </Metro:MetroMenuItem>
                </Metro:MetroMenuItem>
             </Metro:MetroMenuItem>
          </Metro:MetroTitleMenuItem>
