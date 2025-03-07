@@ -1,6 +1,7 @@
 using AduSkin.Controls.Metro;
 using AduSkin.Demo.Servers.Contracts;
 using AduSkin.Demo.ViewModel;
+using System;
 using System.Windows;
 
 namespace AduSkin.Demo

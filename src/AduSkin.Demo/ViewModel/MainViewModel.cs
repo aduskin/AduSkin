@@ -1,7 +1,8 @@
-using AduSkin.Demo.UserControls;
 using AduSkin.Demo.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -9,9 +10,12 @@ namespace AduSkin.Demo.ViewModel
 {
    public partial class MainViewModel : ObservableObject
    {
-      public MainViewModel()
+      public MainViewModel(IServiceProvider serviceProvider)
       {
-
+         CommonControlCase= serviceProvider.GetRequiredService<CommonControlCase>();
+         PracticalCase = serviceProvider.GetRequiredService<PracticalCase>();
+         AduSkinAbout = serviceProvider.GetRequiredService<AduSkinAbout>();
+         AduSkinSupport = serviceProvider.GetRequiredService<AduSkinSupport>();
       }
 
       /// <summary>
@@ -53,21 +57,21 @@ namespace AduSkin.Demo.ViewModel
       /// 常见控件
       /// </summary>
       [ObservableProperty]
-      private UserControl _commonControlCase = new CommonControlCase();
+      private UserControl _commonControlCase;
       /// <summary>
       /// 实用案例
       /// </summary>
       [ObservableProperty]
-      private UserControl _practicalCase = new PracticalCase();
+      private UserControl _practicalCase;
       /// <summary>
       /// 关于
       /// </summary>
       [ObservableProperty]
-      private UserControl _aduSkinAbout = new AduSkinAbout();
+      private UserControl _aduSkinAbout;
       /// <summary>
       /// 支持与赞助
       /// </summary>
       [ObservableProperty]
-      private UserControl _aduSkinSupport = new AduSkinSupport();
+      private UserControl _aduSkinSupport;
    }
 }

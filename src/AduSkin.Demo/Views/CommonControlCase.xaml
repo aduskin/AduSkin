@@ -1,4 +1,4 @@
-<UserControl x:Class="AduSkin.Demo.UserControls.CommonControlCase"
+<UserControl x:Class="AduSkin.Demo.Views.CommonControlCase"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"

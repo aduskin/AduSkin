@@ -1,7 +1,6 @@
-﻿using AduSkin.Controls.Metro;
+using AduSkin.Controls.Metro;
 using System;
-using System.IO;
-using System.Windows;
+
 namespace AduSkin.Demo.Views
 {
    /// <summary>

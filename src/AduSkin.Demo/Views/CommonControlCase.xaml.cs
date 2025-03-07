@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
 
-namespace AduSkin.Demo.UserControls
+namespace AduSkin.Demo.Views
 {
    /// <summary>
    /// CommonControlCase.xaml 的交互逻辑
