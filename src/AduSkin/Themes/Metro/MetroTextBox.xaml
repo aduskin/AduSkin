@@ -51,11 +51,11 @@
       <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
       <Setter Property="MouseMoveBackground" Value="{DynamicResource NormalWhite}"/>
       <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="Foreground" Value="#A5000000"/>
-      <Setter Property="TitleForeground" Value="#A5000000"/>
+      <Setter Property="Foreground" Value="{StaticResource NormalBlack}"/>
+      <Setter Property="TitleForeground" Value="{StaticResource NormalBlack}"/>
       <Setter Property="TitleMinWidth" Value="80"/>
       <Setter Property="BorderThickness" Value="1"/>
-      <Setter Property="CornerRadius" Value="2"/>
+      <Setter Property="CornerRadius" Value="2"/> 
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:MetroTextBox}">
@@ -82,31 +82,31 @@
                               <ColumnDefinition Width="Auto" x:Name="buttonWidth2"/>
                            </Grid.ColumnDefinitions>
                            <Image Grid.Column="0" Width="16" Height="16" Margin="6,6,0,6" Source="{TemplateBinding Icon}" 
-                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
                            <AduSkin:MetroTextBlock Grid.Column="1" x:Name="inputHint" Opacity="0" Margin="{TemplateBinding Padding}" 
                               Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding AduAttach:InputAttach.InputHint}"  
-                              HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                              IsHitTestVisible="False"/> 
+                              HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" IsHitTestVisible="False"/> 
                            
                            <ScrollViewer Grid.Column="1" x:Name="PART_ContentHost" Focusable="false" 
                               HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" 
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
  
                            <Button x:Name="button" Focusable="False" Grid.Column="3" Content="{TemplateBinding ButtonTitle}" 
-                                 Margin="0,6" Style="{StaticResource buttonStyle}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
-                                 Command="AduSkin:MetroTextBox.ButtonClickCommand"/>
+                              Margin="0,6" Style="{StaticResource buttonStyle}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                              Command="AduSkin:MetroTextBox.ButtonClickCommand"/>
                         </Grid>
                      </Grid>
                   </Border>
                   <Popup x:Name="popupHint" PlacementTarget="{Binding ElementName=PART_ContentHost}"
+                         IsOpen="{TemplateBinding IsOpenPopupHint}"
                          AllowsTransparency="True" Focusable="False" Placement="RelativePoint" 
-                         VerticalOffset="-42" HorizontalOffset="-14" PopupAnimation="Fade">
+                         VerticalOffset="-42" HorizontalOffset="-4" PopupAnimation="Fade">
                      <Grid>
                         <StackPanel Visibility="{TemplateBinding PopupHint, Converter={StaticResource StringToVisibility}}">
                            <Border x:Name="popupborder" CornerRadius="2" Background="{TemplateBinding BorderBrush}">
                               <AduSkin:MetroTextBlock x:Name="popupText" Text="{TemplateBinding PopupHint}" Margin="8,6"
-                                       Foreground="{DynamicResource NormalWhite}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    Foreground="{DynamicResource NormalWhite}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                            </Border>
                            <Polygon x:Name="popuppolygon" Points="0,0 10,0 5,5 0,0" Fill="{TemplateBinding BorderBrush}" Margin="10,0,0,0"/>
                         </StackPanel>
@@ -124,8 +124,7 @@
                      <Setter Property="Opacity" TargetName="border" Value="0"/>
                      <Setter Property="Opacity" TargetName="bordermove" Value="1"/>
                      <Setter Property="BorderBrush" TargetName="bordertrue" Value="{StaticResource SuccessBrush}"/>
-                     <Setter Property="BorderBrush" TargetName="borderfalse" Value="{StaticResource ErrorBrush}"/>
-
+                     <Setter Property="BorderBrush" TargetName="borderfalse" Value="{StaticResource ErrorBrush}"/> 
                      <Setter Property="Background" TargetName="back" Value="{Binding MouseMoveBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
                   </Trigger>
                   <Trigger Property="IsPassWordBox" Value="true">
@@ -139,19 +138,19 @@
                   <Trigger Property="IsKeyboardFocused" Value="true">
                      <Setter Property="Opacity" TargetName="border" Value="0"/>
                      <Setter Property="Opacity" TargetName="bordermove" Value="1"/>
-                     <Setter Property="IsOpen" TargetName="popupHint" Value="true"/>
+                     <!--<Setter Property="IsOpen" TargetName="popupHint" Value="true"/>-->
                      <Setter Property="BorderBrush" TargetName="bordertrue" Value="#ff6fae5f"/>
                      <Setter Property="BorderBrush" TargetName="borderfalse" Value="#ffe67979"/>
                      <Setter Property="Opacity" TargetName="inputHint" Value="0"/>
                      <Setter Property="Background" TargetName="back" Value="{Binding MouseMoveBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
                   </Trigger>
                   <Trigger Property="IsKeyboardFocused" Value="false">
-                     <Setter Property="IsOpen" TargetName="popupHint" Value="false"/>
+                     <!--<Setter Property="IsOpen" TargetName="popupHint" Value="false"/>-->
                   </Trigger>
                   <Trigger Property="Title" Value="">
                      <Setter Property="MinWidth" TargetName="titleWidth1" Value="0"/>
                      <Setter Property="Width" TargetName="titleWidth2" Value="0"/>
-                  </Trigger> 
+                  </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="Text" Value=""/>
@@ -160,20 +159,6 @@
                      </MultiTrigger.Conditions>
                      <Setter Property="Opacity" TargetName="inputHint" Value="0.25"/>
                   </MultiTrigger>
-                  <Trigger Property="State" Value="true">
-                     <Setter Property="Visibility" TargetName="border" Value="Hidden"/>
-                     <Setter Property="Visibility" TargetName="bordertrue" Value="Visible"/>
-
-                     <Setter Property="Background" TargetName="popupborder" Value="#FF99cb8a"/>
-                     <Setter Property="Fill" TargetName="popuppolygon" Value="#FF99cb8a"/>
-                  </Trigger>
-                  <Trigger Property="State" Value="false">
-                     <Setter Property="Visibility" TargetName="border" Value="Hidden"/>
-                     <Setter Property="Visibility" TargetName="borderfalse" Value="Visible"/>
-
-                     <Setter Property="Background" TargetName="popupborder" Value="#FFe99595"/>
-                     <Setter Property="Fill" TargetName="popuppolygon" Value="#FFe99595"/>
-                  </Trigger>
                   <Trigger Property="Icon" Value="{x:Null}">
                      <Setter Property="Width" TargetName="iconWidth" Value="0"/>
                   </Trigger>
@@ -185,6 +170,21 @@
             </ControlTemplate>
          </Setter.Value>
       </Setter>
+      <Setter Property="Validation.ErrorTemplate">
+         <Setter.Value>
+            <ControlTemplate>
+               <Border BorderThickness="0">
+                  <AdornedElementPlaceholder />
+               </Border>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+      <Style.Triggers>
+         <Trigger Property="Validation.HasError" Value="True">
+            <Setter Property="PopupHint" Value="{Binding RelativeSource={RelativeSource Self},Path=(Validation.Errors)[0].ErrorContent}"/>
+            <Setter Property="IsOpenPopupHint" Value="True"/>
+         </Trigger>
+      </Style.Triggers>
    </Style>
 
 </ResourceDictionary>

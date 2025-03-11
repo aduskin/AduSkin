@@ -1,0 +1,24 @@
+<UserControl x:Class="AduSkin.Demo.UserControls.FormVerificationDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AduSkin.Demo.UserControls"
+             xmlns:Viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
+             xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+             mc:Ignorable="d" Width="400">
+   <UserControl.DataContext>
+      <Viewmodel:FormVerificationDemoViewModel/>
+   </UserControl.DataContext>
+   <StackPanel Margin="20">
+      <AduSkin:AduFormLable Title="姓名">
+         <AduSkin:MetroTextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged,ValidatesOnNotifyDataErrors=True}"/>
+      </AduSkin:AduFormLable>
+      <AduSkin:AduFormLable Title="年龄">
+         <AduSkin:MetroTextBox Text="{Binding Age,UpdateSourceTrigger=PropertyChanged,ValidatesOnNotifyDataErrors=True}" Margin="0,10"/>
+      </AduSkin:AduFormLable>
+      <AduSkin:AduFormLable Title="地址">
+         <AduSkin:MetroTextBox Text="{Binding Address,UpdateSourceTrigger=PropertyChanged,ValidatesOnNotifyDataErrors=True}"/>
+      </AduSkin:AduFormLable>
+   </StackPanel>
+</UserControl>
