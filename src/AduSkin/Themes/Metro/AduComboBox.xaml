@@ -62,12 +62,7 @@
             <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
          </MultiTrigger>
          <Trigger Property="UIElement.IsEnabled" Value="False">
-            <Setter TargetName="Border" Property="Panel.Background" Value="{StaticResource DisabledBackground}" />
-            <Setter TargetName="ButtonBorder" Property="Panel.Background" Value="{StaticResource DisabledBackground}" />
-            <Setter TargetName="ButtonBorder" Property="Border.BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
-            <Setter Property="TextElement.Foreground" Value="{StaticResource DisabledForegroundBrush}" />
-            <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource DisabledForegroundBrush}" />
-            <Setter TargetName="Arrow" Property="StrokeThickness" Value="0" />
+            <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
@@ -108,7 +103,7 @@
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_DropDowm}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="10"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,6,0"/>
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/> 
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
       <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{StaticResource NormalWhite}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="Background" Value="{StaticResource NormalWhite}"/>

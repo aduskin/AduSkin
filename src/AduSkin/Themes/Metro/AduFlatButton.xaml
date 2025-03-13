@@ -156,7 +156,7 @@
                      <ColorAnimation Duration="00:00:0.2" Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
                                             To="#5CADFF" />
                      <ColorAnimation Duration="00:00:0.2" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                            To="{DynamicResource WhiteColor}" />
+                                            To="{DynamicResource NormalWhite}" />
                   </Storyboard>
                </VisualState>
                <VisualState x:Name="Pressed">
@@ -166,7 +166,7 @@
                      <ColorAnimation Duration="00:00:0.3" Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
                                             To="#3091F2" />
                      <ColorAnimation Duration="0" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" 
-                                            To="{DynamicResource WhiteColor}" />
+                                            To="{DynamicResource NormalWhite}" />
                   </Storyboard>
                </VisualState>
             </VisualStateGroup>

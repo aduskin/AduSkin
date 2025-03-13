@@ -6,26 +6,15 @@
     xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
 
    <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Colors.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/IconLibrary.xaml" />
+      <ResourceDictionary Source="/AduSkin;component/Themes/Effects.xaml" />
       <ResourceDictionary Source="/AduSkin;component/Themes/Converters.xaml" />
    </ResourceDictionary.MergedDictionaries>
 
-   <!--Opacity-->
-   <sys:Double x:Key="NormalOpacity">1</sys:Double>
-   <sys:Double x:Key="PressedOpacity">0.9</sys:Double>
-   <sys:Double x:Key="MouseOverOpacity">0.8</sys:Double>
-   <sys:Double x:Key="DisableOpacity">0.5</sys:Double>
-   <sys:Double x:Key="NotSelectedOpacity">0.6</sys:Double>
-
    <!--Color-->
-   <Color x:Key="WhiteColor" >#FFFFFF</Color>
-   <Color x:Key="WhiteBlack" >#000000</Color>
-   <Color x:Key="TransparentColor" >#00000000</Color>
-
-   <!--Shadow-->
-   <DropShadowEffect x:Key="TextShadow-Black" BlurRadius="6" Opacity="0.2" ShadowDepth="0" Color="{StaticResource WhiteBlack}" />
-   <DropShadowEffect x:Key="CardShadow-Black" BlurRadius="20" Opacity="0.1"  Direction="270" Color="{StaticResource WhiteBlack}" />
-   <DropShadowEffect x:Key="PopupShadowBlack" BlurRadius="20" Opacity="0.1"  Direction="270" Color="{StaticResource WhiteBlack}" />
+   
 
    <!--NormalBrush-->
    <SolidColorBrush x:Key="NormalWhiteTest" Color="#7160E8" />
@@ -49,7 +38,7 @@
    <SolidColorBrush x:Key="NormalBlue80" Color="#803399FF" />
    <SolidColorBrush x:Key="NormalBlue90" Color="#903399FF" />
    <!--Transparent-->
-   <SolidColorBrush x:Key="NormalTransparentBrush" Color="#00000000" />
+   <SolidColorBrush x:Key="NormalTransparentBrush" Color="{StaticResource TransparentColor}" />
 
    <!--Theme-->
    <SolidColorBrush x:Key="Brush" Color="#EE796F" />
@@ -60,10 +49,6 @@
    <SolidColorBrush x:Key="ShadowMouseOverBackgroundBrush" Color="#464646" />
    <SolidColorBrush x:Key="ShadowPressedBackgroundBrush" Color="#393939" />
    <SolidColorBrush x:Key="ShadowSelectedBackgroundBrush" Color="#313131" />
-
-   <!--Foreground-->
-   <SolidColorBrush x:Key="SelectedForegroundBrush" Color="#666" />
-   <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
 
    <!--Background-->
    <SolidColorBrush x:Key="DefaultBackground" Color="#EEEEEE" />

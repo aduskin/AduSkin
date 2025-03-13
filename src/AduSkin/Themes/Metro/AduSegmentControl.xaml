@@ -5,19 +5,20 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
    </ResourceDictionary.MergedDictionaries>
+
    <Style TargetType="{x:Type Adu:AduSegmentItem}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="BorderThickness" Value="1, 0, 0, 0" />
-      <Setter Property="Padding" Value="15, 5" />
+      <Setter Property="Padding" Value="15,5" />
       <Setter Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Adu:AduSegmentControl}}}" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Adu:AduSegmentItem}">
-               <Border x:Name="PART_ItemBorder" Background="Transparent" 
-                            Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True"
-                            UseLayoutRounding="True" BorderThickness="{TemplateBinding BorderThickness}" 
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            CornerRadius="{TemplateBinding CornerRadius}">
+               <Border x:Name="PART_ItemBorder" Background="{StaticResource NormalTransparentBrush}" 
+                     Padding="{TemplateBinding Padding}" 
+                     SnapsToDevicePixels="True" UseLayoutRounding="True" 
+                     BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" 
+                     CornerRadius="{TemplateBinding CornerRadius}">
                   <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                </Border>
                <ControlTemplate.Triggers>
@@ -40,46 +41,36 @@
       </Setter>
    </Style>
 
-   <SolidColorBrush x:Key="ListBox.Static.Background" Color="Transparent" />
-   <SolidColorBrush x:Key="ListBox.Static.Border" Color="#0079FF" />
-   <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="{DynamicResource WhiteColor}" />
-   <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9" />
-
    <Style TargetType="{x:Type Adu:AduSegmentControl}">
-      <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-      <Setter Property="Padding" Value="-1,-1" />
-      <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
-      <Setter Property="BorderThickness" Value="1,1,1,1" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="Foreground" Value="{StaticResource NormalBrush}" />
-      <Setter Property="FontFamily" Value="微软雅黑" />
-      <Setter Property="FontSize" Value="12" />
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+      <Setter Property="Padding" Value="-1" />
       <Setter Property="CornerRadius" Value="5" />
-      <Setter Property="HorizontalAlignment" Value="Left" />
       <Setter Property="VerticalAlignment" Value="Center" />
       <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
       <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-      <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+      <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
       <Setter Property="ScrollViewer.PanningMode" Value="Both" />
       <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Adu:AduSegmentControl}">
-               <Border x:Name="Bd"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}" 
-                            SnapsToDevicePixels="true" UseLayoutRounding="True">
-                  <Adu:MetroScrollViewer Focusable="false" Padding="{TemplateBinding Padding}">
+               <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     CornerRadius="{TemplateBinding CornerRadius}" 
+                     SnapsToDevicePixels="True" UseLayoutRounding="True">
+                  <Adu:MetroScrollViewer Focusable="False" Padding="{TemplateBinding Padding}">
                      <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                   </Adu:MetroScrollViewer>
                </Border>
                <ControlTemplate.Triggers>
-                  <Trigger Property="IsEnabled" Value="false">
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource ListBox.Disabled.Background}" />
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ListBox.Disabled.Border}" />
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>

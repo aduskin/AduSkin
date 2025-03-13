@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+   <Color x:Key="TransparentColor" >#00000000</Color>
+   <Color x:Key="White" >#FFFFFF</Color>
+   <Color x:Key="Black" >#000000</Color>
+</ResourceDictionary>

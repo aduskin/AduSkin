@@ -84,18 +84,13 @@
             <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
          </MultiTrigger>
          <Trigger Property="UIElement.IsEnabled" Value="False">
-            <Setter TargetName="Border" Property="Panel.Background" Value="{StaticResource TranspantBrush}" />
-            <Setter TargetName="ButtonBorder" Property="Panel.Background" Value="{StaticResource TranspantBrush}" />
-            <Setter Property="TextElement.Foreground" Value="{StaticResource DisabledForegroundBrush}" />
-            <Setter TargetName="Arrow" Property="Stroke" Value="#999" />
-            <Setter TargetName="Arrow" Property="StrokeThickness" Value="0" />
-            <Setter Property="Cursor" Value="No" />
+            <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
 
    <Style TargetType="AduSkin:AduCheckComboBoxItem">
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalBrush}" />
       <Setter Property="MinHeight" Value="30"/>
       <Setter Property="Cursor" Value="Hand"/>

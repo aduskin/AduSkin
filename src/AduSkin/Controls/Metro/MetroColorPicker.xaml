@@ -12,7 +12,7 @@
             <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
          </ResourceDictionary.MergedDictionaries>
          <Style x:Key="UserControlStyle" TargetType="{x:Type UserControl}">
-            <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource NormalBrush}"/>
             <Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="Template">
                <Setter.Value>
@@ -30,13 +30,13 @@
       <local:MetroCanvasGrid/>
       <local:MetroFocusButton x:Name="button" Background="{Binding Background,ElementName=root}"/>
       <Popup x:Name="popup" PlacementTarget="{Binding ElementName=root}" AllowsTransparency="True" HorizontalOffset="-20" Focusable="False" VerticalOffset="-10" PopupAnimation="Fade" StaysOpen="False" Placement="Bottom">
-         <Grid Background="#00000000">
-            <Border Grid.Row="1" Background="#1E1F23" BorderBrush="#10000000" BorderThickness="1" CornerRadius="6" Margin="20">
+         <Grid Background="{StaticResource NormalTransparentBrush}">
+            <Border Grid.Row="1" Background="{StaticResource NormalBlack}" BorderBrush="{StaticResource NormalBlack10}" BorderThickness="1" CornerRadius="6" Margin="20">
                <Border.Effect>
                   <DropShadowEffect BlurRadius="20" Direction="0" Opacity="0.2" ShadowDepth="0"/>
                </Border.Effect>
                <Grid>
-                  <Polygon x:Name="polygon" HorizontalAlignment="Left" Fill="#1E1F23" Points="0,5 5,0 10,5 0,5" Margin="13,-5,0,0"/>
+                  <Polygon x:Name="polygon" HorizontalAlignment="Left" Fill="{StaticResource NormalBlack}" Points="0,5 5,0 10,5 0,5" Margin="13,-5,0,0"/>
                   <Grid Margin="10">
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -51,7 +51,7 @@
                               <Rectangle x:Name="viewSelectColor1" RadiusX="2" RadiusY="2">
                                  <Rectangle.Fill>
                                     <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
-                                       <GradientStop Offset="0" Color="{DynamicResource WhiteColor}"/>
+                                       <GradientStop Offset="0" Color="{DynamicResource White}"/>
                                        <GradientStop Offset="1" Color="{DynamicResource TransparentColor}"/>
                                     </LinearGradientBrush>
                                  </Rectangle.Fill>
@@ -59,19 +59,19 @@
                               <Rectangle x:Name="viewSelectColor2" RadiusX="2" RadiusY="2">
                                  <Rectangle.Fill>
                                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                       <GradientStop Offset="0" Color="#00000000"/>
-                                       <GradientStop Offset="1" Color="#FF000000"/>
+                                       <GradientStop Offset="0" Color="{StaticResource TransparentColor}"/>
+                                       <GradientStop Offset="1" Color="{StaticResource Black}"/>
                                     </LinearGradientBrush>
                                  </Rectangle.Fill>
                               </Rectangle>
                               <local:MetroThumb x:Name="thumbSB" OffsetX="-7" OffsetY="-7">
                                  <Thumb.Resources>
                                     <Style TargetType="{x:Type local:MetroThumb}">
-                                       <Setter Property="BorderBrush" Value="#FF000000"/>
+                                       <Setter Property="BorderBrush" Value="{StaticResource NormalBlack}"/>
                                        <Setter Property="Template">
                                           <Setter.Value>
                                              <ControlTemplate TargetType="{x:Type local:MetroThumb}">
-                                                <Canvas Background="#00000000">
+                                                <Canvas Background="{StaticResource NormalTransparentBrush}">
                                                    <Grid Width="14" Height="14" Canvas.Left="{TemplateBinding X}" Canvas.Top="{TemplateBinding Y}">
                                                       <Border BorderThickness="1" BorderBrush="{TemplateBinding Background}" CornerRadius="100"/>
                                                       <Border BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="100" Margin="1"/>
@@ -116,7 +116,7 @@
                                     <Setter Property="Template">
                                        <Setter.Value>
                                           <ControlTemplate TargetType="{x:Type local:MetroThumb}">
-                                             <Canvas Background="#00000000">
+                                             <Canvas Background="{StaticResource NormalTransparentBrush}">
                                                 <Grid Canvas.Left="0" Canvas.Top="{TemplateBinding Y}">
                                                    <Grid.ColumnDefinitions>
                                                       <ColumnDefinition Width="10"/>
@@ -167,7 +167,7 @@
                                     <Setter Property="Template">
                                        <Setter.Value>
                                           <ControlTemplate TargetType="{x:Type local:MetroThumb}">
-                                             <Canvas Background="#00000000">
+                                             <Canvas Background="{StaticResource NormalTransparentBrush}">
                                                 <Grid Canvas.Left="0" Canvas.Top="{TemplateBinding Y}">
                                                    <Grid.ColumnDefinitions>
                                                       <ColumnDefinition Width="10"/>
@@ -212,8 +212,10 @@
                               <ColumnDefinition Width="10"/>
                               <ColumnDefinition/>
                            </Grid.ColumnDefinitions>
-                           <local:MetroTextBlock x:Name="drfault" Text="默认" Foreground="#A8A8A8" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                           <Border Grid.Column="2" Background="Transparent" CornerRadius="6" BorderThickness="1" >
+                           <local:MetroTextBlock x:Name="drfault" Text="默认" Foreground="#A8A8A8" 
+                                 HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                           <Border Grid.Column="2" Background="{StaticResource NormalTransparentBrush}" 
+                                   CornerRadius="6" BorderThickness="1" >
                               <local:MetroCanvasGrid IsApplyTheme="False" CornerRadius="6">
                                  <local:MetroFocusButton x:Name="viewDefColor" CornerRadius="6" BorderThickness="0" MouseMoveBorderThickness="0"/>
                               </local:MetroCanvasGrid>

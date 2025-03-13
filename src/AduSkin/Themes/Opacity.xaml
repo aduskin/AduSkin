@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib">
+   <!--Opacity-->
+   <sys:Double x:Key="NormalOpacity">1</sys:Double>
+   <sys:Double x:Key="PressedOpacity">0.9</sys:Double>
+   <sys:Double x:Key="MouseOverOpacity">0.8</sys:Double>
+   <sys:Double x:Key="DisableOpacity">0.5</sys:Double>
+   <sys:Double x:Key="NotSelectedOpacity">0.6</sys:Double>
+</ResourceDictionary>
