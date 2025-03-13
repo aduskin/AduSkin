@@ -16,23 +16,25 @@
          <ColumnDefinition Width="300"/>
          <ColumnDefinition/>
       </Grid.ColumnDefinitions>
-      <Border Background="{StaticResource NormalWhite}" BorderThickness="0,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}">
+      <Border Background="{StaticResource NormalWhite}" Effect="{StaticResource CardShadow}"
+              BorderThickness="0,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}">
          <Grid >
             <Grid.RowDefinitions>
                <RowDefinition Height="Auto"/>
                <RowDefinition Height="Auto"/>
                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Background="#05000000">
-               <TextBlock Foreground="#999" Style="{StaticResource H5}" 
-                        Padding="0,20,0,0" HorizontalAlignment="Center">搜索你要找的案例</TextBlock>
+            <Border Background="{StaticResource NormalBlack5}">
+               <TextBlock Foreground="{StaticResource NormalBlack90}" Style="{StaticResource H5}" 
+                  Padding="0,20,0,0" HorizontalAlignment="Center">搜索你要找的案例</TextBlock>
             </Border>
-            <Border Background="#05000000" Grid.Row="1">
-               <Metro:MetroTextBox x:Name="SearchKey" CaretBrush="#000" Background="#10000000" 
-                        BorderThickness="0" Padding="10,0"  Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
-                        VerticalAlignment="Center" VerticalContentAlignment="Center" 
-                        CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  
-                        AduAttach:InputAttach.InputHint="Search you need Demo..." />
+            <Border Background="{StaticResource NormalBlack5}" Grid.Row="1">
+               <Metro:MetroTextBox x:Name="SearchKey" 
+                     CaretBrush="{StaticResource NormalBlack}" Background="{StaticResource NormalBlack10}" 
+                     BorderThickness="0" Padding="10,0" Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                     VerticalAlignment="Center" VerticalContentAlignment="Center" 
+                     CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  
+                     AduAttach:InputAttach.InputHint="Search you need Demo..." />
             </Border>
             <Metro:AduTabControl Grid.Row="2" SelectedIndex="{Binding SelectedDemoType}">
                <Metro:AduTabControl.Resources>

@@ -12,7 +12,7 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <AduSkin:AduAnimationPath Width="100" Height="100" VerticalAlignment="Center" 
-                  Data="{StaticResource Icon_Github}" Stretch="Uniform" 
+                  Data="{StaticResource Icon_Desgin}" Stretch="Uniform" 
                   Stroke="{StaticResource NormalBrush}" StrokeThickness="3"  Duration="0:0:6" />
             </Border>
          </Grid>

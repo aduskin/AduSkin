@@ -9,13 +9,14 @@
 
    <!--调整列头宽度样式-->
    <Style x:Key="DefaultColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="Width" Value="8" />
-      <Setter Property="Background" Value="Transparent" />
       <Setter Property="Cursor" Value="SizeWE" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Thumb}">
-               <Border Padding="{TemplateBinding Padding}" Background="Transparent" Margin="0 0 0 2">
+               <Border Padding="{TemplateBinding Padding}" Margin="0 0 0 2"
+                       Background="{DynamicResource NormalTransparentBrush}" >
                   <Rectangle HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Width="1" Fill="{TemplateBinding Background}" />
                </Border>
             </ControlTemplate>
@@ -25,19 +26,18 @@
 
    <!--列头header样式-->
    <Style x:Key="DefaultDataGridColumnHeader" TargetType="{x:Type DataGridColumnHeader}">
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+      <Setter Property="Background" Value="{DynamicResource NormalBorderBrush}" />
+      <Setter Property="BorderThickness" Value="0" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="MinWidth" Value="5" />
       <Setter Property="MinHeight" Value="25" />
       <Setter Property="Height" Value="40" />
-      <Setter Property="Foreground" Value="#000" />
       <Setter Property="HorizontalContentAlignment" Value="Left" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Padding" Value="10,4" />
       <Setter Property="Margin" Value="0,0,0,2" />
       <Setter Property="FontSize" Value="14" />
-      <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="BorderBrush" Value="{StaticResource DefaultBackground}" />
-      <Setter Property="Background" Value="{StaticResource DefaultBackground}" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
@@ -47,19 +47,24 @@
                      <ColumnDefinition Width="auto" />
                   </Grid.ColumnDefinitions>
                   <ContentPresenter x:Name="HeaderContent"
-                                          Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                                          Margin="{TemplateBinding Padding}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          RecognizesAccessKey="True"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                  <Path Data="{StaticResource Icon_DownArrow}" x:Name="SortArrow" Grid.Column="1"  Width="10" Height="10" Visibility="Collapsed" Margin="1,1,3,1" ></Path>
-                  <Thumb x:Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" HorizontalContentAlignment="Left"
-                               Style="{StaticResource DefaultColumnHeaderGripperStyle}" />
+                     Content="{TemplateBinding Content}"
+                     ContentTemplate="{TemplateBinding ContentTemplate}"
+                     Margin="{TemplateBinding Padding}"
+                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                     RecognizesAccessKey="True"
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                  <Path x:Name="SortArrow"  Grid.Column="1" 
+                     Data="{StaticResource Icon_DownArrow}" Stretch="Uniform"
+                     Width="10" Height="10" Visibility="Collapsed" Margin="1,1,3,1"/>
+                  <Thumb x:Name="PART_LeftHeaderGripper" 
+                     HorizontalAlignment="Left" HorizontalContentAlignment="Left"
+                     Style="{StaticResource DefaultColumnHeaderGripperStyle}" />
 
-                  <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Background="Transparent"
-                               Style="{StaticResource DefaultColumnHeaderGripperStyle}" Grid.Column="1" />
+                  <Thumb x:Name="PART_RightHeaderGripper" Grid.Column="1"
+                        Background="{StaticResource NormalTransparentBrush}"
+                        HorizontalAlignment="Right" HorizontalContentAlignment="Right" 
+                        Style="{StaticResource DefaultColumnHeaderGripperStyle}"/>
                </Grid>
                <ControlTemplate.Triggers>
                   <!--显示排序标示-->
@@ -95,7 +100,7 @@
    </Style>
 
    <!--行样式-->
-   <Style x:Key="DefaultDataGridRow" TargetType="{x:Type DataGridRow}"> 
+   <Style x:Key="DefaultDataGridRow" TargetType="{x:Type DataGridRow}">
       <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource MouseOverBackground}"/>
       <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource SelectedBackground}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
@@ -119,11 +124,14 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                      </SelectiveScrollingGrid.RowDefinitions>
-                     <DataGridCellsPresenter Grid.Column="1" ItemsPanel="{TemplateBinding ItemsPanel}"  Padding="{TemplateBinding Padding}"
+                     <DataGridCellsPresenter Grid.Column="1" 
+                           ItemsPanel="{TemplateBinding ItemsPanel}"  Padding="{TemplateBinding Padding}"
                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                     <DataGridDetailsPresenter Grid.Column="1" Grid.Row="1" Visibility="{TemplateBinding DetailsVisibility}"
+                     <DataGridDetailsPresenter Grid.Column="1" Grid.Row="1" 
+                           Visibility="{TemplateBinding DetailsVisibility}"
                            SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
-                     <DataGridRowHeader Grid.RowSpan="2" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+                     <DataGridRowHeader Grid.RowSpan="2" 
+                           SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
                            Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Row}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
                   </SelectiveScrollingGrid>
                </Border>
@@ -161,7 +169,7 @@
    <!--行头调整高度样式 -->
    <Style x:Key="DefaultRowHeaderGripperStyle" TargetType="{x:Type Thumb}">
       <Setter Property="Height" Value="6" />
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="Cursor" Value="SizeNS" />
       <Setter Property="Template">
          <Setter.Value>
@@ -174,32 +182,30 @@
 
    <!--行头部样式-->
    <Style x:Key="DefaultDataGridRowHeader" TargetType="{x:Type DataGridRowHeader}">
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="Background" Value="Transparent" />
-      <Setter Property="BorderBrush" Value="Transparent" />
-      <Setter Property="Foreground" Value="#000" />
       <Setter Property="FontSize" Value="10" />
       <Setter Property="Height" Value="30" />
-      <Setter Property="Margin" Value="0,0,0,0" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type DataGridRowHeader}">
                <Grid>
                   <Border BorderBrush="{TemplateBinding BorderBrush}"
-                                Background="{TemplateBinding Background}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}"
-                                Margin="{TemplateBinding Margin}"
-                                SnapsToDevicePixels="True">
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Padding="{TemplateBinding Padding}"
+                        Margin="{TemplateBinding Margin}"
+                        SnapsToDevicePixels="True">
                      <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
                   </Border>
                   <Thumb x:Name="PART_TopHeaderGripper"
                         VerticalContentAlignment="Top"
                         VerticalAlignment="Top" 
-                        Background="Transparent" 
+                        Background="{DynamicResource NormalTransparentBrush}" 
                         Style="{StaticResource DefaultRowHeaderGripperStyle}" />
                   <Thumb x:Name="PART_BottomHeaderGripper" 
                         VerticalContentAlignment="Bottom"
@@ -213,8 +219,8 @@
 
    <!--单元格样式-->
    <Style x:Key="DefaultDataGridCell" TargetType="{x:Type DataGridCell}">
-      <Setter Property="Background" Value="Transparent" />
-      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -224,21 +230,21 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type DataGridCell}">
                <Border BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Background="{TemplateBinding Background}"
-                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     Background="{TemplateBinding Background}"
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                   <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
-                           Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                           Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
-                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                        Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                        Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
                   </ContentPresenter>
                </Border>
-               <ControlTemplate.Triggers>
+               <!--<ControlTemplate.Triggers>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter Property="Foreground" Value="#000" />
+                     <Setter Property="Opacity" Value="{StaticResource NormalOpacity}" />
                   </Trigger>
-               </ControlTemplate.Triggers>
+               </ControlTemplate.Triggers>-->
             </ControlTemplate>
          </Setter.Value>
       </Setter>
@@ -277,16 +283,17 @@
       <Setter Property="DropLocationIndicatorStyle">
          <Setter.Value>
             <Style TargetType="Separator">
-               <Setter Property="Background" Value="Transparent" />
+               <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
                <Setter Property="Width" Value="2.5" />
                <Setter Property="Template">
                   <Setter.Value>
                      <ControlTemplate TargetType="Separator">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                                Background="{TemplateBinding Background}" 
-                                Padding="{TemplateBinding Padding}" 
-                                BorderThickness="{TemplateBinding BorderThickness}">
-                           <Rectangle Fill="{StaticResource NormalBorderBrush}"  Height="{TemplateBinding Height}"  Width="{TemplateBinding Width}" />
+                              Background="{TemplateBinding Background}" 
+                              Padding="{TemplateBinding Padding}" 
+                              BorderThickness="{TemplateBinding BorderThickness}">
+                           <Rectangle Fill="{StaticResource NormalBorderBrush}" 
+                                 Height="{TemplateBinding Height}"  Width="{TemplateBinding Width}" />
                         </Border>
                      </ControlTemplate>
                   </Setter.Value>
@@ -305,19 +312,15 @@
                        Padding="{TemplateBinding Padding}" 
                        SnapsToDevicePixels="True">
                   <Grid>
-                     <StackPanel
-                        HorizontalAlignment="Center"
-                        Margin="0,40,0,0"
-                        VerticalAlignment="Center"
+                     <StackPanel Margin="0,40,0,0"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
                         Visibility="{TemplateBinding AduAttach:PlaceHolderAttach.PlaceHolderVisible}">
                         <Path x:Name="placeholder" Data="{TemplateBinding AduAttach:PlaceHolderAttach.PathData}" 
                               Fill="{StaticResource PlaceHolderBrush}"
                               Stretch="Uniform" Width="80" Height="80"/>
                         <TextBlock x:Name="message"
-                           FontSize="15"
-                           Foreground="{StaticResource PlaceHolderBrush}"
-                           HorizontalAlignment="Center"
-                           Margin="0,20"
+                           FontSize="15" Foreground="{StaticResource PlaceHolderBrush}"
+                           HorizontalAlignment="Center" Margin="0,20"
                            Text="{TemplateBinding AduAttach:PlaceHolderAttach.Message}" />
                      </StackPanel>
                      <AduSkin:MetroScrollViewer Focusable="false" >
@@ -325,7 +328,7 @@
                            <ControlTemplate TargetType="{x:Type ScrollViewer}" >
                               <Grid>
                                  <Grid.ColumnDefinitions>
-                                    <ColumnDefinition x:Name="col_rowheader" Width="1" />
+                                    <ColumnDefinition Width="1" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                  </Grid.ColumnDefinitions>
@@ -335,26 +338,27 @@
                                     <RowDefinition Height="Auto" />
                                  </Grid.RowDefinitions>
                                  <!--表格头部-->
-                                 <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Column="1" Grid.ColumnSpan="2"
+                                 <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" 
+                                       Grid.Column="1" Grid.ColumnSpan="2"
                                     Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
                                  <!--主数据区-->
                                  <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                                    <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" />
+                                    <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" Grid.ColumnSpan="2"
+                                       CanContentScroll="{TemplateBinding CanContentScroll}"/>
                                  </Grid>
                                  <!--垂直滑动条-->
-                                 <ScrollBar x:Name="PART_VerticalScrollBar" BorderBrush="#000" 
+                                 <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" 
+                                       BorderBrush="{StaticResource NormalBorderBrush}" 
                                        Style="{StaticResource scrollBarStyle}" 
                                        Orientation="Vertical" HorizontalAlignment="Right" 
-                                       Maximum="{TemplateBinding ScrollableHeight}"
-                                       Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" 
+                                       Maximum="{TemplateBinding ScrollableHeight}" 
                                        Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
                                        Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
                                        ViewportSize="{TemplateBinding ViewportHeight}"/>
                                  <!--横向滑动条-->
-                                 <ScrollBar x:Name="PART_HorizontalScrollBar" 
-                                       Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+                                 <ScrollBar x:Name="PART_HorizontalScrollBar" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" 
                                        Style="{StaticResource scrollBarStyle1}" 
-                                       FlowDirection="RightToLeft" BorderBrush="#000" 
+                                       FlowDirection="RightToLeft" BorderBrush="{DynamicResource NormalBorderBrush}" 
                                        Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal"
                                        Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
                                        Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
@@ -368,7 +372,7 @@
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="false">
-                     <Setter TargetName="border" Property="Opacity" Value=".5"/>
+                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}"/>
                   </Trigger>
                   <Trigger Property="AduAttach:PlaceHolderAttach.IsLoading" Value="true">
                      <Setter Property="AduAttach:PlaceHolderAttach.PathData" Value="{StaticResource Icon_Loading}"/>
