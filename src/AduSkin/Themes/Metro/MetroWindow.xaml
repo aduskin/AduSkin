@@ -20,26 +20,27 @@
             <ControlTemplate TargetType="{x:Type Button}">
                <Grid>
                   <Rectangle x:Name="backRectangle"
-                            Fill="{TemplateBinding Background}" Opacity="0"/>
-                  <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                     Fill="{TemplateBinding Background}" Opacity="0"/>
+                  <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                   <VisualStateManager.VisualStateGroups>
                      <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
                            <Storyboard>
-                              <DoubleAnimation Storyboard.TargetName="backRectangle"  Storyboard.TargetProperty="(UIElement.Opacity)"
-                                            To="0" Duration="0:0:0.1" />
+                              <DoubleAnimation Storyboard.TargetName="backRectangle"  
+                                    Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.1" />
                            </Storyboard>
                         </VisualState>
                         <VisualState x:Name="MouseOver">
                            <Storyboard>
-                              <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)"
-                                            To="0.15" Duration="0:0:0.1" />
+                              <DoubleAnimation Storyboard.TargetName="backRectangle" 
+                                    Storyboard.TargetProperty="(UIElement.Opacity)" To="0.15" Duration="0:0:0.1" />
                            </Storyboard>
                         </VisualState>
                         <VisualState x:Name="Pressed">
                            <Storyboard>
-                              <DoubleAnimation Storyboard.TargetName="backRectangle" Storyboard.TargetProperty="(UIElement.Opacity)"
-                                            To="0.05" Duration="0:0:0.1" />
+                              <DoubleAnimation Storyboard.TargetName="backRectangle" 
+                                    Storyboard.TargetProperty="(UIElement.Opacity)" To="0.05" Duration="0:0:0.1" />
                            </Storyboard>
                         </VisualState>
                         <VisualState x:Name="Disabled" />
@@ -51,15 +52,15 @@
       </Setter>
    </Style>
 
-   <Style TargetType="{x:Type Metro:MetroWindow}">
-      <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-      <Setter Property="SnapsToDevicePixels" Value="True" />
-      <Setter Property="WindowStyle" Value="SingleBorderWindow" />
+   <Style TargetType="{x:Type Metro:MetroWindow}"> 
       <Setter Property="Background" Value="{StaticResource NormalWhite}" /> 
       <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
       <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
       <Setter Property="TitleForeground" Value="{StaticResource NormalBlack}" />
       <Setter Property="SysButtonColor" Value="{StaticResource NormalBlack}" />
+      <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="WindowStyle" Value="SingleBorderWindow" />
       <Setter Property="Icon" Value="/AduSkin;component/Resources/logo.ico" />
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="FontSize" Value="12" />
@@ -80,15 +81,18 @@
 
       <Setter Property="Shell:WindowChrome.WindowChrome">
          <Setter.Value>
-            <Shell:WindowChrome CaptionHeight="40" CornerRadius="5" GlassFrameThickness="-1" NonClientFrameEdges="None" ResizeBorderThickness="5" UseAeroCaptionButtons="False" />
+            <Shell:WindowChrome CaptionHeight="40" CornerRadius="5" 
+                  GlassFrameThickness="-1" NonClientFrameEdges="None" ResizeBorderThickness="5" UseAeroCaptionButtons="False" />
          </Setter.Value>
       </Setter>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroWindow}">
-               <Border x:Name="PART_WindowBorder" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+               <Border x:Name="PART_WindowBorder" Background="{TemplateBinding Background}" 
+                       BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                   <Grid Background="{StaticResource NormalWhite}" x:Name="WindowGrid">
-                     <Border Margin="-1" BorderBrush="#000000" BorderThickness="{Binding BorderThickness, ElementName=border}" Opacity="0.15" />
+                     <Border Margin="-1" BorderBrush="{DynamicResource NormalBlack15}" 
+                           BorderThickness="{Binding BorderThickness, ElementName=border}"/>
                      <Grid x:Name="WIdowGrid">
                         <Grid.RowDefinitions>
                            <RowDefinition x:Name="TitleHeight" Height="40" />
@@ -132,7 +136,7 @@
                               <ContentPresenter/>
                            </AdornerDecorator>
                         </Grid>
-                        <Rectangle x:Name="disableRectangle" Grid.RowSpan="2" Fill="#FF000000" IsHitTestVisible="False" Opacity="0" />
+                        <Rectangle x:Name="disableRectangle" Grid.RowSpan="2" Fill="{StaticResource NormalBlack}" IsHitTestVisible="False" Opacity="0" />
                      </Grid>
                   </Grid>
                   <VisualStateManager.VisualStateGroups>
