@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
-             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
+             xmlns:ViewModel="clr-namespace:AduSkin.Demo.ViewModel"
              xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="900">
    <UserControl.DataContext>
-      <viewmodel:PracticalCaseViewModel/>
+      <ViewModel:PracticalCaseViewModel/>
    </UserControl.DataContext>
    <Grid>
       <Grid.ColumnDefinitions>

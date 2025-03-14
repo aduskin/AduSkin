@@ -15,23 +15,11 @@ namespace AduSkin.Demo.ViewModel
    {
       public PracticalCaseViewModel()
       {
-         #region 工具栏
-         AllTool = new List<ControlModel>()
-         {
-            //new ControlModel("百度翻译", typeof(BaiduTranslate),DemoType.Tool),
-            new ControlModel("接口调试工具", typeof(HttpTool), DemoType.Tool, ControlState.InDev),
-         };
-         _SearchTool.Source = _AllTool;
-         _SearchTool.View.Culture = new System.Globalization.CultureInfo("zh-CN");
-         _SearchTool.View.Filter = (obj) => ((obj as ControlModel).Title + (obj as ControlModel).TitlePinyin).ToLower().Contains(SearchKey.ToLower());
-         _SearchTool.View.SortDescriptions.Add(new SortDescription(nameof(ControlModel.Title), ListSortDirection.Ascending));
-         #endregion
-
          #region 实用控件
          AllControl = new List<ControlModel>()
          {
             new ControlModel("Win10菜单", typeof(SortGroup)),
-             new ControlModel("表单校验", typeof(FormVerificationDemo)),
+            new ControlModel("表单校验", typeof(FormVerificationDemo)),
             new ControlModel("步骤条", typeof(StepBarDemo)),
             new ControlModel("图片上传", typeof(UploadPic)),
             new ControlModel("视频控件", typeof(VideoPlayer)),
@@ -48,11 +36,24 @@ namespace AduSkin.Demo.ViewModel
             new ControlModel("右侧弹框", typeof(NoticeDemo)),
             new ControlModel("过渡容器", typeof(TransitioningContentControlDemo), DemoType.Demo),
             new ControlModel("消息弹框", typeof(MessageBoxDemo), DemoType.Demo, ControlState.New),
+            new ControlModel("滚动字幕", typeof(RunningBlockDemo)),
          };
          _SearchControl.Source = _AllControl;
          _SearchControl.View.Culture = new System.Globalization.CultureInfo("zh-CN");
          _SearchControl.View.Filter = (obj) => ((obj as ControlModel).Title + (obj as ControlModel).TitlePinyin).ToLower().Contains(SearchKey.ToLower());
          _SearchControl.View.SortDescriptions.Add(new SortDescription(nameof(ControlModel.Title), ListSortDirection.Ascending));
+         #endregion
+
+         #region 工具栏
+         AllTool = new List<ControlModel>()
+         {
+            //new ControlModel("百度翻译", typeof(BaiduTranslate),DemoType.Tool),
+            new ControlModel("接口调试工具", typeof(HttpTool), DemoType.Tool, ControlState.InDev),
+         };
+         _SearchTool.Source = _AllTool;
+         _SearchTool.View.Culture = new System.Globalization.CultureInfo("zh-CN");
+         _SearchTool.View.Filter = (obj) => ((obj as ControlModel).Title + (obj as ControlModel).TitlePinyin).ToLower().Contains(SearchKey.ToLower());
+         _SearchTool.View.SortDescriptions.Add(new SortDescription(nameof(ControlModel.Title), ListSortDirection.Ascending));
          #endregion
       }
 

@@ -4,6 +4,7 @@
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
+   
    <Style TargetType="{x:Type Adu:AduTabItem}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="FontSize" Value="12"/>

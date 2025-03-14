@@ -23,6 +23,12 @@
       <Resource Include="Resources/**" />
    </ItemGroup>
    <ItemGroup>
+     <Compile Remove="Controls\Validation\**" />
+     <EmbeddedResource Remove="Controls\Validation\**" />
+     <None Remove="Controls\Validation\**" />
+     <Page Remove="Controls\Validation\**" />
+   </ItemGroup>
+   <ItemGroup>
       <None Include="..\..\README.md">
          <Pack>True</Pack>
          <PackagePath>
@@ -37,8 +43,5 @@
    <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.3.0" />
       <PackageReference Include="System.Management" Version="8.0.0" />
-   </ItemGroup>
-   <ItemGroup>
-     <Folder Include="Controls\Validation\" />
    </ItemGroup>
 </Project>

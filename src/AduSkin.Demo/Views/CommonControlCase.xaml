@@ -51,7 +51,7 @@
                         </Border>
                      </StackPanel>
                   </AduSkin:AduRunningBlock>
-                  <AduSkin:AduRunningBlock Content="AduSkin - 追求极致，永臻完美" 
+                  <AduSkin:AduRunningBlock Content="{Binding RunningText}" 
                            FontSize="16" FontWeight="Light" Foreground="OrangeRed" Duration="0:0:10"/>
                </StackPanel>
             </Border>

@@ -2,123 +2,115 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
 
-    
-    <DataTemplate x:Key="FirstSlotTemplate">
-        <Grid>
-            <Ellipse x:Name="Slot1" Width="15" Height="15" Fill="#30AAADAF" />
-            <Ellipse x:Name="Slot2" Width="7" Height="7" Fill="#FF6501" />
-        </Grid>
-    </DataTemplate>
+   <DataTemplate x:Key="FirstSlotTemplate">
+      <Grid>
+         <Ellipse x:Name="Slot1" Width="15" Height="15" Fill="{StaticResource NormalBlack10}" />
+         <Ellipse x:Name="Slot2" Width="7" Height="7" Fill="{StaticResource Brush}" />
+      </Grid>
+   </DataTemplate>
 
-    <DataTemplate x:Key="LastSlotTemplate">
-        <Grid>
-            <Ellipse x:Name="Slot1" Width="15" Height="15" Fill="#AAADAF" />
-            <Path x:Name="path" Width="9"
-                  Data="{StaticResource Icon_Gou}"
-                  Fill="{DynamicResource NormalWhite}" Stretch="Uniform" />
-        </Grid>
-    </DataTemplate>
+   <DataTemplate x:Key="LastSlotTemplate">
+      <Grid>
+         <Ellipse x:Name="Slot1" Width="15" Height="15" Fill="{StaticResource NormalBlack10}" />
+         <Path x:Name="path" Width="9" Data="{StaticResource Icon_Gou}" Fill="{DynamicResource NormalWhite}" Stretch="Uniform" />
+      </Grid>
+   </DataTemplate>
 
-    <Style TargetType="{x:Type Adu:AduTimelineItem}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-        <Setter Property="Padding" Value="15,0,15,0" />
-        <Setter Property="MinHeight" Value="50" />
-        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="UseLayoutRounding" Value="True" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Adu:AduTimelineItem}">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <ContentPresenter x:Name="Slot" ContentTemplate="{Binding MiddleSlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-                        <Rectangle x:Name="Line" Grid.Row="1" Width="1"
-                                   Fill="{TemplateBinding BorderBrush}" />
-                        <ContentPresenter Grid.RowSpan="2" Grid.Column="1"
-                                          Margin="{TemplateBinding Padding}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <!--
-                            当IsCustomEverySlot为True时，FirstSlotTemplate、MiddleSlotTemplate、LastSlotTemplate都将失效，
-                            只能设置SlotTemplate来定义每一个时间轴点的样式
-                        -->
-                        <MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsFirstItem, RelativeSource={RelativeSource Self}}" Value="True" />
-                                <Condition Binding="{Binding IsCustomEverySlot, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" Value="False" />
-                            </MultiDataTrigger.Conditions>
-                            <Setter TargetName="Slot" Property="ContentTemplate" Value="{Binding FirstSlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-                        </MultiDataTrigger>
-                        <MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsLastItem, RelativeSource={RelativeSource Self}}" Value="True" />
-                                <Condition Binding="{Binding IsCustomEverySlot, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" Value="False" />
-                            </MultiDataTrigger.Conditions>
-                            <Setter TargetName="Slot" Property="ContentTemplate" Value="{Binding LastSlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-                        </MultiDataTrigger>
-                        <MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsMiddleItem, RelativeSource={RelativeSource Self}}" Value="True" />
-                                <Condition Binding="{Binding IsCustomEverySlot, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" Value="False" />
-                            </MultiDataTrigger.Conditions>
-                            <Setter TargetName="Slot" Property="ContentTemplate" Value="{Binding MiddleSlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-                        </MultiDataTrigger>
-                        <DataTrigger Binding="{Binding IsCustomEverySlot, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" Value="True">
-                            <Setter TargetName="Slot" Property="ContentTemplate" Value="{Binding SlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
-                        </DataTrigger>
-                        <Trigger Property="IsLastItem" Value="True">
-                            <Setter TargetName="Line" Property="Visibility" Value="Collapsed" />
-                            <Setter Property="VerticalAlignment" Value="Bottom" />
-                        </Trigger>
-                        <Trigger Property="IsMiddleItem" Value="True">
-                            <Setter TargetName="Line" Property="Visibility" Value="Visible" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+   <Style TargetType="{x:Type Adu:AduTimelineItem}">
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
+      <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+      <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+      <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+      <Setter Property="Padding" Value="15,0" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="UseLayoutRounding" Value="True" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Adu:AduTimelineItem}">
+               <Grid>
+                  <Grid.RowDefinitions>
+                     <RowDefinition Height="auto" />
+                     <RowDefinition Height="*" />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="auto" />
+                     <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <ContentPresenter x:Name="Slot" ContentTemplate="{Binding MiddleSlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+                  <Rectangle x:Name="Line" Grid.Row="1" Width="1" Fill="{TemplateBinding BorderBrush}" />
+                  <ContentPresenter Grid.RowSpan="2" Grid.Column="1" Margin="{TemplateBinding Padding}"
+                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+               </Grid>
+               <ControlTemplate.Triggers>
+                  <MultiDataTrigger>
+                     <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding IsFirstItem, RelativeSource={RelativeSource Self}}" Value="True" />
+                        <Condition Binding="{Binding IsCustomEverySlot, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" Value="False" />
+                     </MultiDataTrigger.Conditions>
+                     <Setter TargetName="Slot" Property="ContentTemplate" Value="{Binding FirstSlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+                  </MultiDataTrigger>
+                  <MultiDataTrigger>
+                     <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding IsLastItem, RelativeSource={RelativeSource Self}}" Value="True" />
+                        <Condition Binding="{Binding IsCustomEverySlot, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" Value="False" />
+                     </MultiDataTrigger.Conditions>
+                     <Setter TargetName="Slot" Property="ContentTemplate" Value="{Binding LastSlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+                  </MultiDataTrigger>
+                  <MultiDataTrigger>
+                     <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding IsMiddleItem, RelativeSource={RelativeSource Self}}" Value="True" />
+                        <Condition Binding="{Binding IsCustomEverySlot, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" Value="False" />
+                     </MultiDataTrigger.Conditions>
+                     <Setter TargetName="Slot" Property="ContentTemplate" Value="{Binding MiddleSlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+                  </MultiDataTrigger>
+                  <DataTrigger Binding="{Binding IsCustomEverySlot, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" Value="True">
+                     <Setter TargetName="Slot" Property="ContentTemplate" Value="{Binding SlotTemplate, RelativeSource={RelativeSource AncestorType={x:Type Adu:AduTimeline}}}" />
+                  </DataTrigger>
+                  <Trigger Property="IsLastItem" Value="True">
+                     <Setter TargetName="Line" Property="Visibility" Value="Collapsed"/>
+                     <Setter Property="VerticalAlignment" Value="Bottom" />
+                  </Trigger>
+                  <Trigger Property="IsMiddleItem" Value="True">
+                     <Setter TargetName="Line" Property="Visibility" Value="Visible" />
+                  </Trigger>
+               </ControlTemplate.Triggers>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 
-    <Style TargetType="{x:Type Adu:AduTimeline}">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="#F0F0F0" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Foreground" Value="Black" />
-        <Setter Property="HorizontalContentAlignment" Value="Left" />
-        <Setter Property="VerticalContentAlignment" Value="Top" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="UseLayoutRounding" Value="True" />
-        <Setter Property="FirstSlotTemplate" Value="{StaticResource FirstSlotTemplate}" />
-        <Setter Property="MiddleSlotTemplate" Value="{StaticResource LastSlotTemplate}" />
-        <Setter Property="LastSlotTemplate" Value="{StaticResource LastSlotTemplate}" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Adu:AduTimeline}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                            UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
-                        <Metro:MetroScrollViewer>
-                            <ItemsPresenter />
-                        </Metro:MetroScrollViewer>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+   <Style TargetType="{x:Type Adu:AduTimeline}">
+      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
+      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+      <Setter Property="VerticalContentAlignment" Value="Top" />
+      <Setter Property="SnapsToDevicePixels" Value="True" />
+      <Setter Property="UseLayoutRounding" Value="True" />
+      <Setter Property="FirstSlotTemplate" Value="{StaticResource FirstSlotTemplate}" />
+      <Setter Property="MiddleSlotTemplate" Value="{StaticResource LastSlotTemplate}" />
+      <Setter Property="LastSlotTemplate" Value="{StaticResource LastSlotTemplate}" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Adu:AduTimeline}">
+               <Border Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                     UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+                  <Metro:MetroScrollViewer>
+                     <ItemsPresenter />
+                  </Metro:MetroScrollViewer>
+               </Border>
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
 </ResourceDictionary>
