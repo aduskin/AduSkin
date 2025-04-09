@@ -7,15 +7,13 @@
 
     <Style TargetType="{x:Type Metro:MetroExpander}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
-
+        <Setter Property="SnapsToDevicePixels" Value="True"/> 
         <Setter Property="MinWidth" Value="180"/>
         <Setter Property="CanHide" Value="True"/>
         <Setter Property="IsExpanded" Value="False"/>
         <Setter Property="Hint" Value="{x:Null}"/>
         <Setter Property="HintBackground" Value="#999"/>
-        <Setter Property="HintForeground" Value="{DynamicResource NormalWhite}"/>
-
+        <Setter Property="HintForeground" Value="{DynamicResource NormalWhite}"/> 
         <Style.Triggers>
             <Trigger Property="CanHide" Value="True">
                 <Setter Property="Template">

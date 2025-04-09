@@ -8,52 +8,13 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/> 
    </ResourceDictionary.MergedDictionaries>
 
-   <!--一级菜单-->
-   <!--<Style TargetType="AduSkin:AduTitleMenu">
-      <Setter Property="BorderThickness" Value="1"/>
-      <Setter Property="Foreground" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="Background" Value="{StaticResource ShadowBackgroundBrush}"/>
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource ShadowMouseOverBackgroundBrush}"/>
-      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="{StaticResource ShadowPressedBackgroundBrush}"/>
-      <Setter Property="Template">
-         <Setter.Value>
-            <ControlTemplate TargetType="AduSkin:AduTitleMenu">
-               <Grid x:Name="bg" Height="30" Width="{TemplateBinding Width}" 
-               Background="{TemplateBinding Background}">
-                  <TextBlock Margin="15 0 15 0" 
-                  VerticalAlignment="Center" 
-                  Text="{Binding Header,RelativeSource={RelativeSource TemplatedParent}}"
-                  Foreground="{TemplateBinding Foreground}"/>
-                  <Popup Placement="Bottom" AllowsTransparency="True" 
-                     Focusable="False" IsOpen="{TemplateBinding IsSubmenuOpen}">
-                     <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-                     SnapsToDevicePixels="True">
-                        <StackPanel Background="{TemplateBinding Background}" IsItemsHost="True" 
-                        KeyboardNavigation.DirectionalNavigation="Cycle"/>
-                     </Border>
-                  </Popup>
-               </Grid>
-               <ControlTemplate.Triggers>
-                  <Trigger Property="IsMouseOver" Value="true">
-                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-                  </Trigger>
-                  <Trigger Property="IsSubmenuOpen" Value="true">
-                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-                  </Trigger>
-               </ControlTemplate.Triggers>
-            </ControlTemplate>
-         </Setter.Value>
-      </Setter>
-   </Style>-->
-
    <!--一级以上菜单栏样式-->
    <Style TargetType="AduSkin:AduTitleMenuItem">
-      <Setter Property="Background" Value="{StaticResource ShadowBackgroundBrush}"/>
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
+      <Setter Property="Background" Value="{StaticResource NormalBlack}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
       <Setter Property="Foreground" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource ShadowMouseOverBackgroundBrush}"/>
-      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="{StaticResource ShadowPressedBackgroundBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalBlack90}"/>
+      <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="{StaticResource NormalBlack}"/>
       <Setter Property="MinHeight" Value="30"/>
       <Setter Property="Template">
          <Setter.Value>

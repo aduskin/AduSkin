@@ -3,27 +3,29 @@
                     xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type AduSkin:AduFormLable}">
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalTransparentBrush}"/>
+      <Setter Property="TitleForeground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="PromptForeground" Value="{DynamicResource ToolTipForeground}"/>
       <Setter Property="MinHeight" Value="30"/>
       <Setter Property="FontSize" Value="12"/>
-      <Setter Property="Foreground" Value="#000"/>
       <Setter Property="TitleWidth" Value="50"/>
       <Setter Property="TitleMinWidth" Value="50"/>
-      <Setter Property="TitleHorizontalAlignment" Value="Right"/>
-      <Setter Property="TitleForeground" Value="Black"/>
+      <Setter Property="TitleHorizontalAlignment" Value="Right"/> 
       <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
       <Setter Property="VerticalContentAlignment" Value="Stretch"/>
       <Setter Property="TitlePadding" Value="0"/>
-      <Setter Property="BorderBrush" Value="Transparent"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduFormLable}">
-               <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="2" Opacity="1"
-                     BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
-                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" UseLayoutRounding="{TemplateBinding UseLayoutRounding}" 
-                     MinHeight="{TemplateBinding MinHeight}">
+               <Border x:Name="border" Background="{TemplateBinding Background}" 
+                  CornerRadius="2" Opacity="1" MinHeight="{TemplateBinding MinHeight}"
+                  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
                   <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition MinWidth="{TemplateBinding TitleMinWidth}" Width="auto"/>
@@ -40,7 +42,8 @@
                      <ContentPresenter Grid.Column="1" Margin="5,0,0,0" 
                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                            Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                           ContentTemplate="{TemplateBinding ContentTemplate}" RecognizesAccessKey="True" SnapsToDevicePixels="True" />
+                           ContentTemplate="{TemplateBinding ContentTemplate}" 
+                           RecognizesAccessKey="True" SnapsToDevicePixels="True" />
                      <TextBlock x:Name="txtPrompt" Grid.Column="2" Margin="5,0,0,0" 
                            VerticalAlignment="Center" HorizontalAlignment="Left" 
                            FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding PromptForeground}" 

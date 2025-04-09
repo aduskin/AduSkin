@@ -1,13 +1,9 @@
 using System.Windows;
 using System.Windows.Markup;
 
-[assembly:ThemeInfo(
-    ResourceDictionaryLocation.None, //主题特定资源词典所处位置
-                             //(当资源未在页面
-                             //或应用程序资源字典中找到时使用)
-    ResourceDictionaryLocation.SourceAssembly //常规资源词典所处位置
-                                      //(当资源未在页面
-                                      //、应用程序或任何主题专用资源字典中找到时使用)
+[assembly: ThemeInfo(
+   ResourceDictionaryLocation.None, //主题资源字典位置
+   ResourceDictionaryLocation.SourceAssembly //常规资源字典位置
 )]
 
 //命名空间映射
@@ -29,4 +25,4 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("https://github.com/aduskin", "AduSkin.Utility.Element")]
 [assembly: XmlnsDefinition("https://github.com/aduskin", "AduSkin.Utility.Extend")]
 [assembly: XmlnsDefinition("https://github.com/aduskin", "AduSkin.Utility.Media")]
-[assembly: XmlnsPrefix("https://github.com/aduskin", "adu")]
+[assembly: XmlnsDefinition("https://github.com/aduskin", " AduSkin.Themes")]

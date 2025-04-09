@@ -4,12 +4,14 @@
                     xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Effects.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--子菜单-->
    <Style TargetType="{x:Type Metro:MetroMenuItem}"> 
-      <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="Foreground" Value="{StaticResource NormalBlack}"/>
-      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{StaticResource NormalBorderBrush}" />
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="20"/>
@@ -24,7 +26,10 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroMenuItem}">
                <Grid>
-                  <Border x:Name="backRectangle" Grid.ColumnSpan="3" CornerRadius="6" Background="#888" Opacity="0" Height="{TemplateBinding Height}" Margin="6,0"/>
+                  <Border x:Name="backRectangle" Grid.ColumnSpan="3" CornerRadius="6" 
+                     Background="{DynamicResource NormalTransparentBrush}" 
+                     Margin="6,0"
+                     Height="{TemplateBinding Height}" />
                   <Grid Margin="6,0">
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
@@ -34,12 +39,11 @@
                         <ColumnDefinition Width="0" x:Name="subWidth"/>
                      </Grid.ColumnDefinitions> 
                      <!--图标-->
-                     <ContentPresenter 
+                     <ContentPresenter x:Name="icon"
                         Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
                         Height="{TemplateBinding AduAttach:PathDataAttach.Width}" 
                         Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}"
-                        HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Visibility="{TemplateBinding Icon,Converter={StaticResource NullToVisibilityConverter}}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" 
                         Content="{TemplateBinding Icon}"  
                         RecognizesAccessKey="True" SnapsToDevicePixels="True" />
 
@@ -62,7 +66,8 @@
                      <Polyline Grid.Column="4" Points="0,0 5,5 0,10" Stroke="{TemplateBinding Foreground}" 
                            VerticalAlignment="Center" Margin="0,0,8,0"/>
                   </Grid>
-                  <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False"  VerticalOffset="-6"
+                  <Popup x:Name="PART_Popup" AllowsTransparency="True"
+                         Focusable="False"  VerticalOffset="-6"
                          IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
                          PopupAnimation="Fade" Placement="Right">
                      <Border Grid.Row="1" RenderOptions.ClearTypeHint="Enabled" 
@@ -78,8 +83,11 @@
                   </Popup>
                </Grid>
                <ControlTemplate.Triggers>
+                  <Trigger Property="Icon" Value="{x:Null}">
+                     <Setter TargetName="icon" Property="Visibility" Value="Collapsed"/>
+                  </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}"/>
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}"/>
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>

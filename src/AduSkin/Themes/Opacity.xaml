@@ -7,4 +7,5 @@
    <sys:Double x:Key="MouseOverOpacity">0.8</sys:Double>
    <sys:Double x:Key="DisableOpacity">0.5</sys:Double>
    <sys:Double x:Key="NotSelectedOpacity">0.6</sys:Double>
+   <sys:Double x:Key="InputHintOpacity">0.25</sys:Double>
 </ResourceDictionary>

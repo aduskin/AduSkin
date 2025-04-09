@@ -187,11 +187,11 @@
 
    <Style TargetType="{x:Type Adu:AduFlatButton}">
       <Setter Property="Width" Value="100" />
-      <Setter Property="Height" Value="32" />
+      <Setter Property="Height" Value="30" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="BorderBrush" Value="Transparent" />
       <Setter Property="Foreground" Value="{DynamicResource NormalWhite}" />
-      <Setter Property="Background" Value="#3399FF" />
+      <Setter Property="Background" Value="{DynamicResource InfoBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -199,10 +199,10 @@
       <Setter Property="Template" Value="{StaticResource Button}" />
       <Style.Triggers>
          <Trigger Property="Type" Value="Default">
-            <Setter Property="Background" Value="#F7F7F7" />
-            <Setter Property="Foreground" Value="#657180" />
+            <Setter Property="Background" Value="{DynamicResource NormalBackground}" />
+            <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="#C3C6C9" />
+            <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
             <Setter Property="Template" Value="{StaticResource Default}" />
          </Trigger>
          <Trigger Property="Type" Value="ghost">
@@ -219,16 +219,16 @@
             <Setter Property="BorderThickness" Value="0" />
          </Trigger>
          <Trigger Property="Type" Value="info">
-            <Setter Property="Background" Value="#3399FF" />
+            <Setter Property="Background" Value="{DynamicResource InfoBrush}" />
          </Trigger>
          <Trigger Property="Type" Value="success">
-            <Setter Property="Background" Value="#61B891" />
+            <Setter Property="Background" Value="{DynamicResource SuccessBrush}" />
          </Trigger>
          <Trigger Property="Type" Value="error">
-            <Setter Property="Background" Value="#FF5500" />
+            <Setter Property="Background" Value="{DynamicResource ErrorBrush}" />
          </Trigger>
          <Trigger Property="Type" Value="warning">
-            <Setter Property="Background" Value="#FF9900" />
+            <Setter Property="Background" Value="{DynamicResource WarnBrush}" />
          </Trigger>
       </Style.Triggers>
    </Style>

@@ -5,10 +5,10 @@
                     xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Converters.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-
-   <Converter:StringToVisibility x:Key="StringToVisibility"/>
-
+ 
    <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -40,22 +40,26 @@
    </Style>
 
    <Style TargetType="{x:Type AduSkin:MetroTextBox}">
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{DynamicResource NormalPathBrush}" />
+      <Setter Property="AduAttach:PathDataAttach.Width" Value="12" />
+      <Setter Property="AduAttach:PathDataAttach.Margin" Value="8,0,2,0"/>
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{DynamicResource Icon_Search}" />
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}"/>
+      <Setter Property="MouseMoveBackground" Value="{DynamicResource NormalBackground}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}"/> 
+      <Setter Property="TitleForeground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="TitleMinWidth" Value="80"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="2"/>
+      <Setter Property="AduAttach:InputAttach.InputHint" Value="请输入..."/>
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>
       <Setter Property="AcceptsReturn" Value="False"/>
       <Setter Property="TextWrapping" Value="NoWrap"/>
       <Setter Property="Padding" Value="4,0"/>
       <Setter Property="VerticalAlignment" Value="Center"/>
-      <Setter Property="VerticalContentAlignment" Value="Center"/>
-      <Setter Property="AduAttach:InputAttach.InputHint" Value="请输入..."/>
-      <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
-      <Setter Property="MouseMoveBackground" Value="{DynamicResource NormalWhite}"/>
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="Foreground" Value="{StaticResource NormalBlack}"/>
-      <Setter Property="TitleForeground" Value="{StaticResource NormalBlack}"/>
-      <Setter Property="TitleMinWidth" Value="80"/>
-      <Setter Property="BorderThickness" Value="1"/>
-      <Setter Property="CornerRadius" Value="2"/> 
+      <Setter Property="VerticalContentAlignment" Value="Center"/>   
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:MetroTextBox}">
@@ -70,10 +74,14 @@
                      HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,6"/>
                   <Border x:Name="back" Grid.Column="2" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}">
                      <Grid>
-                        <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="#FF000000" Opacity="0.15"/>
-                        <Border x:Name="bordermove" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" Opacity="0"/>
-                        <Border x:Name="bordertrue" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="#FF99cb8a" Visibility="Hidden"/>
-                        <Border x:Name="borderfalse" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="#FFe99595" Visibility="Hidden"/>
+                        <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{DynamicResource NormalBorderBrush}" 
+                              CornerRadius="{TemplateBinding CornerRadius}" />
+                        <Border x:Name="bordermove" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" 
+                              CornerRadius="{TemplateBinding CornerRadius}" Opacity="0"/>
+                        <Border x:Name="bordertrue" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="#FF99cb8a" 
+                              CornerRadius="{TemplateBinding CornerRadius}" Visibility="Hidden"/>
+                        <Border x:Name="borderfalse" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="#FFe99595" 
+                              CornerRadius="{TemplateBinding CornerRadius}" Visibility="Hidden"/>
                         <Grid x:Name="content">
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition Width="Auto" x:Name="iconWidth"/>
@@ -81,19 +89,28 @@
                               <ColumnDefinition Width="Auto" x:Name="buttonWidth1"/>
                               <ColumnDefinition Width="Auto" x:Name="buttonWidth2"/>
                            </Grid.ColumnDefinitions>
-                           <Image Grid.Column="0" Width="16" Height="16" Margin="6,6,0,6" Source="{TemplateBinding Icon}" 
+                           <!--<Image Grid.Column="0" Width="16" Height="16" Margin="6,6,0,6" Source="{TemplateBinding Icon}" 
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>-->
+                           <Path Stretch="Uniform" 
+                              Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
+                              Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+                              Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" 
+                              Data="{TemplateBinding AduAttach:PathDataAttach.PathData}" 
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
-                           <AduSkin:MetroTextBlock Grid.Column="1" x:Name="inputHint" Opacity="0" Margin="{TemplateBinding Padding}" 
+                           <AduSkin:MetroTextBlock x:Name="inputHint" Grid.Column="1" Opacity="{DynamicResource InputHintOpacity}"
+                              Visibility="Collapsed" Margin="{TemplateBinding Padding}" IsHitTestVisible="False"
                               Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding AduAttach:InputAttach.InputHint}"  
-                              HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" IsHitTestVisible="False"/> 
+                              HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/> 
                            
                            <ScrollViewer Grid.Column="1" x:Name="PART_ContentHost" Focusable="false" 
                               HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" 
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
- 
-                           <Button x:Name="button" Focusable="False" Grid.Column="3" Content="{TemplateBinding ButtonTitle}" 
-                              Margin="0,6" Style="{StaticResource buttonStyle}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+
+                           <Button x:Name="button" Grid.Column="3" Foreground="{TemplateBinding TitleForeground}"
+                              Content="{TemplateBinding ButtonTitle}" Focusable="False" 
+                              Margin="0,6" Style="{StaticResource buttonStyle}" 
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                               Command="AduSkin:MetroTextBox.ButtonClickCommand"/>
                         </Grid>
                      </Grid>
@@ -102,23 +119,24 @@
                          IsOpen="{TemplateBinding IsOpenPopupHint}"
                          AllowsTransparency="True" Focusable="False" Placement="RelativePoint" 
                          VerticalOffset="-42" HorizontalOffset="-4" PopupAnimation="Fade">
-                     <Grid>
-                        <StackPanel Visibility="{TemplateBinding PopupHint, Converter={StaticResource StringToVisibility}}">
-                           <Border x:Name="popupborder" CornerRadius="2" Background="{TemplateBinding BorderBrush}">
-                              <AduSkin:MetroTextBlock x:Name="popupText" Text="{TemplateBinding PopupHint}" Margin="8,6"
-                                    Foreground="{DynamicResource NormalWhite}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                           </Border>
-                           <Polygon x:Name="popuppolygon" Points="0,0 10,0 5,5 0,0" Fill="{TemplateBinding BorderBrush}" Margin="10,0,0,0"/>
-                        </StackPanel>
+                     <Grid Effect="{DynamicResource PopupHintShadowBlack}" Margin="6">
+                        <Grid.RowDefinitions>
+                           <RowDefinition/>
+                           <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Border x:Name="popupborder" CornerRadius="2" Background="{TemplateBinding Background}"/>
+                        <AduSkin:MetroTextBlock x:Name="popupText" Margin="8,6"
+                           Text="{TemplateBinding PopupHint}"
+                           Foreground="{TemplateBinding Foreground }" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Polygon x:Name="popuppolygon" Grid.Row="1" Margin="10,0,0,0"
+                           Points="0,0 10,0 5,5 0,0" Fill="{TemplateBinding Background}" /> 
                      </Grid>
                   </Popup>
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="false">
-                     <Setter Property="Opacity" TargetName="content" Value="0.5"/>
-                     <Setter Property="Opacity" TargetName="title" Value="0.35"/>
-                     <Setter Property="Background" TargetName="back" Value="{DynamicResource NormalWhite}"/>
-                     <Setter Property="Opacity" TargetName="inputHint" Value="0.5"/>
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}"/> 
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="true">
                      <Setter Property="Opacity" TargetName="border" Value="0"/>
@@ -141,7 +159,7 @@
                      <!--<Setter Property="IsOpen" TargetName="popupHint" Value="true"/>-->
                      <Setter Property="BorderBrush" TargetName="bordertrue" Value="#ff6fae5f"/>
                      <Setter Property="BorderBrush" TargetName="borderfalse" Value="#ffe67979"/>
-                     <Setter Property="Opacity" TargetName="inputHint" Value="0"/>
+                     <Setter Property="Visibility" TargetName="inputHint" Value="Collapsed"/>
                      <Setter Property="Background" TargetName="back" Value="{Binding MouseMoveBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
                   </Trigger>
                   <Trigger Property="IsKeyboardFocused" Value="false">
@@ -157,7 +175,7 @@
                         <Condition Property="IsEnabled" Value="true"/>
                         <Condition Property="IsKeyboardFocused" Value="false"/>
                      </MultiTrigger.Conditions>
-                     <Setter Property="Opacity" TargetName="inputHint" Value="0.25"/>
+                     <Setter Property="Visibility" TargetName="inputHint" Value="Visible"/>
                   </MultiTrigger>
                   <Trigger Property="Icon" Value="{x:Null}">
                      <Setter Property="Width" TargetName="iconWidth" Value="0"/>

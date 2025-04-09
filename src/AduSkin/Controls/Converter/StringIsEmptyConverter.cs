@@ -9,7 +9,6 @@ namespace AduSkin.Controls.Converter
    public class StringIsEmptyConverter : IValueConverter
    {
       #region IValueConverter 成员
-
       public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
       {
          return string.IsNullOrEmpty(System.Convert.ToString(value));

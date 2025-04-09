@@ -77,17 +77,6 @@ namespace AduSkin.Controls.Metro
 
       #endregion
 
-      public static readonly DependencyProperty ToggleButtonColorProperty = DependencyProperty.Register("ToggleButtonColor"
-            , typeof(Brush), typeof(AduCheckComboBox), new FrameworkPropertyMetadata(new SolidColorBrush(Color.FromRgb(238, 121, 111))));
-      /// <summary>
-      /// 下拉列表背景色
-      /// </summary>
-      public Brush ToggleButtonColor
-      {
-         get { return (Brush)GetValue(ToggleButtonColorProperty); }
-         set { SetValue(ToggleButtonColorProperty, value); }
-      }
-
       /// <summary>
       /// 获取或者设置下拉列表过滤文本框的显示与隐藏
       /// </summary>
@@ -112,13 +101,6 @@ namespace AduSkin.Controls.Metro
       public static readonly DependencyProperty MaxShowNumberProperty =
           DependencyProperty.Register("MaxShowNumber", typeof(int), typeof(AduCheckComboBox), new PropertyMetadata(4));
 
-      public static readonly DependencyProperty InputHintProperty =
-          DependencyProperty.Register("InputHint", typeof(string), typeof(AduCheckComboBox), new PropertyMetadata("请选择..."));
-      public string InputHint
-      {
-         get { return (string)GetValue(InputHintProperty); }
-         set { SetValue(InputHintProperty, value); }
-      }
 
       public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register("CornerRadius"
         , typeof(CornerRadius), typeof(AduCheckComboBox));
@@ -243,9 +225,10 @@ namespace AduSkin.Controls.Metro
 
          if (this.SelectedStrList.Count > this.MaxShowNumber)
             this.Content = $"选中{this.SelectedStrList.Count}个";
-         else
+         else if (this.SelectedStrList.Count > 0)
             this.Content = this.SelectedStrList.Aggregate("", (current, p) => current + (p + ", ")).TrimEnd(new char[] { ' ' }).TrimEnd(new char[] { ',' });
-
+         else
+            this.Content = null;
          this.Value = this.SelectedStrList.Aggregate("", (current, p) => current + (p + ",")).TrimEnd(new char[] { ',' });
       }
       #endregion

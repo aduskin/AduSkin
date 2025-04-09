@@ -123,7 +123,7 @@ namespace AduSkin.Controls.Metro
       {
          var track = PART_Slider.Template.FindName("PART_Track", PART_Slider) as Track;
          PART_Thumb = PART_Slider.Template.FindName("PART_Thumb", PART_Slider) as Thumb;
-         var checkbox = PART_Thumb.Template.FindName("PART_CheckBox", PART_Thumb) as CheckBox;
+         var checkbox = PART_Thumb.Template.FindName("PART_ToggleButton", PART_Thumb) as ToggleButton;
          if (Math.Abs(Canvas.GetLeft(PART_Path) - Canvas.GetLeft(PART_PathFix)) <= ToleranceValue)
          {
             checkbox.IsChecked = Result = true;

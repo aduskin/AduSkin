@@ -6,6 +6,11 @@
              xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+   <UserControl.Resources>
+      <Style TargetType="TextBlock">
+         <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      </Style>
+   </UserControl.Resources>
    <Grid>
       <AduSkin:MetroScrollViewer HorizontalScrollBarVisibility="Disabled">
          <AduSkin:AduTimeline x:Name="AduTimeLine" IsCustomEverySlot="True" HorizontalAlignment="Center">

@@ -4,6 +4,7 @@
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/DatePicker/AduCalendarDayButton.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <ControlTemplate x:Key="HeaderButtonTemplate" TargetType="{x:Type Button}">

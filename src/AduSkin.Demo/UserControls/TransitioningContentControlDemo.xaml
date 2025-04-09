@@ -6,6 +6,11 @@
              xmlns:Metro="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+   <UserControl.Resources>
+      <Style TargetType="Label">
+         <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      </Style>
+   </UserControl.Resources>
     <Grid Width="700" Height="300">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

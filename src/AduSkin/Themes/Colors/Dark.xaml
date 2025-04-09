@@ -1,0 +1,45 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+   <!--主色-->
+   <Color x:Key="PrimaryColor">#EE796F</Color>
+
+   <!--字体色-->
+   <Color x:Key="NormalForegroundColor">#FFFFFF</Color>
+   <Color x:Key="MouseOverForegroundColor">#FFFFFF</Color>
+   <Color x:Key="PressedForegroundColor">#FFFFFF</Color>
+   <Color x:Key="SelectedForegroundColor">#FFFFFF</Color>
+   <Color x:Key="HighlightForegroundColor">#70FFFFFF</Color>
+   <Color x:Key="DisabledForegroundColor">#70FFFFFF</Color>
+   <Color x:Key="InputHintForegroundColor">#FFFFFF</Color>
+   <Color x:Key="TooltipForegroundColor">#70FFFFFF</Color>
+
+   <!--图标色-->
+   <Color x:Key="NormalPathColor">#FFFFFF</Color>
+   <Color x:Key="MouseOverPathColor">#FFFFFF</Color>
+   <Color x:Key="PressedPathColor">#FFFFFF</Color>
+   <Color x:Key="SelectedPathColor">#FFFFFF</Color>
+   <Color x:Key="DisabledPathColor">#FFFFFF</Color>
+   <Color x:Key="PlaceHolderPathColor">#FFFFFF</Color>
+
+   <!--边框色-->
+   <Color x:Key="NormalBorderColor">#D9D9D9</Color>
+   <Color x:Key="MouseOverBorderColor">#FFD9D9D9</Color>
+   <Color x:Key="PressedBorderColor">#80FFFFFF</Color>
+   <Color x:Key="SelectedBorderColor">#70FFFFFF</Color>
+   <Color x:Key="DisabledBorderColor">#70FFFFFF</Color>
+   <Color x:Key="PanelBorderColor">#D9D9D9</Color>
+
+   <!--背景色-->
+   <Color x:Key="NormalBackgroundColor">#3E3E3E</Color>
+   <Color x:Key="MouseOverBackgroundColor">#313131</Color>
+   <Color x:Key="PressedBackgroundColor">#2E2E2E</Color>
+   <Color x:Key="SelectedBackgroundColor">#4D4D4D</Color>
+   <Color x:Key="PanelBackgroundColor">#2C2C2C</Color>
+   <Color x:Key="HighlightBackgroundColor">#404040</Color>
+   <Color x:Key="AlternationIndex0Color">#4D4D4D</Color>
+   <Color x:Key="AlternationIndex1Color">#5D5D5D</Color>
+   <Color x:Key="DisabledBackgroundColor">#70FFFFFF</Color>
+   <Color x:Key="WindowBackgroundColor">#202020</Color>
+   <Color x:Key="MosaicColor">#4D4D4D</Color>
+</ResourceDictionary>

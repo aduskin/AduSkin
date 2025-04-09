@@ -3,5 +3,7 @@
    <!--Shadow-->
    <DropShadowEffect x:Key="TextShadow-Black" BlurRadius="6" Opacity="0.2" ShadowDepth="0" Color="Black" />
    <DropShadowEffect x:Key="CardShadow-Black" BlurRadius="20" Opacity="0.1"  Direction="270" Color="Black" />
+   <DropShadowEffect x:Key="PopupHintShadowBlack" BlurRadius="6" Opacity="0.15"  Direction="270" ShadowDepth="-6" Color="Black" />
    <DropShadowEffect x:Key="PopupShadowBlack" BlurRadius="20" Opacity="0.1"  Direction="270" Color="Black" />
+   <DropShadowEffect x:Key="NotificationShadowBlack" BlurRadius="20" Opacity="0.1" ShadowDepth="10" Color="Black" />
 </ResourceDictionary>

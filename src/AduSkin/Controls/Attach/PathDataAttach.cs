@@ -29,10 +29,23 @@ namespace AduSkin.Controls.Attach
         public static Geometry GetSelectedPathData(DependencyObject element) 
             => (Geometry) element.GetValue(SelectedPathDataProperty);
 
+      ///// <summary>
+      ///// 默认空图标
+      ///// </summary>
+      //public static readonly DependencyProperty SelectNullPathDataProperty = DependencyProperty.RegisterAttached(
+      //    "SelectNullPathData", typeof(Geometry), typeof(PathDataAttach), new PropertyMetadata(default(Geometry)));
+
+      //public static void SetSelectNullPathDataa(DependencyObject element, Geometry value)
+      //    => element.SetValue(SelectNullPathDataProperty, value);
+
+      //public static Geometry GetSelectNullPathDataa(DependencyObject element)
+      //    => (Geometry)element.GetValue(SelectNullPathDataProperty);
+
+
       /// <summary>
       /// 图标宽度
       /// </summary>
-        public static readonly DependencyProperty WidthProperty = DependencyProperty.RegisterAttached(
+      public static readonly DependencyProperty WidthProperty = DependencyProperty.RegisterAttached(
             "Width", typeof(double), typeof(PathDataAttach), new PropertyMetadata(double.NaN));
 
         public static void SetWidth(DependencyObject element, double value)

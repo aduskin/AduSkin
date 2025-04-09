@@ -6,21 +6,21 @@
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
-   <Style TargetType="{x:Type Adu:AduPathIconButton}">
-      <Setter Property="Height" Value="30"/>
-      <Setter Property="Width" Value="30"/>
+   <Style TargetType="{x:Type Adu:AduPathIconButton}"> 
       <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalTransparentBrush}"/>
       <Setter Property="AduAttach:BackgroundAttach.PressedBackground" Value="{StaticResource NormalTransparentBrush}"/>
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalPathColor}"/>
-      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource MouseOverPathColor}"/>
-      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource PressedPathColor}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalPathBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.MouseOverPathColor" Value="{StaticResource MouseOverPathBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.PressedPathColor" Value="{StaticResource PressedPathBrush}"/>
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_Logo}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="13"/>
       <Setter Property="BorderThickness" Value="0"/>
       <Setter Property="HorizontalContentAlignment" Value="Center"/>
       <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Height" Value="30"/>
+      <Setter Property="Width" Value="30"/>
       <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Padding" Value="0"/>
       <Setter Property="Template">

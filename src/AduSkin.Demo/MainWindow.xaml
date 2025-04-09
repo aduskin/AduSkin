@@ -5,23 +5,26 @@
       xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      mc:Ignorable="d" d:DesignHeight="1200" d:DesignWidth="1600"
+      mc:Ignorable="d" 
+      d:DesignHeight="1200" 
+      d:DesignWidth="1600"
       xmlns:vm="clr-namespace:AduSkin.Demo.ViewModel" 
-      MinWidth="600" MinHeight="350"  
-      SysButtonColor="{StaticResource NormalWhite}"
-      TitleForeground="{StaticResource NormalWhite}"
-      Foreground="{StaticResource NormalBlack}"
-      BorderBrush="{DynamicResource NormalBrush}"
-      Background="{DynamicResource NormalBorderBrush}"
-      Title="AduSkin.Demo" >
+      MinWidth="600" MinHeight="350"   
+      Background="{DynamicResource WindowBackground}"
+      SysButtonColor="{DynamicResource NormalPathBrush}"
+      BorderBrush="{DynamicResource NormalBackground}"
+      TitleForeground="{DynamicResource NormalForeground}"  
+      Title="AduSkin.Demo">
    <Metro:MetroWindow.Menu>
-      <Metro:MetroTitleMenu Height="40" HorizontalAlignment="Right"> 
-         <Metro:MetroTitleMenuItem Header="联系" Metro:BorderAttach.CornerRadius="6" WindowChrome.IsHitTestVisibleInChrome="True">
+      <Metro:MetroTitleMenu Height="40" HorizontalAlignment="Right">
+         <Metro:MetroTitleMenuItem Header="联系" 
+               Metro:BorderAttach.CornerRadius="6" 
+               WindowChrome.IsHitTestVisibleInChrome="True">
             <Metro:MetroMenuItem Header="QQ" Command="Metro:ControlCommands.OpenLink" 
                   CommandParameter="http://wpa.qq.com/msgrd?v=3&amp;uin=1280429435&amp;site=qq&amp;menu=yes">
                <Metro:MetroMenuItem.Icon>
                   <Path Data="{StaticResource Icon_QQ}" />
-               </Metro:MetroMenuItem.Icon> 
+               </Metro:MetroMenuItem.Icon>
             </Metro:MetroMenuItem>
             <Metro:MetroMenuItem Header="QQ群" Command="Metro:ControlCommands.OpenLink" 
                   CommandParameter="https://jq.qq.com/?_wv=1027&amp;k=57GYQeb">
@@ -35,32 +38,32 @@
                   <Path Data="{StaticResource Icon_Emil}"/>
                </Metro:MetroMenuItem.Icon>
             </Metro:MetroMenuItem>
-            <Metro:MetroMenuItem Header="一级菜单"> 
+            <Metro:MetroMenuItem Header="一级菜单">
                <Metro:MetroMenuItem.Icon>
-                  <Path Data="{StaticResource Icon_Menu}"/>
+                  <Path Data="{StaticResource Icon_Logo}"/>
                </Metro:MetroMenuItem.Icon>
                <Metro:MetroMenuItem Header="二级菜单1" IsCheckable="True">
                   <Metro:MetroMenuItem.Icon>
-                     <Path Data="{StaticResource Icon_Menu}"/>
+                     <Path Data="{StaticResource Icon_Logo}"/>
                   </Metro:MetroMenuItem.Icon>
                </Metro:MetroMenuItem>
                <Metro:MetroMenuItem Header="二级菜单2" IsCheckable="True">
                   <Metro:MetroMenuItem.Icon>
-                     <Path Data="{StaticResource Icon_Menu}"/>
+                     <Path Data="{StaticResource Icon_Logo}"/>
                   </Metro:MetroMenuItem.Icon>
                </Metro:MetroMenuItem>
                <Metro:MetroMenuItem Header="二级菜单3">
                   <Metro:MetroMenuItem.Icon>
-                     <Path Data="{StaticResource Icon_Menu}"/>
+                     <Path Data="{StaticResource Icon_Logo}"/>
                   </Metro:MetroMenuItem.Icon>
                   <Metro:MetroMenuItem Header="三级菜单1" IsCheckable="True">
                      <Metro:MetroMenuItem.Icon>
-                        <Path Data="{StaticResource Icon_Menu}"/>
+                        <Path Data="{StaticResource Icon_Logo}"/>
                      </Metro:MetroMenuItem.Icon>
                   </Metro:MetroMenuItem>
                   <Metro:MetroMenuItem Header="三级菜单2" IsCheckable="True">
                      <Metro:MetroMenuItem.Icon>
-                        <Path Data="{StaticResource Icon_Menu}"/>
+                        <Path Data="{StaticResource Icon_Logo}"/>
                      </Metro:MetroMenuItem.Icon>
                   </Metro:MetroMenuItem>
                </Metro:MetroMenuItem>
@@ -100,10 +103,21 @@
                </Metro:MetroMenuItem.Icon>
             </Metro:MetroMenuItem>
          </Metro:MetroTitleMenuItem>
+         <MenuItem Style="{StaticResource MenuItem_NonStyle}" ToolTip="主题">
+            <MenuItem.Header>
+               <Metro:AduToggleButton IsChecked="{Binding IsLight}" 
+                  AduAttach:PathBrushAttach.NormalPathColor="{DynamicResource NormalPathBrush}"
+                  AduAttach:PathBrushAttach.MouseOverPathColor="{DynamicResource MouseOverPathBrush}"
+                  AduAttach:PathBrushAttach.PressedPathColor="{DynamicResource PressedPathBrush}"
+                  AduAttach:PathBrushAttach.SelectedPathColor="{DynamicResource SelectedPathBrush}"
+                  AduAttach:PathDataAttach.PathData="{StaticResource Icon_Light}"
+                  AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Dark}"/>
+            </MenuItem.Header>
+         </MenuItem>
          <Metro:MetroTitleMenuItem Header="技术支持" AduAttach:PathDataAttach.Width="20"
                Command="Metro:ControlCommands.OpenLink" CommandParameter="https://github.com/aduskin">
             <Metro:MetroTitleMenuItem.Icon>
-               <Path Data="{StaticResource Icon_Github}" Width="16" Fill="{StaticResource NormalWhite}"/>
+               <Path Data="{StaticResource Icon_Github}" Width="16"/>
             </Metro:MetroTitleMenuItem.Icon>
          </Metro:MetroTitleMenuItem>
       </Metro:MetroTitleMenu>
@@ -113,10 +127,10 @@
          <Metro:MetroContextMenu.Resources>
             <Style TargetType="Path">
                <Setter Property="Width" Value="14"/>
-               <Setter Property="Fill" Value="{StaticResource NormalBlack}"/>
+               <Setter Property="Fill" Value="{DynamicResource NormalPathBrush}"/>
                <Setter Property="Stretch" Value="Uniform"/>
             </Style>
-         </Metro:MetroContextMenu.Resources> 
+         </Metro:MetroContextMenu.Resources>
          <Metro:MetroMenuItem Header="返回" >
             <Metro:MetroMenuItem.Icon>
                <Path Data="{StaticResource Icon_Back}"/>
@@ -162,7 +176,7 @@
                <Path Data="{StaticResource Icon_Screenshot}"/>
             </Metro:MetroMenuItem.Icon>
          </Metro:MetroMenuItem>
-         <Metro:MetroMenuSeparator/>  
+         <Metro:MetroMenuSeparator/>
          <Metro:MetroMenuItem Header="检查选项" >
             <Metro:MetroMenuItem.Icon>
                <Path Data="{StaticResource Icon_Check}"/>
@@ -188,8 +202,9 @@
          </Metro:MetroMenuItem>
       </Metro:MetroContextMenu>
    </Metro:MetroWindow.ContextMenu>
-   <Grid Background="{Binding MainBackground}">
-      <Metro:AduTabControl SelectedIndex="{Binding SelectedModularIndex}">
+   <Grid>
+      <Metro:AduTabControl SelectedIndex="{Binding SelectedModularIndex}" 
+            BorderBrush="{DynamicResource NormalBorderBrush}" BorderThickness="0,1,0,1">
          <Metro:AduTabControl.Resources>
             <Style TargetType="TabPanel">
                <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -200,19 +215,13 @@
             </Style>
          </Metro:AduTabControl.Resources>
          <Metro:AduTabItem Header="实用案例">
-            <Border BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,1,0,0">
-               <ContentControl  Content="{Binding PracticalCase}"/>
-            </Border>
+            <ContentControl  Content="{Binding PracticalCase}"/>
          </Metro:AduTabItem>
          <Metro:AduTabItem Header="常用控件">
-            <Border BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,1,0,0">
-               <ContentControl Content="{Binding CommonControlCase}"/>
-            </Border>
+            <ContentControl Content="{Binding CommonControlCase}"/>
          </Metro:AduTabItem>
          <Metro:AduTabItem Header="关于AduSkin">
-            <Border BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,0,0,0">
-               <ContentControl Content="{Binding AduSkinAbout}"/>
-            </Border>
+            <ContentControl Content="{Binding AduSkinAbout}"/>
          </Metro:AduTabItem>
          <Metro:AduTabItem Header="技术支持">
             <ContentControl Content="{Binding AduSkinSupport}"/>

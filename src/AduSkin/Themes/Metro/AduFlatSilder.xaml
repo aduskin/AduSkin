@@ -14,7 +14,7 @@
                   Data="M 0,6 C0,6 5.5,0 5.5,0 5.5,0 11,6 11,6 11,6 11,18 11,18 11,18 0,18 0,18 0,18 0,6 0,6 z"
                   Fill="{StaticResource NormalWhite}"
                   SnapsToDevicePixels="True" Stretch="Fill"
-                  Stroke="{StaticResource NormalBorderBlackBrush30}"
+                  Stroke="{DynamicResource NormalBorderBrush}"
                   StrokeThickness="1" UseLayoutRounding="True" />
       </Grid>
       <ControlTemplate.Triggers>
@@ -39,7 +39,7 @@
                   Data="M 0,12 C0,12 5.5,18 5.5,18 5.5,18 11,12 11,12 11,12 11,0 11,0 11,0 0,0 0,0 0,0 0,12 0,12 z"
                   Fill="{StaticResource NormalWhite}"
                   SnapsToDevicePixels="True" Stretch="Fill"
-                  Stroke="{StaticResource NormalBorderBlackBrush30}"
+                  Stroke="{DynamicResource NormalBorderBrush}"
                   StrokeThickness="1" UseLayoutRounding="True" />
       </Grid>
       <ControlTemplate.Triggers>
@@ -151,7 +151,7 @@
          </Trigger>
          <Trigger Property="IsEnabled" Value="false">
             <Setter TargetName="grip" Property="Fill" Value="{StaticResource NormalWhite}" />
-            <Setter TargetName="grip" Property="Stroke" Value="{StaticResource NormalBorderBlackBrush30}" />
+            <Setter TargetName="grip" Property="Stroke" Value="{DynamicResource NormalBorderBrush}" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
@@ -174,15 +174,14 @@
                   <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}" />
                   <RowDefinition Height="Auto" />
                </Grid.RowDefinitions>
-               <TickBar x:Name="TopTick" Grid.Row="0" Height="4" Margin="0,0,0,2"
-                             Fill="{TemplateBinding Foreground}"
-                             Placement="Top" Visibility="Collapsed" />
+               <TickBar x:Name="TopTick" Grid.Row="0" Height="4" Margin="0,0,0,2" Fill="{TemplateBinding Foreground}"
+                  Placement="Top" Visibility="Collapsed" />
                <Border x:Name="TrackBackground" Grid.Row="1"
-                            Height="{StaticResource Slider.Horizontal.RepeatButton.Height}"
-                            Margin="5,0" VerticalAlignment="center"
-                            Background="Transparent"
-                            BorderBrush="{StaticResource NormalBorderBlackBrush30}"
-                            BorderThickness="0" CornerRadius="3">
+                  Height="{StaticResource Slider.Horizontal.RepeatButton.Height}"
+                  Margin="5,0" VerticalAlignment="center"
+                  Background="{StaticResource NormalTransparentBrush}"
+                  BorderBrush="{DynamicResource NormalBorderBrush}"
+                  BorderThickness="0" CornerRadius="3">
                   <Canvas Margin="-6,-1">
                      <Rectangle x:Name="PART_SelectionRange"
                                        Height="{StaticResource Slider.Horizontal.RepeatButton.Height}"
@@ -241,7 +240,7 @@
                   Data="M 6,11 C6,11 0,5.5 0,5.5 0,5.5 6,0 6,0 6,0 18,0 18,0 18,0 18,11 18,11 18,11 6,11 6,11 z"
                   Fill="{StaticResource NormalWhite}"
                   Stretch="Fill"
-                  Stroke="{StaticResource NormalBorderBlackBrush30}" />
+                  Stroke="{DynamicResource NormalBorderBrush}" />
       </Grid>
       <ControlTemplate.Triggers>
          <Trigger Property="IsMouseOver" Value="true">
@@ -261,11 +260,8 @@
 
    <ControlTemplate x:Key="SliderThumbVerticalRight" TargetType="{x:Type Thumb}">
       <Grid HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="True">
-         <Path x:Name="grip"
-                  Data="M 12,11 C12,11 18,5.5 18,5.5 18,5.5 12,0 12,0 12,0 0,0 0,0 0,0 0,11 0,11 0,11 12,11 12,11 z"
-                  Fill="{StaticResource NormalWhite}"
-                  Stretch="Fill"
-                  Stroke="{StaticResource NormalBorderBlackBrush30}"/>
+         <Path x:Name="grip" Data="M 12,11 C12,11 18,5.5 18,5.5 18,5.5 12,0 12,0 12,0 0,0 0,0 0,0 0,11 0,11 0,11 12,11 12,11 z"
+               Fill="{StaticResource NormalWhite}" Stretch="Fill" Stroke="{DynamicResource NormalBorderBrush}"/>
       </Grid>
       <ControlTemplate.Triggers>
          <Trigger Property="IsMouseOver" Value="true">
@@ -300,7 +296,7 @@
                          Placement="Left" Visibility="Collapsed" />
             <Border x:Name="TrackBackground" Grid.Column="1" Width="2.0" Margin="0"
                         HorizontalAlignment="center"
-                        BorderBrush="{StaticResource NormalBorderBlackBrush30}"
+                        BorderBrush="{DynamicResource NormalBorderBrush}"
                         BorderThickness="0">
                <Canvas Margin="-1,-6">
                   <Rectangle x:Name="PART_SelectionRange" Width="4.0"
@@ -351,11 +347,11 @@
    </ControlTemplate>
 
    <Style TargetType="{x:Type Adu:AduFlatSilder}">
-      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
-      <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
-      <Setter Property="DecreaseColor" Value="{StaticResource NormalBrush}" />
-      <Setter Property="IncreaseColor" Value="#E3E8EE" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalTransparentBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
+      <Setter Property="DecreaseColor" Value="{DynamicResource PrimaryBrush}" />
+      <Setter Property="IncreaseColor" Value="{DynamicResource  NormalBackground}" />
       <Setter Property="VerticalAlignment" Value="Center" />
       <Setter Property="Template" Value="{StaticResource SliderHorizontal}" />
       <Style.Triggers>

@@ -1,8 +1,12 @@
+using AduSkin.Controls;
 using AduSkin.Demo.Views;
+using AduSkin.Themes;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -12,7 +16,7 @@ namespace AduSkin.Demo.ViewModel
    {
       public MainViewModel(IServiceProvider serviceProvider)
       {
-         CommonControlCase= serviceProvider.GetRequiredService<CommonControlCase>();
+         CommonControlCase = serviceProvider.GetRequiredService<CommonControlCase>();
          PracticalCase = serviceProvider.GetRequiredService<PracticalCase>();
          AduSkinAbout = serviceProvider.GetRequiredService<AduSkinAbout>();
          AduSkinSupport = serviceProvider.GetRequiredService<AduSkinSupport>();
@@ -42,15 +46,18 @@ namespace AduSkin.Demo.ViewModel
          set
          {
             SetProperty(ref _SelectedModularIndex, value);
-            if (value == 2)
-               MainBackground = new SolidColorBrush(Color.FromRgb(28, 64, 139));
-            else if (value == 3)
-               MainBackground = new SolidColorBrush(Color.FromRgb(250, 251, 252));
-            else
-               MainBackground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
          }
       }
-      
+
+      [ObservableProperty]
+      private bool _isLight;
+      partial void OnIsLightChanged(bool oldValue, bool newValue)
+      {
+         var resourceDictionary = App.Current.Resources.MergedDictionaries.FirstOrDefault(s => s is AduTheme);
+         if(resourceDictionary is AduTheme theme)
+            theme.CurrentSkin = newValue ? SkinType.Dark : SkinType.Light; 
+      }
+
       [ObservableProperty]
       private SolidColorBrush __mainBackground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
       /// <summary>

@@ -24,7 +24,7 @@
             </interactivity:EventTrigger>
          </interactivity:Interaction.Triggers>
       </AduSkin:AduPage>
-      <AduSkin:AduDataGrid Grid.Row="1" IsReadOnly="True"  Background="White"  
+      <AduSkin:AduDataGrid Grid.Row="1" IsReadOnly="True" 
             Width="400" MaxHeight="900"  MinHeight="200" 
             HeadersVisibility="All"  AutoGenerateColumns="False" 
             ItemsSource="{Binding ContactList}">

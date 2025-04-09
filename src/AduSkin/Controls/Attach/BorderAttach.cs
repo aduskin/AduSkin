@@ -33,6 +33,18 @@ namespace AduSkin.Controls.Attach
           => (Brush)element.GetValue(SelectedBorderBrushProperty);
 
       /// <summary>
+      /// Panel边框色
+      /// </summary>
+      public static readonly DependencyProperty PanelBorderBrushProperty = DependencyProperty.RegisterAttached(
+            "PanelBorderBrush", typeof(Brush), typeof(BorderAttach));
+
+      public static void SetPanelBorderBrush(DependencyObject element, Brush value)
+          => element.SetValue(PanelBorderBrushProperty, value);
+
+      public static Brush GetPanelBorderBrush(DependencyObject element)
+          => (Brush)element.GetValue(PanelBorderBrushProperty);
+
+      /// <summary>
       /// 边框厚度
       /// </summary>
       public static readonly DependencyProperty BorderThicknessProperty = DependencyProperty.RegisterAttached(

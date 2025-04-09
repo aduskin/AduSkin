@@ -23,7 +23,7 @@
                   </Grid.ColumnDefinitions>
                   <StackPanel Orientation="Horizontal">
                      <Grid Margin="0,0,10,0">
-                        <Border x:Name="Bd" BorderBrush="{StaticResource NormalBorderBrush}" Width="25" Height="25" CornerRadius="25" 
+                        <Border x:Name="Bd" BorderBrush="{DynamicResource NormalBorderBrush}" Width="25" Height="25" CornerRadius="25" 
                                     BorderThickness="1" SnapsToDevicePixels="True" UseLayoutRounding="True">
                         </Border>
                         <TextBlock x:Name="Number" Text="{TemplateBinding Number}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -32,7 +32,7 @@
                      <ContentPresenter VerticalAlignment="Center" />
                   </StackPanel>
                   <Border x:Name="Line" Grid.Column="1" MinWidth="10"
-                        BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="0,1,0,0" 
+                        BorderBrush="{DynamicResource NormalBorderBrush}" BorderThickness="0,1,0,0" 
                         VerticalAlignment="Center" Margin="10,0"
                         SnapsToDevicePixels="True" UseLayoutRounding="True" />
                </Grid>

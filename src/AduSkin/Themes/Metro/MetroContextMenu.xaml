@@ -4,10 +4,11 @@
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Effects.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--右键菜单-->
    <Style TargetType="{x:Type Metro:MetroContextMenu}"> 
-      <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}"/>
       <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>

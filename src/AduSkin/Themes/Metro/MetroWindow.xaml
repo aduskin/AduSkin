@@ -52,12 +52,12 @@
       </Setter>
    </Style>
 
-   <Style TargetType="{x:Type Metro:MetroWindow}"> 
-      <Setter Property="Background" Value="{StaticResource NormalWhite}" /> 
-      <Setter Property="BorderBrush" Value="{StaticResource Brush}" />
-      <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
-      <Setter Property="TitleForeground" Value="{StaticResource NormalBlack}" />
-      <Setter Property="SysButtonColor" Value="{StaticResource NormalBlack}" />
+   <Style TargetType="{x:Type Metro:MetroWindow}">
+      <Setter Property="Background" Value="{DynamicResource WindowBackground}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
+      <Setter Property="TitleForeground" Value="{DynamicResource NormalForeground}" />
+      <Setter Property="SysButtonColor" Value="{DynamicResource NormalForeground}" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="WindowStyle" Value="SingleBorderWindow" />
@@ -67,7 +67,7 @@
       <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
       <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
       <Setter Property="UseLayoutRounding" Value="True" />
-      
+
       <!--  相对的解决字体显示模糊的问题
         <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
         <Setter Property="TextOptions.TextHintingMode" Value="Auto"/>
@@ -88,32 +88,33 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroWindow}">
-               <Border x:Name="PART_WindowBorder" Background="{TemplateBinding Background}" 
-                       BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                  <Grid Background="{StaticResource NormalWhite}" x:Name="WindowGrid">
-                     <Border Margin="-1" BorderBrush="{DynamicResource NormalBlack15}" 
-                           BorderThickness="{Binding BorderThickness, ElementName=border}"/>
+               <Grid>
+                  <Rectangle Fill="{StaticResource NormalBlack}"/>
+                  <Border x:Name="PART_WindowBorder" Background="{TemplateBinding Background}" 
+                     BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                      <Grid x:Name="WIdowGrid">
                         <Grid.RowDefinitions>
                            <RowDefinition x:Name="TitleHeight" Height="40" />
                            <RowDefinition />
                         </Grid.RowDefinitions>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{TemplateBinding BorderBrush}"/>
                         <Grid x:Name="PART_Title" Background="{TemplateBinding BorderBrush}">
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition x:Name="iconSize" Width="auto" />
                               <ColumnDefinition Width="Auto" />
-                              <ColumnDefinition />
+                              <ColumnDefinition/>
                               <ColumnDefinition Width="Auto" />
                            </Grid.ColumnDefinitions>
                            <Metro:MetroImage x:Name="icon" Grid.Column="0" Margin="10,0" 
                               Source="{TemplateBinding Icon}" Width="20" Height="20" Stretch="Uniform"/>
-                           
+
                            <Metro:MetroTextBlock x:Name="title" Grid.Column="1" 
                               HorizontalAlignment="Left" VerticalAlignment="Center" 
-                              Foreground="{TemplateBinding TitleForeground}" FontSize="{TemplateBinding TitleFontSize}" Text="{TemplateBinding Title}" />
-                           
-                           <ContentPresenter x:Name="menu" Grid.Column="2" Content="{TemplateBinding Menu}"/>
-                           
+                              Foreground="{TemplateBinding TitleForeground}" 
+                              FontSize="{TemplateBinding TitleFontSize}" Text="{TemplateBinding Title}" />
+
+                           <ContentPresenter x:Name="menu" Grid.Column="2" Content="{TemplateBinding Menu}" WindowChrome.IsHitTestVisibleInChrome="True"/>
+
                            <Grid Grid.Column="3" x:Name="PART_SysButton" Shell:WindowChrome.IsHitTestVisibleInChrome="True">
                               <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                                  <Button x:Name="PART_MinimizedButton" Style="{StaticResource buttonStyle}">
@@ -138,22 +139,22 @@
                         </Grid>
                         <Rectangle x:Name="disableRectangle" Grid.RowSpan="2" Fill="{StaticResource NormalBlack}" IsHitTestVisible="False" Opacity="0" />
                      </Grid>
-                  </Grid>
-                  <VisualStateManager.VisualStateGroups>
-                     <VisualStateGroup>
-                        <VisualState x:Name="Enabled">
-                           <Storyboard>
-                              <DoubleAnimation Storyboard.TargetName="disableRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.5" Duration="0:0:0.1" />
-                           </Storyboard>
-                        </VisualState>
-                        <VisualState x:Name="Disable">
-                           <Storyboard>
-                              <DoubleAnimation Storyboard.TargetName="disableRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.1" />
-                           </Storyboard>
-                        </VisualState>
-                     </VisualStateGroup>
-                  </VisualStateManager.VisualStateGroups>
-               </Border>
+                     <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup>
+                           <VisualState x:Name="Enabled">
+                              <Storyboard>
+                                 <DoubleAnimation Storyboard.TargetName="disableRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0.5" Duration="0:0:0.1" />
+                              </Storyboard>
+                           </VisualState>
+                           <VisualState x:Name="Disable">
+                              <Storyboard>
+                                 <DoubleAnimation Storyboard.TargetName="disableRectangle" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" Duration="0:0:0.1" />
+                              </Storyboard>
+                           </VisualState>
+                        </VisualStateGroup>
+                     </VisualStateManager.VisualStateGroups>
+                  </Border>
+               </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="ResizeMode" Value="NoResize">
                      <Setter TargetName="PART_MinimizedButton" Property="Visibility" Value="Collapsed" />

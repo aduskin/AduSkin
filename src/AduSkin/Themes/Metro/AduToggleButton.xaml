@@ -29,7 +29,15 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduToggleButton}">
-               <Border x:Name="border" 
+               <Grid>
+                  <Border Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
+                     Padding="{TemplateBinding Padding}"
+                     Background="{DynamicResource NormalTransparentBrush}"
+                     CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                     BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}"
+                     BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}"
+                     SnapsToDevicePixels="true" UseLayoutRounding="True"/>
+                  <Border x:Name="border" 
                      Height="{TemplateBinding Height}"
                      Width="{TemplateBinding Width}"
                      Padding="{TemplateBinding Padding}"
@@ -37,14 +45,14 @@
                      CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
                      BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}"
                      BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}"
-                     SnapsToDevicePixels="true" UseLayoutRounding="True">
-                  <Path x:Name="path"
-                        Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
-                        Margin="0,0,0,0" VerticalAlignment="Center"
-                        Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
-                        Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
-                        Stretch="Uniform" />
-               </Border>
+                     SnapsToDevicePixels="true" UseLayoutRounding="True"/>
+                  <Path x:Name="path" VerticalAlignment="Center"
+                     Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
+                     Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+                     Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+                     Stretch="Uniform" />
+
+               </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsChecked" Value="False">
                      <Setter TargetName="path" Property="Data" Value="{Binding (AduAttach:PathDataAttach.PathData), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>

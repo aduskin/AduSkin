@@ -4,14 +4,17 @@
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/IconLibrary.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <!--多选按钮-->
    <Style TargetType="{x:Type AduSkin:AduCheckBox}">
-      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/> 
-      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{DynamicResource PressedPathBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{DynamicResource SelectedPathBrush}"/>
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_NoChecked}"/>
+      <!--<Setter Property="AduAttach:PathDataAttach.SelectNullPathData" Value="{StaticResource Icon_NullChecked}"/>-->
       <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{StaticResource Icon_Checked}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="14"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="4,0"/>
@@ -34,11 +37,19 @@
                </Border>
                <!--控件触发器-->
                <ControlTemplate.Triggers>
+                  <!--<Trigger Property="IsChecked" Value="{x:Null}">
+                     <Setter TargetName="path" Property="Data" Value="{Binding Path=(AduAttach:PathDataAttach.SelectNullPathData), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                     <Setter TargetName="path" Property="Fill" Value="{Binding Path=(AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                  </Trigger>-->
                   <Trigger Property="IsChecked" Value="True">
                      <Setter TargetName="path" Property="Data" Value="{Binding Path=(AduAttach:PathDataAttach.SelectedPathData), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                     <Setter TargetName="path" Property="Fill" Value="{Binding Path=(AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                  </Trigger>
+                  <Trigger Property="IsMouseOver" Value="True">
+                     <Setter TargetName="path" Property="Opacity" Value="{DynamicResource MouseOverOpacity}"/>
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter Property="Opacity" Value=".5"/>
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}"/>
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>

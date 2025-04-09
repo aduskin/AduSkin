@@ -8,8 +8,7 @@
         xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"       
         mc:Ignorable="d"
         BorderBrush="#3E3E45"       
-        BorderThickness="1"
-        Background="{StaticResource ShadowBrush}"
+        BorderThickness="1" 
         SysButtonColor="{StaticResource NormalWhite}"
         SysButtonMargin="14"
         SysButtonVisible="Visible"
@@ -48,10 +47,11 @@
          <Grid Grid.Row="1" Grid.ColumnSpan="3">
             <Adu:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,20" Padding="20,0">
                <StackPanel>
-                  <Adu:AduCarousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
+                  <Adu:AduCarousel x:Name="Carousels" AutoPlay="True" AutoPlaySpeed="5000" 
+                        Foreground="Red" Height="350" Width="700" HorizontalAlignment="Center" Margin="0,0,0,40">
                      <Adu:AduCarousel.ItemTemplate>
                         <DataTemplate>
-                           <Grid Background="#00000000">
+                           <Grid Background="{DynamicResource NormalTransparentBrush}">
                               <Image x:Name="cover" RenderTransformOrigin="0.5,0.5" Source="{Binding Cover}" Stretch="UniformToFill" >
                                  <Image.RenderTransform>
                                     <TransformGroup>
@@ -60,10 +60,10 @@
                                  </Image.RenderTransform>
                               </Image>
                               <Adu:AduFlatButton x:Name="PlayBtn" Visibility="Hidden"  Margin="20,60" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                                       MouseOverBackground="#000" Foreground="{StaticResource NormalBrush}" 
-                                                       ToolTip="点击进入Demo查看" FontSize="18" FontWeight="Bold" Width="120" Height="40" 
-                                                       Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}"
-                                                       Content="查看案例" Background="Transparent" />
+                                    MouseOverBackground="#000" Foreground="{StaticResource NormalBrush}" 
+                                    ToolTip="点击进入Demo查看" FontSize="18" FontWeight="Bold" Width="120" Height="40" 
+                                    Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Link}"
+                                    Content="查看案例" Background="Transparent" />
                               <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
                                  <TextBlock Text="{Binding BlogDate}" Background="#80000000" Padding="6,0" Foreground="{DynamicResource NormalWhite}" FontSize="16" HorizontalAlignment="Center"  MaxWidth="300" TextTrimming="CharacterEllipsis"/>
                                  <TextBlock Text="{Binding Name}" Background="#80000000" Padding="4,2" Foreground="{DynamicResource NormalWhite}" FontSize="20" HorizontalAlignment="Center"  MaxWidth="400" TextTrimming="CharacterEllipsis"/>

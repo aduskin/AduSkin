@@ -6,7 +6,7 @@
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type AduPicker:AduCalendarButton}">
-      <Setter Property="Background" Value="{StaticResource NormalBlue}" />
+      <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="FontSize" Value="12" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -14,7 +14,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type AduPicker:AduCalendarButton}">
                     <Grid HorizontalAlignment="Center" VerticalAlignment="Center" 
-                          Background="{StaticResource NormalTransparentBrush}">
+                          Background="{DynamicResource NormalTransparentBrush}">
                         <Border x:Name="border" CornerRadius="3" />
                         <Border x:Name="SelectedBackground" CornerRadius="3" />
                         <ContentPresenter x:Name="NormalText" Margin="10,6"
@@ -23,17 +23,17 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                     <Setter TargetName="border" Property="Background" Value="{StaticResource NormalBorderBrush}" />
-                            <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
+                     <Setter TargetName="border" Property="Background" Value="{DynamicResource NormalBorderBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource MouseOverForeground}" />
                             <Setter Property="Cursor" Value="Hand" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#5A5A5A" />
-                            <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource PressedBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PressedForeground}" />
                         </Trigger>
                         <Trigger Property="HasSelectedDates" Value="True">
-                            <Setter TargetName="SelectedBackground" Property="Background" Value="#5A5A5A" />
-                            <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+                            <Setter TargetName="SelectedBackground" Property="Background" Value="{DynamicResource SelectedBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource SelectedForeground}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

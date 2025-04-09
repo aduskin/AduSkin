@@ -1,7 +1,6 @@
 using AduSkin.Demo.Servers;
 using AduSkin.Demo.Servers.Contracts;
 using AduSkin.Demo.Servers.Extensions;
-using AduSkin.Demo.UserControls;
 using AduSkin.Demo.ViewModel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

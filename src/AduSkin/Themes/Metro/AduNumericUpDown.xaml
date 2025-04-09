@@ -3,20 +3,14 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml" />
-   </ResourceDictionary.MergedDictionaries>
-   <SolidColorBrush x:Key="UpDownButton.Static.Background">#0037BC9B</SolidColorBrush>
-   <SolidColorBrush x:Key="UpDownButton.Static.Foreground">#B299A5</SolidColorBrush>
-
-   <Geometry x:Key="Icon_Up">M496.230851 286.980084c-2.263553 1.305739-4.3951 2.919493-6.326079 4.850471L129.919978 651.814326c-11.938913 11.938913-11.938913 31.475875 0 43.414789l0 0c11.938913 11.938913 31.475875 11.938913 43.414789 0l338.759377-338.759377L850.493318 694.868911c11.938913 11.938913 31.475875 11.938913 43.414789 0l0 0c11.938913-11.938913 11.938913-31.475875 0-43.414789L533.924335 291.469328C523.742439 281.287431 508.038782 279.796474 496.230851 286.980084z</Geometry>
-   <Geometry x:Key="Icon_Down">M945.399851 228.101091c-14.471596-14.285355-37.747719-14.2127-52.071959 0.224104L516.006244 609.102548 133.420709 229.944066c-14.471596-14.32424-37.748742-14.217816-52.111868 0.218988-14.33038 14.476713-14.217816 37.787628 0.218988 52.118008l406.634254 402.952398c0.62831 0.623193 1.438769 0.769526 2.061962 1.359974 0.152473 0.145309 0.185218 0.330528 0.332575 0.477884 7.181563 7.108908 16.57756 10.683317 25.928532 10.683317 9.463536 0 18.96698-3.647063 26.148543-10.902304l402.952398-406.634254C959.949218 265.741363 959.836655 242.429425 945.399851 228.101091L945.399851 228.101091zM945.399851 228.101091</Geometry>
-   <Geometry x:Key="Icon_Add">M882.688 562.688h-320v320c0 18.432-22.528 50.688-50.688 50.688s-50.688-31.744-50.688-50.688v-320H141.312c-18.432 0-50.688-22.528-50.688-50.688 0-27.648 31.744-50.688 50.688-50.688h320V141.312c0-18.432 22.528-50.688 50.688-50.688 27.648 0 50.688 31.744 50.688 50.688v320h320c18.432 0 50.688 22.528 50.688 50.688s-32.256 50.688-50.688 50.688</Geometry>
-   <Geometry x:Key="Icon_Reduce">M80 432h864c44 0 80 36 80 80s-36 80-80 80H80c-44 0-80-36-80-80s36-80 80-80z</Geometry>
-
-   <!--#region 按钮位于右侧，并上下排列-->
-   <!--  “增加”按钮样式  -->
+      <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/IconLibrary.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
+   </ResourceDictionary.MergedDictionaries> 
+ 
+ 
    <Style x:Key="UpButtonStyle" TargetType="{x:Type Button}">
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -24,23 +18,22 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Button}">
-               <Border x:Name="Bd"
-                     Background="{TemplateBinding Background}"
+               <Border x:Name="Bd" Background="{TemplateBinding Background}"
                      BorderThickness="0" Padding="4,0,5,0" SnapsToDevicePixels="True">
                   <Path x:Name="path" HorizontalAlignment="Center" VerticalAlignment="Center" 
                      Data="{StaticResource Icon_Up}" Stretch="Uniform" Width="10"
-                     Fill="{StaticResource NormalPathBrush}"
+                     Fill="{DynamicResource NormalPathBrush}"
                      SnapsToDevicePixels="True" UseLayoutRounding="True" />
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="Bd" Property="Opacity" Value="0.8" />
                      <Setter TargetName="Bd" Property="Cursor" Value="Hand" />
-                     <Setter TargetName="path" Property="Fill" Value="{StaticResource MouseOverPathBrush}" />
+                     <Setter TargetName="path" Property="Fill" Value="{DynamicResource MouseOverPathBrush}" />
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter Property="Cursor" Value="No" />
-                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -50,28 +43,27 @@
 
    <!--  “减少”按钮样式  -->
    <Style x:Key="DownButtonStyle" TargetType="{x:Type Button}">
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Button}">
-               <Border x:Name="Bd"
-                        Background="{TemplateBinding Background}"
+               <Border x:Name="Bd" Background="{TemplateBinding Background}"
                         BorderThickness="0" Padding="4,0,5,0" SnapsToDevicePixels="True">
                   <Path x:Name="path" HorizontalAlignment="Center" VerticalAlignment="Center" 
                         Data="{StaticResource Icon_Down}" Stretch="Uniform" Width="10"
-                        Fill="{StaticResource NormalPathBrush}"
+                        Fill="{DynamicResource NormalPathBrush}"
                         SnapsToDevicePixels="True" UseLayoutRounding="True" />
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="Bd" Property="Opacity" Value="0.8" />
                      <Setter TargetName="Bd" Property="Cursor" Value="Hand" />
-                     <Setter TargetName="path" Property="Fill" Value="{StaticResource MouseOverPathBrush}" />
+                     <Setter TargetName="path" Property="Fill" Value="{DynamicResource MouseOverPathBrush}" />
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter Property="Cursor" Value="No" />
-                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -83,8 +75,8 @@
    <!--#region 按钮位于两侧-->
    <!--  “增加”按钮样式  -->
    <Style x:Key="AddButtonStyle" TargetType="{x:Type Button}">
-      <Setter Property="Foreground" Value="{StaticResource UpDownButton.Static.Foreground}" />
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="Padding" Value="4,0" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -93,25 +85,23 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Button}">
-               <Border x:Name="Bd"
-                            Background="{TemplateBinding Background}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            CornerRadius="0,4,4,0"
-                            Padding="{TemplateBinding Padding}"
-                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                            UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+               <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     CornerRadius="0,4,4,0"
+                     Padding="{TemplateBinding Padding}"
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                     UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
                   <Path x:Name="path" Data="M544.83 557.536l374.19 0.973c17.694 0.046 32.039-14.21 32.085-31.904 0.045-17.74-14.21-32.04-31.904-32.086l-374.258-0.995 0.566-372.561c0.022-17.627-14.256-31.995-31.95-32.041-17.672-0.022-32.018 14.278-32.064 31.973l-0.564 372.47-373.986-0.996c-17.695-0.045-32.04 14.21-32.086 31.904-0.022 8.849 3.552 16.903 9.368 22.719 5.769 5.77 13.734 9.345 22.537 9.367l374.076 0.996-0.565 375.955c-0.023 8.846 3.553 16.856 9.368 22.671 5.793 5.793 13.78 9.346 22.583 9.369 17.672 0.022 31.995-14.256 32.04-31.95L544.83 557.536 544.83 557.536z"
-                               Fill="{TemplateBinding Foreground}" Height="9" Stretch="Uniform"/>
+                        Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" Height="9" Stretch="Uniform"/>
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="Bd" Property="Opacity" Value="0.8" />
-                     <Setter TargetName="Bd" Property="Cursor" Value="Hand" />
-                     <Setter TargetName="path" Property="Fill" Value="#000" />
+                     <Setter TargetName="Bd" Property="Cursor" Value="Hand" /> 
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter Property="Foreground" Value="#E2E2E2" />
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -121,8 +111,8 @@
 
    <!--  “减少”按钮样式  -->
    <Style x:Key="DecreaseButtonStyle" TargetType="{x:Type Button}">
-      <Setter Property="Foreground" Value="{StaticResource UpDownButton.Static.Foreground}" />
-      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="Padding" Value="4,0" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -131,25 +121,23 @@
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Button}">
-               <Border x:Name="Bd"
-                            Background="{TemplateBinding Background}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            CornerRadius="4,0,0,4"
-                            Padding="{TemplateBinding Padding}"
-                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                            UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+               <Border x:Name="Bd" Background="{TemplateBinding Background}"
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     CornerRadius="4,0,0,4"
+                     Padding="{TemplateBinding Padding}"
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                     UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
                   <Path x:Name="path" Data="M224 464h576a48 48 0 0 1 0 96h-576a48 48 0 0 1 0-96z" 
-                             Fill="{TemplateBinding Foreground}" Width="8" Stretch="Uniform"/>
+                     Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}" Width="8" Stretch="Uniform"/>
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="Bd" Property="Opacity" Value="0.8" />
-                     <Setter TargetName="Bd" Property="Cursor" Value="Hand" />
-                     <Setter TargetName="path" Property="Fill" Value="#000" />
+                     <Setter TargetName="Bd" Property="Cursor" Value="Hand" /> 
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter TargetName="path" Property="Fill" Value="#E2E2E2" />
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -161,15 +149,13 @@
    <!--  加减按钮位于右侧，并以上下排列  -->
    <ControlTemplate x:Key="VerticalUpDown" TargetType="{x:Type Adu:AduNumericUpDownBase}">
       <Grid>
-         <Border x:Name="border" 
-                 CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+         <Border x:Name="border" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                  Background="{TemplateBinding Background}" 
-                 BorderBrush="{StaticResource NormalBorderBrush}" 
+                 BorderBrush="{DynamicResource NormalBorderBrush}" 
                  BorderThickness="{TemplateBinding BorderThickness}" 
                  SnapsToDevicePixels="True"/>
-         <Border x:Name="bordermove" 
-                 CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
-                 Opacity="0" 
+         <Border x:Name="bordermove" Opacity="0" 
+                 CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                  Background="{TemplateBinding Background}" 
                  BorderBrush="{TemplateBinding BorderBrush}" 
                  BorderThickness="{TemplateBinding BorderThickness}" 
@@ -179,24 +165,26 @@
                <ColumnDefinition Width="*" />
                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" Margin="4,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center"
-                                  VerticalScrollBarVisibility="Hidden" />
+            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" Margin="4,0"
+                  HorizontalAlignment="Center" HorizontalContentAlignment="Center"
+                  HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
 
             <Popup AllowsTransparency="True"
-                           IsOpen="{Binding IsShowTip,
-                            RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                           Placement="Top"
-                           PlacementTarget="{Binding ElementName=border}"
-                           StaysOpen="False">
+                  IsOpen="{Binding IsShowTip, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                  Placement="Top"
+                  PlacementTarget="{Binding ElementName=border}"
+                  StaysOpen="False">
                <Grid>
                   <Grid.RowDefinitions>
                      <RowDefinition Height="auto" />
                      <RowDefinition Height="5" />
                   </Grid.RowDefinitions>
                   <Border Background="{Binding TipBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" CornerRadius="2" Padding="5">
-                     <TextBlock Foreground="White" Text="{Binding TipText, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <TextBlock Foreground="{DynamicResource ToolTipForeground}" 
+                           Text="{Binding TipText, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                   </Border>
-                  <Path Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Left" Data="M0,0 5,5 10,0Z" Fill="{Binding TipBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                  <Path Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Left" 
+                     Data="M0,0 5,5 10,0Z" Fill="{Binding TipBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                </Grid>
             </Popup>
             <Grid x:Name="UpDown" Grid.Column="1">
@@ -209,9 +197,9 @@
                   <RowDefinition Height="1" />
                   <RowDefinition Height="*" />
                </Grid.RowDefinitions>
-               <Rectangle x:Name="leftBorder" Grid.Column="0" Grid.RowSpan="3" Fill="{StaticResource NormalBorderBrush}" Margin="0,0,0,1"/>
+               <Rectangle x:Name="leftBorder" Grid.Column="0" Grid.RowSpan="3" Fill="{DynamicResource NormalBorderBrush}" Margin="0,0,0,1"/>
                <Button x:Name="PART_UP" Grid.Column="1" Style="{StaticResource UpButtonStyle}"/>
-               <Rectangle x:Name="centerBorder" Grid.Column="1" Grid.Row="1" Fill="{StaticResource NormalBorderBrush}" Margin="0,0,1,0"/>
+               <Rectangle x:Name="centerBorder" Grid.Column="1" Grid.Row="1" Fill="{DynamicResource NormalBorderBrush}" Margin="0,0,1,0"/>
                <Button x:Name="PART_DOWN" Grid.Column="1" Grid.Row="2" Style="{StaticResource DownButtonStyle}"/>
             </Grid>
          </Grid>
@@ -219,8 +207,7 @@
 
       <ControlTemplate.Triggers>
          <Trigger Property="IsEnabled" Value="false">
-            <Setter TargetName="border" Property="Opacity" Value="0.56" />
-            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" /> 
          </Trigger>
          <Trigger Property="IsKeyboardFocused" Value="true">
             <Setter Property="Fill" TargetName="leftBorder" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
@@ -254,7 +241,7 @@
          <Border x:Name="border" 
               CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
               Background="{TemplateBinding Background}" 
-              BorderBrush="{StaticResource NormalBorderBrush}" 
+              BorderBrush="{DynamicResource NormalBorderBrush}" 
               BorderThickness="{TemplateBinding BorderThickness}" 
               SnapsToDevicePixels="True"/>
          <Border x:Name="bordermove" 
@@ -277,14 +264,18 @@
                      <RowDefinition Height="5" />
                   </Grid.RowDefinitions>
                   <Border Background="{Binding TipBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}" CornerRadius="2" Padding="5">
-                     <TextBlock Foreground="White" Text="{Binding TipText, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <TextBlock Foreground="{DynamicResource ToolTipForeground}" Text="{Binding TipText, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                   </Border>
                   <Path Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Left" Data="M0,0 5,5 10,0Z" Fill="{Binding TipBackground, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                </Grid>
             </Popup>
-            <Button x:Name="PART_DOWN" Grid.Column="0" Style="{StaticResource DecreaseButtonStyle}" BorderThickness="0,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}"/>
+            <Button x:Name="PART_DOWN" Grid.Column="0" Style="{StaticResource DecreaseButtonStyle}"
+               BorderThickness="0,0,1,0" BorderBrush="{DynamicResource NormalBorderBrush}"
+               AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"/>
             <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"  Margin="4,0"/>
-            <Button x:Name="PART_UP" Grid.Column="2" Style="{StaticResource AddButtonStyle}" BorderThickness="1,0,0,0" BorderBrush="{StaticResource NormalBorderBrush}"/>
+            <Button x:Name="PART_UP" Grid.Column="2" Style="{StaticResource AddButtonStyle}"  
+               BorderThickness="1,0,0,0" BorderBrush="{DynamicResource NormalBorderBrush}"
+               AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"/>
          </Grid>
       </Grid>
 
@@ -312,14 +303,16 @@
 
    <!--  控件样式，以UpDownOrientation来控制控件呈现方式  -->
    <Style TargetType="{x:Type Adu:AduNumericUpDownBase}">
-      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
       <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{DynamicResource NormalPathBrush}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
       <Setter Property="HorizontalContentAlignment" Value="Left" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="Text" Value="{Binding Value, RelativeSource={RelativeSource Mode=Self}}" />
       <Setter Property="MinHeight" Value="25" />
+      <Setter Property="Height" Value="30" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="Template" Value="{StaticResource ResourceKey=VerticalUpDown}" />
       <Style.Triggers>

@@ -7,6 +7,11 @@
       xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
       mc:Ignorable="d" 
       d:DesignHeight="2000" d:DesignWidth="1000">
+   <UserControl.Resources>
+      <Style TargetType="AduSkin:MetroTextBlock">
+         <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      </Style>
+   </UserControl.Resources>
    <AduSkin:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Padding="10">
       <AduSkin:MetroWaterfallFlow x:Name="waterfallFlow" ListWidth="300">
          <Grid>
@@ -55,14 +60,7 @@
                            FontSize="16" FontWeight="Light" Foreground="OrangeRed" Duration="0:0:10"/>
                </StackPanel>
             </Border>
-         </Grid>
-         <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
-               <AduSkin:AduGroupBoxLight Header="标题" Width="280">
-                  <TextBlock Text="内容" Margin="10"/>
-               </AduSkin:AduGroupBoxLight>
-            </Border>
-         </Grid>
+         </Grid> 
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <AduSkin:AduSliderVerifyCode Height="150" ImageUri="pack://application:,,,/Resources/pic.jpg"
@@ -71,44 +69,43 @@
          </Grid>
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
-               <AduSkin:AduCalendar x:Name="Calendar1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                  AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBrush}"
-                  AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
-                  AduAttach:BackgroundAttach.HighlightBackground="{StaticResource NormalBrush}"
-                  AduAttach:ForegroundAttach.SelectedForeground="{StaticResource NormalWhite}"
-                  AduAttach:ForegroundAttach.MouseOverForeground="{StaticResource NormalWhite}"
-                  AduAttach:ForegroundAttach.HighlightForeground="{StaticResource NormalWhite}"/>
+               <AduSkin:AduCalendar x:Name="Calendar1"  
+                  AduAttach:BackgroundAttach.MouseOverBackground="{DynamicResource MouseOverBackground}"
+                  AduAttach:BackgroundAttach.SelectedBackground="{DynamicResource SelectedBackground}"
+                  AduAttach:BackgroundAttach.HighlightBackground="{DynamicResource HighlightBackground}"
+                  AduAttach:ForegroundAttach.SelectedForeground="{DynamicResource SelectedForeground}"
+                  AduAttach:ForegroundAttach.MouseOverForeground="{DynamicResource MouseOverForeground}"
+                  AduAttach:ForegroundAttach.HighlightForeground="{DynamicResource HighlightForeground}"/>
             </Border>
          </Grid>
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel>
-                  <AduSkin:AduTimePicker HorizontalAlignment="Left" Margin="4" Width="200" />
-                  <AduSkin:AduDatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="4" Width="200" 
-                     VerticalAlignment="Center" Height="28" Type="DateTime" DateStringFormat="yyyy/MM/dd"
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"
-                     AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBrush}"
-                     AduAttach:BackgroundAttach.SelectedBackground="{StaticResource NormalBrush}"
-                     AduAttach:BackgroundAttach.HighlightBackground="{StaticResource NormalBrush}"
-                     AduAttach:ForegroundAttach.SelectedForeground="{StaticResource NormalWhite}"
-                     AduAttach:ForegroundAttach.MouseOverForeground="{StaticResource NormalWhite}"
-                     AduAttach:ForegroundAttach.HighlightForeground="{StaticResource NormalWhite}"/>
-                  <AduSkin:AduDatePicker x:Name="Date2" Margin="4" Width="200" 
-                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28"
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
-                  <AduSkin:AduDatePicker x:Name="Date3" Margin="4" Width="200"
-                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" IsShowShortCuts="True" 
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
-                  <AduSkin:AduDatePicker x:Name="Date4" Margin="4" Width="200" 
-                     VerticalAlignment="Center" HorizontalAlignment="Left" Height="28" Type="SingleDateRange"
+                  <StackPanel.Resources>
+                     <Style TargetType="AduSkin:AduDatePicker">  
+                        <Setter Property="Margin" Value="4"/>
+                     </Style>
+                  </StackPanel.Resources>
+                  <AduSkin:AduTimePicker Margin="4"/>
+                  <AduSkin:AduDatePicker x:Name="Date1" Type="DateTime" DateStringFormat="yyyy/MM/dd"
+                     AduAttach:BackgroundAttach.PanelBackground="{DynamicResource PanelBackground}"
+                     AduAttach:BackgroundAttach.MouseOverBackground="{DynamicResource MouseOverBackground}"
+                     AduAttach:BackgroundAttach.SelectedBackground="{DynamicResource SelectedBackground}"
+                     AduAttach:BackgroundAttach.HighlightBackground="{DynamicResource HighlightBackground}"
+                     AduAttach:ForegroundAttach.SelectedForeground="{DynamicResource SelectedForeground}"
+                     AduAttach:ForegroundAttach.MouseOverForeground="{DynamicResource MouseOverForeground}"
+                     AduAttach:ForegroundAttach.HighlightForeground="{DynamicResource HighlightForeground}"/>
+                  <AduSkin:AduDatePicker x:Name="Date2" 
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                  <AduSkin:AduDatePicker x:Name="Date3" IsShowShortCuts="True" 
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                  <AduSkin:AduDatePicker x:Name="Date4" Type="SingleDateRange"
                      DateStringFormat="yyyy/MM/dd" IsShowShortCuts="True" 
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
-                  <AduSkin:AduDatePicker x:Name="Date5" HorizontalAlignment="Left" Margin="4" Width="240" 
-                     VerticalAlignment="Center" Height="28" Type="SingleDateRange"
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
-                  <AduSkin:AduDatePicker x:Name="Date6" HorizontalAlignment="Left" Margin="4" Width="240" 
-                     VerticalAlignment="Center" Height="28" Type="SingleDateRange"
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource NormalWhite}"/>
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                  <AduSkin:AduDatePicker x:Name="Date5" Type="SingleDateRange"
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                  <AduSkin:AduDatePicker x:Name="Date6" Type="SingleDateRange"
+                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
                </StackPanel>
             </Border>
          </Grid>
@@ -137,38 +134,32 @@
                   <AduSkin:AduRadioButtonIcon
                         Content="盒子"
                         IsChecked="True"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Desgin2}"
-                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Desgin2}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="聊天"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_WeChat}"
-                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_WeChat}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="福利"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Gift}"
-                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Gift}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="组"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Group}"
-                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Group}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="标签"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Tag}"
-                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Tag}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="创意"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Light}"
-                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource DefaultMouseOverBrush}"
+                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_ALight}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="14"/>
                </StackPanel>
@@ -177,6 +168,11 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel>
+                  <StackPanel.Resources>
+                     <Style TargetType="AduSkin:AduCheckBox">
+                        <Setter Property="Margin" Value="4"/>
+                     </Style>
+                  </StackPanel.Resources>
                   <StackPanel Orientation="Horizontal">
                      <AduSkin:AduCheckBox Content="禁用未选择" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="False" IsEnabled="False" />
                      <AduSkin:AduCheckBox Content="默认未选择" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="False" />
@@ -192,8 +188,7 @@
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel  >
                   <AduSkin:AduComboBox x:Name="site" Height="30" IsEditable="True" 
-                        AduAttach:InputAttach.InputHint="请选择" IsShowFilterBox="True"
-                        Background="{StaticResource NormalTransparentBrush}" 
+                        AduAttach:InputAttach.InputHint="请选择" IsShowFilterBox="True" 
                         Margin="10,10,0,10" AduAttach:BorderAttach.CornerRadius="3"/>
                   <AduSkin:AduComboBox x:Name="size" Width="auto" Height="30" SelectedIndex="0" Margin="10,10,0,10" 
                         AduAttach:BorderAttach.CornerRadius="3"/>
@@ -230,15 +225,15 @@
                            <AduSkin:AduRadioButton Content="单选框" FontSize="14" AduAttach:PathDataAttach.Width="16" Margin="0,4"/>
                         </StackPanel>
                      </AduSkin:AduNoExpander>
-                     <AduSkin:AduExpander Header="可折叠" IsEnabled="True" IsExpanded="True" AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}" AduAttach:PathDataAttach.Width="14" AduAttach:PathDataAttach.Margin="4,0,10,2">
-                        <StackPanel>
-                           <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
-                           <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" Margin="0,4" />
-                           <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
-                           <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True"  Margin="0,4"
+                     <AduSkin:AduExpander Header="可折叠" IsEnabled="True" IsExpanded="True"> 
+                           <StackPanel>
+                              <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
+                              <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" Margin="0,4" />
+                              <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
+                              <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True"  Margin="0,4"
                                  AduAttach:PathDataAttach.PathData="{StaticResource Icon_NoChecked}" 
                                  AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Checked}"/>
-                        </StackPanel>
+                           </StackPanel> 
                      </AduSkin:AduExpander>
                   </StackPanel>
                </AduSkin:MetroScrollViewer>
@@ -248,10 +243,9 @@
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:AduSlider Maximum="1000" Value="500" Margin="0,10" Height="20"
-                           AduAttach:PathDataAttach.Width="10" 
-                           AduAttach:BorderAttach.CornerRadius="3"
-                           AduAttach:BackgroundAttach.PanelBackground="#10000000"
-                           AduAttach:PathBrushAttach.NormalPathColor="#90000000"/>
+                        AduAttach:PathDataAttach.Width="10" 
+                        AduAttach:BorderAttach.CornerRadius="3" 
+                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalWhite}"/>
                   <AduSkin:AduFlatSilder Maximum="1000" Value="500" Margin="0,10" Height="17"/>
                </StackPanel>
             </Border>
@@ -277,6 +271,11 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel>
+                  <StackPanel.Resources>
+                     <Style TargetType="AduSkin:AduRadioButton">
+                        <Setter Property="Margin" Value="4"/>
+                     </Style>
+                  </StackPanel.Resources>
                   <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                      <AduSkin:AduRadioButton Content="禁用已选择" AduAttach:PathDataAttach.Width="16"
                               FontSize="14" IsEnabled="False" />
@@ -306,8 +305,9 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel>
-                  <AduSkin:AduFormLable Title="日期选择" TitleForeground="{StaticResource  NormalBlack}" 
-                        PromptVisibility="Visible" Prompt="选择" PromptForeground="{StaticResource NormalBlack}">
+                  <AduSkin:AduFormLable Title="日期选择" TitleForeground="{StaticResource  NormalRed}" 
+                        PromptVisibility="Visible" Prompt="选择" PromptForeground="{StaticResource NormalRed}">
+                     <AduSkin:AduDatePicker/>
                   </AduSkin:AduFormLable>
                   <AduSkin:AduFormLable Title="下拉选择" Margin="0,10,0,0">
                      <AduSkin:AduComboBox>
@@ -327,14 +327,14 @@
                      <AduSkin:AduChooseBox AduChooseBoxType="SingleFile"/>
                   </AduSkin:AduFormLable>
                   <AduSkin:AduPasswordBox Margin="0,10,0,10"  Height="30" IsCanSeePassword="True" 
-                           Password="{Binding Path=DemoPassWord,Mode=OneWayToSource}" AduAttach:InputAttach.InputHint="请输入密码"/>
+                     Password="{Binding Path=DemoPassWord,Mode=OneWayToSource}"
+                     AduAttach:InputAttach.InputHint="请输入密码"/>
                   <AduSkin:MetroTextBox x:Name="password" ButtonTitle="确定"
-                           AduAttach:InputAttach.InputHint="PassWord Input Box!"
-                           IsPassWordBox="True"
-                           PopupHint="请输入密码" />
+                     AduAttach:InputAttach.InputHint="PassWord Input Box!"
+                     IsPassWordBox="True" PopupHint="请输入密码" />
                   <AduSkin:MetroTextBox Margin="0,10,0,0"
-                           AduAttach:InputAttach.InputHint="InputHint..."
-                           PopupHint="This is TextBox!" />
+                     AduAttach:InputAttach.InputHint="InputHint..."
+                     PopupHint="This is TextBox!" />
                   <AduSkin:MetroTextBox Margin="0,10,0,0" />
                   <AduSkin:MetroTextBox Title="Default Title"
                            Margin="0,10,0,0"
@@ -411,7 +411,7 @@
                   <StackPanel Orientation="Horizontal">
                      <AduSkin:AduButtonSvg AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}"  AduAttach:PathDataAttach.Width="20" 
                         Foreground="#999" Height="40" Width="40" />
-                     <AduSkin:AduButtonIcon Height="40" Margin="10" Content="hehhe" Foreground="#000"  VerticalContentAlignment="Center" 
+                     <AduSkin:AduButtonIcon Height="40" Margin="10" Content="hehhe" VerticalContentAlignment="Center" 
                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}" 
                         AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
                         AduAttach:PathDataAttach.Width="16" 
@@ -419,16 +419,18 @@
                         AduAttach:BorderAttach.CornerRadius="6"/>
                      <AduSkin:AduToggleButton 
                         AduAttach:BorderAttach.BorderThickness="1" 
-                        AduAttach:BorderAttach.BorderBrush="#30000000" 
+                        AduAttach:BorderAttach.BorderBrush="{DynamicResource NormalBorderBrush}" 
+                         AduAttach:BorderAttach.SelectedBorderBrush="{DynamicResource SelectedBorderBrush}" 
                         AduAttach:BorderAttach.CornerRadius="15"    
                         AduAttach:PathDataAttach.Width="14"
                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
                         AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
-                        AduAttach:PathBrushAttach.SelectedPathColor="{StaticResource NormalBlue}"
-                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
-                        AduAttach:PathBrushAttach.MouseOverPathColor="#90000000"
-                        AduAttach:BackgroundAttach.SelectedBackground="#30000000" 
-                        AduAttach:BackgroundAttach.MouseOverBackground="#10000000" 
+                        AduAttach:PathBrushAttach.SelectedPathColor="{DynamicResource SelectedPathBrush}"
+                        AduAttach:PathBrushAttach.NormalPathColor="{DynamicResource NormalPathBrush}"
+                        AduAttach:PathBrushAttach.PressedPathColor="{DynamicResource PressedPathBrush}"
+                        AduAttach:PathBrushAttach.MouseOverPathColor="{DynamicResource MouseOverPathBrush}"
+                        AduAttach:BackgroundAttach.SelectedBackground="{DynamicResource SelectedBackground}" 
+                        AduAttach:BackgroundAttach.MouseOverBackground="{DynamicResource MouseOverBackground}" 
                         Width="30" Height="30"/>
                      <AduSkin:AduPathIconButton Margin="10,0" AduAttach:PathDataAttach.PathData="{StaticResource Icon_CopyCode}"/>
                      <AduSkin:AduPathIconButton 
@@ -463,14 +465,14 @@
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel>
-                  <AduSkin:MetroRichTextBox MaxHeight="100" Margin="5" CornerRadius="1" IsEnabled="False">
+                  <AduSkin:MetroRichTextBox MaxHeight="100" Margin="5" IsEnabled="False">
                      <FlowDocument>
                         <Paragraph>
                            <Run Text="禁用" />
                         </Paragraph>
                      </FlowDocument>
                   </AduSkin:MetroRichTextBox>
-                  <AduSkin:MetroRichTextBox x:Name="rt1" MaxHeight="100" Margin="5" CornerRadius="1"  IsReadOnly="True">
+                  <AduSkin:MetroRichTextBox x:Name="rt1" MaxHeight="100" Margin="5" IsReadOnly="True">
                      <FlowDocument>
                         <Paragraph>
                            <Run Text="阅读模式" />
@@ -480,8 +482,7 @@
                   <AduSkin:MetroRichTextBox x:Name="rt3"
                            MaxHeight="100"
                            Margin="5"
-                           AutoLimitMouse="True"
-                           CornerRadius="1">
+                           AutoLimitMouse="True">
                      <FlowDocument>
                         <Paragraph>
                            <Run Text="追加内容" />
@@ -496,7 +497,6 @@
                            Margin="5"
                            Background="#00000000"
                            BorderThickness="0"
-                           CornerRadius="0"
                            IsEnabled="False">
                      <FlowDocument>
                         <Paragraph>
@@ -511,8 +511,7 @@
                            MaxHeight="100"
                            Margin="5"
                            Background="{StaticResource NormalTransparentBrush}"
-                           BorderThickness="0"
-                           CornerRadius="0">
+                           BorderThickness="0">
                      <FlowDocument>
                         <Paragraph>
                            <Run Text="修改外观的 MetroRichTextBox" />
@@ -527,18 +526,16 @@
          </Grid>
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
-               <StackPanel Background="#00000000">
+               <StackPanel>
                   <AduSkin:MetroProgressBar
-                     Margin="5" 
-                     Foreground="{StaticResource NormalWhite}"
+                     Margin="5"  
                      Background="#FF555C65"
                      CornerRadius="10"
                      IsEnabled="False"
                      ProgressBarHeight="20"
                      ProgressBarState="None"
                      Value="15" />
-                  <AduSkin:MetroProgressBar 
-                     Foreground="{StaticResource NormalWhite}"
+                  <AduSkin:MetroProgressBar  
                      x:Name="pb1"
                      Title="MetroProgressBar 调整"
                      Margin="5"
@@ -555,7 +552,7 @@
                      Maximum="50"
                      TextHorizontalAlignment="Right"
                      Value="0" />
-                  <AduSkin:MetroProgressBar
+                  <AduSkin:MetroProgressBar  
                      Title="MetroProgressBar 错误"
                      Margin="5"
                      ProgressBarState="Error"
@@ -567,16 +564,16 @@
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:MetroCanvasGrid
-                                                            Height="100"
-                                                            Margin="5"
-                                                            CornerRadius="2" />
+                     Height="100"
+                     Margin="5"
+                     CornerRadius="2" />
                   <AduSkin:MetroCanvasGrid
-                                                            Height="100"
-                                                            Margin="5"
-                                                            CornerRadius="2"
-                                                            GridOpacity="1"
-                                                            IsApplyTheme="False"
-                                                            Viewport="0 0 20 20" />
+                     Height="100"
+                     Margin="5"
+                     CornerRadius="2"
+                     GridOpacity="1"
+                     IsApplyTheme="False"
+                     Viewport="0 0 20 20" />
                </StackPanel>
             </Border>
          </Grid>

@@ -4,20 +4,22 @@
       xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/IconLibrary.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type AduSkin:AduChooseBox}">
-      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}" />
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}" />
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{DynamicResource NormalPathBrush}" />
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,8,0"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="11" />
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_File}" />
       <Setter Property="AduAttach:InputAttach.InputHint" Value="请选择..."/>
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="CornerRadius" Value="2" />
-      <Setter Property="FontSize" Value="12" />
-      <Setter Property="Foreground" Value="Black" />
+      <Setter Property="FontSize" Value="12" /> 
       <Setter Property="Height" Value="30" />
       <Setter Property="Padding" Value="4,0" />
       <Setter Property="ChooseButtonWidth" Value="20" />
@@ -29,8 +31,9 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduChooseBox}">
                <Grid>
+                  <Border x:Name="back"  CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}"/>
                   <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}"
-                      CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{StaticResource NormalBlack}" Opacity="0.15"/>
+                      CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{DynamicResource NormalBorderBrush}" />
                   <Border x:Name="bordermove" Opacity="0"
                      Background="{TemplateBinding Background}"
                      BorderBrush="{TemplateBinding BorderBrush}"
@@ -95,6 +98,7 @@
                      <Setter TargetName="bordermove" Property="Opacity" Value="1" />
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="true">
+                     <Setter TargetName="back" Property="Background" Value="{Binding MouseMoveBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
                      <Setter TargetName="bordermove" Property="Opacity" Value="1" />
                   </Trigger>
                </ControlTemplate.Triggers>
@@ -104,7 +108,7 @@
       <Setter Property="ChooseButtonStyle">
          <Setter.Value>
             <Style TargetType="Button">
-               <Setter Property="Background" Value="Transparent" />
+               <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
                <Setter Property="BorderThickness" Value="0" />
                <Setter Property="Template">
                   <Setter.Value>
@@ -120,7 +124,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                            <Trigger Property="IsMouseOver" Value="True">
-                              <Setter TargetName="icon" Property="Opacity" Value="{StaticResource MouseOverOpacity}" />
+                              <Setter TargetName="icon" Property="Opacity" Value="{DynamicResource MouseOverOpacity}" />
                            </Trigger>
                         </ControlTemplate.Triggers>
                      </ControlTemplate>

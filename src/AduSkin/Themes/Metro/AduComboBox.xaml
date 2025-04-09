@@ -4,71 +4,60 @@
       xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/IconLibrary.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <ControlTemplate x:Key="ComboBoxToggleButtonTemplate" TargetType="{x:Type AduSkin:AduToggleButton}">
-      <Grid Background="{StaticResource NormalTransparentBrush}">
+      <Grid Background="{DynamicResource NormalTransparentBrush}">
          <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
          </Grid.ColumnDefinitions>
-         <Border x:Name="ShadowBorder" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-            Background="{TemplateBinding Background}" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
-         <Border Name="Border" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-            BorderBrush="#D9D9D9" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" UseLayoutRounding="True" />
-         <Border Name="ButtonBorder" Grid.Column="1" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}">
-            <Path Name="Arrow" Grid.Column="1" 
-               HorizontalAlignment="Center" VerticalAlignment="Center"
-               Margin="{TemplateBinding  AduAttach:PathDataAttach.Margin}"
-               Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
-               Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
-               Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
-               RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="Uniform"
-               UseLayoutRounding="True">
-               <Path.RenderTransform>
-                  <TransformGroup>
-                     <ScaleTransform />
-                     <SkewTransform />
-                     <RotateTransform />
-                     <TranslateTransform />
-                  </TransformGroup>
-               </Path.RenderTransform>
-            </Path>
-         </Border>
+         <Path Name="Arrow" Grid.Column="1" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Margin="{TemplateBinding  AduAttach:PathDataAttach.Margin}"
+            Width="{TemplateBinding AduAttach:PathDataAttach.Width}"
+            Data="{TemplateBinding AduAttach:PathDataAttach.PathData}"
+            Fill="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
+            RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="Uniform"
+            UseLayoutRounding="True">
+            <Path.RenderTransform>
+               <TransformGroup>
+                  <ScaleTransform />
+                  <SkewTransform />
+                  <RotateTransform />
+                  <TranslateTransform />
+               </TransformGroup>
+            </Path.RenderTransform>
+         </Path>
          <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="CheckStates">
                <VisualState x:Name="Checked">
                   <Storyboard>
-                     <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" To="180" />
+                     <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="Arrow" 
+                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" To="180" />
                   </Storyboard>
                </VisualState>
                <VisualState x:Name="Unchecked">
                   <Storyboard>
-                     <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="Arrow" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" To="0" />
+                     <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="Arrow" 
+                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" To="0" />
                   </Storyboard>
                </VisualState>
             </VisualStateGroup>
          </VisualStateManager.VisualStateGroups>
       </Grid>
       <ControlTemplate.Triggers>
-         <Trigger Property="IsMouseOver" Value="True">
-            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-         </Trigger>
-         <MultiTrigger>
-            <MultiTrigger.Conditions>
-               <Condition Property="ToggleButton.IsChecked" Value="True" />
-               <Condition Property="IsMouseOver" Value="False" />
-            </MultiTrigger.Conditions>
-            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-         </MultiTrigger>
-         <Trigger Property="UIElement.IsEnabled" Value="False">
-            <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
+         <Trigger Property="IsEnabled" Value="False">
+            <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
          </Trigger>
       </ControlTemplate.Triggers>
    </ControlTemplate>
 
    <Style x:Key="ComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalBrush}" />
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{DynamicResource MouseOverBackground}" />
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{DynamicResource SelectedBackground}" />
       <Setter Property="Height" Value="30"/>
       <Setter Property="MinHeight" Value="22"/>
       <Setter Property="MinWidth" Value="30"/>
@@ -82,16 +71,15 @@
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter Property="Opacity" Value="{StaticResource DisableOpacity}" />
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="bg"  Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+                     <Setter Property="Foreground" Value="{DynamicResource MouseOverForeground}" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
-                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
-                     <Setter TargetName="bg" Property="Opacity" Value=".5" />
-                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.MouseOverBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter Property="Foreground" Value="{DynamicResource SelectedForeground}" />
+                     <Setter TargetName="bg" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -99,16 +87,40 @@
       </Setter>
    </Style>
 
+   <Storyboard x:Key="Storyboard_Open">
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDown" Storyboard.TargetProperty="(UIElement.Opacity)">
+         <EasingDoubleKeyFrame KeyTime="0" Value="0.0" />
+         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1" />
+      </DoubleAnimationUsingKeyFrames>
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDown" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+         <EasingDoubleKeyFrame KeyTime="0" Value="0.9" />
+         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1" />
+      </DoubleAnimationUsingKeyFrames>
+   </Storyboard>
+
+   <Storyboard x:Key="Storyboard_Close">
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDown" Storyboard.TargetProperty="(UIElement.Opacity)">
+         <EasingDoubleKeyFrame KeyTime="0" Value="1" />
+         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
+      </DoubleAnimationUsingKeyFrames>
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDown" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+         <EasingDoubleKeyFrame KeyTime="0" Value="1" />
+         <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
+      </DoubleAnimationUsingKeyFrames>
+   </Storyboard>
+
    <Style TargetType="{x:Type AduSkin:AduComboBox}">
-      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{StaticResource Icon_DropDowm}"/>
+      <Setter Property="AduAttach:PathDataAttach.PathData" Value="{DynamicResource Icon_DropDowm}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="10"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="0,0,6,0"/>
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{DynamicResource PrimaryBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{DynamicResource PanelBackground}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
-      <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="Foreground" Value="{StaticResource NormalBlack}"/>
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:BorderAttach.PanelBorderBrush" Value="{DynamicResource PanelBorderBrush}"/>
+      <Setter Property="AduAttach:InputAttach.InputHint" Value="请选择..."/>
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}"/>
       <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="UIElement.SnapsToDevicePixels" Value="True"/>
       <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
@@ -120,37 +132,19 @@
       <Setter Property="ItemContainerStyle" Value="{StaticResource ComboBoxItemStyle}"/>
       <Setter Property="VerticalContentAlignment" Value="Center"/>
       <Setter Property="Padding" Value="5,0,0,0"/>
-      <Setter Property="AduAttach:InputAttach.InputHint" Value="请选择..."/>
       <Setter Property="Control.Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduComboBox}">
-               <ControlTemplate.Resources>
-                  <Storyboard x:Key="Storyboard_Open">
-                     <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDown" Storyboard.TargetProperty="(UIElement.Opacity)">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="0.0" />
-                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1" />
-                     </DoubleAnimationUsingKeyFrames>
-                     <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDown" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="0.9" />
-                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1" />
-                     </DoubleAnimationUsingKeyFrames>
-                  </Storyboard>
-                  <Storyboard x:Key="Storyboard_Close">
-                     <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDown" Storyboard.TargetProperty="(UIElement.Opacity)">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1" />
-                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
-                     </DoubleAnimationUsingKeyFrames>
-                     <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDown" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
-                        <EasingDoubleKeyFrame KeyTime="0" Value="1" />
-                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
-                     </DoubleAnimationUsingKeyFrames>
-                  </Storyboard>
-               </ControlTemplate.Resources>
                <Grid Width="{TemplateBinding Width}">
                   <Grid.ColumnDefinitions>
                      <ColumnDefinition Width="auto" />
                      <ColumnDefinition Width="*" />
                   </Grid.ColumnDefinitions>
+                  <Border x:Name="back" Grid.ColumnSpan="2" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Background="{TemplateBinding Background}"/>
+                  <Border x:Name="border" Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{DynamicResource NormalBorderBrush}" 
+                     CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"/>
+                  <Border x:Name="bordermove" Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" 
+                     CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Visibility="Collapsed"/>
                   <Grid Grid.Column="1">
                      <AduSkin:AduToggleButton x:Name="ToggleButton" ClickMode="Press" Focusable="False" 
                            AduAttach:PathDataAttach.PathData="{TemplateBinding AduAttach:PathDataAttach.PathData}"
@@ -159,20 +153,22 @@
                            AduAttach:BorderAttach.CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
                            AduAttach:PathBrushAttach.NormalPathColor="{TemplateBinding AduAttach:PathBrushAttach.NormalPathColor}"
                            IsChecked="{Binding Path=IsDropDownOpen,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}"
-                           Template="{StaticResource ComboBoxToggleButtonTemplate}" 
-                           Background="{TemplateBinding Background}"
-                           BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
+                           Template="{StaticResource ComboBoxToggleButtonTemplate}"/>
+
                      <ContentPresenter Name="ContentSite" Margin="5, 3, 25, 3" 
                            HorizontalAlignment="Left" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                            Content="{TemplateBinding ComboBox.SelectionBoxItem}"
                            ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}"
                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                            IsHitTestVisible="False" />
+
                      <TextBlock Margin="{TemplateBinding Padding}"
                            HorizontalAlignment="Left" 
                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                           FontSize="{TemplateBinding FontSize}"
-                           Opacity="0.25" IsHitTestVisible="False"
+                           FontSize="{TemplateBinding FontSize}" 
+                           IsHitTestVisible="False"
+                           Foreground="{TemplateBinding Foreground}"
+                           Opacity="{DynamicResource InputHintOpacity}"
                            Text="{TemplateBinding AduAttach:InputAttach.InputHint}">
                         <TextBlock.Style>
                            <Style TargetType="{x:Type TextBlock}">
@@ -189,7 +185,6 @@
                                     </MultiDataTrigger.Conditions>
                                     <Setter Property="Visibility" Value="Collapsed" />
                                  </MultiDataTrigger>
-
                                  <MultiDataTrigger>
                                     <MultiDataTrigger.Conditions>
                                        <Condition Binding="{Binding Path=Text.IsEmpty, ElementName=PART_EditableTextBox}" Value="False" />
@@ -200,9 +195,11 @@
                            </Style>
                         </TextBlock.Style>
                      </TextBlock>
+
                      <TextBox Name="PART_EditableTextBox" Margin="5, 3, 25, 3" Focusable="True" IsReadOnly="False"
                            HorizontalAlignment="Stretch" VerticalAlignment="Center" 
-                           Background="Transparent" Foreground="{TemplateBinding Foreground}" 
+                           Background="{TemplateBinding Background}"
+                           Foreground="{TemplateBinding Foreground}" 
                            Visibility="Hidden" Text="{TemplateBinding ComboBox.SelectionBoxItem}" >
                         <TextBox.Template>
                            <ControlTemplate TargetType="TextBox">
@@ -213,17 +210,18 @@
                         </TextBox.Template>
                      </TextBox>
 
-                     <!--  Popup showing items  -->
-                     <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" VerticalOffset="-1" AllowsTransparency="True" PopupAnimation="Fade" >
+                     <Popup x:Name="Popup" IsOpen="{TemplateBinding IsDropDownOpen}"
+                            Placement="Bottom" Focusable="False"
+                            AllowsTransparency="True" PopupAnimation="Fade" >
                         <Border RenderTransformOrigin="0.5,0" 
                               CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                              BorderBrush="{TemplateBinding BorderBrush}" 
+                              BorderBrush="{TemplateBinding AduAttach:BorderAttach.PanelBorderBrush}" 
                               BorderThickness="{TemplateBinding BorderThickness}" 
                               Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}" 
                               MaxHeight="{TemplateBinding MaxDropDownHeight}" 
                               Padding="0,3" Margin="10" 
                               MinWidth="{TemplateBinding ActualWidth}" 
-                              x:Name="DropDown" SnapsToDevicePixels="True">
+                              x:Name="DropDown" SnapsToDevicePixels="True" Effect="{DynamicResource CardShadow-Black}">
                            <Border.RenderTransform>
                               <TransformGroup>
                                  <ScaleTransform />
@@ -231,20 +229,22 @@
                                  <RotateTransform />
                                  <TranslateTransform />
                               </TransformGroup>
-                           </Border.RenderTransform>
-                           <Border.Effect>
-                              <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="0" Opacity="0.2"/>
-                           </Border.Effect>
+                           </Border.RenderTransform> 
                            <Grid>
                               <Grid.RowDefinitions>
                                  <RowDefinition Height="auto"/>
                                  <RowDefinition/>
                               </Grid.RowDefinitions>
-                              <AduSkin:MetroTextBox  x:Name="PART_FilterTextBox"
-                                    Height="26" Margin="5,2,5,5" AduAttach:InputAttach.InputHint="请输入关键字"
-                                    Visibility="{Binding IsShowFilterBox, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibility}}" />
-                              <AduSkin:MetroScrollViewer Grid.Row="1" Margin="0" MaxHeight="{TemplateBinding MaxDropDownHeight}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
-                                 <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                              <AduSkin:MetroTextBox x:Name="PART_FilterTextBox" 
+                                 BorderBrush="{TemplateBinding BorderBrush}"
+                                 Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}" 
+                                 MouseMoveBackground="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"
+                                 Height="26" Margin="5,2,5,5" AduAttach:InputAttach.InputHint="请输入关键字"
+                                 Visibility="{Binding IsShowFilterBox, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibility}}" />
+                              <AduSkin:MetroScrollViewer Grid.Row="1" Margin="0" 
+                                 MaxHeight="{TemplateBinding MaxDropDownHeight}" 
+                                 HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                                 SnapsToDevicePixels="True" CanContentScroll="True">
                                  <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                               </AduSkin:MetroScrollViewer>
                            </Grid>
@@ -269,12 +269,19 @@
                         <BeginStoryboard x:Name="Storyboard_Close_BeginStoryboard" Storyboard="{StaticResource Storyboard_Close}" />
                      </Trigger.EnterActions>
                   </Trigger>
-                  <Trigger Property="UIElement.IsEnabled" Value="False">
-                     <Setter Property="TextElement.Foreground" Value="{StaticResource ComboBox.Disabled.Foreground}" />
-                     <Setter TargetName="PART_EditableTextBox" Property="Foreground" Value="{StaticResource ComboBox.Disabled.Foreground}" />
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
                   </Trigger>
                   <Trigger Property="ItemsControl.IsGrouping" Value="True">
                      <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                  </Trigger>
+                  <Trigger Property="IsFocused" Value="True">
+                     <Setter TargetName="border" Property="Visibility" Value="Collapsed"/>
+                     <Setter TargetName="bordermove" Property="Visibility" Value="Visible"/>
+                  </Trigger>
+                  <Trigger Property="IsMouseOver" Value="True">
+                     <Setter TargetName="border" Property="Visibility" Value="Collapsed"/>
+                     <Setter TargetName="bordermove" Property="Visibility" Value="Visible"/>
                   </Trigger>
                   <Trigger Property="ComboBox.IsEditable" Value="True">
                      <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />

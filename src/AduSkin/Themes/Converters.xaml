@@ -8,4 +8,7 @@
    <Converter:StringIsEmptyConverter x:Key="StringIsEmptyConverter"/>
    <Converter:NumberConverter x:Key="NumberConverter" />
    <Converter:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+   <Converter:StringToVisibility x:Key="StringToVisibility"/>
+   <Converter:CornerRadiusToDouble x:Key="CornerRadiusToDouble"/>
+   
 </ResourceDictionary>

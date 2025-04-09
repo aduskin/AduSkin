@@ -16,8 +16,9 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Thumb}">
                <Border Padding="{TemplateBinding Padding}" Margin="0 0 0 2"
-                       Background="{DynamicResource NormalTransparentBrush}" >
-                  <Rectangle HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Width="1" Fill="{TemplateBinding Background}" />
+                       Background="{TemplateBinding Background}" >
+                  <Rectangle HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                             Width="1" Fill="{TemplateBinding Background}" />
                </Border>
             </ControlTemplate>
          </Setter.Value>
@@ -27,7 +28,7 @@
    <!--列头header样式-->
    <Style x:Key="DefaultDataGridColumnHeader" TargetType="{x:Type DataGridColumnHeader}">
       <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
-      <Setter Property="Background" Value="{DynamicResource NormalBorderBrush}" />
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="MinWidth" Value="5" />
@@ -62,7 +63,7 @@
                      Style="{StaticResource DefaultColumnHeaderGripperStyle}" />
 
                   <Thumb x:Name="PART_RightHeaderGripper" Grid.Column="1"
-                        Background="{StaticResource NormalTransparentBrush}"
+                        Background="{DynamicResource NormalTransparentBrush}"
                         HorizontalAlignment="Right" HorizontalContentAlignment="Right" 
                         Style="{StaticResource DefaultColumnHeaderGripperStyle}"/>
                </Grid>
@@ -101,10 +102,10 @@
 
    <!--行样式-->
    <Style x:Key="DefaultDataGridRow" TargetType="{x:Type DataGridRow}">
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource MouseOverBackground}"/>
-      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource SelectedBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{DynamicResource MouseOverBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{DynamicResource SelectedBackground}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
-      <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}"/>
       <Setter Property="Cursor" Value="Hand"/>
       <Setter Property="Margin" Value="0,1"/>
       <Setter Property="Padding" Value="0,4"/>
@@ -252,18 +253,18 @@
 
    <!--表格DataGrid样式-->
    <Style TargetType="{x:Type AduSkin:AduDataGrid}">
-      <Setter Property="AduAttach:BackgroundAttach.NormalBackground" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource MouseOverBackground}"/>
-      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource SelectedBackground}"/>
-      <Setter Property="AduAttach:PlaceHolderAttach.PathData" Value="{StaticResource Icon_Null}"/>
+      <Setter Property="AduAttach:BackgroundAttach.NormalBackground" Value="{DynamicResource NormalBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{DynamicResource MouseOverBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{DynamicResource SelectedBackground}"/>
+      <Setter Property="AduAttach:PlaceHolderAttach.PathData" Value="{DynamicResource Icon_Null}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
-      <Setter Property="Background" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}"/> 
+      <Setter Property="ColumnHeaderStyle" Value="{DynamicResource DefaultDataGridColumnHeader}"/>
+      <Setter Property="RowHeaderStyle" Value="{DynamicResource DefaultDataGridRowHeader}"/>
+      <Setter Property="CellStyle" Value="{DynamicResource DefaultDataGridCell}"/>
+      <Setter Property="RowStyle" Value="{DynamicResource DefaultDataGridRow}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
       <Setter Property="BorderThickness" Value="0"/>
-      <Setter Property="ColumnHeaderStyle" Value="{StaticResource DefaultDataGridColumnHeader}"/>
-      <Setter Property="RowHeaderStyle" Value="{StaticResource DefaultDataGridRowHeader}"/>
-      <Setter Property="CellStyle" Value="{StaticResource DefaultDataGridCell}"/>
-      <Setter Property="RowStyle" Value="{StaticResource DefaultDataGridRow}"/>
       <Setter Property="AlternationCount" Value="2"/>
       <Setter Property="MinRowHeight" Value="25"/>
       <Setter Property="RowHeaderWidth" Value="0"/>
@@ -283,7 +284,7 @@
       <Setter Property="DropLocationIndicatorStyle">
          <Setter.Value>
             <Style TargetType="Separator">
-               <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
+               <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
                <Setter Property="Width" Value="2.5" />
                <Setter Property="Template">
                   <Setter.Value>
@@ -292,8 +293,8 @@
                               Background="{TemplateBinding Background}" 
                               Padding="{TemplateBinding Padding}" 
                               BorderThickness="{TemplateBinding BorderThickness}">
-                           <Rectangle Fill="{StaticResource NormalBorderBrush}" 
-                                 Height="{TemplateBinding Height}"  Width="{TemplateBinding Width}" />
+                           <Rectangle Fill="{DynamicResource NormalBorderBrush}" 
+                                 Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" />
                         </Border>
                      </ControlTemplate>
                   </Setter.Value>
@@ -348,7 +349,7 @@
                                  </Grid>
                                  <!--垂直滑动条-->
                                  <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" 
-                                       BorderBrush="{StaticResource NormalBorderBrush}" 
+                                       BorderBrush="{DynamicResource NormalBorderBrush}" 
                                        Style="{StaticResource scrollBarStyle}" 
                                        Orientation="Vertical" HorizontalAlignment="Right" 
                                        Maximum="{TemplateBinding ScrollableHeight}" 

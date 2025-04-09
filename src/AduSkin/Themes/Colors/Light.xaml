@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+   <!--主色-->
+   <Color x:Key="PrimaryColor">#EE796F</Color>
+
+   <!--字体色-->
+   <Color x:Key="NormalForegroundColor">#000000</Color>
+   <Color x:Key="MouseOverForegroundColor">#FFFFFF</Color>
+   <Color x:Key="PressedForegroundColor">#000000</Color>
+   <Color x:Key="SelectedForegroundColor">#FFFFFF</Color>
+   <Color x:Key="HighlightForegroundColor">#FFFFFF</Color>
+   <Color x:Key="DisabledForegroundColor">#000000</Color>
+   <Color x:Key="InputHintForegroundColor">#000000</Color>
+   <Color x:Key="TooltipForegroundColor">#70FFFFFF</Color>
+
+   <!--图标色-->
+   <Color x:Key="NormalPathColor">#EE796F</Color>
+   <Color x:Key="MouseOverPathColor">#EE796F</Color>
+   <Color x:Key="PressedPathColor">#EE796F</Color>
+   <Color x:Key="SelectedPathColor">#EE796F</Color>
+   <Color x:Key="DisabledPathColor">#000000</Color>
+   <Color x:Key="PlaceHolderPathColor">#000000</Color>
+   <Color x:Key="NormalPathBackgroundColor">#EE796F</Color>
+    
+   <!--边框色-->
+   <Color x:Key="NormalBorderColor">#D9D9D9</Color>
+   <Color x:Key="MouseOverBorderColor">#FFD9D9D9</Color>
+   <Color x:Key="PressedBorderColor">#80000000</Color>
+   <Color x:Key="SelectedBorderColor">#70000000</Color>
+   <Color x:Key="DisabledBorderColor">#70000000</Color>
+   <Color x:Key="PanelBorderColor">#D9D9D9</Color>
+   
+   <!--背景色-->
+   <Color x:Key="NormalBackgroundColor">#FFFFFF</Color>
+   <Color x:Key="MouseOverBackgroundColor">#EE796F</Color>
+   <Color x:Key="PressedBackgroundColor">#8FFFFFF0</Color>
+   <Color x:Key="SelectedBackgroundColor">#EE796F</Color>
+   <Color x:Key="PanelBackgroundColor">#FFFFFF</Color>
+   <Color x:Key="HighlightBackgroundColor">#EE796F</Color>
+   <Color x:Key="AlternationIndex0Color">#7FFFFFF0</Color>
+   <Color x:Key="AlternationIndex1Color">#7FFFFFF0</Color> 
+   <Color x:Key="DisabledBackgroundColor">#7FFFFFF0</Color>
+   <Color x:Key="WindowBackgroundColor">#F5F5F5</Color>
+   <Color x:Key="MosaicColor">#EE796F</Color>
+</ResourceDictionary>

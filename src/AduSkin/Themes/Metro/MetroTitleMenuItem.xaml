@@ -5,12 +5,14 @@
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Effects.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--顶部菜单-->
    <Style TargetType="{x:Type Metro:MetroTitleMenuItem}">
-      <Setter Property="Background" Value="{DynamicResource NormalRed}"/>
-      <Setter Property="Foreground" Value="{DynamicResource NormalBlack}"/>
-      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{StaticResource NormalWhite}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{DynamicResource NormalPathBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{DynamicResource PanelBackground}"/>
       <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
@@ -24,8 +26,7 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroTitleMenuItem}">
                <Grid>
-                  <Grid x:Name="content" Shell:WindowChrome.IsHitTestVisibleInChrome="True"
-                        Background="{StaticResource NormalTransparentBrush}">
+                  <Grid x:Name="content" Shell:WindowChrome.IsHitTestVisibleInChrome="True" Background="{StaticResource NormalTransparentBrush}">
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" x:Name="iconWidth"/>
                         <ColumnDefinition Width="Auto"/>
@@ -38,13 +39,14 @@
                      <ContentPresenter x:Name="icon" HorizontalAlignment="Center" VerticalAlignment="Center"
                          Width="{TemplateBinding AduAttach:PathDataAttach.Width}" 
                          Height="{TemplateBinding AduAttach:PathDataAttach.Width}" 
-                         Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}" 
-                         Visibility="{TemplateBinding Icon,Converter={StaticResource NullToVisibilityConverter}}"
+                         Margin="{TemplateBinding AduAttach:PathDataAttach.Margin}"  
                          Content="{TemplateBinding Icon}"  
                          RecognizesAccessKey="True" SnapsToDevicePixels="True" />
-
-                     <Metro:MetroTextBlock Grid.Column="1" Text="{TemplateBinding Header}"
-                           Foreground="{TemplateBinding Foreground}" Margin="8,0" VerticalAlignment="Center"/>
+ 
+                     <ContentPresenter x:Name="header" Grid.Column="1" Margin="8,0"  VerticalAlignment="Center"
+                         Content="{TemplateBinding Header}"  
+                         RecognizesAccessKey="True" SnapsToDevicePixels="True" />
+                     
                      <Path Grid.Column="2" Width="10" Data="{StaticResource Icon_DownArrow}" 
                            Stretch="Uniform" Fill="{TemplateBinding Foreground}"
                            VerticalAlignment="Center"  Margin="0,0,10,0"/>
@@ -52,8 +54,8 @@
                   <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False"
                         IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" 
                         PopupAnimation="Fade" Placement="Bottom">
-                     <Border Grid.Row="1" RenderOptions.ClearTypeHint="Enabled"
-                        Margin="20" Padding="0" 
+                     <Border Grid.Row="1" Margin="20"  
+                        RenderOptions.ClearTypeHint="Enabled" 
                         Effect="{StaticResource PopupShadowBlack}"
                         Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}" 
                         BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
@@ -66,7 +68,7 @@
                </Grid>
                <ControlTemplate.Triggers>
                   <Trigger Property="Icon" Value="{x:Null}">
-                     <Setter TargetName="iconWidth" Property="Width" Value="0"/>
+                     <Setter TargetName="icon" Property="Visibility" Value="Collapsed"/>
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter TargetName="icon" Property="Opacity" Value="0.5"/>

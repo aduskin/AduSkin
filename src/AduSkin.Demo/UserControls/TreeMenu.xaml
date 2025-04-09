@@ -8,6 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
    <Grid>
-      <AduSkin:AduTreeView  x:Name="TreeViewCompany"/>
+      <AduSkin:AduTreeView  x:Name="TreeViewCompany" Foreground="{DynamicResource NormalForeground}"/>
    </Grid>
 </UserControl>

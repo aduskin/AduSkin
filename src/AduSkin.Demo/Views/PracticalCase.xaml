@@ -16,7 +16,7 @@
          <ColumnDefinition Width="300"/>
          <ColumnDefinition/>
       </Grid.ColumnDefinitions>
-      <Border Background="{StaticResource NormalWhite}" Effect="{StaticResource CardShadow}"
+      <Border Background="{DynamicResource PanelBackground}" Effect="{DynamicResource PanelShadow}"
               BorderThickness="0,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}">
          <Grid >
             <Grid.RowDefinitions>
@@ -24,10 +24,8 @@
                <RowDefinition Height="Auto"/>
                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Background="{StaticResource NormalBlack5}">
-               <TextBlock Foreground="{StaticResource NormalBlack90}" Style="{StaticResource H5}" 
-                  Padding="0,20,0,0" HorizontalAlignment="Center">搜索你要找的案例</TextBlock>
-            </Border>
+            <TextBlock Foreground="{DynamicResource NormalForeground}" Style="{StaticResource H5}" 
+               Padding="0,20,0,0" HorizontalAlignment="Center" Text="搜索你要找的案例"/>
             <Border Background="{StaticResource NormalBlack5}" Grid.Row="1">
                <Metro:MetroTextBox x:Name="SearchKey" 
                      CaretBrush="{StaticResource NormalBlack}" Background="{StaticResource NormalBlack10}" 
@@ -43,19 +41,21 @@
                   </Style>
                </Metro:AduTabControl.Resources>
                <Metro:AduTabItem Header="案例">
-                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" 
+                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" BorderThickness="0" Background="{DynamicResource PanelBackground}"
                            ItemsSource="{Binding SearchControl.View}" SelectedItem="{Binding CurrentShowControl}"/>
                </Metro:AduTabItem>
                <Metro:AduTabItem Header="工具">
-                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}"
+                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" BorderThickness="0" Background="{DynamicResource PanelBackground}"
                            ItemsSource="{Binding SearchTool.View}" SelectedItem="{Binding CurrentShowTool}"/>
                </Metro:AduTabItem>
             </Metro:AduTabControl>
          </Grid>
       </Border>
-      <Grid Background="{StaticResource MainContentForegroundDrawingBrush}" Grid.Column="1">
+      <Grid Background="{DynamicResource MosaicBackground}" Grid.Column="1">
          <Border HorizontalAlignment="Center" VerticalAlignment="Center" Padding="40,0,40,40" Margin="20"
-                 MinWidth="400" Background="{StaticResource NormalWhite}" BorderThickness="1" BorderBrush="{StaticResource NormalBorderBrush}" CornerRadius="6" Effect="{StaticResource CardShadow}">
+                 MinWidth="400" Background="{DynamicResource PanelBackground}" 
+                 BorderThickness="1" BorderBrush="{DynamicResource NormalBorderBrush}" 
+                 CornerRadius="10" Effect="{DynamicResource PanelShadow}">
             <Grid>
                <Grid.RowDefinitions>
                   <RowDefinition Height="60"/>

@@ -67,7 +67,7 @@ namespace AduSkin.Controls.Attach
           => (Brush)element.GetValue(MouseOverBackgroundProperty);
 
       /// <summary>
-      /// 鼠标悬浮颜色
+      /// 鼠标按下颜色
       /// </summary>
       public static readonly DependencyProperty PressedBackgroundProperty = DependencyProperty.RegisterAttached(
             "PressedBackground", typeof(Brush), typeof(BackgroundAttach), new PropertyMetadata(default(Brush)));

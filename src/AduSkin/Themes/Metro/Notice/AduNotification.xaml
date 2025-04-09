@@ -31,15 +31,14 @@
                      <TranslateTransform />
                   </TransformGroup>
                </Grid.RenderTransform>
-               <Border Background="{StaticResource NormalWhite}" CornerRadius="6,0,0,6" SnapsToDevicePixels="True" UseLayoutRounding="True">
-                  <Border.Effect>
-                     <DropShadowEffect BlurRadius="20" Opacity="0.1" ShadowDepth="10" Color="Black" />
-                  </Border.Effect>
-               </Border>
+               <Border Background="{DynamicResource NormalBackground}" CornerRadius="6,0,0,6" 
+                     Effect="{StaticResource NotificationShadowBlack}"
+                     SnapsToDevicePixels="True" UseLayoutRounding="True"/>
 
-               <Border x:Name="Border" CornerRadius="6,0,0,6" Background="{StaticResource NormalWhite}" BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="1"/>
+               <Border x:Name="Border" CornerRadius="6,0,0,6"
+                     BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="1"/>
 
-               <Border Background="{StaticResource NormalWhite}" CornerRadius="6,0,0,6" Margin="1" Padding="10">
+               <Border Margin="1" Padding="10">
                   <Grid>
                      <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -54,16 +53,16 @@
                               VerticalAlignment="Center" Stretch="Uniform" />
 
                      <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="14"
-                                   Foreground="#464C5B"
+                                   Foreground="{DynamicResource NormalForeground}"
                                    Text="{Binding Title}" />
-                     <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,8,0,0" Foreground="#999999"
+                     <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,8,0,0" Foreground="{DynamicResource NormalForeground}"
                                    Text="{Binding Content}"
                                    TextWrapping="Wrap" />
 
                      <Adu:AduPathIconButton x:Name="PART_CloseButton" Grid.ColumnSpan="2" Margin="0" 
                               HorizontalAlignment="Right" VerticalAlignment="Center" 
-                              AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource MouseOverPathBrush}" 
-                              AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalPathBrush}"
+                              AduAttach:PathBrushAttach.MouseOverPathColor="{DynamicResource MouseOverPathBrush}" 
+                              AduAttach:PathBrushAttach.NormalPathColor="{DynamicResource NormalPathBrush}"
                               AduAttach:PathDataAttach.PathData="{StaticResource Icon_SystemClose}"
                               AduAttach:PathDataAttach.Width="10" />
                   </Grid>

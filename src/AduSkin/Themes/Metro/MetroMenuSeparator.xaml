@@ -6,8 +6,8 @@
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type Metro:MetroMenuSeparator}">
-      <Setter Property="Background" Value="{StaticResource NormalBorderBrush}"/>
-      <Setter Property="Opacity" Value=".4"/>
+      <Setter Property="Background" Value="{DynamicResource NormalSeparator}"/>
+      <Setter Property="Opacity" Value=".1"/>
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="Focusable" Value="false"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>

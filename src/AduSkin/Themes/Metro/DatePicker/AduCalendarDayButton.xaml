@@ -13,14 +13,13 @@
       <Setter Property="Margin" Value="1" />
       <Setter Property="HorizontalContentAlignment" Value="Center" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="{StaticResource NormalWhite10}"/>
-      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource NormalBlack20}"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalWhite10}"/>
-      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{StaticResource NormalBlack90}"/>
-      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}"/>
+      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="{DynamicResource HighlightBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{DynamicResource SelectedBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{DynamicResource MouseOverBackground}"/>
+      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{DynamicResource HighlightForeground}"/>
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{DynamicResource SelectedForeground}"/>
+      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{DynamicResource MouseOverForeground}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduPicker:AduCalendarDayButton}">
@@ -54,13 +53,13 @@
                   <Trigger Property="IsMouseOver" Value="True">
                      <Setter TargetName="border" Property="Background" 
                         Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.MouseOverBackground)}" />
-                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+                     <Setter Property="Foreground" Value="{DynamicResource MouseOverForeground}" />
                      <Setter Property="Cursor" Value="Hand" />
                   </Trigger>
                   <Trigger Property="IsSelected" Value="True">
                      <Setter TargetName="SelectedBackground" Property="Background" 
                         Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}" />
-                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+                     <Setter Property="Foreground" Value="{DynamicResource SelectedForeground}" />
                   </Trigger>
                   <Trigger Property="IsBelongCurrentMonth" Value="False">
                      <Setter Property="Opacity" Value=".4" />
@@ -76,7 +75,7 @@
                         <Condition Property="IsSelected" Value="False" />
                         <Condition Property="IsMouseOver" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter Property="Foreground" Value="{StaticResource NormalWhite}" />
+                     <Setter Property="Foreground" Value="{DynamicResource MouseOverForeground}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
@@ -91,7 +90,7 @@
                         <Condition Property="IsSelected" Value="True" />
                         <Condition Property="IsToday" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="TodayBackground" Property="Background" Value="{StaticResource NormalWhite}" />
+                     <Setter TargetName="TodayBackground" Property="Background" Value="{DynamicResource SelectedBackground}" />
                   </MultiTrigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>

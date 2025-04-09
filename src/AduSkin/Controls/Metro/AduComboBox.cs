@@ -13,11 +13,7 @@ namespace AduSkin.Controls.Metro
    public class AduComboBox : ComboBox
    {
       private TextBox PART_FilterTextBox;
-      private ICollectionView view;
-      public AduComboBox()
-      {
-
-      }
+      private ICollectionView view; 
       static AduComboBox()
       {
          ElementBase.DefaultStyle<AduComboBox>(DefaultStyleKeyProperty);

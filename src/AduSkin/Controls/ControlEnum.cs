@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace AduSkin.Controls
 {
+   /// <summary>
+   /// 主题类型
+   /// </summary>
+   public enum SkinType
+   {
+      Light,
+      Dark,
+      System,
+      Custom
+   }
+
    #region EnumDatePickerType
    public enum EnumDatePickerType
    {

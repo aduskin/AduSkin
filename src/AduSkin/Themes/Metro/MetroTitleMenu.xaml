@@ -7,7 +7,7 @@
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type Metro:MetroTitleMenu}">
-      <Setter Property="Background" Value="{DynamicResource Brush}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}"/> 
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/> 
       <Setter Property="VerticalAlignment" Value="Center"/>

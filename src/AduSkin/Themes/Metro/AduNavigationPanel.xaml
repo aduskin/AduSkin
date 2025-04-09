@@ -3,18 +3,17 @@
                     xmlns:Adu="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduControls="clr-namespace:AduSkin.Controls.Metro"
                     xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
-   
+
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
-  
+
    <!--#region 左边样式-->
    <Style x:Key="LeftIndicatorStyle" TargetType="{x:Type Adu:AduSegmentControl}">
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+      <Setter Property="BorderThickness" Value="0,0,1,0" />
       <Setter Property="Padding" Value="0" />
       <Setter Property="CornerRadius" Value="0" />
-      <Setter Property="VerticalAlignment" Value="Top" />
-      <Setter Property="BorderThickness" Value="0,0,1,0" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBlack10}" />
       <Setter Property="VerticalAlignment" Value="Stretch" />
       <Setter Property="ItemsPanel">
          <Setter.Value>
@@ -28,9 +27,9 @@
    <Style x:Key="LeftIndicatorItemStyle" TargetType="{x:Type Adu:AduSegmentItem}">
       <Setter Property="Padding" Value="0" />
       <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="Foreground" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{DynamicResource SelectedForeground}"/>
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="HorizontalContentAlignment" Value="Right" />
       <Setter Property="Template">
          <Setter.Value>
@@ -41,43 +40,43 @@
                   BorderThickness="{TemplateBinding BorderThickness}"
                   Padding="{TemplateBinding Padding}"
                   SnapsToDevicePixels="true" UseLayoutRounding="True">
-                  <ContentPresenter x:Name="content" Margin="20,8,20,8" Opacity="{StaticResource NotSelectedOpacity}"
+                  <ContentPresenter x:Name="content" Margin="20,8,20,8" Opacity="{DynamicResource NotSelectedOpacity}"
                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource MouseOverBorderBrush}" />
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsMouseOver" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SelectedBackground}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource SelectedBorderBrush}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="Selector.IsSelectionActive" Value="False" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="Bd" Property="Background" 
+                             Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="content" Property="Opacity" Value="1" />
-                     <!--<Setter  Property="Foreground" Value="{Binding (AduAttach:ForegroundAttach.SelectedForeground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />-->
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="Selector.IsSelectionActive" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                     <Setter TargetName="Bd" Property="Background" 
+                             Value="{Binding (AduAttach:BackgroundAttach.SelectedBackground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                      <Setter TargetName="content" Property="Opacity" Value="1" />
-                     <!--<Setter  Property="Foreground" Value="{Binding (AduAttach:ForegroundAttach.SelectedForeground),RelativeSource={RelativeSource Mode=TemplatedParent}}" />-->
                   </MultiTrigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{StaticResource NormalBlack20}" />
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -88,11 +87,11 @@
 
    <!--#region 右边样式-->
    <Style x:Key="RightIndicatorStyle" TargetType="{x:Type Adu:AduSegmentControl}">
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+      <Setter Property="BorderThickness" Value="1,0,0,0" />
       <Setter Property="Padding" Value="0" />
       <Setter Property="CornerRadius" Value="0" />
       <Setter Property="VerticalAlignment" Value="Top" />
-      <Setter Property="BorderThickness" Value="1,0,0,0" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBlackBrush30}" />
       <Setter Property="VerticalAlignment" Value="Stretch" />
       <Setter Property="ItemsPanel">
          <Setter.Value>
@@ -104,9 +103,9 @@
    </Style>
 
    <Style x:Key="RightIndicatorItemStyle" TargetType="{x:Type Adu:AduSegmentItem}">
-      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
       <Setter Property="Padding" Value="0" />
-      <Setter Property="BorderThickness" Value="0" /> 
+      <Setter Property="BorderThickness" Value="0" />
       <Setter Property="HorizontalContentAlignment" Value="Left" />
       <Setter Property="Template">
          <Setter.Value>
@@ -124,46 +123,46 @@
                      </Grid.ColumnDefinitions>
 
                      <ContentPresenter Margin="20,8,20,8" Grid.Column="1"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
 
-                     <Border x:Name="markline" Grid.Column="0" Background="{StaticResource NormalTransparentBrush}" SnapsToDevicePixels="True"
-                                    UseLayoutRounding="True" />
+                     <Border x:Name="markline" Grid.Column="0" Background="{DynamicResource NormalTransparentBrush}" 
+                           UseLayoutRounding="True" SnapsToDevicePixels="True"/>
                   </Grid>
                </Border>
                <ControlTemplate.Triggers>
                   <Trigger Property="IsMouseOver" Value="True">
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource MouseOverBackground}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource MouseOverBorderBrush}" />
                   </Trigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="IsMouseOver" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
-                     <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource NormalBlue80}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SelectedBackground}" />
+                     <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource SelectedBorderBrush}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="Selector.IsSelectionActive" Value="False" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
-                     <Setter TargetName="markline" Property="Background" Value="{StaticResource NormalBlue}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SelectedBackground}" />
+                     <Setter TargetName="markline" Property="Background" Value="{DynamicResource SelectedBackground}" />
                   </MultiTrigger>
                   <MultiTrigger>
                      <MultiTrigger.Conditions>
                         <Condition Property="Selector.IsSelectionActive" Value="True" />
                         <Condition Property="IsSelected" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="markline" Property="Background" Value="{StaticResource NormalBlue}" />
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
-                     <Setter Property="Foreground" Value="{StaticResource NormalBlue}" />
+                     <Setter TargetName="markline" Property="Background" Value="{DynamicResource SelectedBackground}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SelectedBackground}" />
+                     <Setter Property="Foreground" Value="{DynamicResource SelectedForeground}" />
                   </MultiTrigger>
                   <Trigger Property="IsEnabled" Value="False">
-                     <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{StaticResource NormalBlack90}" />
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" />
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -260,11 +259,11 @@
    <!--#endregion-->
 
    <Style TargetType="{x:Type AduControls:AduNavigationPanel}">
-      <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalTransparentBrush}" />
-      <Setter Property="Foreground" Value="{StaticResource NormalBrush}" />
-      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource NormalBrush}" />
-      <Setter Property="BorderThickness" Value="1" /> 
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalTransparentBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{DynamicResource SelectedForeground}" />
+      <Setter Property="BorderThickness" Value="1" />
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
       <Setter Property="SnapsToDevicePixels" Value="True" />

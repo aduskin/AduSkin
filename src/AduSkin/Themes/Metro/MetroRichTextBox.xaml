@@ -4,21 +4,20 @@
             xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Metro/MetroScrollViewer.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type AduSkin:MetroRichTextBox}">
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/> 
       <Setter Property="BorderThickness" Value="1"/>
-      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="2"/>
-      <Setter Property="AduAttach:BackgroundAttach.DisabledBackground" Value="{StaticResource NormalTransparentBrush}"/>
-      <Setter Property="Background" Value="{DynamicResource NormalWhite}"/>
-      <Setter Property="CaretBrush" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="SelectionBrush" Value="{StaticResource NormalBrush}"/>
-      <Setter Property="Foreground" Value="{StaticResource NormalBlack}"/> 
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
-      <Setter Property="MouseMoveBorderBrush" Value="{x:Null}"/>
-      <Setter Property="MouseMoveThemeBorderBrush" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/> 
+      <Setter Property="Background" Value="{DynamicResource NormalBackground}"/>
+      <Setter Property="CaretBrush" Value="{DynamicResource NormalForeground}"/>
+      <Setter Property="SelectionBrush" Value="{DynamicResource SelectedBackground}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/> 
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}"/> 
       <Setter Property="IsDocumentEnabled" Value="True"/>
       <Setter Property="Padding" Value="1,3"/>
       <Setter Property="SelectionOpacity" Value="0.2"/>
@@ -30,56 +29,32 @@
                <Grid>
                   <Border x:Name="background" Background="{TemplateBinding Background}" 
                      BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"/>
-                  <Border x:Name="border" 
-                     BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}"/>
-                  <Border x:Name="bordermove" 
-                     BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" BorderBrush="{TemplateBinding MouseMoveBorderBrush}" Opacity="0"/>
-                  <Border x:Name="themebordermove" 
-                     BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" BorderBrush="{TemplateBinding MouseMoveThemeBorderBrush}" Opacity="0"/>
-                  <AduSkin:MetroScrollViewer 
-                     BorderBrush="{TemplateBinding Foreground}" Margin="{TemplateBinding BorderThickness}" 
-                     Focusable="False" AutoLimitMouse="{TemplateBinding AutoLimitMouse}">
-                     <ScrollViewer x:Name="PART_ContentHost" MinHeight="0" MinWidth="0" 
-                        Margin="{TemplateBinding Padding}" Focusable="False" 
-                        HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                  </AduSkin:MetroScrollViewer>
+                  <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{DynamicResource NormalBorderBrush}" 
+                        CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" />
+                  <Border x:Name="bordermove" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" 
+                        CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" Opacity="0"/>
+                  <ScrollViewer x:Name="PART_ContentHost" MinHeight="0" MinWidth="0"
+                     BorderBrush="{TemplateBinding Foreground}" Margin="{TemplateBinding Padding}" Focusable="False" />
                </Grid>
                <ControlTemplate.Triggers>
-                  <Trigger Property="IsEnabled" Value="false">
-                     <Setter TargetName="PART_ContentHost" Property="Opacity" Value="0.5"/>
-                     <Setter TargetName="background" Property="Background" Value="{Binding (AduAttach:BackgroundAttach.DisabledBackground), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                  <Trigger Property="IsEnabled" Value="False">
+                     <Setter Property="Opacity" Value="{DynamicResource DisableOpacity}"/>
                   </Trigger>
                   <Trigger Property="IsKeyboardFocused" Value="true">
-                     <Setter TargetName="border" Property="Opacity" Value="0"/>
-                     <Setter TargetName="bordermove" Property="Opacity" Value="1"/>
+                     <Setter Property="Opacity" TargetName="border" Value="0"/>
+                     <Setter Property="Opacity" TargetName="bordermove" Value="1"/>
                   </Trigger>
                   <Trigger Property="IsMouseOver" Value="true">
-                     <Setter TargetName="border" Property="Opacity" Value="0"/>
-                     <Setter TargetName="bordermove" Property="Opacity" Value="1"/>
-                  </Trigger>
-                  <MultiTrigger>
-                     <MultiTrigger.Conditions>
-                        <Condition Property="IsMouseOver" Value="true"/>
-                        <Condition Property="MouseMoveBorderBrush" Value="{x:Null}"/>
-                     </MultiTrigger.Conditions>
-                     <Setter TargetName="border" Property="Opacity" Value="0"/>
-                     <Setter TargetName="themebordermove" Property="Opacity" Value="1"/>
-                  </MultiTrigger>
-                  <MultiTrigger>
-                     <MultiTrigger.Conditions>
-                        <Condition Property="IsKeyboardFocused" Value="true"/>
-                        <Condition Property="MouseMoveBorderBrush" Value="{x:Null}"/>
-                     </MultiTrigger.Conditions>
-                     <Setter TargetName="border" Property="Opacity" Value="0"/>
-                     <Setter TargetName="themebordermove" Property="Opacity" Value="1"/>
-                  </MultiTrigger>
+                     <Setter Property="Opacity" TargetName="border" Value="0"/>
+                     <Setter Property="Opacity" TargetName="bordermove" Value="1"/>
+                  </Trigger> 
                </ControlTemplate.Triggers>
             </ControlTemplate>
          </Setter.Value>
       </Setter>
       <Style.Resources>
          <Style TargetType="{x:Type FlowDocument}">
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="PagePadding" Value="0"/>
             <Setter Property="LineHeight" Value="20"/>
          </Style>
@@ -87,7 +62,7 @@
             <Setter Property="Margin" Value="0"/>
          </Style>
          <Style TargetType="{x:Type Hyperlink}">
-            <Setter Property="Foreground" Value="#5599f8"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
             <Setter Property="ForceCursor" Value="True"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property ="TextBlock.TextDecorations" Value ="{x:Null}"/>

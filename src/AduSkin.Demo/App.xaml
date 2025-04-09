@@ -1,9 +1,11 @@
 <Application x:Class="AduSkin.Demo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:AduSkin="clr-namespace:AduSkin.Themes;assembly=AduSkin">
    <Application.Resources>
       <ResourceDictionary>
          <ResourceDictionary.MergedDictionaries>
+            <AduSkin:AduTheme CurrentSkin="Light"/>
             <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/AduTreeView.xaml"/>
             <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/BaseStyle.xaml"/>
             <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/ShowControl.xaml"/>

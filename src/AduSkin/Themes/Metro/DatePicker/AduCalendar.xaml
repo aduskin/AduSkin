@@ -13,15 +13,16 @@
    <Converters:CalendarDayButtonTypeConverter x:Key="CalendarDayButtonTypeConverter" />
 
    <Style TargetType="{x:Type Adu:AduCalendar}">
-      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="{StaticResource NormalBlack05}"/>
-      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{StaticResource NormalBlack20}"/>
-      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{StaticResource NormalBlack10}"/>
-      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{StaticResource NormalWhite}"/>
-      <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
-      <Setter Property="Background" Value="{StaticResource NormalWhite}" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBlack10}" />
+      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{DynamicResource PanelBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.HighlightBackground" Value="{DynamicResource HighlightBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{DynamicResource SelectedBackground}"/>
+      <Setter Property="AduAttach:BackgroundAttach.MouseOverBackground" Value="{DynamicResource MouseOverBackground}"/>
+      <Setter Property="AduAttach:ForegroundAttach.HighlightForeground" Value="{DynamicResource HighlightForeground}"/>
+      <Setter Property="AduAttach:ForegroundAttach.SelectedForeground" Value="{DynamicResource SelectedForeground}"/>
+      <Setter Property="AduAttach:ForegroundAttach.MouseOverForeground" Value="{DynamicResource MouseOverForeground}"/>
+      <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
+      <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="UseLayoutRounding" Value="True" />
@@ -54,7 +55,7 @@
       <Setter Property="DayTitleTemplate">
          <Setter.Value>
             <DataTemplate>
-               <TextBlock Text="{Binding}" Foreground="{StaticResource NormalBrush}" />
+               <TextBlock Text="{Binding}" Foreground="{DynamicResource PrimaryBrush}" />
             </DataTemplate>
          </Setter.Value>
       </Setter>

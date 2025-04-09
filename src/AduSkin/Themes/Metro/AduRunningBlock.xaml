@@ -6,7 +6,7 @@
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type aduskin:AduRunningBlock}">
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
       <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="Padding" Value="0,10"/>
       <Setter Property="Template">

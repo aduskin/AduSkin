@@ -1,43 +1,47 @@
 <UserControl x:Class="AduSkin.Demo.Views.AduSkinSupport"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
-             xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
-              xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
-             xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+   xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin"
+   xmlns:AduOpenLink="clr-namespace:AduSkin.Interactivity;assembly=AduSkin"
+   xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach;assembly=AduSkin"
+   xmlns:viewmodel="clr-namespace:AduSkin.Demo.ViewModel">
    <UserControl.DataContext>
       <viewmodel:AduSkinSupportViewModel/>
    </UserControl.DataContext>
-   <Grid Background="#FAFBFC">
+   <UserControl.Resources>
+      <Style TargetType="TextBlock">
+         <Setter Property="HorizontalAlignment" Value="Center"/>
+         <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+      </Style>
+   </UserControl.Resources>
+   <Grid>
       <Grid.RowDefinitions>
          <RowDefinition Height="Auto"/>
          <RowDefinition/>
       </Grid.RowDefinitions>
       <StackPanel  VerticalAlignment="Center" Margin="0,10">
-         <TextBlock Style="{StaticResource H2}" Text="技术支持和赞助" FontWeight="Bold" Foreground="{StaticResource NormalBrush}"/>
-         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="赞助支持请点赞【蛇年红包】，完成后联系作者可加入赞助墙，感谢大佬的支持！"
-               FontWeight="Light" Foreground="{StaticResource NormalBrush}"/>
-         <Border HorizontalAlignment="Center" Padding="0,10">
-            <StackPanel >
+         <TextBlock Style="{StaticResource H2}" Text="技术支持和赞助" Foreground="{DynamicResource NormalForeground}" FontWeight="Bold" Margin="0,20"/>
+         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="赞助支持请点赞【蛇年红包】，完成后联系作者可加入赞助墙，感谢大佬的支持！" FontWeight="Light"/>
+         <Border HorizontalAlignment="Center">
+            <StackPanel>
                <UniformGrid Columns="2">
                   <StackPanel>
-                     <TextBlock FontSize="16" Text="支付宝" HorizontalAlignment="Center" Foreground="#3399FF"/>
+                     <TextBlock FontSize="16" Text="支付宝" Margin="0,10"/>
                      <Image Width="120" Height="120" Source="http://m.qpic.cn/psc?/V12WtbKq3d7FCg/ruAMsa53pVQWN7FLK88i5i.E7kji6g6vbNhQMB*dUSedlhf0R6lXK68tVUSxFySLZvg3jRMuCEhLdRv5Mb*2RTaP7E33Ft4mJ3rPdEjHjMQ!/b&amp;bo=.QICA*kCAgMBCS4!&amp;rf=viewer_4"/>
                   </StackPanel>
                   <StackPanel>
-                     <TextBlock FontSize="16" Text="微信" HorizontalAlignment="Center" Foreground="#129611"/>
+                     <TextBlock FontSize="16" Text="微信" Margin="0,10"/>
                      <Image Width="120" Height="120" Source="http://m.qpic.cn/psc?/V12WtbKq3d7FCg/ruAMsa53pVQWN7FLK88i5qgkLIK97iDKThLo2O3Wa1DdyryWT1VA.PSo289S7PWRUksBj8rVFEUpsIKvvl2uRJcuNsqj8Xsr9oF0A6gCELY!/b&amp;bo=rAKwAqwCsAIBCS4!&amp;rf=viewer_4"/>
                   </StackPanel>
                </UniformGrid>
-               <TextBlock FontSize="16" Text="(*召)" HorizontalAlignment="Center"/>
+               <TextBlock FontSize="16" Text="(*召)" HorizontalAlignment="Center" Margin="0,10"/>
             </StackPanel>
          </Border>
          <AduSkin:AduTransitioningContentControl TransitionStoryboard="{StaticResource Custom2Transition}">
-            <AduSkin:AduPathIconButton Name="OpenReward" Command="{Binding OpenCommand}" CommandParameter="Reward"
+            <AduSkin:AduPathIconButton Name="OpenReward"
+                  Command="{Binding OpenCommand}" CommandParameter="Reward"
                   AduAttach:PathDataAttach.Width="40" 
                   AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
                   AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource NormalBrush}" 
@@ -52,7 +56,7 @@
          <!--</Popup>-->
       </StackPanel>
       <ItemsControl Grid.Row="1" ItemsSource="{Binding AllSupports}"  
-               Margin="40,0,40,40" Background="Transparent">
+               Margin="40,0,40,40">
          <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
                <WrapPanel />
@@ -60,22 +64,25 @@
          </ItemsControl.ItemsPanel>
          <ItemsControl.ItemTemplate>
             <DataTemplate>
-               <Border x:Name="Bd" MinHeight="100" Background="{StaticResource NormalWhite}" Margin="10" Cursor="Hand"
-                  BorderBrush="{StaticResource NormalBorderBrush}" BorderThickness="1" CornerRadius="10" Effect="{StaticResource PanelShadow}">
+               <Border x:Name="Bd" MinHeight="100" Background="{DynamicResource PanelBackground}" Margin="10" Cursor="Hand"
+                  BorderBrush="{DynamicResource NormalBorderBrush}" BorderThickness="1"
+                  CornerRadius="10" Effect="{StaticResource PanelShadow}">
                   <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
                         <ColumnDefinition />
                      </Grid.ColumnDefinitions>
-                     <Border Width="70" Height="70" CornerRadius="10" BorderThickness="2" BorderBrush="{StaticResource NormalBorderBrush}">
+                     <Border Width="70" Height="70" CornerRadius="10" BorderThickness="2" BorderBrush="{DynamicResource NormalBorderBrush}">
                         <Border.Background>
                            <ImageBrush ImageSource="{Binding Header}" Stretch="UniformToFill"/>
                         </Border.Background>
                      </Border>
                      <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,20,0">
-                        <TextBlock Text="{Binding Name}" FontSize="14"  TextAlignment="Left" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" MaxWidth="150">
+                        <TextBlock Text="{Binding Name}" FontSize="14"  TextAlignment="Left"
+                           TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" MaxWidth="150">
                            <TextBlock.ToolTip>
-                              <AduSkin:AduToolTip Content="{Binding Name}" IsShowShadow="True" FontSize="12" FontWeight="Bold" Foreground="{StaticResource NormalBrush}" Background="{StaticResource ShadowBrush}" Padding="20,10" PlacementEx="TopCenter" />
+                              <AduSkin:AduToolTip Content="{Binding Name}" IsShowShadow="True" FontSize="12" FontWeight="Bold" 
+                                 Foreground="{DynamicResource NormalForeground}" Padding="20,10" PlacementEx="TopCenter" />
                            </TextBlock.ToolTip>
                         </TextBlock>
                         <ItemsControl
@@ -90,8 +97,8 @@
                            </ItemsControl.ItemsPanel>
                            <ItemsControl.ItemTemplate>
                               <DataTemplate>
-                                 <Border VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="2" Background="#EE796F" CornerRadius="2">
-                                    <TextBlock  Text="{Binding }" Margin="4,2" FontSize="10" Foreground="{DynamicResource NormalWhite}" />
+                                 <Border VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="2" Background="{DynamicResource NormalBackground}" CornerRadius="2">
+                                    <TextBlock  Text="{Binding }" Margin="4,2" FontSize="10" Foreground="{DynamicResource NormalForeground}" />
                                  </Border>
                                  <DataTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
@@ -101,7 +108,8 @@
                               </DataTemplate>
                            </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <AduSkin:AduFlatButton x:Name="btnContact" Visibility="Collapsed" Content="发起聊天" Margin="2,0" Height="18" Width="50" CornerRadius="2" FontSize="10" Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Contact}" FontWeight="Light" HorizontalAlignment="Left"/>
+                        <AduSkin:AduFlatButton x:Name="btnContact" Visibility="Collapsed" Content="发起聊天" Margin="2,0" Height="18" Width="50" CornerRadius="2" FontSize="10" 
+                              Command="AduOpenLink:ControlCommands.OpenLink" CommandParameter="{Binding Contact}" FontWeight="Light" HorizontalAlignment="Left"/>
                      </StackPanel>
                   </Grid>
                </Border>
@@ -113,8 +121,8 @@
                      <MultiTrigger.Conditions>
                         <Condition Property="IsMouseOver" Value="True" />
                      </MultiTrigger.Conditions>
-                     <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalWhite}" />
-                     <Setter TargetName="Bd" Property="Effect" Value="{StaticResource CardShadow}" />
+                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource MouseOverBackground}" />
+                     <Setter TargetName="Bd" Property="Effect" Value="{DynamicResource PanelShadow}" />
                   </MultiTrigger> 
                </DataTemplate.Triggers>
             </DataTemplate>

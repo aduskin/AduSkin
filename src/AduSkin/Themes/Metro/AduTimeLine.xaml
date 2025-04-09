@@ -88,7 +88,7 @@
    <Style TargetType="{x:Type Adu:AduTimeline}">
       <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
       <Setter Property="Foreground" Value="{StaticResource NormalBlack}" />
-      <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="HorizontalContentAlignment" Value="Left" />
       <Setter Property="VerticalContentAlignment" Value="Top" />
