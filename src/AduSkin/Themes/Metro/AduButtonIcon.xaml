@@ -8,7 +8,7 @@
 
    <Style TargetType="{x:Type Adu:AduButtonIcon}">
       <Setter Property="Background" Value="{StaticResource NormalTransparentBrush}" />
-      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{StaticResource NormalBrush}"/>
+      <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{DynamicResource NormalPathBrush}"/>
       <Setter Property="FocusVisualStyle" Value="{x:Null}" />
       <Setter Property="SnapsToDevicePixels" Value="True" />
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>

@@ -21,6 +21,7 @@
    <Color x:Key="SelectedPathColor">#FFFFFF</Color>
    <Color x:Key="DisabledPathColor">#FFFFFF</Color>
    <Color x:Key="PlaceHolderPathColor">#FFFFFF</Color>
+   <Color x:Key="NormalPathBackgroundColor">#FFFFFF</Color>
 
    <!--边框色-->
    <Color x:Key="NormalBorderColor">#D9D9D9</Color>
