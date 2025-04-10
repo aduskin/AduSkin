@@ -425,10 +425,10 @@
                         AduAttach:PathDataAttach.Width="14"
                         AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
                         AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
-                        AduAttach:PathBrushAttach.SelectedPathColor="{DynamicResource SelectedPathBrush}"
+                        AduAttach:PathBrushAttach.SelectedPathColor="{DynamicResource NormalWhite}"
                         AduAttach:PathBrushAttach.NormalPathColor="{DynamicResource NormalPathBrush}"
                         AduAttach:PathBrushAttach.PressedPathColor="{DynamicResource PressedPathBrush}"
-                        AduAttach:PathBrushAttach.MouseOverPathColor="{DynamicResource MouseOverPathBrush}"
+                        AduAttach:PathBrushAttach.MouseOverPathColor="{DynamicResource NormalWhite}"
                         AduAttach:BackgroundAttach.SelectedBackground="{DynamicResource SelectedBackground}" 
                         AduAttach:BackgroundAttach.MouseOverBackground="{DynamicResource MouseOverBackground}" 
                         Width="30" Height="30"/>
@@ -581,26 +581,26 @@
             <Border Style="{StaticResource ShowControlBorder}">
                <StackPanel Background="#00000000">
                   <AduSkin:MetroProgressBar Title="MetroProgressBar 等待禁用"
-                                                            Margin="60,5,5,5"
-                                                            Background="#FF555C65"
-                                                            IsEnabled="False"
-                                                            ProgressBarState="Wait" />
+                     Margin="60,5,5,5"
+                     Background="#FF555C65"
+                     IsEnabled="False"
+                     ProgressBarState="Wait" />
                   <AduSkin:MetroProgressBar x:Name="vis"
-                                                            Title="MetroProgressBar 等待"
-                                                            Margin="5"
-                                                            Background="#FF555C65"
-                                                            ProgressBarState="Wait" />
+                     Title="MetroProgressBar 等待"
+                     Margin="5"
+                     Background="#FF555C65"
+                     ProgressBarState="Wait" />
                   <AduSkin:MetroVisualElement Width="{Binding ActualWidth, ElementName=vis}"
-                                                            Height="{Binding ActualHeight, ElementName=vis}"
-                                                            Visual="{Binding ElementName=vis}"
-                                                            VisualBlurRadius="10"
-                                                            VisualOpacity="0.5" />
+                     Height="{Binding ActualHeight, ElementName=vis}"
+                     Visual="{Binding ElementName=vis}"
+                     VisualBlurRadius="10"
+                     VisualOpacity="0.5" />
                   <AduSkin:MetroProgressBar Title="MetroProgressBar 等待调整大小"
-                                                            Margin="5,5,60,5"
-                                                            Background="#FF555C65"
-                                                            CornerRadius="5"
-                                                            ProgressBarHeight="10"
-                                                            ProgressBarState="Wait" />
+                     Margin="5,5,60,5"
+                     Background="#FF555C65"
+                     CornerRadius="5"
+                     ProgressBarHeight="10"
+                     ProgressBarState="Wait" />
                </StackPanel>
             </Border>
          </Grid>

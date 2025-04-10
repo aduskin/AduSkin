@@ -15,13 +15,13 @@
    <Color x:Key="TooltipForegroundColor">#70FFFFFF</Color>
 
    <!--图标色-->
-   <Color x:Key="NormalPathColor">#FFFFFF</Color>
-   <Color x:Key="MouseOverPathColor">#FFFFFF</Color>
-   <Color x:Key="PressedPathColor">#FFFFFF</Color>
-   <Color x:Key="SelectedPathColor">#FFFFFF</Color>
-   <Color x:Key="DisabledPathColor">#FFFFFF</Color>
-   <Color x:Key="PlaceHolderPathColor">#FFFFFF</Color>
-   <Color x:Key="NormalPathBackgroundColor">#FFFFFF</Color>
+   <Color x:Key="NormalPathColor">#EE796F</Color>
+   <Color x:Key="MouseOverPathColor">#EE796F</Color>
+   <Color x:Key="PressedPathColor">#EE796F</Color>
+   <Color x:Key="SelectedPathColor">#EE796F</Color>
+   <Color x:Key="DisabledPathColor">#EE796F</Color>
+   <Color x:Key="PlaceHolderPathColor">#EE796F</Color>
+   <Color x:Key="NormalPathBackgroundColor">#EE796F</Color>
 
    <!--边框色-->
    <Color x:Key="NormalBorderColor">#D9D9D9</Color>
@@ -42,5 +42,5 @@
    <Color x:Key="AlternationIndex1Color">#5D5D5D</Color>
    <Color x:Key="DisabledBackgroundColor">#70FFFFFF</Color>
    <Color x:Key="WindowBackgroundColor">#202020</Color>
-   <Color x:Key="MosaicColor">#4D4D4D</Color>
+   <Color x:Key="MosaicColor">#EE796F</Color>
 </ResourceDictionary>

@@ -78,7 +78,7 @@
                         </Border.Background>
                      </Border>
                      <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,20,0">
-                        <TextBlock Text="{Binding Name}" FontSize="14"  TextAlignment="Left"
+                        <TextBlock x:Name="txtName" Text="{Binding Name}" FontSize="14"  TextAlignment="Left" FontWeight="Bold"
                            TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" MaxWidth="150">
                            <TextBlock.ToolTip>
                               <AduSkin:AduToolTip Content="{Binding Name}" IsShowShadow="True" FontSize="12" FontWeight="Bold" 
@@ -98,11 +98,11 @@
                            <ItemsControl.ItemTemplate>
                               <DataTemplate>
                                  <Border VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="2" Background="{DynamicResource NormalBackground}" CornerRadius="2">
-                                    <TextBlock  Text="{Binding }" Margin="4,2" FontSize="10" Foreground="{DynamicResource NormalForeground}" />
+                                    <TextBlock Text="{Binding }" Margin="4,2" FontSize="10" Foreground="{DynamicResource NormalForeground}" />
                                  </Border>
                                  <DataTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                       <!--<Setter TargetName="PlayBtn" Property="Visibility" Value="Visible" />-->
+                                      
                                     </Trigger>
                                  </DataTemplate.Triggers>
                               </DataTemplate>
@@ -121,6 +121,7 @@
                      <MultiTrigger.Conditions>
                         <Condition Property="IsMouseOver" Value="True" />
                      </MultiTrigger.Conditions>
+                     <Setter TargetName="txtName" Property="Foreground" Value="{DynamicResource MouseOverForeground}"/>
                      <Setter TargetName="Bd" Property="Background" Value="{DynamicResource MouseOverBackground}" />
                      <Setter TargetName="Bd" Property="Effect" Value="{DynamicResource PanelShadow}" />
                   </MultiTrigger> 

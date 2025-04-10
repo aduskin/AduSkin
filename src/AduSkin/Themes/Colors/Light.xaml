@@ -19,8 +19,8 @@
    <Color x:Key="MouseOverPathColor">#EE796F</Color>
    <Color x:Key="PressedPathColor">#EE796F</Color>
    <Color x:Key="SelectedPathColor">#EE796F</Color>
-   <Color x:Key="DisabledPathColor">#000000</Color>
-   <Color x:Key="PlaceHolderPathColor">#000000</Color>
+   <Color x:Key="DisabledPathColor">#EE796F</Color>
+   <Color x:Key="PlaceHolderPathColor">#EE796F</Color>
    <Color x:Key="NormalPathBackgroundColor">#EE796F</Color>
     
    <!--边框色-->
@@ -41,6 +41,6 @@
    <Color x:Key="AlternationIndex0Color">#7FFFFFF0</Color>
    <Color x:Key="AlternationIndex1Color">#7FFFFFF0</Color> 
    <Color x:Key="DisabledBackgroundColor">#7FFFFFF0</Color>
-   <Color x:Key="WindowBackgroundColor">#F5F5F5</Color>
+   <Color x:Key="WindowBackgroundColor">#FCFCFC</Color>
    <Color x:Key="MosaicColor">#EE796F</Color>
 </ResourceDictionary>
