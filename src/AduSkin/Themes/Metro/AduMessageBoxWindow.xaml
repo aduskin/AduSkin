@@ -86,10 +86,10 @@
          <AduSkin:AduPathIconButton x:Name="btnClose"
                Grid.Row="0" Grid.Column="1" 
                VerticalAlignment="Top" HorizontalAlignment="Right"
-               AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalPathBrush}" 
-               AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource MouseOverPathBrush}" 
-               AduAttach:PathBrushAttach.PressedPathColor="{StaticResource PressedPathBrush}" 
-               AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource DisabledPathBrush}" 
+               AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalForeground}" 
+               AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource NormalForeground}" 
+               AduAttach:PathBrushAttach.PressedPathColor="{StaticResource NormalForeground}" 
+               AduAttach:PathBrushAttach.DisabledPathColor="{StaticResource NormalForeground}" 
                AduAttach:PathDataAttach.PathData="{StaticResource Icon_SystemClose}" 
                AduAttach:PathDataAttach.Width="10" 
                AduAttach:BorderAttach.CornerRadius="0,6,0,6"
@@ -117,7 +117,7 @@
                      MinWidth="88" MaxWidth="160" Height="26" Margin="5,0" 
                      HorizontalAlignment="Right" Visibility="Collapsed" IsCancel="True"
                      DockPanel.Dock="Right" Click="Button_Cancel_Click" BorderBrush="{DynamicResource PanelBorderBrush}"
-                     Background="{DynamicResource MouseOverBackground}">
+                     Background="{DynamicResource NormalBackground}">
                   <Label Name="Label_Cancel" Padding="0" Margin="10,0" 
                         Foreground="{StaticResource NormalForeground}">_Cancel</Label>
                </AduSkin:AduFlatButton>
@@ -125,7 +125,7 @@
 
                <!-- No Button -->
                <AduSkin:AduFlatButton x:Name="Button_No" Type="ghost" 
-                     Background="{DynamicResource MouseOverBackground}" 
+                     Background="{DynamicResource NormalBackground}" 
                      BorderBrush="{DynamicResource PanelBorderBrush}" 
                      MinWidth="88" MaxWidth="160" Height="26" Margin="5,0" 
                      HorizontalAlignment="Right" Visibility="Collapsed"
