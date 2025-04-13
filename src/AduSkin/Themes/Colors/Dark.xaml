@@ -24,8 +24,8 @@
    <Color x:Key="NormalPathBackgroundColor">#EE796F</Color>
 
    <!--边框色-->
-   <Color x:Key="NormalBorderColor">#D9D9D9</Color>
-   <Color x:Key="MouseOverBorderColor">#FFD9D9D9</Color>
+   <Color x:Key="NormalBorderColor">#FFFFFF</Color>
+   <Color x:Key="MouseOverBorderColor">#FFFFFF</Color>
    <Color x:Key="PressedBorderColor">#80FFFFFF</Color>
    <Color x:Key="SelectedBorderColor">#70FFFFFF</Color>
    <Color x:Key="DisabledBorderColor">#70FFFFFF</Color>
@@ -33,7 +33,7 @@
 
    <!--背景色-->
    <Color x:Key="NormalBackgroundColor">#3E3E3E</Color>
-   <Color x:Key="MouseOverBackgroundColor">#313131</Color>
+   <Color x:Key="MouseOverBackgroundColor">#FFFFFF</Color>
    <Color x:Key="PressedBackgroundColor">#2E2E2E</Color>
    <Color x:Key="SelectedBackgroundColor">#4D4D4D</Color>
    <Color x:Key="PanelBackgroundColor">#2C2C2C</Color>

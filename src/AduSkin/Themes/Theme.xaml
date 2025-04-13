@@ -6,7 +6,7 @@
     xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
 
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Colors/Light.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Colors/Dark.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/IconLibrary.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/Effects.xaml"/>
@@ -22,6 +22,9 @@
    <SolidColorBrush x:Key="NormalWhite05" Color="White" Opacity="0.05"/>
    <SolidColorBrush x:Key="NormalWhite10" Color="White" Opacity=".1"/>
    <SolidColorBrush x:Key="NormalWhite30" Color="White" Opacity=".3"/>
+   <SolidColorBrush x:Key="NormalWhite50" Color="White" Opacity=".5"/>
+   <SolidColorBrush x:Key="NormalWhite70" Color="White" Opacity=".7"/>
+   <SolidColorBrush x:Key="NormalWhite90" Color="White" Opacity=".9"/>
    <!--Black-->
    <SolidColorBrush x:Key="NormalBlack" Color="Black"/>
    <SolidColorBrush x:Key="NormalBlack05" Color="Black" Opacity=".05"/>
@@ -37,27 +40,30 @@
    <SolidColorBrush x:Key="NormalBlue10" Color="#3399FF" Opacity=".1"/>
    <SolidColorBrush x:Key="NormalBlue80" Color="#3399FF" Opacity=".8"/>
    <SolidColorBrush x:Key="NormalBlue90" Color="#3399FF" Opacity=".9"/>
+   <!--Green-->
+   <SolidColorBrush x:Key="NormalGreen" Color="Green" Opacity=".2"/>
+   <SolidColorBrush x:Key="NormalLightGreen" Color="LightGreen" Opacity=".2"/>
    <!--Transparent-->
    <SolidColorBrush x:Key="NormalTransparentBrush" Color="#00000000" />
 
    <!--Theme-->
-   <SolidColorBrush x:Key="Brush" Color="#EE796F" />
-   <SolidColorBrush x:Key="NormalBrush" Color="#EE796F" />
-   <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+   <SolidColorBrush x:Key="Brush" Color="#EE796F"/>
+   <SolidColorBrush x:Key="NormalBrush" Color="#EE796F"/>
+   <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
 
    <!--Foreground-->
-   <SolidColorBrush x:Key="NormalForeground" Color="{DynamicResource NormalForegroundColor}" />
+   <SolidColorBrush x:Key="NormalForeground" Color="{DynamicResource NormalForegroundColor}"/>
    <SolidColorBrush x:Key="MouseOverForeground" Color="{DynamicResource MouseOverForegroundColor}" Opacity=".9"/>
    <SolidColorBrush x:Key="PressedForeground" Color="{DynamicResource PressedForegroundColor}" Opacity=".8"/>
    <SolidColorBrush x:Key="SelectedForeground" Color="{DynamicResource SelectedForegroundColor}" Opacity=".7"/>
-   <SolidColorBrush x:Key="HighlightForeground" Color="{DynamicResource HighlightForegroundColor}" />
+   <SolidColorBrush x:Key="HighlightForeground" Color="{DynamicResource HighlightForegroundColor}"/>
    <SolidColorBrush x:Key="DisabledForeground" Color="{DynamicResource DisabledForegroundColor}" Opacity=".5"/>
    <SolidColorBrush x:Key="InputHintForeground" Color="{DynamicResource InputHintForegroundColor}" Opacity=".25"/>
-   <SolidColorBrush x:Key="ToolTipForeground" Color="{DynamicResource TooltipForegroundColor}" />
+   <SolidColorBrush x:Key="ToolTipForeground" Color="{DynamicResource TooltipForegroundColor}"/>
 
    <!--Background-->
    <SolidColorBrush x:Key="NormalBackground" Color="{DynamicResource NormalBackgroundColor}" />
-   <SolidColorBrush x:Key="MouseOverBackground" Color="{DynamicResource MouseOverBackgroundColor}" Opacity=".8"/>
+   <SolidColorBrush x:Key="MouseOverBackground" Color="{DynamicResource MouseOverBackgroundColor}" Opacity=".2"/>
    <SolidColorBrush x:Key="PressedBackground" Color="{DynamicResource PressedBackgroundColor}" />
    <SolidColorBrush x:Key="HighlightBackground" Color="{DynamicResource HighlightBackgroundColor}" Opacity=".2"/>
    <SolidColorBrush x:Key="PanelBackground" Color="{DynamicResource PanelBackgroundColor}" />
@@ -71,10 +77,10 @@
    <SolidColorBrush x:Key="MosaicBrush" Color="{DynamicResource MosaicColor}" Opacity=".1"/>
 
    <!--Border-->
-   <SolidColorBrush x:Key="NormalBorderBrush" Color="{DynamicResource NormalBorderColor}" />
-   <SolidColorBrush x:Key="MouseOverBorderBrush" Color="{DynamicResource MouseOverBorderColor}" />
-   <SolidColorBrush x:Key="PressedBorderBrush" Color="{DynamicResource PressedBorderColor}" />
-   <SolidColorBrush x:Key="SelectedBorderBrush" Color="{DynamicResource SelectedBorderColor}" />
+   <SolidColorBrush x:Key="NormalBorderBrush" Color="{DynamicResource NormalBorderColor}" Opacity=".1"/>
+   <SolidColorBrush x:Key="MouseOverBorderBrush" Color="{DynamicResource MouseOverBorderColor}" Opacity="0.15"/>
+   <SolidColorBrush x:Key="PressedBorderBrush" Color="{DynamicResource PressedBorderColor}" Opacity=".2"/>
+   <SolidColorBrush x:Key="SelectedBorderBrush" Color="{DynamicResource SelectedBorderColor}" Opacity=".2"/>
    <SolidColorBrush x:Key="DisabledBorderBrush" Color="{DynamicResource DisabledBorderColor}" />
    <SolidColorBrush x:Key="PanelBorderBrush" Color="{DynamicResource PanelBorderColor}" Opacity=".3"/>
 

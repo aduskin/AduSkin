@@ -1,15 +1,15 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
-                    xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Metro="clr-namespace:AduSkin.Controls.Metro"
+      xmlns:AduAttach="clr-namespace:AduSkin.Controls.Attach">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/Effects.xaml"/>
    </ResourceDictionary.MergedDictionaries>
    <!--右键菜单-->
-   <Style TargetType="{x:Type Metro:MetroContextMenu}"> 
-      <Setter Property="Background" Value="{DynamicResource NormalBackground}"/>
-      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+   <Style TargetType="{x:Type Metro:MetroContextMenu}">
+      <Setter Property="AduAttach:BackgroundAttach.PanelBackground" Value="{DynamicResource PanelBackground}"/>
+      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
       <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="1"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
       <Setter Property="Padding" Value="0"/> 
@@ -21,7 +21,7 @@
                <Border BorderBrush="{TemplateBinding AduAttach:BorderAttach.BorderBrush}" 
                   BorderThickness="{TemplateBinding AduAttach:BorderAttach.BorderThickness}" 
                   CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                  Background="{TemplateBinding Background}" 
+                  Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}" 
                   Margin="20" Padding="{TemplateBinding Padding}" 
                   Effect="{StaticResource PopupShadowBlack}"> 
                   <ItemsPresenter Margin="0,6"/>

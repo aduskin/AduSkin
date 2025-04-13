@@ -89,7 +89,7 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type Metro:MetroWindow}">
                <Grid>
-                  <Rectangle Fill="{StaticResource NormalBlack}"/>
+                  <Rectangle Fill="{DynamicResource NormalBlack}"/>
                   <Border x:Name="PART_WindowBorder" Background="{TemplateBinding Background}" 
                      BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                      <Grid x:Name="WIdowGrid">
