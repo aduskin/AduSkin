@@ -11,7 +11,7 @@
       xmlns:vm="clr-namespace:AduSkin.Demo.ViewModel" 
       MinWidth="600" MinHeight="350"   
       Background="{DynamicResource WindowBackground}"
-      SysButtonColor="{DynamicResource NormalPathBrush}"
+      SysButtonColor="{DynamicResource NormalForeground}"
       BorderBrush="{DynamicResource NormalBackground}"
       TitleForeground="{DynamicResource NormalForeground}"  
       Title="AduSkin.Demo">
