@@ -26,7 +26,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid Height="300">
-        <ListBox x:Name="ListBoxContact" BorderBrush="{StaticResource NormalBorderBrush}" Width="300" 
+        <ListBox x:Name="ListBoxContact" BorderBrush="{DynamicResource NormalBorderBrush}" Width="300" 
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Style="{StaticResource StackPanelVerticalListBox}" 
                  ItemsSource="{Binding ContactList}" SelectedItem="{Binding CurrentChatUserModel}">
             <ListBox.ItemTemplate>

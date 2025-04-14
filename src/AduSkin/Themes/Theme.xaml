@@ -6,7 +6,7 @@
     xmlns:Converter="clr-namespace:AduSkin.Controls.Converter">
 
    <ResourceDictionary.MergedDictionaries>
-      <ResourceDictionary Source="/AduSkin;component/Themes/Colors/Dark.xaml"/>
+      <ResourceDictionary Source="/AduSkin;component/Themes/Colors/Light.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/Opacity.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/IconLibrary.xaml"/>
       <ResourceDictionary Source="/AduSkin;component/Themes/Effects.xaml"/>

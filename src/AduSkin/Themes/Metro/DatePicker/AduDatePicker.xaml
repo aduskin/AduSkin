@@ -164,13 +164,13 @@
                                  Effect="{DynamicResource CardShadow-Black}" SnapsToDevicePixels="True" UseLayoutRounding="True" >
                               <Grid x:Name="Calendar_Layout">
                                  <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
                                  </Grid.RowDefinitions>
                                  <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto" />
-                                    <ColumnDefinition Width="auto" />
-                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
                                  </Grid.ColumnDefinitions>
 
                                  <ItemsControl x:Name="SingleDateShortCuts" Grid.RowSpan="2" Width="100" BorderBrush="{DynamicResource NormalBorderBrush}"
@@ -213,6 +213,7 @@
                                        AduAttach:ForegroundAttach.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.SelectedForeground)}"
                                        AduAttach:ForegroundAttach.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.MouseOverForeground)}"
                                        AduAttach:ForegroundAttach.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}" />
+                                 
                                  <AduPicker:AduCalendar x:Name="PART_Calendar_Second" Grid.Column="2" Margin="-2,0,0,0" BorderThickness="0" Type="Second" Visibility="Collapsed" 
                                        AduAttach:BorderAttach.CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BorderAttach.CornerRadius)}"
                                        AduAttach:BackgroundAttach.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.PanelBackground)}"
@@ -222,6 +223,7 @@
                                        AduAttach:ForegroundAttach.SelectedForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.SelectedForeground)}"
                                        AduAttach:ForegroundAttach.MouseOverForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.MouseOverForeground)}"
                                        AduAttach:ForegroundAttach.HighlightForeground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:ForegroundAttach.HighlightForeground)}" />
+                                 
                                  <Border x:Name="ButtonLayout" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Padding="0,7"  Visibility="Collapsed"
                                             BorderBrush="{DynamicResource NormalBorderBrush}" BorderThickness="0,1,0,0">
                                     <DockPanel>
