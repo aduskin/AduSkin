@@ -8,4 +8,7 @@
    <sys:Double x:Key="DisableOpacity">0.5</sys:Double>
    <sys:Double x:Key="NotSelectedOpacity">0.6</sys:Double>
    <sys:Double x:Key="InputHintOpacity">0.25</sys:Double>
+
+
+   <sys:Double x:Key="PopupVerticalOffset">1</sys:Double>
 </ResourceDictionary>

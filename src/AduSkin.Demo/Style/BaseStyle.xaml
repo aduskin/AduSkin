@@ -19,8 +19,7 @@
    <SolidColorBrush x:Key="NormalBlack90" Color="#90000000" />
    <SolidColorBrush x:Key="NormalTransparentBrush" Color="#00000000" />
 
-   <SolidColorBrush x:Key="DefaultMouseOverBrush" Color="#FA9D95" />
-   <SolidColorBrush x:Key="NormalBorderBrush" Color="#10000000" />
+   <SolidColorBrush x:Key="DefaultMouseOverBrush" Color="#FA9D95" /> 
    <SolidColorBrush x:Key="DefaultBackground" Color="#05000000" />
    <!--ShadowBrush-->
    <SolidColorBrush x:Key="ShadowBrush" Color="#2D2D30" /> 

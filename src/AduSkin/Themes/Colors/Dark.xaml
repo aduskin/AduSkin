@@ -24,20 +24,20 @@
    <Color x:Key="NormalPathBackgroundColor">#EE796F</Color>
 
    <!--边框色-->
-   <Color x:Key="NormalBorderColor">#FFFFFF</Color>
-   <Color x:Key="MouseOverBorderColor">#FFFFFF</Color>
+   <Color x:Key="NormalBorderColor">#3A3A3A</Color>
+   <Color x:Key="MouseOverBorderColor">#FF3A3A3A</Color>
    <Color x:Key="PressedBorderColor">#80FFFFFF</Color>
    <Color x:Key="SelectedBorderColor">#70FFFFFF</Color>
    <Color x:Key="DisabledBorderColor">#70FFFFFF</Color>
-   <Color x:Key="PanelBorderColor">#D9D9D9</Color>
+   <Color x:Key="PanelBorderColor">#3A3A3A</Color>
 
    <!--背景色-->
    <Color x:Key="NormalBackgroundColor">#3E3E3E</Color>
-   <Color x:Key="MouseOverBackgroundColor">#FFFFFF</Color>
+   <Color x:Key="MouseOverBackgroundColor">#20FFFFFF</Color>
    <Color x:Key="PressedBackgroundColor">#2E2E2E</Color>
    <Color x:Key="SelectedBackgroundColor">#4D4D4D</Color>
    <Color x:Key="PanelBackgroundColor">#2C2C2C</Color>
-   <Color x:Key="HighlightBackgroundColor">#404040</Color>
+   <Color x:Key="HighlightBackgroundColor">#20FFFFFF</Color>
    <Color x:Key="AlternationIndex0Color">#4D4D4D</Color>
    <Color x:Key="AlternationIndex1Color">#5D5D5D</Color>
    <Color x:Key="DisabledBackgroundColor">#70FFFFFF</Color>

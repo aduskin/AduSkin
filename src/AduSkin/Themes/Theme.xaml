@@ -63,9 +63,9 @@
 
    <!--Background-->
    <SolidColorBrush x:Key="NormalBackground" Color="{DynamicResource NormalBackgroundColor}" />
-   <SolidColorBrush x:Key="MouseOverBackground" Color="{DynamicResource MouseOverBackgroundColor}" Opacity=".2"/>
+   <SolidColorBrush x:Key="MouseOverBackground" Color="{DynamicResource MouseOverBackgroundColor}"/>
    <SolidColorBrush x:Key="PressedBackground" Color="{DynamicResource PressedBackgroundColor}" />
-   <SolidColorBrush x:Key="HighlightBackground" Color="{DynamicResource HighlightBackgroundColor}" Opacity=".2"/>
+   <SolidColorBrush x:Key="HighlightBackground" Color="{DynamicResource HighlightBackgroundColor}"/>
    <SolidColorBrush x:Key="PanelBackground" Color="{DynamicResource PanelBackgroundColor}" />
    <SolidColorBrush x:Key="SelectedBackground" Color="{DynamicResource SelectedBackgroundColor}"/>
    <SolidColorBrush x:Key="DisabledBackground" Color="{DynamicResource TransparentColor}" />
@@ -77,12 +77,12 @@
    <SolidColorBrush x:Key="MosaicBrush" Color="{DynamicResource MosaicColor}" Opacity=".1"/>
 
    <!--Border-->
-   <SolidColorBrush x:Key="NormalBorderBrush" Color="{DynamicResource NormalBorderColor}" Opacity=".1"/>
-   <SolidColorBrush x:Key="MouseOverBorderBrush" Color="{DynamicResource MouseOverBorderColor}" Opacity="0.15"/>
-   <SolidColorBrush x:Key="PressedBorderBrush" Color="{DynamicResource PressedBorderColor}" Opacity=".2"/>
-   <SolidColorBrush x:Key="SelectedBorderBrush" Color="{DynamicResource SelectedBorderColor}" Opacity=".2"/>
+   <SolidColorBrush x:Key="NormalBorderBrush" Color="{DynamicResource NormalBorderColor}"/>
+   <SolidColorBrush x:Key="MouseOverBorderBrush" Color="{DynamicResource MouseOverBorderColor}"/>
+   <SolidColorBrush x:Key="PressedBorderBrush" Color="{DynamicResource PressedBorderColor}"/>
+   <SolidColorBrush x:Key="SelectedBorderBrush" Color="{DynamicResource SelectedBorderColor}"/>
    <SolidColorBrush x:Key="DisabledBorderBrush" Color="{DynamicResource DisabledBorderColor}" />
-   <SolidColorBrush x:Key="PanelBorderBrush" Color="{DynamicResource PanelBorderColor}" Opacity=".3"/>
+   <SolidColorBrush x:Key="PanelBorderBrush" Color="{DynamicResource PanelBorderColor}"/>
 
    <!--Path-->
    <SolidColorBrush x:Key="NormalPathBrush" Color="{DynamicResource NormalPathColor}" Opacity=".8"/>

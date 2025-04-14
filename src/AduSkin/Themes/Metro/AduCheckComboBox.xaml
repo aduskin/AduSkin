@@ -166,9 +166,10 @@
                   <Popup x:Name="PART_Popup"
                      AllowsTransparency="True"
                      Focusable="False"
-                     IsOpen="{TemplateBinding IsDropDownOpen}"
                      Placement="Bottom"
-                     StaysOpen="True">
+                     StaysOpen="True"
+                     IsOpen="{TemplateBinding IsDropDownOpen}"
+                     VerticalOffset="{DynamicResource PopupVerticalOffset}">
                      <Border Name="DropDownBorder"
                         MinWidth="{TemplateBinding ActualWidth}"
                         MaxHeight="{TemplateBinding MaxDropDownHeight}"

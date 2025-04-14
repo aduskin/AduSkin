@@ -111,7 +111,7 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="80" x:Name="state"/>
                      </Grid.ColumnDefinitions>
-                     <TextBlock Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource NormalBrush}" 
+                     <TextBlock x:Name="txtName" Text="{Binding Title}" Style="{StaticResource H5}" Foreground="{StaticResource NormalBrush}" 
                                 Metro:TextBlockService.HighlightText="{Binding ElementName=SearchKey,Path=Text}" 
                                 Margin="20,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                      <Border Grid.Column="1" x:Name="states" Background="{StaticResource NormalBrush}" 
@@ -143,6 +143,7 @@
                   </MultiTrigger>
                   <Trigger Property="IsSelected" Value="True">
                      <Setter TargetName="Bd" Property="Background" Value="{StaticResource NormalBlack10}" />
+                     <Setter TargetName="txtName" Property="Foreground" Value="{StaticResource NormalWhite}" />
                   </Trigger>
                   <Trigger Property="IsEnabled" Value="False">
                      <Setter TargetName="Bd" Property="TextElement.Foreground" Value="{StaticResource NormalBlack}" />

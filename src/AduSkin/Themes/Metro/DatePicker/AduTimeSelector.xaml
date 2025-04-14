@@ -33,7 +33,7 @@
                   <Trigger Property="IsSelected" Value="True">
                      <Setter Property="Background" Value="{DynamicResource SelectedBackground}"/>
                      <Setter Property="FontWeight" Value="Bold" />
-                     <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+                     <Setter Property="Foreground" Value="{DynamicResource SelectedForeground}"/>
                   </Trigger>
                </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -68,13 +68,13 @@
 
    <Style TargetType="{x:Type AduPicker:AduTimeSelector}">
       <Setter Property="Background" Value="{DynamicResource NormalBackground}"/>
-      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}"/>
       <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="3"/>
-      <Setter Property="HorizontalContentAlignment" Value="Left" />
-      <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="SnapsToDevicePixels" Value="True" />
-      <Setter Property="UseLayoutRounding" Value="True" />
+      <Setter Property="HorizontalContentAlignment" Value="Left"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="SnapsToDevicePixels" Value="True"/>
+      <Setter Property="UseLayoutRounding" Value="True"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduPicker:AduTimeSelector}">
@@ -84,13 +84,15 @@
                      UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
                   <Grid>
                      <Border CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
-                           BorderBrush="{TemplateBinding BorderBrush}" 
-                           BorderThickness="{TemplateBinding BorderThickness}"/>
+                        BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
                      <UniformGrid Columns="3" Margin="0,6">
-                        <ListBox x:Name="PART_Hour" Style="{StaticResource TimeItemsStyle}"/>
-                        <ListBox x:Name="PART_Minute" Style="{StaticResource TimeItemsStyle}"
+                        <ListBox x:Name="PART_Hour" Style="{StaticResource TimeItemsStyle}" ItemContainerStyle="{StaticResource ItemStyle}"
+                           AduAttach:ForegroundAttach.SelectedForeground="{TemplateBinding AduAttach:ForegroundAttach.SelectedForeground}"/>
+                        <ListBox x:Name="PART_Minute" Style="{StaticResource TimeItemsStyle}" ItemContainerStyle="{StaticResource ItemStyle}"
+                           AduAttach:ForegroundAttach.SelectedForeground="{TemplateBinding AduAttach:ForegroundAttach.SelectedForeground}"
                            BorderThickness="1,0,1,0" BorderBrush="{DynamicResource NormalBorderBrush}"/>
-                        <ListBox x:Name="PART_Second" Style="{StaticResource TimeItemsStyle}" />
+                        <ListBox x:Name="PART_Second" Style="{StaticResource TimeItemsStyle}" ItemContainerStyle="{StaticResource ItemStyle}"
+                           AduAttach:ForegroundAttach.SelectedForeground="{TemplateBinding AduAttach:ForegroundAttach.SelectedForeground}" />
                      </UniformGrid>
                   </Grid>
                </Border>

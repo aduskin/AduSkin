@@ -151,12 +151,13 @@
                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Popup x:Name="PART_Popup_New" 
-                              MinWidth="{Binding Path=ActualWidth, ElementName=Root}"
-                              AllowsTransparency="True"
-                              IsOpen="{Binding Path=IsChecked, ElementName=PART_DropDownButton}"
-                              Placement="Bottom"
-                              PlacementTarget="{Binding ElementName=Root}"
-                              StaysOpen="False" VerticalOffset="1">
+                           MinWidth="{Binding Path=ActualWidth, ElementName=Root}"
+                           AllowsTransparency="True"
+                           IsOpen="{Binding Path=IsChecked, ElementName=PART_DropDownButton}"
+                           Placement="Bottom"
+                           PlacementTarget="{Binding ElementName=Root}"
+                           StaysOpen="False" 
+                           VerticalOffset="{DynamicResource PopupVerticalOffset}">
                            <Border Margin="20" CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                                  Background="{TemplateBinding AduAttach:BackgroundAttach.PanelBackground}"   
                                  BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding AduAttach:BorderAttach.PanelBorderBrush}" 
@@ -232,19 +233,19 @@
                                                 HorizontalAlignment="Right" Content="清空" Foreground="{DynamicResource NormalForeground}" 
                                                 Background="{DynamicResource NormalTransparentBrush}"/>
                                           <AduSkin:AduFlatButton x:Name="PART_ConfirmSelected" Width="40" Height="22" Margin="0,0,7,0" 
-                                                Foreground="{DynamicResource NormalForeground}"
+                                                Foreground="{DynamicResource NormalWhite}"
                                                 Background="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.SelectedBackground)}"
                                                 HorizontalAlignment="Right" Content="确定"/>
                                        </StackPanel>
 
                                        <Popup x:Name="PART_Popup_TimeSelector" AllowsTransparency="True" Placement="Top" 
-                                                 PlacementTarget="{Binding ElementName=ButtonLayout}"
-                                                IsOpen="{Binding IsChecked, ElementName=ChooseTime}" 
-                                                 Width="{Binding Path=ActualWidth, ElementName=ButtonLayout}">
-                                          <AduPicker:AduTimeSelector x:Name="PART_TimeSelector" BorderThickness="0" 
-                                                   AduAttach:BorderAttach.CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BorderAttach.CornerRadius)}"
-                                                   AduAttach:BackgroundAttach.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.PanelBackground)}"
-                                                   Height="{Binding Path=ActualHeight, ElementName=PART_Calendar}"/>
+                                          PlacementTarget="{Binding ElementName=ButtonLayout}"
+                                          IsOpen="{Binding IsChecked, ElementName=ChooseTime}" 
+                                          Width="{Binding Path=ActualWidth, ElementName=ButtonLayout}">
+                                          <AduPicker:AduTimeSelector x:Name="PART_TimeSelector" BorderThickness="0"
+                                                AduAttach:BorderAttach.CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BorderAttach.CornerRadius)}"
+                                                AduAttach:BackgroundAttach.PanelBackground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(AduAttach:BackgroundAttach.PanelBackground)}"
+                                                Height="{Binding Path=ActualHeight, ElementName=PART_Calendar}"/>
                                        </Popup>
                                     </DockPanel>
                                  </Border>

@@ -210,9 +210,11 @@
                         </TextBox.Template>
                      </TextBox>
 
-                     <Popup x:Name="Popup" IsOpen="{TemplateBinding IsDropDownOpen}"
-                            Placement="Bottom" Focusable="False"
-                            AllowsTransparency="True" PopupAnimation="Fade" >
+                     <Popup x:Name="Popup" 
+                        IsOpen="{TemplateBinding IsDropDownOpen}"
+                        Placement="Bottom" Focusable="False" 
+                        VerticalOffset="{DynamicResource PopupVerticalOffset}"
+                        AllowsTransparency="True" PopupAnimation="Fade" >
                         <Border RenderTransformOrigin="0.5,0" 
                               CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                               BorderBrush="{TemplateBinding AduAttach:BorderAttach.PanelBorderBrush}" 
