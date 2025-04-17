@@ -14,14 +14,14 @@
       <Setter Property="Background" Value="{DynamicResource NormalTransparentBrush}"/>
       <Setter Property="AduAttach:PathBrushAttach.NormalPathColor" Value="{DynamicResource PressedPathBrush}"/>
       <Setter Property="AduAttach:PathBrushAttach.SelectedPathColor" Value="{DynamicResource SelectedPathBrush}"/>
-      <Setter Property="AduAttach:BorderAttach.BorderBrush" Value="{StaticResource NormalTransparentBrush}"/>
-      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0"/>
-      <Setter Property="AduAttach:BorderAttach.BorderThickness" Value="0"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalTransparentBrush}"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0"/> 
       <Setter Property="AduAttach:PathDataAttach.PathData" Value="{DynamicResource Icon_SingleNoChecked}"/>
       <Setter Property="AduAttach:PathDataAttach.SelectedPathData" Value="{DynamicResource Icon_SingleChecked}"/>
       <Setter Property="AduAttach:PathDataAttach.Width" Value="14"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="4,0"/>
-      <Setter Property="AduAttach:PathDataAttach.Visibility" Value="Visible"/> 
+      <Setter Property="AduAttach:PathDataAttach.Visibility" Value="Visible"/>
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="FontSize" Value="12"/>
@@ -31,7 +31,8 @@
                <Border x:Name="border" Background="{TemplateBinding Background}" 
                        CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
                        BorderThickness="{TemplateBinding BorderThickness}"
-                       BorderBrush="{TemplateBinding BorderBrush}">
+                       BorderBrush="{TemplateBinding BorderBrush}"
+                       Padding="{TemplateBinding Padding}">
                   <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                      <Path x:Name="path" VerticalAlignment="Center" Stretch="Uniform"
                            Visibility="{TemplateBinding AduAttach:PathDataAttach.Visibility}"
@@ -42,7 +43,7 @@
                   </StackPanel>
                </Border>
                <!--控件触发器-->
-               <ControlTemplate.Triggers> 
+               <ControlTemplate.Triggers>
                   <Trigger Property="IsChecked" Value="True">
                      <Setter TargetName="path" Property="Data" Value="{Binding Path=(AduAttach:PathDataAttach.SelectedPathData), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                      <Setter TargetName="path" Property="Fill" Value="{Binding Path=(AduAttach:PathBrushAttach.SelectedPathColor), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>

@@ -19,13 +19,20 @@
       <Setter Property="AduAttach:PathDataAttach.Width" Value="14"/>
       <Setter Property="AduAttach:PathDataAttach.Margin" Value="4,0"/>
       <Setter Property="AduAttach:PathDataAttach.Visibility" Value="Visible"/>
+      <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="0"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalTransparentBrush}"/>
       <Setter Property="Cursor" Value="Hand" />
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="FontSize" Value="12"/>
       <Setter Property="Template">
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduCheckBox}">
-               <Border Background="{TemplateBinding Background}">
+               <Border Background="{TemplateBinding Background}" 
+                       CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}" 
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                       Padding="{TemplateBinding Padding}">
                   <StackPanel Orientation="Horizontal">
                      <Path x:Name="path" Stretch="Uniform"
                        Visibility="{TemplateBinding AduAttach:PathDataAttach.Visibility}"
