@@ -151,7 +151,7 @@ namespace AduSkin.Controls.Metro
             }
         }
 
-        public static void ShowBalloonTip(string title, string content, NotifyIconInfoType infoType, string token)
+        public static void ShowBalloonTip(string title, string content, StatusType infoType, string token)
         {
             if (NotifyIconDic.TryGetValue(token, out var notifyIcon))
             {
@@ -159,7 +159,7 @@ namespace AduSkin.Controls.Metro
             }
         }
 
-        public void ShowBalloonTip(string title, string content, NotifyIconInfoType infoType)
+        public void ShowBalloonTip(string title, string content, StatusType infoType)
         {
             if (!_added || DesignerHelper.IsInDesignMode) return;
 
@@ -174,16 +174,16 @@ namespace AduSkin.Controls.Metro
 
             switch (infoType)
             {
-                case NotifyIconInfoType.Info:
+                case StatusType.Info:
                     data.dwInfoFlags = InteropValues.NIIF_INFO;
                     break;
-                case NotifyIconInfoType.Warning:
+                case StatusType.Warning:
                     data.dwInfoFlags = InteropValues.NIIF_WARNING;
                     break;
-                case NotifyIconInfoType.Error:
+                case StatusType.Error:
                     data.dwInfoFlags = InteropValues.NIIF_ERROR;
                     break;
-                case NotifyIconInfoType.None:
+                case StatusType.None:
                     data.dwInfoFlags = InteropValues.NIIF_NONE;
                     break;
             }

@@ -64,5 +64,18 @@ namespace AduSkin.Controls.Attach
 
       public static Geometry GetLoadingPathData(DependencyObject element)
           => (Geometry)element.GetValue(LoadingPathDataProperty);
+
+      /// <summary>
+      /// 占位图标色
+      /// </summary>
+      public static readonly DependencyProperty PlaceHolderBrushProperty = DependencyProperty.RegisterAttached(
+          "PlaceHolderBrush", typeof(Brush), typeof(PlaceHolderAttach), new PropertyMetadata(default(Brush)));
+
+      public static void SetPlaceHolderBrush(DependencyObject element, Brush value)
+          => element.SetValue(PlaceHolderBrushProperty, value);
+
+      public static Brush GetPlaceHolderBrush(DependencyObject element)
+          => (Brush)element.GetValue(PlaceHolderBrushProperty);
+      
    }
 }

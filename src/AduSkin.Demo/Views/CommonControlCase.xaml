@@ -69,6 +69,16 @@
          </Grid>
          <Grid>
             <Border Style="{StaticResource ShowControlBorder}">
+               <UniformGrid Columns="4">
+                  <AduSkin:AduStatusIcon StatusType="Info"/>
+                  <AduSkin:AduStatusIcon StatusType="None"/>
+                  <AduSkin:AduStatusIcon StatusType="Warning"/>
+                  <AduSkin:AduStatusIcon StatusType="Error"/>
+               </UniformGrid>
+            </Border>
+         </Grid>
+         <Grid>
+            <Border Style="{StaticResource ShowControlBorder}">
                <AduSkin:AduCalendar x:Name="Calendar1"  
                   AduAttach:BackgroundAttach.MouseOverBackground="{DynamicResource MouseOverBackground}"
                   AduAttach:BackgroundAttach.SelectedBackground="{DynamicResource SelectedBackground}"

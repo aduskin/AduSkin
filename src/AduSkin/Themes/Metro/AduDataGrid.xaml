@@ -258,6 +258,8 @@
       <Setter Property="AduAttach:BackgroundAttach.SelectedBackground" Value="{DynamicResource SelectedBackground}"/>
       <Setter Property="AduAttach:PlaceHolderAttach.PathData" Value="{DynamicResource Icon_Null}"/>
       <Setter Property="AduAttach:BorderAttach.CornerRadius" Value="6"/>
+      <Setter Property="AduAttach:PlaceHolderAttach.PlaceHolderBrush" Value="{DynamicResource PlaceHolderBrush}"/>
+      <Setter Property="AduAttach:PlaceHolderAttach.PathData" Value="{DynamicResource Icon_Null}"/>
       <Setter Property="Background" Value="{DynamicResource NormalBackground}"/> 
       <Setter Property="ColumnHeaderStyle" Value="{DynamicResource DefaultDataGridColumnHeader}"/>
       <Setter Property="RowHeaderStyle" Value="{DynamicResource DefaultDataGridRowHeader}"/>
@@ -265,6 +267,7 @@
       <Setter Property="RowStyle" Value="{DynamicResource DefaultDataGridRow}"/>
       <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
       <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Padding" Value="8"/>
       <Setter Property="AlternationCount" Value="2"/>
       <Setter Property="MinRowHeight" Value="25"/>
       <Setter Property="RowHeaderWidth" Value="0"/>
@@ -289,12 +292,9 @@
                <Setter Property="Template">
                   <Setter.Value>
                      <ControlTemplate TargetType="Separator">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                              Background="{TemplateBinding Background}" 
-                              Padding="{TemplateBinding Padding}" 
-                              BorderThickness="{TemplateBinding BorderThickness}">
-                           <Rectangle Fill="{DynamicResource NormalBorderBrush}" 
-                                 Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" />
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                              Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                           <Rectangle Fill="{DynamicResource NormalBorderBrush}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" />
                         </Border>
                      </ControlTemplate>
                   </Setter.Value>
@@ -307,20 +307,19 @@
          <Setter.Value>
             <ControlTemplate TargetType="{x:Type AduSkin:AduDataGrid}">
                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
-                       BorderThickness="{TemplateBinding BorderThickness}"
-                       CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
-                       Background="{TemplateBinding Background}"
-                       Padding="{TemplateBinding Padding}" 
-                       SnapsToDevicePixels="True">
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding AduAttach:BorderAttach.CornerRadius}"
+                  Background="{TemplateBinding Background}"
+                  Padding="{TemplateBinding Padding}" 
+                  SnapsToDevicePixels="True">
                   <Grid>
-                     <StackPanel Margin="0,40,0,0"
-                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                     <StackPanel Margin="0,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"
                         Visibility="{TemplateBinding AduAttach:PlaceHolderAttach.PlaceHolderVisible}">
                         <Path x:Name="placeholder" Data="{TemplateBinding AduAttach:PlaceHolderAttach.PathData}" 
-                              Fill="{StaticResource PlaceHolderBrush}"
-                              Stretch="Uniform" Width="80" Height="80"/>
-                        <TextBlock x:Name="message"
-                           FontSize="15" Foreground="{StaticResource PlaceHolderBrush}"
+                           Fill="{TemplateBinding AduAttach:PlaceHolderAttach.PlaceHolderBrush}"
+                           Stretch="Uniform" Width="80" Height="80"/>
+                        <TextBlock x:Name="message" FontSize="15" 
+                           Foreground="{TemplateBinding AduAttach:PlaceHolderAttach.PlaceHolderBrush}"
                            HorizontalAlignment="Center" Margin="0,20"
                            Text="{TemplateBinding AduAttach:PlaceHolderAttach.Message}" />
                      </StackPanel>

@@ -1,13 +1,13 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Metro="clr-namespace:AduSkin.Controls.Metro">
    <ResourceDictionary.MergedDictionaries>
       <ResourceDictionary Source="/AduSkin;component/Themes/Theme.xaml"/>
    </ResourceDictionary.MergedDictionaries>
 
    <Style TargetType="{x:Type Metro:MetroMenuSeparator}">
-      <Setter Property="Background" Value="{DynamicResource NormalSeparator}"/>
-      <Setter Property="Opacity" Value=".1"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource NormalSeparator}"/>
+      <Setter Property="Opacity" Value=".03"/>
       <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
       <Setter Property="Focusable" Value="false"/>
       <Setter Property="SnapsToDevicePixels" Value="True"/>

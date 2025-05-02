@@ -5,7 +5,7 @@
    <Application.Resources>
       <ResourceDictionary>
          <ResourceDictionary.MergedDictionaries>
-            <AduSkin:AduTheme CurrentSkin="Light"/>
+            <AduSkin:AduTheme CurrentSkin="Dark"/>
             <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/AduTreeView.xaml"/>
             <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/BaseStyle.xaml"/>
             <ResourceDictionary Source="pack://application:,,,/AduSkin.Demo;component/Style/ShowControl.xaml"/>

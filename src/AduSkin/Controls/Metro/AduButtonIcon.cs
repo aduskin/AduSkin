@@ -8,11 +8,6 @@ namespace AduSkin.Controls.Metro
 {
    public class AduButtonIcon : AduButtonBase
    {
-      public AduButtonIcon()
-      {
-         
-      }
-
       static AduButtonIcon()
       {
          ElementBase.DefaultStyle<AduButtonIcon>(DefaultStyleKeyProperty);

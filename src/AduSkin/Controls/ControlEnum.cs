@@ -266,7 +266,7 @@ namespace AduSkin.Controls
    /// <summary>
    /// 通知图片类型
    /// </summary>
-   public enum NotifyIconInfoType
+   public enum StatusType
    {
       /// <summary>
       ///  No Icon.
