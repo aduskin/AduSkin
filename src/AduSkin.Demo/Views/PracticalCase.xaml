@@ -17,18 +17,18 @@
          <ColumnDefinition/>
       </Grid.ColumnDefinitions>
       <Border Background="{DynamicResource PanelBackground}" Effect="{DynamicResource PanelShadow}"
-              BorderThickness="0,0,1,0" BorderBrush="{StaticResource NormalBorderBrush}">
+              BorderThickness="0,0,1,0" BorderBrush="{DynamicResource NormalBorderBrush}">
          <Grid >
             <Grid.RowDefinitions>
                <RowDefinition Height="Auto"/>
                <RowDefinition Height="Auto"/>
                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock Foreground="{DynamicResource NormalForeground}" Style="{StaticResource H5}" 
+            <TextBlock Foreground="{DynamicResource NormalForeground}" Style="{DynamicResource H5}" 
                Padding="0,20,0,0" HorizontalAlignment="Center" Text="搜索你要找的案例"/>
-            <Border Background="{StaticResource NormalBlack5}" Grid.Row="1">
+            <Border Background="{DynamicResource NormalBlack5}" Grid.Row="1">
                <Metro:MetroTextBox x:Name="SearchKey" 
-                     CaretBrush="{StaticResource NormalBlack}" Background="{StaticResource NormalBlack10}" 
+                     CaretBrush="{DynamicResource NormalBlack}" Background="{DynamicResource NormalBlack10}" 
                      BorderThickness="0" Padding="10,0" Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                      VerticalAlignment="Center" VerticalContentAlignment="Center" 
                      CornerRadius="15" Height="30" Margin="15 20" FontSize="14" BorderBrush="Transparent"  
@@ -41,11 +41,11 @@
                   </Style>
                </Metro:AduTabControl.Resources>
                <Metro:AduTabItem Header="案例">
-                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" BorderThickness="0" Background="{DynamicResource PanelBackground}"
+                  <ListBox ItemContainerStyle="{DynamicResource DemoListBoxItem}" BorderThickness="0" Background="{DynamicResource PanelBackground}"
                            ItemsSource="{Binding SearchControl.View}" SelectedItem="{Binding CurrentShowControl}"/>
                </Metro:AduTabItem>
                <Metro:AduTabItem Header="工具">
-                  <ListBox ItemContainerStyle="{StaticResource DemoListBoxItem}" BorderThickness="0" Background="{DynamicResource PanelBackground}"
+                  <ListBox ItemContainerStyle="{DynamicResource DemoListBoxItem}" BorderThickness="0" Background="{DynamicResource PanelBackground}"
                            ItemsSource="{Binding SearchTool.View}" SelectedItem="{Binding CurrentShowTool}"/>
                </Metro:AduTabItem>
             </Metro:AduTabControl>
@@ -61,7 +61,7 @@
                   <RowDefinition Height="60"/>
                   <RowDefinition MinHeight="200" Height="Auto"/>
                </Grid.RowDefinitions>
-               <TextBlock Grid.Row="0" Text="{Binding Title}" Style="{StaticResource H5}" VerticalAlignment="Center" Margin="20,0"/>
+               <TextBlock Grid.Row="0" Text="{Binding Title}" Style="{DynamicResource H5}" VerticalAlignment="Center" Margin="20,0"/>
                <ContentPresenter Grid.Row="1" Content="{Binding Content}"/>
             </Grid>
          </Border>

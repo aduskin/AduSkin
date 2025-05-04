@@ -15,14 +15,14 @@
    <AduSkin:MetroScrollViewer HorizontalScrollBarVisibility="Disabled" Padding="10">
       <AduSkin:MetroWaterfallFlow x:Name="waterfallFlow" ListWidth="300">
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <AduSkin:AduAnimationPath Width="100" Height="100" VerticalAlignment="Center" 
-                  Data="{StaticResource Icon_Desgin}" Stretch="Uniform" 
-                  Stroke="{StaticResource NormalBrush}" StrokeThickness="3"  Duration="0:0:6" />
+                  Data="{DynamicResource Icon_Desgin}" Stretch="Uniform" 
+                  Stroke="{DynamicResource NormalBrush}" StrokeThickness="3"  Duration="0:0:6" />
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <WrapPanel Orientation="Horizontal">
                   <AduSkin:MetroColorPicker x:Name="color1" Width="50" Height="50" Padding="5" 
                      Background="#EE796F" DefaultColor="#EE796F" />
@@ -32,7 +32,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:AduRunningBlock Duration="0:0:20" Margin="0,0,0,10">
                      <StackPanel Orientation="Horizontal">
@@ -62,13 +62,13 @@
             </Border>
          </Grid> 
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <AduSkin:AduSliderVerifyCode Height="150" ImageUri="pack://application:,,,/Resources/pic.jpg"
                   Result="{Binding VerifyResult,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <UniformGrid Columns="4">
                   <AduSkin:AduStatusIcon StatusType="Info"/>
                   <AduSkin:AduStatusIcon StatusType="None"/>
@@ -78,7 +78,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <AduSkin:AduCalendar x:Name="Calendar1"  
                   AduAttach:BackgroundAttach.MouseOverBackground="{DynamicResource MouseOverBackground}"
                   AduAttach:BackgroundAttach.SelectedBackground="{DynamicResource SelectedBackground}"
@@ -89,7 +89,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <StackPanel.Resources>
                      <Style TargetType="AduSkin:AduDatePicker">  
@@ -106,21 +106,21 @@
                      AduAttach:ForegroundAttach.MouseOverForeground="{DynamicResource MouseOverForeground}"
                      AduAttach:ForegroundAttach.HighlightForeground="{DynamicResource HighlightForeground}"/>
                   <AduSkin:AduDatePicker x:Name="Date2" 
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                     AduAttach:BackgroundAttach.PanelBackground="{DynamicResource PanelBackground}"/>
                   <AduSkin:AduDatePicker x:Name="Date3" IsShowShortCuts="True" 
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                     AduAttach:BackgroundAttach.PanelBackground="{DynamicResource PanelBackground}"/>
                   <AduSkin:AduDatePicker x:Name="Date4" Type="SingleDateRange"
                      DateStringFormat="yyyy/MM/dd" IsShowShortCuts="True" 
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                     AduAttach:BackgroundAttach.PanelBackground="{DynamicResource PanelBackground}"/>
                   <AduSkin:AduDatePicker x:Name="Date5" Type="SingleDateRange"
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                     AduAttach:BackgroundAttach.PanelBackground="{DynamicResource PanelBackground}"/>
                   <AduSkin:AduDatePicker x:Name="Date6" Type="SingleDateRange"
-                     AduAttach:BackgroundAttach.PanelBackground="{StaticResource PanelBackground}"/>
+                     AduAttach:BackgroundAttach.PanelBackground="{DynamicResource PanelBackground}"/>
                </StackPanel>
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <UniformGrid Columns="3">
                   <UniformGrid.Resources>
                      <Style TargetType="AduSkin:AduLoading">
@@ -139,44 +139,44 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:AduRadioButtonIcon
                         Content="盒子"
                         IsChecked="True"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Desgin2}" 
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Desgin2}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="聊天"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_WeChat}" 
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_WeChat}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="福利"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Gift}" 
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Gift}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="组"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Group}" 
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Group}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="标签"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Tag}" 
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Tag}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="16"/>
                   <AduSkin:AduRadioButtonIcon
                         Content="创意"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_ALight}" 
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_ALight}" 
                         AduAttach:PathDataAttach.Margin="14,0"
                         AduAttach:PathDataAttach.Width="14"/>
                </StackPanel>
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <StackPanel.Resources>
                      <Style TargetType="AduSkin:AduCheckBox">
@@ -195,7 +195,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel  >
                   <AduSkin:AduComboBox x:Name="site" Height="30" IsEditable="True" 
                         AduAttach:InputAttach.InputHint="请选择" IsShowFilterBox="True" 
@@ -208,7 +208,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel Orientation="Horizontal">
                   <AduSkin:AduIntegerUpDown Width="100" Maximum="20"
                      Minimum="0" Value="15" UpDownOrientation="Horizontal" />
@@ -219,14 +219,14 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <AduSkin:AduUpload Height="100" 
-                  BorderBrush="{StaticResource NormalBrush}" 
-                  Foreground="{StaticResource NormalBrush}"/>
+                  BorderBrush="{DynamicResource NormalBrush}" 
+                  Foreground="{DynamicResource NormalBrush}"/>
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}" Height="250">
+            <Border Style="{DynamicResource ShowControlBorder}" Height="250">
                <AduSkin:MetroScrollViewer>
                   <StackPanel>
                      <AduSkin:AduNoExpander Header="不可折叠" IsExpanded="True">
@@ -241,8 +241,8 @@
                               <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" Margin="0,4" />
                               <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True" />
                               <AduSkin:AduCheckBox Content="复选框" FontSize="14" AduAttach:PathDataAttach.Width="16" IsChecked="True"  Margin="0,4"
-                                 AduAttach:PathDataAttach.PathData="{StaticResource Icon_NoChecked}" 
-                                 AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Checked}"/>
+                                 AduAttach:PathDataAttach.PathData="{DynamicResource Icon_NoChecked}" 
+                                 AduAttach:PathDataAttach.SelectedPathData="{DynamicResource Icon_Checked}"/>
                            </StackPanel> 
                      </AduSkin:AduExpander>
                   </StackPanel>
@@ -250,18 +250,18 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:AduSlider Maximum="1000" Value="500" Margin="0,10" Height="20"
                         AduAttach:PathDataAttach.Width="10" 
                         AduAttach:BorderAttach.CornerRadius="3" 
-                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalWhite}"/>
+                        AduAttach:PathBrushAttach.NormalPathColor="{DynamicResource NormalWhite}"/>
                   <AduSkin:AduFlatSilder Maximum="1000" Value="500" Margin="0,10" Height="17"/>
                </StackPanel>
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:AduRatingBar VerticalAlignment="Center" Height="30" Value="3" IsShowContent="True" IsReadOnly="False"/>
                   <AduSkin:AduRatingBar VerticalAlignment="Center" Height="30" Value="3.7"/>
@@ -271,7 +271,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:MetroTextBlock Opacity="0.65" Text="自动调整大小，不用管图片的PPI" />
                   <AduSkin:MetroImage Margin="0,5,0,0" Source="../Resources/pic.jpg" RenderOptions.BitmapScalingMode="Fant"/>
@@ -279,7 +279,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <StackPanel.Resources>
                      <Style TargetType="AduSkin:AduRadioButton">
@@ -302,7 +302,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:MetroSwitch Margin="10" Content="关闭禁用" IsEnabled="False" />
                   <AduSkin:MetroSwitch Margin="10" Content="打开禁用" IsChecked="true" IsEnabled="False" />
@@ -313,10 +313,10 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
-                  <AduSkin:AduFormLable Title="日期选择" TitleForeground="{StaticResource  NormalRed}" 
-                        PromptVisibility="Visible" Prompt="选择" PromptForeground="{StaticResource NormalRed}">
+                  <AduSkin:AduFormLable Title="日期选择" TitleForeground="{DynamicResource  NormalRed}" 
+                        PromptVisibility="Visible" Prompt="选择" PromptForeground="{DynamicResource NormalRed}">
                      <AduSkin:AduDatePicker/>
                   </AduSkin:AduFormLable>
                   <AduSkin:AduFormLable Title="下拉选择" Margin="0,10,0,0">
@@ -392,7 +392,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel HorizontalAlignment="Center">
                   <StackPanel Orientation="Horizontal">
                      <AduSkin:AduFlatButton Margin="10" Content="默认颜色" IsEnabled="False" Type="success" />
@@ -419,11 +419,11 @@
                      <AduSkin:AduFlatButton Name="btnShowAdu" Margin="10" Content="正确颜色" Type="error" />
                   </StackPanel>
                   <StackPanel Orientation="Horizontal">
-                     <AduSkin:AduButtonSvg AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}"  AduAttach:PathDataAttach.Width="20" 
+                     <AduSkin:AduButtonSvg AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Logo}"  AduAttach:PathDataAttach.Width="20" 
                         Foreground="#999" Height="40" Width="40" />
                      <AduSkin:AduButtonIcon Height="40" Margin="10" Content="hehhe" VerticalContentAlignment="Center" 
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Logo}" 
-                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBrush}"
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Logo}" 
+                        AduAttach:PathBrushAttach.NormalPathColor="{DynamicResource NormalBrush}"
                         AduAttach:PathDataAttach.Width="16" 
                         AduAttach:PathDataAttach.Margin="0,0,10,0" 
                         AduAttach:BorderAttach.CornerRadius="6"/>
@@ -433,8 +433,8 @@
                          AduAttach:BorderAttach.SelectedBorderBrush="{DynamicResource SelectedBorderBrush}" 
                         AduAttach:BorderAttach.CornerRadius="15"    
                         AduAttach:PathDataAttach.Width="14"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_Bluetooth}"
-                        AduAttach:PathDataAttach.SelectedPathData="{StaticResource Icon_Bluetooth}"
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Bluetooth}"
+                        AduAttach:PathDataAttach.SelectedPathData="{DynamicResource Icon_Bluetooth}"
                         AduAttach:PathBrushAttach.SelectedPathColor="{DynamicResource NormalWhite}"
                         AduAttach:PathBrushAttach.NormalPathColor="{DynamicResource NormalPathBrush}"
                         AduAttach:PathBrushAttach.PressedPathColor="{DynamicResource PressedPathBrush}"
@@ -442,38 +442,38 @@
                         AduAttach:BackgroundAttach.SelectedBackground="{DynamicResource SelectedBackground}" 
                         AduAttach:BackgroundAttach.MouseOverBackground="{DynamicResource MouseOverBackground}" 
                         Width="30" Height="30"/>
-                     <AduSkin:AduPathIconButton Margin="10,0" AduAttach:PathDataAttach.PathData="{StaticResource Icon_CopyCode}"/>
+                     <AduSkin:AduPathIconButton Margin="10,0" AduAttach:PathDataAttach.PathData="{DynamicResource Icon_CopyCode}"/>
                      <AduSkin:AduPathIconButton 
-                        BorderThickness="1" BorderBrush="{StaticResource NormalBlack20}" 
+                        BorderThickness="1" BorderBrush="{DynamicResource NormalBlack20}" 
                         AduAttach:BorderAttach.CornerRadius="15" 
                         AduAttach:PathDataAttach.Width="14"
-                        AduAttach:PathDataAttach.PathData="{StaticResource Icon_CopyCode}"
-                        AduAttach:PathBrushAttach.NormalPathColor="{StaticResource NormalBlue}"
-                        AduAttach:PathBrushAttach.MouseOverPathColor="{StaticResource NormalBrush}" 
-                        AduAttach:PathBrushAttach.PressedPathColor="{StaticResource NormalBlack}"
-                        AduAttach:BackgroundAttach.MouseOverBackground="{StaticResource NormalBlack10}" 
-                        AduAttach:BackgroundAttach.PressedBackground="{StaticResource NormalBlack10}" 
+                        AduAttach:PathDataAttach.PathData="{DynamicResource Icon_CopyCode}"
+                        AduAttach:PathBrushAttach.NormalPathColor="{DynamicResource NormalBlue}"
+                        AduAttach:PathBrushAttach.MouseOverPathColor="{DynamicResource NormalBrush}" 
+                        AduAttach:PathBrushAttach.PressedPathColor="{DynamicResource NormalBlack}"
+                        AduAttach:BackgroundAttach.MouseOverBackground="{DynamicResource NormalBlack10}" 
+                        AduAttach:BackgroundAttach.PressedBackground="{DynamicResource NormalBlack10}" 
                         Width="30" Height="30"/>
                   </StackPanel>
                </StackPanel>
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel Orientation="Horizontal">
-                  <AduSkin:AduButtonRemind AduAttach:PathDataAttach.PathData="{StaticResource Icon_Demo}" AduAttach:PathDataAttach.Width="20" 
-                        AduButtonState="Green" Foreground="{StaticResource NormalBrush}"  Hint="99+" Height="40" Width="40" />
-                  <AduSkin:AduButtonRemind AduAttach:PathDataAttach.PathData="{StaticResource Icon_Demo}" AduAttach:PathDataAttach.Width="20" 
-                        AduButtonState="Red" Foreground="{StaticResource NormalBrush}"  Hint="99+" Height="40" Width="40" />
-                  <AduSkin:AduButtonRemind AduAttach:PathDataAttach.PathData="{StaticResource Icon_Demo}" AduAttach:PathDataAttach.Width="20" 
-                        AduButtonState="Blue" Foreground="{StaticResource NormalBrush}" Hint="99+" Height="40" Width="40" />
-                  <AduSkin:AduButtonRemind AduAttach:PathDataAttach.PathData="{StaticResource Icon_Demo}" AduAttach:PathDataAttach.Width="20" 
-                        AduButtonState="None" Foreground="{StaticResource NormalBrush}"  Hint="99+" Height="40" Width="40" />
+                  <AduSkin:AduButtonRemind AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Demo}" AduAttach:PathDataAttach.Width="20" 
+                        AduButtonState="Green" Foreground="{DynamicResource NormalBrush}"  Hint="99+" Height="40" Width="40" />
+                  <AduSkin:AduButtonRemind AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Demo}" AduAttach:PathDataAttach.Width="20" 
+                        AduButtonState="Red" Foreground="{DynamicResource NormalBrush}"  Hint="99+" Height="40" Width="40" />
+                  <AduSkin:AduButtonRemind AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Demo}" AduAttach:PathDataAttach.Width="20" 
+                        AduButtonState="Blue" Foreground="{DynamicResource NormalBrush}" Hint="99+" Height="40" Width="40" />
+                  <AduSkin:AduButtonRemind AduAttach:PathDataAttach.PathData="{DynamicResource Icon_Demo}" AduAttach:PathDataAttach.Width="20" 
+                        AduButtonState="None" Foreground="{DynamicResource NormalBrush}"  Hint="99+" Height="40" Width="40" />
                </StackPanel>
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:MetroRichTextBox MaxHeight="100" Margin="5" IsEnabled="False">
                      <FlowDocument>
@@ -520,7 +520,7 @@
                   <AduSkin:MetroRichTextBox
                            MaxHeight="100"
                            Margin="5"
-                           Background="{StaticResource NormalTransparentBrush}"
+                           Background="{DynamicResource NormalTransparentBrush}"
                            BorderThickness="0">
                      <FlowDocument>
                         <Paragraph>
@@ -535,7 +535,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:MetroProgressBar
                      Margin="5"  
@@ -571,7 +571,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel>
                   <AduSkin:MetroCanvasGrid
                      Height="100"
@@ -588,7 +588,7 @@
             </Border>
          </Grid>
          <Grid>
-            <Border Style="{StaticResource ShowControlBorder}">
+            <Border Style="{DynamicResource ShowControlBorder}">
                <StackPanel Background="#00000000">
                   <AduSkin:MetroProgressBar Title="MetroProgressBar 等待禁用"
                      Margin="60,5,5,5"
