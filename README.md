@@ -65,7 +65,7 @@ AduSkin 项目基于 LGPL-3.0 开源协议开放项目源代码。本项目版�
 
 ### 开发环境
 
-开发环境：Windows 10  +  Visual Studio 2019 Professional  +  .Net Framework 4.5 + .Net Core 3.1
+开发环境：Windows 10++   Visual Studio 2019 Professional++   .Net Framework 6++
 
 ### 使用方法
 
