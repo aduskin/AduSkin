@@ -61,7 +61,7 @@ namespace AduSkin.Controls.Metro
       /// <summary>
       ///     刻度字符串
       /// </summary>
-      internal static readonly DependencyProperty SpeStrProperty = DependencyProperty.Register(
+      public static readonly DependencyProperty SpeStrProperty = DependencyProperty.Register(
           "SpeStr", typeof(string), typeof(AduTimeBarNew), new PropertyMetadata("1h"));
 
       /// <summary>
@@ -227,7 +227,7 @@ namespace AduSkin.Controls.Metro
       /// <summary>
       ///     刻度字符串
       /// </summary>
-      internal string SpeStr
+      public string SpeStr
       {
          get => (string)GetValue(SpeStrProperty);
          set => SetValue(SpeStrProperty, value);
